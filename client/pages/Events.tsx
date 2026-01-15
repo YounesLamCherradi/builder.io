@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Globe,
@@ -14,12 +14,6 @@ import {
   Check,
   ArrowRight,
   Star,
-  ChevronLeft,
-  ChevronRight,
-  Zap,
-  Award,
-  TrendingUp,
-  MessageSquare,
   ChevronUp,
 } from 'lucide-react';
 
@@ -29,7 +23,6 @@ export default function Events() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   React.useEffect(() => {
@@ -79,8 +72,6 @@ export default function Events() {
         get_started: 'Get Started',
         events_title: 'Upcoming Events & Opportunities',
         events_subtitle: 'Join us for seminars, workshops, and networking events designed to accelerate your global journey',
-        featured_events: 'Featured Events - This Month',
-        featured_subtitle: 'Don\'t miss these trending events',
         filter_all: 'All Events',
         filter_scholarship: 'Scholarships',
         filter_webinar: 'Webinars',
@@ -99,19 +90,6 @@ export default function Events() {
         in_person: 'In Person',
         past_events: 'Past Events Highlights',
         past_events_subtitle: 'Relive the magic - See what our students experienced',
-        event_stats_title: 'Event Impact & Statistics',
-        total_events: 'Total Events This Year',
-        total_attendees: 'Global Attendees',
-        success_rate: 'Applicant Success Rate',
-        countries_reached: 'Countries Reached',
-        early_bird_benefits: 'Early Bird Benefits',
-        early_bird_desc: 'Register early and unlock exclusive perks',
-        benefit_discount: '20% Discount on Paid Events',
-        benefit_materials: 'Free Workshop Materials',
-        benefit_networking: 'Priority Networking',
-        benefit_certificate: 'Digital Certificate',
-        testimonials_title: 'What Students Say',
-        testimonials_subtitle: 'Real experiences from real attendees',
         faq_title: 'Frequently Asked Questions',
         faq_subtitle: 'Find answers to common questions about our events',
         footer_tagline: 'Empowering Moroccans to achieve their global dreams.',
@@ -139,8 +117,6 @@ export default function Events() {
         get_started: 'Commencer',
         events_title: 'Événements et Opportunités à Venir',
         events_subtitle: 'Rejoignez-nous pour des séminaires, ateliers et événements de réseautage',
-        featured_events: 'Événements Vedettes - Ce Mois',
-        featured_subtitle: 'Ne manquez pas ces événements tendance',
         filter_all: 'Tous les Événements',
         filter_scholarship: 'Bourses',
         filter_webinar: 'Webinaires',
@@ -159,19 +135,6 @@ export default function Events() {
         in_person: 'En Personne',
         past_events: 'Faits Marquants des Événements Passés',
         past_events_subtitle: 'Revivez la magie - Découvrez ce qu\'ont vécu nos étudiants',
-        event_stats_title: 'Impact et Statistiques des Événements',
-        total_events: 'Événements Totaux Cette Année',
-        total_attendees: 'Participants Mondiaux',
-        success_rate: 'Taux de Réussite des Candidats',
-        countries_reached: 'Pays Atteints',
-        early_bird_benefits: 'Avantages Accès Anticipé',
-        early_bird_desc: 'Inscrivez-vous tôt et débloquez des avantages exclusifs',
-        benefit_discount: 'Réduction de 20% sur les Événements Payants',
-        benefit_materials: 'Matériaux d\'Atelier Gratuits',
-        benefit_networking: 'Réseautage Prioritaire',
-        benefit_certificate: 'Certificat Numérique',
-        testimonials_title: 'Ce que Disent les Étudiants',
-        testimonials_subtitle: 'Expériences réelles de vrais participants',
         faq_title: 'Questions Fréquemment Posées',
         faq_subtitle: 'Trouvez les réponses aux questions courantes sur nos événements',
         footer_tagline: 'Aider les Marocains à réaliser leurs rêves.',
@@ -199,8 +162,6 @@ export default function Events() {
         get_started: 'Начать',
         events_title: 'Предстоящие События и Возможности',
         events_subtitle: 'Присоединяйтесь к нам на семинарах, мастер-классах и сетевых мероприятиях',
-        featured_events: 'Избранные События - Этот Месяц',
-        featured_subtitle: 'Не пропустите эти популярные события',
         filter_all: 'Все События',
         filter_scholarship: 'Стипендии',
         filter_webinar: 'Вебинары',
@@ -219,19 +180,6 @@ export default function Events() {
         in_person: 'Очно',
         past_events: 'Знаковые Моменты Прошлых События',
         past_events_subtitle: 'Переживайте снова - Посмотрите, что испытали наши студенты',
-        event_stats_title: 'Влияние и Статистика События',
-        total_events: 'Всего События За Год',
-        total_attendees: 'Глобальные Участники',
-        success_rate: 'Показатель Успеха Кандидатов',
-        countries_reached: 'Охватные Страны',
-        early_bird_benefits: 'Преимущества Ранней Регистрации',
-        early_bird_desc: 'Зарегистрируйтесь рано и разблокируйте эксклюзивные преимущества',
-        benefit_discount: 'Скидка 20% на Платные События',
-        benefit_materials: 'Бесплатные Материалы Мастер-Класса',
-        benefit_networking: 'Приоритетное Сетевое Взаимодействие',
-        benefit_certificate: 'Цифровой Сертификат',
-        testimonials_title: 'Что Говорят Студенты',
-        testimonials_subtitle: 'Реальный опыт реальных участников',
         faq_title: 'Часто Задаваемые Вопросы',
         faq_subtitle: 'Найдите ответы на распространенные вопросы о наших событиях',
         footer_tagline: 'Помогаем марокканцам достигать глобальных целей.',
@@ -474,67 +422,48 @@ export default function Events() {
     },
   ];
 
-  const testimonials = [
-    {
-      name: 'Fatima Ahmed',
-      role: 'Fulbright Scholar 2025',
-      avatar: '👩‍🎓',
-      text: 'The masterclass completely transformed my application. I got accepted to my dream university!',
-      rating: 5,
-    },
-    {
-      name: 'Mohammed Hassan',
-      role: 'Tech Intern at Google',
-      avatar: '👨‍💼',
-      text: 'Networking at the tech summit connected me with the right people. Life-changing experience!',
-      rating: 5,
-    },
-    {
-      name: 'Layla Omar',
-      role: 'Master\'s Student in Canada',
-      avatar: '👩‍🏫',
-      text: 'The Canada event was incredibly informative. Worth every minute!',
-      rating: 4.8,
-    },
-  ];
-
   const faqs = [
     {
       id: 1,
       question: 'How do I register for an event?',
-      answer: 'Click on any event card and hit the "Register Now" button. You\'ll need to fill in your basic information and confirm your email.',
+      answer: 'Click on any event card and hit the "Register Now" button. You\'ll need to fill in your basic information and confirm your email. Once registered, you\'ll receive all event details and reminders.',
     },
     {
       id: 2,
       question: 'Are the events really free?',
-      answer: 'Most of our events are completely free! Some specialized workshops may have a small fee, but it\'s always clearly labeled.',
+      answer: 'Most of our events are completely free! Some specialized premium workshops may have a small fee, but it\'s always clearly labeled on the event card. We believe in making quality education accessible.',
     },
     {
       id: 3,
       question: 'Can I attend online events from anywhere?',
-      answer: 'Yes! Online events are accessible from anywhere in the world. You\'ll receive a Zoom link via email after registration.',
+      answer: 'Yes! Online events are accessible from anywhere in the world with an internet connection. You\'ll receive a Zoom link via email after registration. You can attend from home, office, or anywhere convenient.',
     },
     {
       id: 4,
       question: 'Do I get a certificate after attending?',
-      answer: 'Certificates are provided for completed workshops and paid events. Attendance at free webinars also earns you a digital badge.',
+      answer: 'Certificates are provided for completed workshops and paid events. Attendance at free webinars also earns you a digital badge. Both are shareable on LinkedIn and other professional platforms.',
     },
     {
       id: 5,
       question: 'What if I can\'t make the scheduled time?',
-      answer: 'Recorded versions are available for registered attendees if they miss the live session.',
+      answer: 'Recorded versions are available for registered attendees if you miss the live session. You\'ll receive the recording link within 24 hours of the event. You\'ll still get all materials and certificates.',
+    },
+    {
+      id: 6,
+      question: 'How do I get notifications about new events?',
+      answer: 'Subscribe to our newsletter using the email box in the footer! We\'ll send you curated event recommendations, early bird offers, and exclusive opportunities. You can unsubscribe anytime.',
+    },
+    {
+      id: 7,
+      question: 'Can I bring friends to in-person events?',
+      answer: 'Absolutely! Friends are welcome. Each person needs their own registration to secure a spot. Group registrations are especially welcome - contact us for group discounts.',
+    },
+    {
+      id: 8,
+      question: 'What technical requirements do I need for online events?',
+      answer: 'Just a device (computer, tablet, or phone) and a stable internet connection. We recommend using a desktop for the best experience. Audio and video should be enabled for interactive sessions.',
     },
   ];
-
-  const scrollCarousel = (direction: 'left' | 'right') => {
-    if (carouselRef.current) {
-      const scrollAmount = 400;
-      carouselRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   const filterOptions = ['all', 'scholarship', 'webinar', 'workshop', 'networking'];
   const [activeFilter, setActiveFilter] = useState('all');
@@ -624,6 +553,7 @@ export default function Events() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  aria-label="Join us on Telegram"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M9.417 15.181l-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.639-17.13c.373-1.747-.678-2.572-1.887-2.06L.857 8.913c-1.713.685-1.708 1.666-.283 2.147l4.822 1.5 11.102-6.933c.523-.326 1.004-.15.623.325z" />
@@ -634,6 +564,7 @@ export default function Events() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  aria-label="Follow us on Instagram"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.224.223 2.742.072 7.1.014 8.38 0 8.788 0 12s.014 3.62.072 4.9c.15 4.358 2.623 6.876 6.98 7.028 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.152 6.83-2.669 6.98-7.028.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.15-4.358-2.623-6.876-6.98-7.028C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
@@ -764,11 +695,6 @@ export default function Events() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center space-y-6 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-              <Sparkles className="w-5 h-5 text-red-600 animate-spin" style={{ animationDuration: '3s' }} />
-              <span className="font-medium text-gray-700">{t('featured_events')}</span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-gray-900">{t('events_title').split(' ').slice(0, 2).join(' ')}</span>
               <br />
@@ -779,131 +705,6 @@ export default function Events() {
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               {t('events_subtitle')}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Events Horizontal Carousel */}
-      <section className="py-16 sm:py-20 bg-white relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
-              ⭐ {t('featured_events')}
-            </h2>
-            <p className="text-gray-600">{t('featured_subtitle')}</p>
-          </div>
-
-          <div className="relative">
-            {/* Carousel Container */}
-            <div
-              ref={carouselRef}
-              className="flex overflow-x-auto gap-6 scroll-smooth pb-4"
-              style={{ scrollBehavior: 'smooth' }}
-            >
-              {events.slice(0, 5).map((event, idx) => (
-                <div
-                  key={event.id}
-                  className="flex-shrink-0 w-96 group cursor-pointer animate-fade-in-up"
-                  style={{ animationDelay: `${idx * 50}ms` }}
-                >
-                  <div
-                    onClick={() => setSelectedEvent(event.id)}
-                    className="relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full transform hover:scale-105"
-                  >
-                    {/* Image */}
-                    <div className="relative h-56 overflow-hidden bg-gray-200">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className={`absolute top-4 right-4 px-3 py-1 bg-gradient-to-r ${getTypeColor(event.type)} text-white text-xs font-bold rounded-full`}>
-                        {getTypeLabel(event.type)}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-5 sm:p-6">
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-red-600 transition-colors">
-                        {event.title}
-                      </h3>
-
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Calendar className="w-4 h-4 text-red-600" />
-                          <span>{new Date(event.date).toLocaleDateString(currentLanguage)}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <MapPin className="w-4 h-4 text-red-600" />
-                          <span className="line-clamp-1">{event.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Users className="w-4 h-4 text-red-600" />
-                          <span>
-                            {event.spotsLeft > 0
-                              ? `${event.spotsLeft} ${t('spots_left')}`
-                              : t('event_full')}
-                          </span>
-                        </div>
-                      </div>
-
-                      <button
-                        onClick={() => setSelectedEvent(event.id)}
-                        className="w-full py-2.5 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
-                      >
-                        {t('view_details')}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Carousel Controls */}
-            <button
-              onClick={() => scrollCarousel('left')}
-              className="absolute left-0 top-1/3 -translate-y-1/2 -translate-x-6 z-10 w-12 h-12 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={() => scrollCarousel('right')}
-              className="absolute right-0 top-1/3 -translate-y-1/2 translate-x-6 z-10 w-12 h-12 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Event Statistics Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-red-50 via-amber-50 to-green-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
-            {t('event_stats_title')} 📊
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { label: t('total_events'), value: '45+', icon: Calendar, color: 'from-blue-500 to-cyan-500' },
-              { label: t('total_attendees'), value: '12K+', icon: Users, color: 'from-purple-500 to-pink-500' },
-              { label: t('success_rate'), value: '92%', icon: TrendingUp, color: 'from-green-500 to-emerald-500' },
-              { label: t('countries_reached'), value: '120+', icon: Globe, color: 'from-orange-500 to-red-500' },
-            ].map((stat, idx) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={idx}
-                  className={`bg-gradient-to-br ${stat.color} rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform animate-fade-in-up`}
-                  style={{ animationDelay: `${idx * 50}ms` }}
-                >
-                  <Icon className="w-8 h-8 mb-4 opacity-90" />
-                  <p className="text-4xl sm:text-5xl font-bold mb-2">{stat.value}</p>
-                  <p className="text-white/90 font-medium">{stat.label}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -938,7 +739,7 @@ export default function Events() {
         </div>
       </section>
 
-      {/* All Events Grid */}
+      {/* Events Grid */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
@@ -1019,118 +820,6 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Early Bird Benefits */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-red-600 via-amber-600 to-green-600 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">🎁 {t('early_bird_benefits')}</h2>
-            <p className="text-lg text-white/90">{t('early_bird_desc')}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Zap, title: t('benefit_discount') },
-              { icon: Award, title: t('benefit_materials') },
-              { icon: Users, title: t('benefit_networking') },
-              { icon: Star, title: t('benefit_certificate') },
-            ].map((benefit, idx) => {
-              const Icon = benefit.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center hover:bg-white/20 transition-all duration-300 transform hover:scale-105 animate-fade-in-up"
-                  style={{ animationDelay: `${idx * 50}ms` }}
-                >
-                  <Icon className="w-10 h-10 mx-auto mb-4 text-yellow-300" />
-                  <p className="font-semibold text-lg">{benefit.title}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
-            {t('testimonials_title')} ⭐
-          </h2>
-          <p className="text-gray-600 text-center mb-12">{t('testimonials_subtitle')}</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-red-500 transition-all duration-300 hover:shadow-lg transform hover:scale-105 animate-fade-in-up"
-                style={{ animationDelay: `${idx * 50}ms` }}
-              >
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="text-5xl">{testimonial.avatar}</div>
-                  <div>
-                    <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-4 h-4 ${
-                        i < Math.floor(testimonial.rating)
-                          ? 'fill-yellow-400 text-yellow-400'
-                          : 'text-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <p className="text-gray-700 italic">"{ testimonial.text}"</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
-            {t('faq_title')} ❓
-          </h2>
-          <p className="text-gray-600 text-center mb-12">{t('faq_subtitle')}</p>
-
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-red-500 transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${faq.id * 50}ms` }}
-              >
-                <button
-                  onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
-                >
-                  <h3 className="text-lg font-bold text-gray-900 text-left">{faq.question}</h3>
-                  <ChevronUp
-                    className={`w-5 h-5 text-red-600 transition-transform duration-300 ${
-                      expandedFAQ === faq.id ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {expandedFAQ === faq.id && (
-                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Past Events Section */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -1181,6 +870,44 @@ export default function Events() {
                     {event.attendees}
                   </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
+            {t('faq_title')} ❓
+          </h2>
+          <p className="text-gray-600 text-center mb-12">{t('faq_subtitle')}</p>
+
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div
+                key={faq.id}
+                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-red-500 transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${faq.id * 50}ms` }}
+              >
+                <button
+                  onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                >
+                  <h3 className="text-lg font-bold text-gray-900 text-left">{faq.question}</h3>
+                  <ChevronUp
+                    className={`w-5 h-5 text-red-600 transition-transform duration-300 ${
+                      expandedFAQ === faq.id ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {expandedFAQ === faq.id && (
+                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -1322,6 +1049,42 @@ export default function Events() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="mb-12 sm:mb-16">
+            <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-amber-100/60 p-6 sm:p-8 md:p-12">
+              <div className="text-center mb-6 sm:mb-8">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  Stay Updated with{' '}
+                  <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+                    Global Opportunities
+                  </span>
+                </h3>
+                <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                  Get the latest events, scholarships, and exclusive tips delivered to your inbox every month.
+                </p>
+              </div>
+
+              <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
+                >
+                  <span>Subscribe</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </form>
+
+              <p className="text-center text-xs sm:text-sm text-gray-500 mt-5 sm:mt-6">
+                We respect your privacy. Unsubscribe anytime. No spam, ever.
+              </p>
+            </div>
+          </div>
+
           <div className="grid md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
             <div className="md:col-span-5 lg:col-span-4">
               <div className="flex items-center gap-3 mb-5 sm:mb-6">
