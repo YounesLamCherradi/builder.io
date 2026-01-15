@@ -514,8 +514,8 @@ export default function Events() {
           scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="flex h-16 sm:h-18 items-center justify-between py-3">
+        <div className="w-full px-4 sm:px-6">
+          <div className="mx-auto max-w-7xl flex h-16 sm:h-18 items-center justify-between py-3">
             <Link
               to="/"
               className="flex items-center gap-3 text-left hover:opacity-80 transition-opacity"
