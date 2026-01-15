@@ -12,6 +12,8 @@ import {
   ChevronDown,
   Sparkles,
   Check,
+  ArrowRight,
+  Star,
 } from 'lucide-react';
 
 export default function Events() {
@@ -19,7 +21,7 @@ export default function Events() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('en');
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [expandedEventId, setExpandedEventId] = useState<number | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
 
   React.useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -43,6 +45,14 @@ export default function Events() {
       document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
+
+  React.useEffect(() => {
+    if (selectedEvent) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedEvent]);
 
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -78,6 +88,8 @@ export default function Events() {
         paid_event: 'Paid',
         online_event: 'Online',
         in_person: 'In Person',
+        past_events: 'Past Events Highlights',
+        past_events_subtitle: 'Relive the magic - See what our students experienced',
         footer_tagline: 'Empowering Moroccans to achieve their global dreams.',
         platform: 'Platform',
         company: 'Company',
@@ -93,6 +105,9 @@ export default function Events() {
         terms: 'Terms of Service',
         cookies: 'Cookie Policy',
         rights: '© 2026 MoroccoGlobal. All rights reserved.',
+        close: 'Close',
+        attendee_count: 'Attendees',
+        event_time: 'Event Time',
       },
       fr: {
         nav_home: 'Accueil',
@@ -120,6 +135,8 @@ export default function Events() {
         paid_event: 'Payant',
         online_event: 'En Ligne',
         in_person: 'En Personne',
+        past_events: 'Faits Marquants des Événements Passés',
+        past_events_subtitle: 'Revivez la magie - Découvrez ce qu\'ont vécu nos étudiants',
         footer_tagline: 'Aider les Marocains à réaliser leurs rêves.',
         platform: 'Plateforme',
         company: 'Entreprise',
@@ -135,6 +152,9 @@ export default function Events() {
         terms: "Conditions d'utilisation",
         cookies: 'Cookies',
         rights: '© 2026 MoroccoGlobal. Tous droits réservés.',
+        close: 'Fermer',
+        attendee_count: 'Participants',
+        event_time: 'Horaire de l\'Événement',
       },
       ru: {
         nav_home: 'Главная',
@@ -162,6 +182,8 @@ export default function Events() {
         paid_event: 'Платный',
         online_event: 'Онлайн',
         in_person: 'Очно',
+        past_events: 'Знаковые Моменты Прошлых События',
+        past_events_subtitle: 'Переживайте снова - Посмотрите, что испытали наши студенты',
         footer_tagline: 'Помогаем марокканцам достигать глобальных целей.',
         platform: 'Платформа',
         company: 'Компания',
@@ -177,6 +199,9 @@ export default function Events() {
         terms: 'Условия',
         cookies: 'Cookies',
         rights: '© 2026 MoroccoGlobal. Все права защищены.',
+        close: 'Закрыть',
+        attendee_count: 'Участники',
+        event_time: 'Время События',
       },
     }),
     []
@@ -362,6 +387,45 @@ export default function Events() {
     },
   ];
 
+  const pastEvents = [
+    {
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+      title: 'Fulbright Alumni Success Panel 2025',
+      rating: 4.9,
+      attendees: '250+ Students',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&h=400&fit=crop',
+      title: 'European Universities Expo 2025',
+      rating: 4.8,
+      attendees: '450+ Participants',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+      title: 'Tech Leaders Roundtable 2025',
+      rating: 4.9,
+      attendees: '180+ Attendees',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&h=400&fit=crop',
+      title: 'Global Scholarship Workshop 2024',
+      rating: 4.7,
+      attendees: '380+ Students',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
+      title: 'Master\'s Programs Information Day 2024',
+      rating: 4.8,
+      attendees: '320+ Participants',
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&h=400&fit=crop',
+      title: 'Cultural Exchange Gala 2024',
+      rating: 5.0,
+      attendees: '550+ Guests',
+    },
+  ];
+
   const filterOptions = ['all', 'scholarship', 'webinar', 'workshop', 'networking'];
   const [activeFilter, setActiveFilter] = useState('all');
 
@@ -401,11 +465,13 @@ export default function Events() {
     }
   };
 
+  const currentEvent = events.find((e) => e.id === selectedEvent);
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Navigation Bar - Same as Homepage */}
+      {/* Navigation Bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
         }`}
       >
@@ -589,7 +655,7 @@ export default function Events() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="text-center space-y-6">
+          <div className="text-center space-y-6 animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-gray-900">{t('events_title').split(' ').slice(0, 2).join(' ')}</span>
               <br />
@@ -605,7 +671,7 @@ export default function Events() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 sm:py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white sticky top-16 z-30 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex flex-wrap gap-3 justify-center">
             {[
@@ -618,9 +684,9 @@ export default function Events() {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                   activeFilter === filter.id
-                    ? 'bg-gradient-to-r from-red-600 to-green-600 text-white shadow-lg'
+                    ? 'bg-gradient-to-r from-red-600 to-green-600 text-white shadow-lg scale-105'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -638,25 +704,29 @@ export default function Events() {
       <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-            {filteredEvents.map((event) => (
+            {filteredEvents.map((event, idx) => (
               <div
                 key={event.id}
-                onClick={() => setExpandedEventId(expandedEventId === event.id ? null : event.id)}
-                className="group cursor-pointer relative h-full"
+                className="group cursor-pointer relative h-full animate-fade-in-up"
+                style={{ animationDelay: `${idx * 50}ms` }}
               >
-                <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl h-full flex flex-col">
+                <div
+                  onClick={() => setSelectedEvent(event.id)}
+                  className="relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 h-full flex flex-col transform hover:scale-[1.02]"
+                >
                   {/* Event Image */}
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <div className="relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
                     <img
                       src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className={`absolute top-4 right-4 px-4 py-2 bg-gradient-to-r ${getTypeColor(event.type)} text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg`}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className={`absolute top-4 right-4 px-4 py-2 bg-gradient-to-r ${getTypeColor(event.type)} text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm`}>
                       {getTypeLabel(event.type)}
                     </div>
                     {event.price === 'free' && (
-                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm text-green-600 text-xs sm:text-sm font-bold rounded-full shadow-lg">
+                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/95 backdrop-blur-sm text-green-600 text-xs sm:text-sm font-bold rounded-full shadow-lg">
                         {t('free_event')}
                       </div>
                     )}
@@ -672,7 +742,11 @@ export default function Events() {
                     <div className="space-y-2.5 mb-4">
                       <div className="flex items-center gap-2 text-sm text-gray-600">
                         <Calendar className="w-4 h-4 text-red-600 shrink-0" />
-                        <span>{new Date(event.date).toLocaleDateString(currentLanguage)} • {event.time}</span>
+                        <span>{new Date(event.date).toLocaleDateString(currentLanguage)}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <Clock className="w-4 h-4 text-red-600 shrink-0" />
+                        <span>{event.time}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-600">
                         <MapPin className="w-4 h-4 text-red-600 shrink-0" />
@@ -688,40 +762,16 @@ export default function Events() {
                       </div>
                     </div>
 
-                    {/* Expandable Details */}
-                    {expandedEventId === event.id && (
-                      <div className="border-t border-gray-200 pt-4 mb-4 space-y-3">
-                        <p className="text-sm text-gray-700 leading-relaxed">{event.description}</p>
-                        <div className="space-y-2">
-                          <h4 className="font-semibold text-sm text-gray-900">What to expect:</h4>
-                          <ul className="space-y-1.5">
-                            {event.details.map((detail, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                                <Check className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                                <span>{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    )}
-
                     {/* CTA Buttons */}
                     <div className="mt-auto flex flex-col gap-2 sm:gap-3">
                       {event.spotsLeft > 0 ? (
                         <>
-                          <button className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
-                            {t('register')}
-                          </button>
-                          <a
-                            href={event.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full py-2.5 sm:py-3 bg-gray-100 text-gray-800 rounded-lg font-medium text-sm sm:text-base transition-all duration-300 hover:bg-gray-200 flex items-center justify-center gap-2"
+                          <button 
+                            onClick={() => setSelectedEvent(event.id)}
+                            className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
                           >
-                            <span>{t('learn_more')}</span>
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
+                            {t('view_details')}
+                          </button>
                         </>
                       ) : (
                         <button disabled className="w-full py-2.5 sm:py-3 bg-gray-300 text-gray-600 rounded-lg font-semibold text-sm sm:text-base cursor-not-allowed">
@@ -737,7 +787,198 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Footer - Same as Homepage */}
+      {/* Past Events Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              {t('past_events')}
+            </h2>
+            <p className="text-lg text-gray-600">
+              {t('past_events_subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pastEvents.map((event, idx) => (
+              <div
+                key={idx}
+                className="group relative rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform hover:scale-[1.02] animate-fade-in-up"
+                style={{ animationDelay: `${idx * 50}ms` }}
+              >
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                </div>
+
+                <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < Math.floor(event.rating)
+                            ? 'fill-yellow-400 text-yellow-400'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                    <span className="text-sm text-yellow-300 ml-1 font-semibold">{event.rating}</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                    {event.title}
+                  </h3>
+                  <p className="text-sm text-gray-200 flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    {event.attendees}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Event Detail Modal */}
+      {selectedEvent && currentEvent && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setSelectedEvent(null)}
+          />
+
+          <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-slide-up">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="absolute top-6 right-6 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+            >
+              <X className="w-6 h-6 text-gray-900" />
+            </button>
+
+            {/* Modal Content */}
+            <div>
+              {/* Header Image */}
+              <div className="relative h-64 sm:h-80 overflow-hidden">
+                <img
+                  src={currentEvent.image}
+                  alt={currentEvent.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className={`absolute top-6 right-6 px-4 py-2 bg-gradient-to-r ${getTypeColor(currentEvent.type)} text-white text-sm sm:text-base font-semibold rounded-full shadow-lg`}>
+                  {getTypeLabel(currentEvent.type)}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 sm:p-8">
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                  {currentEvent.title}
+                </h1>
+
+                {/* Event Details Grid */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Calendar className="w-5 h-5 text-red-600" />
+                      <span className="text-sm text-gray-600">{t('date')}</span>
+                    </div>
+                    <p className="text-lg font-bold text-gray-900">
+                      {new Date(currentEvent.date).toLocaleDateString(currentLanguage)}
+                    </p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Clock className="w-5 h-5 text-blue-600" />
+                      <span className="text-sm text-gray-600">{t('event_time')}</span>
+                    </div>
+                    <p className="text-lg font-bold text-gray-900">
+                      {currentEvent.time}
+                    </p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <MapPin className="w-5 h-5 text-green-600" />
+                      <span className="text-sm text-gray-600">{t('location')}</span>
+                    </div>
+                    <p className="text-lg font-bold text-gray-900">
+                      {currentEvent.location}
+                    </p>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Users className="w-5 h-5 text-purple-600" />
+                      <span className="text-sm text-gray-600">{t('attendee_count')}</span>
+                    </div>
+                    <p className="text-lg font-bold text-gray-900">
+                      {currentEvent.attendees}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <div className="mb-8">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                    About This Event
+                  </h2>
+                  <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                    {currentEvent.description}
+                  </p>
+                </div>
+
+                {/* What to Expect */}
+                <div className="mb-8">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                    What to Expect
+                  </h2>
+                  <div className="space-y-3">
+                    {currentEvent.details.map((detail, idx) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <Check className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                        <span className="text-gray-700">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  {currentEvent.spotsLeft > 0 ? (
+                    <>
+                      <button className="flex-1 py-4 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95">
+                        {t('register')}
+                      </button>
+                      <a
+                        href={currentEvent.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-4 bg-gray-100 text-gray-800 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-gray-200 flex items-center justify-center gap-2"
+                      >
+                        <span>{t('learn_more')}</span>
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    </>
+                  ) : (
+                    <button disabled className="w-full py-4 bg-gray-300 text-gray-600 rounded-xl font-bold text-lg cursor-not-allowed">
+                      {t('event_full')}
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer */}
       <footer className="bg-gradient-to-b from-white via-amber-50/40 to-green-50/30 text-gray-800 pt-12 sm:pt-16 pb-10 sm:pb-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,#dc2626_1px,transparent_1px)] bg-[length:60px_60px]" />
@@ -771,9 +1012,7 @@ export default function Events() {
                   className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
                 >
                   <span>Subscribe</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
 
@@ -805,19 +1044,6 @@ export default function Events() {
               <p className="text-gray-700 leading-relaxed mb-7 sm:mb-8 max-w-md text-sm sm:text-base">
                 {t('footer_tagline')}
               </p>
-
-              <div className="flex gap-3 sm:gap-4">
-                {['Telegram', 'Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-green-100 hover:from-red-100 hover:to-amber-100 flex items-center justify-center text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-110 shadow-sm hover:shadow"
-                    aria-label={platform}
-                  >
-                    <span className="text-lg font-medium">{platform[0]}</span>
-                  </a>
-                ))}
-              </div>
             </div>
 
             <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
@@ -906,6 +1132,51 @@ export default function Events() {
           </div>
         </div>
       </footer>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-slide-up {
+          animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 }
