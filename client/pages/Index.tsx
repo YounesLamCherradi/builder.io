@@ -692,7 +692,7 @@ export default function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-gradient-to-r from-red-600 to-green-600 text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg">
+              <span className="px-4 py-2 bg-gradient-to-r from-brand-red to-gray-900 text-white text-xs sm:text-sm font-semibold rounded-full shadow-lg">
                 Strategic International Partnerships
               </span>
             </div>
