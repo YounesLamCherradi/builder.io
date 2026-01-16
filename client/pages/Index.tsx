@@ -683,7 +683,7 @@ export default function Index() {
       {/* Opportunities Section */}
       <section
         id="opportunities"
-        className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-amber-50/50 to-green-50/30 relative overflow-hidden"
+        className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-brand-silver/10 to-black/5 relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(107,114,128)_1px,transparent_1px)] bg-[length:24px_24px]" />
