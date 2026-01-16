@@ -977,7 +977,7 @@ export default function Index() {
                   <a
                     key={platform}
                     href="#"
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-green-100 hover:from-red-100 hover:to-amber-100 flex items-center justify-center text-gray-700 hover:text-red-600 transition-all duration-300 hover:scale-110 shadow-sm hover:shadow"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-green-100 hover:from-red-100 hover:to-amber-100 flex items-center justify-center text-gray-700 hover:text-brand-red transition-all duration-300 hover:scale-110 shadow-sm hover:shadow"
                     aria-label={platform}
                   >
                     <span className="text-lg font-medium">{platform[0]}</span>
@@ -1008,7 +1008,7 @@ export default function Index() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('nav_resources')}
                     </a>
                   </li>
@@ -1026,17 +1026,17 @@ export default function Index() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('contact')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('careers')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('blog')}
                     </a>
                   </li>
@@ -1049,17 +1049,17 @@ export default function Index() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('privacy')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('terms')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('cookies')}
                     </a>
                   </li>
@@ -1073,7 +1073,7 @@ export default function Index() {
               <p>{t('rights')}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>Made with ❤️ in Morocco</span>
-                <a href="#" className="hover:text-red-600 transition-colors">
+                <a href="#" className="hover:text-brand-red transition-colors">
                   Sitemap
                 </a>
                 <span>v1.0.0 • 2026</span>
