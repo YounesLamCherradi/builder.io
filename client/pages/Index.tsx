@@ -569,7 +569,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div className="space-y-6 sm:space-y-8">
               <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg max-w-full">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shrink-0" />
+                <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
                 <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
                   {t('serving')}
                 </span>
