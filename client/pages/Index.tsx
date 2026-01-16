@@ -598,7 +598,7 @@ export default function Index() {
                 </Link>
                 <button className="w-full sm:w-auto px-7 py-4 bg-white text-gray-800 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
                   <span>{t('watch_demo')}</span>
-                  <div className="w-8 h-8 bg-gradient-to-r from-red-600 to-green-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-gray-900 rounded-full flex items-center justify-center">
                     <div className="w-0 h-0 border-l-8 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1" />
                   </div>
                 </button>
