@@ -773,7 +773,7 @@ export default function Events() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                   activeFilter === filter.id
-                    ? 'bg-gradient-to-r from-red-600 to-green-600 text-white shadow-lg scale-105'
+                    ? 'bg-gradient-to-r from-brand-red to-gray-900 text-white shadow-lg scale-105'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
@@ -825,19 +825,19 @@ export default function Events() {
 
                     <div className="space-y-2.5 mb-4">
                       <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Calendar className="w-4 h-4 text-red-600 shrink-0" />
+                        <Calendar className="w-4 h-4 text-brand-red shrink-0" />
                         <span>{new Date(event.date).toLocaleDateString(currentLanguage)}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Clock className="w-4 h-4 text-red-600 shrink-0" />
+                        <Clock className="w-4 h-4 text-brand-red shrink-0" />
                         <span>{event.time}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <MapPin className="w-4 h-4 text-red-600 shrink-0" />
+                        <MapPin className="w-4 h-4 text-brand-red shrink-0" />
                         <span>{event.location}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Users className="w-4 h-4 text-red-600 shrink-0" />
+                        <Users className="w-4 h-4 text-brand-red shrink-0" />
                         <span>
                           {event.spotsLeft > 0
                             ? `${event.spotsLeft} ${t('spots_left')}`
@@ -945,7 +945,7 @@ export default function Events() {
                 >
                   <h3 className="text-lg font-bold text-gray-900 text-left">{faq.question}</h3>
                   <ChevronUp
-                    className={`w-5 h-5 text-red-600 transition-transform duration-300 ${
+                    className={`w-5 h-5 text-brand-red transition-transform duration-300 ${
                       expandedFAQ === faq.id ? 'rotate-180' : ''
                     }`}
                   />
@@ -997,9 +997,9 @@ export default function Events() {
                 </h1>
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-brand-red/10 to-brand-red/20 rounded-xl p-4">
                     <div className="flex items-center gap-3 mb-2">
-                      <Calendar className="w-5 h-5 text-red-600" />
+                      <Calendar className="w-5 h-5 text-brand-red" />
                       <span className="text-sm text-gray-600">{t('date')}</span>
                     </div>
                     <p className="text-lg font-bold text-gray-900">
@@ -1007,7 +1007,7 @@ export default function Events() {
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-4">
                     <div className="flex items-center gap-3 mb-2">
                       <Clock className="w-5 h-5 text-blue-600" />
                       <span className="text-sm text-gray-600">{t('event_time')}</span>
@@ -1017,9 +1017,9 @@ export default function Events() {
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-brand-silver/20 to-brand-silver/40 rounded-xl p-4">
                     <div className="flex items-center gap-3 mb-2">
-                      <MapPin className="w-5 h-5 text-green-600" />
+                      <MapPin className="w-5 h-5 text-black" />
                       <span className="text-sm text-gray-600">{t('location')}</span>
                     </div>
                     <p className="text-lg font-bold text-gray-900">
@@ -1027,7 +1027,7 @@ export default function Events() {
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4">
+                  <div className="bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl p-4">
                     <div className="flex items-center gap-3 mb-2">
                       <Users className="w-5 h-5 text-purple-600" />
                       <span className="text-sm text-gray-600">Attendees</span>
@@ -1054,7 +1054,7 @@ export default function Events() {
                   <div className="space-y-3">
                     {currentEvent.details.map((detail, idx) => (
                       <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <Check className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                        <Check className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
                         <span className="text-gray-700">{detail}</span>
                       </div>
                     ))}
@@ -1141,7 +1141,7 @@ export default function Events() {
                     <Globe className="w-6 h-6 sm:w-7 sm:h-7 text-white -rotate-12" />
                   </div>
                   <div className="absolute -top-1 -right-1 w-5 h-5 bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Sparkles className="w-3 h-3 text-amber-300" />
+                    <Sparkles className="w-3 h-3 text-brand-silver" />
                   </div>
                 </div>
                 <div>
