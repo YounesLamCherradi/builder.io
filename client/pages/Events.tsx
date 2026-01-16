@@ -652,6 +652,24 @@ export default function Events() {
               </div>
 
               <div className="p-4 space-y-4 overflow-y-auto flex-1">
+                <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 p-3">
+                  <div className="flex items-center gap-2">
+                    <Globe className="w-5 h-5 text-gray-700" />
+                    <span className="text-sm text-gray-700">Language</span>
+                  </div>
+                  <select
+                    value={currentLanguage}
+                    onChange={(e) => setCurrentLanguage(e.target.value)}
+                    className="text-sm bg-gray-50 border border-gray-200 rounded-xl px-3 py-2"
+                  >
+                    {languages.map((lang) => (
+                      <option key={lang.code} value={lang.code}>
+                        {lang.flag} {lang.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <div className="space-y-1">
                   {menuItems.map((item, idx) => (
                     <Link
@@ -663,6 +681,27 @@ export default function Events() {
                       {item.name}
                     </Link>
                   ))}
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <a
+                    href="https://t.me/MoroccoGlobal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl border border-gray-100 px-4 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="text-lg">📨</span>
+                    <span className="text-sm font-medium text-gray-800">Telegram</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/moroccoglobal_official"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl border border-gray-100 px-4 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="text-lg">📸</span>
+                    <span className="text-sm font-medium text-gray-800">Instagram</span>
+                  </a>
                 </div>
               </div>
 
