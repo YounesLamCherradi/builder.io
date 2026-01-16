@@ -552,7 +552,7 @@ export default function Index() {
                 key={i}
                 className="absolute rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
                 style={{
-                  backgroundColor: ['#dc2626', '#f59e0b', '#10b981'][i % 3],
+                  backgroundColor: ['#BB0909', '#D9D4D4', '#000000'][i % 3],
                   width: `${Math.random() * 320 + 180}px`,
                   height: `${Math.random() * 320 + 180}px`,
                   top: `${Math.random() * 100}%`,
