@@ -420,7 +420,7 @@ export default function Index() {
                           <span>{lang.flag}</span>
                           <span className="text-sm text-gray-800">{lang.name}</span>
                         </div>
-                        {currentLanguage === lang.code && <Check className="w-4 h-4 text-green-600" />}
+                        {currentLanguage === lang.code && <Check className="w-4 h-4 text-brand-red" />}
                       </button>
                     ))}
                   </div>
