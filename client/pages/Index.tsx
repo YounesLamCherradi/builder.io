@@ -470,7 +470,7 @@ export default function Index() {
                 </button>
               </div>
 
-              <div className="p-4 space-y-4 overflow-y-auto">
+              <div className="p-4 space-y-4 overflow-y-auto flex-1">
                 <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 p-3">
                   <div className="flex items-center gap-2">
                     <Globe className="w-5 h-5 text-gray-700" />
@@ -522,7 +522,9 @@ export default function Index() {
                     <span className="text-sm font-medium text-gray-800">Instagram</span>
                   </a>
                 </div>
+              </div>
 
+              <div className="p-4 border-t border-gray-100 bg-white">
                 <button className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full font-semibold shadow-lg">
                   {t('get_started')}
                 </button>
