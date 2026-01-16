@@ -541,7 +541,7 @@ export default function Events() {
                   className="text-gray-700 hover:text-brand-red font-medium transition-colors relative group"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-600 to-green-600 transition-all duration-300 w-0 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-red to-gray-900 transition-all duration-300 w-0 group-hover:w-full" />
                 </Link>
               ))}
             </div>
