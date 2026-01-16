@@ -626,12 +626,12 @@ export default function Events() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-50">
+          <div className="md:hidden fixed inset-0 z-50 top-16 pt-0">
             <div
-              className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm top-16"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="absolute top-0 right-0 h-full w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
+            <div className="fixed top-16 right-0 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
               <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 bg-gradient-to-br from-red-600 via-amber-500 to-green-600 rounded-xl flex items-center justify-center transform rotate-45">
