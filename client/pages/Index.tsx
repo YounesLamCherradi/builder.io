@@ -1021,7 +1021,7 @@ export default function Index() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('about_us')}
                     </a>
                   </li>
