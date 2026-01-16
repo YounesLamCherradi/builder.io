@@ -328,12 +328,12 @@ export default function Index() {
               className="flex items-center gap-3 text-left hover:opacity-80 transition-opacity"
             >
               <div className="relative shrink-0">
-                <div className="w-10 h-10 bg-gradient-to-br from-red-600 via-amber-500 to-green-600 rounded-xl flex items-center justify-center transform rotate-45">
+                <div className="w-10 h-10 bg-gradient-to-br from-brand-red via-gray-400 to-black rounded-xl flex items-center justify-center transform rotate-45">
                   <Globe className="w-5 h-5 text-white -rotate-45" />
                 </div>
               </div>
               <div className="leading-tight">
-                <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+                <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                   MoroccoGlobal
                 </div>
                 <div className="text-[11px] sm:text-xs text-gray-500 -mt-0.5">Your World Awaits</div>
