@@ -479,15 +479,15 @@ export default function Events() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'workshop':
-        return 'from-blue-500 to-cyan-500';
+        return 'from-brand-red to-gray-900';
       case 'webinar':
-        return 'from-purple-500 to-pink-500';
+        return 'from-brand-red to-black';
       case 'networking':
-        return 'from-orange-500 to-red-500';
+        return 'from-brand-silver to-black';
       case 'scholarship':
-        return 'from-green-500 to-emerald-500';
+        return 'from-gray-800 to-black';
       default:
-        return 'from-gray-500 to-gray-600';
+        return 'from-gray-600 to-gray-800';
     }
   };
 
@@ -538,7 +538,7 @@ export default function Events() {
                 <Link
                   key={idx}
                   to={item.path}
-                  className="text-gray-700 hover:text-red-600 font-medium transition-colors relative group"
+                  className="text-gray-700 hover:text-brand-red font-medium transition-colors relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-600 to-green-600 transition-all duration-300 w-0 group-hover:w-full" />
@@ -819,7 +819,7 @@ export default function Events() {
                   </div>
 
                   <div className="p-5 sm:p-6 flex-1 flex flex-col">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-red-600 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand-red transition-colors">
                       {event.title}
                     </h3>
 
@@ -1164,17 +1164,17 @@ export default function Events() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('scholarships')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('jobs')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('programs')}
                     </a>
                   </li>
@@ -1187,17 +1187,17 @@ export default function Events() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('about_us')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('contact')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('careers')}
                     </a>
                   </li>
@@ -1210,17 +1210,17 @@ export default function Events() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('privacy')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('terms')}
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-red-600 transition-colors">
+                    <a href="#" className="hover:text-brand-red transition-colors">
                       {t('cookies')}
                     </a>
                   </li>
@@ -1234,7 +1234,7 @@ export default function Events() {
               <p>{t('rights')}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>Made with ❤️ in Morocco</span>
-                <a href="#" className="hover:text-red-600 transition-colors">
+                <a href="#" className="hover:text-brand-red transition-colors">
                   Sitemap
                 </a>
                 <span>v1.0.0 • 2026</span>
