@@ -612,7 +612,7 @@ export default function Index() {
                       key={index}
                       className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
                     >
-                      <Icon className="w-5 h-5 text-red-600 mx-auto mb-1" />
+                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-1" />
                       <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.number}</div>
                       <div className="text-xs text-gray-500">{stat.label}</div>
                     </div>
