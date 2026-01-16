@@ -632,11 +632,20 @@ export default function Events() {
               onClick={() => setMobileMenuOpen(false)}
             />
             <div className="fixed top-16 right-0 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
-              <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white">
-                <h2 className="font-bold text-gray-900">Menu</h2>
+              <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-gradient-to-br from-red-600 via-amber-500 to-green-600 rounded-xl flex items-center justify-center transform rotate-45">
+                    <Globe className="w-4 h-4 text-white -rotate-45" />
+                  </div>
+                  <div className="leading-tight">
+                    <div className="text-base font-bold text-gray-900">MoroccoGlobal</div>
+                    <div className="text-xs text-gray-500 -mt-0.5">Your World Awaits</div>
+                  </div>
+                </div>
                 <button
                   className="rounded-xl p-2 hover:bg-gray-100 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Close menu"
                 >
                   <X className="w-6 h-6" />
                 </button>
