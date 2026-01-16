@@ -579,7 +579,7 @@ export default function Index() {
                 <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
                   {t('hero_line1')}
                 </span>
-                <span className="block bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
+                <span className="block bg-gradient-to-r from-brand-red via-gray-900 to-brand-black bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
                   {t('hero_line2')}
                 </span>
                 <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
