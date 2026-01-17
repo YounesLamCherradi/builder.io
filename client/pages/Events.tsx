@@ -549,7 +549,7 @@ export default function Events() {
             <div className="hidden md:flex items-center gap-5">
               <div className="flex items-center gap-3">
                 <a
-                  href="https://t.me/MoroccoGlobal"
+                  href="https://t.me/wyfmorocco"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
