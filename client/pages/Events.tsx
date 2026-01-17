@@ -848,9 +848,9 @@ export default function Events() {
 
                     <div className="mt-auto flex flex-col gap-2 sm:gap-3">
                       {event.spotsLeft > 0 ? (
-                        <button 
+                        <button
                           onClick={() => setSelectedEvent(event.id)}
-                          className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                          className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-brand-red to-black text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
                         >
                           {t('view_details')}
                         </button>
