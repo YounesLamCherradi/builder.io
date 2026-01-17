@@ -712,7 +712,7 @@ export default function Events() {
               </div>
 
               <div className="p-4 border-t border-gray-100 bg-white">
-                <button className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full font-semibold shadow-lg">
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg">
                   {t('get_started')}
                 </button>
               </div>
