@@ -722,7 +722,7 @@ export default function Events() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-20 bg-gradient-to-br from-red-50 via-amber-50 to-green-50">
+      <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-20 bg-white">
         <div className="absolute inset-0 opacity-20">
           {[...Array(8)].map((_, i) => (
             <div
