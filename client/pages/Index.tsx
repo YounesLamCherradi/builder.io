@@ -427,7 +427,7 @@ export default function Index() {
                 )}
               </div>
 
-              <button className="px-5 py-2 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <button className="px-5 py-2 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                 {t('get_started')}
               </button>
             </div>
