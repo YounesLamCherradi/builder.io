@@ -1064,7 +1064,7 @@ export default function Events() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   {currentEvent.spotsLeft > 0 ? (
                     <>
-                      <button className="flex-1 py-4 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95">
+                      <button className="flex-1 py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95">
                         {t('register')}
                       </button>
                       <a
