@@ -604,14 +604,14 @@ export default function Events() {
                           <span>{lang.flag}</span>
                           <span className="text-sm text-gray-800">{lang.name}</span>
                         </div>
-                        {currentLanguage === lang.code && <Check className="w-4 h-4 text-green-600" />}
+                        {currentLanguage === lang.code && <Check className="w-4 h-4 text-brand-red" />}
                       </button>
                     ))}
                   </div>
                 )}
               </div>
 
-              <button className="px-5 py-2 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <button className="px-5 py-2 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                 {t('get_started')}
               </button>
             </div>
