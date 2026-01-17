@@ -545,8 +545,8 @@ export default function Index() {
         id="home"
         className="scroll-section relative min-h-[100svh] flex items-center pt-20 sm:pt-24 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-amber-50 to-green-50">
-          <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-white">
+          <div className="absolute inset-0 opacity-0">
             {[...Array(12)].map((_, i) => (
               <div
                 key={i}
