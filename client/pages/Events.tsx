@@ -560,7 +560,7 @@ export default function Events() {
                   </svg>
                 </a>
                 <a
-                  href="https://t.me/wyfmorocco"
+                  href="https://www.instagram.com/wyfmorocco/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red via-brand-silver to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
