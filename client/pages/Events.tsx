@@ -552,7 +552,7 @@ export default function Events() {
                   href="https://t.me/MoroccoGlobal"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
                   aria-label="Join us on Telegram"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -563,7 +563,7 @@ export default function Events() {
                   href="https://www.instagram.com/moroccoglobal_official"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-orange-500 flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red via-brand-silver to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
                   aria-label="Follow us on Instagram"
                 >
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
