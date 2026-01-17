@@ -277,7 +277,7 @@ export default function Index() {
       icon: BookOpen,
       title: t('opp_scholarships'),
       count: '2,500+',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-gray-800 to-brand-silver',
       desc: t('opp_desc_sch'),
     },
     {
