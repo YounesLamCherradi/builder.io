@@ -504,7 +504,7 @@ export default function Index() {
 
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <a
-                    href="https://t.me/MoroccoGlobal"
+                    href="https://t.me/wyfmorocco"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-2xl border border-gray-100 px-4 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
