@@ -634,7 +634,7 @@ export default function Events() {
             <div className="fixed top-16 right-0 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
               <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-gradient-to-br from-red-600 via-amber-500 to-green-600 rounded-xl flex items-center justify-center transform rotate-45">
+                  <div className="w-9 h-9 bg-gradient-to-br from-brand-red via-gray-400 to-black rounded-xl flex items-center justify-center transform rotate-45">
                     <Globe className="w-4 h-4 text-white -rotate-45" />
                   </div>
                   <div className="leading-tight">
