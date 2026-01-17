@@ -903,12 +903,12 @@ export default function Events() {
                         key={i}
                         className={`w-4 h-4 ${
                           i < Math.floor(event.rating)
-                            ? 'fill-yellow-400 text-yellow-400'
+                            ? 'fill-brand-red text-brand-red'
                             : 'text-gray-300'
                         }`}
                       />
                     ))}
-                    <span className="text-sm text-yellow-300 ml-1 font-semibold">{event.rating}</span>
+                    <span className="text-sm text-brand-red ml-1 font-semibold">{event.rating}</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                     {event.title}
