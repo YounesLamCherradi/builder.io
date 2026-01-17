@@ -746,7 +746,7 @@ export default function Events() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-gray-900">{t('events_title').split(' ').slice(0, 2).join(' ')}</span>
               <br />
-              <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                 {t('events_title').split(' ').slice(2).join(' ')}
               </span>
             </h1>
