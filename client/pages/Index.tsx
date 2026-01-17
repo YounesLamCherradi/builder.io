@@ -685,8 +685,8 @@ export default function Index() {
         id="opportunities"
         className="scroll-section py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(107,114,128)_1px,transparent_1px)] bg-[length:24px_24px]" />
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 via-transparent to-black/10" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
