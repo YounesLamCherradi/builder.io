@@ -918,7 +918,7 @@ export default function Index() {
               <div className="text-center mb-6 sm:mb-8">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                   Stay Updated with{' '}
-                  <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                     Global Opportunities
                   </span>
                 </h3>
