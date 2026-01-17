@@ -815,7 +815,7 @@ export default function Index() {
       {/* Success Stories Grid */}
       <section
         id="success-stories"
-        className="scroll-section py-16 sm:py-20 md:py-28 bg-gradient-to-br from-gray-50 via-white to-amber-50/30 relative overflow-hidden"
+        className="scroll-section py-16 sm:py-20 md:py-28 bg-white relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(220,38,38,0.08)_1px,transparent_1px)] bg-[length:40px_40px]" />
