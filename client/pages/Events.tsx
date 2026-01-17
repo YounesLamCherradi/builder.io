@@ -1145,7 +1145,7 @@ export default function Events() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                     MoroccoGlobal
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 mt-0.5">Your World Awaits</p>
