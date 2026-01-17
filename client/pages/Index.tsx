@@ -1068,7 +1068,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-amber-100/60 text-center md:text-left">
+          <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-brand-silver/40 text-center md:text-left">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600">
               <p>{t('rights')}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
