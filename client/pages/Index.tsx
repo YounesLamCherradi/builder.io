@@ -515,7 +515,7 @@ export default function Index() {
                     <span className="text-sm font-medium text-gray-800">Telegram</span>
                   </a>
                   <a
-                    href="https://t.me/wyfmorocco"
+                    href="https://www.instagram.com/wyfmorocco/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-2xl border border-gray-100 px-4 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
