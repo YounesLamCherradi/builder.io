@@ -825,7 +825,7 @@ export default function Index() {
           <div className="text-center mb-10 sm:mb-14 md:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
               Moments of{' '}
-              <span className="bg-gradient-to-r from-red-600 via-amber-600 to-green-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                 Moroccan Global Success
               </span>
             </h2>
