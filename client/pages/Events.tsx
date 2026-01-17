@@ -812,7 +812,7 @@ export default function Events() {
                       {getTypeLabel(event.type)}
                     </div>
                     {event.price === 'free' && (
-                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/95 backdrop-blur-sm text-green-600 text-xs sm:text-sm font-bold rounded-full shadow-lg">
+                      <div className="absolute top-4 left-4 px-3 py-1 bg-white/95 backdrop-blur-sm text-brand-red text-xs sm:text-sm font-bold rounded-full shadow-lg">
                         {t('free_event')}
                       </div>
                     )}
