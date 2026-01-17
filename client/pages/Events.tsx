@@ -1137,7 +1137,7 @@ export default function Events() {
             <div className="md:col-span-5 lg:col-span-4">
               <div className="flex items-center gap-3 mb-5 sm:mb-6">
                 <div className="relative">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-600 via-amber-500 to-green-600 rounded-2xl flex items-center justify-center transform rotate-12 shadow-xl">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-brand-red via-gray-400 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-xl">
                     <Globe className="w-6 h-6 sm:w-7 sm:h-7 text-white -rotate-12" />
                   </div>
                   <div className="absolute -top-1 -right-1 w-5 h-5 bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center">
