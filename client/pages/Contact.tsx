@@ -12,6 +12,7 @@ import {
   MapPin,
   Send,
   Check,
+  ArrowRight,
 } from 'lucide-react';
 
 export default function Contact() {
