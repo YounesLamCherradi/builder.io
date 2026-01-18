@@ -141,7 +141,10 @@ export default function Admin() {
         image_url: event.image_url || '',
         location: event.location || '',
         date: event.date,
+        time: event.time || '18:00',
+        about_event: event.about_event || '',
       });
+      setEventDetails(event.details || ['', '', '', '']);
     }
     setEditingId(item.id);
     setShowForm(true);
