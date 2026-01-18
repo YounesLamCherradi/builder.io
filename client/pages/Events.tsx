@@ -547,7 +547,7 @@ export default function Events() {
                 <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                   MoroccoGlobal
                 </div>
-                <div className="text-[11px] sm:text-xs text-gray-500 -mt-0.5">Your World Awaits</div>
+                <div className="text-[11px] sm:text-xs text-gray-500 -mt-0.5">{t('tagline')}</div>
               </div>
             </Link>
 
