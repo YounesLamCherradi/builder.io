@@ -564,7 +564,7 @@ export default function About() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 pt-4">
+                <div className="grid grid-cols-2 gap-3 pt-2">
                   <a
                     href="https://t.me/wyfmorocco"
                     target="_blank"
