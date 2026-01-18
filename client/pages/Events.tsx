@@ -485,12 +485,14 @@ export default function Events() {
     spotsLeft: 20,
     image: event.image_url || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
     description: event.description,
-    details: [
-      event.description || 'Learn about this opportunity',
-      '✓ Expert mentors and professionals',
-      '✓ Networking opportunities',
-      '✓ Q&A session with speakers',
-    ],
+    details: event.details && event.details.length > 0
+      ? event.details
+      : [
+          event.description || 'Learn about this opportunity',
+          '✓ Expert mentors and professionals',
+          '✓ Networking opportunities',
+          '✓ Q&A session with speakers',
+        ],
     link: 'https://morocoglobal.com',
   }));
 
