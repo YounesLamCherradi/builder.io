@@ -220,6 +220,7 @@ export default function Admin() {
       about_event: '',
     });
     setEventDetails(['', '', '', '']);
+    setImagePreview(null);
     setEditingId(null);
     setShowForm(false);
   };
