@@ -911,50 +911,75 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - Horizontal Scroll */}
       <section className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-              {t('about_team_title')}
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-              {t('about_team_subtitle')}
-            </p>
+        <div className="relative z-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-12 sm:mb-16 lg:mb-20">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                {t('about_team_title')}
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                {t('about_team_subtitle')}
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {[
-              { name: t('about_team_member_1'), emoji: '👨‍💼', color: 'from-brand-red to-gray-900' },
-              { name: t('about_team_member_2'), emoji: '👩‍💼', color: 'from-gray-900 to-black' },
-              { name: t('about_team_member_3'), emoji: '👩‍💻', color: 'from-brand-red to-black' },
-              { name: t('about_team_member_4'), emoji: '👩‍🤝‍👨', color: 'from-gray-900 to-brand-red' },
-              { name: t('about_team_member_5'), emoji: '👨‍💻', color: 'from-brand-red via-gray-900 to-black' },
-              { name: t('about_team_member_6'), emoji: '🤝', color: 'from-black to-brand-red' },
-            ].map((member, idx) => (
-              <div
-                key={idx}
-                className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 hover:border-brand-red shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700"
-                style={{ animationDelay: `${idx * 80}ms` }}
-              >
-                {/* Image Background */}
-                <div className={`h-64 bg-gradient-to-br ${member.color} relative overflow-hidden`}>
-                  <div className="w-full h-full flex items-center justify-center text-6xl group-hover:scale-125 transition-transform duration-500">
-                    {member.emoji}
+          {/* Horizontal Scrollable Container */}
+          <div className="relative">
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex gap-6 sm:gap-8 pb-6 px-4 sm:px-6 min-w-min mx-auto">
+                {[
+                  { name: t('about_team_member_1'), emoji: '👨‍💼', color: 'from-brand-red to-gray-900', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=600' },
+                  { name: t('about_team_member_2'), emoji: '👩‍💼', color: 'from-gray-900 to-black', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F96b25083da1648fc945bd37d8b67b8bc?format=webp&width=600' },
+                  { name: t('about_team_member_3'), emoji: '👩‍💻', color: 'from-brand-red to-black', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F481a670441c749588fa9123ea890126b?format=webp&width=600' },
+                  { name: t('about_team_member_4'), emoji: '👩‍🤝‍👨', color: 'from-gray-900 to-brand-red', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fd3f4a862a09848f59bda97b5f7122d66?format=webp&width=600' },
+                  { name: t('about_team_member_5'), emoji: '👨‍💻', color: 'from-brand-red via-gray-900 to-black', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=600' },
+                  { name: t('about_team_member_6'), emoji: '🤝', color: 'from-black to-brand-red', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F257d7571060a432ab27e06f12b4bd593?format=webp&width=600' },
+                ].map((member, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 hover:border-brand-red shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700 flex-shrink-0 w-72 sm:w-80"
+                    style={{ animationDelay: `${idx * 80}ms` }}
+                  >
+                    {/* Image */}
+                    <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-200">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={{
+                          filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                      {/* Icon Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center text-5xl sm:text-6xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                        {member.emoji}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 sm:p-6">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
+                        Making global impact through dedication and innovation
+                      </p>
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <div className="text-xs font-semibold text-brand-red">Learn More →</div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                </div>
-                {/* Content */}
-                <div className="p-6 sm:p-8">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    Making global impact through dedication and innovation
-                  </p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Fade gradients for better UX */}
+            <div className="absolute top-0 left-0 bottom-0 w-8 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10" />
+            <div className="absolute top-0 right-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
           </div>
         </div>
       </section>
