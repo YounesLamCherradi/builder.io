@@ -322,7 +322,9 @@ export default function Admin() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Description *</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  {activeTab === 'news' ? 'Description' : 'Short Description'} *
+                </label>
                 <textarea
                   name="description"
                   value={formData.description}
@@ -330,9 +332,24 @@ export default function Admin() {
                   required
                   rows={2}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                  placeholder="Brief summary"
+                  placeholder={activeTab === 'news' ? 'Brief summary' : 'Brief event summary for event card'}
                 />
               </div>
+
+              {activeTab === 'events' && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">About This Event *</label>
+                  <textarea
+                    name="about_event"
+                    value={formData.about_event}
+                    onChange={handleInputChange}
+                    required
+                    rows={3}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                    placeholder="Detailed description shown in the event details modal"
+                  />
+                </div>
+              )}
 
               {activeTab === 'news' && (
                 <div>
