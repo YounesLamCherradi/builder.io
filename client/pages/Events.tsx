@@ -292,12 +292,12 @@ export default function Events() {
         event_7_d3: 'Opportunités de bourse de recherche',
         event_7_d4: 'Études de cas de candidats réussis',
 
-        event_8_title: 'Salon mondial de l\'emploi pour les diplômés',
-        event_8_desc: 'Connectez-vous avec les employeurs internationaux et explorez les opportunités professionnelles mondiales.',
-        event_8_d1: 'Tendances du marché du travail international',
-        event_8_d2: 'Entretiens individuels avec les employeurs',
-        event_8_d3: 'Optimisation LinkedIn pour la recherche d\'emploi',
-        event_8_d4: 'Stratégies de négociation salariale',
+        event_8_title: 'Lancement du programme d\'échange linguistique et culturel',
+        event_8_desc: 'Rejoignez notre nouvelle initiative d\'échange linguistique et culturel.',
+        event_8_d1: 'Partenariats d\'échange linguistique',
+        event_8_d2: 'Activités d\'immersion culturelle',
+        event_8_d3: 'Réunions virtuelles et en personne',
+        event_8_d4: 'Présentations du pays partenaire',
 
         past_events_title: 'Faits marquants des événements passés',
         past_events_subtitle: 'Revivez la magie - Voyez ce que nos étudiants ont vécu',
