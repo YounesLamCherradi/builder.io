@@ -11,7 +11,9 @@ import {
   Check,
   Search,
   X as XIcon,
+  Loader,
 } from 'lucide-react';
+import { fetchNews, type NewsArticle } from '../lib/supabase';
 
 export default function News() {
   const [scrollY, setScrollY] = useState(0);
