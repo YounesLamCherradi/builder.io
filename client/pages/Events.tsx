@@ -108,6 +108,12 @@ export default function Events() {
         cookies: 'Cookie Policy',
         rights: '© 2026 MoroccoGlobal. All rights reserved.',
         event_time: 'Event Time',
+
+        tagline: 'Your World Awaits',
+        made_with: 'Made with ❤️ in Morocco',
+        sitemap: 'Sitemap',
+        subscribe_privacy: 'We respect your privacy. Unsubscribe anytime. No spam, ever.',
+        subscribe: 'Subscribe',
       },
       fr: {
         nav_home: 'Accueil',
