@@ -951,10 +951,18 @@ export default function Index() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-700 opacity-0 group-hover:opacity-100" />
 
                 {/* Content */}
-                <div className="relative z-10 text-center px-3 sm:px-4">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">
-                    {sponsor.logo}
-                  </div>
+                <div className="relative z-10 text-center px-3 sm:px-4 flex flex-col items-center justify-center h-full">
+                  {sponsor.isImage ? (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="h-20 sm:h-24 w-auto mb-2 sm:mb-3 group-hover:scale-110 transition-all duration-500 object-contain"
+                    />
+                  ) : (
+                    <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">
+                      {sponsor.logo}
+                    </div>
+                  )}
                   <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 line-clamp-2 group-hover:scale-105">
                     {sponsor.name}
                   </p>
