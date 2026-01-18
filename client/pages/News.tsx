@@ -382,68 +382,6 @@ export default function News() {
     { name: t('nav_news'), path: '/news' },
   ];
 
-  const articles = [
-    {
-      id: 1,
-      title: t('news_article_1_title'),
-      description: t('news_article_1_desc'),
-      content: t('news_article_1_content'),
-      category: t('news_article_1_category'),
-      author: t('news_article_1_author'),
-      date: t('news_article_1_date'),
-      image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F92f8b815178841d0bd08aed5b20d683c?format=webp&width=800',
-    },
-    {
-      id: 2,
-      title: t('news_article_2_title'),
-      description: t('news_article_2_desc'),
-      content: t('news_article_2_content'),
-      category: t('news_article_2_category'),
-      author: t('news_article_2_author'),
-      date: t('news_article_2_date'),
-      image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F777feb4da2644478bce44a65dfd42f41?format=webp&width=800',
-    },
-    {
-      id: 3,
-      title: t('news_article_3_title'),
-      description: t('news_article_3_desc'),
-      content: t('news_article_3_content'),
-      category: t('news_article_3_category'),
-      author: t('news_article_3_author'),
-      date: t('news_article_3_date'),
-      image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=800',
-    },
-    {
-      id: 4,
-      title: t('news_article_4_title'),
-      description: t('news_article_4_desc'),
-      content: t('news_article_4_content'),
-      category: t('news_article_4_category'),
-      author: t('news_article_4_author'),
-      date: t('news_article_4_date'),
-      image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F92f8b815178841d0bd08aed5b20d683c?format=webp&width=800',
-    },
-    {
-      id: 5,
-      title: t('news_article_5_title'),
-      description: t('news_article_5_desc'),
-      content: t('news_article_5_content'),
-      category: t('news_article_5_category'),
-      author: t('news_article_5_author'),
-      date: t('news_article_5_date'),
-      image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F777feb4da2644478bce44a65dfd42f41?format=webp&width=800',
-    },
-    {
-      id: 6,
-      title: t('news_article_6_title'),
-      description: t('news_article_6_desc'),
-      content: t('news_article_6_content'),
-      category: t('news_article_6_category'),
-      author: t('news_article_6_author'),
-      date: t('news_article_6_date'),
-      image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=800',
-    },
-  ];
 
   const categories = [
     { id: 'all', label: t('news_category_all') },
