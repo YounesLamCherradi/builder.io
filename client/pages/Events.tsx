@@ -761,12 +761,12 @@ export default function Events() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Navigation Bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
         }`}
       >
-        <div className="w-full px-4 sm:px-6">
-          <div className="mx-auto max-w-7xl flex h-16 sm:h-18 items-center justify-between py-3">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="flex h-16 sm:h-18 items-center justify-between py-3">
             <Link
               to="/"
               className="flex items-center hover:opacity-80 transition-opacity shrink-0"
