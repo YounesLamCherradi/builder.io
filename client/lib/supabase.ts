@@ -31,6 +31,13 @@ if (supabaseUrl && supabaseKey) {
 
 export { supabase };
 
+// Subscriber types
+export interface Subscriber {
+  id: string;
+  email: string;
+  created_at: string;
+}
+
 // News types
 export interface NewsArticle {
   id: string;
