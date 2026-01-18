@@ -870,8 +870,14 @@ export default function Events() {
       {/* Events Grid */}
       <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-            {filteredEvents.map((event, idx) => (
+          {loadingEvents ? (
+            <div className="text-center py-16 sm:py-20">
+              <Loader className="w-12 h-12 mx-auto text-brand-red animate-spin" />
+              <p className="text-gray-600 mt-4">Loading events...</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+              {filteredEvents.map((event, idx) => (
               <div
                 key={event.id}
                 className="group cursor-pointer relative h-full animate-fade-in-up"
@@ -944,7 +950,8 @@ export default function Events() {
                 </div>
               </div>
             ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
