@@ -86,8 +86,10 @@ export default function Admin() {
           await updateEvent(editingId, {
             title: formData.title,
             description: formData.description,
+            about_event: formData.about_event,
             location: formData.location,
             date: formData.date,
+            time: formData.time,
             image_url: formData.image_url,
             details: eventDetails.filter(d => d.trim()),
           });
@@ -95,8 +97,10 @@ export default function Admin() {
           await createEvent({
             title: formData.title,
             description: formData.description,
+            about_event: formData.about_event,
             location: formData.location,
             date: formData.date,
+            time: formData.time,
             image_url: formData.image_url,
             details: eventDetails.filter(d => d.trim()),
           });
