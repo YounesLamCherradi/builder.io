@@ -1287,7 +1287,7 @@ export default function Events() {
 
                 <div className="mb-8">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                    About This Event
+                    {t('about_event')}
                   </h2>
                   <p className="text-gray-700 leading-relaxed text-lg mb-6">
                     {currentEvent.description}
@@ -1296,7 +1296,7 @@ export default function Events() {
 
                 <div className="mb-8">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                    What to Expect
+                    {t('what_expect')}
                   </h2>
                   <div className="space-y-3">
                     {currentEvent.details.map((detail, idx) => (
