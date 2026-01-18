@@ -83,6 +83,7 @@ export default function Events() {
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         nav_contact: 'Contact',
+        nav_news: 'News',
         get_started: 'Get Started',
         events_title: 'Upcoming Events & Opportunities',
         events_subtitle: 'Join us for seminars, workshops, and networking events designed to accelerate your global journey',
