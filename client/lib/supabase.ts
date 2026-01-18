@@ -49,8 +49,10 @@ export interface Event {
   id: string;
   title: string;
   description: string;
+  about_event: string;
   location: string | null;
   date: string;
+  time: string;
   image_url: string | null;
   details?: string[];
   created_at: string;
