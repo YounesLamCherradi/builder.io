@@ -190,6 +190,7 @@ export default function Events() {
         stay_updated_title: 'Stay Updated with',
         stay_updated_highlight: 'Global Opportunities',
         stay_updated_desc: 'Subscribe to our newsletter and never miss an opportunity. Get early access to events, exclusive scholarships, and insider tips.',
+        email_placeholder: 'Enter your email address',
       },
       fr: {
         nav_home: 'Accueil',
