@@ -477,18 +477,17 @@ export default function Events() {
     title: event.title,
     type: 'workshop',
     date: event.date.split('T')[0],
-    time: '18:00 - 20:00',
+    time: event.time || '18:00',
     location: event.location || 'Online',
     eventType: event.location ? 'in-person' : 'online',
     price: 'free',
-    attendees: 100,
-    spotsLeft: 20,
     image: event.image_url || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
     description: event.description,
+    about_event: event.about_event || event.description,
     details: event.details && event.details.length > 0
       ? event.details
       : [
-          event.description || 'Learn about this opportunity',
+          'Learn about this opportunity',
           '✓ Expert mentors and professionals',
           '✓ Networking opportunities',
           '✓ Q&A session with speakers',
