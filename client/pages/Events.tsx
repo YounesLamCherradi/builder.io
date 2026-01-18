@@ -1166,7 +1166,7 @@ export default function Events() {
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
                     MoroccoGlobal
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5">Your World Awaits</p>
+                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5">{t('tagline')}</p>
                 </div>
               </div>
 
