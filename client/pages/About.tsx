@@ -189,6 +189,7 @@ export default function About() {
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         nav_contact: 'Contact',
+        nav_news: 'Actualités',
         tagline: 'Votre monde vous attend',
 
         about_hero_title: 'Transformer Les Vies Par Les Opportunités Mondiales',
