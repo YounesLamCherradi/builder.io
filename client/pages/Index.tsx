@@ -963,9 +963,23 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Sponsors Horizontal Scroll */}
-          <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide">
-            {sponsors.map((sponsor, index) => (
+          {/* Sponsors Horizontal Scroll with Navigation */}
+          <div className="relative">
+            {/* Left Arrow */}
+            <button
+              onClick={() => scrollSponsors('left')}
+              className="hidden lg:flex absolute left-0 top-1/3 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Scroll Container */}
+            <div
+              ref={sponsorsScrollRef}
+              className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
+            >
+              {sponsors.map((sponsor, index) => (
               <a
                 key={sponsor.id}
                 href={sponsor.link}
@@ -1011,7 +1025,17 @@ export default function Index() {
                   {sponsor.name}
                 </p>
               </a>
-            ))}
+              ))}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={() => scrollSponsors('right')}
+              className="hidden lg:flex absolute right-0 top-1/3 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
 
           {/* View All Link */}
