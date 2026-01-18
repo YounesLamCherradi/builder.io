@@ -159,6 +159,12 @@ export default function Events() {
         cookies: 'Cookies',
         rights: '© 2026 MoroccoGlobal. Tous droits réservés.',
         event_time: 'Horaire de l\'Événement',
+
+        tagline: 'Votre monde vous attend',
+        made_with: 'Fait avec ❤️ au Maroc',
+        sitemap: 'Plan du site',
+        subscribe_privacy: 'Nous respectons votre vie privée. Désinscrivez-vous à tout moment. Pas de spam.',
+        subscribe: 'S\'abonner',
       },
       ru: {
         nav_home: 'Главная',
