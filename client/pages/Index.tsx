@@ -15,8 +15,6 @@ import {
   Zap,
   Target,
   Check,
-  Moon,
-  Sun,
 } from 'lucide-react';
 
 export default function Index() {
@@ -30,12 +28,6 @@ export default function Index() {
     return 'en';
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkModeState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('darkMode') === 'true';
-    }
-    return false;
-  });
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
@@ -43,26 +35,6 @@ export default function Index() {
       localStorage.setItem('selectedLanguage', lang);
     }
   };
-
-  const setDarkMode = (isDark) => {
-    setIsDarkModeState(isDark);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', isDark ? 'true' : 'false');
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -565,11 +537,11 @@ export default function Index() {
   const selectedLang = languages.find((l) => l.code === currentLanguage) ?? languages[0];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 overflow-x-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Navigation Bar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrollY > 50 ? 'bg-white/95 dark:bg-gray-950/95 backdrop-blur-lg shadow-lg dark:shadow-gray-900/50' : 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm'
+          scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -679,14 +651,6 @@ export default function Index() {
                 )}
               </div>
 
-              <button
-                onClick={() => setDarkMode(!isDarkMode)}
-                className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
-                aria-label="Toggle dark mode"
-                title={isDarkMode ? 'Light mode' : 'Dark mode'}
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -787,15 +751,6 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="p-4 border-t border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-900">
-                <button
-                  onClick={() => setDarkMode(!isDarkMode)}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-900 dark:text-yellow-400 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                  <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
-                </button>
-              </div>
             </div>
           </div>
         )}
