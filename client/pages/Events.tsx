@@ -20,10 +20,22 @@ import {
 export default function Events() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
+  const [currentLanguage, setCurrentLanguageState] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('selectedLanguage') || 'en';
+    }
+    return 'en';
+  });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+
+  const setCurrentLanguage = (lang) => {
+    setCurrentLanguageState(lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('selectedLanguage', lang);
+    }
+  };
 
   React.useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
