@@ -995,10 +995,10 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-red/20 via-transparent to-brand-red/10" />
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {t('about_cta_title')}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+          <p className="text-base sm:text-lg text-gray-200 mb-8 sm:mb-12 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
             {t('about_cta_desc')}
           </p>
           <Link
