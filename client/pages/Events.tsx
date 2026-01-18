@@ -657,7 +657,7 @@ export default function Events() {
                   </div>
                   <div className="leading-tight">
                     <div className="text-base font-bold text-gray-900">MoroccoGlobal</div>
-                    <div className="text-xs text-gray-500 -mt-0.5">Your World Awaits</div>
+                    <div className="text-xs text-gray-500 -mt-0.5">{t('tagline')}</div>
                   </div>
                 </div>
                 <button
