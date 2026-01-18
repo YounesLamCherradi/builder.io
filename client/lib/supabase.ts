@@ -251,3 +251,59 @@ export async function deleteEvent(id: string): Promise<boolean> {
     return false;
   }
 }
+
+// Subscribe to newsletter
+export async function subscribeNewsletter(email: string): Promise<boolean> {
+  try {
+    // Check if email already exists
+    const { data: existing } = await supabase
+      .from('subscribers')
+      .select('id')
+      .eq('email', email)
+      .single();
+
+    if (existing) {
+      console.log('Email already subscribed');
+      return true;
+    }
+
+    const { error } = await supabase
+      .from('subscribers')
+      .insert([{ email }]);
+
+    if (error) {
+      console.error('Error subscribing:', error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return false;
+  }
+}
+
+// Upload file to Supabase Storage
+export async function uploadImage(file: File, bucket: string = 'media'): Promise<string | null> {
+  try {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+    const filePath = `${bucket}/${fileName}`;
+
+    const { error: uploadError } = await supabase.storage
+      .from('media')
+      .upload(filePath, file);
+
+    if (uploadError) {
+      console.error('Error uploading file:', uploadError);
+      return null;
+    }
+
+    // Get public URL
+    const { data } = supabase.storage.from('media').getPublicUrl(filePath);
+    return data.publicUrl;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
