@@ -998,7 +998,7 @@ export default function Index() {
               </form>
 
               <p className="text-center text-xs sm:text-sm text-gray-500 mt-5 sm:mt-6">
-                We respect your privacy. Unsubscribe anytime. No spam, ever.
+                {t('subscribe_privacy')}
               </p>
             </div>
           </div>
