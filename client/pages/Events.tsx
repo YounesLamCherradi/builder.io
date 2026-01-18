@@ -1133,15 +1133,25 @@ export default function Events() {
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="flex-1 py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95">
-                    {t('register')}
-                  </button>
-                  {currentEvent.link && (
+                  {currentEvent.show_register_button && (
                     <a
-                      href={currentEvent.link}
+                      href={currentEvent.register_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 py-4 bg-gray-100 text-gray-800 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-gray-200 flex items-center justify-center gap-2"
+                      className="flex-1 py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95 flex items-center justify-center gap-2"
+                    >
+                      <span>{t('register')}</span>
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  )}
+                  {currentEvent.show_learn_more_button && (
+                    <a
+                      href={currentEvent.learn_more_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${
+                        currentEvent.show_register_button ? 'flex-1' : 'w-full'
+                      } py-4 bg-gray-100 text-gray-800 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-gray-200 flex items-center justify-center gap-2`}
                     >
                       <span>{t('learn_more')}</span>
                       <ExternalLink className="w-5 h-5" />
