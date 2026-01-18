@@ -787,6 +787,81 @@ export default function About() {
         </div>
       </section>
 
+      {/* Journey Moments Gallery */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+              Our Journey in Moments
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              Celebrating partnerships, international events, and the impact we're creating together
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F96b25083da1648fc945bd37d8b67b8bc?format=webp&width=800',
+                title: 'Global Discussions',
+                desc: 'Engaging in international dialogues about education and opportunities'
+              },
+              {
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F481a670441c749588fa9123ea890126b?format=webp&width=800',
+                title: 'International Events',
+                desc: 'Representing Morocco at prestigious global conferences and assemblies'
+              },
+              {
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=800',
+                title: 'Cultural Pride',
+                desc: 'Celebrating Moroccan heritage at world youth festivals and global platforms'
+              },
+              {
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fd3f4a862a09848f59bda97b5f7122d66?format=webp&width=800',
+                title: 'Global Representation',
+                desc: 'Connecting Moroccan youth with opportunities across 150+ countries'
+              },
+              {
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=800',
+                title: 'Youth Empowerment',
+                desc: 'Building confidence and networks for Moroccan students on the world stage'
+              },
+              {
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F257d7571060a432ab27e06f12b4bd593?format=webp&width=800',
+                title: 'Partnerships & Collaborations',
+                desc: 'Signing agreements and building lasting relationships with global institutions'
+              },
+            ].map((moment, idx) => (
+              <div
+                key={idx}
+                className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 hover:border-brand-red shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700"
+                style={{ animationDelay: `${idx * 100}ms` }}
+              >
+                {/* Image Container */}
+                <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-200">
+                  <img
+                    src={moment.image}
+                    alt={moment.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
+
+                {/* Content Overlay */}
+                <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-brand-red transition-colors">
+                    {moment.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-white/90">
+                    {moment.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
       <section className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
