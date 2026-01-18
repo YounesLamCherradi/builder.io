@@ -231,6 +231,7 @@ export default function Index() {
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         nav_contact: 'Contact',
+        nav_news: 'Actualités',
         sign_in: 'Se connecter',
         get_started: 'Commencer',
 
