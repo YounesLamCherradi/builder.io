@@ -340,9 +340,10 @@ export default function Admin() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
                     >
                       <option>Visa Updates</option>
-                      <option>Scholarships</option>
                       <option>Opportunities</option>
-                      <option>Success Stories</option>
+                      <option>General</option>
+                      <option>Notice</option>
+                      <option>Scholarship</option>
                     </select>
                   </div>
                 )}
