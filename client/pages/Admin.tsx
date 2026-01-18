@@ -168,6 +168,7 @@ export default function Admin() {
         location: '',
         date: news.date,
       });
+      setImagePreview(news.image_url || null);
     } else {
       const event = item as Event;
       setFormData({
@@ -182,6 +183,7 @@ export default function Admin() {
         time: event.time || '18:00',
         about_event: event.about_event || '',
       });
+      setImagePreview(event.image_url || null);
       setEventDetails(event.details || ['', '', '', '']);
     }
     setEditingId(item.id);
