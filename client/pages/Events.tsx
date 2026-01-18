@@ -473,7 +473,7 @@ export default function Events() {
 
   // Convert fetched events to component format
   const events = fetchedEvents.map(event => ({
-    id: Math.random(),
+    id: event.id,
     title: event.title,
     type: 'workshop',
     date: event.date.split('T')[0],
@@ -486,10 +486,10 @@ export default function Events() {
     image: event.image_url || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
     description: event.description,
     details: [
-      event.description,
-      'Expert mentors and professionals',
-      'Networking opportunities',
-      'Q&A session',
+      event.description || 'Learn about this opportunity',
+      '✓ Expert mentors and professionals',
+      '✓ Networking opportunities',
+      '✓ Q&A session with speakers',
     ],
     link: 'https://morocoglobal.com',
   }));
