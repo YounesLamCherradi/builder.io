@@ -629,13 +629,13 @@ export default function About() {
               {t('about_hero_desc')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-8 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
               <Link
                 to="/events"
-                className="group w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+                className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-red to-brand-red text-white rounded-full font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 hover:brightness-110"
               >
                 <span>{t('about_cta_button')}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>
