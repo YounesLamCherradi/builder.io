@@ -327,6 +327,7 @@ export default function Events() {
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
+        nav_news: 'Новости',
         get_started: 'Начать',
         events_title: 'Предстоящие События и Возможности',
         events_subtitle: 'Присоединяйтесь к нам на семинарах, мастер-классах и сетевых мероприятиях',
