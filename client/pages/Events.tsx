@@ -492,7 +492,10 @@ export default function Events() {
           '✓ Networking opportunities',
           '✓ Q&A session with speakers',
         ],
-    link: 'https://morocoglobal.com',
+    show_register_button: event.show_register_button ?? true,
+    register_url: event.register_url || 'https://morocoglobal.com',
+    show_learn_more_button: event.show_learn_more_button ?? true,
+    learn_more_url: event.learn_more_url || 'https://morocoglobal.com',
   }));
 
   const pastEvents = [
