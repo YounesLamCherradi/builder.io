@@ -15,8 +15,6 @@ import {
   ArrowRight,
   Star,
   ChevronUp,
-  Moon,
-  Sun,
 } from 'lucide-react';
 
 export default function Events() {
@@ -31,29 +29,11 @@ export default function Events() {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  const [isDarkMode, setIsDarkModeState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('darkMode') === 'true';
-    }
-    return false;
-  });
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
     if (typeof window !== 'undefined') {
       localStorage.setItem('selectedLanguage', lang);
-    }
-  };
-
-  const setDarkMode = (isDark) => {
-    setIsDarkModeState(isDark);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', isDark ? 'true' : 'false');
-      if (isDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
     }
   };
 
@@ -71,14 +51,6 @@ export default function Events() {
     window.addEventListener('click', onClick);
     return () => window.removeEventListener('click', onClick);
   }, []);
-
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
 
   React.useEffect(() => {
     if (mobileMenuOpen) document.body.style.overflow = 'hidden';
@@ -782,7 +754,7 @@ export default function Events() {
   const currentEvent = events.find((e) => e.id === selectedEvent);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 overflow-x-hidden transition-colors duration-300">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Navigation Bar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -886,14 +858,6 @@ export default function Events() {
                 )}
               </div>
 
-              <button
-                onClick={() => setDarkMode(!isDarkMode)}
-                className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
-                aria-label="Toggle dark mode"
-                title={isDarkMode ? 'Light mode' : 'Dark mode'}
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
             </div>
 
             <button
@@ -991,15 +955,6 @@ export default function Events() {
                 </div>
               </div>
 
-              <div className="p-4 border-t border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-900">
-                <button
-                  onClick={() => setDarkMode(!isDarkMode)}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-900 dark:text-yellow-400 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                  <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
-                </button>
-              </div>
             </div>
           </div>
         )}
