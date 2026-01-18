@@ -86,6 +86,7 @@ export default function About() {
         nav_about: 'About Us',
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
+        nav_contact: 'Contact',
         tagline: 'Your World Awaits',
 
         about_hero_title: 'Transforming Lives Through Global Opportunities',
