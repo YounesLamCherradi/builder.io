@@ -905,85 +905,63 @@ export default function Index() {
       </section>
 
       {/* Sponsors Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(187,9,9,0.15)_1px,transparent_1px)] bg-[length:60px_60px]" />
+        </div>
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <span className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30">
+              {t('sponsors_title')}
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               {t('sponsors_title')}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
               {t('sponsors_desc')}
             </p>
           </div>
 
-          {/* Animated Sponsors Carousel */}
-          <div className="relative overflow-hidden">
-            {/* Left Gradient Mask */}
-            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-gray-50 via-gray-50/50 to-transparent z-10" />
-            {/* Right Gradient Mask */}
-            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-gray-50 via-gray-50/50 to-transparent z-10" />
+          {/* Sponsors Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            {sponsors.map((sponsor, index) => (
+              <a
+                key={sponsor.id}
+                href={sponsor.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative h-28 sm:h-32 lg:h-36 rounded-2xl border-2 border-gray-200 hover:border-brand-red transition-all duration-300 bg-white flex items-center justify-center overflow-hidden hover:shadow-xl hover:shadow-red-100/50"
+              >
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            {/* Scrolling Container */}
-            <div className="flex gap-6 sm:gap-8 overflow-x-auto pb-4 scrollbar-hide" style={{
-              animation: 'scroll-sponsors 30s linear infinite',
-              WebkitOverflowScrolling: 'touch',
-            }}>
-              {sponsors.map((sponsor) => (
-                <div
-                  key={sponsor.id}
-                  className="flex-shrink-0"
-                >
-                  <a
-                    href={sponsor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center h-24 sm:h-28 min-w-32 sm:min-w-40 px-6 bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-100 hover:border-brand-red transition-all duration-300 transform hover:scale-105 group"
-                  >
-                    <div className="text-5xl sm:text-6xl group-hover:scale-110 transition-transform duration-300">
-                      {sponsor.logo}
-                    </div>
-                  </a>
+                {/* Accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300" />
+
+                {/* Content */}
+                <div className="relative z-10 text-center px-3 sm:px-4">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
+                    {sponsor.logo}
+                  </div>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-colors duration-300 line-clamp-2">
+                    {sponsor.name}
+                  </p>
                 </div>
-              ))}
-              {/* Duplicate for seamless loop */}
-              {sponsors.map((sponsor) => (
-                <div
-                  key={`dup-${sponsor.id}`}
-                  className="flex-shrink-0"
-                >
-                  <a
-                    href={sponsor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center h-24 sm:h-28 min-w-32 sm:min-w-40 px-6 bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-100 hover:border-brand-red transition-all duration-300 transform hover:scale-105 group"
-                  >
-                    <div className="text-5xl sm:text-6xl group-hover:scale-110 transition-transform duration-300">
-                      {sponsor.logo}
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </div>
+              </a>
+            ))}
           </div>
 
-          {/* CSS Animation */}
-          <style>{`
-            @keyframes scroll-sponsors {
-              0% {
-                transform: translateX(0);
-              }
-              100% {
-                transform: translateX(-50%);
-              }
-            }
-            .scrollbar-hide::-webkit-scrollbar {
-              display: none;
-            }
-            .scrollbar-hide {
-              -ms-overflow-style: none;
-              scrollbar-width: none;
-            }
-          `}</style>
+          {/* View All Link */}
+          <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
+              Partner with us or list your organization
+            </p>
+            <button className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-red-200/50">
+              <span>Get in Touch</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </section>
 
