@@ -523,6 +523,17 @@ export default function Index() {
     { number: '24/7', label: t('stat_support'), icon: Sparkles },
   ];
 
+  const sponsors = [
+    { id: 1, name: 'Fulbright Morocco', logo: '🎓', link: 'https://fulbright.org.ma' },
+    { id: 2, name: 'AMIDEAST', logo: '🌍', link: 'https://www.amideast.org' },
+    { id: 3, name: 'YES Program', logo: '⭐', link: 'https://www.yes-abroad.org' },
+    { id: 4, name: 'British Council', logo: '🇬🇧', link: 'https://www.britishcouncil.ma' },
+    { id: 5, name: 'Campus France', logo: '🇫🇷', link: 'https://www.campusfrance.org' },
+    { id: 6, name: 'DAAD', logo: '🇩🇪', link: 'https://www.daad.de' },
+    { id: 7, name: 'Nuffic', logo: '🇳🇱', link: 'https://www.nuffic.nl' },
+    { id: 8, name: 'Study in USA', logo: '🇺🇸', link: 'https://studyusa.state.gov' },
+  ];
+
   const selectedLang = languages.find((l) => l.code === currentLanguage) ?? languages[0];
 
   return (
