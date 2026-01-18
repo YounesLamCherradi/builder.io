@@ -438,15 +438,28 @@ export default function News() {
     { id: 'stories', label: t('news_category_stories') },
   ];
 
-  const filteredArticles = selectedCategory === 'all' 
-    ? articles 
-    : articles.filter(article => 
-        article.category.toLowerCase().includes(selectedCategory) ||
-        (selectedCategory === 'visa' && article.category.includes(t('news_category_visa'))) ||
-        (selectedCategory === 'scholarships' && article.category.includes(t('news_category_scholarships'))) ||
-        (selectedCategory === 'opportunities' && article.category.includes(t('news_category_opportunities'))) ||
-        (selectedCategory === 'stories' && article.category.includes(t('news_category_stories')))
-      );
+  const filteredArticles = articles.filter(article => {
+    // Filter by category
+    const matchesCategory = selectedCategory === 'all'
+      ? true
+      : article.category.includes(
+          selectedCategory === 'visa' ? t('news_category_visa') :
+          selectedCategory === 'scholarships' ? t('news_category_scholarships') :
+          selectedCategory === 'opportunities' ? t('news_category_opportunities') :
+          selectedCategory === 'stories' ? t('news_category_stories') :
+          ''
+        );
+
+    // Filter by search query
+    const searchLower = searchQuery.toLowerCase();
+    const matchesSearch = searchQuery === ''
+      ? true
+      : article.title.toLowerCase().includes(searchLower) ||
+        article.description.toLowerCase().includes(searchLower) ||
+        article.content.toLowerCase().includes(searchLower);
+
+    return matchesCategory && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
