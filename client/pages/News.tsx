@@ -844,6 +844,96 @@ export default function News() {
           </div>
         </div>
       </footer>
+
+      {/* Article Detail Modal */}
+      {selectedArticle && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm bg-black/40 animate-in fade-in duration-300"
+          onClick={() => setSelectedArticle(null)}
+        >
+          <div
+            className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-in slide-in-from-bottom-4 zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white border-b border-gray-200 px-6 sm:px-8 py-5 sm:py-6 flex items-center justify-between">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 line-clamp-1">
+                {selectedArticle.title}
+              </h2>
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="ml-4 p-2 rounded-lg hover:bg-gray-100 transition-colors flex-shrink-0"
+                aria-label={t('news_close')}
+              >
+                <X className="w-6 h-6 text-gray-600" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 sm:p-8 md:p-10">
+              {/* Featured Image */}
+              <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden mb-6 sm:mb-8">
+                <img
+                  src={selectedArticle.image}
+                  alt={selectedArticle.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    {selectedArticle.category}
+                  </span>
+                </div>
+              </div>
+
+              {/* Article Metadata */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 pb-6 sm:pb-8 border-b border-gray-200">
+                <div className="flex items-center gap-2 text-gray-600">
+                  <User className="w-5 h-5" />
+                  <span className="text-sm sm:text-base">{t('news_by')} {selectedArticle.author}</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-600">
+                  <Calendar className="w-5 h-5" />
+                  <span className="text-sm sm:text-base">{t('news_published')} {selectedArticle.date}</span>
+                </div>
+              </div>
+
+              {/* Article Title */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 my-6 sm:my-8">
+                {selectedArticle.title}
+              </h1>
+
+              {/* Article Content */}
+              <div className="prose prose-sm sm:prose max-w-none text-gray-700 leading-relaxed">
+                {selectedArticle.content.split('\n\n').map((paragraph, idx) => (
+                  <div key={idx} className="mb-6 sm:mb-8">
+                    {paragraph.includes('•') ? (
+                      <ul className="space-y-2 sm:space-y-3">
+                        {paragraph.split('\n').map((item, i) => (
+                          <li key={i} className={`${item.trim().startsWith('•') ? 'ml-6 sm:ml-8 text-gray-700' : 'font-semibold text-gray-900 mt-4'}`}>
+                            {item.replace('•', '').trim()}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className={paragraph.includes(':') && paragraph.length < 100 ? 'font-semibold text-gray-900 text-lg sm:text-xl mb-3' : 'text-gray-700'}>
+                        {paragraph}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="mt-8 sm:mt-10 w-full px-6 sm:px-8 py-3 sm:py-4 bg-brand-red text-white rounded-xl font-semibold hover:bg-red-700 transition-colors"
+              >
+                {t('news_close')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
