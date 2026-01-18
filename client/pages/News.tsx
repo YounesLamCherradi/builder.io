@@ -9,6 +9,8 @@ import {
   User,
   ArrowRight,
   Check,
+  Search,
+  X as XIcon,
 } from 'lucide-react';
 
 export default function News() {
