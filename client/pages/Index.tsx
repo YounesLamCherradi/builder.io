@@ -77,6 +77,7 @@ export default function Index() {
       en: {
         nav_home: 'Home',
         nav_events: 'Events',
+        nav_about: 'About Us',
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         sign_in: 'Sign In',
@@ -210,6 +211,7 @@ export default function Index() {
       fr: {
         nav_home: 'Accueil',
         nav_events: 'Événements',
+        nav_about: 'À Propos',
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         sign_in: 'Se connecter',
@@ -343,6 +345,7 @@ export default function Index() {
       ru: {
         nav_home: 'Главная',
         nav_events: 'События',
+        nav_about: 'О нас',
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         sign_in: 'Войти',
@@ -481,6 +484,7 @@ export default function Index() {
   const menuItems = [
     { name: t('nav_home'), path: '/' },
     { name: t('nav_events'), path: '/events' },
+    { name: t('nav_about'), path: '/about' },
     { name: t('nav_stories'), path: '/stories' },
     { name: t('nav_resources'), path: '/resources' },
   ];
