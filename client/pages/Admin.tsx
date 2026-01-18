@@ -200,6 +200,12 @@ export default function Admin() {
       });
       setImagePreview(event.image_url || null);
       setEventDetails(event.details || ['', '', '', '']);
+      setButtonConfig({
+        show_register_button: event.show_register_button ?? true,
+        register_url: event.register_url || '',
+        show_learn_more_button: event.show_learn_more_button ?? true,
+        learn_more_url: event.learn_more_url || '',
+      });
     }
     setEditingId(item.id);
     setShowForm(true);
