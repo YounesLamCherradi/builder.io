@@ -94,6 +94,7 @@ export default function Index() {
         nav_about: 'About Us',
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
+        nav_contact: 'Contact',
         sign_in: 'Sign In',
         get_started: 'Get Started',
 
