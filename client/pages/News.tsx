@@ -61,6 +61,17 @@ export default function News() {
     };
   }, [mobileMenuOpen, selectedArticle]);
 
+  // Fetch articles from Supabase
+  useEffect(() => {
+    const loadArticles = async () => {
+      setLoadingArticles(true);
+      const data = await fetchNews();
+      setArticles(data);
+      setLoadingArticles(false);
+    };
+    loadArticles();
+  }, []);
+
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
