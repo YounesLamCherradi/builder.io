@@ -58,44 +58,6 @@
 
     --sidebar-ring: 4 89% 39%;
   }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 15%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 15%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 4 89% 39%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 25%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 25%;
-    --muted-foreground: 0 0% 70%;
-
-    --accent: 0 0% 0%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 4 89% 39%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 4 89% 39%;
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 4 89% 39%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 25%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 25%;
-    --sidebar-ring: 4 89% 39%;
-  }
 }
 
 @layer base {
@@ -117,28 +79,4 @@
     overflow-x: auto;
     white-space: pre;
   }
-}
-
-/* Dark Mode Enhancements */
-.dark {
-  color-scheme: dark;
-}
-
-.dark input,
-.dark textarea,
-.dark select {
-  @apply bg-gray-900 text-white border-gray-700;
-}
-
-.dark input::placeholder,
-.dark textarea::placeholder {
-  @apply text-gray-500;
-}
-
-.dark input:focus {
-  @apply border-brand-red ring-brand-red/20;
-}
-
-.dark textarea:focus {
-  @apply border-brand-red ring-brand-red/20;
 }
