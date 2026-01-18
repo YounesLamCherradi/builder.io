@@ -723,11 +723,12 @@ export default function About() {
       {/* Core Values */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-4"
+          className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F96b25083da1648fc945bd37d8b67b8bc?format=webp&width=800)',
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F257d7571060a432ab27e06f12b4bd593?format=webp&width=800)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            filter: 'sepia(0.15) brightness(1.15)',
           }}
         />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
