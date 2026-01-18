@@ -766,8 +766,8 @@ export default function Index() {
               {
                 topBar: 'from-brand-red to-black',
                 emoji: '🇲🇦',
-                title: 'Morocco',
-                subtitle: 'Foundation Hub',
+                title: t('morocco'),
+                subtitle: t('morocco_subtitle'),
                 bullets: [
                   ['bg-brand-red', 'Local University Network'],
                   ['bg-black', 'Career Development Centers'],
@@ -781,8 +781,8 @@ export default function Index() {
               {
                 topBar: 'from-brand-red to-brand-silver',
                 emoji: '🇨🇳',
-                title: 'China',
-                subtitle: 'BRI Partnership',
+                title: t('china'),
+                subtitle: t('china_subtitle'),
                 bullets: [
                   ['bg-brand-red', 'Belt & Road Scholarships'],
                   ['bg-brand-silver', 'Chinese Government Grants'],
@@ -796,8 +796,8 @@ export default function Index() {
               {
                 topBar: 'from-black via-brand-silver to-brand-red',
                 emoji: '🇷🇺',
-                title: 'Russia',
-                subtitle: 'Federal Programs',
+                title: t('russia'),
+                subtitle: t('russia_subtitle'),
                 bullets: [
                   ['bg-black', 'Government Scholarships'],
                   ['bg-brand-red', 'Research Grants'],
@@ -811,8 +811,8 @@ export default function Index() {
               {
                 topBar: 'from-brand-silver via-brand-red to-black',
                 emoji: '🌎',
-                title: 'South America',
-                subtitle: 'Regional Network',
+                title: t('south_america'),
+                subtitle: t('sa_subtitle'),
                 bullets: [
                   ['bg-brand-silver', 'Brazilian Partnerships'],
                   ['bg-brand-red', 'Argentine Universities'],
