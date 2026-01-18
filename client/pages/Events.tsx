@@ -1352,7 +1352,7 @@ export default function Events() {
               <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder={t('email_placeholder')}
                   className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
                   required
                 />
