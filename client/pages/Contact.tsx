@@ -445,13 +445,13 @@ export default function Contact() {
                   </select>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-2 pt-4">
                   {menuItems.map((item, idx) => (
                     <Link
                       key={idx}
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-left px-3 py-3 rounded-xl hover:bg-gray-50 text-gray-800 font-medium transition-colors block"
+                      className="w-full text-left px-4 py-4 rounded-xl hover:bg-brand-red/10 text-gray-800 font-semibold text-lg transition-all duration-300 block border-2 border-transparent hover:border-brand-red/30"
                     >
                       {item.name}
                     </Link>
