@@ -36,6 +36,13 @@ export default function Admin() {
   const [uploadingImage, setUploadingImage] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
 
+  const [buttonConfig, setButtonConfig] = useState({
+    show_register_button: true,
+    register_url: '',
+    show_learn_more_button: true,
+    learn_more_url: '',
+  });
+
   // Load data
   useEffect(() => {
     loadData();
