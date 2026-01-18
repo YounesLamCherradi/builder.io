@@ -1015,47 +1015,47 @@ export default function Index() {
             {[
               {
                 src: 'https://www.moroccoworldnews.com/wp-content/uploads/2024/11/munich-is-top-destination-for-moroccan-students-in-germany.png',
-                caption: 'Moroccan Scholars in Germany – Munich Welcome',
+                caption: t('caption_1'),
               },
               {
                 src: 'https://media.licdn.com/dms/image/v2/D4E12AQE9ybFDnRm1XA/article-cover_image-shrink_720_1280/B4EZjnOKdiGwAM-/0/1756225912720?e=2147483647&v=beta&t=WaBogNKIrzrqg6v2VHX7aFDPlEfu-B086wd-1K7fFt0',
-                caption: 'Journey from Morocco to London – Student Success',
+                caption: t('caption_2'),
               },
               {
                 src: 'https://ec.usembassy.gov/wp-content/uploads/sites/167/2024/06/IMG_4913-copy-1-1140x684-1.jpg',
-                caption: 'Fulbright Award Ceremony – Proud Moment',
+                caption: t('caption_3'),
               },
               {
                 src: 'https://www.shutterstock.com/image-photo/graduate-students-diplomas-light-room-260nw-2445597597.jpg',
-                caption: 'Graduation Joy – Diplomas & Smiles',
+                caption: t('caption_4'),
               },
               {
                 src: 'https://www.amideast.org/sites/default/files/styles/large/public/2025-07/YES%20Morocco_0.jpg?itok=4to3HsO5',
-                caption: 'YES Program – Moroccan Youth Abroad',
+                caption: t('caption_5'),
               },
               {
                 src: 'https://e2.hespress.com/wp-content/uploads/2025/09/IMG-20250920-WA0015.jpg',
-                caption: 'Cultural Gathering – Global Peers United',
+                caption: t('caption_6'),
               },
               {
                 src: 'https://www.yes-abroad.org/assets/general/Maria-and-her-friends-smile-from-the-street.JPG',
-                caption: 'Friendships Built in Morocco Exchange',
+                caption: t('caption_7'),
               },
               {
                 src: 'https://ualr.edu/news-archive/wp-content/uploads/sites/208/2019/11/Morocco3.jpg',
-                caption: 'University Life – Moroccan Students Abroad',
+                caption: t('caption_8'),
               },
               {
                 src: 'https://f.hubspotusercontent10.net/hubfs/67369/2021%20Compressed%20Images/Morocco%20Compressed/Ariel-Dansky-Oujda-Morocco-students.jpeg',
-                caption: 'Classroom Connections – Immersive Learning',
+                caption: t('caption_9'),
               },
               {
                 src: 'https://www.iesabroad.org/sites/default/files/styles/media_gallery_preview/public/2022-07/31803254657_626b62c73e_k.jpg?h=a01a9706&itok=PVJTp2H5',
-                caption: 'Campus Moments – New Horizons',
+                caption: t('caption_10'),
               },
               {
                 src: 'https://e1.hespress.com/wp-content/uploads/2024/01/Alumni-Summit-3-900x600.jpeg',
-                caption: 'Alumni Networking – Innovation & Collaboration',
+                caption: t('caption_11'),
               },
             ].map((item, idx) => (
               <div
