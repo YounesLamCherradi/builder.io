@@ -291,6 +291,7 @@ export default function About() {
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
+        nav_news: 'Новости',
         tagline: 'Ваш мир ждёт',
 
         about_hero_title: 'Преобразование жизней через глобальные возможности',
