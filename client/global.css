@@ -118,3 +118,49 @@
     white-space: pre;
   }
 }
+
+/* Dark Mode Enhancements */
+@layer components {
+  .dark {
+    color-scheme: dark;
+  }
+
+  .dark input,
+  .dark textarea,
+  .dark select {
+    @apply bg-gray-900 text-white border-gray-700;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    @apply text-gray-500;
+  }
+
+  .dark a {
+    @apply text-white hover:text-brand-red transition-colors;
+  }
+
+  .dark button {
+    @apply transition-colors duration-300;
+  }
+
+  .dark .border-gray-100 {
+    @apply dark:border-gray-800;
+  }
+
+  .dark .bg-gray-50 {
+    @apply dark:bg-gray-900;
+  }
+
+  .dark .text-gray-600 {
+    @apply dark:text-gray-400;
+  }
+
+  .dark .text-gray-700 {
+    @apply dark:text-gray-300;
+  }
+
+  .dark .shadow-lg {
+    @apply dark:shadow-gray-900/50;
+  }
+}
