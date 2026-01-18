@@ -605,6 +605,19 @@ export default function Events() {
     },
   ];
 
+  // Function to get translated events
+  const events = baseEvents.map(event => ({
+    ...event,
+    title: t(`event_${event.id}_title`),
+    description: t(`event_${event.id}_desc`),
+    details: [
+      t(`event_${event.id}_d1`),
+      t(`event_${event.id}_d2`),
+      t(`event_${event.id}_d3`),
+      t(`event_${event.id}_d4`),
+    ],
+  }));
+
   const pastEvents = [
     {
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
