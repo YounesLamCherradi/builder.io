@@ -391,17 +391,18 @@ export default function News() {
     { id: 'stories', label: t('news_category_stories') },
   ];
 
+  const categoryMap: { [key: string]: string } = {
+    'visa': 'Visa Updates',
+    'scholarships': 'Scholarships',
+    'opportunities': 'Opportunities',
+    'stories': 'Success Stories',
+  };
+
   const filteredArticles = articles.filter(article => {
     // Filter by category
     const matchesCategory = selectedCategory === 'all'
       ? true
-      : article.category.includes(
-          selectedCategory === 'visa' ? t('news_category_visa') :
-          selectedCategory === 'scholarships' ? t('news_category_scholarships') :
-          selectedCategory === 'opportunities' ? t('news_category_opportunities') :
-          selectedCategory === 'stories' ? t('news_category_stories') :
-          ''
-        );
+      : article.category === categoryMap[selectedCategory];
 
     // Filter by search query
     const searchLower = searchQuery.toLowerCase();
