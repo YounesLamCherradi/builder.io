@@ -349,6 +349,8 @@ export default function News() {
         home_email_placeholder: 'Введите ваш адрес электронной почты',
         subscribe_now: 'Подписаться',
         subscribe_privacy: 'Мы уважаем вашу конфиденциальность. Отпишитесь в любой момент. Нет спама.',
+        news_search_placeholder: 'Поиск статей по названию или содержанию...',
+        news_close: 'Закрыть',
       },
     }),
     []
