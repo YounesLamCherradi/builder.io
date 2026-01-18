@@ -677,11 +677,12 @@ export default function About() {
       {/* Mission & Vision */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-6"
           style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=800)',
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=800)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            filter: 'brightness(1.1) contrast(1.05)',
           }}
         />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
