@@ -1059,14 +1059,8 @@ export default function About() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
                     alt="MoroccoGlobal Logo"
-                    className="h-14 sm:h-16 w-auto"
+                    className="h-16 sm:h-20 w-auto"
                   />
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                    MoroccoGlobal
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5">Your World Awaits</p>
                 </div>
               </div>
 
