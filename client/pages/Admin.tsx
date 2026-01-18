@@ -170,6 +170,7 @@ export default function Admin() {
       location: '',
       date: new Date().toISOString().split('T')[0],
     });
+    setEventDetails(['', '', '', '']);
     setEditingId(null);
     setShowForm(false);
   };
