@@ -673,15 +673,17 @@ export default function Index() {
             />
             <div className="fixed top-16 right-0 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
               <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-gradient-to-br from-brand-red via-gray-400 to-black rounded-xl flex items-center justify-center transform rotate-45">
-                    <Globe className="w-4 h-4 text-white -rotate-45" />
-                  </div>
-                  <div className="leading-tight">
-                    <div className="text-base font-bold text-gray-900">MoroccoGlobal</div>
-                    <div className="text-xs text-gray-500 -mt-0.5">{t('tagline')}</div>
-                  </div>
-                </div>
+                <Link
+                  to="/"
+                  className="flex items-center hover:opacity-80 transition-opacity shrink-0"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                    alt="MoroccoGlobal Logo"
+                    className="h-10 w-auto"
+                  />
+                </Link>
                 <button
                   className="rounded-xl p-2 hover:bg-gray-100 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
