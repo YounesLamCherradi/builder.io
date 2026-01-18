@@ -1251,9 +1251,9 @@ export default function Events() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600">
               <p>{t('rights')}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
-                <span>Made with ❤️ in Morocco</span>
+                <span>{t('made_with')}</span>
                 <a href="#" className="hover:text-brand-red transition-colors">
-                  Sitemap
+                  {t('sitemap')}
                 </a>
                 <span>v1.0.0 • 2026</span>
               </div>
