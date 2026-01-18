@@ -21,8 +21,20 @@ export default function Index() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
+  const [currentLanguage, setCurrentLanguageState] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('selectedLanguage') || 'en';
+    }
+    return 'en';
+  });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+
+  const setCurrentLanguage = (lang) => {
+    setCurrentLanguageState(lang);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('selectedLanguage', lang);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
