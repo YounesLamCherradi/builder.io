@@ -906,19 +906,24 @@ export default function Index() {
 
       {/* Sponsors Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.02]">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(187,9,9,0.15)_1px,transparent_1px)] bg-[length:60px_60px]" />
         </div>
 
+        {/* Floating animated orbs */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gray-900/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <span className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30">
+            <span className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30 animate-pulse" style={{ animationDuration: '3s' }}>
               {t('sponsors_title')}
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
               {t('sponsors_title')}
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
               {t('sponsors_desc')}
             </p>
           </div>
@@ -931,38 +936,128 @@ export default function Index() {
                 href={sponsor.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative h-28 sm:h-32 lg:h-36 rounded-2xl border-2 border-gray-200 hover:border-brand-red transition-all duration-300 bg-white flex items-center justify-center overflow-hidden hover:shadow-xl hover:shadow-red-100/50"
+                className="group relative h-28 sm:h-32 lg:h-36 rounded-2xl border-2 border-gray-200 hover:border-brand-red transition-all duration-500 bg-white flex items-center justify-center overflow-hidden hover:shadow-2xl hover:shadow-red-200/40 animate-in fade-in slide-in-from-bottom-8 duration-500"
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                }}
               >
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 via-transparent to-brand-silver/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300" />
+                {/* Accent bar with animation */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-500 group-hover:drop-shadow-lg" />
+
+                {/* Animated background shimmer */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-700 opacity-0 group-hover:opacity-100" />
 
                 {/* Content */}
                 <div className="relative z-10 text-center px-3 sm:px-4">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">
                     {sponsor.logo}
                   </div>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-colors duration-300 line-clamp-2">
+                  <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 line-clamp-2 group-hover:scale-105">
                     {sponsor.name}
                   </p>
                 </div>
+
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
               </a>
             ))}
           </div>
 
           {/* View All Link */}
-          <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
+          <div className="mt-12 sm:mt-16 lg:mt-20 text-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
               Partner with us or list your organization
             </p>
-            <button className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-red-200/50">
+            <button className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-500 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105">
               <span>Get in Touch</span>
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </button>
           </div>
         </div>
+
+        <style jsx>{`
+          @keyframes shimmer {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+
+          @keyframes float-up {
+            0% {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes glow-pulse {
+            0%, 100% {
+              box-shadow: 0 0 20px rgba(187, 9, 9, 0);
+            }
+            50% {
+              box-shadow: 0 0 30px rgba(187, 9, 9, 0.3);
+            }
+          }
+
+          .animate-in {
+            animation: float-up 0.6s ease-out forwards;
+            opacity: 0;
+          }
+
+          .fade-in {
+            animation: fade 0.6s ease-out forwards;
+            opacity: 0;
+          }
+
+          .slide-in-from-bottom-4 {
+            animation: slideUp 0.6s ease-out forwards;
+          }
+
+          .slide-in-from-bottom-6 {
+            animation: slideUp 0.6s ease-out forwards;
+          }
+
+          .slide-in-from-bottom-8 {
+            animation: slideUp 0.6s ease-out forwards;
+          }
+
+          .delay-100 {
+            animation-delay: 100ms;
+          }
+
+          .delay-300 {
+            animation-delay: 300ms;
+          }
+
+          @keyframes fade {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          @keyframes slideUp {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Opportunities Section */}
