@@ -769,18 +769,14 @@ export default function Events() {
           <div className="mx-auto max-w-7xl flex h-16 sm:h-18 items-center justify-between py-3">
             <Link
               to="/"
-              className="flex items-center gap-3 text-left hover:opacity-80 transition-opacity"
+              className="flex items-center hover:opacity-80 transition-opacity shrink-0"
             >
-              <div className="relative shrink-0">
-                <div className="w-10 h-10 bg-gradient-to-br from-brand-red via-gray-400 to-black rounded-xl flex items-center justify-center transform rotate-45">
-                  <Globe className="w-5 h-5 text-white -rotate-45" />
-                </div>
-              </div>
-              <div className="leading-tight">
-                <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                  MoroccoGlobal
-                </div>
-                <div className="text-[11px] sm:text-xs text-gray-500 -mt-0.5">{t('tagline')}</div>
+              <div className="relative">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                  alt="MoroccoGlobal Logo"
+                  className="h-12 sm:h-14 w-auto"
+                />
               </div>
             </Link>
 
