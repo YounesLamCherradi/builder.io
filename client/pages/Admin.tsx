@@ -33,6 +33,9 @@ export default function Admin() {
     '',
   ]);
 
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+
   // Load data
   useEffect(() => {
     loadData();
