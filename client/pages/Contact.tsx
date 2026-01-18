@@ -709,65 +709,142 @@ export default function Contact() {
       <footer className="bg-gradient-to-b from-white via-amber-50/40 to-green-50/30 text-gray-800 pt-12 sm:pt-16 pb-10 sm:pb-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,#dc2626_1px,transparent_1px)] bg-[length:60px_60px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_15%,#10b981_1px,transparent_1px)] bg-[length:80px_80px]" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="mb-12 sm:mb-16">
             <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-brand-silver/40 p-6 sm:p-8 md:p-12">
               <div className="text-center mb-6 sm:mb-8">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-                  {t('contact_social_title')}
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  {t('home_stay_updated_title')}{' '}
+                  <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
+                    {t('home_stay_updated_highlight')}
+                  </span>
                 </h3>
+                <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                  {t('home_stay_updated_desc')}
+                </p>
               </div>
-              <div className="flex gap-4 justify-center flex-wrap">
+
+              <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
                 <input
                   type="email"
-                  placeholder={t('contact_email_address')}
-                  className="flex-1 min-w-[200px] px-6 py-3 bg-white border-2 border-gray-200 rounded-full focus:border-brand-red focus:outline-none transition-colors"
+                  placeholder={t('home_email_placeholder')}
+                  className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
+                  required
                 />
-                <button className="bg-gradient-to-r from-brand-red to-gray-900 text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl transition-all duration-300">
-                  Subscribe
+                <button
+                  type="submit"
+                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
+                >
+                  <span>{t('subscribe_now')}</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
+              </form>
+
+              <p className="text-center text-xs sm:text-sm text-gray-500 mt-5 sm:mt-6">
+                {t('subscribe_privacy')}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
+            <div className="md:col-span-5 lg:col-span-4">
+              <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                  alt="MoroccoGlobal Logo"
+                  className="h-16 sm:h-20 w-auto"
+                />
+              </div>
+
+              <p className="text-gray-700 leading-relaxed mb-7 sm:mb-8 max-w-md text-sm sm:text-base">
+                {t('footer_tagline')}
+              </p>
+            </div>
+
+            <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
+                  {t('platform')}
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('scholarships')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('jobs')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('programs')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
+                  {t('company')}
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('about_us')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('contact')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('careers')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="col-span-2 sm:col-span-1">
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
+                  {t('legal')}
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('privacy')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('terms')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('cookies')}
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">{t('platform')}</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('scholarships')}</a></li>
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('jobs')}</a></li>
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('programs')}</a></li>
-              </ul>
+          <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-brand-silver/40 text-center md:text-left">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600">
+              <p>{t('rights')}</p>
+              <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
+                <span>{t('made_with')}</span>
+                <a href="#" className="hover:text-brand-red transition-colors">{t('sitemap')}</a>
+                <span>v1.0.0 • 2026</span>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">{t('company')}</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('about_us')}</a></li>
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('contact')}</a></li>
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('careers')}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">{t('legal')}</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('privacy')}</a></li>
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('terms')}</a></li>
-                <li><a href="#" className="hover:text-brand-red transition-colors">{t('cookies')}</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Social</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="https://t.me/wyfmorocco" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">Telegram</a></li>
-                <li><a href="https://www.instagram.com/wyfmorocco/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-red transition-colors">Instagram</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-300 pt-8 text-center text-sm text-gray-600">
-            <p>{t('rights')}</p>
           </div>
         </div>
       </footer>
