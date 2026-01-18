@@ -72,6 +72,17 @@ export default function Events() {
     };
   }, [selectedEvent]);
 
+  // Fetch events from Supabase
+  React.useEffect(() => {
+    const loadEvents = async () => {
+      setLoadingEvents(true);
+      const data = await fetchEvents();
+      setFetchedEvents(data);
+      setLoadingEvents(false);
+    };
+    loadEvents();
+  }, []);
+
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
