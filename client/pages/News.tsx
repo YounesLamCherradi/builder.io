@@ -253,6 +253,8 @@ export default function News() {
         home_email_placeholder: 'Entrez votre adresse email',
         subscribe_now: 'S\'abonner',
         subscribe_privacy: 'Nous respectons votre vie privée. Désinscrivez-vous à tout moment. Pas de spam.',
+        news_search_placeholder: 'Rechercher des articles par titre ou contenu...',
+        news_close: 'Fermer',
       },
 
       ru: {
