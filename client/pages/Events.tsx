@@ -177,12 +177,12 @@ export default function Events() {
         event_7_d3: 'Research fellowship opportunities',
         event_7_d4: 'Case studies of successful applicants',
 
-        event_8_title: 'Global Job Fair for Graduates',
-        event_8_desc: 'Connect with international employers and explore career opportunities worldwide.',
-        event_8_d1: 'International job market trends',
-        event_8_d2: 'One-on-one interviews with employers',
-        event_8_d3: 'LinkedIn optimization for job search',
-        event_8_d4: 'Salary negotiation strategies',
+        event_8_title: 'Language & Culture Exchange Program Launch',
+        event_8_desc: 'Join our new language and cultural exchange initiative.',
+        event_8_d1: 'Language exchange partnerships',
+        event_8_d2: 'Cultural immersion activities',
+        event_8_d3: 'Virtual and in-person meetups',
+        event_8_d4: 'Partner country presentations',
 
         past_events_title: 'Past Events Highlights',
         past_events_subtitle: 'Relive the magic - See what our students experienced',
