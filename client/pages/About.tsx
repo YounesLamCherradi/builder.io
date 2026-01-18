@@ -768,6 +768,14 @@ export default function About() {
 
       {/* Why Choose Us */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-3"
+          style={{
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F481a670441c749588fa9123ea890126b?format=webp&width=800)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
