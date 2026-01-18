@@ -210,6 +210,24 @@ export default function Index() {
         feat_review_desc: 'Retour expert sur vos essais et documents',
         feat_analytics: 'Analytique',
         feat_analytics_desc: "Insights sur les taux d'acceptation et la concurrence",
+
+        tagline: 'Votre monde vous attend',
+        explore_all_opps: 'Explorer toutes les opportunités',
+        moments_of: 'Moments de',
+        moroccan_success: 'Succès marocains mondiaux',
+        made_with: 'Fait avec ❤️ au Maroc',
+        sitemap: 'Plan du site',
+        subscribe_privacy: 'Nous respectons votre vie privée. Désinscrivez-vous à tout moment. Pas de spam.',
+        subscribe_now: 'S\'abonner',
+
+        morocco: 'Maroc',
+        morocco_subtitle: 'Hub fondateur',
+        china: 'Chine',
+        china_subtitle: 'Partenariat BRI',
+        russia: 'Russie',
+        russia_subtitle: 'Programmes fédéraux',
+        south_america: 'Amérique du Sud',
+        sa_subtitle: 'Réseau régional',
       },
 
       ru: {
