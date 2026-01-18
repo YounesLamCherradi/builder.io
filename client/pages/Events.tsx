@@ -15,7 +15,9 @@ import {
   ArrowRight,
   Star,
   ChevronUp,
+  Loader,
 } from 'lucide-react';
+import { fetchEvents, type Event } from '../lib/supabase';
 
 export default function Events() {
   const [scrollY, setScrollY] = useState(0);
