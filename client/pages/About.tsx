@@ -978,11 +978,12 @@ export default function About() {
       {/* CTA Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-brand-red/10 via-white to-gray-900/10 relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-6"
           style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fd3f4a862a09848f59bda97b5f7122d66?format=webp&width=800)',
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=800)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            filter: 'brightness(1.2) contrast(1.1)',
           }}
         />
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center relative z-10">
