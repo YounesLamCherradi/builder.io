@@ -553,20 +553,14 @@ export default function Index() {
             {/* Logo */}
             <Link
               to="/"
-              className="flex items-center gap-2 sm:gap-3 text-left hover:opacity-80 transition-opacity"
+              className="flex items-center hover:opacity-80 transition-opacity shrink-0"
             >
-              <div className="relative shrink-0">
+              <div className="relative">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
                   alt="MoroccoGlobal Logo"
                   className="h-12 sm:h-14 w-auto"
                 />
-              </div>
-              <div className="leading-tight">
-                <div className="text-sm sm:text-lg font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                  MoroccoGlobal
-                </div>
-                <div className="text-[10px] sm:text-xs text-gray-500 -mt-0.5">{t('tagline')}</div>
               </div>
             </Link>
 
