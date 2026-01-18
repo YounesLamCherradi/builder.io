@@ -87,6 +87,7 @@ export default function Admin() {
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
+            details: eventDetails.filter(d => d.trim()),
           });
         } else {
           await createEvent({
@@ -95,6 +96,7 @@ export default function Admin() {
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
+            details: eventDetails.filter(d => d.trim()),
           });
         }
       }
