@@ -23,6 +23,13 @@ export default function Admin() {
     date: new Date().toISOString().split('T')[0],
   });
 
+  const [eventDetails, setEventDetails] = useState<string[]>([
+    '',
+    '',
+    '',
+    '',
+  ]);
+
   // Load data
   useEffect(() => {
     loadData();
