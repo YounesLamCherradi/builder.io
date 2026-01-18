@@ -50,12 +50,12 @@ export default function News() {
   }, []);
 
   useEffect(() => {
-    if (mobileMenuOpen) document.body.style.overflow = 'hidden';
+    if (mobileMenuOpen || selectedArticle) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
     return () => {
       document.body.style.overflow = '';
     };
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, selectedArticle]);
 
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
