@@ -664,9 +664,9 @@ export default function About() {
             </div>
             <div className="relative order-1 lg:order-2 animate-in fade-in zoom-in-50 duration-700 delay-200">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop"
-                alt="Team collaboration"
-                className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+                src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=800"
+                alt="Global representation with Moroccan flag"
+                className="rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 w-full h-auto"
               />
               <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl -z-10" />
             </div>
