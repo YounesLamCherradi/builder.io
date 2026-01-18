@@ -199,6 +199,7 @@ export default function Events() {
       fr: {
         nav_home: 'Accueil',
         nav_events: 'Événements',
+        nav_about: 'À Propos',
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         get_started: 'Commencer',
