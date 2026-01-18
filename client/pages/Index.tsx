@@ -251,12 +251,41 @@ export default function Index() {
 
         morocco: 'Maroc',
         morocco_subtitle: 'Hub fondateur',
+        morocco_b1: 'Réseau universitaire local',
+        morocco_b2: 'Centres de développement professionnel',
+        morocco_b3: 'Services de soutien aux étudiants',
+        morocco_b4: 'Orientation en bourses',
+        morocco_b5: 'Programmes de préparation aux tests',
+        morocco_stat: 'Étudiants servis',
+
         china: 'Chine',
         china_subtitle: 'Partenariat BRI',
+        china_b1: 'Bourses Route de la Soie',
+        china_b2: 'Subventions gouvernementales chinoises',
+        china_b3: 'Programmes d\'échange technologique',
+        china_b4: 'Bourses d\'ingénierie',
+        china_b5: 'Soutien à l\'intégration culturelle',
+        china_stat: 'Placements actifs',
+
         russia: 'Russie',
         russia_subtitle: 'Programmes fédéraux',
+        russia_b1: 'Bourses gouvernementales',
+        russia_b2: 'Subventions de recherche',
+        russia_b3: 'Échange académique',
+        russia_b4: 'Accent sur la science et l\'innovation',
+        russia_b5: 'Soutien à la formation linguistique',
+        russia_stat: 'Opportunités annuelles',
+
         south_america: 'Amérique du Sud',
         sa_subtitle: 'Réseau régional',
+        sa_b1: 'Partenariats brésiliens',
+        sa_b2: 'Universités argentines',
+        sa_b3: 'Programmes d\'innovation chiliens',
+        sa_b4: 'Initiatives d\'échange culturel',
+        sa_b5: 'Programmes en langue espagnole',
+        sa_stat: 'Réseau en croissance',
+
+        inspiring_text: 'Inspirant de vrais voyages — des bourses et échanges aux réalisations de classe mondiale',
       },
 
       ru: {
