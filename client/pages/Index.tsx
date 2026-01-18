@@ -971,7 +971,7 @@ export default function Index() {
               </span>
             </h2>
             <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
-              Inspiring real journeys — from scholarships and exchanges to world-class achievements
+              {t('inspiring_text')}
             </p>
           </div>
 
