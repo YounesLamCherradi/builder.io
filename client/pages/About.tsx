@@ -870,6 +870,9 @@ export default function About() {
                     src={moment.image}
                     alt={moment.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    style={{
+                      filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
