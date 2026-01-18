@@ -1375,19 +1375,12 @@ export default function Events() {
           <div className="grid md:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
             <div className="md:col-span-5 lg:col-span-4">
               <div className="flex items-center gap-3 mb-5 sm:mb-6">
-                <div className="relative">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-brand-red via-gray-400 to-black rounded-2xl flex items-center justify-center transform rotate-12 shadow-xl">
-                    <Globe className="w-6 h-6 sm:w-7 sm:h-7 text-white -rotate-12" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Sparkles className="w-3 h-3 text-brand-silver" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                    MoroccoGlobal
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5">{t('tagline')}</p>
+                <div className="relative shrink-0">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                    alt="MoroccoGlobal Logo"
+                    className="h-16 sm:h-20 w-auto"
+                  />
                 </div>
               </div>
 
