@@ -144,11 +144,30 @@
     @apply transition-colors duration-300;
   }
 
+  /* Navigation dark mode */
+  .dark nav {
+    @apply bg-gray-950/95;
+  }
+
   .dark .border-gray-100 {
     @apply dark:border-gray-800;
   }
 
+  .dark .border-white/40 {
+    @apply dark:border-gray-700/40;
+  }
+
+  .dark .bg-white/75,
+  .dark .bg-white/80,
+  .dark .bg-white/90 {
+    @apply dark:bg-gray-900/75;
+  }
+
   .dark .bg-gray-50 {
+    @apply dark:bg-gray-900;
+  }
+
+  .dark .bg-white {
     @apply dark:bg-gray-900;
   }
 
@@ -160,7 +179,56 @@
     @apply dark:text-gray-300;
   }
 
-  .dark .shadow-lg {
+  .dark .text-gray-800 {
+    @apply dark:text-gray-200;
+  }
+
+  .dark .text-gray-900 {
+    @apply dark:text-white;
+  }
+
+  .dark .text-gray-500 {
+    @apply dark:text-gray-500;
+  }
+
+  .dark .shadow-lg,
+  .dark .shadow-xl,
+  .dark .shadow-2xl {
     @apply dark:shadow-gray-900/50;
+  }
+
+  .dark .bg-gradient-to-r,
+  .dark .bg-gradient-to-b,
+  .dark .bg-gradient-to-br,
+  .dark .bg-gradient-to-l,
+  .dark .bg-gradient-to-t,
+  .dark .bg-gradient-to-tl {
+    @apply transition-colors duration-300;
+  }
+
+  /* Form elements */
+  .dark input:focus {
+    @apply border-brand-red ring-brand-red/20;
+  }
+
+  .dark textarea:focus {
+    @apply border-brand-red ring-brand-red/20;
+  }
+
+  /* Scrollbar dark mode */
+  .dark ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
   }
 }
