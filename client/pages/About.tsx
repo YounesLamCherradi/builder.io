@@ -676,6 +676,14 @@ export default function About() {
 
       {/* Mission & Vision */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=800)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             <div
