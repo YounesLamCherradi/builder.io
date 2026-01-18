@@ -138,12 +138,41 @@ export default function Index() {
 
         morocco: 'Morocco',
         morocco_subtitle: 'Foundation Hub',
+        morocco_b1: 'Local University Network',
+        morocco_b2: 'Career Development Centers',
+        morocco_b3: 'Student Support Services',
+        morocco_b4: 'Scholarship Guidance',
+        morocco_b5: 'Test Preparation Programs',
+        morocco_stat: 'Students Served',
+
         china: 'China',
         china_subtitle: 'BRI Partnership',
+        china_b1: 'Belt & Road Scholarships',
+        china_b2: 'Chinese Government Grants',
+        china_b3: 'Technology Exchange Programs',
+        china_b4: 'Engineering Fellowships',
+        china_b5: 'Cultural Integration Support',
+        china_stat: 'Active Placements',
+
         russia: 'Russia',
         russia_subtitle: 'Federal Programs',
+        russia_b1: 'Government Scholarships',
+        russia_b2: 'Research Grants',
+        russia_b3: 'Academic Exchange',
+        russia_b4: 'Science & Innovation Focus',
+        russia_b5: 'Language Training Support',
+        russia_stat: 'Annual Opportunities',
+
         south_america: 'South America',
         sa_subtitle: 'Regional Network',
+        sa_b1: 'Brazilian Partnerships',
+        sa_b2: 'Argentine Universities',
+        sa_b3: 'Chilean Innovation Programs',
+        sa_b4: 'Cultural Exchange Initiatives',
+        sa_b5: 'Spanish Language Programs',
+        sa_stat: 'Growing Network',
+
+        inspiring_text: 'Inspiring real journeys — from scholarships and exchanges to world-class achievements',
       },
 
       fr: {
