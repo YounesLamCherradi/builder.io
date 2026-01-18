@@ -191,6 +191,9 @@ export default function Index() {
         home_stay_updated_desc: 'Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.',
         home_email_placeholder: 'Enter your email address',
 
+        sponsors_title: 'Our Partners',
+        sponsors_desc: 'Trusted by leading organizations worldwide',
+
         caption_1: 'Moroccan Scholars in Germany – Munich Welcome',
         caption_2: 'Journey from Morocco to London – Student Success',
         caption_3: 'Fulbright Award Ceremony – Proud Moment',
