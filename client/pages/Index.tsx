@@ -126,6 +126,24 @@ export default function Index() {
         feat_review_desc: 'Get expert feedback on your essays and documents',
         feat_analytics: 'Success Analytics',
         feat_analytics_desc: 'Insights on acceptance rates and competition levels',
+
+        tagline: 'Your World Awaits',
+        explore_all_opps: 'Explore All Opportunities',
+        moments_of: 'Moments of',
+        moroccan_success: 'Moroccan Global Success',
+        made_with: 'Made with ❤️ in Morocco',
+        sitemap: 'Sitemap',
+        subscribe_privacy: 'We respect your privacy. Unsubscribe anytime. No spam, ever.',
+        subscribe_now: 'Subscribe Now',
+
+        morocco: 'Morocco',
+        morocco_subtitle: 'Foundation Hub',
+        china: 'China',
+        china_subtitle: 'BRI Partnership',
+        russia: 'Russia',
+        russia_subtitle: 'Federal Programs',
+        south_america: 'South America',
+        sa_subtitle: 'Regional Network',
       },
 
       fr: {
