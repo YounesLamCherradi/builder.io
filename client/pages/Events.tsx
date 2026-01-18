@@ -79,6 +79,7 @@ export default function Events() {
       en: {
         nav_home: 'Home',
         nav_events: 'Events',
+        nav_about: 'About Us',
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         get_started: 'Get Started',
@@ -442,6 +443,7 @@ export default function Events() {
   const menuItems = [
     { name: t('nav_home'), path: '/' },
     { name: t('nav_events'), path: '/events' },
+    { name: t('nav_about'), path: '/about' },
     { name: t('nav_stories'), path: '/stories' },
     { name: t('nav_resources'), path: '/resources' },
   ];
