@@ -316,6 +316,11 @@ export default function Index() {
 
         inspiring_text: 'Inspirant de vrais voyages — des bourses et échanges aux réalisations de classe mondiale',
 
+        home_stay_updated_title: 'Restez informé avec',
+        home_stay_updated_highlight: 'Opportunités mondiales',
+        home_stay_updated_desc: 'Recevez les dernières bourses, stages, histoires de réussite et conseils exclusifs dans votre boîte de réception chaque mois.',
+        home_email_placeholder: 'Entrez votre adresse e-mail',
+
         caption_1: 'Étudiants marocains en Allemagne – Bienvenue à Munich',
         caption_2: 'Voyage du Maroc à Londres – Succès étudiant',
         caption_3: 'Cérémonie Fulbright – Moment de fierté',
