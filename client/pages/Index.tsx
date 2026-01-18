@@ -30,11 +30,23 @@ export default function Index() {
     return 'en';
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const sponsorsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
     if (typeof window !== 'undefined') {
       localStorage.setItem('selectedLanguage', lang);
+    }
+  };
+
+  const scrollSponsors = (direction: 'left' | 'right') => {
+    if (sponsorsScrollRef.current) {
+      const scrollAmount = 400;
+      if (direction === 'left') {
+        sponsorsScrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        sponsorsScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
     }
   };
 
