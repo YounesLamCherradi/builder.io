@@ -137,6 +137,10 @@ export default function Admin() {
             time: formData.time,
             image_url: formData.image_url,
             details: eventDetails.filter(d => d.trim()),
+            show_register_button: buttonConfig.show_register_button,
+            register_url: buttonConfig.register_url || null,
+            show_learn_more_button: buttonConfig.show_learn_more_button,
+            learn_more_url: buttonConfig.learn_more_url || null,
           });
         } else {
           await createEvent({
@@ -148,6 +152,10 @@ export default function Admin() {
             time: formData.time,
             image_url: formData.image_url,
             details: eventDetails.filter(d => d.trim()),
+            show_register_button: buttonConfig.show_register_button,
+            register_url: buttonConfig.register_url || null,
+            show_learn_more_button: buttonConfig.show_learn_more_button,
+            learn_more_url: buttonConfig.learn_more_url || null,
           });
         }
       }
