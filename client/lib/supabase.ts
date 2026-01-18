@@ -62,6 +62,10 @@ export interface Event {
   time: string;
   image_url: string | null;
   details?: string[];
+  show_register_button: boolean;
+  register_url: string | null;
+  show_learn_more_button: boolean;
+  learn_more_url: string | null;
   created_at: string;
 }
 
