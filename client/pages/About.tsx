@@ -948,12 +948,7 @@ export default function About() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-            <div className="inline-block mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <span className="px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full border border-brand-red/30">
-                ✨ Our Impact
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-6 duration-700">
               {t('about_achievements_title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
