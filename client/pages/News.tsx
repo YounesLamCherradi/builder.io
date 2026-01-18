@@ -869,7 +869,7 @@ export default function News() {
               {/* Featured Image */}
               <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden mb-6 sm:mb-8">
                 <img
-                  src={selectedArticle.image}
+                  src={selectedArticle.image_url || 'https://images.unsplash.com/photo-1505252585461-04db1267ae5e?w=800&h=600&fit=crop'}
                   alt={selectedArticle.title}
                   className="w-full h-full object-cover"
                 />
