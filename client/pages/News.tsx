@@ -676,53 +676,70 @@ export default function News() {
       {/* Articles Grid */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {filteredArticles.map((article) => (
-              <article
-                key={article.id}
-                className="bg-white rounded-2xl border border-gray-200 hover:border-brand-red overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col group"
-              >
-                <div className="relative h-48 sm:h-56 overflow-hidden bg-gray-200">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-brand-red text-white px-3 py-1.5 rounded-full text-xs font-semibold">
-                      {article.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-5 sm:p-6 flex flex-col flex-1">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-2 flex-1">
-                    {article.description}
-                  </p>
-
-                  <div className="space-y-3 pt-4 border-t border-gray-200">
-                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                      <User className="w-4 h-4" />
-                      <span>{t('news_by')} {article.author}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                      <Calendar className="w-4 h-4" />
-                      <span>{t('news_published')} {article.date}</span>
+          {filteredArticles.length === 0 ? (
+            <div className="text-center py-16 sm:py-20">
+              <div className="text-gray-400 mb-4">
+                <Search className="w-12 h-12 mx-auto opacity-50" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No articles found</h3>
+              <p className="text-gray-600">Try adjusting your search terms or filters</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+              {filteredArticles.map((article, idx) => (
+                <article
+                  key={article.id}
+                  className="bg-white rounded-2xl border border-gray-200 hover:border-brand-red overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col group animate-in fade-in slide-in-from-bottom-4"
+                  style={{
+                    animationDelay: `${idx * 50}ms`,
+                    animationFillMode: 'both'
+                  }}
+                >
+                  <div className="relative h-48 sm:h-56 overflow-hidden bg-gray-200">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-brand-red text-white px-3 py-1.5 rounded-full text-xs font-semibold">
+                        {article.category}
+                      </span>
                     </div>
                   </div>
 
-                  <button className="mt-4 group/btn inline-flex items-center gap-2 text-brand-red font-semibold hover:gap-3 transition-all duration-300">
-                    <span>{t('news_read_more')}</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <div className="p-5 sm:p-6 flex flex-col flex-1">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
+                      {article.title}
+                    </h3>
+
+                    <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-2 flex-1">
+                      {article.description}
+                    </p>
+
+                    <div className="space-y-3 pt-4 border-t border-gray-200">
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                        <User className="w-4 h-4" />
+                        <span>{t('news_by')} {article.author}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                        <Calendar className="w-4 h-4" />
+                        <span>{t('news_published')} {article.date}</span>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => setSelectedArticle(article)}
+                      className="mt-4 group/btn inline-flex items-center gap-2 text-brand-red font-semibold hover:gap-3 transition-all duration-300"
+                    >
+                      <span>{t('news_read_more')}</span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
