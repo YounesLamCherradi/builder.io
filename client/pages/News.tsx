@@ -667,7 +667,12 @@ export default function News() {
       {/* Articles Grid */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          {filteredArticles.length === 0 ? (
+          {loadingArticles ? (
+            <div className="text-center py-16 sm:py-20">
+              <Loader className="w-12 h-12 mx-auto text-brand-red animate-spin" />
+              <p className="text-gray-600 mt-4">Loading articles...</p>
+            </div>
+          ) : filteredArticles.length === 0 ? (
             <div className="text-center py-16 sm:py-20">
               <div className="text-gray-400 mb-4">
                 <Search className="w-12 h-12 mx-auto opacity-50" />
