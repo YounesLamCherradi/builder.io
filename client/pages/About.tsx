@@ -599,7 +599,7 @@ export default function About() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F92f8b815178841d0bd08aed5b20d683c?format=webp&width=800)',
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F777feb4da2644478bce44a65dfd42f41?format=webp&width=800)',
           }}
         >
           {/* Dark overlay for text readability */}
