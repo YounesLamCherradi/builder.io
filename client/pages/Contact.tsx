@@ -202,6 +202,7 @@ export default function Contact() {
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
+        nav_news: 'Новости',
 
         contact_hero_title: 'Свяжитесь с Нами',
         contact_hero_subtitle: 'Нам было бы приятно услышать от вас. Отправьте нам сообщение, и мы ответим как можно скорее.',
