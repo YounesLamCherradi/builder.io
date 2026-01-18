@@ -463,38 +463,75 @@ export default function News() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrollY > 50 ? 'bg-white backdrop-blur-lg shadow-lg' : 'bg-white/90 backdrop-blur-sm'
-      }`}>
+      {/* Navigation Bar */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
+        }`}
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-16 sm:h-18 items-center justify-between py-3">
-            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity shrink-0">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
-                alt="MoroccoGlobal Logo"
-                className="h-12 sm:h-14 w-auto"
-              />
+            {/* Logo */}
+            <Link
+              to="/"
+              className="flex items-center hover:opacity-80 transition-opacity shrink-0"
+            >
+              <div className="relative">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                  alt="MoroccoGlobal Logo"
+                  className="h-12 sm:h-14 w-auto"
+                />
+              </div>
             </Link>
 
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               {menuItems.map((item, idx) => (
                 <Link
                   key={idx}
                   to={item.path}
-                  className={`text-gray-700 hover:text-brand-red font-medium transition-colors relative group ${
-                    item.path === '/news' ? 'text-brand-red' : ''
-                  }`}
+                  className={`text-gray-700 hover:text-brand-red font-medium transition-colors relative group`}
                 >
                   {item.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-red to-gray-900 transition-all duration-300 ${
-                    item.path === '/news' ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-red to-gray-900 transition-all duration-300 w-0 group-hover:w-full`}
+                  />
                 </Link>
               ))}
             </div>
 
+            {/* Desktop Right Controls */}
             <div className="hidden md:flex items-center gap-5">
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://t.me/wyfmorocco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  aria-label="Join us on Telegram"
+                  title="Telegram"
+                >
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.417 15.181l-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.639-17.13c.373-1.747-.678-2.572-1.887-2.06L.857 8.913c-1.713.685-1.708 1.666-.283 2.147l4.822 1.5 11.102-6.933c.523-.326 1.004-.15.623.325z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://t.me/wyfmorocco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red via-brand-silver to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  aria-label="Follow us on Instagram"
+                  title="Instagram"
+                >
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.224.223 2.742.072 7.1.014 8.38 0 8.788 0 12s.014 3.62.072 4.9c.15 4.358 2.623 6.876 6.98 7.028 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.152 6.83-2.669 6.98-7.028.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.15-4.358-2.623-6.876-6.98-7.028C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Language Selector */}
               <div className="relative" data-lang-menu>
                 <button
                   onClick={(e) => {
