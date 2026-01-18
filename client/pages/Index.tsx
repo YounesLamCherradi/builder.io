@@ -859,7 +859,7 @@ export default function Index() {
           <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
             <Link to="/events" className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-red via-gray-900 to-black text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] cursor-pointer group">
               <Globe className="w-5 h-5" />
-              <span className="font-semibold text-base sm:text-lg">Explore All Opportunities</span>
+              <span className="font-semibold text-base sm:text-lg">{t('explore_all_opps')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
