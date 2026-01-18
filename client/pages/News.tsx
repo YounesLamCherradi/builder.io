@@ -729,7 +729,7 @@ export default function News() {
                   className="bg-white rounded-2xl border border-gray-200 hover:border-brand-red overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col group animate-in fade-in slide-in-from-bottom-4"
                   style={{
                     animationDelay: `${idx * 50}ms`
-                  } as React.CSSProperties}
+                  }}
                 >
                   <div className="relative h-48 sm:h-56 overflow-hidden bg-gray-200">
                     <img
