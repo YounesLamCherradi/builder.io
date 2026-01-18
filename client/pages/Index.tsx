@@ -324,6 +324,9 @@ export default function Index() {
         home_stay_updated_desc: 'Recevez les dernières bourses, stages, histoires de réussite et conseils exclusifs dans votre boîte de réception chaque mois.',
         home_email_placeholder: 'Entrez votre adresse e-mail',
 
+        sponsors_title: 'Nos partenaires',
+        sponsors_desc: 'Fait confiance par les principales organisations du monde',
+
         caption_1: 'Étudiants marocains en Allemagne – Bienvenue à Munich',
         caption_2: 'Voyage du Maroc à Londres – Succès étudiant',
         caption_3: 'Cérémonie Fulbright – Moment de fierté',
