@@ -324,6 +324,29 @@ export default function Admin() {
                 </div>
               )}
 
+              {activeTab === 'events' && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">What to Expect (Event Details)</label>
+                  <p className="text-xs text-gray-500 mb-3">Add up to 4 details about what attendees will experience</p>
+                  <div className="space-y-2">
+                    {eventDetails.map((detail, idx) => (
+                      <input
+                        key={idx}
+                        type="text"
+                        value={detail}
+                        onChange={(e) => {
+                          const newDetails = [...eventDetails];
+                          newDetails[idx] = e.target.value;
+                          setEventDetails(newDetails);
+                        }}
+                        placeholder={`Detail ${idx + 1} (optional)`}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none text-sm"
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
                 <input
