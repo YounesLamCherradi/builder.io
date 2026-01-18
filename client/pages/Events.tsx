@@ -434,7 +434,7 @@ export default function Events() {
     { name: t('nav_resources'), path: '/resources' },
   ];
 
-  const events = [
+  const baseEvents = [
     {
       id: 1,
       title: 'Fulbright Scholarship Masterclass',
