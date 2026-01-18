@@ -1057,7 +1057,7 @@ export default function About() {
         <div
           className="absolute inset-0 opacity-6"
           style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=800)',
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F481a670441c749588fa9123ea890126b?format=webp&width=800)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             filter: 'brightness(1.2) contrast(1.1)',
