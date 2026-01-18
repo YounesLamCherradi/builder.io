@@ -27,7 +27,9 @@ export default function News() {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedArticle, setSelectedArticle] = useState<NewsArticle | null>(null);
+  const [articles, setArticles] = useState<NewsArticle[]>([]);
+  const [loadingArticles, setLoadingArticles] = useState(true);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
