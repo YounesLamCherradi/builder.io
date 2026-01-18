@@ -191,6 +191,9 @@ export default function Events() {
         stay_updated_highlight: 'Global Opportunities',
         stay_updated_desc: 'Subscribe to our newsletter and never miss an opportunity. Get early access to events, exclusive scholarships, and insider tips.',
         email_placeholder: 'Enter your email address',
+
+        about_event: 'About This Event',
+        what_expect: 'What to Expect',
       },
       fr: {
         nav_home: 'Accueil',
