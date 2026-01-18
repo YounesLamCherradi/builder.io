@@ -949,15 +949,15 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Sponsors Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+          {/* Sponsors Horizontal Scroll */}
+          <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-2 scrollbar-hide">
             {sponsors.map((sponsor, index) => (
               <a
                 key={sponsor.id}
                 href={sponsor.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative h-28 sm:h-32 lg:h-36 rounded-2xl border-2 border-gray-200 hover:border-brand-red transition-all duration-500 bg-white flex items-center justify-center overflow-hidden hover:shadow-2xl hover:shadow-red-200/40 animate-in fade-in slide-in-from-bottom-8 duration-500"
+                className="group relative h-28 sm:h-32 lg:h-36 w-40 sm:w-48 lg:w-56 flex-shrink-0 rounded-2xl border-2 border-gray-200 hover:border-brand-red transition-all duration-500 bg-white flex items-center justify-center overflow-hidden hover:shadow-2xl hover:shadow-red-200/40 animate-in fade-in slide-in-from-bottom-8 duration-500"
                 style={{
                   animationDelay: `${index * 50}ms`,
                 }}
