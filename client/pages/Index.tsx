@@ -904,6 +904,89 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Sponsors Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-r from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              {t('sponsors_title')}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('sponsors_desc')}
+            </p>
+          </div>
+
+          {/* Animated Sponsors Carousel */}
+          <div className="relative overflow-hidden">
+            {/* Left Gradient Mask */}
+            <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-gray-50 via-gray-50/50 to-transparent z-10" />
+            {/* Right Gradient Mask */}
+            <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-gray-50 via-gray-50/50 to-transparent z-10" />
+
+            {/* Scrolling Container */}
+            <div className="flex gap-6 sm:gap-8 overflow-x-auto pb-4 scrollbar-hide" style={{
+              animation: 'scroll-sponsors 30s linear infinite',
+              WebkitOverflowScrolling: 'touch',
+            }}>
+              {sponsors.map((sponsor) => (
+                <div
+                  key={sponsor.id}
+                  className="flex-shrink-0"
+                >
+                  <a
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-24 sm:h-28 min-w-32 sm:min-w-40 px-6 bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-100 hover:border-brand-red transition-all duration-300 transform hover:scale-105 group"
+                  >
+                    <div className="text-5xl sm:text-6xl group-hover:scale-110 transition-transform duration-300">
+                      {sponsor.logo}
+                    </div>
+                  </a>
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {sponsors.map((sponsor) => (
+                <div
+                  key={`dup-${sponsor.id}`}
+                  className="flex-shrink-0"
+                >
+                  <a
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center h-24 sm:h-28 min-w-32 sm:min-w-40 px-6 bg-white rounded-2xl shadow-lg hover:shadow-xl border border-gray-100 hover:border-brand-red transition-all duration-300 transform hover:scale-105 group"
+                  >
+                    <div className="text-5xl sm:text-6xl group-hover:scale-110 transition-transform duration-300">
+                      {sponsor.logo}
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CSS Animation */}
+          <style>{`
+            @keyframes scroll-sponsors {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+              display: none;
+            }
+            .scrollbar-hide {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+          `}</style>
+        </div>
+      </section>
+
       {/* Opportunities Section */}
       <section
         id="opportunities"
