@@ -229,6 +229,7 @@ export default function Index() {
         nav_about: 'À Propos',
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
+        nav_contact: 'Contact',
         sign_in: 'Se connecter',
         get_started: 'Commencer',
 
