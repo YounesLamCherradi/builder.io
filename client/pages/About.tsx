@@ -600,24 +600,14 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-20 sm:pt-24 overflow-hidden">
-        <div className="absolute inset-0 bg-white">
-          <div className="absolute inset-0 opacity-0">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
-                style={{
-                  backgroundColor: ['#BB0909', '#D9D4D4', '#000000'][i % 3],
-                  width: `${Math.random() * 320 + 180}px`,
-                  height: `${Math.random() * 320 + 180}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${i * 0.4}s`,
-                  animationDuration: `${Math.random() * 8 + 6}s`,
-                }}
-              />
-            ))}
-          </div>
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F92f8b815178841d0bd08aed5b20d683c?format=webp&width=800)',
+          }}
+        >
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
