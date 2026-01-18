@@ -672,27 +672,6 @@ export default function Index() {
               onClick={() => setMobileMenuOpen(false)}
             />
             <div className="fixed top-16 right-0 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
-              <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100">
-                <Link
-                  to="/"
-                  className="flex items-center hover:opacity-80 transition-opacity shrink-0"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
-                    alt="MoroccoGlobal Logo"
-                    className="h-10 w-auto"
-                  />
-                </Link>
-                <button
-                  className="rounded-xl p-2 hover:bg-gray-100 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                  aria-label="Close menu"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
               <div className="p-4 space-y-4 overflow-y-auto flex-1">
                 <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 p-3">
                   <div className="flex items-center gap-2">
