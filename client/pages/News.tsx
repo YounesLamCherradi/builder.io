@@ -215,6 +215,18 @@ export default function News() {
         news_article_6_author: 'Julia Martinez',
         news_article_6_date: '28 déc 2024',
 
+        news_article_1_content: 'Le visa étudiant F-1 est le type de visa le plus courant pour les étudiants internationaux étudiant aux États-Unis. Ce guide complet vous guide à travers chaque étape du processus de demande.\n\nExigences:\n• Passeport valide\n• Formulaire I-20 de votre établissement d\'enseignement\n• Preuve du soutien financier\n• Reçu du paiement des frais SEVIS\n\nLe Processus d\'Entrevue:\nVotre entrevue de visa est une étape cruciale. Soyez prêt à répondre aux questions sur vos plans d\'études.\n\nCalendrier:\nTypiquement, le processus prend 4 à 8 semaines. Postulez dès que vous recevez votre formulaire I-20.',
+
+        news_article_2_content: 'La Bourse Fulbright est l\'un des programmes de bourses les plus prestigieux disponibles pour les étudiants internationaux. Les candidatures pour l\'année académique 2025-2026 sont maintenant ouvertes!\n\nCritères d\'Admissibilité:\n• Citoyenneté marocaine\n• Diplôme de premier cycle complété\n• Dossier académique solide\n• Maîtrise de la langue anglaise\n• Engagement dans votre domaine',
+
+        news_article_3_content: 'La Silicon Valley est l\'épicentre de l\'innovation technologique, et 2025 offre des opportunités sans précédent pour les stagiaires étudiants internationaux.\n\nMeilleures Entreprises:\n• Google\n• Apple\n• Meta (Facebook)\n• Microsoft\n• Amazon\n• Netflix\n• Stripe',
+
+        news_article_4_content: 'Le parcours de Fatima Al-Mansouri de Marrakech à l\'Université d\'Oxford est un témoignage inspirant de détermination et de travail acharné.\n\nAntécédents de Fatima:\nGrandissant à Marrakech, Fatima a fait face à des défis financiers mais a maintenu un engagement inébranlable envers l\'éducation.\n\nLe Défi:\nBien que ses qualifications académiques soient solides, le coût d\'une formation universitaire semblait impossible.\n\nLa Percée:\nAprès plusieurs rejets, Fatima a persisté et a reçu une attention spéciale du comité de sélection d\'Oxford.',
+
+        news_article_5_content: 'Le gouvernement britannique a mis en œuvre plusieurs changements importants aux exigences de visa étudiant à partir du 1er janvier 2025.\n\nChangements Clés:\n• Nouvelles exigences de maîtrise de la langue anglaise\n• Normes de documentation financière mises à jour\n• Calendrier de traitement des visas révisé (6-8 semaines)\n• Nouvelles options de travail après visa',
+
+        news_article_6_content: 'Le système Canadian Express Entry de Canada offre l\'un des chemins les plus rapides vers la résidence permanente pour les travailleurs qualifiés.\n\nQu\'est-ce qu\'Express Entry?\nExpress Entry est un système en ligne qui gère les demandes de résidence permanente au Canada. Il est conçu pour les travailleurs qualifiés et les diplômés internationaux.',
+
         tagline: 'Votre monde vous attend',
         footer_tagline: 'Aider les Marocains à réaliser leurs rêves mondiaux.',
         platform: 'Plateforme',
