@@ -1107,7 +1107,7 @@ export default function Events() {
                     {t('about_event')}
                   </h2>
                   <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                    {currentEvent.description}
+                    {currentEvent.about_event}
                   </p>
                 </div>
 
