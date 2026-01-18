@@ -623,6 +623,35 @@ export default function News() {
         </div>
       </section>
 
+      {/* Search Bar */}
+      <section className="py-8 sm:py-12 bg-white border-b border-gray-200 sticky top-16 z-40">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="relative mb-6">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <input
+              type="text"
+              placeholder={t('news_search_placeholder')}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 sm:py-4 rounded-full border-2 border-gray-200 focus:border-brand-red focus:outline-none transition-all text-gray-800 placeholder-gray-400 shadow-sm hover:border-gray-300"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <XIcon className="w-5 h-5" />
+              </button>
+            )}
+          </div>
+          {searchQuery && (
+            <p className="text-sm text-gray-600">
+              {filteredArticles.length} {filteredArticles.length === 1 ? 'article found' : 'articles found'}
+            </p>
+          )}
+        </div>
+      </section>
+
       {/* Categories */}
       <section className="py-12 sm:py-16 bg-white relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
