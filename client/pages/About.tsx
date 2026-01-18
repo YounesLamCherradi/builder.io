@@ -400,7 +400,7 @@ export default function About() {
       {/* Navigation Bar - SAME AS INDEX */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
+          scrollY > 50 ? 'bg-white backdrop-blur-lg shadow-lg' : 'bg-white/90 backdrop-blur-sm'
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
