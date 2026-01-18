@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Plus, Edit2, Trash2, Loader } from 'lucide-react';
-import { fetchNews, createNews, updateNews, deleteNews, fetchEvents, createEvent, updateEvent, deleteEvent, type NewsArticle, type Event } from '../lib/supabase';
+import { ArrowLeft, Plus, Edit2, Trash2, Loader, Upload, X } from 'lucide-react';
+import { fetchNews, createNews, updateNews, deleteNews, fetchEvents, createEvent, updateEvent, deleteEvent, uploadImage, type NewsArticle, type Event } from '../lib/supabase';
+import { toast } from 'sonner';
 
 export default function Admin() {
   const [activeTab, setActiveTab] = useState<'news' | 'events'>('news');
