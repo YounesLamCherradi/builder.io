@@ -532,7 +532,7 @@ export default function News() {
               </div>
 
               {/* Language Selector */}
-              <div className="relative" data-lang-menu>
+              <div className="relative" data-lang-menu="true">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
