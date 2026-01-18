@@ -21,6 +21,8 @@ export default function Admin() {
     image_url: '',
     location: '',
     date: new Date().toISOString().split('T')[0],
+    time: '18:00',
+    about_event: '',
   });
 
   const [eventDetails, setEventDetails] = useState<string[]>([
