@@ -432,15 +432,58 @@ export default function Admin() {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
-                <input
-                  type="url"
-                  name="image_url"
-                  value={formData.image_url}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                  placeholder="https://example.com/image.jpg"
-                />
+                <label className="block text-sm font-medium text-gray-700 mb-1">Image Upload</label>
+                <div className="space-y-3">
+                  <div className="relative">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      disabled={uploadingImage}
+                      className="hidden"
+                      id="image-upload"
+                    />
+                    <label
+                      htmlFor="image-upload"
+                      className="flex items-center justify-center w-full px-4 py-8 border-2 border-dashed border-gray-300 rounded-lg hover:border-brand-red hover:bg-red-50 transition-colors cursor-pointer disabled:opacity-50"
+                    >
+                      <div className="flex flex-col items-center gap-2">
+                        {uploadingImage ? (
+                          <>
+                            <Loader className="w-6 h-6 animate-spin text-brand-red" />
+                            <span className="text-sm text-gray-600">Uploading...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Upload className="w-6 h-6 text-brand-red" />
+                            <span className="text-sm text-gray-600">Click to upload image</span>
+                            <span className="text-xs text-gray-400">PNG, JPG, GIF up to 5MB</span>
+                          </>
+                        )}
+                      </div>
+                    </label>
+                  </div>
+
+                  {imagePreview && (
+                    <div className="relative border border-gray-200 rounded-lg overflow-hidden">
+                      <img
+                        src={imagePreview}
+                        alt="Preview"
+                        className="w-full h-48 object-cover"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setImagePreview(null);
+                          setFormData(prev => ({ ...prev, image_url: '' }));
+                        }}
+                        className="absolute top-2 right-2 p-1 bg-white rounded-lg shadow hover:bg-red-50"
+                      >
+                        <X className="w-5 h-5 text-brand-red" />
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="flex gap-3 pt-4">
