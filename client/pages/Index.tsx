@@ -878,9 +878,9 @@ export default function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-10 sm:mb-14 md:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
-              Moments of{' '}
+              {t('moments_of')}{' '}
               <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                Moroccan Global Success
+                {t('moroccan_success')}
               </span>
             </h2>
             <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
