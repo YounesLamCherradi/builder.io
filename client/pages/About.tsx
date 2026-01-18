@@ -770,15 +770,6 @@ export default function About() {
 
       {/* Why Choose Us */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fd3f4a862a09848f59bda97b5f7122d66?format=webp&width=800)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'sepia(0.12) brightness(1.12)',
-          }}
-        />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -786,27 +777,55 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
             {[
-              t('about_why_1'),
-              t('about_why_2'),
-              t('about_why_3'),
-              t('about_why_4'),
-            ].map((reason, idx) => (
+              {
+                reason: t('about_why_1'),
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F96b25083da1648fc945bd37d8b67b8bc?format=webp&width=800',
+              },
+              {
+                reason: t('about_why_2'),
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F481a670441c749588fa9123ea890126b?format=webp&width=800',
+              },
+              {
+                reason: t('about_why_3'),
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fd3f4a862a09848f59bda97b5f7122d66?format=webp&width=800',
+              },
+              {
+                reason: t('about_why_4'),
+                image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=800',
+              },
+            ].map((item, idx) => (
               <div
                 key={idx}
-                className="group flex items-start gap-4 p-6 sm:p-8 rounded-2xl border-2 border-gray-200 hover:border-brand-red bg-white hover:bg-gradient-to-br hover:from-brand-red/5 to-transparent shadow-lg hover:shadow-xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 duration-700"
+                className="group relative rounded-3xl overflow-hidden bg-white border-2 border-gray-200 hover:border-brand-red shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-gradient-to-br from-brand-red to-gray-900 group-hover:scale-110 transition-transform">
-                    <Check className="h-6 w-6 text-white" />
-                  </div>
+                {/* Image */}
+                <div className="relative h-56 sm:h-64 lg:h-72 overflow-hidden bg-gray-200">
+                  <img
+                    src={item.image}
+                    alt={item.reason}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    style={{
+                      filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 </div>
-                <div>
-                  <p className="text-base sm:text-lg font-semibold text-gray-900 group-hover:text-brand-red transition-colors">
-                    {reason}
-                  </p>
+
+                {/* Content */}
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="flex items-center justify-center h-8 w-8 rounded-lg bg-gradient-to-br from-brand-red to-gray-900 group-hover:scale-110 transition-transform">
+                        <Check className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">
+                      {item.reason}
+                    </h3>
+                  </div>
                 </div>
               </div>
             ))}
