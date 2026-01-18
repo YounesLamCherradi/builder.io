@@ -394,6 +394,7 @@ export default function About() {
     { name: t('nav_about'), path: '/about' },
     { name: t('nav_stories'), path: '/stories' },
     { name: t('nav_resources'), path: '/resources' },
+    { name: t('nav_contact'), path: '/contact' },
   ];
 
   const selectedLang = languages.find((l) => l.code === currentLanguage) ?? languages[0];
