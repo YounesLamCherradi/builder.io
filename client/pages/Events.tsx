@@ -310,6 +310,9 @@ export default function Events() {
         stay_updated_highlight: 'Opportunités mondiales',
         stay_updated_desc: 'Abonnez-vous à notre newsletter et ne manquez aucune opportunité. Accédez avant les autres aux événements, bourses exclusives et conseils privilégiés.',
         email_placeholder: 'Entrez votre adresse e-mail',
+
+        about_event: 'À propos de cet événement',
+        what_expect: 'À quoi s\'attendre',
       },
       ru: {
         nav_home: 'Главная',
