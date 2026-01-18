@@ -950,47 +950,52 @@ export default function Index() {
           </div>
 
           {/* Sponsors Horizontal Scroll */}
-          <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-2 scrollbar-hide">
+          <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide">
             {sponsors.map((sponsor, index) => (
               <a
                 key={sponsor.id}
                 href={sponsor.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative h-28 sm:h-32 lg:h-36 w-40 sm:w-48 lg:w-56 flex-shrink-0 rounded-2xl border-2 border-gray-200 hover:border-brand-red transition-all duration-500 bg-white flex items-center justify-center overflow-hidden hover:shadow-2xl hover:shadow-red-200/40 animate-in fade-in slide-in-from-bottom-8 duration-500"
+                className="group flex flex-col items-center flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500"
                 style={{
                   animationDelay: `${index * 50}ms`,
                 }}
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 via-transparent to-brand-silver/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Logo Card */}
+                <div className="relative h-28 sm:h-32 lg:h-36 w-40 sm:w-48 lg:w-56 rounded-2xl border-2 border-gray-200 group-hover:border-brand-red transition-all duration-500 bg-white flex items-center justify-center overflow-hidden hover:shadow-2xl hover:shadow-red-200/40">
+                  {/* Gradient overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 via-transparent to-brand-silver/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Accent bar with animation */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-500 group-hover:drop-shadow-lg" />
+                  {/* Accent bar with animation */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-500 group-hover:drop-shadow-lg" />
 
-                {/* Animated background shimmer */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-700 opacity-0 group-hover:opacity-100" />
+                  {/* Animated background shimmer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-700 opacity-0 group-hover:opacity-100" />
 
-                {/* Content */}
-                <div className="relative z-10 text-center px-3 sm:px-4 flex flex-col items-center justify-center h-full">
-                  {sponsor.isImage ? (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="h-20 sm:h-24 w-auto mb-2 sm:mb-3 group-hover:scale-110 transition-all duration-500 object-contain"
-                    />
-                  ) : (
-                    <div className="text-3xl sm:text-4xl lg:text-5xl mb-2 sm:mb-3 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">
-                      {sponsor.logo}
-                    </div>
-                  )}
-                  <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 line-clamp-2 group-hover:scale-105">
-                    {sponsor.name}
-                  </p>
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center justify-center h-full p-4">
+                    {sponsor.isImage ? (
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="h-20 sm:h-24 lg:h-28 w-auto group-hover:scale-110 transition-all duration-500 object-contain"
+                      />
+                    ) : (
+                      <div className="text-3xl sm:text-4xl lg:text-5xl group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">
+                        {sponsor.logo}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
                 </div>
 
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
+                {/* Text Label Below Card */}
+                <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 text-center w-40 sm:w-48 lg:w-56">
+                  {sponsor.name}
+                </p>
               </a>
             ))}
           </div>
