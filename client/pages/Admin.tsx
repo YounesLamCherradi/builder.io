@@ -436,26 +436,76 @@ export default function Admin() {
               )}
 
               {activeTab === 'events' && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">What to Expect (Event Details)</label>
-                  <p className="text-xs text-gray-500 mb-3">Add up to 4 details about what attendees will experience</p>
-                  <div className="space-y-2">
-                    {eventDetails.map((detail, idx) => (
-                      <input
-                        key={idx}
-                        type="text"
-                        value={detail}
-                        onChange={(e) => {
-                          const newDetails = [...eventDetails];
-                          newDetails[idx] = e.target.value;
-                          setEventDetails(newDetails);
-                        }}
-                        placeholder={`Detail ${idx + 1} (optional)`}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none text-sm"
-                      />
-                    ))}
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">What to Expect (Event Details)</label>
+                    <p className="text-xs text-gray-500 mb-3">Add up to 4 details about what attendees will experience</p>
+                    <div className="space-y-2">
+                      {eventDetails.map((detail, idx) => (
+                        <input
+                          key={idx}
+                          type="text"
+                          value={detail}
+                          onChange={(e) => {
+                            const newDetails = [...eventDetails];
+                            newDetails[idx] = e.target.value;
+                            setEventDetails(newDetails);
+                          }}
+                          placeholder={`Detail ${idx + 1} (optional)`}
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none text-sm"
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
+
+                  <div className="border-t pt-4 mt-4">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-4">Event Action Buttons</h3>
+
+                    <div className="space-y-4">
+                      <div>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={buttonConfig.show_register_button}
+                            onChange={(e) => setButtonConfig(prev => ({ ...prev, show_register_button: e.target.checked }))}
+                            className="w-4 h-4 text-brand-red rounded focus:ring-2 focus:ring-brand-red"
+                          />
+                          <span className="text-sm font-medium text-gray-700">Show "Register Now" Button</span>
+                        </label>
+                        {buttonConfig.show_register_button && (
+                          <input
+                            type="url"
+                            value={buttonConfig.register_url}
+                            onChange={(e) => setButtonConfig(prev => ({ ...prev, register_url: e.target.value }))}
+                            placeholder="https://example.com/register"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none text-sm mt-2"
+                          />
+                        )}
+                      </div>
+
+                      <div>
+                        <label className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={buttonConfig.show_learn_more_button}
+                            onChange={(e) => setButtonConfig(prev => ({ ...prev, show_learn_more_button: e.target.checked }))}
+                            className="w-4 h-4 text-brand-red rounded focus:ring-2 focus:ring-brand-red"
+                          />
+                          <span className="text-sm font-medium text-gray-700">Show "Learn More" Button</span>
+                        </label>
+                        {buttonConfig.show_learn_more_button && (
+                          <input
+                            type="url"
+                            value={buttonConfig.learn_more_url}
+                            onChange={(e) => setButtonConfig(prev => ({ ...prev, learn_more_url: e.target.value }))}
+                            placeholder="https://example.com/learn-more"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none text-sm mt-2"
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </>
               )}
 
               <div>
