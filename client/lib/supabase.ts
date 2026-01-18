@@ -1,13 +1,35 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  console.warn('Supabase environment variables are not set. Using demo mode.');
+let supabase: any = null;
+
+if (supabaseUrl && supabaseKey) {
+  supabase = createClient(supabaseUrl, supabaseKey);
+} else {
+  console.warn(
+    '⚠️  Supabase credentials not configured.\n' +
+    'Add these to your .env.local file:\n' +
+    'VITE_SUPABASE_URL=your_url\n' +
+    'VITE_SUPABASE_ANON_KEY=your_key\n\n' +
+    'News and events will not load without proper Supabase configuration.'
+  );
+
+  // Create a mock client that returns empty data for development
+  supabase = {
+    from: () => ({
+      select: () => Promise.resolve({ data: [], error: null }),
+      insert: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
+      update: () => Promise.resolve({ data: null, error: new Error('Supabase not configured') }),
+      delete: () => Promise.resolve({ error: new Error('Supabase not configured') }),
+      eq: () => Promise.resolve({ data: null, error: null }),
+      order: () => Promise.resolve({ data: [], error: null }),
+    }),
+  };
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+export { supabase };
 
 // News types
 export interface NewsArticle {
@@ -30,6 +52,7 @@ export interface Event {
   location: string | null;
   date: string;
   image_url: string | null;
+  details?: string[];
   created_at: string;
 }
 
