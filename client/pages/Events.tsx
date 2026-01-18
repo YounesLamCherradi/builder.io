@@ -1336,13 +1336,13 @@ export default function Events() {
             <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-brand-silver/40 p-6 sm:p-8 md:p-12">
               <div className="text-center mb-6 sm:mb-8">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                  Stay Updated with{' '}
+                  {t('stay_updated_title')}{' '}
                   <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                    Global Opportunities
+                    {t('stay_updated_highlight')}
                   </span>
                 </h3>
                 <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                  Get the latest events, scholarships, and exclusive tips delivered to your inbox every month.
+                  {t('stay_updated_desc')}
                 </p>
               </div>
 
