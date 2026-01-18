@@ -157,6 +157,8 @@ export default function News() {
         home_email_placeholder: 'Enter your email address',
         subscribe_now: 'Subscribe',
         subscribe_privacy: 'We respect your privacy. Unsubscribe at any time. No spam.',
+        news_search_placeholder: 'Search articles by title or content...',
+        news_close: 'Close',
       },
 
       fr: {
