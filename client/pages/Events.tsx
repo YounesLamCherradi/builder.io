@@ -31,6 +31,8 @@ export default function Events() {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+  const [fetchedEvents, setFetchedEvents] = useState<Event[]>([]);
+  const [loadingEvents, setLoadingEvents] = useState(true);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
