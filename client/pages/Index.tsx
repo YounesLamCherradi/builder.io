@@ -563,6 +563,27 @@ export default function Index() {
       link: '#',
       isImage: true,
     },
+    {
+      id: 6,
+      name: 'Coat of Arms of Kaliningrad Oblast',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F0db76a0cd43040ec947c4c77f35b385b?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
+    {
+      id: 7,
+      name: 'Coat of Arms of Dagestan',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fad39b7d7fe02449cb3ef97a7a398cb94?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
+    {
+      id: 8,
+      name: 'Coat of Arms of the Komi Republic',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fdebb584a0f9046a7bf2f2b227313f15b?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
   ];
 
   const selectedLang = languages.find((l) => l.code === currentLanguage) ?? languages[0];
