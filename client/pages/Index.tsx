@@ -364,6 +364,7 @@ export default function Index() {
         nav_about: 'О нас',
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
+        nav_contact: 'Контакты',
         sign_in: 'Войти',
         get_started: 'Начать',
 
