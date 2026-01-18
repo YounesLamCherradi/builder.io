@@ -528,14 +528,41 @@ export default function Index() {
   ];
 
   const sponsors = [
-    { id: 1, name: 'Fulbright Morocco', logo: '🎓', link: 'https://fulbright.org.ma' },
-    { id: 2, name: 'AMIDEAST', logo: '🌍', link: 'https://www.amideast.org' },
-    { id: 3, name: 'YES Program', logo: '⭐', link: 'https://www.yes-abroad.org' },
-    { id: 4, name: 'British Council', logo: '🇬🇧', link: 'https://www.britishcouncil.ma' },
-    { id: 5, name: 'Campus France', logo: '🇫🇷', link: 'https://www.campusfrance.org' },
-    { id: 6, name: 'DAAD', logo: '🇩🇪', link: 'https://www.daad.de' },
-    { id: 7, name: 'Nuffic', logo: '🇳🇱', link: 'https://www.nuffic.nl' },
-    { id: 8, name: 'Study in USA', logo: '🇺🇸', link: 'https://studyusa.state.gov' },
+    {
+      id: 1,
+      name: 'Coat of Arms of Ryazan Oblast',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F17892532a17e40d1b12b791ae4f2fb66?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
+    {
+      id: 2,
+      name: 'Coat of Arms of Volgograd Oblast',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fdc3871c8e6e44b8c83f216cf7f4da1ca?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
+    {
+      id: 3,
+      name: 'Russian Student Safety Corps',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff96089f4b92d4701a923f960b840aa0e?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
+    {
+      id: 4,
+      name: 'Yunarmiya',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F4608d7484aac425f9ce3cf73bcb94f88?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
+    {
+      id: 5,
+      name: 'World Peoples Assembly',
+      logo: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff015b212fef044bb9744451c7217f876?format=webp&width=800',
+      link: '#',
+      isImage: true,
+    },
   ];
 
   const selectedLang = languages.find((l) => l.code === currentLanguage) ?? languages[0];
