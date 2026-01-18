@@ -298,6 +298,18 @@ export default function Index() {
         sa_stat: 'Réseau en croissance',
 
         inspiring_text: 'Inspirant de vrais voyages — des bourses et échanges aux réalisations de classe mondiale',
+
+        caption_1: 'Étudiants marocains en Allemagne – Bienvenue à Munich',
+        caption_2: 'Voyage du Maroc à Londres – Succès étudiant',
+        caption_3: 'Cérémonie Fulbright – Moment de fierté',
+        caption_4: 'Joie de la graduation – Diplômes & Sourires',
+        caption_5: 'Programme YES – Jeunesse marocaine à l\'étranger',
+        caption_6: 'Rassemblement culturel – Pairs mondiaux unis',
+        caption_7: 'Amitiés nouées dans l\'échange au Maroc',
+        caption_8: 'Vie universitaire – Étudiants marocains à l\'étranger',
+        caption_9: 'Connexions en classe – Apprentissage immersif',
+        caption_10: 'Moments du campus – Nouveaux horizons',
+        caption_11: 'Réseautage des anciens – Innovation & Collaboration',
       },
 
       ru: {
