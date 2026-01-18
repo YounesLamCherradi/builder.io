@@ -687,7 +687,7 @@ export default function News() {
                 >
                   <div className="relative h-48 sm:h-56 overflow-hidden bg-gray-200">
                     <img
-                      src={article.image}
+                      src={article.image_url || 'https://images.unsplash.com/photo-1505252585461-04db1267ae5e?w=400&h=300&fit=crop'}
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
