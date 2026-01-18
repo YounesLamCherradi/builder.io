@@ -203,6 +203,7 @@ export default function Events() {
         nav_about: 'À Propos',
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
+        nav_contact: 'Contact',
         get_started: 'Commencer',
         events_title: 'Événements et Opportunités à Venir',
         events_subtitle: 'Rejoignez-nous pour des séminaires, ateliers et événements de réseautage',
