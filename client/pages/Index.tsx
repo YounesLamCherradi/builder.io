@@ -1121,20 +1121,20 @@ export default function Index() {
             <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-brand-silver/40 p-6 sm:p-8 md:p-12">
               <div className="text-center mb-6 sm:mb-8">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-                  Stay Updated with{' '}
+                  {t('home_stay_updated_title')}{' '}
                   <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                    Global Opportunities
+                    {t('home_stay_updated_highlight')}
                   </span>
                 </h3>
                 <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto">
-                  Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.
+                  {t('home_stay_updated_desc')}
                 </p>
               </div>
 
               <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder={t('home_email_placeholder')}
                   className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
                   required
                 />
