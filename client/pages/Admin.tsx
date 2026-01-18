@@ -244,6 +244,12 @@ export default function Admin() {
     });
     setEventDetails(['', '', '', '']);
     setImagePreview(null);
+    setButtonConfig({
+      show_register_button: true,
+      register_url: '',
+      show_learn_more_button: true,
+      learn_more_url: '',
+    });
     setEditingId(null);
     setShowForm(false);
   };
