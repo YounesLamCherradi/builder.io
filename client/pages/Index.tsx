@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { subscribeNewsletter } from '../lib/supabase';
+import { toast } from 'sonner';
 import {
   Globe,
   ArrowRight,
