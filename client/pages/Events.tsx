@@ -1134,40 +1134,38 @@ export default function Events() {
                   </p>
                 </div>
 
-                <div className="mb-8">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                    {t('what_expect')}
-                  </h2>
-                  <div className="space-y-3">
-                    {currentEvent.details.map((detail, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                        <Check className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{detail}</span>
-                      </div>
-                    ))}
+                {currentEvent.details && currentEvent.details.length > 0 && (
+                  <div className="mb-8">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+                      {t('what_expect')}
+                    </h2>
+                    <div className="space-y-3">
+                      {currentEvent.details.map((detail, idx) => (
+                        detail && (
+                          <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <Check className="w-5 h-5 text-brand-red shrink-0 mt-0.5" />
+                            <span className="text-gray-700">{detail}</span>
+                          </div>
+                        )
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  {currentEvent.spotsLeft > 0 ? (
-                    <>
-                      <button className="flex-1 py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95">
-                        {t('register')}
-                      </button>
-                      <a
-                        href={currentEvent.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 py-4 bg-gray-100 text-gray-800 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-gray-200 flex items-center justify-center gap-2"
-                      >
-                        <span>{t('learn_more')}</span>
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
-                    </>
-                  ) : (
-                    <button disabled className="w-full py-4 bg-gray-300 text-gray-600 rounded-xl font-bold text-lg cursor-not-allowed">
-                      {t('event_full')}
-                    </button>
+                  <button className="flex-1 py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-xl font-bold text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform active:scale-95">
+                    {t('register')}
+                  </button>
+                  {currentEvent.link && (
+                    <a
+                      href={currentEvent.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-4 bg-gray-100 text-gray-800 rounded-xl font-bold text-lg transition-all duration-300 hover:bg-gray-200 flex items-center justify-center gap-2"
+                    >
+                      <span>{t('learn_more')}</span>
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
                   )}
                 </div>
               </div>
