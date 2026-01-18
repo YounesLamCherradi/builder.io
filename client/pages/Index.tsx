@@ -173,6 +173,18 @@ export default function Index() {
         sa_stat: 'Growing Network',
 
         inspiring_text: 'Inspiring real journeys — from scholarships and exchanges to world-class achievements',
+
+        caption_1: 'Moroccan Scholars in Germany – Munich Welcome',
+        caption_2: 'Journey from Morocco to London – Student Success',
+        caption_3: 'Fulbright Award Ceremony – Proud Moment',
+        caption_4: 'Graduation Joy – Diplomas & Smiles',
+        caption_5: 'YES Program – Moroccan Youth Abroad',
+        caption_6: 'Cultural Gathering – Global Peers United',
+        caption_7: 'Friendships Built in Morocco Exchange',
+        caption_8: 'University Life – Moroccan Students Abroad',
+        caption_9: 'Classroom Connections – Immersive Learning',
+        caption_10: 'Campus Moments – New Horizons',
+        caption_11: 'Alumni Networking – Innovation & Collaboration',
       },
 
       fr: {
