@@ -210,6 +210,12 @@ export default function Events() {
         cookies: 'Cookies',
         rights: '© 2026 MoroccoGlobal. Все права защищены.',
         event_time: 'Время События',
+
+        tagline: 'Ваш мир ждёт',
+        made_with: 'Сделано с ❤️ в Марокко',
+        sitemap: 'Карта сайта',
+        subscribe_privacy: 'Мы уважаем вашу приватность. Отпишитесь в любой момент. Без спама.',
+        subscribe: 'Подписаться',
       },
     }),
     []
