@@ -319,6 +319,7 @@ export default function Events() {
       ru: {
         nav_home: 'Главная',
         nav_events: 'События',
+        nav_about: 'О нас',
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         get_started: 'Начать',
