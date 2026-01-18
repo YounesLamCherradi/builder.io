@@ -825,7 +825,7 @@ export default function Events() {
                 </a>
               </div>
 
-              <div className="relative" data-lang-menu>
+              <div className="relative" data-lang-menu="true">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
