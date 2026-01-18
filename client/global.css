@@ -214,21 +214,4 @@
   .dark textarea:focus {
     @apply border-brand-red ring-brand-red/20;
   }
-
-  /* Scrollbar dark mode */
-  .dark ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .dark ::-webkit-scrollbar-track {
-    @apply bg-gray-900;
-  }
-
-  .dark ::-webkit-scrollbar-thumb {
-    @apply bg-gray-700 rounded;
-  }
-
-  .dark ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-600;
-  }
 }
