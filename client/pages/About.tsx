@@ -612,20 +612,20 @@ export default function About() {
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="space-y-6 sm:space-y-8 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg max-w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full shadow-lg max-w-full animate-in fade-in slide-in-from-bottom-4 duration-700 border border-white/30">
               <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
+              <span className="text-xs sm:text-sm font-medium text-white truncate">
                 {t('about_hero_subtitle')}
               </span>
             </div>
 
             <h1 className="font-bold leading-[1.05] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              <span className="block bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
+              <span className="block text-white text-4xl sm:text-5xl lg:text-7xl drop-shadow-xl">
                 {t('about_hero_title')}
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 drop-shadow-lg">
               {t('about_hero_desc')}
             </p>
 
