@@ -476,3 +476,169 @@ export async function deleteTeamMember(id: string): Promise<boolean> {
     return false;
   }
 }
+
+// Fetch all gallery items
+export async function fetchGallery(): Promise<GalleryItem[]> {
+  try {
+    const { data, error } = await supabase
+      .from('gallery')
+      .select('*')
+      .order('order_index', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching gallery:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Unexpected error fetching gallery:', err);
+    return [];
+  }
+}
+
+// Create gallery item
+export async function createGalleryItem(item: Omit<GalleryItem, 'id' | 'created_at'>): Promise<GalleryItem | null> {
+  try {
+    const { data, error } = await supabase
+      .from('gallery')
+      .insert([item])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating gallery item:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Update gallery item
+export async function updateGalleryItem(id: string, updates: Partial<Omit<GalleryItem, 'id' | 'created_at'>>): Promise<GalleryItem | null> {
+  try {
+    const { data, error } = await supabase
+      .from('gallery')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error updating gallery item:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Delete gallery item
+export async function deleteGalleryItem(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from('gallery')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error deleting gallery item:', error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return false;
+  }
+}
+
+// Fetch all partners
+export async function fetchPartners(): Promise<Partner[]> {
+  try {
+    const { data, error } = await supabase
+      .from('partners')
+      .select('*')
+      .order('order_index', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching partners:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Unexpected error fetching partners:', err);
+    return [];
+  }
+}
+
+// Create partner
+export async function createPartner(partner: Omit<Partner, 'id' | 'created_at'>): Promise<Partner | null> {
+  try {
+    const { data, error } = await supabase
+      .from('partners')
+      .insert([partner])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating partner:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Update partner
+export async function updatePartner(id: string, updates: Partial<Omit<Partner, 'id' | 'created_at'>>): Promise<Partner | null> {
+  try {
+    const { data, error } = await supabase
+      .from('partners')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error updating partner:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Delete partner
+export async function deletePartner(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from('partners')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error deleting partner:', error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return false;
+  }
+}
