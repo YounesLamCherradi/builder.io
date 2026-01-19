@@ -610,6 +610,9 @@ export default function Admin() {
       role: '',
       partnerName: '',
       partnerLink: '',
+      question: '',
+      answer: '',
+      bio: '',
     });
     setI18nData({
       title_i18n: { en: '', fr: '', ru: '' },
