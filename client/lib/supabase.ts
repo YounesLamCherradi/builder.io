@@ -667,3 +667,169 @@ export async function deletePartner(id: string): Promise<boolean> {
     return false;
   }
 }
+
+// Fetch all FAQs
+export async function fetchFAQs(): Promise<FAQ[]> {
+  try {
+    const { data, error } = await supabase
+      .from('faqs')
+      .select('*')
+      .order('order_index', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching FAQs:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Unexpected error fetching FAQs:', err);
+    return [];
+  }
+}
+
+// Create FAQ
+export async function createFAQ(faq: Omit<FAQ, 'id' | 'created_at'>): Promise<FAQ | null> {
+  try {
+    const { data, error } = await supabase
+      .from('faqs')
+      .insert([faq])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating FAQ:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Update FAQ
+export async function updateFAQ(id: string, updates: Partial<Omit<FAQ, 'id' | 'created_at'>>): Promise<FAQ | null> {
+  try {
+    const { data, error } = await supabase
+      .from('faqs')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error updating FAQ:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Delete FAQ
+export async function deleteFAQ(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from('faqs')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error deleting FAQ:', error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return false;
+  }
+}
+
+// Fetch all past events
+export async function fetchPastEvents(): Promise<PastEvent[]> {
+  try {
+    const { data, error } = await supabase
+      .from('past_events')
+      .select('*')
+      .order('order_index', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching past events:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Unexpected error fetching past events:', err);
+    return [];
+  }
+}
+
+// Create past event
+export async function createPastEvent(event: Omit<PastEvent, 'id' | 'created_at'>): Promise<PastEvent | null> {
+  try {
+    const { data, error } = await supabase
+      .from('past_events')
+      .insert([event])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating past event:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Update past event
+export async function updatePastEvent(id: string, updates: Partial<Omit<PastEvent, 'id' | 'created_at'>>): Promise<PastEvent | null> {
+  try {
+    const { data, error } = await supabase
+      .from('past_events')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error updating past event:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Delete past event
+export async function deletePastEvent(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from('past_events')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error deleting past event:', error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return false;
+  }
+}
