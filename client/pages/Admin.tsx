@@ -536,51 +536,53 @@ export default function Admin() {
                 </div>
               )}
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Date *</label>
-                  <input
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                  />
-                </div>
-
-                {activeTab === 'news' && (
+              {activeTab !== 'team' && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                    <select
-                      name="category"
-                      value={formData.category}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    >
-                      <option>Visa Updates</option>
-                      <option>Scholarships</option>
-                      <option>General</option>
-                      <option>Notice</option>
-                      <option>Cooperation</option>
-                    </select>
-                  </div>
-                )}
-
-                {activeTab === 'events' && (
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Time *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Date *</label>
                     <input
-                      type="time"
-                      name="time"
-                      value={formData.time}
+                      type="date"
+                      name="date"
+                      value={formData.date}
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
                     />
                   </div>
-                )}
-              </div>
+
+                  {activeTab === 'news' && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                      <select
+                        name="category"
+                        value={formData.category}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      >
+                        <option>Visa Updates</option>
+                        <option>Scholarships</option>
+                        <option>General</option>
+                        <option>Notice</option>
+                        <option>Cooperation</option>
+                      </select>
+                    </div>
+                  )}
+
+                  {activeTab === 'events' && (
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Time *</label>
+                      <input
+                        type="time"
+                        name="time"
+                        value={formData.time}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
