@@ -1042,7 +1042,7 @@ export default function Index() {
               ref={sponsorsScrollRef}
               className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
             >
-              {sponsors.map((sponsor, index) => (
+              {(partnersList.length > 0 ? partnersList : sponsors).map((sponsor, index) => (
               <a
                 key={sponsor.id}
                 href={sponsor.link}
@@ -1066,15 +1066,21 @@ export default function Index() {
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-center h-full p-4">
-                    {sponsor.isImage ? (
+                    {'logo_url' in sponsor ? (
                       <img
-                        src={sponsor.logo}
+                        src={sponsor.logo_url}
+                        alt={sponsor.name}
+                        className="h-20 sm:h-24 lg:h-28 w-auto group-hover:scale-110 transition-all duration-500 object-contain"
+                      />
+                    ) : (sponsor as any).isImage ? (
+                      <img
+                        src={(sponsor as any).logo}
                         alt={sponsor.name}
                         className="h-20 sm:h-24 lg:h-28 w-auto group-hover:scale-110 transition-all duration-500 object-contain"
                       />
                     ) : (
                       <div className="text-3xl sm:text-4xl lg:text-5xl group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500">
-                        {sponsor.logo}
+                        {(sponsor as any).logo}
                       </div>
                     )}
                   </div>
