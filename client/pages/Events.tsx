@@ -471,32 +471,42 @@ export default function Events() {
     { name: t('nav_news'), path: '/news' },
   ];
 
+  // Helper to get multilingual event content
+  const getEventContent = (event: Event) => ({
+    title: event.title_i18n?.[currentLanguage] || event.title,
+    description: event.description_i18n?.[currentLanguage] || event.description,
+    about_event: event.about_event_i18n?.[currentLanguage] || event.about_event || event.description,
+  });
+
   // Convert fetched events to component format
-  const events = fetchedEvents.map(event => ({
-    id: event.id,
-    title: event.title,
-    type: 'workshop',
-    date: event.date.split('T')[0],
-    time: event.time || '18:00',
-    location: event.location || 'Online',
-    eventType: event.location ? 'in-person' : 'online',
-    price: 'free',
-    image: event.image_url || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
-    description: event.description,
-    about_event: event.about_event || event.description,
-    details: event.details && event.details.length > 0
-      ? event.details
-      : [
-          'Learn about this opportunity',
-          '✓ Expert mentors and professionals',
-          '✓ Networking opportunities',
-          '✓ Q&A session with speakers',
-        ],
-    show_register_button: event.show_register_button ?? true,
-    register_url: event.register_url || 'https://morocoglobal.com',
-    show_learn_more_button: event.show_learn_more_button ?? true,
-    learn_more_url: event.learn_more_url || 'https://morocoglobal.com',
-  }));
+  const events = fetchedEvents.map(event => {
+    const content = getEventContent(event);
+    return {
+      id: event.id,
+      title: content.title,
+      type: 'workshop',
+      date: event.date.split('T')[0],
+      time: event.time || '18:00',
+      location: event.location || 'Online',
+      eventType: event.location ? 'in-person' : 'online',
+      price: 'free',
+      image: event.image_url || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
+      description: content.description,
+      about_event: content.about_event,
+      details: event.details && event.details.length > 0
+        ? event.details
+        : [
+            'Learn about this opportunity',
+            '✓ Expert mentors and professionals',
+            '✓ Networking opportunities',
+            '✓ Q&A session with speakers',
+          ],
+      show_register_button: event.show_register_button ?? true,
+      register_url: event.register_url || 'https://morocoglobal.com',
+      show_learn_more_button: event.show_learn_more_button ?? true,
+      learn_more_url: event.learn_more_url || 'https://morocoglobal.com',
+    };
+  });
 
   const pastEvents = [
     {
