@@ -114,6 +114,31 @@ export interface Partner {
   created_at: string;
 }
 
+// FAQ types
+export interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+  question_i18n?: I18nString;
+  answer_i18n?: I18nString;
+  order_index: number;
+  created_at: string;
+}
+
+// Past Events types
+export interface PastEvent {
+  id: string;
+  title: string;
+  description: string;
+  location: string;
+  date: string;
+  image_url: string | null;
+  title_i18n?: I18nString;
+  description_i18n?: I18nString;
+  order_index: number;
+  created_at: string;
+}
+
 // Fetch all news
 export async function fetchNews(): Promise<NewsArticle[]> {
   try {
