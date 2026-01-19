@@ -1016,7 +1016,13 @@ export default function Admin() {
         <div className="bg-white rounded-lg shadow">
           <div className="px-6 py-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">
-              {activeTab === 'news' ? `Articles (${newsList.length})` : activeTab === 'events' ? `Events (${eventsList.length})` : `Team Members (${teamList.length})`}
+              {
+                activeTab === 'news' ? `Articles (${newsList.length})` :
+                activeTab === 'events' ? `Events (${eventsList.length})` :
+                activeTab === 'team' ? `Team Members (${teamList.length})` :
+                activeTab === 'gallery' ? `Gallery Items (${galleryList.length})` :
+                `Partners (${partnersList.length})`
+              }
             </h2>
           </div>
 
