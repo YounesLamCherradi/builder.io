@@ -398,6 +398,13 @@ export default function News() {
     'stories': 'Success Stories',
   };
 
+  // Helper to get multilingual content
+  const getArticleContent = (article: NewsArticle) => ({
+    title: article.title_i18n?.[currentLanguage] || article.title,
+    description: article.description_i18n?.[currentLanguage] || article.description,
+    content: article.content_i18n?.[currentLanguage] || article.content,
+  });
+
   const filteredArticles = articles.filter(article => {
     // Filter by category
     const matchesCategory = selectedCategory === 'all'
@@ -406,11 +413,12 @@ export default function News() {
 
     // Filter by search query
     const searchLower = searchQuery.toLowerCase();
+    const articleContent = getArticleContent(article);
     const matchesSearch = searchQuery === ''
       ? true
-      : article.title.toLowerCase().includes(searchLower) ||
-        article.description.toLowerCase().includes(searchLower) ||
-        article.content.toLowerCase().includes(searchLower);
+      : articleContent.title.toLowerCase().includes(searchLower) ||
+        articleContent.description.toLowerCase().includes(searchLower) ||
+        articleContent.content.toLowerCase().includes(searchLower);
 
     return matchesCategory && matchesSearch;
   });
