@@ -213,6 +213,11 @@ export default function Index() {
         subscribe_privacy: 'We respect your privacy. Unsubscribe anytime. No spam, ever.',
         subscribe_now: 'Subscribe Now',
 
+        faq_title: 'Frequently Asked Questions',
+        faq_subtitle: 'Get answers to your questions about opportunities and our platform',
+        past_events_title: 'Past Events Highlights',
+        past_events_subtitle: 'Relive the magic - See what our students experienced',
+
         morocco: 'Morocco',
         morocco_subtitle: 'Foundation Hub',
         morocco_b1: 'Local University Network',
