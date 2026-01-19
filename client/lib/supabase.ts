@@ -322,10 +322,16 @@ export async function uploadImage(file: File, bucket: string = 'media'): Promise
 
     const { error: uploadError } = await supabase.storage
       .from('media')
-      .upload(filePath, file);
+      .upload(filePath, file, {
+        cacheControl: '3600',
+        upsert: false
+      });
 
     if (uploadError) {
       console.error('Error uploading file:', uploadError);
+      if (uploadError.message.includes('not found')) {
+        console.error('⚠️ Storage bucket "media" not found. Please create it in Supabase dashboard: Storage > Create new bucket > Name: "media" > Set as Public');
+      }
       return null;
     }
 
@@ -333,7 +339,7 @@ export async function uploadImage(file: File, bucket: string = 'media'): Promise
     const { data } = supabase.storage.from('media').getPublicUrl(filePath);
     return data.publicUrl;
   } catch (err) {
-    console.error('Unexpected error:', err);
+    console.error('Unexpected error during image upload:', err);
     return null;
   }
 }
