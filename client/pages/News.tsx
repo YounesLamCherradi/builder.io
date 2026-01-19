@@ -907,7 +907,7 @@ export default function News() {
 
               {/* Article Content */}
               <div className="prose prose-sm sm:prose max-w-none text-gray-700 leading-relaxed">
-                {selectedArticle.content.split('\n\n').map((paragraph, idx) => (
+                {getArticleContent(selectedArticle).content.split('\n\n').map((paragraph, idx) => (
                   <div key={idx} className="mb-6 sm:mb-8">
                     {paragraph.includes('•') ? (
                       <ul className="space-y-2 sm:space-y-3">
