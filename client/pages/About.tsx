@@ -74,6 +74,18 @@ export default function About() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const loadTeamData = async () => {
+      try {
+        const data = await fetchTeam();
+        setTeamMembers(data);
+      } catch (error) {
+        console.error('Error loading team data:', error);
+      }
+    };
+    loadTeamData();
+  }, []);
+
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
