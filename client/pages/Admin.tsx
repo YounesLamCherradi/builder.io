@@ -958,8 +958,14 @@ export default function Admin() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || (activeTab === 'gallery' && !formData.image_url) || (activeTab === 'partners' && (!formData.image_url || !formData.partnerName))}
                   className="flex-1 px-6 py-2 bg-brand-red text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-2"
+                  title={
+                    activeTab === 'gallery' && !formData.image_url ? 'Please upload an image' :
+                    activeTab === 'partners' && !formData.image_url ? 'Please upload a logo' :
+                    activeTab === 'partners' && !formData.partnerName ? 'Please enter partner name' :
+                    ''
+                  }
                 >
                   {loading ? <Loader className="w-5 h-5 animate-spin" /> : <Plus className="w-5 h-5" />}
                   {editingId ? 'Update' : 'Create'}
