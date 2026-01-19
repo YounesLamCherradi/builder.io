@@ -139,15 +139,13 @@ export default function Index() {
         get_started: 'Get Started',
 
         serving: '🇲🇦 Largest Network in North Africa',
-        hero_line1: 'Transform Your',
-        hero_line2: 'Global Dreams',
-        hero_line3: 'Into Reality',
-        hero_desc:
-          'Discover thousands of scholarships, jobs, and international programs tailored for talented Moroccans. Your passport to global success starts here.',
+        hero_quote: 'International cooperation in education opens doors to unprecedented opportunities for young talents worldwide.',
+        hero_author: 'Zakharova',
+        hero_author_title: 'Russian Federation Official',
+        hero_line1: 'Discover Your',
+        hero_line2: 'Global Potential',
         explore_opps: 'Explore Opportunities',
         watch_demo: 'Watch Demo',
-        testimonial_quote: 'Join thousands of Moroccan success stories transforming their futures through our platform.',
-        testimonial_author: 'MoroccoGlobal Community',
 
         stat_users: 'Active Users',
         stat_countries: 'Countries',
