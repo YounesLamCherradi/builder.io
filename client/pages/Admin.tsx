@@ -157,7 +157,7 @@ export default function Admin() {
             content_i18n: i18nData.content_i18n,
           });
         }
-      } else {
+      } else if (activeTab === 'events') {
         if (editingId) {
           await updateEvent(editingId, {
             title: i18nData.title_i18n.en,
@@ -195,13 +195,36 @@ export default function Admin() {
             about_event_i18n: i18nData.about_event_i18n,
           });
         }
+      } else {
+        // Team member handling
+        if (editingId) {
+          await updateTeamMember(editingId, {
+            name: formData.name,
+            role: i18nData.role_i18n.en,
+            role_i18n: i18nData.role_i18n,
+            bio: i18nData.bio_i18n.en,
+            bio_i18n: i18nData.bio_i18n,
+            image_url: formData.image_url,
+          });
+        } else {
+          await createTeamMember({
+            name: formData.name,
+            role: i18nData.role_i18n.en,
+            role_i18n: i18nData.role_i18n,
+            bio: i18nData.bio_i18n.en,
+            bio_i18n: i18nData.bio_i18n,
+            image_url: formData.image_url,
+          });
+        }
       }
 
       // Reset form and reload
       resetForm();
       await loadData();
+      toast.success(`${activeTab === 'news' ? 'Article' : activeTab === 'events' ? 'Event' : 'Team member'} ${editingId ? 'updated' : 'created'} successfully`);
     } catch (error) {
       console.error('Error saving:', error);
+      toast.error('Failed to save');
     } finally {
       setLoading(false);
     }
