@@ -809,7 +809,7 @@ export default function Admin() {
                 className="flex items-center gap-2 px-6 py-3 bg-brand-red text-white rounded-lg font-semibold hover:bg-red-700"
               >
                 <Plus className="w-5 h-5" />
-                Add New {activeTab === 'news' ? 'Article' : 'Event'}
+                Add New {activeTab === 'news' ? 'Article' : activeTab === 'events' ? 'Event' : 'Team Member'}
               </button>
             </div>
           )}
