@@ -957,10 +957,6 @@ export default function About() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-                      {/* Icon Overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center text-5xl sm:text-6xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
-                        {member.emoji}
-                      </div>
                     </div>
 
                     {/* Content */}
