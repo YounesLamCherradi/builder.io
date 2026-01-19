@@ -902,7 +902,7 @@ export default function News() {
 
               {/* Article Title */}
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 my-6 sm:my-8">
-                {selectedArticle.title}
+                {getArticleContent(selectedArticle).title}
               </h1>
 
               {/* Article Content */}
