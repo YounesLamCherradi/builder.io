@@ -275,13 +275,43 @@ export default function Contact() {
     { name: t('nav_news'), path: '/news' },
   ];
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+    try {
+      // Send email via our Netlify function
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Show success message
+        const { toast } = await import('sonner');
+        toast.success('Email sent successfully! We will get back to you soon.');
+
+        // Reset form
+        setTimeout(() => {
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setFormSubmitted(false);
+        }, 3000);
+      } else {
+        const { toast } = await import('sonner');
+        toast.error(result.error || 'Failed to send email');
+        setFormSubmitted(false);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      const { toast } = await import('sonner');
+      toast.error('Failed to send email. Please try again.');
       setFormSubmitted(false);
-    }, 3000);
+    }
   };
 
   const faqs = [
