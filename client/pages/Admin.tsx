@@ -1258,7 +1258,9 @@ export default function Admin() {
                   activeTab === 'events' ? 'Event' :
                   activeTab === 'team' ? 'Team Member' :
                   activeTab === 'gallery' ? 'Gallery Item' :
-                  'Partner'
+                  activeTab === 'partners' ? 'Partner' :
+                  activeTab === 'faqs' ? 'FAQ' :
+                  'Past Event'
                 }
               </button>
             </div>
