@@ -275,6 +275,12 @@ export default function Admin() {
       time: '18:00',
       about_event: '',
     });
+    setI18nData({
+      title_i18n: { en: '', fr: '', ru: '' },
+      description_i18n: { en: '', fr: '', ru: '' },
+      content_i18n: { en: '', fr: '', ru: '' },
+      about_event_i18n: { en: '', fr: '', ru: '' },
+    });
     setEventDetails(['', '', '', '']);
     setImagePreview(null);
     setButtonConfig({
@@ -283,6 +289,7 @@ export default function Admin() {
       show_learn_more_button: true,
       learn_more_url: '',
     });
+    setActiveLanguage('en');
     setEditingId(null);
     setShowForm(false);
   };
