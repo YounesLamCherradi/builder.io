@@ -139,6 +139,25 @@ export default function Admin() {
     e.preventDefault();
     setLoading(true);
 
+    // Validation
+    if (activeTab === 'gallery' && !formData.image_url) {
+      toast.error('Please upload an image for the gallery');
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === 'partners' && !formData.image_url) {
+      toast.error('Please upload a logo for the partner');
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === 'partners' && !formData.partnerName) {
+      toast.error('Please enter a partner name');
+      setLoading(false);
+      return;
+    }
+
     try {
       if (activeTab === 'news') {
         if (editingId) {
