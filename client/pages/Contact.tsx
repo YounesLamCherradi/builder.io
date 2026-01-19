@@ -257,6 +257,13 @@ export default function Contact() {
         contact_social_title: 'Свяжитесь с Нами',
         contact_social_desc: 'Следите за нами в социальных сетях для новостей и историй успеха',
 
+        home_stay_updated_title: 'Будьте Информированы',
+        home_stay_updated_highlight: 'Глобальные Возможности',
+        home_stay_updated_desc: 'Получайте последние новости о стипендиях, визах и возможностях каждый месяц на вашу почту.',
+        home_email_placeholder: 'Введите ваш адрес электронной почты',
+        subscribe_now: 'Подписаться',
+        subscribe_privacy: 'Мы уважаем вашу конфиденциальность. Отпишитесь в любой момент. Нет спама.',
+
         tagline: 'Твой мир ждет',
         footer_tagline: 'Помогаем марокканцам реализовывать глобальные мечты.',
         platform: 'Платформа',
