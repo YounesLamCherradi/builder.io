@@ -713,7 +713,7 @@ export default function News() {
 
                   <div className="p-5 sm:p-6 flex flex-col flex-1">
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                      {article.title}
+                      {getArticleContent(article).title}
                     </h3>
 
                     <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-2 flex-1">
