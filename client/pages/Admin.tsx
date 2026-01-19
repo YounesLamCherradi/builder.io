@@ -901,7 +901,10 @@ export default function Admin() {
               )}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">{activeTab === 'gallery' ? 'Image' : activeTab === 'partners' ? 'Logo' : 'Image'} Upload</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  {activeTab === 'gallery' ? 'Image' : activeTab === 'partners' ? 'Logo' : 'Image'} Upload
+                  {(activeTab === 'gallery' || activeTab === 'partners') && <span className="text-red-600"> *</span>}
+                </label>
                 <div className="space-y-3">
                   <div className="relative">
                     <input
