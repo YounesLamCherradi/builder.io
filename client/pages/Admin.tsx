@@ -819,7 +819,7 @@ export default function Admin() {
         <div className="bg-white rounded-lg shadow">
           <div className="px-6 py-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">
-              {activeTab === 'news' ? `Articles (${newsList.length})` : `Events (${eventsList.length})`}
+              {activeTab === 'news' ? `Articles (${newsList.length})` : activeTab === 'events' ? `Events (${eventsList.length})` : `Team Members (${teamList.length})`}
             </h2>
           </div>
 
@@ -833,6 +833,8 @@ export default function Admin() {
                 <div className="p-12 text-center text-gray-500">No articles yet. Create your first one!</div>
               ) : activeTab === 'events' && eventsList.length === 0 ? (
                 <div className="p-12 text-center text-gray-500">No events yet. Create your first one!</div>
+              ) : activeTab === 'team' && teamList.length === 0 ? (
+                <div className="p-12 text-center text-gray-500">No team members yet. Create your first one!</div>
               ) : null}
 
               {activeTab === 'news' &&
