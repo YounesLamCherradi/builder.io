@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { subscribeNewsletter, fetchGallery, fetchPartners, type GalleryItem, type Partner } from '../lib/supabase';
+import { subscribeNewsletter, fetchGallery, fetchPartners, fetchFAQs, fetchPastEvents, type GalleryItem, type Partner, type FAQ, type PastEvent } from '../lib/supabase';
 import { toast } from 'sonner';
 import {
   Globe,
@@ -19,6 +19,8 @@ import {
   Zap,
   Target,
   Check,
+  ChevronUp,
+  MapPin,
 } from 'lucide-react';
 
 export default function Index() {
