@@ -22,6 +22,7 @@ import {
   Brain,
   Star,
 } from 'lucide-react';
+import { fetchTeam, type TeamMember } from '../lib/supabase';
 
 export default function About() {
   const [scrollY, setScrollY] = useState(0);
