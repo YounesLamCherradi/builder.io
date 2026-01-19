@@ -283,13 +283,15 @@ export default function Index() {
         get_started: 'Commencer',
 
         serving: '🇲🇦 Le plus grand réseau d\'Afrique du Nord',
-        hero_quote: 'La coopération internationale dans l\'éducation ouvre des portes à des opportunités sans précédent pour les jeunes talents du monde entier.',
-        hero_author: 'Zakharova',
-        hero_author_title: 'Official de la Fédération Russe',
-        hero_line1: 'Découvrez votre',
-        hero_line2: 'Potentiel Mondial',
+        hero_line1: 'Transformez vos',
+        hero_line2: 'Rêves mondiaux',
+        hero_line3: 'En réalité',
+        hero_desc:
+          "Découvrez des milliers de bourses, emplois et programmes internationaux adaptés aux talents marocains. Votre passeport vers la réussite commence ici.",
         explore_opps: 'Explorer les opportunités',
         watch_demo: 'Voir la démo',
+        testimonial_quote: 'Rejoignez des milliers d\'histoires de succès marocaines transformant leur avenir grâce à notre plateforme.',
+        testimonial_author: 'Communauté MoroccoGlobal',
 
         stat_users: 'Utilisateurs actifs',
         stat_countries: 'Pays',
