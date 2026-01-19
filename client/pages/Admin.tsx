@@ -579,6 +579,10 @@ export default function Admin() {
         await deleteGalleryItem(id);
       } else if (activeTab === 'partners') {
         await deletePartner(id);
+      } else if (activeTab === 'faqs') {
+        await deleteFAQ(id);
+      } else if (activeTab === 'past_events') {
+        await deletePastEvent(id);
       }
       await loadData();
       toast.success('Item deleted successfully');
