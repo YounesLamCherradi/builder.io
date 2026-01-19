@@ -71,9 +71,12 @@ export default function Admin() {
     if (activeTab === 'news') {
       const data = await fetchNews();
       setNewsList(data);
-    } else {
+    } else if (activeTab === 'events') {
       const data = await fetchEvents();
       setEventsList(data);
+    } else {
+      const data = await fetchTeam();
+      setTeamList(data);
     }
     setLoading(false);
   };
