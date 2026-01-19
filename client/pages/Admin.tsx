@@ -338,7 +338,7 @@ export default function Admin() {
         show_learn_more_button: event.show_learn_more_button ?? true,
         learn_more_url: event.learn_more_url || '',
       });
-    } else {
+    } else if (activeTab === 'team') {
       const member = item as TeamMember;
       setFormData({
         title: '',
@@ -353,6 +353,8 @@ export default function Admin() {
         about_event: '',
         name: member.name,
         role: member.role,
+        partnerName: '',
+        partnerLink: '',
       });
       setI18nData({
         title_i18n: { en: '', fr: '', ru: '' },
@@ -361,8 +363,65 @@ export default function Admin() {
         about_event_i18n: { en: '', fr: '', ru: '' },
         role_i18n: member.role_i18n || { en: member.role, fr: '', ru: '' },
         bio_i18n: member.bio_i18n || { en: member.bio, fr: '', ru: '' },
+        caption_i18n: { en: '', fr: '', ru: '' },
       });
       setImagePreview(member.image_url || null);
+    } else if (activeTab === 'gallery') {
+      const gallery = item as GalleryItem;
+      setFormData({
+        title: '',
+        description: '',
+        content: '',
+        category: 'Visa Updates',
+        author: '',
+        image_url: gallery.image_url || '',
+        location: '',
+        date: new Date().toISOString().split('T')[0],
+        time: '18:00',
+        about_event: '',
+        name: '',
+        role: '',
+        partnerName: '',
+        partnerLink: '',
+      });
+      setI18nData({
+        title_i18n: { en: '', fr: '', ru: '' },
+        description_i18n: { en: '', fr: '', ru: '' },
+        content_i18n: { en: '', fr: '', ru: '' },
+        about_event_i18n: { en: '', fr: '', ru: '' },
+        role_i18n: { en: '', fr: '', ru: '' },
+        bio_i18n: { en: '', fr: '', ru: '' },
+        caption_i18n: gallery.caption_i18n || { en: '', fr: '', ru: '' },
+      });
+      setImagePreview(gallery.image_url || null);
+    } else if (activeTab === 'partners') {
+      const partner = item as Partner;
+      setFormData({
+        title: '',
+        description: '',
+        content: '',
+        category: 'Visa Updates',
+        author: '',
+        image_url: partner.logo_url || '',
+        location: '',
+        date: new Date().toISOString().split('T')[0],
+        time: '18:00',
+        about_event: '',
+        name: '',
+        role: '',
+        partnerName: partner.name,
+        partnerLink: partner.link,
+      });
+      setI18nData({
+        title_i18n: { en: '', fr: '', ru: '' },
+        description_i18n: { en: '', fr: '', ru: '' },
+        content_i18n: { en: '', fr: '', ru: '' },
+        about_event_i18n: { en: '', fr: '', ru: '' },
+        role_i18n: { en: '', fr: '', ru: '' },
+        bio_i18n: { en: '', fr: '', ru: '' },
+        caption_i18n: { en: '', fr: '', ru: '' },
+      });
+      setImagePreview(partner.logo_url || null);
     }
     setEditingId(item.id);
     setShowForm(true);
