@@ -138,7 +138,7 @@ export default function Index() {
         sign_in: 'Sign In',
         get_started: 'Get Started',
 
-        serving: '🇲🇦 Serving 50,000+ Moroccan Students',
+        serving: '🇲🇦 Largest Network in North Africa',
         hero_line1: 'Transform Your',
         hero_line2: 'Global Dreams',
         hero_line3: 'Into Reality',
@@ -146,6 +146,8 @@ export default function Index() {
           'Discover thousands of scholarships, jobs, and international programs tailored for talented Moroccans. Your passport to global success starts here.',
         explore_opps: 'Explore Opportunities',
         watch_demo: 'Watch Demo',
+        testimonial_quote: 'Join thousands of Moroccan success stories transforming their futures through our platform.',
+        testimonial_author: 'MoroccoGlobal Community',
 
         stat_users: 'Active Users',
         stat_countries: 'Countries',
