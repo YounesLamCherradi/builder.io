@@ -316,11 +316,15 @@ export async function subscribeNewsletter(email: string): Promise<boolean> {
 // Upload file to Supabase Storage
 export async function uploadImage(file: File, bucket: string = 'media'): Promise<string | null> {
   try {
+    console.log('Starting image upload...', { fileName: file.name, fileSize: file.size, fileType: file.type });
+
     const fileExt = file.name.split('.').pop();
     const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
     const filePath = `${bucket}/${fileName}`;
 
-    const { error: uploadError } = await supabase.storage
+    console.log('Uploading to path:', filePath);
+
+    const { data, error: uploadError } = await supabase.storage
       .from('media')
       .upload(filePath, file, {
         cacheControl: '3600',
@@ -328,18 +332,24 @@ export async function uploadImage(file: File, bucket: string = 'media'): Promise
       });
 
     if (uploadError) {
-      console.error('Error uploading file:', uploadError);
-      if (uploadError.message.includes('not found')) {
-        console.error('⚠️ Storage bucket "media" not found. Please create it in Supabase dashboard: Storage > Create new bucket > Name: "media" > Set as Public');
-      }
+      console.error('❌ Upload Error:', {
+        message: uploadError.message,
+        status: (uploadError as any).status,
+        error: uploadError
+      });
       return null;
     }
 
+    console.log('✅ Upload successful:', filePath);
+
     // Get public URL
-    const { data } = supabase.storage.from('media').getPublicUrl(filePath);
-    return data.publicUrl;
+    const { data: urlData } = supabase.storage.from('media').getPublicUrl(filePath);
+    console.log('Generated public URL:', urlData.publicUrl);
+
+    return urlData.publicUrl;
   } catch (err) {
-    console.error('Unexpected error during image upload:', err);
+    console.error('❌ Unexpected error during image upload:', err);
+    console.error('Error details:', (err as any).message || JSON.stringify(err));
     return null;
   }
 }
