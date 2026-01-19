@@ -282,7 +282,7 @@ export default function Index() {
         sign_in: 'Se connecter',
         get_started: 'Commencer',
 
-        serving: '🇲🇦 Au service de plus de 50 000 étudiants marocains',
+        serving: '🇲🇦 Le plus grand réseau d\'Afrique du Nord',
         hero_line1: 'Transformez vos',
         hero_line2: 'Rêves mondiaux',
         hero_line3: 'En réalité',
@@ -290,6 +290,8 @@ export default function Index() {
           "Découvrez des milliers de bourses, emplois et programmes internationaux adaptés aux talents marocains. Votre passeport vers la réussite commence ici.",
         explore_opps: 'Explorer les opportunités',
         watch_demo: 'Voir la démo',
+        testimonial_quote: 'Rejoignez des milliers d\'histoires de succès marocaines transformant leur avenir grâce à notre plateforme.',
+        testimonial_author: 'Communauté MoroccoGlobal',
 
         stat_users: 'Utilisateurs actifs',
         stat_countries: 'Pays',
