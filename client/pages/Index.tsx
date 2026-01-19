@@ -38,6 +38,9 @@ export default function Index() {
   const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
+  const [faqsList, setFaqsList] = useState<FAQ[]>([]);
+  const [pastEventsList, setPastEventsList] = useState<PastEvent[]>([]);
+  const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
   const sponsorsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
