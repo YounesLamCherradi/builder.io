@@ -83,9 +83,15 @@ export default function Admin() {
     } else if (activeTab === 'events') {
       const data = await fetchEvents();
       setEventsList(data);
-    } else {
+    } else if (activeTab === 'team') {
       const data = await fetchTeam();
       setTeamList(data);
+    } else if (activeTab === 'gallery') {
+      const data = await fetchGallery();
+      setGalleryList(data);
+    } else if (activeTab === 'partners') {
+      const data = await fetchPartners();
+      setPartnersList(data);
     }
     setLoading(false);
   };
