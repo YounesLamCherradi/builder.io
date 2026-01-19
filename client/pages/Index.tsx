@@ -949,52 +949,59 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden">
-                {opportunities.map((opp, index) => {
-                  const Icon = opp.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100"
-                    >
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
-                      >
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900 mb-1">{opp.count}</div>
-                      <div className="text-base font-semibold text-gray-800 mb-1">{opp.title}</div>
-                      <div className="text-sm text-gray-500">{opp.desc}</div>
+            <div className="relative flex flex-col items-center justify-center">
+              {/* Testimonial Card */}
+              <div className="w-full max-w-md relative group">
+                {/* Background glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-brand-red via-brand-silver to-black rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
+
+                {/* Card content */}
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
+                  {/* Top gradient bar */}
+                  <div className="h-1 bg-gradient-to-r from-brand-red via-brand-silver to-black" />
+
+                  {/* Image section */}
+                  <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
+                      alt="Community testimonial"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+
+                  {/* Quote section */}
+                  <div className="p-6 sm:p-8 lg:p-8 space-y-4">
+                    {/* Quote mark */}
+                    <div className="text-5xl sm:text-6xl text-brand-red opacity-30 leading-none">"</div>
+
+                    {/* Quote text */}
+                    <p className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 leading-relaxed">
+                      {t('testimonial_quote')}
+                    </p>
+
+                    {/* Author info */}
+                    <div className="pt-4 border-t border-gray-200">
+                      <p className="text-sm font-bold text-gray-800">{t('testimonial_author')}</p>
+                      <p className="text-xs text-brand-red font-semibold">✓ Verified Network</p>
                     </div>
-                  );
-                })}
+                  </div>
+                </div>
               </div>
 
-              <div className="hidden lg:block relative h-[600px]">
-                {opportunities.map((opp, index) => {
-                  const Icon = opp.icon;
+              {/* Small stats below testimonial - mobile/tablet view */}
+              <div className="lg:hidden mt-10 grid grid-cols-2 gap-4 w-full">
+                {stats.slice(0, 2).map((stat, index) => {
+                  const Icon = stat.icon;
                   return (
                     <div
                       key={index}
-                      className="absolute bg-white rounded-2xl p-6 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 cursor-pointer"
-                      style={{
-                        top: `${index * 18}%`,
-                        left: `${index % 2 === 0 ? '0' : '25%'}`,
-                        right: `${index % 2 === 0 ? '25%' : '0'}`,
-                        animation: `float ${3 + index}s ease-in-out infinite`,
-                        animationDelay: `${index * 0.2}s`,
-                        zIndex: 4 - index,
-                      }}
+                      className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
                     >
-                      <div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
-                      >
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div className="text-3xl font-bold text-gray-900 mb-1">{opp.count}</div>
-                      <div className="text-lg font-semibold text-gray-800 mb-1">{opp.title}</div>
-                      <div className="text-sm text-gray-500">{opp.desc}</div>
+                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-2" />
+                      <div className="text-lg sm:text-xl font-bold text-gray-900">{stat.number}</div>
+                      <div className="text-xs text-gray-500">{stat.label}</div>
                     </div>
                   );
                 })}
