@@ -717,7 +717,7 @@ export default function News() {
                     </h3>
 
                     <p className="text-gray-600 text-sm sm:text-base mb-4 line-clamp-2 flex-1">
-                      {article.description}
+                      {getArticleContent(article).description}
                     </p>
 
                     <div className="space-y-3 pt-4 border-t border-gray-200">
