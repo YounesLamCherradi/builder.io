@@ -113,6 +113,13 @@ export default function Contact() {
         contact_social_title: 'Connect With Us',
         contact_social_desc: 'Follow us on social media for updates and success stories',
 
+        home_stay_updated_title: 'Stay Updated with',
+        home_stay_updated_highlight: 'Global Opportunities',
+        home_stay_updated_desc: 'Get the latest news about scholarships, visas, and opportunities delivered to your inbox every month.',
+        home_email_placeholder: 'Enter your email address',
+        subscribe_now: 'Subscribe',
+        subscribe_privacy: 'We respect your privacy. Unsubscribe at any time. No spam.',
+
         tagline: 'Your World Awaits',
         footer_tagline: 'Helping Moroccans achieve global dreams.',
         platform: 'Platform',
