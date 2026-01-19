@@ -280,7 +280,7 @@ export default function Admin() {
     }
   };
 
-  const handleEdit = (item: NewsArticle | Event | TeamMember) => {
+  const handleEdit = (item: NewsArticle | Event | TeamMember | GalleryItem | Partner) => {
     if (activeTab === 'news') {
       const news = item as NewsArticle;
       setFormData({
