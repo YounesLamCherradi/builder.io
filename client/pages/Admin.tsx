@@ -577,7 +577,13 @@ export default function Admin() {
         <div className="bg-white rounded-lg shadow mb-8">
           <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-900">
-              {showForm ? (editingId ? 'Edit' : 'Create New') : 'Add New'} {activeTab === 'news' ? 'Article' : activeTab === 'events' ? 'Event' : 'Team Member'}
+              {showForm ? (editingId ? 'Edit' : 'Create New') : 'Add New'} {
+                activeTab === 'news' ? 'Article' :
+                activeTab === 'events' ? 'Event' :
+                activeTab === 'team' ? 'Team Member' :
+                activeTab === 'gallery' ? 'Gallery Item' :
+                'Partner'
+              }
             </h2>
             {showForm && (
               <button
