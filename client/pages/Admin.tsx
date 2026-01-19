@@ -204,6 +204,12 @@ export default function Admin() {
         location: '',
         date: news.date,
       });
+      setI18nData({
+        title_i18n: news.title_i18n || { en: news.title, fr: '', ru: '' },
+        description_i18n: news.description_i18n || { en: news.description, fr: '', ru: '' },
+        content_i18n: news.content_i18n || { en: news.content, fr: '', ru: '' },
+        about_event_i18n: { en: '', fr: '', ru: '' },
+      });
       setImagePreview(news.image_url || null);
     } else {
       const event = item as Event;
@@ -218,6 +224,12 @@ export default function Admin() {
         date: event.date,
         time: event.time || '18:00',
         about_event: event.about_event || '',
+      });
+      setI18nData({
+        title_i18n: event.title_i18n || { en: event.title, fr: '', ru: '' },
+        description_i18n: event.description_i18n || { en: event.description, fr: '', ru: '' },
+        content_i18n: { en: '', fr: '', ru: '' },
+        about_event_i18n: event.about_event_i18n || { en: event.about_event, fr: '', ru: '' },
       });
       setImagePreview(event.image_url || null);
       setEventDetails(event.details || ['', '', '', '']);
