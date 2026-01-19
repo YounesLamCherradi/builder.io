@@ -584,22 +584,41 @@ export default function Admin() {
                 </div>
               )}
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {activeTab === 'news' ? 'Description' : 'Short Description'} * ({activeLanguage.toUpperCase()})
-                </label>
-                <textarea
-                  value={i18nData.description_i18n[activeLanguage]}
-                  onChange={(e) => setI18nData(prev => ({
-                    ...prev,
-                    description_i18n: { ...prev.description_i18n, [activeLanguage]: e.target.value }
-                  }))}
-                  required
-                  rows={2}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                  placeholder={activeTab === 'news' ? 'Brief summary' : 'Brief event summary for event card'}
-                />
-              </div>
+              {activeTab === 'team' ? (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Bio * ({activeLanguage.toUpperCase()})
+                  </label>
+                  <textarea
+                    value={i18nData.bio_i18n[activeLanguage]}
+                    onChange={(e) => setI18nData(prev => ({
+                      ...prev,
+                      bio_i18n: { ...prev.bio_i18n, [activeLanguage]: e.target.value }
+                    }))}
+                    required
+                    rows={3}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                    placeholder="Team member bio or description"
+                  />
+                </div>
+              ) : (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    {activeTab === 'news' ? 'Description' : 'Short Description'} * ({activeLanguage.toUpperCase()})
+                  </label>
+                  <textarea
+                    value={i18nData.description_i18n[activeLanguage]}
+                    onChange={(e) => setI18nData(prev => ({
+                      ...prev,
+                      description_i18n: { ...prev.description_i18n, [activeLanguage]: e.target.value }
+                    }))}
+                    required
+                    rows={2}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                    placeholder={activeTab === 'news' ? 'Brief summary' : 'Brief event summary for event card'}
+                  />
+                </div>
+              )}
 
               {activeTab === 'events' && (
                 <div>
