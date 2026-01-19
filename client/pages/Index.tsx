@@ -360,6 +360,11 @@ export default function Index() {
         subscribe_privacy: 'Nous respectons votre vie privée. Désinscrivez-vous à tout moment. Pas de spam.',
         subscribe_now: 'S\'abonner',
 
+        faq_title: 'Questions Fréquemment Posées',
+        faq_subtitle: 'Obtenez des réponses à vos questions sur les opportunités et notre plateforme',
+        past_events_title: 'Faits Marquants des Événements Passés',
+        past_events_subtitle: 'Revivez la magie - Découvrez ce qu\'ont vécu nos étudiants',
+
         morocco: 'Maroc',
         morocco_subtitle: 'Hub fondateur',
         morocco_b1: 'Réseau universitaire local',
