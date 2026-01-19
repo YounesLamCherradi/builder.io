@@ -35,6 +35,7 @@ export default function About() {
     return 'en';
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
