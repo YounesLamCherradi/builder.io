@@ -34,6 +34,8 @@ export default function Admin() {
     date: new Date().toISOString().split('T')[0],
     time: '18:00',
     about_event: '',
+    name: '',
+    role: '',
   });
 
   // Multilingual form data
