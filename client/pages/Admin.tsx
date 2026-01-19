@@ -44,6 +44,8 @@ export default function Admin() {
     description_i18n: { en: '', fr: '', ru: '' },
     content_i18n: { en: '', fr: '', ru: '' },
     about_event_i18n: { en: '', fr: '', ru: '' },
+    role_i18n: { en: '', fr: '', ru: '' },
+    bio_i18n: { en: '', fr: '', ru: '' },
   });
 
   const [eventDetails, setEventDetails] = useState<string[]>([
