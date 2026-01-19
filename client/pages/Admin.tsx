@@ -38,6 +38,8 @@ export default function Admin() {
     about_event: '',
     name: '',
     role: '',
+    partnerName: '',
+    partnerLink: '',
   });
 
   // Multilingual form data
