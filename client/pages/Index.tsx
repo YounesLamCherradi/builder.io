@@ -107,6 +107,18 @@ export default function Index() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const loadData = async () => {
+      const [gallery, partners] = await Promise.all([
+        fetchGallery(),
+        fetchPartners()
+      ]);
+      if (gallery.length > 0) setGalleryItems(gallery);
+      if (partners.length > 0) setPartnersList(partners);
+    };
+    loadData();
+  }, []);
+
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
