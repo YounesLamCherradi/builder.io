@@ -83,6 +83,18 @@ export interface Event {
   created_at: string;
 }
 
+// Team types
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  role_i18n?: I18nString;
+  bio: string;
+  bio_i18n?: I18nString;
+  image_url: string | null;
+  created_at: string;
+}
+
 // Fetch all news
 export async function fetchNews(): Promise<NewsArticle[]> {
   try {
