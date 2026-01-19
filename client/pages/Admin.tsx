@@ -1302,7 +1302,7 @@ export default function Admin() {
               ) : activeTab === 'faqs' && faqsList.length === 0 ? (
                 <div className="p-12 text-center text-gray-500">No FAQs yet. Create your first one!</div>
               ) : activeTab === 'past_events' && pastEventsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">No partners yet. Create your first one!</div>
+                <div className="p-12 text-center text-gray-500">No past events yet. Create your first one!</div>
               ) : null}
 
               {activeTab === 'news' &&
