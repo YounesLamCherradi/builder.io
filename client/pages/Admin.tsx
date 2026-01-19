@@ -352,12 +352,16 @@ export default function Admin() {
       date: new Date().toISOString().split('T')[0],
       time: '18:00',
       about_event: '',
+      name: '',
+      role: '',
     });
     setI18nData({
       title_i18n: { en: '', fr: '', ru: '' },
       description_i18n: { en: '', fr: '', ru: '' },
       content_i18n: { en: '', fr: '', ru: '' },
       about_event_i18n: { en: '', fr: '', ru: '' },
+      role_i18n: { en: '', fr: '', ru: '' },
+      bio_i18n: { en: '', fr: '', ru: '' },
     });
     setEventDetails(['', '', '', '']);
     setImagePreview(null);
