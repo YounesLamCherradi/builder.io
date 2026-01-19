@@ -869,8 +869,57 @@ export default function Admin() {
                 </>
               )}
 
+              {activeTab === 'gallery' && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Image Caption * ({activeLanguage.toUpperCase()})
+                  </label>
+                  <input
+                    type="text"
+                    value={i18nData.caption_i18n[activeLanguage]}
+                    onChange={(e) => setI18nData(prev => ({
+                      ...prev,
+                      caption_i18n: { ...prev.caption_i18n, [activeLanguage]: e.target.value }
+                    }))}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                    placeholder={`Caption in ${activeLanguage.toUpperCase()}`}
+                  />
+                </div>
+              )}
+
+              {activeTab === 'partners' && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Partner Name *</label>
+                      <input
+                        type="text"
+                        name="partnerName"
+                        value={formData.partnerName}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="Organization name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Partner Link</label>
+                      <input
+                        type="url"
+                        name="partnerLink"
+                        value={formData.partnerLink}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="https://example.com"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Image Upload</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">{activeTab === 'gallery' ? 'Image' : activeTab === 'partners' ? 'Logo' : 'Image'} Upload</label>
                 <div className="space-y-3">
                   <div className="relative">
                     <input
