@@ -99,6 +99,12 @@ export default function Admin() {
     } else if (activeTab === 'partners') {
       const data = await fetchPartners();
       setPartnersList(data);
+    } else if (activeTab === 'faqs') {
+      const data = await fetchFAQs();
+      setFaqsList(data);
+    } else if (activeTab === 'past_events') {
+      const data = await fetchPastEvents();
+      setPastEventsList(data);
     }
     setLoading(false);
   };
