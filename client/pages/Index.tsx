@@ -1338,48 +1338,72 @@ export default function Index() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               {
-                src: 'https://www.moroccoworldnews.com/wp-content/uploads/2024/11/munich-is-top-destination-for-moroccan-students-in-germany.png',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F19ae65cb32f546b491a1fb585d4baf31?format=webp&width=800',
                 caption: t('caption_1'),
               },
               {
-                src: 'https://media.licdn.com/dms/image/v2/D4E12AQE9ybFDnRm1XA/article-cover_image-shrink_720_1280/B4EZjnOKdiGwAM-/0/1756225912720?e=2147483647&v=beta&t=WaBogNKIrzrqg6v2VHX7aFDPlEfu-B086wd-1K7fFt0',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ffa187bb6d4244f059f8b222d86f00b63?format=webp&width=800',
                 caption: t('caption_2'),
               },
               {
-                src: 'https://ec.usembassy.gov/wp-content/uploads/sites/167/2024/06/IMG_4913-copy-1-1140x684-1.jpg',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F9d72fc5424a44f139487c956c757df53?format=webp&width=800',
                 caption: t('caption_3'),
               },
               {
-                src: 'https://www.shutterstock.com/image-photo/graduate-students-diplomas-light-room-260nw-2445597597.jpg',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F508e9f259a9849429e3e9b3c031d16cf?format=webp&width=800',
                 caption: t('caption_4'),
               },
               {
-                src: 'https://www.amideast.org/sites/default/files/styles/large/public/2025-07/YES%20Morocco_0.jpg?itok=4to3HsO5',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fcec6c69151a14533baae683259a19778?format=webp&width=800',
                 caption: t('caption_5'),
               },
               {
-                src: 'https://e2.hespress.com/wp-content/uploads/2025/09/IMG-20250920-WA0015.jpg',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F27bde78a063348f4ba40f8bc4125f3b9?format=webp&width=800',
                 caption: t('caption_6'),
               },
               {
-                src: 'https://www.yes-abroad.org/assets/general/Maria-and-her-friends-smile-from-the-street.JPG',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F513d1a78045a4ce9b27e689c997b8d8b?format=webp&width=800',
                 caption: t('caption_7'),
               },
               {
-                src: 'https://ualr.edu/news-archive/wp-content/uploads/sites/208/2019/11/Morocco3.jpg',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F9d460b8e609b461090ef2fcc6f5b2880?format=webp&width=800',
                 caption: t('caption_8'),
               },
               {
-                src: 'https://f.hubspotusercontent10.net/hubfs/67369/2021%20Compressed%20Images/Morocco%20Compressed/Ariel-Dansky-Oujda-Morocco-students.jpeg',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F0edef04d17754bc9ad0a67de98572f1a?format=webp&width=800',
                 caption: t('caption_9'),
               },
               {
-                src: 'https://www.iesabroad.org/sites/default/files/styles/media_gallery_preview/public/2022-07/31803254657_626b62c73e_k.jpg?h=a01a9706&itok=PVJTp2H5',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fc80a4d77218a4d23b96d447c5f697d4e?format=webp&width=800',
                 caption: t('caption_10'),
               },
               {
-                src: 'https://e1.hespress.com/wp-content/uploads/2024/01/Alumni-Summit-3-900x600.jpeg',
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fb58c8a44308143cfb4736db92f8bd3c5?format=webp&width=800',
                 caption: t('caption_11'),
+              },
+              {
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fad4270b9a112424a81acfbbe4c3c4f69?format=webp&width=800',
+                caption: t('caption_12'),
+              },
+              {
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fb01dc4afdc9b4881b9d67779a30b7370?format=webp&width=800',
+                caption: t('caption_13'),
+              },
+              {
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F975eb756dbce466e888795c92f7cfbfc?format=webp&width=800',
+                caption: t('caption_14'),
+              },
+              {
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F7559024621ac47c9a78d5e0ff554ad87?format=webp&width=800',
+                caption: t('caption_15'),
+              },
+              {
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fdfdb9c9f6794454292eaf2ff11d6762d?format=webp&width=800',
+                caption: t('caption_16'),
+              },
+              {
+                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F5580a433756540269052cfc4d1c5a0d9?format=webp&width=800',
+                caption: t('caption_17'),
               },
             ].map((item, idx) => (
               <div
