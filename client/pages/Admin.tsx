@@ -1465,6 +1465,73 @@ export default function Admin() {
                     </div>
                   </div>
                 ))}
+
+              {activeTab === 'faqs' &&
+                faqsList.map(faq => (
+                  <div key={faq.id} className="p-6 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
+                        <p className="text-sm text-gray-600 mt-2 line-clamp-2">{faq.answer}</p>
+                        <p className="text-xs text-gray-500 mt-2">ID: {faq.id}</p>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEdit(faq)}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                        >
+                          <Edit2 className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(faq.id)}
+                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+              {activeTab === 'past_events' &&
+                pastEventsList.map(event => (
+                  <div key={event.id} className="p-6 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 flex gap-4">
+                        {event.image_url && (
+                          <img
+                            src={event.image_url}
+                            alt={event.title}
+                            className="w-24 h-24 object-cover rounded-lg"
+                          />
+                        )}
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900">{event.title}</h3>
+                          <p className="text-sm text-gray-600 mt-1 line-clamp-2">{event.description}</p>
+                          <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
+                            <span>{event.location}</span>
+                            <span>{event.date}</span>
+                          </div>
+                          <p className="text-xs text-gray-500 mt-2">ID: {event.id}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEdit(event)}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                        >
+                          <Edit2 className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(event.id)}
+                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           )}
         </div>
