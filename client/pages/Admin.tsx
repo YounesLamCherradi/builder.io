@@ -500,6 +500,65 @@ export default function Admin() {
         caption_i18n: { en: '', fr: '', ru: '' },
       });
       setImagePreview(partner.logo_url || null);
+    } else if (activeTab === 'faqs') {
+      const faq = item as FAQ;
+      setFormData({
+        title: '',
+        description: '',
+        content: '',
+        category: 'Visa Updates',
+        author: '',
+        image_url: '',
+        location: '',
+        date: new Date().toISOString().split('T')[0],
+        time: '18:00',
+        about_event: '',
+        name: '',
+        role: '',
+        partnerName: '',
+        partnerLink: '',
+        question: faq.question,
+        answer: faq.answer,
+      });
+      setI18nData({
+        title_i18n: { en: '', fr: '', ru: '' },
+        description_i18n: { en: '', fr: '', ru: '' },
+        content_i18n: { en: '', fr: '', ru: '' },
+        about_event_i18n: { en: '', fr: '', ru: '' },
+        role_i18n: { en: '', fr: '', ru: '' },
+        bio_i18n: { en: '', fr: '', ru: '' },
+        caption_i18n: { en: '', fr: '', ru: '' },
+        question_i18n: faq.question_i18n || { en: faq.question, fr: '', ru: '' },
+        answer_i18n: faq.answer_i18n || { en: faq.answer, fr: '', ru: '' },
+      });
+    } else if (activeTab === 'past_events') {
+      const pastEvent = item as PastEvent;
+      setFormData({
+        title: pastEvent.title,
+        description: pastEvent.description,
+        content: '',
+        category: 'Visa Updates',
+        author: '',
+        image_url: pastEvent.image_url || '',
+        location: pastEvent.location,
+        date: pastEvent.date,
+        time: '18:00',
+        about_event: '',
+        name: '',
+        role: '',
+        partnerName: '',
+        partnerLink: '',
+      });
+      setI18nData({
+        title_i18n: pastEvent.title_i18n || { en: pastEvent.title, fr: '', ru: '' },
+        description_i18n: pastEvent.description_i18n || { en: pastEvent.description, fr: '', ru: '' },
+        content_i18n: { en: '', fr: '', ru: '' },
+        about_event_i18n: { en: '', fr: '', ru: '' },
+        role_i18n: { en: '', fr: '', ru: '' },
+        bio_i18n: { en: '', fr: '', ru: '' },
+        caption_i18n: { en: '', fr: '', ru: '' },
+      });
+      setImagePreview(pastEvent.image_url || null);
     }
     setEditingId(item.id);
     setShowForm(true);
