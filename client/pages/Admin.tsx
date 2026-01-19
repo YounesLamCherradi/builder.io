@@ -11,6 +11,7 @@ export default function Admin() {
   const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [activeLanguage, setActiveLanguage] = useState<'en' | 'fr' | 'ru'>('en');
 
   // Form state
   const [formData, setFormData] = useState({
@@ -24,6 +25,14 @@ export default function Admin() {
     date: new Date().toISOString().split('T')[0],
     time: '18:00',
     about_event: '',
+  });
+
+  // Multilingual form data
+  const [i18nData, setI18nData] = useState({
+    title_i18n: { en: '', fr: '', ru: '' },
+    description_i18n: { en: '', fr: '', ru: '' },
+    content_i18n: { en: '', fr: '', ru: '' },
+    about_event_i18n: { en: '', fr: '', ru: '' },
   });
 
   const [eventDetails, setEventDetails] = useState<string[]>([
