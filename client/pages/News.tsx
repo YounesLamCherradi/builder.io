@@ -889,10 +889,6 @@ export default function News() {
               {/* Article Metadata */}
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 pb-6 sm:pb-8 border-b border-gray-200">
                 <div className="flex items-center gap-2 text-gray-600">
-                  <User className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">{t('news_by')} {selectedArticle.author}</span>
-                </div>
-                <div className="flex items-center gap-2 text-gray-600">
                   <Calendar className="w-5 h-5" />
                   <span className="text-sm sm:text-base">{t('news_published')} {selectedArticle.date}</span>
                 </div>
