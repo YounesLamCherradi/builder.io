@@ -55,7 +55,7 @@ ${message}
         Authorization: `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: 'Contact Form <onboarding@resend.dev>',
+        from: 'noreply@resend.dev',
         to: 'younes@lamhamedicherradi.com',
         replyTo: email,
         subject: `New Contact Form Submission: ${subject}`,
