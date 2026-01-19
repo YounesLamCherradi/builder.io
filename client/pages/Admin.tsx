@@ -1133,6 +1133,77 @@ export default function Admin() {
                     </div>
                   </div>
                 ))}
+
+              {activeTab === 'gallery' &&
+                galleryList.map(item => (
+                  <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 flex gap-4">
+                        {item.image_url && (
+                          <img
+                            src={item.image_url}
+                            alt={item.caption_i18n?.en || 'Gallery item'}
+                            className="w-24 h-24 object-cover rounded-lg"
+                          />
+                        )}
+                        <div>
+                          <p className="text-sm text-gray-600">{item.caption_i18n?.en || 'No caption'}</p>
+                          <p className="text-xs text-gray-500 mt-1">ID: {item.id}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEdit(item)}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                        >
+                          <Edit2 className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(item.id)}
+                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+              {activeTab === 'partners' &&
+                partnersList.map(partner => (
+                  <div key={partner.id} className="p-6 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 flex gap-4">
+                        {partner.logo_url && (
+                          <img
+                            src={partner.logo_url}
+                            alt={partner.name}
+                            className="w-24 h-24 object-cover rounded-lg"
+                          />
+                        )}
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-900">{partner.name}</h3>
+                          <p className="text-sm text-gray-600 mt-1">{partner.link}</p>
+                          <p className="text-xs text-gray-500 mt-1">ID: {partner.id}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEdit(partner)}
+                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                        >
+                          <Edit2 className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(partner.id)}
+                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           )}
         </div>
