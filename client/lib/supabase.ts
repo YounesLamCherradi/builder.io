@@ -38,6 +38,13 @@ export interface Subscriber {
   created_at: string;
 }
 
+// Multilingual string type
+export type I18nString = {
+  en: string;
+  fr: string;
+  ru: string;
+};
+
 // News types
 export interface NewsArticle {
   id: string;
@@ -48,6 +55,9 @@ export interface NewsArticle {
   author: string;
   image_url: string | null;
   date: string;
+  title_i18n?: I18nString;
+  description_i18n?: I18nString;
+  content_i18n?: I18nString;
   created_at: string;
 }
 
