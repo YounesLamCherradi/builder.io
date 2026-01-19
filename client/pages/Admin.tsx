@@ -869,24 +869,6 @@ export default function Admin() {
                 </>
               )}
 
-              {activeTab === 'gallery' && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Image Caption * ({activeLanguage.toUpperCase()})
-                  </label>
-                  <input
-                    type="text"
-                    value={i18nData.caption_i18n[activeLanguage]}
-                    onChange={(e) => setI18nData(prev => ({
-                      ...prev,
-                      caption_i18n: { ...prev.caption_i18n, [activeLanguage]: e.target.value }
-                    }))}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    placeholder={`Caption in ${activeLanguage.toUpperCase()}`}
-                  />
-                </div>
-              )}
-
               {activeTab === 'partners' && (
                 <>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
