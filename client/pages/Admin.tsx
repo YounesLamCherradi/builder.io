@@ -325,12 +325,16 @@ export default function Admin() {
     try {
       if (activeTab === 'news') {
         await deleteNews(id);
-      } else {
+      } else if (activeTab === 'events') {
         await deleteEvent(id);
+      } else {
+        await deleteTeamMember(id);
       }
       await loadData();
+      toast.success('Item deleted successfully');
     } catch (error) {
       console.error('Error deleting:', error);
+      toast.error('Failed to delete item');
     } finally {
       setLoading(false);
     }
