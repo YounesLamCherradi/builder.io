@@ -722,11 +722,7 @@ export default function News() {
                       {getArticleContent(article).description}
                     </p>
 
-                    <div className="space-y-3 pt-4 border-t border-gray-200">
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                        <User className="w-4 h-4" />
-                        <span>{t('news_by')} {article.author}</span>
-                      </div>
+                    <div className="pt-4 border-t border-gray-200">
                       <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
                         <Calendar className="w-4 h-4" />
                         <span>{t('news_published')} {article.date}</span>
