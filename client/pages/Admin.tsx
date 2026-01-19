@@ -291,6 +291,50 @@ export default function Admin() {
             order_index: partnersList.length,
           });
         }
+      } else if (activeTab === 'faqs') {
+        // FAQs handling
+        if (editingId) {
+          await updateFAQ(editingId, {
+            question: i18nData.question_i18n.en,
+            answer: i18nData.answer_i18n.en,
+            question_i18n: i18nData.question_i18n,
+            answer_i18n: i18nData.answer_i18n,
+            order_index: 0,
+          });
+        } else {
+          await createFAQ({
+            question: i18nData.question_i18n.en,
+            answer: i18nData.answer_i18n.en,
+            question_i18n: i18nData.question_i18n,
+            answer_i18n: i18nData.answer_i18n,
+            order_index: faqsList.length,
+          });
+        }
+      } else if (activeTab === 'past_events') {
+        // Past Events handling
+        if (editingId) {
+          await updatePastEvent(editingId, {
+            title: i18nData.title_i18n.en,
+            description: i18nData.description_i18n.en,
+            location: formData.location,
+            date: formData.date,
+            image_url: formData.image_url,
+            title_i18n: i18nData.title_i18n,
+            description_i18n: i18nData.description_i18n,
+            order_index: 0,
+          });
+        } else {
+          await createPastEvent({
+            title: i18nData.title_i18n.en,
+            description: i18nData.description_i18n.en,
+            location: formData.location,
+            date: formData.date,
+            image_url: formData.image_url,
+            title_i18n: i18nData.title_i18n,
+            description_i18n: i18nData.description_i18n,
+            order_index: pastEventsList.length,
+          });
+        }
       }
 
       // Reset form and reload
@@ -301,7 +345,9 @@ export default function Admin() {
         events: 'Event',
         team: 'Team member',
         gallery: 'Gallery item',
-        partners: 'Partner'
+        partners: 'Partner',
+        faqs: 'FAQ',
+        past_events: 'Past Event'
       };
       toast.success(`${tabLabels[activeTab as keyof typeof tabLabels]} ${editingId ? 'updated' : 'created'} successfully`);
     } catch (error) {
