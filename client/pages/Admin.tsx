@@ -5,6 +5,7 @@ import { fetchNews, createNews, updateNews, deleteNews, fetchEvents, createEvent
 import { toast } from 'sonner';
 
 export default function Admin() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'news' | 'events'>('news');
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [eventsList, setEventsList] = useState<Event[]>([]);
@@ -12,6 +13,13 @@ export default function Admin() {
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [activeLanguage, setActiveLanguage] = useState<'en' | 'fr' | 'ru'>('en');
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminToken');
+    localStorage.removeItem('adminUsername');
+    toast.success('Logged out successfully');
+    navigate('/admin-login');
+  };
 
   // Form state
   const [formData, setFormData] = useState({
