@@ -1068,6 +1068,99 @@ export default function Admin() {
                 </>
               )}
 
+              {activeTab === 'faqs' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Question * ({activeLanguage.toUpperCase()})</label>
+                    <input
+                      type="text"
+                      value={i18nData.question_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        question_i18n: { ...prev.question_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="FAQ question"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Answer * ({activeLanguage.toUpperCase()})</label>
+                    <textarea
+                      value={i18nData.answer_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        answer_i18n: { ...prev.answer_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="FAQ answer"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'past_events' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Event Title * ({activeLanguage.toUpperCase()})</label>
+                    <input
+                      type="text"
+                      value={i18nData.title_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        title_i18n: { ...prev.title_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Past event title"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Event Description * ({activeLanguage.toUpperCase()})</label>
+                    <textarea
+                      value={i18nData.description_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        description_i18n: { ...prev.description_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      rows={3}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Event description"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Location *</label>
+                      <input
+                        type="text"
+                        value={formData.location}
+                        onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="Event location"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Event Date *</label>
+                      <input
+                        type="date"
+                        value={formData.date}
+                        onChange={(e) => setFormData(prev => ({ ...prev, date: e.target.value }))}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   {activeTab === 'gallery' ? 'Image' : activeTab === 'partners' ? 'Logo' : 'Image'} Upload
