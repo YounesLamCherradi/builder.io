@@ -206,7 +206,7 @@ export default function Admin() {
             about_event_i18n: i18nData.about_event_i18n,
           });
         }
-      } else {
+      } else if (activeTab === 'team') {
         // Team member handling
         if (editingId) {
           await updateTeamMember(editingId, {
@@ -227,12 +227,51 @@ export default function Admin() {
             image_url: formData.image_url,
           });
         }
+      } else if (activeTab === 'gallery') {
+        // Gallery handling
+        if (editingId) {
+          await updateGalleryItem(editingId, {
+            image_url: formData.image_url,
+            caption_i18n: i18nData.caption_i18n,
+            order_index: 0,
+          });
+        } else {
+          await createGalleryItem({
+            image_url: formData.image_url,
+            caption_i18n: i18nData.caption_i18n,
+            order_index: galleryList.length,
+          });
+        }
+      } else if (activeTab === 'partners') {
+        // Partners handling
+        if (editingId) {
+          await updatePartner(editingId, {
+            logo_url: formData.image_url,
+            name: formData.partnerName,
+            link: formData.partnerLink,
+            order_index: 0,
+          });
+        } else {
+          await createPartner({
+            logo_url: formData.image_url,
+            name: formData.partnerName,
+            link: formData.partnerLink,
+            order_index: partnersList.length,
+          });
+        }
       }
 
       // Reset form and reload
       resetForm();
       await loadData();
-      toast.success(`${activeTab === 'news' ? 'Article' : activeTab === 'events' ? 'Event' : 'Team member'} ${editingId ? 'updated' : 'created'} successfully`);
+      const tabLabels = {
+        news: 'Article',
+        events: 'Event',
+        team: 'Team member',
+        gallery: 'Gallery item',
+        partners: 'Partner'
+      };
+      toast.success(`${tabLabels[activeTab as keyof typeof tabLabels]} ${editingId ? 'updated' : 'created'} successfully`);
     } catch (error) {
       console.error('Error saving:', error);
       toast.error('Failed to save');
