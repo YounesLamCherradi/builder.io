@@ -861,7 +861,7 @@ export default function News() {
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 px-6 sm:px-8 py-5 sm:py-6 flex items-center justify-between">
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 line-clamp-1">
-                {selectedArticle.title}
+                {getArticleContent(selectedArticle).title}
               </h2>
               <button
                 onClick={() => setSelectedArticle(null)}
