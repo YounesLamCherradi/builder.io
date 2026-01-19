@@ -355,17 +355,37 @@ export default function Admin() {
 
           {showForm && (
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
+              {/* Language Tabs */}
+              <div className="flex gap-2 mb-6 border-b border-gray-200">
+                {(['en', 'fr', 'ru'] as const).map((lang) => (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => setActiveLanguage(lang)}
+                    className={`px-4 py-2 font-medium transition-colors border-b-2 ${
+                      activeLanguage === lang
+                        ? 'border-brand-red text-brand-red'
+                        : 'border-transparent text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    {lang === 'en' ? '🇬🇧 English' : lang === 'fr' ? '🇫🇷 Français' : '🇷🇺 Русский'}
+                  </button>
+                ))}
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Title * ({activeLanguage.toUpperCase()})</label>
                   <input
                     type="text"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleInputChange}
+                    value={i18nData.title_i18n[activeLanguage]}
+                    onChange={(e) => setI18nData(prev => ({
+                      ...prev,
+                      title_i18n: { ...prev.title_i18n, [activeLanguage]: e.target.value }
+                    }))}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    placeholder="Article/Event title"
+                    placeholder={`Article/Event title in ${activeLanguage.toUpperCase()}`}
                   />
                 </div>
 
