@@ -950,7 +950,7 @@ export default function About() {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover"
                         style={{
                           filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
                         }}
