@@ -473,36 +473,68 @@ export default function Admin() {
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Title * ({activeLanguage.toUpperCase()})</label>
-                  <input
-                    type="text"
-                    value={i18nData.title_i18n[activeLanguage]}
-                    onChange={(e) => setI18nData(prev => ({
-                      ...prev,
-                      title_i18n: { ...prev.title_i18n, [activeLanguage]: e.target.value }
-                    }))}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    placeholder={`Article/Event title in ${activeLanguage.toUpperCase()}`}
-                  />
-                </div>
+              {activeTab === 'team' ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Team member full name"
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {activeTab === 'news' ? 'Author' : 'Location'}
-                  </label>
-                  <input
-                    type="text"
-                    name={activeTab === 'news' ? 'author' : 'location'}
-                    value={activeTab === 'news' ? formData.author : formData.location}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    placeholder={activeTab === 'news' ? 'Author name' : 'Event location'}
-                  />
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Role/Title * ({activeLanguage.toUpperCase()})</label>
+                    <input
+                      type="text"
+                      value={i18nData.role_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        role_i18n: { ...prev.role_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder={`Role in ${activeLanguage.toUpperCase()}`}
+                    />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Title * ({activeLanguage.toUpperCase()})</label>
+                    <input
+                      type="text"
+                      value={i18nData.title_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        title_i18n: { ...prev.title_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder={`Article/Event title in ${activeLanguage.toUpperCase()}`}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {activeTab === 'news' ? 'Author' : 'Location'}
+                    </label>
+                    <input
+                      type="text"
+                      name={activeTab === 'news' ? 'author' : 'location'}
+                      value={activeTab === 'news' ? formData.author : formData.location}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder={activeTab === 'news' ? 'Author name' : 'Event location'}
+                    />
+                  </div>
+                </div>
+              )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
