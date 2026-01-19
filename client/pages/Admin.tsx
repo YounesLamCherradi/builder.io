@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Plus, Edit2, Trash2, Loader, Upload, X, LogOut } from 'lucide-react';
-import { fetchNews, createNews, updateNews, deleteNews, fetchEvents, createEvent, updateEvent, deleteEvent, uploadImage, type NewsArticle, type Event } from '../lib/supabase';
+import { fetchNews, createNews, updateNews, deleteNews, fetchEvents, createEvent, updateEvent, deleteEvent, fetchTeam, createTeamMember, updateTeamMember, deleteTeamMember, uploadImage, type NewsArticle, type Event, type TeamMember } from '../lib/supabase';
 import { toast } from 'sonner';
 
 export default function Admin() {
