@@ -337,3 +337,107 @@ export async function uploadImage(file: File, bucket: string = 'media'): Promise
     return null;
   }
 }
+
+// Fetch all team members
+export async function fetchTeam(): Promise<TeamMember[]> {
+  try {
+    const { data, error } = await supabase
+      .from('team')
+      .select('*')
+      .order('created_at', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching team:', error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error('Unexpected error fetching team:', err);
+    return [];
+  }
+}
+
+// Fetch single team member
+export async function fetchTeamById(id: string): Promise<TeamMember | null> {
+  try {
+    const { data, error } = await supabase
+      .from('team')
+      .select('*')
+      .eq('id', id)
+      .single();
+
+    if (error) {
+      console.error('Error fetching team member:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Create team member
+export async function createTeamMember(member: Omit<TeamMember, 'id' | 'created_at'>): Promise<TeamMember | null> {
+  try {
+    const { data, error } = await supabase
+      .from('team')
+      .insert([member])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating team member:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Update team member
+export async function updateTeamMember(id: string, updates: Partial<Omit<TeamMember, 'id' | 'created_at'>>): Promise<TeamMember | null> {
+  try {
+    const { data, error } = await supabase
+      .from('team')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error updating team member:', error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return null;
+  }
+}
+
+// Delete team member
+export async function deleteTeamMember(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from('team')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error deleting team member:', error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error('Unexpected error:', err);
+    return false;
+  }
+}
