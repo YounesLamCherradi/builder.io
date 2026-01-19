@@ -1356,7 +1356,10 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {[
+            {(galleryItems.length > 0 ? galleryItems.map(item => ({
+              src: item.image_url,
+              caption: item.caption_i18n?.[currentLanguage as keyof typeof item.caption_i18n] || item.caption_i18n?.en || 'Gallery item',
+            })) : [
               {
                 src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F19ae65cb32f546b491a1fb585d4baf31?format=webp&width=800',
                 caption: t('caption_1'),
@@ -1425,7 +1428,7 @@ export default function Index() {
                 src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F5580a433756540269052cfc4d1c5a0d9?format=webp&width=800',
                 caption: t('caption_17'),
               },
-            ].map((item, idx) => (
+            ]).map((item, idx) => (
               <div
                 key={idx}
                 className="group relative rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 hover:scale-[1.01]"
