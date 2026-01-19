@@ -6,9 +6,10 @@ import { toast } from 'sonner';
 
 export default function Admin() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<'news' | 'events'>('news');
+  const [activeTab, setActiveTab] = useState<'news' | 'events' | 'team'>('news');
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [eventsList, setEventsList] = useState<Event[]>([]);
+  const [teamList, setTeamList] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
