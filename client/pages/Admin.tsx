@@ -436,8 +436,12 @@ export default function Admin() {
         await deleteNews(id);
       } else if (activeTab === 'events') {
         await deleteEvent(id);
-      } else {
+      } else if (activeTab === 'team') {
         await deleteTeamMember(id);
+      } else if (activeTab === 'gallery') {
+        await deleteGalleryItem(id);
+      } else if (activeTab === 'partners') {
+        await deletePartner(id);
       }
       await loadData();
       toast.success('Item deleted successfully');
