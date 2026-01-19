@@ -1163,8 +1163,8 @@ export default function Admin() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {activeTab === 'gallery' ? 'Image' : activeTab === 'partners' ? 'Logo' : 'Image'} Upload
-                  {(activeTab === 'gallery' || activeTab === 'partners') && <span className="text-red-600"> *</span>}
+                  {activeTab === 'gallery' ? 'Image' : activeTab === 'partners' ? 'Logo' : activeTab === 'past_events' ? 'Event Image' : 'Image'} Upload
+                  {(activeTab === 'gallery' || activeTab === 'partners' || activeTab === 'past_events') && <span className="text-red-600"> *</span>}
                 </label>
                 <div className="space-y-3">
                   <div className="relative">
