@@ -95,6 +95,25 @@ export interface TeamMember {
   created_at: string;
 }
 
+// Gallery types
+export interface GalleryItem {
+  id: string;
+  image_url: string;
+  caption_i18n?: I18nString;
+  order_index: number;
+  created_at: string;
+}
+
+// Partners types
+export interface Partner {
+  id: string;
+  logo_url: string;
+  name: string;
+  link: string;
+  order_index: number;
+  created_at: string;
+}
+
 // Fetch all news
 export async function fetchNews(): Promise<NewsArticle[]> {
   try {
