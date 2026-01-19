@@ -280,8 +280,8 @@ export default function Contact() {
     setFormSubmitted(true);
 
     try {
-      // Send email via our Netlify function
-      const response = await fetch('/.netlify/functions/send-email', {
+      // Send email via our API endpoint
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
