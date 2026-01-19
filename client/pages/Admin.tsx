@@ -622,6 +622,8 @@ export default function Admin() {
       role_i18n: { en: '', fr: '', ru: '' },
       bio_i18n: { en: '', fr: '', ru: '' },
       caption_i18n: { en: '', fr: '', ru: '' },
+      question_i18n: { en: '', fr: '', ru: '' },
+      answer_i18n: { en: '', fr: '', ru: '' },
     });
     setEventDetails(['', '', '', '']);
     setImagePreview(null);
