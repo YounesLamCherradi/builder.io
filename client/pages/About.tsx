@@ -942,7 +942,7 @@ export default function About() {
                 ].map((member, idx) => (
                   <div
                     key={idx}
-                    className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 hover:border-brand-red shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 duration-700 flex-shrink-0 w-72 sm:w-80"
+                    className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 flex-shrink-0 w-72 sm:w-80"
                     style={{ animationDelay: `${idx * 80}ms` }}
                   >
                     {/* Image */}
