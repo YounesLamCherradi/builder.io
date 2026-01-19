@@ -1276,7 +1276,9 @@ export default function Admin() {
                 activeTab === 'events' ? `Events (${eventsList.length})` :
                 activeTab === 'team' ? `Team Members (${teamList.length})` :
                 activeTab === 'gallery' ? `Gallery Items (${galleryList.length})` :
-                `Partners (${partnersList.length})`
+                activeTab === 'partners' ? `Partners (${partnersList.length})` :
+                activeTab === 'faqs' ? `FAQs (${faqsList.length})` :
+                `Past Events (${pastEventsList.length})`
               }
             </h2>
           </div>
