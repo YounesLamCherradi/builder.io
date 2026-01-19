@@ -42,6 +42,9 @@ export default function Admin() {
     role: '',
     partnerName: '',
     partnerLink: '',
+    question: '',
+    answer: '',
+    bio: '',
   });
 
   // Multilingual form data
