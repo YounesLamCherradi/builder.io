@@ -144,9 +144,9 @@ export default function Admin() {
       } else {
         if (editingId) {
           await updateEvent(editingId, {
-            title: formData.title,
-            description: formData.description,
-            about_event: formData.about_event,
+            title: i18nData.title_i18n.en,
+            description: i18nData.description_i18n.en,
+            about_event: i18nData.about_event_i18n.en,
             location: formData.location,
             date: formData.date,
             time: formData.time,
@@ -156,12 +156,15 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
+            title_i18n: i18nData.title_i18n,
+            description_i18n: i18nData.description_i18n,
+            about_event_i18n: i18nData.about_event_i18n,
           });
         } else {
           await createEvent({
-            title: formData.title,
-            description: formData.description,
-            about_event: formData.about_event,
+            title: i18nData.title_i18n.en,
+            description: i18nData.description_i18n.en,
+            about_event: i18nData.about_event_i18n.en,
             location: formData.location,
             date: formData.date,
             time: formData.time,
@@ -171,6 +174,9 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
+            title_i18n: i18nData.title_i18n,
+            description_i18n: i18nData.description_i18n,
+            about_event_i18n: i18nData.about_event_i18n,
           });
         }
       }
