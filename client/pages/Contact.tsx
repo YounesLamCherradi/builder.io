@@ -185,6 +185,13 @@ export default function Contact() {
         contact_social_title: 'Connectez-vous avec Nous',
         contact_social_desc: 'Suivez-nous sur les réseaux sociaux pour les mises à jour et les histoires de succès',
 
+        home_stay_updated_title: 'Restez Informé avec',
+        home_stay_updated_highlight: 'Opportunités Mondiales',
+        home_stay_updated_desc: 'Recevez les dernières nouvelles sur les bourses, visas et opportunités chaque mois dans votre boîte de réception.',
+        home_email_placeholder: 'Entrez votre adresse email',
+        subscribe_now: 'S\'abonner',
+        subscribe_privacy: 'Nous respectons votre vie privée. Désinscrivez-vous à tout moment. Pas de spam.',
+
         tagline: 'Votre monde vous attend',
         footer_tagline: 'Aider les Marocains à réaliser leurs rêves mondiaux.',
         platform: 'Plateforme',
