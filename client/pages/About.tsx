@@ -986,9 +986,6 @@ export default function About() {
                           <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
                             {displayBio}
                           </p>
-                          <div className="mt-4 pt-4 border-t border-gray-200">
-                            <div className="text-xs font-semibold text-brand-red">Learn More →</div>
-                          </div>
                         </div>
                       </div>
                     );
