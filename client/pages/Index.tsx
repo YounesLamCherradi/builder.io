@@ -862,139 +862,160 @@ export default function Index() {
         )}
       </nav>
 
-      {/* Hero Section - Quote Focused */}
+      {/* Hero Section - Creative Modern Design */}
       <section
         id="home"
-        className="scroll-section relative min-h-[100svh] flex items-center pt-16 sm:pt-20 pb-16 overflow-hidden"
+        className="scroll-section relative min-h-[100svh] flex items-center justify-center pt-24 sm:pt-32 pb-16 overflow-hidden"
       >
-        {/* Background with animated gradient orbs */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-black/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-brand-silver/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
+        {/* Dynamic gradient background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-50 to-gray-100" />
+          {/* Animated background blobs */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-red/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDuration: '7s' }} />
+          <div className="absolute top-40 right-0 w-96 h-96 bg-black/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDuration: '9s', animationDelay: '2s' }} />
+          <div className="absolute -bottom-8 left-1/3 w-96 h-96 bg-brand-silver/15 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '4s' }} />
         </div>
 
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 relative z-10">
-          {/* Badge */}
-          <div className="flex justify-center mb-8 sm:mb-12">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-              <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-              <span className="text-xs sm:text-sm font-medium text-gray-700">
-                {t('serving')}
-              </span>
-            </div>
-          </div>
-
-          {/* Main Quote Section - Two Column Layout */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: Image */}
-            <div className="relative group hidden lg:flex items-center justify-center">
-              {/* Glow background */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-brand-red/30 via-brand-silver/20 to-black/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-              {/* Image container with circular frame */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
-                  alt={t('hero_author')}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column: Animated Image & Badge */}
+            <div className="flex flex-col items-center lg:items-start space-y-8">
+              {/* Network Badge */}
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-red/10 to-black/5 backdrop-blur-xl px-6 py-3 rounded-full border border-brand-red/30 shadow-lg">
+                <div className="w-3 h-3 bg-brand-red rounded-full animate-pulse" />
+                <span className="text-sm font-semibold text-gray-800">{t('serving')}</span>
               </div>
 
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-40 h-40 border-2 border-brand-red/30 rounded-full" style={{ animation: 'spin 20s linear infinite' }} />
-              <div className="absolute bottom-0 left-0 w-32 h-32 border-2 border-black/20 rounded-full" style={{ animation: 'spin 30s linear infinite reverse' }} />
+              {/* Image with artistic frame */}
+              <div className="relative w-full max-w-sm group">
+                {/* Floating frame decoration */}
+                <div className="absolute -inset-8 bg-gradient-to-r from-brand-red via-brand-silver to-black opacity-20 rounded-3xl blur-2xl group-hover:opacity-40 transition-opacity duration-500" />
+
+                {/* Main image frame */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-white">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
+                    alt={t('hero_author')}
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+                  {/* Quote overlay on image */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+                    <p className="text-xl sm:text-2xl font-bold text-white leading-snug italic">
+                      "{t('hero_quote').substring(0, 50)}..."
+                    </p>
+                  </div>
+                </div>
+
+                {/* Decorative side accent */}
+                <div className="absolute -right-6 top-1/3 w-20 h-40 border-4 border-brand-red rounded-3xl opacity-40 group-hover:opacity-100 transition-all duration-500 hidden lg:block" />
+              </div>
+
+              {/* Author info card below image */}
+              <div className="w-full max-w-sm bg-white rounded-2xl p-6 shadow-lg border-l-4 border-brand-red">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                    {t('hero_author').charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-gray-900">{t('hero_author')}</p>
+                    <p className="text-sm text-brand-red font-semibold">{t('hero_author_title')}</p>
+                    <p className="text-xs text-gray-500 mt-1">🇷🇺 Russian Federation</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Right: Quote Content */}
-            <div className="space-y-8 lg:space-y-10 flex flex-col justify-center">
-              {/* Quote box */}
-              <div className="relative">
-                {/* Decorative top accent */}
-                <div className="absolute -top-6 -left-6 sm:-left-8 text-6xl sm:text-8xl lg:text-9xl text-brand-red/15 font-serif leading-none">"</div>
+            {/* Right Column: Quote & CTA */}
+            <div className="space-y-10 lg:space-y-12 flex flex-col justify-center">
+              {/* Main quote section */}
+              <div className="space-y-8">
+                {/* Opening quotation mark */}
+                <div className="text-9xl text-brand-red opacity-20 font-serif leading-none" style={{ marginBottom: '-30px' }}>
+                  "
+                </div>
 
-                {/* Main quote */}
-                <blockquote className="relative z-10">
-                  <p className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6 sm:mb-8">
+                {/* Main quote text */}
+                <blockquote>
+                  <p className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-tight">
                     {t('hero_quote')}
                   </p>
                 </blockquote>
 
-                {/* Author attribution with styling */}
-                <div className="mt-8 sm:mt-10 space-y-2 border-l-4 border-brand-red pl-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white text-lg sm:text-xl font-bold">
-                      {t('hero_author').charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-lg sm:text-xl font-bold text-gray-900">{t('hero_author')}</p>
-                      <p className="text-sm text-gray-600">{t('hero_author_title')}</p>
-                    </div>
-                  </div>
+                {/* Decorative divider */}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-1 bg-gradient-to-r from-brand-red to-transparent rounded-full" />
+                  <span className="text-sm font-semibold text-gray-600">International Partnership</span>
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6">
-                <Link to="/events" className="group px-7 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 hover:gap-4">
-                  <span>{t('explore_opps')}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {/* CTA Section */}
+              <div className="space-y-6">
+                {/* Primary CTA */}
+                <Link
+                  to="/events"
+                  className="group block px-8 sm:px-12 py-5 sm:py-6 bg-gradient-to-r from-brand-red via-brand-red to-black text-white rounded-full font-bold text-lg sm:text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-black via-brand-red to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative flex items-center justify-center gap-3 group-hover:gap-4">
+                    <span>{t('explore_opps')}</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </Link>
-                <button className="px-7 sm:px-10 py-4 sm:py-5 border-2 border-black bg-white text-black rounded-full font-bold text-base sm:text-lg hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center gap-3">
+
+                {/* Secondary CTA */}
+                <button className="w-full px-8 sm:px-12 py-5 sm:py-6 border-2 border-black hover:border-brand-red bg-transparent hover:bg-black text-black hover:text-white rounded-full font-bold text-lg sm:text-xl transition-all duration-300 hover:shadow-xl flex items-center justify-center gap-3 group">
                   <span>{t('watch_demo')}</span>
-                  <div className="w-6 h-6 rounded-full border-2 border-current flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-4 border-l-current border-t-2.5 border-t-transparent border-b-2.5 border-b-transparent ml-0.5" />
+                  <div className="w-6 h-6 border-2 border-current rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </button>
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
                 {stats.map((stat, index) => {
                   const Icon = stat.icon;
                   return (
                     <div
                       key={index}
-                      className="rounded-2xl bg-white border border-gray-200 p-3 sm:p-4 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                      className="group rounded-2xl bg-white/80 backdrop-blur border border-white/60 p-4 sm:p-5 text-center shadow-md hover:shadow-xl hover:bg-white hover:border-brand-red transition-all duration-300 hover:-translate-y-2"
                     >
-                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-2" />
-                      <div className="text-lg sm:text-xl font-bold text-gray-900">{stat.number}</div>
-                      <div className="text-xs text-gray-600">{stat.label}</div>
+                      <Icon className="w-6 h-6 text-brand-red mx-auto mb-2 group-hover:scale-125 transition-transform" />
+                      <div className="text-lg sm:text-2xl font-bold text-gray-900">{stat.number}</div>
+                      <div className="text-xs sm:text-sm text-gray-600 mt-1">{stat.label}</div>
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
-
-          {/* Mobile Image - shown on small screens */}
-          <div className="lg:hidden mt-12 mb-8">
-            <div className="relative w-full max-w-sm mx-auto group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-brand-red/30 via-brand-silver/20 to-black/20 rounded-3xl blur-3xl" />
-              <div className="relative w-full aspect-square rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
-                  alt={t('hero_author')}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
         </div>
 
+        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8 text-gray-400" />
+          <ChevronDown className="w-8 h-8 text-gray-400" />
         </div>
 
         <style jsx>{`
-          @keyframes spin {
-            from {
-              transform: rotate(0deg);
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0px);
             }
-            to {
-              transform: rotate(360deg);
+            50% {
+              transform: translateY(-20px);
+            }
+          }
+
+          @keyframes shimmer {
+            0% {
+              background-position: -1000px 0;
+            }
+            100% {
+              background-position: 1000px 0;
             }
           }
         `}</style>
