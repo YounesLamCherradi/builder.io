@@ -385,17 +385,19 @@ export default function News() {
 
   const categories = [
     { id: 'all', label: t('news_category_all') },
-    { id: 'visa', label: t('news_category_visa') },
-    { id: 'scholarships', label: t('news_category_scholarships') },
-    { id: 'opportunities', label: t('news_category_opportunities') },
-    { id: 'stories', label: t('news_category_stories') },
+    { id: 'visa', label: 'Visa Updates' },
+    { id: 'scholarships', label: 'Scholarships' },
+    { id: 'notice', label: 'Notice' },
+    { id: 'general', label: 'General' },
+    { id: 'cooperation', label: 'Cooperation' },
   ];
 
   const categoryMap: { [key: string]: string } = {
     'visa': 'Visa Updates',
     'scholarships': 'Scholarships',
-    'opportunities': 'Opportunities',
-    'stories': 'Success Stories',
+    'notice': 'Notice',
+    'general': 'General',
+    'cooperation': 'Cooperation',
   };
 
   // Helper to get multilingual content
