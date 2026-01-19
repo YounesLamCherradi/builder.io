@@ -76,6 +76,10 @@ export interface Event {
   register_url: string | null;
   show_learn_more_button: boolean;
   learn_more_url: string | null;
+  title_i18n?: I18nString;
+  description_i18n?: I18nString;
+  about_event_i18n?: I18nString;
+  details_i18n?: Record<string, string[]>;
   created_at: string;
 }
 
