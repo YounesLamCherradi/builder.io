@@ -946,47 +946,58 @@ export default function About() {
           <div className="relative">
             <div className="overflow-x-auto scrollbar-hide">
               <div className="flex gap-6 sm:gap-8 pb-6 px-4 sm:px-6 min-w-min mx-auto">
-                {[
-                  { name: t('about_team_member_1'), emoji: '👨‍💼', color: 'from-brand-red to-gray-900', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ff4a5df7a53c344c384c5df7655028bcb?format=webp&width=600' },
-                  { name: t('about_team_member_2'), emoji: '👩‍💼', color: 'from-gray-900 to-black', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F96b25083da1648fc945bd37d8b67b8bc?format=webp&width=600' },
-                  { name: t('about_team_member_3'), emoji: '👩‍💻', color: 'from-brand-red to-black', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F481a670441c749588fa9123ea890126b?format=webp&width=600' },
-                  { name: t('about_team_member_4'), emoji: '👩‍🤝‍👨', color: 'from-gray-900 to-brand-red', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fd3f4a862a09848f59bda97b5f7122d66?format=webp&width=600' },
-                  { name: t('about_team_member_5'), emoji: '👨‍💻', color: 'from-brand-red via-gray-900 to-black', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F124d87ee51824b9a881ed04fbeff769c?format=webp&width=600' },
-                  { name: t('about_team_member_6'), emoji: '🤝', color: 'from-black to-brand-red', image: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F257d7571060a432ab27e06f12b4bd593?format=webp&width=600' },
-                ].map((member, idx) => (
-                  <div
-                    key={idx}
-                    className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 flex-shrink-0 w-72 sm:w-80"
-                    style={{ animationDelay: `${idx * 80}ms` }}
-                  >
-                    {/* Image */}
-                    <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-200">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                        style={{
-                          filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {teamMembers.length > 0 ? (
+                  teamMembers.map((member, idx) => {
+                    const displayRole = member.role_i18n?.[currentLanguage] || member.role || '';
+                    const displayBio = member.bio_i18n?.[currentLanguage] || member.bio || 'Making global impact through dedication and innovation';
+                    return (
+                      <div
+                        key={member.id}
+                        className="group relative rounded-2xl overflow-hidden bg-white border-2 border-gray-200 shadow-lg animate-in fade-in slide-in-from-bottom-8 duration-700 flex-shrink-0 w-72 sm:w-80"
+                        style={{ animationDelay: `${idx * 80}ms` }}
+                      >
+                        {/* Image */}
+                        <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-200">
+                          {member.image_url ? (
+                            <img
+                              src={member.image_url}
+                              alt={member.name}
+                              className="w-full h-full object-cover"
+                              style={{
+                                filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
+                              }}
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gradient-to-br from-brand-red/20 to-gray-900/20 flex items-center justify-center">
+                              <Users className="w-16 h-16 text-gray-400" />
+                            </div>
+                          )}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        </div>
 
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-5 sm:p-6">
-                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
-                        Making global impact through dedication and innovation
-                      </p>
-                      <div className="mt-4 pt-4 border-t border-gray-200">
-                        <div className="text-xs font-semibold text-brand-red">Learn More →</div>
+                        {/* Content */}
+                        <div className="p-5 sm:p-6">
+                          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 line-clamp-2">
+                            {member.name}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-brand-red font-semibold mb-2">
+                            {displayRole}
+                          </p>
+                          <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">
+                            {displayBio}
+                          </p>
+                          <div className="mt-4 pt-4 border-t border-gray-200">
+                            <div className="text-xs font-semibold text-brand-red">Learn More →</div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    );
+                  })
+                ) : (
+                  <div className="flex items-center justify-center w-full py-12">
+                    <p className="text-gray-500">Loading team members...</p>
                   </div>
-                ))}
+                )}
               </div>
             </div>
 
