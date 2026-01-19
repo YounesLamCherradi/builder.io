@@ -230,7 +230,7 @@ export default function Admin() {
     }
   };
 
-  const handleEdit = (item: NewsArticle | Event) => {
+  const handleEdit = (item: NewsArticle | Event | TeamMember) => {
     if (activeTab === 'news') {
       const news = item as NewsArticle;
       setFormData({
@@ -242,15 +242,21 @@ export default function Admin() {
         image_url: news.image_url || '',
         location: '',
         date: news.date,
+        name: '',
+        role: '',
+        time: '18:00',
+        about_event: '',
       });
       setI18nData({
         title_i18n: news.title_i18n || { en: news.title, fr: '', ru: '' },
         description_i18n: news.description_i18n || { en: news.description, fr: '', ru: '' },
         content_i18n: news.content_i18n || { en: news.content, fr: '', ru: '' },
         about_event_i18n: { en: '', fr: '', ru: '' },
+        role_i18n: { en: '', fr: '', ru: '' },
+        bio_i18n: { en: '', fr: '', ru: '' },
       });
       setImagePreview(news.image_url || null);
-    } else {
+    } else if (activeTab === 'events') {
       const event = item as Event;
       setFormData({
         title: event.title,
@@ -263,12 +269,16 @@ export default function Admin() {
         date: event.date,
         time: event.time || '18:00',
         about_event: event.about_event || '',
+        name: '',
+        role: '',
       });
       setI18nData({
         title_i18n: event.title_i18n || { en: event.title, fr: '', ru: '' },
         description_i18n: event.description_i18n || { en: event.description, fr: '', ru: '' },
         content_i18n: { en: '', fr: '', ru: '' },
         about_event_i18n: event.about_event_i18n || { en: event.about_event, fr: '', ru: '' },
+        role_i18n: { en: '', fr: '', ru: '' },
+        bio_i18n: { en: '', fr: '', ru: '' },
       });
       setImagePreview(event.image_url || null);
       setEventDetails(event.details || ['', '', '', '']);
@@ -278,6 +288,31 @@ export default function Admin() {
         show_learn_more_button: event.show_learn_more_button ?? true,
         learn_more_url: event.learn_more_url || '',
       });
+    } else {
+      const member = item as TeamMember;
+      setFormData({
+        title: '',
+        description: '',
+        content: '',
+        category: 'Visa Updates',
+        author: '',
+        image_url: member.image_url || '',
+        location: '',
+        date: new Date().toISOString().split('T')[0],
+        time: '18:00',
+        about_event: '',
+        name: member.name,
+        role: member.role,
+      });
+      setI18nData({
+        title_i18n: { en: '', fr: '', ru: '' },
+        description_i18n: { en: '', fr: '', ru: '' },
+        content_i18n: { en: '', fr: '', ru: '' },
+        about_event_i18n: { en: '', fr: '', ru: '' },
+        role_i18n: member.role_i18n || { en: member.role, fr: '', ru: '' },
+        bio_i18n: member.bio_i18n || { en: member.bio, fr: '', ru: '' },
+      });
+      setImagePreview(member.image_url || null);
     }
     setEditingId(item.id);
     setShowForm(true);
