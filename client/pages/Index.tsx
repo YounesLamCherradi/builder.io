@@ -862,151 +862,142 @@ export default function Index() {
         )}
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Quote Focused */}
       <section
         id="home"
-        className="scroll-section relative min-h-[100svh] flex items-center pt-20 sm:pt-24 overflow-hidden"
+        className="scroll-section relative min-h-[100svh] flex items-center pt-16 sm:pt-20 pb-16 overflow-hidden"
       >
-        <div className="absolute inset-0 bg-white">
-          <div className="absolute inset-0 opacity-0">
-            {[...Array(12)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute rounded-full mix-blend-multiply filter blur-3xl animate-pulse"
-                style={{
-                  backgroundColor: ['#BB0909', '#D9D4D4', '#000000'][i % 3],
-                  width: `${Math.random() * 320 + 180}px`,
-                  height: `${Math.random() * 320 + 180}px`,
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${i * 0.4}s`,
-                  animationDuration: `${Math.random() * 8 + 6}s`,
-                }}
-              />
-            ))}
-          </div>
+        {/* Background with animated gradient orbs */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+          <div className="absolute -top-40 -left-40 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-black/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-brand-silver/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }} />
         </div>
 
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg max-w-full">
-                <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
-                  {t('serving')}
-                </span>
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 relative z-10">
+          {/* Badge */}
+          <div className="flex justify-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+              <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-gray-700">
+                {t('serving')}
+              </span>
+            </div>
+          </div>
+
+          {/* Main Quote Section - Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left: Image */}
+            <div className="relative group hidden lg:flex items-center justify-center">
+              {/* Glow background */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-brand-red/30 via-brand-silver/20 to-black/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              {/* Image container with circular frame */}
+              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
+                  alt={t('hero_author')}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
 
-              <h1 className="font-bold leading-[1.05]">
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line1')}
-                </span>
-                <span className="block bg-gradient-to-r from-brand-red via-gray-900 to-brand-black bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line2')}
-                </span>
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line3')}
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
-                {t('hero_desc')}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/events" className="group w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
-                  <span>{t('explore_opps')}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <button className="w-full sm:w-auto px-7 py-4 bg-white text-gray-800 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
-                  <span>{t('watch_demo')}</span>
-                  <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-gray-900 rounded-full flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-8 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1" />
-                  </div>
-                </button>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
-                {stats.map((stat, index) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
-                    >
-                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-1" />
-                      <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.number}</div>
-                      <div className="text-xs text-gray-500">{stat.label}</div>
-                    </div>
-                  );
-                })}
-              </div>
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-40 h-40 border-2 border-brand-red/30 rounded-full" style={{ animation: 'spin 20s linear infinite' }} />
+              <div className="absolute bottom-0 left-0 w-32 h-32 border-2 border-black/20 rounded-full" style={{ animation: 'spin 30s linear infinite reverse' }} />
             </div>
 
-            <div className="relative flex flex-col items-center justify-center">
-              {/* Testimonial Card */}
-              <div className="w-full max-w-md relative group">
-                {/* Background glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-brand-red via-brand-silver to-black rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
+            {/* Right: Quote Content */}
+            <div className="space-y-8 lg:space-y-10 flex flex-col justify-center">
+              {/* Quote box */}
+              <div className="relative">
+                {/* Decorative top accent */}
+                <div className="absolute -top-6 -left-6 sm:-left-8 text-6xl sm:text-8xl lg:text-9xl text-brand-red/15 font-serif leading-none">"</div>
 
-                {/* Card content */}
-                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
-                  {/* Top gradient bar */}
-                  <div className="h-1 bg-gradient-to-r from-brand-red via-brand-silver to-black" />
+                {/* Main quote */}
+                <blockquote className="relative z-10">
+                  <p className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6 sm:mb-8">
+                    {t('hero_quote')}
+                  </p>
+                </blockquote>
 
-                  {/* Image section */}
-                  <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
-                      alt="Community testimonial"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  </div>
-
-                  {/* Quote section */}
-                  <div className="p-6 sm:p-8 lg:p-8 space-y-4">
-                    {/* Quote mark */}
-                    <div className="text-5xl sm:text-6xl text-brand-red opacity-30 leading-none">"</div>
-
-                    {/* Quote text */}
-                    <p className="text-base sm:text-lg lg:text-xl font-semibold text-gray-900 leading-relaxed">
-                      {t('testimonial_quote')}
-                    </p>
-
-                    {/* Author info */}
-                    <div className="pt-4 border-t border-gray-200">
-                      <p className="text-sm font-bold text-gray-800">{t('testimonial_author')}</p>
-                      <p className="text-xs text-brand-red font-semibold">✓ Verified Network</p>
+                {/* Author attribution with styling */}
+                <div className="mt-8 sm:mt-10 space-y-2 border-l-4 border-brand-red pl-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white text-lg sm:text-xl font-bold">
+                      {t('hero_author').charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-lg sm:text-xl font-bold text-gray-900">{t('hero_author')}</p>
+                      <p className="text-sm text-gray-600">{t('hero_author_title')}</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Small stats below testimonial - mobile/tablet view */}
-              <div className="lg:hidden mt-10 grid grid-cols-2 gap-4 w-full">
-                {stats.slice(0, 2).map((stat, index) => {
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6">
+                <Link to="/events" className="group px-7 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 hover:gap-4">
+                  <span>{t('explore_opps')}</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <button className="px-7 sm:px-10 py-4 sm:py-5 border-2 border-black bg-white text-black rounded-full font-bold text-base sm:text-lg hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center gap-3">
+                  <span>{t('watch_demo')}</span>
+                  <div className="w-6 h-6 rounded-full border-2 border-current flex items-center justify-center">
+                    <div className="w-0 h-0 border-l-4 border-l-current border-t-2.5 border-t-transparent border-b-2.5 border-b-transparent ml-0.5" />
+                  </div>
+                </button>
+              </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
+                {stats.map((stat, index) => {
                   const Icon = stat.icon;
                   return (
                     <div
                       key={index}
-                      className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
+                      className="rounded-2xl bg-white border border-gray-200 p-3 sm:p-4 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                     >
                       <Icon className="w-5 h-5 text-brand-red mx-auto mb-2" />
                       <div className="text-lg sm:text-xl font-bold text-gray-900">{stat.number}</div>
-                      <div className="text-xs text-gray-500">{stat.label}</div>
+                      <div className="text-xs text-gray-600">{stat.label}</div>
                     </div>
                   );
                 })}
               </div>
             </div>
           </div>
+
+          {/* Mobile Image - shown on small screens */}
+          <div className="lg:hidden mt-12 mb-8">
+            <div className="relative w-full max-w-sm mx-auto group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-brand-red/30 via-brand-silver/20 to-black/20 rounded-3xl blur-3xl" />
+              <div className="relative w-full aspect-square rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fe4117325940d45a2923ce7f238129c50?format=webp&width=800"
+                  alt={t('hero_author')}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8 text-gray-400" />
         </div>
+
+        <style jsx>{`
+          @keyframes spin {
+            from {
+              transform: rotate(0deg);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Sponsors Section */}
