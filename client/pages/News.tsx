@@ -6,7 +6,6 @@ import {
   X,
   ChevronDown,
   Calendar,
-  User,
   ArrowRight,
   Check,
   Search,
