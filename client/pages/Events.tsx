@@ -976,45 +976,62 @@ export default function Events() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pastEvents.map((event, idx) => (
-              <div
-                key={idx}
-                className="group relative rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform hover:scale-[1.02] animate-fade-in-up"
-                style={{ animationDelay: `${idx * 50}ms` }}
-              >
-                <div className="aspect-[4/3] relative overflow-hidden">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                </div>
+            {(fetchedPastEvents.length > 0 ? fetchedPastEvents : pastEvents).map((event, idx) => {
+              const isDbEvent = 'title_i18n' in event;
+              const title = isDbEvent ? (event.title_i18n?.[currentLanguage as keyof typeof event.title_i18n] || event.title) : (event as any).title;
+              const image = isDbEvent ? (event as PastEvent).image_url : (event as any).image;
 
-                <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`w-4 h-4 ${
-                          i < Math.floor(event.rating)
-                            ? 'fill-brand-red text-brand-red'
-                            : 'text-gray-300'
-                        }`}
+              return (
+                <div
+                  key={isDbEvent ? event.id : idx}
+                  className="group relative rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 transform hover:scale-[1.02] animate-fade-in-up"
+                  style={{ animationDelay: `${idx * 50}ms` }}
+                >
+                  {image && (
+                    <div className="aspect-[4/3] relative overflow-hidden">
+                      <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                    ))}
-                    <span className="text-sm text-brand-red ml-1 font-semibold">{event.rating}</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    </div>
+                  )}
+
+                  <div className={image ? "absolute inset-0 flex flex-col justify-end p-5 sm:p-6" : "p-5 sm:p-6"}>
+                    {!isDbEvent && (
+                      <div className="flex items-center gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < Math.floor((event as any).rating)
+                                ? 'fill-brand-red text-brand-red'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                        <span className="text-sm text-brand-red ml-1 font-semibold">{(event as any).rating}</span>
+                      </div>
+                    )}
+                    <h3 className={`text-lg sm:text-xl font-bold ${image ? 'text-white' : 'text-gray-900'} mb-2`}>
+                      {title}
+                    </h3>
+                    {!isDbEvent && (
+                      <p className={`text-sm ${image ? 'text-gray-200' : 'text-gray-600'} flex items-center gap-2`}>
+                        <Users className="w-4 h-4" />
+                        {(event as any).attendees}
+                      </p>
+                    )}
+                    {isDbEvent && (
+                      <p className={`text-sm ${image ? 'text-gray-200' : 'text-gray-600'}`}>
+                        {new Date((event as PastEvent).date).toLocaleDateString(currentLanguage)}
+                      </p>
+                    )}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-sm text-gray-200 flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    {event.attendees}
-                  </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
