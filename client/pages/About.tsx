@@ -160,8 +160,8 @@ export default function About() {
         about_journey_milestone_3: 'Today',
         about_journey_milestone_3_desc: '50,000+ transformations, 150+ countries, and we\'re just getting started',
 
-        about_why_title: 'Why Choose MoroccoGlobal?',
-        about_why_1: 'Curated Opportunities - Handpicked from 50,000+ verified sources',
+        about_why_title: 'Why WYF Morocco?',
+        about_why_1: 'As the official National Committee of Morocco of the World Youth Festival, WYF Morocco is trusted by diplomatic partners, institutions, and youth organizations both nationally and internationally.',
         about_why_2: 'Expert Guidance - AI-powered matching + human mentorship',
         about_why_3: 'Community Driven - Learn from thousands of successful peers',
         about_why_4: 'Accessible Always - Free platform, premium support optional',
