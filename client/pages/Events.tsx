@@ -1028,31 +1028,36 @@ export default function Events() {
           <p className="text-gray-600 text-center mb-12">{t('faq_subtitle')}</p>
 
           <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-red-500 transition-all duration-300 animate-fade-in-up"
-                style={{ animationDelay: `${faq.id * 50}ms` }}
-              >
-                <button
-                  onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
-                >
-                  <h3 className="text-lg font-bold text-gray-900 text-left">{faq.question}</h3>
-                  <ChevronUp
-                    className={`w-5 h-5 text-brand-red transition-transform duration-300 ${
-                      expandedFAQ === faq.id ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
+            {(fetchedFAQs.length > 0 ? fetchedFAQs : faqs).map((faq) => {
+              const question = 'question_i18n' in faq ? (faq.question_i18n?.[currentLanguage as keyof typeof faq.question_i18n] || faq.question) : faq.question;
+              const answer = 'answer_i18n' in faq ? (faq.answer_i18n?.[currentLanguage as keyof typeof faq.answer_i18n] || faq.answer) : faq.answer;
 
-                {expandedFAQ === faq.id && (
-                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+              return (
+                <div
+                  key={faq.id}
+                  className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-red-500 transition-all duration-300 animate-fade-in-up"
+                  style={{ animationDelay: `${(typeof faq.id === 'number' ? faq.id : Object.values(faq).join('').length) * 50}ms` }}
+                >
+                  <button
+                    onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  >
+                    <h3 className="text-lg font-bold text-gray-900 text-left">{question}</h3>
+                    <ChevronUp
+                      className={`w-5 h-5 text-brand-red transition-transform duration-300 ${
+                        expandedFAQ === faq.id ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {expandedFAQ === faq.id && (
+                    <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">{answer}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
