@@ -120,7 +120,7 @@ export default function About() {
 
         about_values_title: 'Core Values That Guide Us',
         about_values_access: 'Representation & Inclusion',
-        about_values_access_desc: 'Making world-class opportunities available to everyone, breaking down financial and geographical barriers',
+        about_values_access_desc: 'Ensuring Moroccan youth from all regions and backgrounds have the opportunity to participate in international events, dialogue, and cultural exchange.',
         about_values_excellence: 'Excellence Always',
         about_values_excellence_desc: 'Delivering the highest quality guidance, support, and resources to our community',
         about_values_impact: 'Impact Driven',
