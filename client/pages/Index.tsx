@@ -138,20 +138,19 @@ export default function Index() {
         sign_in: 'Sign In',
         get_started: 'Get Started',
 
-        serving: '🇲🇦 OFFICIAL PAGE OF WYF MOROCCO',
-        hero_quote: 'Russia is now your friend.',
-        hero_quote2: 'Our doors are always open to you',
-        hero_attribution: 'Vladimir Putin',
-        hero_event: 'Closing Ceremony of World Youth Festival (2024)',
-        hero_desc1: 'The Official Page of the National Committee of Morocco of the World Youth Festival',
-        hero_desc2: 'The Largest Russian Youth Network in Africa',
+        serving: '🇲🇦 Serving 50,000+ Moroccan Students',
+        hero_line1: 'Transform Your',
+        hero_line2: 'Global Dreams',
+        hero_line3: 'Into Reality',
+        hero_desc:
+          'Discover thousands of scholarships, jobs, and international programs tailored for talented Moroccans. Your passport to global success starts here.',
         explore_opps: 'Explore Opportunities',
         watch_demo: 'Watch Demo',
 
-        stat_users: '+8 Million Youth Reached',
-        stat_countries: '+115 PARTNERS WORLDWIDE',
-        stat_success: '+80 EVENTS EACH YEAR',
-        stat_support: '24/7',
+        stat_users: 'Active Users',
+        stat_countries: 'Countries',
+        stat_success: 'Success Rate',
+        stat_support: 'Support',
 
         opps_title_1: 'Discover Your',
         opps_title_2: 'Perfect Match',
@@ -281,20 +280,19 @@ export default function Index() {
         sign_in: 'Se connecter',
         get_started: 'Commencer',
 
-        serving: '🇲🇦 PAGE OFFICIELLE DE WYF MAROC',
-        hero_quote: 'La Russie est maintenant votre ami.',
-        hero_quote2: 'Nos portes vous sont toujours ouvertes',
-        hero_attribution: 'Vladimir Poutine',
-        hero_event: 'Cérémonie de clôture du Festival mondial de la jeunesse (2024)',
-        hero_desc1: 'La page officielle du Comité national du Maroc du Festival mondial de la jeunesse',
-        hero_desc2: 'Le plus grand réseau de jeunesse russe en Afrique',
+        serving: '🇲🇦 Au service de plus de 50 000 étudiants marocains',
+        hero_line1: 'Transformez vos',
+        hero_line2: 'Rêves mondiaux',
+        hero_line3: 'En réalité',
+        hero_desc:
+          "Découvrez des milliers de bourses, emplois et programmes internationaux adaptés aux talents marocains. Votre passeport vers la réussite commence ici.",
         explore_opps: 'Explorer les opportunités',
         watch_demo: 'Voir la démo',
 
-        stat_users: '+8 millions de jeunes atteints',
-        stat_countries: '+115 PARTENAIRES MONDIAUX',
-        stat_success: '+80 ÉVÉNEMENTS PAR AN',
-        stat_support: '24/7',
+        stat_users: 'Utilisateurs actifs',
+        stat_countries: 'Pays',
+        stat_success: 'Taux de réussite',
+        stat_support: 'Support',
 
         opps_title_1: 'Trouvez votre',
         opps_title_2: 'match parfait',
@@ -424,20 +422,19 @@ export default function Index() {
         sign_in: 'Войти',
         get_started: 'Начать',
 
-        serving: '🇲🇦 ОФИЦИАЛЬНАЯ СТРАНИЦА WYF МАРОККО',
-        hero_quote: 'Россия теперь ваш друг.',
-        hero_quote2: 'Наши двери всегда открыты для вас',
-        hero_attribution: 'Владимир Путин',
-        hero_event: 'Закрытие Всемирного фестиваля молодёжи (2024)',
-        hero_desc1: 'Официальная страница Национального комитета Марокко Всемирного фестиваля молодёжи',
-        hero_desc2: 'Крупнейшая русская молодёжная сеть в Африке',
+        serving: '🇲🇦 Более 50 000 марокканских студентов',
+        hero_line1: 'Преврати свои',
+        hero_line2: 'Глобальные мечты',
+        hero_line3: 'В реальность',
+        hero_desc:
+          'Тысячи стипендий, вакансий и международных программ для талантливых марокканцев. Твой путь к успеху начинается здесь.',
         explore_opps: 'Найти возможности',
         watch_demo: 'Смотреть демо',
 
-        stat_users: '+8 млн молодёжи охвачено',
-        stat_countries: '+115 ПАРТНЁРОВ МИРА',
-        stat_success: '+80 СОБЫТИЙ В ГОД',
-        stat_support: '24/7',
+        stat_users: 'Пользователи',
+        stat_countries: 'Страны',
+        stat_success: 'Успешность',
+        stat_support: 'Поддержка',
 
         opps_title_1: 'Найди свой',
         opps_title_2: 'идеальный вариант',
@@ -600,12 +597,7 @@ export default function Index() {
     },
   ];
 
-  const stats = [
-    { number: '50K+', label: t('stat_users'), icon: Users },
-    { number: '150+', label: t('stat_countries'), icon: Globe },
-    { number: '95%', label: t('stat_success'), icon: TrendingUp },
-    { number: '24/7', label: t('stat_support'), icon: Sparkles },
-  ];
+
 
   const sponsors = [
     {
@@ -891,77 +883,110 @@ export default function Index() {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg max-w-full">
                 <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-gray-800">
+                <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
                   {t('serving')}
                 </span>
               </div>
 
-              <div className="space-y-5">
-                <h1 className="font-bold leading-[1.15] space-y-2">
-                  <span className="block text-brand-red text-4xl sm:text-5xl lg:text-6xl">
-                    "{t('hero_quote')}
-                  </span>
-                  <span className="block text-brand-red text-4xl sm:text-5xl lg:text-6xl">
-                    {t('hero_quote2')}"
-                  </span>
-                </h1>
+              <h1 className="font-bold leading-[1.05]">
+                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
+                  {t('hero_line1')}
+                </span>
+                <span className="block bg-gradient-to-r from-brand-red via-gray-900 to-brand-black bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
+                  {t('hero_line2')}
+                </span>
+                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
+                  {t('hero_line3')}
+                </span>
+              </h1>
 
-                <div className="space-y-1.5 pt-4">
-                  <p className="text-base sm:text-lg font-bold text-gray-900">
-                    {t('hero_attribution')}
-                  </p>
-                  <p className="text-sm text-gray-600 font-medium">
-                    {t('hero_event')}
-                  </p>
-                </div>
-              </div>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
+                {t('hero_desc')}
+              </p>
 
-              <div className="space-y-4 pt-4 border-t border-gray-300">
-                <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
-                  {t('hero_desc1')}
-                </p>
-                <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
-                  {t('hero_desc2')}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link to="/events" className="group px-9 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Link to="/events" className="group w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
                   <span>{t('explore_opps')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="px-9 py-4 bg-white text-gray-900 rounded-full font-bold shadow-md hover:shadow-lg border-2 border-gray-300 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-center">
+                <button className="w-full sm:w-auto px-7 py-4 bg-white text-gray-800 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
                   <span>{t('watch_demo')}</span>
-                  <div className="w-6 h-6 bg-gradient-to-r from-brand-red to-gray-900 rounded-full flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-5 border-l-white border-t-3 border-t-transparent border-b-3 border-b-transparent ml-0.5" />
+                  <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-gray-900 rounded-full flex items-center justify-center">
+                    <div className="w-0 h-0 border-l-8 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1" />
                   </div>
                 </button>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-gray-200">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center py-2">
-                    <div className="text-2xl sm:text-3xl font-bold text-brand-red">{stat.number}</div>
-                    <div className="text-xs sm:text-sm text-gray-700 font-semibold leading-tight mt-2">{stat.label}</div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
+                {stats.map((stat, index) => {
+                  const Icon = stat.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
+                    >
+                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-1" />
+                      <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.number}</div>
+                      <div className="text-xs text-gray-500">{stat.label}</div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-red-700 to-red-900 rounded-full blur-3xl opacity-60 -z-10" />
-                <div className="relative w-full h-full rounded-full border-[12px] border-brand-red shadow-2xl overflow-hidden">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fbb741b97521d4209909af2db8317fc54?format=webp&width=800"
-                    alt="Hero Profile"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
+            <div className="relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden">
+                {opportunities.map((opp, index) => {
+                  const Icon = opp.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100"
+                    >
+                      <div
+                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">{opp.count}</div>
+                      <div className="text-base font-semibold text-gray-800 mb-1">{opp.title}</div>
+                      <div className="text-sm text-gray-500">{opp.desc}</div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="hidden lg:block relative h-[600px]">
+                {opportunities.map((opp, index) => {
+                  const Icon = opp.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="absolute bg-white rounded-2xl p-6 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 cursor-pointer"
+                      style={{
+                        top: `${index * 18}%`,
+                        left: `${index % 2 === 0 ? '0' : '25%'}`,
+                        right: `${index % 2 === 0 ? '25%' : '0'}`,
+                        animation: `float ${3 + index}s ease-in-out infinite`,
+                        animationDelay: `${index * 0.2}s`,
+                        zIndex: 4 - index,
+                      }}
+                    >
+                      <div
+                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
+                      >
+                        <Icon className="w-7 h-7 text-white" />
+                      </div>
+                      <div className="text-3xl font-bold text-gray-900 mb-1">{opp.count}</div>
+                      <div className="text-lg font-semibold text-gray-800 mb-1">{opp.title}</div>
+                      <div className="text-sm text-gray-500">{opp.desc}</div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -1058,6 +1083,11 @@ export default function Index() {
                   {/* Glow effect on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
                 </div>
+
+                {/* Text Label Below Card */}
+                <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 text-center w-40 sm:w-48 lg:w-56">
+                  {sponsor.name}
+                </p>
               </a>
               ))}
             </div>
