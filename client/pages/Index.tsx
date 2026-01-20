@@ -888,29 +888,19 @@ export default function Index() {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg max-w-full">
-                <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
-                  {t('serving')}
+              <h1 className="font-bold leading-[1.15]">
+                <span className="block text-brand-red text-4xl sm:text-5xl lg:text-6xl">
+                  "Russia is now your friend.
                 </span>
-              </div>
-
-              <h1 className="font-bold leading-[1.05]">
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line1')}
-                </span>
-                <span className="block bg-gradient-to-r from-brand-red via-gray-900 to-brand-black bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line2')}
-                </span>
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line3')}
+                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl mt-2">
+                  Our doors are always open to you."
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
-                {t('hero_desc')}
+              <p className="text-base sm:text-lg text-gray-600 max-w-xl">
+                Join thousands of Moroccan students discovering unprecedented opportunities for growth and success through international partnerships and educational exchange programs.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -925,73 +915,18 @@ export default function Index() {
                   </div>
                 </button>
               </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
-                {stats.map((stat, index) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
-                    >
-                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-1" />
-                      <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.number}</div>
-                      <div className="text-xs text-gray-500">{stat.label}</div>
-                    </div>
-                  );
-                })}
-              </div>
             </div>
 
-            <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden">
-                {opportunities.map((opp, index) => {
-                  const Icon = opp.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100"
-                    >
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
-                      >
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900 mb-1">{opp.count}</div>
-                      <div className="text-base font-semibold text-gray-800 mb-1">{opp.title}</div>
-                      <div className="text-sm text-gray-500">{opp.desc}</div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="hidden lg:block relative h-[600px]">
-                {opportunities.map((opp, index) => {
-                  const Icon = opp.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="absolute bg-white rounded-2xl p-6 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 cursor-pointer"
-                      style={{
-                        top: `${index * 18}%`,
-                        left: `${index % 2 === 0 ? '0' : '25%'}`,
-                        right: `${index % 2 === 0 ? '25%' : '0'}`,
-                        animation: `float ${3 + index}s ease-in-out infinite`,
-                        animationDelay: `${index * 0.2}s`,
-                        zIndex: 4 - index,
-                      }}
-                    >
-                      <div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
-                      >
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div className="text-3xl font-bold text-gray-900 mb-1">{opp.count}</div>
-                      <div className="text-lg font-semibold text-gray-800 mb-1">{opp.title}</div>
-                      <div className="text-sm text-gray-500">{opp.desc}</div>
-                    </div>
-                  );
-                })}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:aspect-square">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
+                <div className="relative rounded-full overflow-hidden border-[12px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F0b3c8f9e2a4d5c6f7g8h9i0j1k2l3m4n?format=webp&width=800"
+                    alt="Putin Portrait"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
