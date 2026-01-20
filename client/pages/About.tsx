@@ -109,7 +109,7 @@ export default function About() {
         about_hero_desc: 'We believe every Moroccan student deserves access to world-class opportunities. MoroccoGlobal is the bridge connecting ambition with possibility.',
 
         about_story_title: 'Our Story',
-        about_story_desc: 'Founded with a singular vision: to democratize access to global education and career opportunities for Moroccan students and professionals. We witnessed brilliant minds limited by geography and information gaps. So we built MoroccoGlobal to eliminate those barriers.',
+        about_story_desc: 'WYF Morocco is the National Committee of Morocco of the World Youth Festival, created to represent Moroccan youth and connect them with international platforms, global events, and cross-cultural opportunities. Through sustained engagement and international partnerships, the committee has become a recognized actor in youth diplomacy and global youth cooperation.',
         about_story_highlight: 'Today, we\'ve become the trusted platform for 50,000+ Moroccan seekers worldwide, changing lives daily.',
 
         about_mission_title: 'Our Mission',
