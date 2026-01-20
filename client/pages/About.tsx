@@ -110,7 +110,7 @@ export default function About() {
 
         about_story_title: 'Our Story',
         about_story_desc: 'WYF Morocco is the National Committee of Morocco of the World Youth Festival, created to represent Moroccan youth and connect them with international platforms, global events, and cross-cultural opportunities. Through sustained engagement and international partnerships, the committee has become a recognized actor in youth diplomacy and global youth cooperation.',
-        about_story_highlight: 'Today, we\'ve become the trusted platform for 50,000+ Moroccan seekers worldwide, changing lives daily.',
+        about_story_highlight: 'WYF Morocco works closely with international institutions, diplomatic partners, and youth networks to enable Moroccan students, young professionals, researchers, and community leaders to take part in major global forums, assemblies, and cultural exchanges. These efforts aim to strengthen youth leadership, promote intercultural understanding, and enhance Morocco’s presence within the global youth ecosystem.',
 
         about_mission_title: 'Our Mission',
         about_mission_desc: 'To democratize access to global opportunities for every Moroccan student and professional, regardless of their background or location, empowering them to achieve their dreams.',
