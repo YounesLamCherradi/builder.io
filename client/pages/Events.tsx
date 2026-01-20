@@ -74,15 +74,21 @@ export default function Events() {
     };
   }, [selectedEvent]);
 
-  // Fetch events from Supabase
+  // Fetch events, FAQs, and past events from Supabase
   React.useEffect(() => {
-    const loadEvents = async () => {
+    const loadData = async () => {
       setLoadingEvents(true);
-      const data = await fetchEvents();
-      setFetchedEvents(data);
+      const [events, faqs, pastEvents] = await Promise.all([
+        fetchEvents(),
+        fetchFAQs(),
+        fetchPastEvents()
+      ]);
+      setFetchedEvents(events);
+      setFetchedFAQs(faqs);
+      setFetchedPastEvents(pastEvents);
       setLoadingEvents(false);
     };
-    loadEvents();
+    loadData();
   }, []);
 
   const languages = [
