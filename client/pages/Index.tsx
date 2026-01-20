@@ -198,7 +198,7 @@ export default function Index() {
         tagline: 'Your World Awaits',
         explore_all_opps: 'Explore All Opportunities',
         moments_of: 'Moments of',
-        moroccan_success: 'Moroccan Global Success',
+        moroccan_success: 'WYF Morocco Impact',
         made_with: 'Made with ❤️ in Morocco',
         sitemap: 'Sitemap',
         subscribe_privacy: 'We respect your privacy. Unsubscribe anytime. No spam, ever.',
