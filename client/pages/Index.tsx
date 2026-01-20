@@ -597,7 +597,7 @@ export default function Index() {
     },
   ];
 
- const stats = [
+  const stats = [
     { number: '50K+', label: t('stat_users'), icon: Users },
     { number: '150+', label: t('stat_countries'), icon: Globe },
     { number: '95%', label: t('stat_success'), icon: TrendingUp },
