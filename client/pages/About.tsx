@@ -119,7 +119,7 @@ export default function About() {
         about_vision_desc: 'A world in which Moroccan youth are fully represented and actively engaged on the global stage, empowered to develop leadership, foster cross-cultural understanding, and contribute positively to their communities and the international youth ecosystem.',
 
         about_values_title: 'Core Values That Guide Us',
-        about_values_access: 'Accessibility First',
+        about_values_access: 'Representation & Inclusion',
         about_values_access_desc: 'Making world-class opportunities available to everyone, breaking down financial and geographical barriers',
         about_values_excellence: 'Excellence Always',
         about_values_excellence_desc: 'Delivering the highest quality guidance, support, and resources to our community',
