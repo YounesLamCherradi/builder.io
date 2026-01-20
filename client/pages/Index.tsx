@@ -1088,11 +1088,6 @@ export default function Index() {
                   {/* Glow effect on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
                 </div>
-
-                {/* Text Label Below Card */}
-                <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 text-center w-40 sm:w-48 lg:w-56">
-                  {sponsor.name}
-                </p>
               </a>
               ))}
             </div>
