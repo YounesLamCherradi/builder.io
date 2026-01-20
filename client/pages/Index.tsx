@@ -240,7 +240,7 @@ export default function Index() {
         sa_b5: 'Spanish Language Programs',
         sa_stat: 'Growing Network',
 
-        inspiring_text: 'Inspiring real journeys — from scholarships and exchanges to world-class achievements',
+        inspiring_text: 'Celebrating real journeys of Moroccan youth — from international assemblies and cultural exchanges to leadership roles and global collaborations.',
 
         home_stay_updated_title: 'Stay Updated with',
         home_stay_updated_highlight: 'Global Opportunities',
