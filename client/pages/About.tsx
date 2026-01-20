@@ -113,7 +113,7 @@ export default function About() {
         about_story_highlight: 'WYF Morocco works closely with international institutions, diplomatic partners, and youth networks to enable Moroccan students, young professionals, researchers, and community leaders to take part in major global forums, assemblies, and cultural exchanges. These efforts aim to strengthen youth leadership, promote intercultural understanding, and enhance Morocco’s presence within the global youth ecosystem.',
 
         about_mission_title: 'Our Mission',
-        about_mission_desc: 'TTo represent, engage, and empower Moroccan youth by facilitating their participation in international platforms, global events, and youth cooperation initiatives, while promoting cultural exchange, dialogue, and leadership at the international level.',
+        about_mission_desc: 'To represent, engage, and empower Moroccan youth by facilitating their participation in international platforms, global events, and youth cooperation initiatives, while promoting cultural exchange, dialogue, and leadership at the international level.',
 
         about_vision_title: 'Our Vision',
         about_vision_desc: 'A world where every talented Moroccan can pursue their dreams globally, breaking geographic barriers and creating a generation of global leaders who transform their communities.',
