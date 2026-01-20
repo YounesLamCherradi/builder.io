@@ -116,7 +116,7 @@ export default function About() {
         about_mission_desc: 'To represent, engage, and empower Moroccan youth by facilitating their participation in international platforms, global events, and youth cooperation initiatives, while promoting cultural exchange, dialogue, and leadership at the international level.',
 
         about_vision_title: 'Our Vision',
-        about_vision_desc: 'A world where every talented Moroccan can pursue their dreams globally, breaking geographic barriers and creating a generation of global leaders who transform their communities.',
+        about_vision_desc: 'AA world in which Moroccan youth are fully represented and actively engaged on the global stage, empowered to develop leadership, foster cross-cultural understanding, and contribute positively to their communities and the international youth ecosystem.',
 
         about_values_title: 'Core Values That Guide Us',
         about_values_access: 'Accessibility First',
