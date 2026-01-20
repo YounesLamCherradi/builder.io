@@ -891,26 +891,26 @@ export default function Index() {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg max-w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="space-y-5 sm:space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                 <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
+                <span className="text-xs sm:text-sm font-medium text-gray-800">
                   {t('serving')}
                 </span>
               </div>
 
-              <h1 className="font-bold leading-[1.1]">
-                <span className="block text-brand-red text-3xl sm:text-4xl lg:text-5xl">
+              <h1 className="font-bold leading-tight">
+                <span className="block text-brand-red text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-2">
                   "{t('hero_quote')}
                 </span>
-                <span className="block text-brand-red text-3xl sm:text-4xl lg:text-5xl">
+                <span className="block text-brand-red text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                   {t('hero_quote2')}"
                 </span>
               </h1>
 
-              <div className="space-y-1">
-                <p className="text-sm sm:text-base font-semibold text-gray-800">
+              <div className="space-y-1 pt-2">
+                <p className="text-sm sm:text-base font-bold text-gray-900">
                   {t('hero_attribution')}
                 </p>
                 <p className="text-xs sm:text-sm text-gray-600">
@@ -918,46 +918,48 @@ export default function Index() {
                 </p>
               </div>
 
-              <div className="space-y-2 py-4 border-t border-gray-200">
-                <p className="text-sm sm:text-base text-gray-700 font-medium">
+              <div className="space-y-3 py-6 border-t border-b border-gray-200">
+                <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
                   {t('hero_desc1')}
                 </p>
-                <p className="text-sm sm:text-base text-gray-700 font-medium">
+                <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
                   {t('hero_desc2')}
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Link to="/events" className="group w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <Link to="/events" className="group px-8 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">
                   <span>{t('explore_opps')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="w-full sm:w-auto px-7 py-4 bg-white text-gray-800 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
+                <button className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold shadow-md hover:shadow-lg border-2 border-gray-200 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto">
                   <span>{t('watch_demo')}</span>
-                  <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-gray-900 rounded-full flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-8 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1" />
+                  <div className="w-6 h-6 bg-gradient-to-r from-brand-red to-gray-900 rounded-full flex items-center justify-center">
+                    <div className="w-0 h-0 border-l-5 border-l-white border-t-3 border-t-transparent border-b-3 border-b-transparent ml-0.5" />
                   </div>
                 </button>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-lg sm:text-xl font-bold text-brand-red">{stat.number}</div>
-                    <div className="text-xs sm:text-sm text-gray-700 font-medium">{stat.label}</div>
+                    <div className="text-lg sm:text-2xl font-bold text-brand-red">{stat.number}</div>
+                    <div className="text-xs sm:text-sm text-gray-700 font-semibold leading-tight mt-1">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative flex items-center justify-center lg:justify-end">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red to-gray-900 rounded-full opacity-100 blur-2xl" />
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F8686c15b8463498aacf520663ccc2408?format=webp&width=800"
-                  alt="Hero Profile"
-                  className="relative w-full h-full rounded-full object-cover border-8 border-brand-red shadow-2xl"
-                />
+            <div className="relative flex items-center justify-center pt-8 lg:pt-0">
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:h-auto lg:aspect-square">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-red to-red-800 rounded-full blur-3xl opacity-80 -z-10" style={{ transform: 'scale(1.05)' }} />
+                <div className="relative w-full h-full rounded-full border-8 border-brand-red shadow-2xl overflow-hidden bg-white">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F8686c15b8463498aacf520663ccc2408?format=webp&width=800"
+                    alt="Hero Profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
