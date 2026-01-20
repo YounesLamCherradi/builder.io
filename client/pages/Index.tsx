@@ -900,21 +900,32 @@ export default function Index() {
                 </span>
               </div>
 
-              <h1 className="font-bold leading-[1.05]">
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line1')}
+              <h1 className="font-bold leading-[1.1]">
+                <span className="block text-brand-red text-3xl sm:text-4xl lg:text-5xl">
+                  "{t('hero_quote')}
                 </span>
-                <span className="block bg-gradient-to-r from-brand-red via-gray-900 to-brand-black bg-clip-text text-transparent text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line2')}
-                </span>
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-7xl">
-                  {t('hero_line3')}
+                <span className="block text-brand-red text-3xl sm:text-4xl lg:text-5xl">
+                  {t('hero_quote2')}"
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-xl">
-                {t('hero_desc')}
-              </p>
+              <div className="space-y-1">
+                <p className="text-sm sm:text-base font-semibold text-gray-800">
+                  {t('hero_attribution')}
+                </p>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  {t('hero_event')}
+                </p>
+              </div>
+
+              <div className="space-y-2 py-4 border-t border-gray-200">
+                <p className="text-sm sm:text-base text-gray-700 font-medium">
+                  {t('hero_desc1')}
+                </p>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">
+                  {t('hero_desc2')}
+                </p>
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link to="/events" className="group w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
@@ -929,72 +940,24 @@ export default function Index() {
                 </button>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
-                {stats.map((stat, index) => {
-                  const Icon = stat.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="rounded-2xl bg-white/75 backdrop-blur-sm border border-white/40 p-4 text-center shadow-sm"
-                    >
-                      <Icon className="w-5 h-5 text-brand-red mx-auto mb-1" />
-                      <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.number}</div>
-                      <div className="text-xs text-gray-500">{stat.label}</div>
-                    </div>
-                  );
-                })}
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-lg sm:text-xl font-bold text-brand-red">{stat.number}</div>
+                    <div className="text-xs sm:text-sm text-gray-700 font-medium">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:hidden">
-                {opportunities.map((opp, index) => {
-                  const Icon = opp.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100"
-                    >
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
-                      >
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div className="text-2xl font-bold text-gray-900 mb-1">{opp.count}</div>
-                      <div className="text-base font-semibold text-gray-800 mb-1">{opp.title}</div>
-                      <div className="text-sm text-gray-500">{opp.desc}</div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="hidden lg:block relative h-[600px]">
-                {opportunities.map((opp, index) => {
-                  const Icon = opp.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="absolute bg-white rounded-2xl p-6 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-500 cursor-pointer"
-                      style={{
-                        top: `${index * 18}%`,
-                        left: `${index % 2 === 0 ? '0' : '25%'}`,
-                        right: `${index % 2 === 0 ? '25%' : '0'}`,
-                        animation: `float ${3 + index}s ease-in-out infinite`,
-                        animationDelay: `${index * 0.2}s`,
-                        zIndex: 4 - index,
-                      }}
-                    >
-                      <div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${opp.color} flex items-center justify-center mb-4`}
-                      >
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div className="text-3xl font-bold text-gray-900 mb-1">{opp.count}</div>
-                      <div className="text-lg font-semibold text-gray-800 mb-1">{opp.title}</div>
-                      <div className="text-sm text-gray-500">{opp.desc}</div>
-                    </div>
-                  );
-                })}
+            <div className="relative flex items-center justify-center lg:justify-end">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red to-gray-900 rounded-full opacity-100 blur-2xl" />
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F8686c15b8463498aacf520663ccc2408?format=webp&width=800"
+                  alt="Hero Profile"
+                  className="relative w-full h-full rounded-full object-cover border-8 border-brand-red shadow-2xl"
+                />
               </div>
             </div>
           </div>
