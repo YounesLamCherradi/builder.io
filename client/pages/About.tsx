@@ -123,8 +123,8 @@ export default function About() {
         about_values_access_desc: 'Ensuring Moroccan youth from all regions and backgrounds have the opportunity to participate in international events, dialogue, and cultural exchange.',
         about_values_excellence: 'Excellence & Integrity',
         about_values_excellence_desc: 'Maintaining the highest standards of professionalism, transparency, and accountability in all activities, partnerships, and engagements.',
-        about_values_impact: 'Impact Driven',
-        about_values_impact_desc: 'Creating lasting, measurable change in the lives of our users and their families',
+        about_values_impact: 'Impact & Empowerment',
+        about_values_impact_desc: 'Creating meaningful opportunities that develop leadership, skills, and global awareness, enabling youth to contribute positively to their communities and beyond.',
         about_values_innovation: 'Innovation Constant',
         about_values_innovation_desc: 'Continuously evolving technology and services to better serve our growing global community',
 
