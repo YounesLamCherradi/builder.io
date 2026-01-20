@@ -109,16 +109,12 @@ export default function Index() {
 
   useEffect(() => {
     const loadData = async () => {
-      const [gallery, partners, faqs, pastEvents] = await Promise.all([
+      const [gallery, partners] = await Promise.all([
         fetchGallery(),
-        fetchPartners(),
-        fetchFAQs(),
-        fetchPastEvents()
+        fetchPartners()
       ]);
       if (gallery.length > 0) setGalleryItems(gallery);
       if (partners.length > 0) setPartnersList(partners);
-      if (faqs.length > 0) setFaqsList(faqs);
-      if (pastEvents.length > 0) setPastEventsList(pastEvents);
     };
     loadData();
   }, []);
