@@ -17,7 +17,7 @@ import {
   ChevronUp,
   Loader,
 } from 'lucide-react';
-import { fetchEvents, type Event } from '../lib/supabase';
+import { fetchEvents, fetchFAQs, fetchPastEvents, type Event, type FAQ, type PastEvent } from '../lib/supabase';
 
 export default function Events() {
   const [scrollY, setScrollY] = useState(0);
