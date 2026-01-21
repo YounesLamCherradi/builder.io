@@ -58,6 +58,7 @@ export interface NewsArticle {
   title_i18n?: I18nString;
   description_i18n?: I18nString;
   content_i18n?: I18nString;
+  order_index: number;
   created_at: string;
 }
 
