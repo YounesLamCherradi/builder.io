@@ -377,6 +377,12 @@ export default function Admin() {
         role: '',
         time: '18:00',
         about_event: '',
+        partnerName: '',
+        partnerLink: '',
+        question: '',
+        answer: '',
+        bio: '',
+        orderIndex: news.order_index || 0,
       });
       setI18nData({
         title_i18n: news.title_i18n || { en: news.title, fr: '', ru: '' },
