@@ -1309,6 +1309,104 @@ export default function Index() {
         </div>
       </section>
 
+      {/* News Detail Modal */}
+      {selectedNews && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
+          onClick={() => setSelectedNews(null)}
+        >
+          <div
+            className="bg-white rounded-3xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Hero Image */}
+            {selectedNews.image_url && (
+              <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+                <img
+                  src={selectedNews.image_url}
+                  alt={selectedNews.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedNews(null)}
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white text-gray-900 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 shadow-lg"
+                  aria-label="Close"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            )}
+
+            {/* Content */}
+            <div className="p-6 sm:p-8 lg:p-10">
+              {/* Category & Date */}
+              <div className="flex items-center gap-3 mb-5 flex-wrap">
+                {selectedNews.category && (
+                  <span className="inline-block px-4 py-2 bg-brand-red text-white text-xs sm:text-sm font-bold rounded-full">
+                    {selectedNews.category}
+                  </span>
+                )}
+                <span className="text-sm text-gray-500">
+                  {new Date(selectedNews.date || selectedNews.created_at).toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+                {(selectedNews.title_i18n?.[currentLanguage as any]) || selectedNews.title}
+              </h1>
+
+              {/* Author */}
+              {selectedNews.author && (
+                <div className="flex items-center gap-3 mb-8 pb-8 border-b border-gray-200">
+                  <div className="w-12 h-12 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold">
+                    {selectedNews.author.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">By {selectedNews.author}</p>
+                    <p className="text-sm text-gray-500">Author</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Description */}
+              <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
+                {(selectedNews.description_i18n?.[currentLanguage as any]) || selectedNews.description}
+              </p>
+
+              {/* Content */}
+              {selectedNews.content && (
+                <div className="prose prose-lg max-w-none">
+                  <div className="text-base sm:text-lg text-gray-700 leading-relaxed whitespace-pre-wrap">
+                    {(selectedNews.content_i18n?.[currentLanguage as any]) || selectedNews.content}
+                  </div>
+                </div>
+              )}
+
+              {/* Footer Action */}
+              <div className="mt-10 pt-8 border-t border-gray-200">
+                <button
+                  onClick={() => setSelectedNews(null)}
+                  className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
+                >
+                  <span>Back to News</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Footer */}
       <footer className="bg-gradient-to-b from-white via-amber-50/40 to-green-50/30 text-gray-800 pt-12 sm:pt-16 pb-10 sm:pb-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
