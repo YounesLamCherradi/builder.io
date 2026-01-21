@@ -943,7 +943,7 @@ export default function Index() {
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
                     alt="Putin Portrait"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
