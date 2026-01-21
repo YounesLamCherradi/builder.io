@@ -911,22 +911,37 @@ export default function Admin() {
               )}
 
               {activeTab === 'team' ? (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Bio * ({activeLanguage.toUpperCase()})
-                  </label>
-                  <textarea
-                    value={i18nData.bio_i18n[activeLanguage]}
-                    onChange={(e) => setI18nData(prev => ({
-                      ...prev,
-                      bio_i18n: { ...prev.bio_i18n, [activeLanguage]: e.target.value }
-                    }))}
-                    required
-                    rows={3}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    placeholder="Team member bio or description"
-                  />
-                </div>
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Bio * ({activeLanguage.toUpperCase()})
+                    </label>
+                    <textarea
+                      value={i18nData.bio_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        bio_i18n: { ...prev.bio_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      rows={3}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Team member bio or description"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Display Order Position</label>
+                    <input
+                      type="number"
+                      value={formData.orderIndex}
+                      onChange={(e) => setFormData(prev => ({ ...prev, orderIndex: parseInt(e.target.value) || 0 }))}
+                      min="0"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="0 (first position), 1 (second), etc..."
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Set the position number to control where this team member appears. Lower numbers appear first.</p>
+                  </div>
+                </>
               ) : (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
