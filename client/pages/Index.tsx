@@ -948,12 +948,39 @@ export default function Index() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-              </div>
 
-              <div className="mt-6 sm:mt-10">
-                <div className="text-center space-y-1 sm:space-y-2">
-                  <p className="text-base sm:text-xl font-bold bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">Vision 2030</p>
-                  <p className="text-xs sm:text-base text-gray-600 font-medium">Building Bridges Globally</p>
+                {/* Vision 2030 Quote - Positioned at bottom left of portrait */}
+                <div className="absolute -bottom-16 left-0 right-0 lg:-left-24 lg:bottom-12 lg:right-auto lg:w-72 z-20">
+                  <div className="relative group">
+                    {/* Quote bubble background */}
+                    <div className="relative bg-white rounded-2xl border-2 border-brand-red/40 shadow-xl p-5 sm:p-6 hover:shadow-2xl hover:border-brand-red/80 transition-all duration-300 group-hover:bg-white/95">
+                      {/* Top accent line */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-red to-transparent rounded-t-2xl" />
+
+                      {/* Quote mark decoration */}
+                      <div className="absolute -top-4 -left-2 text-4xl sm:text-5xl text-brand-red/30 font-serif">"</div>
+
+                      {/* Content */}
+                      <div className="space-y-2">
+                        <h3 className="text-base sm:text-lg font-bold bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent leading-tight">
+                          Vision 2030
+                        </h3>
+                        <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-colors">
+                          Building Bridges Globally
+                        </p>
+                      </div>
+
+                      {/* Attribution line */}
+                      <div className="absolute bottom-2 right-4 text-xs text-gray-500 italic">
+                        — Leadership Vision
+                      </div>
+
+                      {/* Arrow pointer to portrait */}
+                      <div className="hidden lg:block absolute -right-8 top-4 sm:top-5">
+                        <div className="w-0 h-0 border-l-8 border-t-4 border-b-4 border-l-white border-t-transparent border-b-transparent shadow-lg" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
