@@ -961,18 +961,18 @@ export default function Index() {
                       <div className="absolute -top-4 -left-2 text-4xl sm:text-5xl text-brand-red/30 font-serif">"</div>
 
                       {/* Content */}
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <h3 className="text-base sm:text-lg font-bold bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent leading-tight">
                           Vision 2030
                         </h3>
                         <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-colors">
                           Building Bridges Globally
                         </p>
-                      </div>
-
-                      {/* Attribution line */}
-                      <div className="absolute bottom-2 right-4 text-xs text-gray-500 italic">
-                        — Leadership Vision
+                        {/* Attribution */}
+                        <p className="text-xs text-gray-600 italic border-t border-gray-200 pt-2 mt-2">
+                          Vladimir Putin<br/>
+                          <span className="text-gray-500">Closing Ceremony of World Youth Festival (2024)</span>
+                        </p>
                       </div>
 
                       {/* Arrow pointer to portrait */}
