@@ -1206,65 +1206,101 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {newsList.length > 0 ? (
-              newsList.slice(0, 6).map((article) => (
-                <div
-                  key={article.id}
-                  className="group rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 hover:scale-[1.02] flex flex-col"
-                >
-                  {/* Image Container */}
-                  {article.image_url && (
-                    <div className="relative h-48 sm:h-56 overflow-hidden">
+          {newsList.length > 0 ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* Featured News - Left Side (2 columns on desktop) */}
+              <div className="lg:col-span-2">
+                <div className="group rounded-3xl overflow-hidden shadow-2xl bg-white transition-all duration-500 hover:shadow-3xl h-full flex flex-col">
+                  {newsList[0].image_url && (
+                    <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
                       <img
-                        src={article.image_url}
-                        alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        src={newsList[0].image_url}
+                        alt={newsList[0].title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     </div>
                   )}
 
-                  {/* Content Container */}
-                  <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                    {/* Category & Date */}
-                    <div className="flex items-center justify-between mb-3 sm:mb-4">
-                      {article.category && (
-                        <span className="inline-block px-3 py-1 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full border border-brand-red/30">
-                          {article.category}
+                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                    <div className="flex items-center gap-3 mb-4">
+                      {newsList[0].category && (
+                        <span className="inline-block px-4 py-2 bg-brand-red text-white text-xs sm:text-sm font-bold rounded-full">
+                          {newsList[0].category}
                         </span>
                       )}
-                      <span className="text-xs text-gray-500">
-                        {new Date(article.date || article.created_at).toLocaleDateString()}
+                      <span className="text-sm text-gray-500">
+                        {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: '2-digit',
+                          day: '2-digit'
+                        })}
                       </span>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
-                      {article.title_i18n?.[currentLanguage as keyof typeof article.title_i18n] || article.title}
-                    </h3>
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors">
+                      {(newsList[0].title_i18n?.[currentLanguage as any]) || newsList[0].title}
+                    </h2>
 
-                    {/* Description */}
-                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 line-clamp-3 flex-grow">
-                      {article.description_i18n?.[currentLanguage as keyof typeof article.description_i18n] || article.description}
+                    <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow">
+                      {(newsList[0].description_i18n?.[currentLanguage as any]) || newsList[0].description}
                     </p>
 
-                    {/* Author */}
-                    {article.author && (
-                      <p className="text-xs text-gray-500">
-                        By <span className="font-semibold text-gray-700">{article.author}</span>
+                    {newsList[0].author && (
+                      <p className="text-sm text-gray-600">
+                        By <span className="font-semibold text-gray-900">{newsList[0].author}</span>
                       </p>
                     )}
                   </div>
                 </div>
-              ))
-            ) : (
-              <div className="col-span-full text-center py-12">
-                <p className="text-gray-600 text-lg">No news articles available yet</p>
               </div>
-            )}
-          </div>
+
+              {/* News List - Right Side */}
+              <div className="lg:col-span-1 space-y-4">
+                {newsList.slice(1, 6).map((article) => (
+                  <div
+                    key={article.id}
+                    className="group rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 hover:shadow-lg hover:scale-105 flex gap-4 cursor-pointer"
+                  >
+                    {article.image_url && (
+                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                        <img
+                          src={article.image_url}
+                          alt={article.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                      </div>
+                    )}
+
+                    <div className="flex-grow py-2 flex flex-col justify-between min-w-0">
+                      {article.category && (
+                        <span className="text-xs font-bold text-brand-red mb-1">
+                          {article.category}
+                        </span>
+                      )}
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors line-clamp-2">
+                        {(article.title_i18n?.[currentLanguage as any]) || article.title}
+                      </h3>
+                      <span className="text-xs text-gray-500 mt-auto">
+                        {new Date(article.date || article.created_at).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: '2-digit',
+                          day: '2-digit'
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No news articles available yet</p>
+            </div>
+          )}
         </div>
       </section>
 
