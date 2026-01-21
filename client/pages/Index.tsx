@@ -1265,6 +1265,7 @@ export default function Index() {
                 {newsList.slice(1, 6).map((article) => (
                   <div
                     key={article.id}
+                    onClick={() => setSelectedNews(article)}
                     className="group rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 hover:shadow-lg hover:scale-105 flex gap-4 cursor-pointer"
                   >
                     {article.image_url && (
