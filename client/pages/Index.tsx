@@ -888,7 +888,7 @@ export default function Index() {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="space-y-6 sm:space-y-8">
               <h1 className="font-bold leading-[1.15]">
                 <span className="block text-brand-red text-4xl sm:text-5xl lg:text-6xl">
