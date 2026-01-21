@@ -144,7 +144,6 @@ export default function Contact() {
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         nav_contact: 'Contact',
-        nav_news: 'Actualités',
 
         contact_hero_title: 'Nous Contacter',
         contact_hero_subtitle: 'Nous aimerions vous entendre. Envoyez-nous un message et nous répondrons dès que possible.',
