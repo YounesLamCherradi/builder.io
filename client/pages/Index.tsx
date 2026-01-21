@@ -899,6 +899,22 @@ export default function Index() {
                 </span>
               </h1>
 
+              {/* Vision 2030 Attribution */}
+              <div className="space-y-2">
+                <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight">
+                  Vision 2030
+                </h3>
+                <p className="text-sm sm:text-base font-semibold text-gray-800">
+                  Building Bridges Globally
+                </p>
+                <p className="text-xs sm:text-sm font-bold text-gray-900">
+                  Vladimir Putin
+                </p>
+                <p className="text-xs text-gray-600 font-medium">
+                  Closing Ceremony of World Youth Festival (2024)
+                </p>
+              </div>
+
               <p className="text-base sm:text-lg text-gray-600 max-w-xl">
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
