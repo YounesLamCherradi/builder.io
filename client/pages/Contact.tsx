@@ -73,7 +73,6 @@ export default function Contact() {
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         nav_contact: 'Contact',
-        nav_news: 'News',
 
         contact_hero_title: 'Get in Touch',
         contact_hero_subtitle: 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.',
