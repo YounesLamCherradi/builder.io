@@ -60,6 +60,14 @@ export default function Contact() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const loadFaqs = async () => {
+      const faqs = await fetchFAQs();
+      if (faqs.length > 0) setDbFaqs(faqs);
+    };
+    loadFaqs();
+  }, []);
+
   const languages = [
     { code: 'en', name: 'English', flag: '🇬🇧' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
