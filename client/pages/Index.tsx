@@ -1211,67 +1211,75 @@ export default function Index() {
                   onClick={() => setSelectedNews([...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0])}
                   className="group rounded-3xl overflow-hidden backdrop-blur-xl bg-white/80 border border-white/20 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:bg-white/90 h-full flex flex-col cursor-pointer hover:border-brand-red/50"
                 >
-                  {[...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0].image_url && (
-                    <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
-                      <img
-                        src={newsList[0].image_url}
-                        alt={newsList[0].title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  {(() => {
+                    const sortedNews = [...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0));
+                    return sortedNews[0].image_url && (
+                      <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+                        <img
+                          src={sortedNews[0].image_url}
+                          alt={sortedNews[0].title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                      {/* Trending Badge */}
-                      <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg animate-pulse">
-                        <Zap className="w-4 h-4" />
-                        <span>Trending</span>
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                    <div className="flex items-center gap-3 mb-4">
-                      {newsList[0].category && (
-                        <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg">
-                          {newsList[0].category}
-                        </span>
-                      )}
-                      <span className="text-sm text-gray-500 flex items-center gap-1">
-                        📅 {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        })}
-                      </span>
-                    </div>
-
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors leading-tight">
-                      {(newsList[0].title_i18n?.[currentLanguage as any]) || newsList[0].title}
-                    </h2>
-
-                    <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3">
-                      {(newsList[0].description_i18n?.[currentLanguage as any]) || newsList[0].description}
-                    </p>
-
-                    {newsList[0].author && (
-                      <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                        <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                          {newsList[0].author.charAt(0)}
+                        {/* Trending Badge */}
+                        <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg animate-pulse">
+                          <Zap className="w-4 h-4" />
+                          <span>Trending</span>
                         </div>
-                        <p className="text-sm">
-                          <span className="font-semibold text-gray-900">{newsList[0].author}</span>
-                          <br/>
-                          <span className="text-gray-500">Author</span>
-                        </p>
                       </div>
-                    )}
-                  </div>
+                    );
+                  })()}
+
+                  {(() => {
+                    const sortedNews = [...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0));
+                    return (
+                      <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div className="flex items-center gap-3 mb-4">
+                          {sortedNews[0].category && (
+                            <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg">
+                              {sortedNews[0].category}
+                            </span>
+                          )}
+                          <span className="text-sm text-gray-500 flex items-center gap-1">
+                            📅 {new Date(sortedNews[0].date || sortedNews[0].created_at).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'short',
+                              day: 'numeric'
+                            })}
+                          </span>
+                        </div>
+
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors leading-tight">
+                          {(sortedNews[0].title_i18n?.[currentLanguage as any]) || sortedNews[0].title}
+                        </h2>
+
+                        <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3">
+                          {(sortedNews[0].description_i18n?.[currentLanguage as any]) || sortedNews[0].description}
+                        </p>
+
+                        {sortedNews[0].author && (
+                          <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                            <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                              {sortedNews[0].author.charAt(0)}
+                            </div>
+                            <p className="text-sm">
+                              <span className="font-semibold text-gray-900">{sortedNews[0].author}</span>
+                              <br/>
+                              <span className="text-gray-500">Author</span>
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
 
               {/* News Grid - Right Side */}
               <div className="lg:col-span-2 flex flex-col gap-6">
-                {newsList.slice(1, 5).map((article, idx) => (
+                {[...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).slice(1, 5).map((article, idx) => (
                   <div
                     key={article.id}
                     onClick={() => setSelectedNews(article)}
