@@ -1190,7 +1190,7 @@ export default function Admin() {
                           <>
                             <Upload className="w-6 h-6 text-brand-red" />
                             <span className="text-sm text-gray-600">Click to upload image</span>
-                            <span className="text-xs text-gray-400">PNG, JPG, GIF up to 5MB</span>
+                            <span className="text-xs text-gray-400">PNG, JPG, GIF up to 15MB</span>
                           </>
                         )}
                       </div>
