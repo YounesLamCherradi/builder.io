@@ -936,7 +936,14 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="relative flex justify-center lg:justify-end">
+            <div className="relative flex flex-col items-center lg:items-end justify-center">
+              <div className="mb-4 sm:mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 rounded-full border border-brand-red/30">
+                  <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
+                  <span className="text-xs sm:text-sm font-semibold text-brand-red">Leadership</span>
+                </div>
+              </div>
+
               <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:aspect-square">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
                 <div className="relative rounded-full overflow-hidden border-[12px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
@@ -945,6 +952,13 @@ export default function Index() {
                     alt="Putin Portrait"
                     className="w-full h-full object-cover"
                   />
+                </div>
+              </div>
+
+              <div className="mt-4 sm:mt-6">
+                <div className="text-center">
+                  <p className="text-sm font-semibold text-gray-900">Vision 2030</p>
+                  <p className="text-xs text-gray-600 mt-1">Building Bridges Globally</p>
                 </div>
               </div>
             </div>
