@@ -936,12 +936,51 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="mt-4 sm:mt-6">
-                <div className="text-center">
+              <div className="mt-4 sm:mt-6 space-y-3 text-center">
+                <div>
                   <p className="text-sm font-semibold text-gray-900">Vision 2030</p>
                   <p className="text-xs text-gray-600 mt-1">Building Bridges Globally</p>
                 </div>
+                <div className="flex justify-center gap-3 pt-2">
+                  <div className="flex flex-col items-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center border border-brand-red/30 mb-2">
+                      <span className="text-xs font-bold text-brand-red">✓</span>
+                    </div>
+                    <p className="text-xs text-gray-600">Trusted</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center border border-brand-red/30 mb-2">
+                      <span className="text-xs font-bold text-brand-red">★</span>
+                    </div>
+                    <p className="text-xs text-gray-600">Excellence</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center border border-brand-red/30 mb-2">
+                      <span className="text-xs font-bold text-brand-red">🌍</span>
+                    </div>
+                    <p className="text-xs text-gray-600">Global</p>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16 lg:mt-20">
+            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 8M</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2">Youth Reached</p>
+            </div>
+            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 115</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2">Partners Worldwide</p>
+            </div>
+            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 80</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2">Events Each Year</p>
+            </div>
+            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-red">24/7</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2">Support</p>
             </div>
           </div>
         </div>
