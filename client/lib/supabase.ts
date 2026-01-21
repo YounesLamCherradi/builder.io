@@ -92,6 +92,7 @@ export interface TeamMember {
   bio: string;
   bio_i18n?: I18nString;
   image_url: string | null;
+  order_index: number;
   created_at: string;
 }
 
