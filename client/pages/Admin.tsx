@@ -249,6 +249,7 @@ export default function Admin() {
             bio: i18nData.bio_i18n.en,
             bio_i18n: i18nData.bio_i18n,
             image_url: formData.image_url,
+            order_index: formData.orderIndex,
           });
         } else {
           await createTeamMember({
@@ -258,6 +259,7 @@ export default function Admin() {
             bio: i18nData.bio_i18n.en,
             bio_i18n: i18nData.bio_i18n,
             image_url: formData.image_url,
+            order_index: formData.orderIndex,
           });
         }
       } else if (activeTab === 'gallery') {
@@ -322,7 +324,7 @@ export default function Admin() {
             image_url: formData.image_url,
             title_i18n: i18nData.title_i18n,
             description_i18n: i18nData.description_i18n,
-            order_index: 0,
+            order_index: formData.orderIndex,
           });
         } else {
           await createPastEvent({
