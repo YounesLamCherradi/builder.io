@@ -950,34 +950,51 @@ export default function Index() {
                 </div>
 
                 {/* Vision 2030 Quote - Positioned at bottom left of portrait */}
-                <div className="absolute -bottom-16 left-0 right-0 lg:-left-24 lg:bottom-12 lg:right-auto lg:w-72 z-20">
+                <div className="absolute -bottom-24 left-0 right-0 lg:-left-28 lg:bottom-8 lg:right-auto lg:w-80 z-20">
                   <div className="relative group">
                     {/* Quote bubble background */}
-                    <div className="relative bg-white rounded-2xl border-2 border-brand-red/40 shadow-xl p-5 sm:p-6 hover:shadow-2xl hover:border-brand-red/80 transition-all duration-300 group-hover:bg-white/95">
-                      {/* Top accent line */}
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-red to-transparent rounded-t-2xl" />
+                    <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-brand-red/60 shadow-2xl p-6 sm:p-8 hover:shadow-3xl hover:border-brand-red transition-all duration-300 backdrop-blur-sm bg-white/95">
+                      {/* Top accent line with glow */}
+                      <div className="absolute top-0 left-6 right-6 h-1.5 bg-gradient-to-r from-brand-red via-pink-600 to-brand-red/20 rounded-full blur-sm opacity-60" />
+                      <div className="absolute top-0.5 left-6 right-6 h-0.5 bg-gradient-to-r from-brand-red via-pink-600 to-brand-red/20 rounded-full" />
 
-                      {/* Quote mark decoration */}
-                      <div className="absolute -top-4 -left-2 text-4xl sm:text-5xl text-brand-red/30 font-serif">"</div>
+                      {/* Large decorative quote mark */}
+                      <div className="absolute -top-6 -left-3 text-6xl sm:text-7xl text-brand-red/20 font-serif leading-none">"</div>
 
                       {/* Content */}
-                      <div className="space-y-3">
-                        <h3 className="text-base sm:text-lg font-bold bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent leading-tight">
-                          Vision 2030
-                        </h3>
-                        <p className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-colors">
-                          Building Bridges Globally
-                        </p>
-                        {/* Attribution */}
-                        <p className="text-xs text-gray-600 italic border-t border-gray-200 pt-2 mt-2">
-                          Vladimir Putin<br/>
-                          <span className="text-gray-500">Closing Ceremony of World Youth Festival (2024)</span>
-                        </p>
+                      <div className="space-y-4 relative z-10">
+                        {/* Vision heading */}
+                        <div>
+                          <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight">
+                            Vision 2030
+                          </h3>
+                          <p className="text-sm sm:text-base font-semibold text-gray-800 mt-2 group-hover:text-brand-red transition-colors">
+                            Building Bridges Globally
+                          </p>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="h-px bg-gradient-to-r from-brand-red/60 via-brand-red/30 to-transparent" />
+
+                        {/* Attribution section */}
+                        <div className="space-y-1">
+                          <p className="text-sm font-bold text-gray-900">
+                            Vladimir Putin
+                          </p>
+                          <p className="text-xs font-medium text-gray-600">
+                            Closing Ceremony of<br/>World Youth Festival (2024)
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Arrow pointer to portrait */}
-                      <div className="hidden lg:block absolute -right-8 top-4 sm:top-5">
-                        <div className="w-0 h-0 border-l-8 border-t-4 border-b-4 border-l-white border-t-transparent border-b-transparent shadow-lg" />
+                      {/* Corner accent */}
+                      <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-brand-red/10 to-transparent rounded-tl-3xl" />
+
+                      {/* Arrow pointer to portrait - only on desktop */}
+                      <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2">
+                        <div className="w-6 h-6 bg-white rounded-full border border-brand-red/60 flex items-center justify-center">
+                          <ArrowRight className="w-3 h-3 text-brand-red/60" />
+                        </div>
                       </div>
                     </div>
                   </div>
