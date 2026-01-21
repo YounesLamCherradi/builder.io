@@ -991,8 +991,8 @@ export default function Index() {
                       <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-brand-red/10 to-transparent rounded-tl-3xl" />
 
                       {/* Arrow pointer to portrait - only on desktop */}
-                      <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2">
-                        <div className="w-6 h-6 bg-white rounded-full border border-brand-red/60 flex items-center justify-center">
+                      <div className="hidden lg:block absolute -right-16 top-6">
+                        <div className="w-6 h-6 bg-white rounded-full border border-brand-red/60 flex items-center justify-center shadow-md">
                           <ArrowRight className="w-3 h-3 text-brand-red/60" />
                         </div>
                       </div>
