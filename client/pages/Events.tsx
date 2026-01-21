@@ -106,7 +106,6 @@ export default function Events() {
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         nav_contact: 'Contact',
-        nav_news: 'News',
         get_started: 'Get Started',
         events_title: 'Upcoming Events & Opportunities',
         events_subtitle: 'Join us for seminars, workshops, and networking events designed to accelerate your global journey',
@@ -228,7 +227,6 @@ export default function Events() {
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         nav_contact: 'Contact',
-        nav_news: 'Actualités',
         get_started: 'Commencer',
         events_title: 'Événements et Opportunités à Venir',
         events_subtitle: 'Rejoignez-nous pour des séminaires, ateliers et événements de réseautage',
@@ -350,7 +348,6 @@ export default function Events() {
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
-        nav_news: 'Новости',
         get_started: 'Начать',
         events_title: 'Предстоящие События и Возможности',
         events_subtitle: 'Присоединяйтесь к нам на семинарах, мастер-классах и сетевых мероприятиях',
@@ -476,7 +473,6 @@ export default function Events() {
     { name: t('nav_events'), path: '/events' },
     { name: t('nav_about'), path: '/about' },
     { name: t('nav_contact'), path: '/contact' },
-    { name: t('nav_news'), path: '/news' },
   ];
 
   // Helper to get multilingual event content
