@@ -947,7 +947,7 @@ export default function About() {
             <div className="overflow-x-auto scrollbar-hide">
               <div className="flex gap-6 sm:gap-8 pb-6 px-4 sm:px-6 min-w-min mx-auto">
                 {teamMembers.length > 0 ? (
-                  teamMembers.map((member, idx) => {
+                  [...teamMembers].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map((member, idx) => {
                     const displayRole = member.role_i18n?.[currentLanguage] || member.role || '';
                     const displayBio = member.bio_i18n?.[currentLanguage] || member.bio || 'Making global impact through dedication and innovation';
                     return (
