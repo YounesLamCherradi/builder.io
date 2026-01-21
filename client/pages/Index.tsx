@@ -1023,7 +1023,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="absolute bottom-16 sm:bottom-20 lg:bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute -bottom-16 sm:-bottom-20 lg:-bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronDown className="w-7 h-7 sm:w-8 sm:h-8 text-gray-400" />
         </div>
       </section>
