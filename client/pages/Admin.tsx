@@ -500,6 +500,10 @@ export default function Admin() {
         role: '',
         partnerName: partner.name,
         partnerLink: partner.link,
+        question: '',
+        answer: '',
+        bio: '',
+        orderIndex: partner.order_index || 0,
       });
       setI18nData({
         title_i18n: { en: '', fr: '', ru: '' },
@@ -530,6 +534,8 @@ export default function Admin() {
         partnerLink: '',
         question: faq.question,
         answer: faq.answer,
+        bio: '',
+        orderIndex: faq.order_index || 0,
       });
       setI18nData({
         title_i18n: { en: '', fr: '', ru: '' },
