@@ -186,6 +186,7 @@ export default function Admin() {
             title_i18n: i18nData.title_i18n,
             description_i18n: i18nData.description_i18n,
             content_i18n: i18nData.content_i18n,
+            order_index: formData.orderIndex,
           });
         } else {
           await createNews({
@@ -199,6 +200,7 @@ export default function Admin() {
             title_i18n: i18nData.title_i18n,
             description_i18n: i18nData.description_i18n,
             content_i18n: i18nData.content_i18n,
+            order_index: formData.orderIndex,
           });
         }
       } else if (activeTab === 'events') {
