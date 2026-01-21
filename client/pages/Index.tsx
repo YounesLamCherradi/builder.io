@@ -939,7 +939,7 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:aspect-square">
+              <div className="relative w-56 h-56 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:aspect-square">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
                 <div className="relative rounded-full overflow-hidden border-[12px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
                   <img
