@@ -1208,10 +1208,10 @@ export default function Index() {
               {/* Featured News - Left Side (2 columns on desktop) */}
               <div className="lg:col-span-2 lg:row-span-2">
                 <div
-                  onClick={() => setSelectedNews(newsList[0])}
+                  onClick={() => setSelectedNews([...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0])}
                   className="group rounded-3xl overflow-hidden backdrop-blur-xl bg-white/80 border border-white/20 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:bg-white/90 h-full flex flex-col cursor-pointer hover:border-brand-red/50"
                 >
-                  {newsList[0].image_url && (
+                  {[...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0].image_url && (
                     <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
                       <img
                         src={newsList[0].image_url}
