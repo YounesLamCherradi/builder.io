@@ -138,7 +138,6 @@ export default function Index() {
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         nav_contact: 'Contact',
-        nav_news: 'News',
         sign_in: 'Sign In',
         get_started: 'Get Started',
 
@@ -280,7 +279,6 @@ export default function Index() {
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         nav_contact: 'Contact',
-        nav_news: 'Actualités',
         sign_in: 'Se connecter',
         get_started: 'Commencer',
 
@@ -422,7 +420,6 @@ export default function Index() {
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
-        nav_news: 'Новости',
         sign_in: 'Войти',
         get_started: 'Начать',
 
