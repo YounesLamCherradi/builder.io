@@ -101,7 +101,6 @@ export default function About() {
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         nav_contact: 'Contact',
-        nav_news: 'News',
         tagline: 'Your World Awaits',
 
         about_hero_title: 'Transforming Lives Through Global Opportunities',
@@ -203,7 +202,6 @@ export default function About() {
         nav_stories: 'Témoignages',
         nav_resources: 'Ressources',
         nav_contact: 'Contact',
-        nav_news: 'Actualités',
         tagline: 'Votre monde vous attend',
 
         about_hero_title: 'Transformer Les Vies Par Les Opportunités Mondiales',
@@ -305,7 +303,6 @@ export default function About() {
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
-        nav_news: 'Новости',
         tagline: 'Ваш мир ждёт',
 
         about_hero_title: 'Преобразование жизней через глобальные возможности',
@@ -410,7 +407,6 @@ export default function About() {
     { name: t('nav_events'), path: '/events' },
     { name: t('nav_about'), path: '/about' },
     { name: t('nav_contact'), path: '/contact' },
-    { name: t('nav_news'), path: '/news' },
   ];
 
   const selectedLang = languages.find((l) => l.code === currentLanguage) ?? languages[0];
