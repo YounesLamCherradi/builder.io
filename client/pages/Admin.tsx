@@ -45,6 +45,7 @@ export default function Admin() {
     question: '',
     answer: '',
     bio: '',
+    orderIndex: 0,
   });
 
   // Multilingual form data
@@ -265,13 +266,13 @@ export default function Admin() {
           await updateGalleryItem(editingId, {
             image_url: formData.image_url,
             caption_i18n: i18nData.caption_i18n,
-            order_index: 0,
+            order_index: formData.orderIndex,
           });
         } else {
           await createGalleryItem({
             image_url: formData.image_url,
             caption_i18n: i18nData.caption_i18n,
-            order_index: galleryList.length,
+            order_index: formData.orderIndex,
           });
         }
       } else if (activeTab === 'partners') {
@@ -461,6 +462,10 @@ export default function Admin() {
         role: '',
         partnerName: '',
         partnerLink: '',
+        question: '',
+        answer: '',
+        bio: '',
+        orderIndex: gallery.order_index || 0,
       });
       setI18nData({
         title_i18n: { en: '', fr: '', ru: '' },
@@ -613,6 +618,7 @@ export default function Admin() {
       question: '',
       answer: '',
       bio: '',
+      orderIndex: 0,
     });
     setI18nData({
       title_i18n: { en: '', fr: '', ru: '' },
