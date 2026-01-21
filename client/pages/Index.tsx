@@ -952,6 +952,7 @@ export default function Index() {
                 {/* Vision 2030 Text - Simple text without box */}
                 <div className="absolute -bottom-24 left-0 right-0 lg:-left-28 lg:bottom-8 lg:right-auto lg:w-80 z-20 text-center lg:text-left">
                   <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight mb-2">
+                    Vision 2030
                   </h3>
                   <p className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
                     Building Bridges Globally
