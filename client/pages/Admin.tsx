@@ -993,20 +993,35 @@ export default function Admin() {
               )}
 
               {activeTab === 'news' && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Content * ({activeLanguage.toUpperCase()})</label>
-                  <textarea
-                    value={i18nData.content_i18n[activeLanguage]}
-                    onChange={(e) => setI18nData(prev => ({
-                      ...prev,
-                      content_i18n: { ...prev.content_i18n, [activeLanguage]: e.target.value }
-                    }))}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                    placeholder="Full article content"
-                  />
-                </div>
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Content * ({activeLanguage.toUpperCase()})</label>
+                    <textarea
+                      value={i18nData.content_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        content_i18n: { ...prev.content_i18n, [activeLanguage]: e.target.value }
+                      }))}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Full article content"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Display Order Position</label>
+                    <input
+                      type="number"
+                      value={formData.orderIndex}
+                      onChange={(e) => setFormData(prev => ({ ...prev, orderIndex: parseInt(e.target.value) || 0 }))}
+                      min="0"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="0 (first position), 1 (second), etc..."
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Set the position number to control where this article appears. Lower numbers appear first.</p>
+                  </div>
+                </>
               )}
 
               {activeTab === 'events' && (
