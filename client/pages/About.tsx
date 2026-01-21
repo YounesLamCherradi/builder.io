@@ -954,7 +954,16 @@ export default function About() {
 
           {/* Horizontal Scrollable Container */}
           <div className="relative">
-            <div className="overflow-x-auto scrollbar-hide">
+            {/* Left Arrow */}
+            <button
+              onClick={() => scrollTeam('left')}
+              className="hidden lg:flex absolute left-0 top-1/3 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <div ref={teamScrollRef} className="overflow-x-auto scrollbar-hide">
               <div className="flex gap-6 sm:gap-8 pb-6 px-4 sm:px-6 min-w-min mx-auto">
                 {teamMembers.length > 0 ? (
                   [...teamMembers].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map((member, idx) => {
