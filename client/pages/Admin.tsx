@@ -559,6 +559,10 @@ export default function Admin() {
         role: '',
         partnerName: '',
         partnerLink: '',
+        question: '',
+        answer: '',
+        bio: '',
+        orderIndex: pastEvent.order_index || 0,
       });
       setI18nData({
         title_i18n: pastEvent.title_i18n || { en: pastEvent.title, fr: '', ru: '' },
