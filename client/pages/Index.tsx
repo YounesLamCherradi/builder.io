@@ -1160,7 +1160,7 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {(galleryItems.length > 0 ? galleryItems.map(item => ({
+            {(galleryItems.length > 0 ? [...galleryItems].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map(item => ({
               src: item.image_url,
               caption: item.caption_i18n?.[currentLanguage as keyof typeof item.caption_i18n] || item.caption_i18n?.en || 'Gallery item',
             })) : [
