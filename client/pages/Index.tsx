@@ -913,14 +913,9 @@ export default function Index() {
                   {/* Content */}
                   <div className="space-y-4 relative z-10">
                     {/* Vision heading */}
-                    <div>
-                      <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight">
-                        Vision 2030
-                      </h3>
-                      <p className="text-sm sm:text-base font-semibold text-gray-800 mt-2 group-hover:text-brand-red transition-colors">
-                        Building Bridges Globally
-                      </p>
-                    </div>
+                    <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight">
+                      Vision 2030
+                    </h3>
 
                     {/* Divider */}
                     <div className="h-px bg-gradient-to-r from-brand-red/60 via-brand-red/30 to-transparent" />
