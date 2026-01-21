@@ -936,27 +936,27 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="mt-8 sm:mt-10 space-y-6">
-                <div className="text-center space-y-2 pb-6 border-b border-brand-red/20">
-                  <p className="text-lg sm:text-xl font-bold bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">Vision 2030</p>
-                  <p className="text-sm sm:text-base text-gray-600 font-medium">Building Bridges Globally</p>
+              <div className="mt-6 sm:mt-10 space-y-4 sm:space-y-6">
+                <div className="text-center space-y-1 sm:space-y-2 pb-4 sm:pb-6 border-b border-brand-red/20">
+                  <p className="text-base sm:text-xl font-bold bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">Vision 2030</p>
+                  <p className="text-xs sm:text-base text-gray-600 font-medium">Building Bridges Globally</p>
                 </div>
-                <div className="flex justify-center gap-6 sm:gap-8">
+                <div className="flex justify-center gap-4 sm:gap-8">
                   <div className="flex flex-col items-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-3">
-                      <span className="text-lg sm:text-xl font-bold text-brand-red">✓</span>
+                    <div className="w-14 h-14 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-2 sm:mb-3">
+                      <span className="text-xl sm:text-xl font-bold text-brand-red">✓</span>
                     </div>
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-brand-red transition-colors">Trusted</p>
                   </div>
                   <div className="flex flex-col items-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-3">
-                      <span className="text-lg sm:text-xl font-bold text-brand-red">★</span>
+                    <div className="w-14 h-14 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-2 sm:mb-3">
+                      <span className="text-xl sm:text-xl font-bold text-brand-red">★</span>
                     </div>
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-brand-red transition-colors">Excellence</p>
                   </div>
                   <div className="flex flex-col items-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-3">
-                      <span className="text-lg sm:text-xl">🌍</span>
+                    <div className="w-14 h-14 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-2 sm:mb-3">
+                      <span className="text-xl sm:text-xl">🌍</span>
                     </div>
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-brand-red transition-colors">Global</p>
                   </div>
@@ -965,7 +965,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16 lg:mt-20">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 mt-8 sm:mt-16 lg:mt-20">
             <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
               <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 8M</div>
               <p className="text-xs sm:text-sm text-gray-700 mt-2">Youth Reached</p>
