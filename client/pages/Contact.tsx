@@ -341,12 +341,17 @@ export default function Contact() {
     }
   };
 
-  const faqs = [
-    { q: t('contact_faq_q1'), a: t('contact_faq_a1') },
-    { q: t('contact_faq_q2'), a: t('contact_faq_a2') },
-    { q: t('contact_faq_q3'), a: t('contact_faq_a3') },
-    { q: t('contact_faq_q4'), a: t('contact_faq_a4') },
-  ];
+  const faqs = dbFaqs.length > 0
+    ? dbFaqs.map(faq => ({
+        q: (faq.question_i18n?.[currentLanguage] || faq.question) as string,
+        a: (faq.answer_i18n?.[currentLanguage] || faq.answer) as string
+      }))
+    : [
+        { q: t('contact_faq_q1'), a: t('contact_faq_a1') },
+        { q: t('contact_faq_q2'), a: t('contact_faq_a2') },
+        { q: t('contact_faq_q3'), a: t('contact_faq_a3') },
+        { q: t('contact_faq_q4'), a: t('contact_faq_a4') },
+      ];
 
   const contactInfo = [
     { icon: Mail, label: t('contact_email'), value: t('contact_email_address') },
