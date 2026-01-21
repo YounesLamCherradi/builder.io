@@ -965,22 +965,22 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 mt-8 sm:mt-16 lg:mt-20">
-            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 8M</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2">Youth Reached</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mt-8 sm:mt-14 lg:mt-20 w-full">
+            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 8M</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Youth Reached</p>
             </div>
-            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 115</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2">Partners Worldwide</p>
+            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 115</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Partners Worldwide</p>
             </div>
-            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 80</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2">Events Each Year</p>
+            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 80</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Events Each Year</p>
             </div>
-            <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors hover:scale-105 transform duration-300">
-              <div className="text-2xl sm:text-3xl font-bold text-brand-red">24/7</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2">Support</p>
+            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">24/7</div>
+              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Support</p>
             </div>
           </div>
         </div>
