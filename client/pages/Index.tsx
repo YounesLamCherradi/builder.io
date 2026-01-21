@@ -1181,9 +1181,9 @@ export default function Index() {
       </section>
 
 
-      {/* Success Stories Grid */}
+      {/* Latest News Section */}
       <section
-        id="success-stories"
+        id="latest-news"
         className="scroll-section py-16 sm:py-20 md:py-28 bg-white relative overflow-hidden"
       >
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -1193,104 +1193,74 @@ export default function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-10 sm:mb-14 md:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
-              {t('moments_of')}{' '}
+              Latest{' '}
               <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                {t('moroccan_success')}
+                News & Updates
               </span>
             </h2>
             <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
-              {t('inspiring_text')}
+              Stay informed with our latest news and announcements
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-            {(galleryItems.length > 0 ? [...galleryItems].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map(item => ({
-              src: item.image_url,
-              caption: item.caption_i18n?.[currentLanguage as keyof typeof item.caption_i18n] || item.caption_i18n?.en || 'Gallery item',
-            })) : [
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F19ae65cb32f546b491a1fb585d4baf31?format=webp&width=800',
-                caption: t('caption_1'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Ffa187bb6d4244f059f8b222d86f00b63?format=webp&width=800',
-                caption: t('caption_2'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F9d72fc5424a44f139487c956c757df53?format=webp&width=800',
-                caption: t('caption_3'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F508e9f259a9849429e3e9b3c031d16cf?format=webp&width=800',
-                caption: t('caption_4'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fcec6c69151a14533baae683259a19778?format=webp&width=800',
-                caption: t('caption_5'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F27bde78a063348f4ba40f8bc4125f3b9?format=webp&width=800',
-                caption: t('caption_6'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F513d1a78045a4ce9b27e689c997b8d8b?format=webp&width=800',
-                caption: t('caption_7'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F9d460b8e609b461090ef2fcc6f5b2880?format=webp&width=800',
-                caption: t('caption_8'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F0edef04d17754bc9ad0a67de98572f1a?format=webp&width=800',
-                caption: t('caption_9'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fc80a4d77218a4d23b96d447c5f697d4e?format=webp&width=800',
-                caption: t('caption_10'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fb58c8a44308143cfb4736db92f8bd3c5?format=webp&width=800',
-                caption: t('caption_11'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fad4270b9a112424a81acfbbe4c3c4f69?format=webp&width=800',
-                caption: t('caption_12'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fb01dc4afdc9b4881b9d67779a30b7370?format=webp&width=800',
-                caption: t('caption_13'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F975eb756dbce466e888795c92f7cfbfc?format=webp&width=800',
-                caption: t('caption_14'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F7559024621ac47c9a78d5e0ff554ad87?format=webp&width=800',
-                caption: t('caption_15'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2Fdfdb9c9f6794454292eaf2ff11d6762d?format=webp&width=800',
-                caption: t('caption_16'),
-              },
-              {
-                src: 'https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F5580a433756540269052cfc4d1c5a0d9?format=webp&width=800',
-                caption: t('caption_17'),
-              },
-            ]).map((item, idx) => (
-              <div
-                key={idx}
-                className="group relative rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 hover:scale-[1.01]"
-              >
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src={item.src}
-                    alt={item.caption}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {newsList.length > 0 ? (
+              newsList.slice(0, 6).map((article) => (
+                <div
+                  key={article.id}
+                  className="group rounded-2xl overflow-hidden shadow-lg bg-white transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 hover:scale-[1.02] flex flex-col"
+                >
+                  {/* Image Container */}
+                  {article.image_url && (
+                    <div className="relative h-48 sm:h-56 overflow-hidden">
+                      <img
+                        src={article.image_url}
+                        alt={article.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  )}
+
+                  {/* Content Container */}
+                  <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                    {/* Category & Date */}
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      {article.category && (
+                        <span className="inline-block px-3 py-1 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full border border-brand-red/30">
+                          {article.category}
+                        </span>
+                      )}
+                      <span className="text-xs text-gray-500">
+                        {new Date(article.date || article.created_at).toLocaleDateString()}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
+                      {article.title_i18n?.[currentLanguage as keyof typeof article.title_i18n] || article.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 line-clamp-3 flex-grow">
+                      {article.description_i18n?.[currentLanguage as keyof typeof article.description_i18n] || article.description}
+                    </p>
+
+                    {/* Author */}
+                    {article.author && (
+                      <p className="text-xs text-gray-500">
+                        By <span className="font-semibold text-gray-700">{article.author}</span>
+                      </p>
+                    )}
+                  </div>
                 </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-gray-600 text-lg">No news articles available yet</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
