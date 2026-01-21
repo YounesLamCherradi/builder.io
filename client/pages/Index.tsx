@@ -1211,7 +1211,10 @@ export default function Index() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
               {/* Featured News - Left Side (2 columns on desktop) */}
               <div className="lg:col-span-2">
-                <div className="group rounded-3xl overflow-hidden shadow-2xl bg-white transition-all duration-500 hover:shadow-3xl h-full flex flex-col">
+                <div
+                  onClick={() => setSelectedNews(newsList[0])}
+                  className="group rounded-3xl overflow-hidden shadow-2xl bg-white transition-all duration-500 hover:shadow-3xl h-full flex flex-col cursor-pointer"
+                >
                   {newsList[0].image_url && (
                     <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
                       <img
