@@ -290,7 +290,6 @@ export default function Contact() {
     { name: t('nav_events'), path: '/events' },
     { name: t('nav_about'), path: '/about' },
     { name: t('nav_contact'), path: '/contact' },
-    { name: t('nav_news'), path: '/news' },
   ];
 
   const handleFormSubmit = async (e: React.FormEvent) => {
