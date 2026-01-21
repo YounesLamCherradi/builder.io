@@ -1025,11 +1025,8 @@ export default function Index() {
               className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
             >
               {(partnersList.length > 0 ? partnersList : sponsors).map((sponsor, index) => (
-              <a
+              <div
                 key={sponsor.id}
-                href={sponsor.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex flex-col items-center flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500"
                 style={{
                   animationDelay: `${index * 50}ms`,
@@ -1075,7 +1072,7 @@ export default function Index() {
                 <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-brand-red transition-all duration-300 text-center w-40 sm:w-48 lg:w-56">
                   {sponsor.name}
                 </p>
-              </a>
+              </div>
               ))}
             </div>
 
