@@ -436,6 +436,10 @@ export default function Admin() {
         role: member.role,
         partnerName: '',
         partnerLink: '',
+        question: '',
+        answer: '',
+        bio: '',
+        orderIndex: member.order_index || 0,
       });
       setI18nData({
         title_i18n: { en: '', fr: '', ru: '' },
