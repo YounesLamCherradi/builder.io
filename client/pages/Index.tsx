@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { subscribeNewsletter, fetchGallery, fetchPartners, type GalleryItem, type Partner } from '../lib/supabase';
+import { subscribeNewsletter, fetchGallery, fetchPartners, fetchNews, type GalleryItem, type Partner, type NewsArticle } from '../lib/supabase';
 import { toast } from 'sonner';
 import {
   Globe,
