@@ -900,7 +900,7 @@ export default function Index() {
               </h1>
 
               <p className="text-base sm:text-lg text-gray-600 max-w-xl">
-                Join thousands of Moroccan students discovering unprecedented opportunities for growth and success through international partnerships and educational exchange programs.
+                he official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
