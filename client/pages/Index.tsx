@@ -899,43 +899,6 @@ export default function Index() {
                 </span>
               </h1>
 
-              {/* Vision 2030 Quote Box */}
-              <div className="relative group">
-                {/* Quote bubble background */}
-                <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-brand-red/60 shadow-2xl p-6 sm:p-8 hover:shadow-3xl hover:border-brand-red transition-all duration-300 backdrop-blur-sm bg-white/95">
-                  {/* Top accent line with glow */}
-                  <div className="absolute top-0 left-6 right-6 h-1.5 bg-gradient-to-r from-brand-red via-pink-600 to-brand-red/20 rounded-full blur-sm opacity-60" />
-                  <div className="absolute top-0.5 left-6 right-6 h-0.5 bg-gradient-to-r from-brand-red via-pink-600 to-brand-red/20 rounded-full" />
-
-                  {/* Large decorative quote mark */}
-                  <div className="absolute -top-6 -left-3 text-6xl sm:text-7xl text-brand-red/20 font-serif leading-none">"</div>
-
-                  {/* Content */}
-                  <div className="space-y-4 relative z-10">
-                    {/* Vision heading */}
-                    <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight">
-                      Vision 2030
-                    </h3>
-
-                    {/* Divider */}
-                    <div className="h-px bg-gradient-to-r from-brand-red/60 via-brand-red/30 to-transparent" />
-
-                    {/* Attribution section */}
-                    <div className="space-y-1">
-                      <p className="text-sm font-bold text-gray-900">
-                        Vladimir Putin
-                      </p>
-                      <p className="text-xs font-medium text-gray-600">
-                        Closing Ceremony of<br/>World Youth Festival (2024)
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Corner accent */}
-                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-brand-red/10 to-transparent rounded-tl-3xl" />
-                </div>
-              </div>
-
               <p className="text-base sm:text-lg text-gray-600 max-w-xl">
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
