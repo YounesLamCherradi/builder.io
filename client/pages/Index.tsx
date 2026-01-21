@@ -915,6 +915,25 @@ export default function Index() {
                   </div>
                 </button>
               </div>
+
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 max-w-md pt-4 sm:pt-6">
+                <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 8M</div>
+                  <p className="text-xs sm:text-sm text-gray-700 mt-2">Youth Reached</p>
+                </div>
+                <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 115</div>
+                  <p className="text-xs sm:text-sm text-gray-700 mt-2">Partners Worldwide</p>
+                </div>
+                <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-bold text-brand-red">+ 80</div>
+                  <p className="text-xs sm:text-sm text-gray-700 mt-2">Events Each Year</p>
+                </div>
+                <div className="text-center p-4 sm:p-6 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-bold text-brand-red">24/7</div>
+                  <p className="text-xs sm:text-sm text-gray-700 mt-2">Support</p>
+                </div>
+              </div>
             </div>
 
             <div className="relative flex justify-center lg:justify-end">
