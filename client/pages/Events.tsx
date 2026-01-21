@@ -976,7 +976,7 @@ export default function Events() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(fetchedPastEvents.length > 0 ? fetchedPastEvents : pastEvents).map((event, idx) => {
+            {(fetchedPastEvents.length > 0 ? [...fetchedPastEvents].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)) : pastEvents).map((event, idx) => {
               const isDbEvent = 'title_i18n' in event;
               const title = isDbEvent ? (event.title_i18n?.[currentLanguage as keyof typeof event.title_i18n] || event.title) : (event as any).title;
               const image = isDbEvent ? (event as PastEvent).image_url : (event as any).image;
