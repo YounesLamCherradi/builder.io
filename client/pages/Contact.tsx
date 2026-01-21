@@ -28,6 +28,7 @@ export default function Contact() {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [dbFaqs, setDbFaqs] = useState<FAQ[]>([]);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
