@@ -1208,12 +1208,12 @@ export default function Index() {
           </div>
 
           {newsList.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
               {/* Featured News - Left Side (2 columns on desktop) */}
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 lg:row-span-2">
                 <div
                   onClick={() => setSelectedNews(newsList[0])}
-                  className="group rounded-3xl overflow-hidden shadow-2xl bg-white transition-all duration-500 hover:shadow-3xl h-full flex flex-col cursor-pointer"
+                  className="group rounded-3xl overflow-hidden backdrop-blur-xl bg-white/80 border border-white/20 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:bg-white/90 h-full flex flex-col cursor-pointer hover:border-brand-red/50"
                 >
                   {newsList[0].image_url && (
                     <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
@@ -1224,78 +1224,104 @@ export default function Index() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+                      {/* Trending Badge */}
+                      <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg animate-pulse">
+                        <Zap className="w-4 h-4" />
+                        <span>Trending</span>
+                      </div>
                     </div>
                   )}
 
                   <div className="p-6 sm:p-8 flex flex-col flex-grow">
                     <div className="flex items-center gap-3 mb-4">
                       {newsList[0].category && (
-                        <span className="inline-block px-4 py-2 bg-brand-red text-white text-xs sm:text-sm font-bold rounded-full">
+                        <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg">
                           {newsList[0].category}
                         </span>
                       )}
-                      <span className="text-sm text-gray-500">
-                        {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
+                      <span className="text-sm text-gray-500 flex items-center gap-1">
+                        📅 {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
                           year: 'numeric',
-                          month: '2-digit',
-                          day: '2-digit'
+                          month: 'short',
+                          day: 'numeric'
                         })}
                       </span>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors leading-tight">
                       {(newsList[0].title_i18n?.[currentLanguage as any]) || newsList[0].title}
                     </h2>
 
-                    <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow">
+                    <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3">
                       {(newsList[0].description_i18n?.[currentLanguage as any]) || newsList[0].description}
                     </p>
 
                     {newsList[0].author && (
-                      <p className="text-sm text-gray-600">
-                        By <span className="font-semibold text-gray-900">{newsList[0].author}</span>
-                      </p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                        <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                          {newsList[0].author.charAt(0)}
+                        </div>
+                        <p className="text-sm">
+                          <span className="font-semibold text-gray-900">{newsList[0].author}</span>
+                          <br/>
+                          <span className="text-gray-500">Author</span>
+                        </p>
+                      </div>
                     )}
                   </div>
                 </div>
               </div>
 
-              {/* News List - Right Side */}
-              <div className="lg:col-span-1 space-y-4">
-                {newsList.slice(1, 6).map((article) => (
+              {/* News Grid - Right Side */}
+              <div className="lg:col-span-2 flex flex-col gap-6">
+                {newsList.slice(1, 5).map((article, idx) => (
                   <div
                     key={article.id}
                     onClick={() => setSelectedNews(article)}
-                    className="group rounded-2xl overflow-hidden shadow-md bg-white transition-all duration-300 hover:shadow-lg hover:scale-105 flex gap-4 cursor-pointer"
+                    className="group rounded-2xl overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/90 to-white/70 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex gap-4 p-4 sm:p-5 hover:scale-105 hover:bg-white/95"
                   >
                     {article.image_url && (
-                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden rounded-xl ring-2 ring-white/50 group-hover:ring-brand-red/50 transition-all">
                         <img
                           src={article.image_url}
                           alt={article.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
+                        {/* Index Badge */}
+                        <div className="absolute top-2 right-2 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                          {idx + 2}
+                        </div>
                       </div>
                     )}
 
-                    <div className="flex-grow py-2 flex flex-col justify-between min-w-0">
-                      {article.category && (
-                        <span className="text-xs font-bold text-brand-red mb-1">
-                          {article.category}
+                    <div className="flex-grow flex flex-col justify-between min-w-0">
+                      <div>
+                        {article.category && (
+                          <span className="inline-block text-xs font-bold text-brand-red mb-2 bg-brand-red/10 px-2 py-1 rounded-md">
+                            {article.category}
+                          </span>
+                        )}
+                        <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors line-clamp-2 mb-2">
+                          {(article.title_i18n?.[currentLanguage as any]) || article.title}
+                        </h3>
+                        <p className="text-xs text-gray-600 line-clamp-1">
+                          {(article.description_i18n?.[currentLanguage as any]) || article.description}
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/50">
+                        <span className="text-xs text-gray-500 flex items-center gap-1">
+                          📅 {new Date(article.date || article.created_at).toLocaleDateString('en-US', {
+                            month: 'short',
+                            day: 'numeric'
+                          })}
                         </span>
-                      )}
-                      <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors line-clamp-2">
-                        {(article.title_i18n?.[currentLanguage as any]) || article.title}
-                      </h3>
-                      <span className="text-xs text-gray-500 mt-auto">
-                        {new Date(article.date || article.created_at).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: '2-digit',
-                          day: '2-digit'
-                        })}
-                      </span>
+                        <span className="text-xs text-brand-red font-semibold">→ Read</span>
+                      </div>
                     </div>
                   </div>
                 ))}
