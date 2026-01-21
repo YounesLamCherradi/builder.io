@@ -405,7 +405,7 @@ export async function fetchTeam(): Promise<TeamMember[]> {
     const { data, error } = await supabase
       .from('team')
       .select('*')
-      .order('created_at', { ascending: true });
+      .order('order_index', { ascending: true });
 
     if (error) {
       console.error('Error fetching team:', error);
