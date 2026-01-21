@@ -38,6 +38,18 @@ export default function About() {
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const teamScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollTeam = (direction: 'left' | 'right') => {
+    if (teamScrollRef.current) {
+      const scrollAmount = 400;
+      if (direction === 'left') {
+        teamScrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        teamScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
