@@ -284,14 +284,14 @@ export default function Admin() {
             logo_url: formData.image_url,
             name: formData.partnerName,
             link: formData.partnerLink,
-            order_index: 0,
+            order_index: formData.orderIndex,
           });
         } else {
           await createPartner({
             logo_url: formData.image_url,
             name: formData.partnerName,
             link: formData.partnerLink,
-            order_index: partnersList.length,
+            order_index: formData.orderIndex,
           });
         }
       } else if (activeTab === 'faqs') {
@@ -302,7 +302,7 @@ export default function Admin() {
             answer: i18nData.answer_i18n.en,
             question_i18n: i18nData.question_i18n,
             answer_i18n: i18nData.answer_i18n,
-            order_index: 0,
+            order_index: formData.orderIndex,
           });
         } else {
           await createFAQ({
@@ -310,7 +310,7 @@ export default function Admin() {
             answer: i18nData.answer_i18n.en,
             question_i18n: i18nData.question_i18n,
             answer_i18n: i18nData.answer_i18n,
-            order_index: faqsList.length,
+            order_index: formData.orderIndex,
           });
         }
       } else if (activeTab === 'past_events') {
