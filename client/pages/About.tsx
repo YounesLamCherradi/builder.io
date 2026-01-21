@@ -12,6 +12,8 @@ import {
   Menu,
   X,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Target,
   Check,
   Heart,
