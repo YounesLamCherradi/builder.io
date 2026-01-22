@@ -945,18 +945,13 @@ export default function Index() {
               </div>
 
               <div className="relative w-56 h-56 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:aspect-square">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-rose-300/40 via-pink-300/30 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
-                <div className="relative rounded-full overflow-hidden shadow-2xl aspect-square w-full h-full" style={{
-                  backgroundImage: 'conic-gradient(from 0deg, #ec4899, #f43f5e, #fb7185, #fca5a5, #ec4899)',
-                  padding: '12px'
-                }}>
-                  <div className="rounded-full overflow-hidden w-full h-full">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
+                <div className="relative rounded-full overflow-hidden border-[12px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
                     alt="Putin Portrait"
                     className="w-full h-full object-cover"
                   />
-                  </div>
                 </div>
 
                 {/* Vision 2030 Quote Box - Positioned at bottom left of portrait */}
