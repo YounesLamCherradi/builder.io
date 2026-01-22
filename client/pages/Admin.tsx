@@ -797,7 +797,7 @@ export default function Admin() {
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
               {/* Language Tabs */}
               <div className="flex gap-2 mb-6 border-b border-gray-200">
-                {(['en', 'fr', 'ru'] as const).map((lang) => (
+                {(['en', 'ar', 'ru'] as const).map((lang) => (
                   <button
                     key={lang}
                     type="button"
@@ -808,7 +808,7 @@ export default function Admin() {
                         : 'border-transparent text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    {lang === 'en' ? '🇬🇧 English' : lang === 'fr' ? '🇫🇷 Français' : '🇷🇺 Русский'}
+                    {lang === 'en' ? '🇬🇧 English' : lang === 'ar' ? '🇸🇦 العربية' : '🇷🇺 Русский'}
                   </button>
                 ))}
               </div>
