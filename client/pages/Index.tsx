@@ -428,6 +428,23 @@ export default function Index() {
         caption_15: 'مبادرة الطلاب - عرض الابتكار',
         caption_16: 'المؤتمر الإقليمي - الحضور المغربي',
         caption_17: 'بناء الإرث - قادة المستقبل المتحدون',
+
+        // Hero section strings
+        official_page_wyf: 'الصفحة الرسمية لمهرجان الشباب العالمي بالمغرب',
+        putin_quote_1: 'روسيا أصبحت صديقتك الآن.',
+        putin_quote_2: 'أبوابنا مفتوحة أمامك دائماً.',
+        putin_attribution: '— فلاديمير بوتين، حفل الإغلاق لمهرجان الشباب العالمي (2024)',
+        wyf_description: 'الصفحة الرسمية للجنة الوطنية المغربية لمهرجان الشباب العالمي، أكبر شبكة شبابية في أفريقيا..',
+        watch_demo: 'شاهد العرض التوضيحي',
+
+        // Sponsors section strings
+        partners_desc_call: 'شارك معنا أو اعرض مؤسستك',
+        get_in_touch: 'تواصل معنا',
+
+        // News section strings
+        news_title: 'الأخبار والتحديثات',
+        news_desc: 'ابق على اطلاع مع أحدث الأخبار والإعلانات',
+        no_news_available: 'لا توجد مقالات أخبار متاحة حالياً',
       },
 
       ru: {
