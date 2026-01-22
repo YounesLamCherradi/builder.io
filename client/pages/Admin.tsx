@@ -54,6 +54,7 @@ export default function Admin() {
     description_i18n: { en: '', ar: '', ru: '' },
     content_i18n: { en: '', ar: '', ru: '' },
     about_event_i18n: { en: '', ar: '', ru: '' },
+    name_i18n: { en: '', ar: '', ru: '' },
     role_i18n: { en: '', ar: '', ru: '' },
     bio_i18n: { en: '', ar: '', ru: '' },
     caption_i18n: { en: '', ar: '', ru: '' },
