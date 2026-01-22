@@ -257,7 +257,7 @@ export default function Admin() {
       } else if (activeTab === 'team') {
         // Team member handling
         if (editingId) {
-          const updateData: Partial<Omit<TeamMember, 'id' | 'created_at'>> = {
+          await updateTeamMember(editingId, {
             name: i18nData.name_i18n.en,
             role: i18nData.role_i18n.en,
             role_i18n: i18nData.role_i18n,
@@ -265,14 +265,9 @@ export default function Admin() {
             bio_i18n: i18nData.bio_i18n,
             image_url: formData.image_url,
             order_index: formData.orderIndex,
-          };
-          // Only include name_i18n if the database supports it
-          if (i18nData.name_i18n.ar || i18nData.name_i18n.ru) {
-            updateData.name_i18n = i18nData.name_i18n;
-          }
-          await updateTeamMember(editingId, updateData);
+          });
         } else {
-          const createData = {
+          await createTeamMember({
             name: i18nData.name_i18n.en,
             role: i18nData.role_i18n.en,
             role_i18n: i18nData.role_i18n,
@@ -280,12 +275,7 @@ export default function Admin() {
             bio_i18n: i18nData.bio_i18n,
             image_url: formData.image_url,
             order_index: formData.orderIndex,
-          } as Omit<TeamMember, 'id' | 'created_at'>;
-          // Only include name_i18n if translations are provided
-          if (i18nData.name_i18n.ar || i18nData.name_i18n.ru) {
-            createData.name_i18n = i18nData.name_i18n;
-          }
-          await createTeamMember(createData);
+          });
         }
       } else if (activeTab === 'gallery') {
         // Gallery handling
