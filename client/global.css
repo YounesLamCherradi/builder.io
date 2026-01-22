@@ -90,4 +90,64 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* RTL Support */
+  html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  html[dir="rtl"] body {
+    direction: rtl;
+  }
+
+  html[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+
+  html[dir="ltr"] body {
+    direction: ltr;
+  }
+
+  /* Handle text alignment in RTL */
+  html[dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  /* Handle border positions in RTL */
+  html[dir="rtl"] .border-l {
+    border-left: none;
+    border-right: 1px solid;
+  }
+
+  html[dir="rtl"] .border-r {
+    border-right: none;
+    border-left: 1px solid;
+  }
+
+  /* Handle padding in RTL */
+  html[dir="rtl"] .pl-4 {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
+  html[dir="rtl"] .pr-4 {
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+
+  html[dir="rtl"] .sm\:pl-6 {
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+
+  html[dir="rtl"] .sm\:pr-6 {
+    padding-right: 0;
+    padding-left: 1.5rem;
+  }
 }
