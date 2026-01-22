@@ -1131,10 +1131,10 @@ export default function Index() {
           {/* View All Link */}
           <div className="mt-12 sm:mt-16 lg:mt-20 text-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
             <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6">
-              Partner with us or list your organization
+              {t('partners_desc_call')}
             </p>
             <Link to="/contact" className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-500 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105">
-              <span>Get in Touch</span>
+              <span>{t('get_in_touch')}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
           </div>
