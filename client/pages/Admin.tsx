@@ -372,8 +372,14 @@ export default function Admin() {
       toast.success(`${tabLabels[activeTab as keyof typeof tabLabels]} ${editingId ? 'updated' : 'created'} successfully`);
     } catch (error) {
       console.error('Error saving:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Failed to save';
-      toast.error(`Error: ${errorMessage}`);
+      let errorMessage = 'Failed to save';
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'object' && error !== null && 'message' in error) {
+        errorMessage = (error as any).message;
+      }
+      console.error('Full error object:', error);
+      toast.error(`❌ ${errorMessage}`);
     } finally {
       setLoading(false);
     }
