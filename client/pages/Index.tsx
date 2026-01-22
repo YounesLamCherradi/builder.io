@@ -270,6 +270,23 @@ export default function Index() {
         caption_15: 'Student Initiative – Innovation Showcase',
         caption_16: 'Regional Conference – Moroccan Presence',
         caption_17: 'Legacy Building – Future Leaders United',
+
+        // Hero section strings
+        official_page_wyf: 'Official Page of WYF Morocco',
+        putin_quote_1: 'Russia is now your friend.',
+        putin_quote_2: 'Our doors are always open to you.',
+        putin_attribution: '— Vladimir Putin, Closing Ceremony of World Youth Festival (2024)',
+        wyf_description: 'The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..',
+        watch_demo: 'Watch Demo',
+
+        // Sponsors section strings
+        partners_desc_call: 'Partner with us or list your organization',
+        get_in_touch: 'Get in Touch',
+
+        // News section strings
+        news_title: 'News & Updates',
+        news_desc: 'Stay informed with our latest news and announcements',
+        no_news_available: 'No news articles available yet',
       },
 
       ar: {
