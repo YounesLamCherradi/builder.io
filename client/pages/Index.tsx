@@ -971,7 +971,7 @@ export default function Index() {
               </h1>
 
               <p className="text-xs sm:text-base lg:text-lg text-gray-600 max-w-xl leading-relaxed">
-                The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
+                {t('wyf_description')}
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
