@@ -865,7 +865,7 @@ export default function Index() {
       {/* Hero Section */}
       <section
         id="home"
-        className="scroll-section relative min-h-[100svh] flex items-center pt-20 sm:pt-24 overflow-hidden"
+        className="scroll-section relative min-h-[100svh] flex items-center pt-12 sm:pt-16 overflow-hidden"
       >
         <div className="absolute inset-0 bg-white">
           <div className="absolute inset-0 opacity-0">
