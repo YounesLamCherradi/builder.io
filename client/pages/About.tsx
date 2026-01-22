@@ -967,6 +967,7 @@ export default function About() {
               <div className="flex gap-6 sm:gap-8 pb-6 px-4 sm:px-6 min-w-min mx-auto">
                 {teamMembers.length > 0 ? (
                   [...teamMembers].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map((member, idx) => {
+                    const displayName = member.name_i18n?.[currentLanguage] || member.name || '';
                     const displayRole = member.role_i18n?.[currentLanguage] || member.role || '';
                     const displayBio = member.bio_i18n?.[currentLanguage] || member.bio || 'Making global impact through dedication and innovation';
                     return (
@@ -980,7 +981,7 @@ export default function About() {
                           {member.image_url ? (
                             <img
                               src={member.image_url}
-                              alt={member.name}
+                              alt={displayName}
                               className="w-full h-full object-cover"
                               style={{
                                 filter: 'brightness(1.1) contrast(1.15) saturate(1.1)',
@@ -997,7 +998,7 @@ export default function About() {
                         {/* Content */}
                         <div className="p-5 sm:p-6">
                           <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 line-clamp-2">
-                            {member.name}
+                            {displayName}
                           </h3>
                           <p className="text-xs sm:text-sm text-brand-red font-semibold mb-2">
                             {displayRole}
