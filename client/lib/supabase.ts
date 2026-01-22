@@ -41,6 +41,7 @@ export interface Subscriber {
 // Multilingual string type
 export type I18nString = {
   en: string;
+  fr: string;
   ar: string;
   ru: string;
 };
