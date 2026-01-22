@@ -1237,11 +1237,11 @@ export default function Index() {
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
               Latest{' '}
               <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
-                News & Updates
+                {t('news_title')}
               </span>
             </h2>
             <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
-              Stay informed with our latest news and announcements
+              {t('news_desc')}
             </p>
           </div>
 
