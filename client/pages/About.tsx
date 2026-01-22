@@ -967,7 +967,7 @@ export default function About() {
               <div className="flex gap-6 sm:gap-8 pb-6 px-4 sm:px-6 min-w-min mx-auto">
                 {teamMembers.length > 0 ? (
                   [...teamMembers].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).map((member, idx) => {
-                    const displayName = member.name_i18n?.[currentLanguage] || member.name || '';
+                    const displayName = member.name || '';
                     const displayRole = member.role_i18n?.[currentLanguage] || member.role || '';
                     const displayBio = member.bio_i18n?.[currentLanguage] || member.bio || 'Making global impact through dedication and innovation';
                     return (
