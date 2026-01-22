@@ -50,15 +50,15 @@ export default function Admin() {
 
   // Multilingual form data
   const [i18nData, setI18nData] = useState({
-    title_i18n: { en: '', fr: '', ru: '' },
-    description_i18n: { en: '', fr: '', ru: '' },
-    content_i18n: { en: '', fr: '', ru: '' },
-    about_event_i18n: { en: '', fr: '', ru: '' },
-    role_i18n: { en: '', fr: '', ru: '' },
-    bio_i18n: { en: '', fr: '', ru: '' },
-    caption_i18n: { en: '', fr: '', ru: '' },
-    question_i18n: { en: '', fr: '', ru: '' },
-    answer_i18n: { en: '', fr: '', ru: '' },
+    title_i18n: { en: '', ar: '', ru: '' },
+    description_i18n: { en: '', ar: '', ru: '' },
+    content_i18n: { en: '', ar: '', ru: '' },
+    about_event_i18n: { en: '', ar: '', ru: '' },
+    role_i18n: { en: '', ar: '', ru: '' },
+    bio_i18n: { en: '', ar: '', ru: '' },
+    caption_i18n: { en: '', ar: '', ru: '' },
+    question_i18n: { en: '', ar: '', ru: '' },
+    answer_i18n: { en: '', ar: '', ru: '' },
   });
 
   const [eventDetails, setEventDetails] = useState<string[]>([
