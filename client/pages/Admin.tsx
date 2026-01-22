@@ -412,12 +412,12 @@ export default function Admin() {
         role: '',
       });
       setI18nData({
-        title_i18n: event.title_i18n || { en: event.title, fr: '', ru: '' },
-        description_i18n: event.description_i18n || { en: event.description, fr: '', ru: '' },
-        content_i18n: { en: '', fr: '', ru: '' },
-        about_event_i18n: event.about_event_i18n || { en: event.about_event, fr: '', ru: '' },
-        role_i18n: { en: '', fr: '', ru: '' },
-        bio_i18n: { en: '', fr: '', ru: '' },
+        title_i18n: event.title_i18n || { en: event.title, ar: '', ru: '' },
+        description_i18n: event.description_i18n || { en: event.description, ar: '', ru: '' },
+        content_i18n: { en: '', ar: '', ru: '' },
+        about_event_i18n: event.about_event_i18n || { en: event.about_event, ar: '', ru: '' },
+        role_i18n: { en: '', ar: '', ru: '' },
+        bio_i18n: { en: '', ar: '', ru: '' },
       });
       setImagePreview(event.image_url || null);
       setEventDetails(event.details || ['', '', '', '']);
@@ -450,13 +450,13 @@ export default function Admin() {
         orderIndex: member.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: '', fr: '', ru: '' },
-        description_i18n: { en: '', fr: '', ru: '' },
-        content_i18n: { en: '', fr: '', ru: '' },
-        about_event_i18n: { en: '', fr: '', ru: '' },
-        role_i18n: member.role_i18n || { en: member.role, fr: '', ru: '' },
-        bio_i18n: member.bio_i18n || { en: member.bio, fr: '', ru: '' },
-        caption_i18n: { en: '', fr: '', ru: '' },
+        title_i18n: { en: '', ar: '', ru: '' },
+        description_i18n: { en: '', ar: '', ru: '' },
+        content_i18n: { en: '', ar: '', ru: '' },
+        about_event_i18n: { en: '', ar: '', ru: '' },
+        role_i18n: member.role_i18n || { en: member.role, ar: '', ru: '' },
+        bio_i18n: member.bio_i18n || { en: member.bio, ar: '', ru: '' },
+        caption_i18n: { en: '', ar: '', ru: '' },
       });
       setImagePreview(member.image_url || null);
     } else if (activeTab === 'gallery') {
@@ -482,13 +482,13 @@ export default function Admin() {
         orderIndex: gallery.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: '', fr: '', ru: '' },
-        description_i18n: { en: '', fr: '', ru: '' },
-        content_i18n: { en: '', fr: '', ru: '' },
-        about_event_i18n: { en: '', fr: '', ru: '' },
-        role_i18n: { en: '', fr: '', ru: '' },
-        bio_i18n: { en: '', fr: '', ru: '' },
-        caption_i18n: gallery.caption_i18n || { en: '', fr: '', ru: '' },
+        title_i18n: { en: '', ar: '', ru: '' },
+        description_i18n: { en: '', ar: '', ru: '' },
+        content_i18n: { en: '', ar: '', ru: '' },
+        about_event_i18n: { en: '', ar: '', ru: '' },
+        role_i18n: { en: '', ar: '', ru: '' },
+        bio_i18n: { en: '', ar: '', ru: '' },
+        caption_i18n: gallery.caption_i18n || { en: '', ar: '', ru: '' },
       });
       setImagePreview(gallery.image_url || null);
     } else if (activeTab === 'partners') {
@@ -514,13 +514,13 @@ export default function Admin() {
         orderIndex: partner.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: '', fr: '', ru: '' },
-        description_i18n: { en: '', fr: '', ru: '' },
-        content_i18n: { en: '', fr: '', ru: '' },
-        about_event_i18n: { en: '', fr: '', ru: '' },
-        role_i18n: { en: '', fr: '', ru: '' },
-        bio_i18n: { en: '', fr: '', ru: '' },
-        caption_i18n: { en: '', fr: '', ru: '' },
+        title_i18n: { en: '', ar: '', ru: '' },
+        description_i18n: { en: '', ar: '', ru: '' },
+        content_i18n: { en: '', ar: '', ru: '' },
+        about_event_i18n: { en: '', ar: '', ru: '' },
+        role_i18n: { en: '', ar: '', ru: '' },
+        bio_i18n: { en: '', ar: '', ru: '' },
+        caption_i18n: { en: '', ar: '', ru: '' },
       });
       setImagePreview(partner.logo_url || null);
     } else if (activeTab === 'faqs') {
@@ -546,15 +546,15 @@ export default function Admin() {
         orderIndex: faq.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: '', fr: '', ru: '' },
-        description_i18n: { en: '', fr: '', ru: '' },
-        content_i18n: { en: '', fr: '', ru: '' },
-        about_event_i18n: { en: '', fr: '', ru: '' },
-        role_i18n: { en: '', fr: '', ru: '' },
-        bio_i18n: { en: '', fr: '', ru: '' },
-        caption_i18n: { en: '', fr: '', ru: '' },
-        question_i18n: faq.question_i18n || { en: faq.question, fr: '', ru: '' },
-        answer_i18n: faq.answer_i18n || { en: faq.answer, fr: '', ru: '' },
+        title_i18n: { en: '', ar: '', ru: '' },
+        description_i18n: { en: '', ar: '', ru: '' },
+        content_i18n: { en: '', ar: '', ru: '' },
+        about_event_i18n: { en: '', ar: '', ru: '' },
+        role_i18n: { en: '', ar: '', ru: '' },
+        bio_i18n: { en: '', ar: '', ru: '' },
+        caption_i18n: { en: '', ar: '', ru: '' },
+        question_i18n: faq.question_i18n || { en: faq.question, ar: '', ru: '' },
+        answer_i18n: faq.answer_i18n || { en: faq.answer, ar: '', ru: '' },
       });
     } else if (activeTab === 'past_events') {
       const pastEvent = item as PastEvent;
@@ -579,13 +579,13 @@ export default function Admin() {
         orderIndex: pastEvent.order_index || 0,
       });
       setI18nData({
-        title_i18n: pastEvent.title_i18n || { en: pastEvent.title, fr: '', ru: '' },
-        description_i18n: pastEvent.description_i18n || { en: pastEvent.description, fr: '', ru: '' },
-        content_i18n: { en: '', fr: '', ru: '' },
-        about_event_i18n: { en: '', fr: '', ru: '' },
-        role_i18n: { en: '', fr: '', ru: '' },
-        bio_i18n: { en: '', fr: '', ru: '' },
-        caption_i18n: { en: '', fr: '', ru: '' },
+        title_i18n: pastEvent.title_i18n || { en: pastEvent.title, ar: '', ru: '' },
+        description_i18n: pastEvent.description_i18n || { en: pastEvent.description, ar: '', ru: '' },
+        content_i18n: { en: '', ar: '', ru: '' },
+        about_event_i18n: { en: '', ar: '', ru: '' },
+        role_i18n: { en: '', ar: '', ru: '' },
+        bio_i18n: { en: '', ar: '', ru: '' },
+        caption_i18n: { en: '', ar: '', ru: '' },
       });
       setImagePreview(pastEvent.image_url || null);
     }
