@@ -895,11 +895,11 @@ export default function Index() {
                 <span className="text-xs font-semibold text-brand-red">Official Page of WYF Morocco</span>
               </div>
 
-              <h1 className="font-bold leading-[1.2] sm:leading-[1.15]">
-                <span className="block text-brand-red text-2xl sm:text-4xl lg:text-6xl">
+              <h1 className="font-bold leading-[1.25] sm:leading-[1.15]">
+                <span className="block text-brand-red text-lg sm:text-4xl lg:text-6xl">
                   "Russia is now your friend.
                 </span>
-                <span className="block text-gray-900 text-2xl sm:text-4xl lg:text-6xl mt-1 sm:mt-2">
+                <span className="block text-gray-900 text-lg sm:text-4xl lg:text-6xl mt-0.5 sm:mt-2">
                   Our doors are always open to you."
                 </span>
                 <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-2 sm:mt-0 block sm:inline-block sm:ml-3" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif', whiteSpace: 'nowrap' }}>
