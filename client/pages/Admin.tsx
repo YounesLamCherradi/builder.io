@@ -173,6 +173,18 @@ export default function Admin() {
       return;
     }
 
+    if (activeTab === 'team' && !i18nData.name_i18n.en) {
+      toast.error('Please enter the team member name in English');
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === 'team' && !i18nData.role_i18n.en) {
+      toast.error('Please enter the team member role in English');
+      setLoading(false);
+      return;
+    }
+
     try {
       if (activeTab === 'news') {
         if (editingId) {
