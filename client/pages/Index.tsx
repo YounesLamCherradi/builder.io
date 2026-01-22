@@ -907,7 +907,7 @@ export default function Index() {
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-xl leading-relaxed">
+              <p className="text-xs sm:text-base lg:text-lg text-gray-600 max-w-xl leading-relaxed">
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
 
