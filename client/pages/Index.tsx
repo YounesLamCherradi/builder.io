@@ -890,9 +890,9 @@ export default function Index() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-24 items-center">
             <div className="space-y-3 sm:space-y-5 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30 mb-2 sm:mb-4">
-                <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
-                <span className="text-xs font-semibold text-brand-red">Official Page of WYF Morocco</span>
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30 mb-2 sm:mb-3">
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-red rounded-full animate-pulse" />
+                <span className="text-[10px] sm:text-sm font-semibold text-brand-red">Official Page of WYF Morocco</span>
               </div>
 
               <h1 className="font-bold leading-[1.25] sm:leading-[1.15]">
