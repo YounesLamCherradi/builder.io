@@ -902,7 +902,7 @@ export default function Index() {
                 <span className="block text-gray-900 text-2xl sm:text-4xl lg:text-6xl mt-1 sm:mt-2">
                   Our doors are always open to you."
                 </span>
-                <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-2 sm:mt-3 block sm:inline-block ml-0 sm:ml-3" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif', whiteSpace: 'nowrap' }}>
+                <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-2 sm:mt-0 block sm:inline-block sm:ml-3" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif', whiteSpace: 'nowrap' }}>
                   — Vladimir Putin, <span className="text-xs text-gray-500 font-normal">Closing Ceremony of World Youth Festival (2024)</span>
                 </span>
               </h1>
