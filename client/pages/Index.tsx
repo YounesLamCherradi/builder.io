@@ -740,11 +740,11 @@ export default function Index() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="flex h-16 sm:h-18 items-center justify-between py-3">
+          <div className="flex h-16 sm:h-18 items-center justify-between py-3" dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}>
             {/* Logo */}
             <Link
               to="/"
-              className="flex items-center hover:opacity-80 transition-opacity shrink-0"
+              className={`flex items-center hover:opacity-80 transition-opacity shrink-0 ${currentLanguage === 'ar' ? 'order-last' : ''}`}
             >
               <div className="relative">
                 <img
