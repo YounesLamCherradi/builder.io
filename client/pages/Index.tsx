@@ -890,7 +890,9 @@ export default function Index() {
                       key={idx}
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-left px-4 py-4 rounded-xl hover:bg-brand-red/10 text-gray-800 font-semibold text-lg transition-all duration-300 block border-2 border-transparent hover:border-brand-red/30"
+                      className={`w-full px-4 py-4 rounded-xl hover:bg-brand-red/10 text-gray-800 font-semibold text-lg transition-all duration-300 block border-2 border-transparent hover:border-brand-red/30 ${
+                        currentLanguage === 'ar' ? 'text-right' : 'text-left'
+                      }`}
                     >
                       {item.name}
                     </Link>
