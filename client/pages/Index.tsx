@@ -945,7 +945,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mt-16 sm:mt-24 lg:mt-32 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-12 w-full">
             <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
               <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 8M</div>
               <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Youth Reached</p>
