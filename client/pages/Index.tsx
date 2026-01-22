@@ -862,7 +862,9 @@ export default function Index() {
               className="fixed inset-0 bg-black/30 backdrop-blur-sm top-16"
               onClick={() => setMobileMenuOpen(false)}
             />
-            <div className="fixed top-16 right-0 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl border-l border-gray-100 flex flex-col">
+            <div className={`fixed top-16 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl flex flex-col ${
+              currentLanguage === 'ar' ? 'left-0 border-r' : 'right-0 border-l'
+            } border-gray-100`}>
               <div className="p-4 space-y-4 overflow-y-auto flex-1">
                 <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 p-3">
                   <div className="flex items-center gap-2">
