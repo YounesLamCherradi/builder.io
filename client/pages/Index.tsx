@@ -1375,7 +1375,7 @@ export default function Index() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-lg">No news articles available yet</p>
+              <p className="text-gray-600 text-lg">{t('no_news_available')}</p>
             </div>
           )}
         </div>
