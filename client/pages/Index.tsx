@@ -963,6 +963,11 @@ export default function Index() {
 
                       {/* Content */}
                       <div className="space-y-4 relative z-10">
+                        {/* Official Page Label */}
+                        <p className="text-xs font-semibold text-brand-red uppercase tracking-wider">
+                          Official Page of WYF Morocco
+                        </p>
+
                         {/* Divider */}
                         <div className="h-px bg-gradient-to-r from-brand-red/60 via-brand-red/30 to-transparent" />
 
