@@ -888,43 +888,43 @@ export default function Index() {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 rounded-full border border-brand-red/30 mb-4">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30 mb-2 sm:mb-4">
                 <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
-                <span className="text-xs sm:text-sm font-semibold text-brand-red">Official Page of WYF Morocco</span>
+                <span className="text-xs font-semibold text-brand-red">Official Page of WYF Morocco</span>
               </div>
 
-              <h1 className="font-bold leading-[1.15]">
-                <span className="block text-brand-red text-4xl sm:text-5xl lg:text-6xl">
+              <h1 className="font-bold leading-[1.2] sm:leading-[1.15]">
+                <span className="block text-brand-red text-2xl sm:text-4xl lg:text-6xl">
                   "Russia is now your friend.
                 </span>
-                <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl mt-2">
+                <span className="block text-gray-900 text-2xl sm:text-4xl lg:text-6xl mt-1 sm:mt-2">
                   Our doors are always open to you."
-                  <span className="text-base sm:text-lg font-serif text-brand-red font-semibold ml-3 inline-block" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif', whiteSpace: 'nowrap' }}>
-                    — Vladimir Putin, <span className="text-xs sm:text-sm text-gray-500 font-normal">Closing Ceremony of World Youth Festival (2024)</span>
-                  </span>
+                </span>
+                <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-2 sm:mt-3 block" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif' }}>
+                  — Vladimir Putin, <span className="text-xs text-gray-500 font-normal">Closing Ceremony of World Youth Festival (2024)</span>
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-600 max-w-xl">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-xl leading-relaxed">
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 w-full sm:w-auto">
-                <Link to="/events" className="group w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold text-sm sm:text-base shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                <Link to="/events" className="group flex-1 sm:flex-none px-4 sm:px-6 lg:px-7 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold text-xs sm:text-sm lg:text-base shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
                   <span>{t('explore_opps')}</span>
-                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="group w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-2">
+                <button className="group flex-1 sm:flex-none px-4 sm:px-6 lg:px-7 py-2.5 sm:py-3 lg:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-xs sm:text-sm lg:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-2">
                   <span>Watch Demo</span>
-                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
-            <div className="relative flex flex-col items-center lg:items-end justify-center">
-              <div className="relative w-56 h-56 sm:w-96 sm:h-96 lg:w-full lg:max-w-md lg:aspect-square">
+            <div className="relative flex flex-col items-center lg:items-end justify-center hidden sm:flex">
+              <div className="relative w-48 h-48 sm:w-80 sm:h-80 lg:w-full lg:max-w-md lg:aspect-square">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
                 <div className="relative rounded-full overflow-hidden border-[12px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
                   <img
@@ -938,7 +938,7 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mt-8 sm:mt-10 lg:mt-12 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 lg:gap-6 mt-6 sm:mt-8 lg:mt-12 w-full">
             <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
               <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 8M</div>
               <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Youth Reached</p>
