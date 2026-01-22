@@ -912,11 +912,11 @@ export default function Index() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
-                <Link to="/events" className="group flex-1 sm:flex-none px-4 sm:px-6 lg:px-7 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold text-xs sm:text-sm lg:text-base shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
+                <Link to="/events" className="group flex-1 sm:flex-none px-3 sm:px-6 lg:px-7 py-2 sm:py-3 lg:py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold text-[11px] sm:text-sm lg:text-base shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2">
                   <span>{t('explore_opps')}</span>
-                  <ArrowRight className="w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="group flex-1 sm:flex-none px-4 sm:px-6 lg:px-7 py-2.5 sm:py-3 lg:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-xs sm:text-sm lg:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-2">
+                <button className="group flex-1 sm:flex-none px-3 sm:px-6 lg:px-7 py-2 sm:py-3 lg:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-[11px] sm:text-sm lg:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-1.5 sm:gap-2">
                   <span>Watch Demo</span>
                   <ArrowRight className="w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
