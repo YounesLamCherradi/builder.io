@@ -832,7 +832,7 @@ export default function Admin() {
                         : 'border-transparent text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    {lang === 'en' ? '🇬🇧 English' : lang === 'ar' ? '🇸🇦 العربية' : '🇷🇺 Русский'}
+                    {lang === 'en' ? '🇬🇧 English' : lang === 'ar' ? '🇲🇦 العربية' : '🇷🇺 Русский'}
                   </button>
                 ))}
               </div>
