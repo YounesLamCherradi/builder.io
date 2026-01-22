@@ -74,6 +74,21 @@ export default function Events() {
     };
   }, [selectedEvent]);
 
+  // Set RTL direction for Arabic language
+  React.useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const htmlElement = document.documentElement;
+      const isArabic = currentLanguage === 'ar';
+      htmlElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+      htmlElement.setAttribute('lang', currentLanguage);
+      if (isArabic) {
+        htmlElement.classList.add('rtl');
+      } else {
+        htmlElement.classList.remove('rtl');
+      }
+    }
+  }, [currentLanguage]);
+
   // Fetch events, FAQs, and past events from Supabase
   React.useEffect(() => {
     const loadData = async () => {
