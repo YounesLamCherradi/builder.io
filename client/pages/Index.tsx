@@ -960,13 +960,13 @@ export default function Index() {
 
               <h1 className="font-bold leading-[1.25] sm:leading-[1.15]">
                 <span className="block text-brand-red text-lg sm:text-4xl lg:text-6xl">
-                  "Russia is now your friend.
+                  "{t('putin_quote_1')}
                 </span>
                 <span className="block text-gray-900 text-lg sm:text-4xl lg:text-6xl mt-0.5 sm:mt-2">
-                  Our doors are always open to you."
+                  {t('putin_quote_2')}"
                 </span>
                 <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-2 sm:mt-0 block sm:inline-block sm:ml-3 w-full sm:w-auto" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif' }}>
-                  — Vladimir Putin, <span className="text-xs text-gray-500 font-normal">Closing Ceremony of World Youth Festival (2024)</span>
+                  {t('putin_attribution')}
                 </span>
               </h1>
 
