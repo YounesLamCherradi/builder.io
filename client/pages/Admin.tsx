@@ -387,12 +387,12 @@ export default function Admin() {
         orderIndex: news.order_index || 0,
       });
       setI18nData({
-        title_i18n: news.title_i18n || { en: news.title, fr: '', ru: '' },
-        description_i18n: news.description_i18n || { en: news.description, fr: '', ru: '' },
-        content_i18n: news.content_i18n || { en: news.content, fr: '', ru: '' },
-        about_event_i18n: { en: '', fr: '', ru: '' },
-        role_i18n: { en: '', fr: '', ru: '' },
-        bio_i18n: { en: '', fr: '', ru: '' },
+        title_i18n: news.title_i18n || { en: news.title, ar: '', ru: '' },
+        description_i18n: news.description_i18n || { en: news.description, ar: '', ru: '' },
+        content_i18n: news.content_i18n || { en: news.content, ar: '', ru: '' },
+        about_event_i18n: { en: '', ar: '', ru: '' },
+        role_i18n: { en: '', ar: '', ru: '' },
+        bio_i18n: { en: '', ar: '', ru: '' },
       });
       setImagePreview(news.image_url || null);
     } else if (activeTab === 'events') {
