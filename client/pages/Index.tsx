@@ -899,6 +899,10 @@ export default function Index() {
                 </span>
               </h1>
 
+              <p className="text-sm sm:text-base font-serif text-gray-500 font-light mt-4" style={{ letterSpacing: '0.08em', fontStyle: 'italic', fontWeight: '300' }}>
+                — Vladimir Putin, <span className="text-gray-400 text-xs">Closing Ceremony of World Youth Festival (2024)</span>
+              </p>
+
               <p className="text-base sm:text-lg text-gray-600 max-w-xl">
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
