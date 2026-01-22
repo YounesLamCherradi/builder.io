@@ -741,10 +741,10 @@ export default function Index() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-16 sm:h-18 items-center justify-between py-3">
-            {/* Logo - flips position in RTL */}
+            {/* Logo - stays on the right */}
             <Link
               to="/"
-              className={`flex items-center hover:opacity-80 transition-opacity shrink-0 ${currentLanguage === 'ar' ? 'order-last' : 'order-first'}`}
+              className="flex items-center hover:opacity-80 transition-opacity shrink-0"
             >
               <div className="relative">
                 <img
@@ -756,7 +756,7 @@ export default function Index() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className={`hidden md:flex items-center gap-8 ${currentLanguage === 'ar' ? 'order-last' : ''}`}>
+            <div className="hidden md:flex items-center gap-8">
               {menuItems.map((item, idx) => (
                 <Link
                   key={idx}
@@ -771,8 +771,8 @@ export default function Index() {
               ))}
             </div>
 
-            {/* Desktop Right Controls - flips to left in RTL */}
-            <div className={`hidden md:flex items-center gap-5 ${currentLanguage === 'ar' ? 'order-first' : ''}`}>
+            {/* Desktop Right Controls - stays on the left */}
+            <div className="hidden md:flex items-center gap-5">
               <div className="flex items-center gap-3">
                 <a
                   href="https://t.me/wyfmorocco"
