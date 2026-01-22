@@ -889,10 +889,22 @@ export default function Index() {
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-24 items-center">
-            <div className="space-y-3 sm:space-y-5 lg:space-y-8">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30 mb-2 sm:mb-3">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-red rounded-full animate-pulse" />
-                <span className="text-[10px] sm:text-sm font-semibold text-brand-red">Official Page of WYF Morocco</span>
+            <div className="space-y-3 sm:space-y-5 lg:space-y-8 w-full">
+              <div className="flex items-center justify-between gap-3 mb-2 sm:mb-3">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-red rounded-full animate-pulse" />
+                  <span className="text-[10px] sm:text-sm font-semibold text-brand-red">Official Page of WYF Morocco</span>
+                </div>
+                <div className="relative w-20 h-20 sm:hidden flex-shrink-0">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
+                  <div className="relative rounded-full overflow-hidden border-[5px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
+                      alt="Putin Portrait"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
 
               <h1 className="font-bold leading-[1.25] sm:leading-[1.15]">
