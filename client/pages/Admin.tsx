@@ -173,8 +173,8 @@ export default function Admin() {
       return;
     }
 
-    if (activeTab === 'team' && !formData.name) {
-      toast.error('Please enter the team member name');
+    if (activeTab === 'team' && !i18nData.name_i18n.en) {
+      toast.error('Please enter the team member name in English');
       setLoading(false);
       return;
     }
