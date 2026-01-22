@@ -895,14 +895,15 @@ export default function Index() {
                   "Russia is now your friend.
                 </span>
                 <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl mt-2">
-                  Our doors are always open to you."   
+                  Our doors are always open to you."
+                  <span className="text-base sm:text-lg font-serif text-brand-red font-semibold ml-3" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif' }}>
+                    — Vladimir Putin
+                  </span>
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg font-serif text-gray-600 mt-5 leading-relaxed" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '400', fontFamily: 'Georgia, serif' }}>
-                <span className="text-brand-red font-semibold">— Vladimir Putin</span>
-                <br />
-                <span className="text-sm text-gray-500">Closing Ceremony of World Youth Festival (2024)</span>
+              <p className="text-sm text-gray-500 mt-3" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '400' }}>
+                Closing Ceremony of World Youth Festival (2024)
               </p>
 
               <p className="text-base sm:text-lg text-gray-600 max-w-xl">
