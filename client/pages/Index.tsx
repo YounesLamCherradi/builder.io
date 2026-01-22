@@ -895,13 +895,9 @@ export default function Index() {
                   "Russia is now your friend.
                 </span>
                 <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl mt-2">
-                  Our doors are always open to you."— Vladimir Putin, Closing Ceremony of World Youth Festival (2024)   
+                  Our doors are always open to you."   
                 </span>
               </h1>
-
-              <p className="text-sm sm:text-base italic text-gray-500 font-light" style={{ fontStyle: 'italic', letterSpacing: '0.05em' }}>
-                — Vladimir Putin, Closing Ceremony of World Youth Festival (2024)
-              </p>
 
               <p className="text-base sm:text-lg text-gray-600 max-w-xl">
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
@@ -953,6 +949,21 @@ export default function Index() {
                   />
                 </div>
 
+                {/* Vision 2030 Text - Simple text without box */}
+                <div className="absolute -bottom-24 left-0 right-0 lg:-left-28 lg:bottom-8 lg:right-auto lg:w-80 z-20 text-center lg:text-left">
+                  <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight mb-2">
+                    Vision 2030
+                  </h3>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
+                    Building Bridges Globally
+                  </p>
+                  <p className="text-xs sm:text-sm font-bold text-gray-900 mb-1">
+                    Vladimir Putin
+                  </p>
+                  <p className="text-xs text-gray-600 font-medium">
+                    Closing Ceremony of World Youth Festival (2024)
+                  </p>
+                </div>
               </div>
             </div>
           </div>
