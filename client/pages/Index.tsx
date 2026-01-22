@@ -911,14 +911,14 @@ export default function Index() {
                 The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                <Link to="/events" className="group w-full sm:w-auto px-7 py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 w-full sm:w-auto">
+                <Link to="/events" className="group w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-4 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold text-sm sm:text-base shadow-xl hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2">
                   <span>{t('explore_opps')}</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="group w-full sm:w-auto px-7 py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-2">
+                <button className="group w-full sm:w-auto px-5 sm:px-7 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-2">
                   <span>Watch Demo</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
