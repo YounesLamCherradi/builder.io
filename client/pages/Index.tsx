@@ -821,7 +821,9 @@ export default function Index() {
                   />
                 </button>
                 {languageMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-44 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                  <div className={`absolute mt-2 w-44 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden ${
+                    currentLanguage === 'ar' ? 'left-0' : 'right-0'
+                  }`}>
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
@@ -829,7 +831,9 @@ export default function Index() {
                           setCurrentLanguage(lang.code);
                           setLanguageMenuOpen(false);
                         }}
-                        className="w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center justify-between"
+                        className={`w-full px-4 py-3 hover:bg-gray-50 flex items-center justify-between ${
+                          currentLanguage === 'ar' ? 'text-right' : 'text-left'
+                        }`}
                       >
                         <div className="flex items-center gap-2">
                           <span>{lang.flag}</span>
