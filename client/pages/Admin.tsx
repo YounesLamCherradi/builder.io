@@ -468,7 +468,7 @@ export default function Admin() {
         description_i18n: { en: '', ar: '', ru: '' },
         content_i18n: { en: '', ar: '', ru: '' },
         about_event_i18n: { en: '', ar: '', ru: '' },
-        name_i18n: member.name_i18n || { en: member.name, ar: '', ru: '' },
+        name_i18n: { en: member.name, ar: '', ru: '' },
         role_i18n: member.role_i18n || { en: member.role, ar: '', ru: '' },
         bio_i18n: member.bio_i18n || { en: member.bio, ar: '', ru: '' },
         caption_i18n: { en: '', ar: '', ru: '' },
