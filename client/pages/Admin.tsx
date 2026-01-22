@@ -17,7 +17,7 @@ export default function Admin() {
   const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [activeLanguage, setActiveLanguage] = useState<'en' | 'fr' | 'ru'>('en');
+  const [activeLanguage, setActiveLanguage] = useState<'en' | 'ar' | 'ru'>('en');
 
   const handleLogout = () => {
     localStorage.removeItem('adminToken');
