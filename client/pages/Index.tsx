@@ -911,26 +911,10 @@ export default function Index() {
                   <span>{t('explore_opps')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <div className="flex gap-3 sm:gap-4 justify-start">
-                  <div className="flex flex-col items-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-1 sm:mb-2">
-                      <span className="text-lg sm:text-lg font-bold text-brand-red">✓</span>
-                    </div>
-                    <p className="text-xs font-semibold text-gray-900 group-hover:text-brand-red transition-colors">Trusted</p>
-                  </div>
-                  <div className="flex flex-col items-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-1 sm:mb-2">
-                      <span className="text-lg sm:text-lg font-bold text-brand-red">★</span>
-                    </div>
-                    <p className="text-xs font-semibold text-gray-900 group-hover:text-brand-red transition-colors">Excellence</p>
-                  </div>
-                  <div className="flex flex-col items-center group cursor-pointer hover:scale-110 transition-transform duration-300">
-                    <div className="w-12 h-12 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 flex items-center justify-center border-2 border-brand-red/40 group-hover:border-brand-red/80 group-hover:shadow-lg group-hover:shadow-brand-red/30 transition-all duration-300 mb-1 sm:mb-2">
-                      <span className="text-lg sm:text-lg">🌍</span>
-                    </div>
-                    <p className="text-xs font-semibold text-gray-900 group-hover:text-brand-red transition-colors">Global</p>
-                  </div>
-                </div>
+                <button className="group w-full sm:w-auto px-7 py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-2">
+                  <span>Watch Demo</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             </div>
 
