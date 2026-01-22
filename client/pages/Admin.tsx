@@ -246,7 +246,8 @@ export default function Admin() {
         // Team member handling
         if (editingId) {
           await updateTeamMember(editingId, {
-            name: formData.name,
+            name: i18nData.name_i18n.en,
+            name_i18n: i18nData.name_i18n,
             role: i18nData.role_i18n.en,
             role_i18n: i18nData.role_i18n,
             bio: i18nData.bio_i18n.en,
@@ -256,7 +257,8 @@ export default function Admin() {
           });
         } else {
           await createTeamMember({
-            name: formData.name,
+            name: i18nData.name_i18n.en,
+            name_i18n: i18nData.name_i18n,
             role: i18nData.role_i18n.en,
             role_i18n: i18nData.role_i18n,
             bio: i18nData.bio_i18n.en,
