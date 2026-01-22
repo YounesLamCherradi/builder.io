@@ -740,11 +740,11 @@ export default function Index() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="flex h-16 sm:h-18 items-center justify-between py-3" dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}>
-            {/* Logo */}
+          <div className="flex h-16 sm:h-18 items-center justify-between py-3">
+            {/* Logo - flips position in RTL */}
             <Link
               to="/"
-              className={`flex items-center hover:opacity-80 transition-opacity shrink-0 ${currentLanguage === 'ar' ? 'order-last' : ''}`}
+              className={`flex items-center hover:opacity-80 transition-opacity shrink-0 ${currentLanguage === 'ar' ? 'order-last' : 'order-first'}`}
             >
               <div className="relative">
                 <img
@@ -756,7 +756,7 @@ export default function Index() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className={`hidden md:flex items-center gap-8 ${currentLanguage === 'ar' ? 'order-last' : ''}`}>
               {menuItems.map((item, idx) => (
                 <Link
                   key={idx}
@@ -765,14 +765,14 @@ export default function Index() {
                 >
                   {item.name}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-red to-gray-900 transition-all duration-300 w-0 group-hover:w-full`}
+                    className={`absolute -bottom-1 ${currentLanguage === 'ar' ? 'right-0' : 'left-0'} h-0.5 bg-gradient-to-r from-brand-red to-gray-900 transition-all duration-300 w-0 group-hover:w-full`}
                   />
                 </Link>
               ))}
             </div>
 
-            {/* Desktop Right Controls */}
-            <div className="hidden md:flex items-center gap-5">
+            {/* Desktop Right Controls - flips to left in RTL */}
+            <div className={`hidden md:flex items-center gap-5 ${currentLanguage === 'ar' ? 'order-first' : ''}`}>
               <div className="flex items-center gap-3">
                 <a
                   href="https://t.me/wyfmorocco"
