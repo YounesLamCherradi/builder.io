@@ -88,6 +88,21 @@ export default function About() {
     };
   }, [mobileMenuOpen]);
 
+  // Set RTL direction for Arabic language
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const htmlElement = document.documentElement;
+      const isArabic = currentLanguage === 'ar';
+      htmlElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+      htmlElement.setAttribute('lang', currentLanguage);
+      if (isArabic) {
+        htmlElement.classList.add('rtl');
+      } else {
+        htmlElement.classList.remove('rtl');
+      }
+    }
+  }, [currentLanguage]);
+
   useEffect(() => {
     const loadTeamData = async () => {
       try {
