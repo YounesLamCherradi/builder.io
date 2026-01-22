@@ -821,15 +821,17 @@ export default function Admin() {
               {activeTab === 'team' ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Full Name * ({activeLanguage.toUpperCase()})</label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
+                      value={i18nData.name_i18n[activeLanguage]}
+                      onChange={(e) => setI18nData(prev => ({
+                        ...prev,
+                        name_i18n: { ...prev.name_i18n, [activeLanguage]: e.target.value }
+                      }))}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                      placeholder="Team member full name"
+                      placeholder={`Team member name in ${activeLanguage.toUpperCase()}`}
                     />
                   </div>
 
