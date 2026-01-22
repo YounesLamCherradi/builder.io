@@ -890,17 +890,12 @@ export default function Index() {
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="space-y-6 sm:space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 rounded-full border border-brand-red/30">
-                <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse" />
-                <span className="text-xs sm:text-sm font-semibold text-brand-red">Official Page of WYF Morocco</span>
-              </div>
-
               <h1 className="font-bold leading-[1.15]">
                 <span className="block text-brand-red text-4xl sm:text-5xl lg:text-6xl">
                   "Russia is now your friend.
                 </span>
                 <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl mt-2">
-                  Our doors are always open to you."
+                  Our doors are always open to you."— Vladimir Putin, Closing Ceremony of World Youth Festival (2024)   
                 </span>
               </h1>
 
@@ -954,45 +949,20 @@ export default function Index() {
                   />
                 </div>
 
-                {/* Vision 2030 Quote Box - Positioned at bottom left of portrait */}
-                <div className="absolute -bottom-24 left-0 right-0 lg:-left-28 lg:bottom-8 lg:right-auto lg:w-80 z-20">
-                  <div className="relative group">
-                    {/* Quote bubble background */}
-                    <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl border border-brand-red/60 shadow-2xl p-6 sm:p-8 hover:shadow-3xl hover:border-brand-red transition-all duration-300 backdrop-blur-sm bg-white/95">
-                      {/* Top accent line with glow */}
-                      <div className="absolute top-0 left-6 right-6 h-1.5 bg-gradient-to-r from-brand-red via-pink-600 to-brand-red/20 rounded-full blur-sm opacity-60" />
-                      <div className="absolute top-0.5 left-6 right-6 h-0.5 bg-gradient-to-r from-brand-red via-pink-600 to-brand-red/20 rounded-full" />
-
-                      {/* Large decorative quote mark */}
-                      <div className="absolute -top-6 -left-3 text-6xl sm:text-7xl text-brand-red/20 font-serif leading-none">"</div>
-
-                      {/* Content */}
-                      <div className="space-y-4 relative z-10">
-                        {/* Divider */}
-                        <div className="h-px bg-gradient-to-r from-brand-red/60 via-brand-red/30 to-transparent" />
-
-                        {/* Attribution section */}
-                        <div className="space-y-1">
-                          <p className="text-sm font-bold text-gray-900">
-                            Vladimir Putin
-                          </p>
-                          <p className="text-xs font-medium text-gray-600">
-                            Closing Ceremony of<br/>World Youth Festival (2024)
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Corner accent */}
-                      <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-brand-red/10 to-transparent rounded-tl-3xl" />
-
-                      {/* Arrow pointer to portrait - only on desktop */}
-                      <div className="hidden lg:block absolute -right-16 top-6">
-                        <div className="w-6 h-6 bg-white rounded-full border border-brand-red/60 flex items-center justify-center shadow-md">
-                          <ArrowRight className="w-3 h-3 text-brand-red/60" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {/* Vision 2030 Text - Simple text without box */}
+                <div className="absolute -bottom-24 left-0 right-0 lg:-left-28 lg:bottom-8 lg:right-auto lg:w-80 z-20 text-center lg:text-left">
+                  <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-brand-red via-red-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight mb-2">
+                    Vision 2030
+                  </h3>
+                  <p className="text-sm sm:text-base font-semibold text-gray-800 mb-4">
+                    Building Bridges Globally
+                  </p>
+                  <p className="text-xs sm:text-sm font-bold text-gray-900 mb-1">
+                    Vladimir Putin
+                  </p>
+                  <p className="text-xs text-gray-600 font-medium">
+                    Closing Ceremony of World Youth Festival (2024)
+                  </p>
                 </div>
               </div>
             </div>
