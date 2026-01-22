@@ -944,7 +944,7 @@ export default function Index() {
               <div className="flex items-center justify-between gap-3 mb-2 sm:mb-3">
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-red rounded-full animate-pulse" />
-                  <span className="text-[10px] sm:text-sm font-semibold text-brand-red">Official Page of WYF Morocco</span>
+                  <span className="text-[10px] sm:text-sm font-semibold text-brand-red">{t('official_page_wyf')}</span>
                 </div>
                 <div className="relative w-20 h-20 sm:hidden flex-shrink-0">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
