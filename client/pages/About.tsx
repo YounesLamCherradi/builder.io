@@ -229,7 +229,7 @@ export default function About() {
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
         cookies: 'Cookie Policy',
-        rights: '© 2026 MoroccoGlobal. All rights reserved.',
+        rights: '© 2026 WYF Morocco. All rights reserved.',
         made_with: 'Made with ❤️ in Morocco',
         sitemap: 'Sitemap',
       },
