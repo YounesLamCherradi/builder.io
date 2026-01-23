@@ -456,6 +456,71 @@ export default function News() {
         </div>
       </section>
 
+      {/* Article Detail Modal */}
+      {selectedArticle && (
+        <div
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setSelectedArticle(null)}
+        >
+          <div
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-in fade-in slide-in-from-bottom-8 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <div className="sticky top-0 z-10 bg-white border-b border-gray-200 p-6 flex items-center justify-between">
+              <h2 className="text-xl font-bold text-gray-900">Article</h2>
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-6 h-6 text-gray-600" />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 sm:p-10">
+              {selectedArticle.image_url && (
+                <img
+                  src={selectedArticle.image_url}
+                  alt={selectedArticle.title}
+                  className="w-full rounded-2xl mb-8 object-cover max-h-96"
+                />
+              )}
+
+              <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
+                {selectedArticle.published_at && (
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-brand-red" />
+                    <span className="font-semibold">{new Date(selectedArticle.published_at).toLocaleDateString()}</span>
+                  </div>
+                )}
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mb-6 leading-tight">
+                {selectedArticle.title}
+              </h1>
+
+              <div className="prose prose-sm max-w-none">
+                <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-wrap">
+                  {selectedArticle.content}
+                </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <button
+                  onClick={() => setSelectedArticle(null)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white rounded-full font-semibold hover:bg-red-700 transition-colors"
+                >
+                  <span>Close Article</span>
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Footer */}
       <footer className="bg-gradient-to-b from-white via-amber-50/40 to-green-50/30 text-gray-800 pt-12 sm:pt-16 pb-10 sm:pb-12 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
