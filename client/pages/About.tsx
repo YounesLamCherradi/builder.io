@@ -851,26 +851,8 @@ export default function About() {
                     The National Committee of Morocco of the <span className="font-bold text-brand-red">World Youth Festival (WYF Morocco)</span> has been honored with the prestigious PATRIOT Award for outstanding contributions to international youth cooperation.
                   </p>
                   <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                    This remarkable recognition was presented by <span className="font-semibold text-gray-900">Maria Zakharova</span>, Official Spokesperson of the Russian Foreign Ministry, during the exclusive ROSPATRIOT award ceremony in <span className="font-semibold text-brand-red">Moscow</span>.
+                    This remarkable recognition was presented by <span className="font-semibold text-gray-900">Maria Zakharova</span>, Official Spokesperson of the Russian Foreign Ministry, during the exclusive ROSPATRIOT award ceremony in <span className="font-semibold text-brand-red">Moscow on December 9, 2025.</span>
                   </p>
-                </div>
-
-                {/* Key Details with enhanced styling */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-2">
-                  <div className="group bg-gradient-to-br from-brand-red/5 via-red-50 to-red-50/30 rounded-2xl p-5 sm:p-6 border border-brand-red/20 hover:border-brand-red/50 hover:shadow-lg transition-all duration-300 cursor-default">
-                    <div className="text-brand-red font-black text-xs uppercase tracking-widest mb-3">Ceremony Date</div>
-                    <div className="space-y-1">
-                      <div className="text-3xl sm:text-4xl font-black text-gray-900">9</div>
-                      <p className="text-sm text-gray-700 font-semibold">December 2025</p>
-                    </div>
-                  </div>
-                  <div className="group bg-gradient-to-br from-gray-900/5 via-gray-50 to-gray-100/30 rounded-2xl p-5 sm:p-6 border border-gray-300 hover:border-brand-red/50 hover:shadow-lg transition-all duration-300 cursor-default">
-                    <div className="text-gray-900 font-black text-xs uppercase tracking-widest mb-3">Location</div>
-                    <div className="space-y-1">
-                      <div className="text-3xl sm:text-4xl font-black text-gray-900">Moscow</div>
-                      <p className="text-sm text-gray-700 font-semibold">Russian Federation</p>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Achievement highlights with better animation */}
