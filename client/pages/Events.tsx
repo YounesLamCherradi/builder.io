@@ -158,7 +158,7 @@ export default function Events() {
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
         cookies: 'Cookie Policy',
-        rights: '© 2026 MoroccoGlobal. All rights reserved.',
+        rights: '© 2026 WYF Morocco. All rights reserved.',
         event_time: 'Event Time',
 
         tagline: 'Your World Awaits',
