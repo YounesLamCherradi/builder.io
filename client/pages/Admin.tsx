@@ -210,8 +210,8 @@ export default function Admin() {
 
     try {
       if (activeTab === 'news') {
-        // Create article data without order_index (column doesn't exist in database)
-        const newsData = {
+        // Create article data with order_index
+        const newsData: any = {
           title: i18nData.title_i18n.en,
           description: i18nData.description_i18n.en,
           content: i18nData.content_i18n.en,
@@ -222,6 +222,7 @@ export default function Admin() {
           title_i18n: i18nData.title_i18n,
           description_i18n: i18nData.description_i18n,
           content_i18n: i18nData.content_i18n,
+          order_index: formData.orderIndex,
         };
 
         if (editingId) {
