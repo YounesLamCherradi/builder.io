@@ -895,17 +895,17 @@ export default function About() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           {/* Section Header - Full Width */}
-          <div className="text-center mb-20 sm:mb-28 lg:mb-32 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <div className="inline-flex items-center gap-3 bg-brand-red/10 px-6 py-3 rounded-full border border-brand-red/20 mb-8">
+          <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="inline-flex items-center gap-3 bg-brand-red/10 px-5 py-3 rounded-full border border-brand-red/20 mb-6">
               <Lightbulb className="w-5 h-5 text-brand-red" />
               <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">Vision & Values</span>
             </div>
 
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight max-w-4xl mx-auto">
-              Our <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Vision</span><br />for a <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Multipolar World</span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight max-w-4xl mx-auto">
+              Our <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Vision</span> for a <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Multipolar World</span>
             </h2>
 
-            <div className="w-32 h-1.5 bg-gradient-to-r from-brand-red via-red-500 to-transparent rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-brand-red via-red-500 to-transparent rounded-full mx-auto" />
           </div>
 
           {/* Vision Content - Stacked Layout */}
