@@ -50,9 +50,9 @@ export function AboutHistory({ t }: AboutHistoryProps) {
         <div className="absolute top-0 right-0 w-80 h-80 bg-gray-900/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 relative z-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
         {/* Section Title */}
-        <div className="mb-16 sm:mb-20 animate-in fade-in slide-in-from-top-6 duration-700">
+        <div className="mb-12 sm:mb-16 animate-in fade-in slide-in-from-top-6 duration-700">
           <div className="flex items-start gap-4 sm:gap-6">
             <div className="flex-shrink-0">
               <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-brand-red to-red-600">
@@ -72,61 +72,65 @@ export function AboutHistory({ t }: AboutHistoryProps) {
           </div>
         </div>
 
-        {/* Timeline Container */}
-        <div className="relative">
-          {/* Center line */}
-          <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-red via-gray-900 to-brand-red opacity-20" />
+        {/* Horizontal Timeline */}
+        <div className="relative group">
+          {/* Horizontal Timeline Line */}
+          <div className="absolute left-0 right-0 top-7 h-1 bg-gradient-to-r from-brand-red via-gray-900 to-brand-red opacity-20 z-0" />
 
-          {/* Timeline Items */}
-          <div className="space-y-10 sm:space-y-14">
-            {historyPoints.map((point, idx) => (
-              <div
-                key={idx}
-                className="relative animate-in fade-in slide-in-from-bottom-6 duration-700"
-                style={{ animationDelay: `${idx * 150}ms` }}
-              >
-                <div className="flex gap-4 sm:gap-8">
-                  {/* Timeline Dot */}
-                  <div className="flex-shrink-0 relative">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${point.color} text-white font-bold text-2xl shadow-xl ring-4 ring-white relative z-10`}>
-                      {point.icon}
+          {/* Timeline Container - Horizontal Scroll */}
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex gap-4 sm:gap-6 pb-4 min-w-min">
+              {historyPoints.map((point, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 animate-in fade-in slide-in-from-bottom-6 duration-700"
+                  style={{ animationDelay: `${idx * 100}ms`, width: '320px' }}
+                >
+                  {/* Timeline Connector - Vertical line from dot to card */}
+                  <div className="flex flex-col items-center">
+                    {/* Timeline Dot */}
+                    <div className="relative z-10 mb-4">
+                      <div className={`flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${point.color} text-white font-bold text-3xl shadow-xl ring-4 ring-white`}>
+                        {point.icon}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content Card */}
-                  <div className="flex-grow pb-4">
-                    <div className={`relative h-full rounded-2xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border-2 border-gray-200 p-6 sm:p-8 transition-all duration-500 group hover:shadow-xl hover:-translate-y-1 group overflow-hidden`}>
+                    {/* Connector line from dot to card */}
+                    <div className="w-1 h-3 bg-gradient-to-b from-gray-900 to-transparent" />
+
+                    {/* Content Card */}
+                    <div className={`relative w-full rounded-2xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border-2 border-gray-200 p-5 sm:p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 overflow-hidden flex flex-col h-full`}>
                       {/* Decorative top bar */}
                       <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${point.color}`} />
 
                       {/* Background gradient accent */}
-                      <div className={`absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br ${point.color} opacity-5 rounded-full blur-xl`} />
+                      <div className={`absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br ${point.color} opacity-5 rounded-full blur-xl`} />
 
-                      <div className="relative z-10">
+                      <div className="relative z-10 flex-grow flex flex-col">
                         {/* Year Badge */}
-                        <div className={`inline-flex items-center gap-2 bg-gradient-to-r ${point.color} text-white px-4 py-1.5 rounded-full text-sm font-bold mb-4`}>
-                          <span className="text-lg">📅</span>
+                        <div className={`inline-flex items-center gap-1 bg-gradient-to-r ${point.color} text-white px-3 py-1 rounded-full text-xs font-bold mb-3 w-fit`}>
+                          <span className="text-sm">📅</span>
                           {point.year}
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2">
                           {point.title}
                         </h3>
 
                         {/* Divider */}
-                        <div className={`h-1 w-12 bg-gradient-to-r ${point.color} rounded-full mb-4`} />
+                        <div className={`h-1 w-8 bg-gradient-to-r ${point.color} rounded-full mb-3`} />
 
                         {/* Description */}
-                        <p className="text-gray-700 leading-relaxed text-base">
+                        <p className="text-gray-700 leading-relaxed text-xs sm:text-sm flex-grow">
                           {point.description}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
