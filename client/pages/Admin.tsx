@@ -375,11 +375,16 @@ export default function Admin() {
       let errorMessage = 'Failed to save';
       if (error instanceof Error) {
         errorMessage = error.message;
-      } else if (typeof error === 'object' && error !== null && 'message' in error) {
-        errorMessage = (error as any).message;
+      } else if (typeof error === 'object' && error !== null) {
+        if ('message' in error) {
+          errorMessage = (error as any).message;
+        } else {
+          errorMessage = JSON.stringify(error);
+        }
       }
       console.error('Full error object:', error);
-      toast.error(`❌ ${errorMessage}`);
+      console.error('Error details:', errorMessage);
+      toast.error(`❌ Error: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
