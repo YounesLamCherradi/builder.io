@@ -72,7 +72,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
                 <div
                   key={idx}
                   className="flex-shrink-0 animate-in fade-in slide-in-from-bottom-6 duration-700"
-                  style={{ animationDelay: `${idx * 100}ms`, width: '320px' }}
+                  style={{ animationDelay: `${idx * 100}ms`, minWidth: '280px', maxWidth: '280px' }}
                 >
                   {/* Timeline Connector - Vertical line from dot to card */}
                   <div className="flex flex-col items-center">
