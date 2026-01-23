@@ -316,6 +316,7 @@ export default function Admin() {
             logo_url: formData.image_url,
             name: formData.partnerName,
             link: formData.partnerLink,
+            type: formData.partnerType as 'institutional' | 'informational',
             order_index: formData.orderIndex,
           });
         } else {
@@ -323,6 +324,7 @@ export default function Admin() {
             logo_url: formData.image_url,
             name: formData.partnerName,
             link: formData.partnerLink,
+            type: formData.partnerType as 'institutional' | 'informational',
             order_index: formData.orderIndex,
           });
         }
