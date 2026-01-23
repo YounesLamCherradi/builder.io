@@ -1278,11 +1278,12 @@ export default function Index() {
                 >
                   {(() => {
                     // Articles are already sorted by order_index from Supabase
-                    return newsList[0]?.image_url && (
+                    if (!newsList[0]) return null;
+                    return newsList[0].image_url && (
                       <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
                         <img
-                          src={sortedNews[0].image_url}
-                          alt={sortedNews[0].title}
+                          src={newsList[0].image_url}
+                          alt={newsList[0].title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           loading="lazy"
                         />
@@ -1298,7 +1299,8 @@ export default function Index() {
                   })()}
 
                   {(() => {
-                    // Articles are already sorted by loadData
+                    // Articles are already sorted by order_index from Supabase
+                    if (!newsList[0]) return null;
                     return (
                       <div className="p-6 sm:p-8 flex flex-col flex-grow">
                         <div className="flex items-center gap-3 mb-4">
