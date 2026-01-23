@@ -629,12 +629,131 @@ export default function Partners() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-100 py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="text-center">
-            <p className="text-sm sm:text-base text-gray-400">
-              © 2026 WYF Morocco. All rights reserved.
-            </p>
+      <footer className="bg-gradient-to-b from-white via-amber-50/40 to-green-50/30 text-gray-800 pt-12 sm:pt-16 pb-10 sm:pb-12 relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="grid md:grid-cols-12 gap-8 sm:gap-10">
+            <div className="md:col-span-5 lg:col-span-4">
+              <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                <div className="relative shrink-0">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                    alt="WYF Logo"
+                    className="h-16 sm:h-20 w-auto"
+                  />
+                </div>
+              </div>
+
+              <p className="text-gray-700 leading-relaxed mb-7 sm:mb-8 max-w-md text-sm sm:text-base">
+                {t('footer_tagline')}
+              </p>
+
+              <div className="flex gap-3 sm:gap-4">
+                {['Telegram', 'Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
+                  <a
+                    key={platform}
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-green-100 hover:from-red-100 hover:to-amber-100 flex items-center justify-center text-gray-700 hover:text-brand-red transition-all duration-300 hover:scale-110 shadow-sm hover:shadow"
+                    aria-label={platform}
+                  >
+                    <span className="text-lg font-medium">{platform[0]}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
+                  {t('platform')}
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('scholarships')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('jobs')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('programs')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('nav_resources')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
+                  {t('company')}
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('about_us')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('contact')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('careers')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('blog')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="col-span-2 sm:col-span-1">
+                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
+                  {t('legal')}
+                </h4>
+                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('privacy')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('terms')}
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:text-brand-red transition-colors">
+                      {t('cookies')}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-brand-silver/40 text-center md:text-left">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600">
+              <p>{t('rights')}</p>
+              <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
+                <span>{t('made_with')}</span>
+                <a href="#" className="hover:text-brand-red transition-colors">
+                  {t('sitemap')}
+                </a>
+                <span>v1.0.0 • 2026</span>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
