@@ -42,7 +42,7 @@ export function AboutHero({ t }: AboutHeroProps) {
           </div>
 
           {/* Right side - Quote and Attribution */}
-          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2 animate-in fade-in slide-in-from-right-8 duration-1000">
+          <div className="space-y-4 sm:space-y-6 order-2 lg:order-2 animate-in fade-in slide-in-from-right-8 duration-1000">
             {/* Quote */}
             <div className="space-y-4">
               <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 leading-snug">
