@@ -68,7 +68,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
 
           {/* Timeline Container - Horizontal Scroll */}
           <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-4 sm:gap-6 pb-4 min-w-min">
+            <div className="flex gap-3 sm:gap-4 pb-2 min-w-min">
               {historyPoints.map((point, idx) => (
                 <div
                   key={idx}
