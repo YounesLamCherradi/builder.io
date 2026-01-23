@@ -886,127 +886,36 @@ export default function About() {
       </section>
 
       {/* Our Vision Section */}
-      <section className="scroll-section py-20 sm:py-28 lg:py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
-        {/* Decorative background elements */}
+      <section className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Decorative background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 right-0 w-[500px] h-[500px] bg-brand-red/5 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 left-0 w-[450px] h-[450px] bg-gray-900/3 rounded-full blur-3xl" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-red/5 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-900/3 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-          {/* Section Header - Full Width */}
-          <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <div className="inline-flex items-center gap-3 bg-brand-red/10 px-5 py-3 rounded-full border border-brand-red/20 mb-6">
-              <Lightbulb className="w-5 h-5 text-brand-red" />
-              <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">Vision & Values</span>
-            </div>
-
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight max-w-4xl mx-auto">
-              Our <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Vision</span> for a <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Multipolar World</span>
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
+          {/* Main Heading */}
+          <div className="text-center mb-12 sm:mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
+              Our Vision for a <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Multipolar World</span>
             </h2>
-
-            <div className="w-24 h-1 bg-gradient-to-r from-brand-red via-red-500 to-transparent rounded-full mx-auto" />
+            <div className="w-24 h-1 bg-gradient-to-r from-brand-red to-transparent rounded-full mx-auto" />
           </div>
 
-          {/* Vision Content - Stacked Layout */}
-          <div className="space-y-12 sm:space-y-14 lg:space-y-16">
-            {/* Main Vision Statement */}
-            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-6 flex items-center gap-3">
-                  <span className="inline-block w-1 h-10 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
-                  Reimagining Global Cooperation
-                </h3>
+          {/* Vision Statement */}
+          <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
+            <div className="space-y-6">
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of <span className="font-bold text-gray-900">diversity among civilizations.</span> We believe that each nation and society has the right to follow its own historical path, shaped by its culture, traditions, values, and collective memory, without external pressure or imposed standards.
+              </p>
 
-                <div className="space-y-6">
-                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                    Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of <span className="font-bold text-gray-900">diversity among civilizations.</span>
-                  </p>
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order,</span> where cooperation is based on <span className="font-semibold text-brand-red">equality, mutual respect, and recognition of sovereign choices.</span> In such a world, <span className="font-bold text-brand-red">dialogue replaces domination, partnership replaces hierarchy,</span> and <span className="font-semibold text-gray-900">long-term stability prevails over short-term interests.</span>
+              </p>
 
-                  <div className="border-l-4 border-brand-red rounded-l p-6 bg-gradient-to-r from-brand-red/5 to-transparent">
-                    <p className="text-gray-800 text-base sm:text-lg leading-relaxed font-semibold italic">
-                      "We believe that each nation and society has the right to follow its own historical path, shaped by its culture, traditions, values, and collective memory, without external pressure or imposed standards."
-                    </p>
-                  </div>
-
-                  <div className="space-y-5">
-                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                      We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order,</span> where cooperation is based on <span className="font-semibold text-brand-red">equality, mutual respect, and recognition of sovereign choices.</span>
-                    </p>
-
-                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                      In such a world, <span className="font-bold text-brand-red">dialogue replaces domination, partnership replaces hierarchy,</span> and <span className="font-semibold text-gray-900">long-term stability prevails over short-term interests.</span>
-                    </p>
-
-                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                      <span className="font-bold text-gray-900">True international cooperation</span> can only exist when <span className="font-semibold">different civilizations engage with one another as equals,</span> <span className="text-brand-red font-bold">preserving their identities</span> while <span className="font-semibold text-gray-900">working toward shared goals.</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Key Pillars - Full Width Grid */}
-            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-10 text-center">
-                Core Principles
-              </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-                {[
-                  {
-                    title: 'Cultural Sovereignty',
-                    desc: 'Each nation has the right to follow its own historical path, shaped by its culture, traditions, and values'
-                  },
-                  {
-                    title: 'Multipolar Order',
-                    desc: 'We support a balanced international system based on equality, mutual respect, and sovereign choices'
-                  },
-                  {
-                    title: 'Equality & Partnership',
-                    desc: 'Dialogue replaces domination, partnership replaces hierarchy in international cooperation'
-                  },
-                  {
-                    title: 'Long-term Stability',
-                    desc: 'True cooperation emerges when civilizations engage as equals while preserving their identities'
-                  }
-                ].map((pillar, idx) => (
-                  <div key={idx} className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-brand-red/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="flex items-start gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red/20 transition-all duration-300">
-                        <Check className="w-5 h-5 text-brand-red font-bold" />
-                      </div>
-                    </div>
-                    <h4 className="font-bold text-gray-900 text-base mb-2 group-hover:text-brand-red transition-colors">
-                      {pillar.title}
-                    </h4>
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      {pillar.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom Highlights - Full Width */}
-            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 grid sm:grid-cols-2 gap-6 sm:gap-8 pt-10 sm:pt-14 border-t-2 border-gray-200">
-              <div className="group cursor-default">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-4">
-                  <Globe className="w-8 h-8 text-brand-red" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2 text-lg">Global Perspective</h4>
-                <p className="text-gray-700 text-base leading-relaxed">
-                  A world where nations cooperate as equal partners on the global stage, respecting sovereign choices and fostering genuine dialogue.
-                </p>
-              </div>
-              <div className="group cursor-default">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-4">
-                  <Heart className="w-8 h-8 text-brand-red" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2 text-lg">Cultural Pride</h4>
-                <p className="text-gray-700 text-base leading-relaxed">
-                  Celebrating and preserving the unique identities and traditions of all civilizations while building bridges of understanding.
-                </p>
-              </div>
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                <span className="font-bold text-gray-900">True international cooperation</span> can only exist when <span className="font-semibold">different civilizations engage with one another as equals,</span> <span className="text-brand-red font-bold">preserving their identities</span> while <span className="font-semibold text-gray-900">working toward shared goals.</span>
+              </p>
             </div>
           </div>
         </div>
