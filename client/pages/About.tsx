@@ -671,12 +671,10 @@ export default function About() {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/10 blur-2xl animate-pulse" style={{ animationDuration: '3s' }} />
 
                 {/* Profile Image with border */}
-                <div className="relative rounded-full overflow-hidden border-8 border-brand-red shadow-2xl shadow-brand-red/50 aspect-square">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
-                    alt="Maria Zakharova"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative rounded-full overflow-hidden border-8 border-brand-red shadow-2xl shadow-brand-red/50 aspect-square bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                  <svg className="w-32 h-32 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                  </svg>
                 </div>
               </div>
             </div>
