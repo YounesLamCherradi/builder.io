@@ -969,11 +969,11 @@ export default function Index() {
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-red rounded-full animate-pulse" />
                   <span className="text-[10px] sm:text-sm font-semibold text-brand-red">{t('official_page_wyf')}</span>
                 </div>
-                <div className="relative w-20 h-20 sm:hidden flex-shrink-0">
+                <div className="relative w-24 h-auto sm:hidden flex-shrink-0">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
                     alt="Portrait"
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
               </div>
