@@ -684,7 +684,7 @@ export default function Partners() {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes fade {
             from {
               opacity: 0;
