@@ -685,16 +685,16 @@ export default function About() {
             <div className="space-y-6 sm:space-y-8 order-1 lg:order-2 animate-in fade-in slide-in-from-right-8 duration-1000">
               {/* Quote */}
               <div className="space-y-6">
-                <blockquote className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-relaxed">
+                <blockquote className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-relaxed">
                   {t('about_testimonial_quote')}
                 </blockquote>
 
                 {/* Attribution */}
-                <div className="space-y-2 pt-4 border-t border-white/20">
-                  <p className="text-lg sm:text-xl font-bold text-white">
+                <div className="space-y-2 pt-4 border-t border-brand-red/30">
+                  <p className="text-lg sm:text-xl font-bold text-gray-900">
                     {t('about_testimonial_author')}
                   </p>
-                  <p className="text-sm sm:text-base text-white/80">
+                  <p className="text-sm sm:text-base text-gray-600">
                     {t('about_testimonial_role')}
                   </p>
                 </div>
