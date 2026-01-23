@@ -133,6 +133,10 @@ export default function Partners() {
         partners_quote_2: 'نقطة بناءة ويشكلون هذا العمارة العالمية الجديدة',
         partners_attribution: '— ليونيد سلوتسكي',
         partners_attribution_role: 'رئيس لجنة الشؤون الدولية في مجلس الدولة',
+        institutional_partners: 'الشركاء المؤسسيون',
+        institutional_partners_desc: 'موثوق به من قبل المنظمات الرائدة في العالم',
+        partners_desc_call: 'شارك معنا أو اعرض مؤسستك',
+        get_in_touch: 'تواصل معنا',
       },
       ru: {
         nav_home: 'Главная',
