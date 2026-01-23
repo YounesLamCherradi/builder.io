@@ -79,15 +79,8 @@ export default function News() {
       setLoading(true);
       try {
         const data = await fetchNews();
-        // Sort articles by order_index first, then by date
-        const sorted = [...data].sort((a, b) => {
-          const aIndex = a.order_index ?? 999;
-          const bIndex = b.order_index ?? 999;
-          if (aIndex !== bIndex) return aIndex - bIndex;
-          // If both have same order_index, sort by date (newest first)
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
-        });
-        setArticles(sorted);
+        // Data is already sorted by date from Supabase query
+        setArticles(data);
       } catch (error) {
         console.error('Error loading news articles:', error);
       } finally {
