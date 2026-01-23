@@ -106,11 +106,23 @@ export function AboutHistory({ t }: AboutHistoryProps) {
                     <div className="w-0.5 h-2 bg-gradient-to-b from-gray-400 to-transparent" />
 
                     {/* Content Card */}
-                    <div className={`relative w-full rounded-xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border border-gray-300 p-4 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden flex flex-col h-full`}>
+                    <div className={`relative w-full rounded-xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border border-gray-300 p-0 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden flex flex-col h-full`}>
                       {/* Decorative top bar */}
-                      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${point.color}`} />
+                      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${point.color} z-20`} />
 
-                      <div className="relative z-10 flex-grow flex flex-col">
+                      {/* Image if available */}
+                      {point.image && (
+                        <div className="relative h-28 sm:h-32 overflow-hidden bg-gray-200">
+                          <img
+                            src={point.image}
+                            alt={point.year}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                        </div>
+                      )}
+
+                      <div className="relative z-10 flex-grow flex flex-col p-4">
                         {/* Year Badge */}
                         <div className={`inline-flex items-center gap-1 bg-gradient-to-r ${point.color} text-white px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2 w-fit`}>
                           {point.year}
