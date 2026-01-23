@@ -762,10 +762,9 @@ export default function Partners() {
           {/* Main Affiliation Card */}
           <div className="group animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-500 border border-gray-100">
-              {/* Images Section */}
-              <div className="grid sm:grid-cols-2 gap-0 h-64 sm:h-80 lg:h-96">
+              <div className="grid lg:grid-cols-3 gap-0">
                 {/* Image Container - Left Side */}
-                <div className="relative w-full h-full bg-gradient-to-br from-brand-red/10 to-amber-100/20 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="relative w-full h-64 sm:h-96 lg:h-auto bg-gradient-to-br from-brand-red/10 to-amber-100/20 overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(187,9,9,0.1)_0%,transparent_50%)]" />
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F1af03a62cabc4172ad9eddeb3f8790aa?format=webp&width=800&height=1200"
@@ -774,49 +773,48 @@ export default function Partners() {
                   />
                 </div>
 
+                {/* Content Container - Middle */}
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                  {/* First Quote - Youth Assembly */}
+                  <div className="mb-6 sm:mb-8">
+                    <blockquote className="text-base sm:text-lg font-light text-gray-900 leading-relaxed">
+                      <span className="text-brand-red font-bold text-2xl">"</span>
+                      The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust
+                      <span className="text-brand-red font-bold text-2xl">"</span>
+                    </blockquote>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="h-1 bg-gradient-to-r from-brand-red/20 via-brand-red to-brand-red/20 rounded-full my-6 sm:my-8" />
+
+                  {/* Second Section - World Peoples Assembly */}
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                      <span className="w-1 h-5 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
+                      World Peoples
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                      An international platform uniting young leaders to promote dialogue and sustainable cooperation. In 2025, representatives from 25+ countries participated in <span className="text-brand-red font-semibold">"Generation of Unity"</span> and <span className="text-brand-red font-semibold">"The Voice of Time"</span>.
+                    </p>
+                  </div>
+
+                  {/* Attribution */}
+                  <div className="pt-6 sm:pt-8 border-t border-gray-100 mt-6 sm:mt-8">
+                    <p className="text-gray-900 font-bold text-sm sm:text-base">Anastasia Shishkina</p>
+                    <p className="text-brand-red font-semibold text-xs sm:text-sm mt-1">
+                      Head of Directorate for Youth Cooperation
+                    </p>
+                  </div>
+                </div>
+
                 {/* Image Container - Right Side */}
-                <div className="relative w-full h-full bg-gradient-to-br from-green-100/20 to-brand-red/10 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="relative w-full h-64 sm:h-96 lg:h-auto bg-gradient-to-br from-green-100/20 to-brand-red/10 overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(187,9,9,0.08)_0%,transparent_50%)]" />
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2Fef4a230084d24bb197bf9c60155e8499?format=webp&width=800&height=1200"
                     alt="World Peoples Assembly Conference"
                     className="w-full h-full object-cover"
                   />
-                </div>
-              </div>
-
-              {/* Content Container */}
-              <div className="p-6 sm:p-8 lg:p-10">
-                {/* First Quote - Youth Assembly */}
-                <div className="mb-8 sm:mb-10">
-                  <blockquote className="text-lg sm:text-xl font-light text-gray-900 leading-relaxed">
-                    <span className="text-brand-red font-bold text-2xl sm:text-3xl">"</span>
-                    The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust
-                    <span className="text-brand-red font-bold text-2xl sm:text-3xl">"</span>
-                  </blockquote>
-                </div>
-
-                {/* Divider */}
-                <div className="h-1 bg-gradient-to-r from-brand-red/20 via-brand-red to-brand-red/20 rounded-full my-8 sm:my-10" />
-
-                {/* Second Section - World Peoples Assembly */}
-                <div className="mb-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                    <span className="w-1 h-6 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
-                    World Peoples Assembly
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                    The World Peoples Youth Assembly is an international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum <span className="text-brand-red font-semibold">"Generation of Unity"</span> and the Public Talk <span className="text-brand-red font-semibold">"The Voice of Time"</span>, strengthening global youth partnerships.
-                  </p>
-                </div>
-
-                {/* Attribution */}
-                <div className="pt-6 sm:pt-8 border-t border-gray-100">
-                  <p className="text-gray-900 font-bold text-base sm:text-lg">Anastasia Shishkina</p>
-                  <p className="text-brand-red font-semibold text-sm sm:text-base mt-1">
-                    Head of the Directorate for Youth Cooperation
-                  </p>
-                  <p className="text-gray-600 text-xs sm:text-sm mt-1">World Peoples Assembly</p>
                 </div>
               </div>
             </div>
