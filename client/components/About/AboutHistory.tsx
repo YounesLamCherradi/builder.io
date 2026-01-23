@@ -124,29 +124,22 @@ export function AboutHistory({ t }: AboutHistoryProps) {
         </div>
 
         {/* WYF Morocco Creation - Featured Box */}
-        <div className="mt-16 sm:mt-20 relative animate-in fade-in slide-in-from-bottom-6 duration-700" style={{ animationDelay: '600ms' }}>
-          <div className="relative rounded-3xl overflow-hidden">
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-red via-red-600 to-gray-900 opacity-90" />
-
+        <div className="mt-10 relative animate-in fade-in slide-in-from-bottom-6 duration-700" style={{ animationDelay: '400ms' }}>
+          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-brand-red to-red-700 border-2 border-brand-red/20">
             {/* Content */}
-            <div className="relative px-8 sm:px-12 py-10 sm:py-14 text-white">
-              <div className="flex items-start gap-4">
-                <div className="text-4xl sm:text-5xl">🎊</div>
+            <div className="relative px-6 sm:px-8 py-6 sm:py-8 text-white">
+              <div className="flex items-start gap-3">
+                <div className="text-2xl flex-shrink-0">🎊</div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">
                     Within this festival, WYF Morocco was officially created!
                   </h3>
-                  <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                    The main idea was to unite countries to create a multipolar world based on the principles of justice and equality. WYF Morocco now stands as a beacon of international youth cooperation and cultural pride.
+                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                    The main idea was to unite countries to create a multipolar world based on the principles of justice and equality.
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* Decorative corners */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-white/20" />
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-white/20" />
           </div>
         </div>
       </div>
