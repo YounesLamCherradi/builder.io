@@ -95,6 +95,7 @@ export default function Contact() {
         nav_home: 'Home',
         nav_news: 'News',
         nav_about: 'About Us',
+        nav_partners: 'Partners',
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
         nav_contact: 'Contact',
