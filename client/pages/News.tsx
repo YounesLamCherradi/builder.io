@@ -312,73 +312,145 @@ export default function News() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
+      <section className="pt-28 sm:pt-36 lg:pt-44 pb-12 sm:pb-16 lg:pb-20 bg-gradient-to-br from-gray-900 via-brand-red/10 to-gray-50 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-brand-red/10 px-5 py-2 rounded-full border border-brand-red/20 mb-6">
+              <Newspaper className="w-4 h-4 text-brand-red" />
+              <span className="text-xs font-bold text-brand-red uppercase tracking-widest">Latest Updates</span>
+            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
               {t('news_title')}
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
               {t('news_subtitle')}
             </p>
           </div>
         </div>
       </section>
 
-      {/* News Articles Grid */}
-      <section className="py-16 sm:py-20 lg:py-24">
+      {/* News Articles Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           {loading ? (
-            <div className="flex items-center justify-center py-20">
-              <p className="text-gray-500 text-lg">{t('loading')}</p>
+            <div className="flex items-center justify-center py-24">
+              <div className="text-center">
+                <div className="inline-block">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-red"></div>
+                </div>
+                <p className="text-gray-500 text-lg mt-4">{t('loading')}</p>
+              </div>
             </div>
           ) : articles.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {articles.map((article) => (
-                <div
-                  key={article.id}
-                  className="group bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-brand-red/30 hover:shadow-xl transition-all duration-300 cursor-pointer"
-                  onClick={() => setSelectedArticle(article)}
-                >
-                  {/* Image */}
-                  {article.image_url && (
-                    <div className="relative h-48 overflow-hidden bg-gray-200">
-                      <img
-                        src={article.image_url}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                      {article.published_at && (
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          <span>{new Date(article.published_at).toLocaleDateString()}</span>
+            <div className="space-y-12">
+              {/* Featured Article */}
+              {articles[0] && (
+                <div className="group relative rounded-3xl overflow-hidden border-2 border-gray-100 hover:border-brand-red/50 hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white animate-in fade-in slide-in-from-bottom-8 duration-700">
+                  <div className="grid lg:grid-cols-2 gap-0">
+                    {/* Image */}
+                    {articles[0].image_url && (
+                      <div className="relative h-64 lg:h-full overflow-hidden bg-gray-200">
+                        <img
+                          src={articles[0].image_url}
+                          alt={articles[0].title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute top-6 left-6">
+                          <span className="bg-brand-red text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Featured</span>
                         </div>
-                      )}
+                      </div>
+                    )}
+
+                    {/* Content */}
+                    <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                          {articles[0].published_at && (
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4 text-brand-red" />
+                              <span className="font-semibold">{new Date(articles[0].published_at).toLocaleDateString()}</span>
+                            </div>
+                          )}
+                        </div>
+                        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4 leading-tight group-hover:text-brand-red transition-colors">
+                          {articles[0].title}
+                        </h2>
+                        <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+                          {articles[0].content.substring(0, 200)}...
+                        </p>
+                      </div>
+                      <button onClick={() => setSelectedArticle(articles[0])} className="inline-flex items-center gap-3 text-brand-red font-bold hover:gap-4 transition-all group/btn">
+                        <span className="text-base">{t('read_more')}</span>
+                        <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-brand-red transition-colors line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
-                      {article.content}
-                    </p>
-                    <button className="inline-flex items-center gap-2 text-brand-red font-semibold hover:gap-3 transition-all">
-                      <span>{t('read_more')}</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
                   </div>
                 </div>
-              ))}
+              )}
+
+              {/* Other Articles Grid */}
+              {articles.length > 1 && (
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">More Stories</h3>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    {articles.slice(1).map((article, idx) => (
+                      <div
+                        key={article.id}
+                        className="group bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-brand-red/50 hover:shadow-xl transition-all duration-300 cursor-pointer animate-in fade-in slide-in-from-bottom-8 duration-700"
+                        style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                        onClick={() => setSelectedArticle(article)}
+                      >
+                        {/* Image */}
+                        {article.image_url && (
+                          <div className="relative h-48 overflow-hidden bg-gray-200">
+                            <img
+                              src={article.image_url}
+                              alt={article.title}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          </div>
+                        )}
+
+                        {/* Content */}
+                        <div className="p-6 sm:p-7">
+                          <div className="flex items-center gap-3 text-xs text-gray-600 mb-3">
+                            {article.published_at && (
+                              <div className="flex items-center gap-1.5">
+                                <Calendar className="w-3.5 h-3.5 text-brand-red" />
+                                <span className="font-semibold">{new Date(article.published_at).toLocaleDateString()}</span>
+                              </div>
+                            )}
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2 leading-tight">
+                            {article.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                            {article.content}
+                          </p>
+                          <div className="flex items-center gap-2 text-brand-red font-semibold text-sm group-hover:gap-3 transition-all">
+                            <span>{t('read_more')}</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <Newspaper className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500 text-lg">{t('no_articles')}</p>
+            <div className="text-center py-24">
+              <Newspaper className="w-20 h-20 text-gray-300 mx-auto mb-6" />
+              <p className="text-gray-500 text-lg font-semibold">{t('no_articles')}</p>
+              <p className="text-gray-400 text-sm mt-2">Check back soon for updates</p>
             </div>
           )}
         </div>
