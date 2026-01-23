@@ -101,6 +101,7 @@ export default function News() {
         nav_home: 'Home',
         nav_news: 'News',
         nav_about: 'About Us',
+        nav_partners: 'Partners',
         nav_contact: 'Contact',
         news_title: 'Latest News & Articles',
         news_subtitle: 'Stay updated with our latest news, announcements, and insights',
