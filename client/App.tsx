@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import News from "./pages/News";
 import About from "./pages/About";
+import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
 import AdminLogin from "./pages/AdminLogin";
