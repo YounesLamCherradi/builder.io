@@ -667,11 +667,6 @@ export default function About() {
       {/* Our Members Section */}
       <AboutMembers t={t} />
 
-      {/* WYF History Section */}
-      <AboutHistory t={t} />
-
-      {/* Removed: Why Choose Us and Journey Moments sections */}
-
       {/* Team Section - Horizontal Scroll */}
       <section className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <div className="relative z-10">
