@@ -134,6 +134,7 @@ export default function News() {
         news_subtitle: 'ابقَ محدثاً مع أحدث أخبارنا والإعلانات والرؤى',
         read_more: 'اقرأ المزيد',
         no_articles: 'لا توجد مقالات متاحة',
+        loading: 'جاري تحميل المقالات...',
         footer_tagline: 'تمكين المغاربة لتحقيق أحلامهم العالمية.',
         platform: 'المنصة',
         company: 'الشركة',
