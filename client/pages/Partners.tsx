@@ -150,6 +150,10 @@ export default function Partners() {
         partners_quote_2: 'конструктивный вклад и сформируют эту новую мировую архитектуру',
         partners_attribution: '— Леонид Слуцкий',
         partners_attribution_role: 'Председатель Комитета Госдумы по международным делам',
+        institutional_partners: 'Институциональные партнёры',
+        institutional_partners_desc: 'Пользуется доверием ведущих организаций мира',
+        partners_desc_call: 'Сотрудничайте с нами или зарегистрируйте вашу организацию',
+        get_in_touch: 'Свяжитесь с нами',
       },
     }),
     []
