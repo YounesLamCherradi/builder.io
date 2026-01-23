@@ -1351,7 +1351,7 @@ export default function Index() {
 
               {/* News Grid - Right Side */}
               <div className="lg:col-span-2 flex flex-col gap-6">
-                {[...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0)).slice(1, 5).map((article, idx) => (
+                {newsList.slice(1, 5).map((article, idx) => (
                   <div
                     key={article.id}
                     onClick={() => setSelectedNews(article)}
