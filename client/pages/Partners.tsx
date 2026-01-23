@@ -811,11 +811,11 @@ export default function Partners() {
                 </p>
 
                 {/* World Peoples Assembly Image */}
-                <div className="pt-4 sm:pt-6 rounded-2xl overflow-hidden border border-brand-red/20 hover:border-brand-red/50 transition-all duration-300">
+                <div className="pt-4 sm:pt-6 rounded-2xl overflow-hidden border border-brand-red/20 hover:border-brand-red/50 transition-all duration-300 h-64 sm:h-80">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F8bea44c5c4fc4bd3ac9176a0feed3f6c?format=webp&width=800&height=1200"
                     alt="World Peoples Assembly Conference"
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
