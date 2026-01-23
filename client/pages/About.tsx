@@ -708,45 +708,73 @@ export default function About() {
 
         {/* Statistics Section */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10 pt-12 sm:pt-16 lg:pt-20">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Stat 1 */}
-            <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
-                50K+
+            <div className="group animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <div className="relative h-full rounded-2xl bg-gradient-to-br from-brand-red/10 via-white to-transparent border border-brand-red/30 p-6 sm:p-8 hover:border-brand-red/60 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Decorative background */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-brand-red/5 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500" />
+
+                <div className="relative z-10">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent mb-3">
+                    50K+
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold">
+                    {t('about_achievements_1_desc')}
+                  </p>
+                </div>
               </div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
-                {t('about_achievements_1_desc')}
-              </p>
             </div>
 
             {/* Stat 2 */}
-            <div className="text-center animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
-                150+
+            <div className="group animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+              <div className="relative h-full rounded-2xl bg-gradient-to-br from-blue-50/50 to-white border border-blue-200/50 p-6 sm:p-8 hover:border-blue-400/50 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Decorative background */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-blue-100/30 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500" />
+
+                <div className="relative z-10">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-600 mb-3">
+                    150+
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold">
+                    {t('about_achievements_2_desc')}
+                  </p>
+                </div>
               </div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
-                {t('about_achievements_2_desc')}
-              </p>
             </div>
 
             {/* Stat 3 */}
-            <div className="text-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
-                95%
+            <div className="group animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+              <div className="relative h-full rounded-2xl bg-gradient-to-br from-green-50/50 to-white border border-green-200/50 p-6 sm:p-8 hover:border-green-400/50 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Decorative background */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-green-100/30 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500" />
+
+                <div className="relative z-10">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-green-600 mb-3">
+                    95%
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold">
+                    {t('about_achievements_4_desc')}
+                  </p>
+                </div>
               </div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
-                {t('about_achievements_4_desc')}
-              </p>
             </div>
 
             {/* Stat 4 */}
-            <div className="text-center animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
-                24/7
+            <div className="group animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
+              <div className="relative h-full rounded-2xl bg-gradient-to-br from-purple-50/50 to-white border border-purple-200/50 p-6 sm:p-8 hover:border-purple-400/50 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                {/* Decorative background */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-purple-100/30 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500" />
+
+                <div className="relative z-10">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-purple-600 mb-3">
+                    24/7
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-700 font-semibold">
+                    {t('stat_support')}
+                  </p>
+                </div>
               </div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
-                {t('stat_support')}
-              </p>
             </div>
           </div>
         </div>
