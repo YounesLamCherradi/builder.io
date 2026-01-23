@@ -226,98 +226,206 @@ export default function Partners() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-gray-200/50">
-        <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-gray-900 hover:text-brand-red transition-colors">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-red to-gray-900 flex items-center justify-center">
-              <Globe className="w-5 h-5 text-white" />
+      {/* Navigation Bar */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrollY > 50 ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-sm'
+        }`}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="flex h-16 sm:h-18 items-center justify-between py-3">
+            {/* Logo */}
+            <Link
+              to="/"
+              className="flex items-center hover:opacity-80 transition-opacity shrink-0"
+            >
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F911b3f35eb7b487196e59df5ecec5440?format=webp&width=800"
+                alt="WYF Logo"
+                className="h-12 sm:h-14 w-auto"
+              />
+            </Link>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-8">
+              {menuItems.map((item, idx) => (
+                <Link
+                  key={idx}
+                  to={item.path}
+                  className={`text-gray-700 hover:text-brand-red font-medium transition-colors relative group`}
+                >
+                  {item.name}
+                  <span
+                    className={`absolute -bottom-1 ${currentLanguage === 'ar' ? 'right-0' : 'left-0'} h-0.5 bg-gradient-to-r from-brand-red to-gray-900 transition-all duration-300 ${
+                      item.path === '/partners' ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </Link>
+              ))}
             </div>
-            <span>WYF Morocco</span>
-          </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors ${
-                  activeSection === menuItems.indexOf(item)
-                    ? 'text-brand-red'
-                    : 'text-gray-700 hover:text-brand-red'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+            {/* Right Controls */}
+            <div className="hidden md:flex items-center gap-5">
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://t.me/wyfmorocco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  aria-label="Join us on Telegram"
+                  title="Telegram"
+                >
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.417 15.181l-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.639-17.13c.373-1.747-.678-2.572-1.887-2.06L.857 8.913c-1.713.685-1.708 1.666-.283 2.147l4.822 1.5 11.102-6.933c.523-.326 1.004-.15.623.325z" />
+                  </svg>
+                </a>
 
-          {/* Right side - Language Selector & Mobile Menu */}
-          <div className="flex items-center gap-4">
-            {/* Language Selector */}
-            <div className="relative" data-lang-menu>
-              <button
-                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium text-gray-700"
-              >
-                <span className="text-lg">{languages.find(l => l.code === currentLanguage)?.flag}</span>
-                <span className="hidden sm:inline">{languages.find(l => l.code === currentLanguage)?.code.toUpperCase()}</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
+                <a
+                  href="https://www.instagram.com/wyfmorocco/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-red via-brand-silver to-black flex items-center justify-center text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-110"
+                  aria-label="Follow us on Instagram"
+                  title="Instagram"
+                >
+                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.224.223 2.742.072 7.1.014 8.38 0 8.788 0 12s.014 3.62.072 4.9c.15 4.358 2.623 6.876 6.98 7.028 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.152 6.83-2.669 6.98-7.028.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.15-4.358-2.623-6.876-6.98-7.028C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                  </svg>
+                </a>
+              </div>
 
-              {languageMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setCurrentLanguage(lang.code);
-                        setLanguageMenuOpen(false);
-                      }}
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors flex items-center gap-2 text-sm"
-                    >
-                      <span className="text-lg">{lang.flag}</span>
-                      <span>{lang.name}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
+              {/* Language Selector */}
+              <div className="relative" data-lang-menu>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLanguageMenuOpen((v) => !v);
+                  }}
+                  className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-gray-100 transition-colors"
+                  aria-label="Change language"
+                >
+                  <Globe className="w-5 h-5 text-gray-700" />
+                  <span className="text-sm">{languages.find(l => l.code === currentLanguage)?.flag}</span>
+                  <span className="text-sm font-medium text-gray-700">{languages.find(l => l.code === currentLanguage)?.code.toUpperCase()}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-gray-500 transition-transform ${
+                      languageMenuOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {languageMenuOpen && (
+                  <div className={`absolute mt-2 w-44 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden ${
+                    currentLanguage === 'ar' ? 'left-0' : 'right-0'
+                  }`}>
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setCurrentLanguage(lang.code);
+                          setLanguageMenuOpen(false);
+                        }}
+                        className={`w-full px-4 py-3 hover:bg-gray-50 flex items-center justify-between ${
+                          currentLanguage === 'ar' ? 'text-right' : 'text-left'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span>{lang.flag}</span>
+                          <span className="text-sm text-gray-800">{lang.name}</span>
+                        </div>
+                        {currentLanguage === lang.code && <Check className="w-4 h-4 text-brand-red" />}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-gray-100 transition-colors"
+              aria-label="Open menu"
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-900" />
-              ) : (
-                <Menu className="w-6 h-6 text-gray-900" />
-              )}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-        </nav>
+        </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200/50 bg-white">
-            <div className="px-4 py-4 space-y-2">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-brand-red transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
+          <div className="md:hidden fixed inset-0 z-50 top-16 pt-0">
+            <div
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm top-16"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <div className={`fixed top-16 h-[calc(100vh-64px)] w-[88%] max-w-sm bg-white shadow-2xl flex flex-col ${
+              currentLanguage === 'ar' ? 'left-0 border-r' : 'right-0 border-l'
+            } border-gray-100`}>
+              <div className="p-4 space-y-4 overflow-y-auto flex-1">
+                <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 p-3">
+                  <div className="flex items-center gap-2">
+                    <Globe className="w-5 h-5 text-gray-700" />
+                    <span className="text-sm text-gray-700">Language</span>
+                  </div>
+                  <select
+                    value={currentLanguage}
+                    onChange={(e) => setCurrentLanguage(e.target.value)}
+                    className="text-sm bg-gray-50 border border-gray-200 rounded-xl px-3 py-2"
+                  >
+                    {languages.map((lang) => (
+                      <option key={lang.code} value={lang.code}>
+                        {lang.flag} {lang.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-2 pt-4">
+                  {menuItems.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`w-full px-4 py-4 rounded-xl hover:bg-brand-red/10 text-gray-800 font-semibold text-lg transition-all duration-300 block border-2 border-transparent hover:border-brand-red/30 ${
+                        currentLanguage === 'ar' ? 'text-right' : 'text-left'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <a
+                    href="https://t.me/wyfmorocco"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl border border-gray-100 px-4 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
+                  >
+                    <svg className="w-5 h-5 text-brand-red" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295-.042 0-.084 0-.127-.01l.214-3.053 5.56-5.023c.242-.213-.054-.328-.375-.115L6.871 12.93l-2.99-.924c-1.294-.403-1.319-1.374.268-2.042l11.953-4.602c.55-.213 1.075.124.892.943z"/>
+                    </svg>
+                    <span className="text-sm font-medium text-gray-800">Telegram</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/wyfmorocco/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl border border-gray-100 px-4 py-3 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
+                  >
+                    <svg className="w-5 h-5 text-brand-red" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.25c2.687 0 3.014.01 4.077.059 1.044.048 1.606.22 1.985.365.498.194.854.425 1.227.796.371.371.602.729.796 1.227.145.379.317.941.365 1.985.049 1.063.06 1.39.06 4.077s-.01 3.014-.059 4.077c-.048 1.044-.22 1.606-.365 1.985-.194.498-.425.854-.796 1.227-.371.371-.729.602-1.227.796-.379.145-.941.317-1.985.365-1.063.049-1.39.06-4.077.06s-3.014-.01-4.077-.059c-1.044-.048-1.606-.22-1.985-.365-.498-.194-.854-.425-1.227-.796-.371-.371-.602-.729-.796-1.227-.145-.379-.317-.941-.365-1.985-.049-1.063-.06-1.39-.06-4.077s.01-3.014.059-4.077c.048-1.044.22-1.606.365-1.985.194-.498.425-.854.796-1.227.371-.371.729-.602 1.227-.796.379-.145.941-.317 1.985-.365 1.063-.049 1.39-.06 4.077-.06z"/>
+                      <circle cx="12" cy="12" r="3.471"/>
+                      <circle cx="18.406" cy="5.594" r="0.813"/>
+                    </svg>
+                    <span className="text-sm font-medium text-gray-800">Instagram</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}
-      </header>
+      </nav>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white">
