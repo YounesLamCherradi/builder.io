@@ -8,6 +8,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  Check,
 } from 'lucide-react';
 import { fetchPartners, type Partner } from '../lib/supabase';
 
