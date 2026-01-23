@@ -913,32 +913,32 @@ export default function About() {
             {/* Main Vision Statement */}
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
               <div className="max-w-4xl mx-auto">
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-8 flex items-center gap-4">
-                  <span className="inline-block w-1.5 h-12 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="inline-block w-1 h-10 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
                   Reimagining Global Cooperation
                 </h3>
 
-                <div className="space-y-8 text-lg leading-relaxed">
-                  <p className="text-gray-700 text-lg sm:text-xl font-medium">
+                <div className="space-y-6">
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
                     Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of <span className="font-bold text-gray-900">diversity among civilizations.</span>
                   </p>
 
-                  <div className="border-l-4 border-brand-red rounded-l p-8 bg-gradient-to-r from-brand-red/5 to-transparent">
-                    <p className="text-gray-800 text-lg sm:text-xl leading-relaxed font-semibold italic">
+                  <div className="border-l-4 border-brand-red rounded-l p-6 bg-gradient-to-r from-brand-red/5 to-transparent">
+                    <p className="text-gray-800 text-base sm:text-lg leading-relaxed font-semibold italic">
                       "We believe that each nation and society has the right to follow its own historical path, shaped by its culture, traditions, values, and collective memory, without external pressure or imposed standards."
                     </p>
                   </div>
 
-                  <div className="space-y-6 pt-4">
-                    <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                  <div className="space-y-5">
+                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
                       We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order,</span> where cooperation is based on <span className="font-semibold text-brand-red">equality, mutual respect, and recognition of sovereign choices.</span>
                     </p>
 
-                    <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
                       In such a world, <span className="font-bold text-brand-red">dialogue replaces domination, partnership replaces hierarchy,</span> and <span className="font-semibold text-gray-900">long-term stability prevails over short-term interests.</span>
                     </p>
 
-                    <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                    <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
                       <span className="font-bold text-gray-900">True international cooperation</span> can only exist when <span className="font-semibold">different civilizations engage with one another as equals,</span> <span className="text-brand-red font-bold">preserving their identities</span> while <span className="font-semibold text-gray-900">working toward shared goals.</span>
                     </p>
                   </div>
