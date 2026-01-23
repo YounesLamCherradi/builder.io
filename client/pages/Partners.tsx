@@ -769,8 +769,8 @@ export default function Partners() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(187,9,9,0.1)_0%,transparent_50%)]" />
                   {/* Image will be placed here - currently showing placeholder */}
                   <img
-                    src="https://via.placeholder.com/600x400/BB0909/FFFFFF?text=Youth+Assembly"
-                    alt="Youth Assembly Affiliation"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F38a7c07461a74c598634dcece07ed028?format=webp&width=800&height=1200"
+                    alt="Anastasia Shishkina - Youth Assembly"
                     className="w-full h-full object-cover"
                   />
                 </div>
