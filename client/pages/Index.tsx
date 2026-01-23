@@ -195,7 +195,7 @@ export default function Index() {
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
         cookies: 'Cookie Policy',
-        rights: '© 2026 MoroccoGlobal. All rights reserved.',
+        rights: '© 2026 WYF Morocco. All rights reserved.',
 
         opp_scholarships: 'Scholarships',
         opp_jobs: 'Jobs & Internships',
