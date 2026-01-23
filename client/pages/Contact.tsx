@@ -160,7 +160,7 @@ export default function Contact() {
         privacy: 'Privacy',
         terms: 'Terms',
         cookies: 'Cookies',
-        rights: '© 2026 MoroccoGlobal. All rights reserved.',
+        rights: '© 2026 WYF Morocco. All rights reserved.',
       },
 
       ar: {
