@@ -32,6 +32,17 @@ export default function Partners() {
     }
   };
 
+  const scrollSponsors = (direction: 'left' | 'right') => {
+    if (sponsorsScrollRef.current) {
+      const scrollAmount = 400;
+      if (direction === 'left') {
+        sponsorsScrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        sponsorsScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
