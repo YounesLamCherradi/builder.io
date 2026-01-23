@@ -583,10 +583,10 @@ export default function News() {
               )}
 
               <div className="flex items-center gap-4 text-sm text-gray-600 mb-6">
-                {selectedArticle.published_at && (
+                {selectedArticle.date && (
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-brand-red" />
-                    <span className="font-semibold">{new Date(selectedArticle.published_at).toLocaleDateString()}</span>
+                    <span className="font-semibold">{new Date(selectedArticle.date).toLocaleDateString()}</span>
                   </div>
                 )}
               </div>
