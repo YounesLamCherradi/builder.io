@@ -1571,18 +1571,6 @@ export default function Index() {
                 {t('footer_tagline')}
               </p>
 
-              <div className="flex gap-3 sm:gap-4">
-                {['Telegram', 'Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
-                  <a
-                    key={platform}
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-green-100 hover:from-red-100 hover:to-amber-100 flex items-center justify-center text-gray-700 hover:text-brand-red transition-all duration-300 hover:scale-110 shadow-sm hover:shadow"
-                    aria-label={platform}
-                  >
-                    <span className="text-lg font-medium">{platform[0]}</span>
-                  </a>
-                ))}
-              </div>
             </div>
 
             <div className="md:col-span-7 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
