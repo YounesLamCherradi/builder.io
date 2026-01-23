@@ -23,23 +23,23 @@ export function AboutMembers({ t }: AboutMembersProps) {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
+    <section className="py-10 sm:py-12 lg:py-16 bg-white relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute inset-0 opacity-8">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-brand-red rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 right-0 w-72 h-72 bg-brand-red rounded-full blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
         {/* Section Title - Compact */}
-        <div className="mb-10 sm:mb-12 animate-in fade-in slide-in-from-top-6 duration-700">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1">
+        <div className="mb-6 sm:mb-8 animate-in fade-in slide-in-from-top-6 duration-700">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
             Our Members
           </h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-brand-red to-red-600 rounded-full" />
+          <div className="h-0.5 w-14 bg-gradient-to-r from-brand-red to-red-600 rounded-full" />
         </div>
 
         {/* Members Stats - Compact Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
           {memberStats.map((stat, idx) => (
             <div
               key={idx}
