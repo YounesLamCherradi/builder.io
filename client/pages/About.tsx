@@ -909,7 +909,7 @@ export default function About() {
           </div>
 
           {/* Vision Content - Stacked Layout */}
-          <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+          <div className="space-y-12 sm:space-y-14 lg:space-y-16">
             {/* Main Vision Statement */}
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
               <div className="max-w-4xl mx-auto">
