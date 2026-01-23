@@ -210,7 +210,7 @@ export default function Admin() {
 
     try {
       if (activeTab === 'news') {
-        const newsData = {
+        const newsData: any = {
           title: i18nData.title_i18n.en,
           description: i18nData.description_i18n.en,
           content: i18nData.content_i18n.en,
@@ -222,6 +222,17 @@ export default function Admin() {
           description_i18n: i18nData.description_i18n,
           content_i18n: i18nData.content_i18n,
         };
+
+        // Add order_index for new articles
+        if (!editingId) {
+          // For new articles, use the provided orderIndex or auto-assign
+          newsData.order_index = formData.orderIndex;
+        } else {
+          // For editing, only include orderIndex if it was explicitly changed
+          if (formData.orderIndex !== undefined) {
+            newsData.order_index = formData.orderIndex;
+          }
+        }
 
         if (editingId) {
           await updateNews(editingId, newsData);
