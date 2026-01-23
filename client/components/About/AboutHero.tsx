@@ -141,20 +141,20 @@ function AboutStats({ t }: AboutStatsProps) {
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${stat.gradient} p-2.5 mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
+                  <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br ${stat.gradient} p-2 mb-2 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
                     <Icon className="w-full h-full text-white" />
                   </div>
 
                   {/* Value */}
-                  <div className={`text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1.5 tracking-tight leading-none`}>
+                  <div className={`text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1 tracking-tight leading-none`}>
                     {stat.value}
                   </div>
 
                   {/* Divider */}
-                  <div className={`h-0.5 w-10 bg-gradient-to-r ${stat.gradient} rounded-full mb-3 group-hover:w-full transition-all duration-500`} />
+                  <div className={`h-0.5 w-8 bg-gradient-to-r ${stat.gradient} rounded-full mb-2 group-hover:w-full transition-all duration-500`} />
 
                   {/* Label */}
-                  <p className="text-xs sm:text-sm font-semibold text-gray-700 leading-snug">
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">
                     {stat.label}
                   </p>
                 </div>
