@@ -1343,18 +1343,6 @@ export default function Index() {
                         <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3 group-hover:text-gray-900 transition-colors duration-300 leading-relaxed">
                           {(newsList[0].description_i18n?.[currentLanguage as any]) || newsList[0].description}
                         </p>
-
-                        {newsList[0].author && (
-                          <div className="flex items-center gap-3 pt-4 border-t border-gray-200 group-hover:border-brand-red/30 transition-colors duration-300">
-                            <div className="w-12 h-12 bg-gradient-to-br from-brand-red to-red-800 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                              {newsList[0].author.charAt(0).toUpperCase()}
-                            </div>
-                            <div>
-                              <p className="text-sm font-semibold text-gray-900 group-hover:text-brand-red transition-colors">By {newsList[0].author}</p>
-                              <p className="text-xs text-gray-500">Author</p>
-                            </div>
-                          </div>
-                        )}
                       </div>
                     );
                   })()}
