@@ -12,6 +12,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       color: 'from-gray-700 to-gray-900',
       bg: 'from-gray-50 to-gray-100',
       border: 'from-gray-300 to-gray-400',
+      image: null,
     },
     {
       year: '1957',
@@ -21,6 +22,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       color: 'from-brand-red to-red-700',
       bg: 'from-brand-red/10 to-red-100/5',
       border: 'from-brand-red/30 to-red-300/20',
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F53096ecbc5164b5f8396f908b5ccec06?format=webp&width=800&height=1200',
     },
     {
       year: '2017',
@@ -30,6 +32,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       color: 'from-gray-600 to-gray-800',
       bg: 'from-gray-50 to-gray-100',
       border: 'from-gray-300 to-gray-400',
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F0361737ffc9545eeb55e8ac90d38391d?format=webp&width=800&height=1200',
     },
     {
       year: '2024',
@@ -39,6 +42,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       color: 'from-brand-red to-red-700',
       bg: 'from-brand-red/10 to-red-100/5',
       border: 'from-brand-red/30 to-red-300/20',
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2Fd7d74058a9ce46a0916900244fcd45d5?format=webp&width=800&height=1200',
     },
   ];
 
