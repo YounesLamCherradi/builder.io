@@ -669,6 +669,16 @@ export default function About() {
 
       {/* Team Section - Horizontal Scroll */}
       <section className="scroll-section py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F77da8a686cb94e459afcaad255d5edb5?format=webp&width=800)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.07,
+            backgroundAttachment: 'fixed',
+          }}
+        />
         <div className="relative z-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 mb-12 sm:mb-16 lg:mb-20">
             <div className="text-center">
