@@ -533,7 +533,12 @@ export default function News() {
 
                         {/* Content */}
                         <div className="p-6 sm:p-7">
-                          <div className="flex items-center gap-3 text-xs text-gray-600 mb-3">
+                          <div className="flex items-center gap-3 text-xs text-gray-600 mb-3 flex-wrap">
+                            {article.category && (
+                              <span className="inline-block px-3 py-1.5 bg-brand-red/10 text-brand-red font-bold rounded-lg border border-brand-red/30">
+                                {article.category}
+                              </span>
+                            )}
                             {article.date && (
                               <div className="flex items-center gap-1.5">
                                 <Calendar className="w-3.5 h-3.5 text-brand-red" />
