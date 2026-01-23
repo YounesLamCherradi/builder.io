@@ -19,6 +19,7 @@ import {
   Zap,
   Target,
   Check,
+  Calendar,
 } from 'lucide-react';
 
 export default function Index() {
