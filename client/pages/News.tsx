@@ -735,9 +735,9 @@ export default function News() {
                   {t('platform')}
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
-                  <li><a href="#" className="hover:text-brand-red transition-colors">{t('scholarships')}</a></li>
-                  <li><a href="#" className="hover:text-brand-red transition-colors">{t('jobs')}</a></li>
-                  <li><a href="#" className="hover:text-brand-red transition-colors">{t('programs')}</a></li>
+                  <li><Link to="/" className="hover:text-brand-red transition-colors">{t('nav_home')}</Link></li>
+                  <li><Link to="/news" className="hover:text-brand-red transition-colors">{t('nav_news')}</Link></li>
+                  <li><Link to="/partners" className="hover:text-brand-red transition-colors">{t('nav_partners')}</Link></li>
                 </ul>
               </div>
               <div>
@@ -745,9 +745,8 @@ export default function News() {
                   {t('company')}
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
-                  <li><a href="#" className="hover:text-brand-red transition-colors">{t('about_us')}</a></li>
-                  <li><a href="#" className="hover:text-brand-red transition-colors">{t('contact')}</a></li>
-                  <li><a href="#" className="hover:text-brand-red transition-colors">{t('careers')}</a></li>
+                  <li><Link to="/about" className="hover:text-brand-red transition-colors">{t('about_us')}</Link></li>
+                  <li><Link to="/contact" className="hover:text-brand-red transition-colors">{t('contact')}</Link></li>
                 </ul>
               </div>
               <div>
