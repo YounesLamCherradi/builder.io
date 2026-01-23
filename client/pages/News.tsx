@@ -557,6 +557,45 @@ export default function News() {
                   </div>
                 </div>
               )}
+
+              {/* Pagination Controls */}
+              {articles.length > articlesPerPage && (
+                <div className="mt-16 flex items-center justify-center gap-2 sm:gap-3">
+                  <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1}
+                    className="p-3 rounded-full border-2 border-gray-200 text-gray-700 hover:border-brand-red hover:text-brand-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:disabled:border-gray-200 hover:disabled:text-gray-700"
+                    aria-label="Previous page"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+
+                  <div className="flex items-center gap-1 sm:gap-2 flex-wrap justify-center">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                      <button
+                        key={page}
+                        onClick={() => handlePageChange(page)}
+                        className={`px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+                          currentPage === page
+                            ? 'bg-brand-red text-white shadow-lg'
+                            : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-brand-red hover:text-brand-red'
+                        }`}
+                      >
+                        {page}
+                      </button>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                    className="p-3 rounded-full border-2 border-gray-200 text-gray-700 hover:border-brand-red hover:text-brand-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:disabled:border-gray-200 hover:disabled:text-gray-700"
+                    aria-label="Next page"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <div className="text-center py-24">
