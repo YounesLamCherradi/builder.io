@@ -737,6 +737,66 @@ export default function Partners() {
         `}</style>
       </section>
 
+      {/* International Affiliation Section */}
+      <section className="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl" />
+        </div>
+
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-brand-red/20 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/50 animate-pulse" style={{ animationDuration: '3s' }}>
+              International Affiliation
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+              International Affiliation
+            </h2>
+          </div>
+
+          {/* Main Content Card */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 sm:p-10 lg:p-12 hover:border-brand-red/50 transition-all duration-500 shadow-2xl">
+            {/* Quote Section */}
+            <div className="mb-10 sm:mb-12 lg:mb-14">
+              <blockquote className="text-lg sm:text-xl lg:text-2xl text-white font-light leading-relaxed mb-6">
+                <span className="text-brand-red text-3xl sm:text-4xl font-bold">"</span>
+                The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust
+                <span className="text-brand-red text-3xl sm:text-4xl font-bold">"</span>
+              </blockquote>
+
+              {/* Speaker Attribution */}
+              <div className="flex items-center gap-4 pt-6 border-t border-white/20">
+                <div className="flex-1">
+                  <p className="text-white font-semibold text-base sm:text-lg">Anastasia Shishkina</p>
+                  <p className="text-brand-red text-sm sm:text-base">Head of the Directorate for Youth Cooperation</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">World Peoples Assembly</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-1 bg-gradient-to-r from-brand-red/30 via-brand-red to-brand-red/30 rounded-full mb-10 sm:mb-12 lg:mb-14" />
+
+            {/* Organization Info */}
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                <span className="w-1 h-8 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
+                World Peoples Assembly
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+                The World Peoples Youth Assembly is an international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum <span className="text-brand-red font-semibold">"Generation of Unity"</span> and the Public Talk <span className="text-brand-red font-semibold">"The Voice of Time"</span>, strengthening global youth partnerships.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom accent line */}
+          <div className="mt-10 sm:mt-12 flex justify-center">
+            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent rounded-full" />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gradient-to-b from-white via-amber-50/40 to-green-50/30 text-gray-800 pt-12 sm:pt-16 pb-10 sm:pb-12 relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
