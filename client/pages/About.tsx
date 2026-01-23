@@ -129,7 +129,7 @@ export default function About() {
     () => ({
       en: {
         nav_home: 'Home',
-        nav_events: 'Events',
+        nav_news: 'News',
         nav_about: 'About Us',
         nav_stories: 'Success Stories',
         nav_resources: 'Team',
