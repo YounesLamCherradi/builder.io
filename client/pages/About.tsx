@@ -827,8 +827,8 @@ export default function About() {
               <div className="space-y-7 sm:space-y-8">
                 {/* Animated header badge */}
                 <div className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-red/10 to-red-50/10 px-5 py-3 rounded-full border border-brand-red/20 hover:border-brand-red/50 transition-all duration-300">
-                  <div className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
-                  <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">🏆 Official Recognition</span>
+                  <Award className="w-5 h-5 text-brand-red flex-shrink-0" />
+                  <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">Official Recognition</span>
                 </div>
 
                 {/* Main Heading with accent */}
