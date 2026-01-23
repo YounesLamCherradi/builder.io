@@ -1008,15 +1008,11 @@ export default function Index() {
 
             <div className="relative hidden sm:flex flex-col items-center lg:items-end justify-center">
               <div className="relative w-80 sm:w-80 lg:w-full lg:max-w-md lg:aspect-square">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/20 to-brand-red/10 blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
-                <div className="relative rounded-full overflow-hidden border-[12px] border-brand-red shadow-2xl shadow-brand-red/50 aspect-square w-full h-full">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
-                    alt="Putin Portrait"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
+                  alt="Portrait"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
