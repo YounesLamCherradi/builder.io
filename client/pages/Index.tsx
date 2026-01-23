@@ -1296,19 +1296,19 @@ export default function Index() {
                     // Articles are already sorted by order_index from Supabase
                     if (!newsList[0]) return null;
                     return newsList[0].image_url && (
-                      <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+                      <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gray-200">
                         <img
                           src={newsList[0].image_url}
                           alt={newsList[0].title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 group-hover:via-black/40" />
 
                         {/* Trending Badge */}
-                        <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-brand-red to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg animate-pulse">
-                          <Zap className="w-4 h-4" />
-                          <span>Trending</span>
+                        <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-brand-red via-red-600 to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-xl animate-pulse hover:animate-none group-hover:animate-none transition-all">
+                          <Zap className="w-5 h-5" />
+                          <span>Trending Now</span>
                         </div>
                       </div>
                     );
