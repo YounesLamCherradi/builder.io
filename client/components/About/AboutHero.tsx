@@ -15,44 +15,44 @@ export function AboutHero({ t }: AboutHeroProps) {
       </div>
 
       {/* Main Hero Content */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10 pt-20 sm:pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10 pt-16 sm:pt-20 pb-12 sm:pb-16">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left side - Profile Image */}
           <div className="flex justify-center lg:justify-start order-2 lg:order-1 animate-in fade-in slide-in-from-left-8 duration-1000">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=1000"
               alt="Maria Zakharova"
-              className="w-full max-w-2xl h-auto"
+              className="w-full max-w-sm sm:max-w-2xl h-auto"
             />
           </div>
 
           {/* Right side - Quote and Attribution */}
-          <div className="space-y-6 sm:space-y-8 order-1 lg:order-2 animate-in fade-in slide-in-from-right-8 duration-1000">
+          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2 animate-in fade-in slide-in-from-right-8 duration-1000">
             {/* Quote */}
-            <div className="space-y-6">
-              <blockquote className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-relaxed">
+            <div className="space-y-4">
+              <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 leading-snug">
                 {t('about_testimonial_quote')}
               </blockquote>
 
               {/* Attribution */}
-              <div className="space-y-2 pt-4 border-t border-brand-red/30">
-                <p className="text-lg sm:text-xl font-bold text-gray-900">
+              <div className="space-y-1 pt-3 border-t border-brand-red/30">
+                <p className="text-base sm:text-lg font-bold text-gray-900">
                   {t('about_testimonial_author')}
                 </p>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600">
                   {t('about_testimonial_role')}
                 </p>
               </div>
             </div>
 
             {/* CTA Button */}
-            <div className="pt-4">
+            <div className="pt-2">
               <Link
                 to="/events"
-                className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-red to-red-700 text-white rounded-full font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:brightness-110"
+                className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-brand-red to-red-700 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
                 <span>{t('about_cta_button')}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>
