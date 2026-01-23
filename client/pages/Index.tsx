@@ -1472,19 +1472,6 @@ export default function Index() {
                 {(selectedNews.title_i18n?.[currentLanguage as any]) || selectedNews.title}
               </h1>
 
-              {/* Author */}
-              {selectedNews.author && (
-                <div className="flex items-center gap-3 mb-8 pb-8 border-b border-gray-200">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold">
-                    {selectedNews.author.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">By {selectedNews.author}</p>
-                    <p className="text-sm text-gray-500">Author</p>
-                  </div>
-                </div>
-              )}
-
               {/* Description */}
               <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
                 {(selectedNews.description_i18n?.[currentLanguage as any]) || selectedNews.description}
