@@ -666,16 +666,11 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left side - Profile Image */}
             <div className="flex justify-center lg:justify-start order-2 lg:order-1 animate-in fade-in slide-in-from-left-8 duration-1000">
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-full lg:max-w-md">
-                {/* Profile Image - Simple circle */}
-                <div className="relative rounded-full overflow-hidden shadow-2xl aspect-square">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=800"
-                    alt="Maria Zakharova"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=800"
+                alt="Maria Zakharova"
+                className="w-full max-w-md h-auto shadow-lg"
+              />
             </div>
 
             {/* Right side - Quote and Attribution */}
