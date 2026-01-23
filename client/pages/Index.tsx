@@ -632,6 +632,7 @@ export default function Index() {
     { name: t('nav_home'), path: '/' },
     { name: t('nav_news'), path: '/news' },
     { name: t('nav_about'), path: '/about' },
+    { name: t('nav_partners'), path: '/partners' },
     { name: t('nav_contact'), path: '/contact' },
   ];
 
