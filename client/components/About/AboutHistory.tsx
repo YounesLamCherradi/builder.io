@@ -44,6 +44,21 @@ export function AboutHistory({ t }: AboutHistoryProps) {
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F59dc7109e391432d9e680e18ef48c9eb?format=webp&width=800&height=1200)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 0.06,
+        }}
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-white/30" />
+
       {/* Decorative background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-red rounded-full blur-3xl" />
