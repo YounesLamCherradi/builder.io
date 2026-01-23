@@ -461,8 +461,8 @@ export default function News() {
             </div>
           ) : articles.length > 0 ? (
             <div className="space-y-12">
-              {/* Featured Article */}
-              {articles[0] && (
+              {/* Featured Article - Only on first page */}
+              {displayFeaturedArticle && (
                 <div className="group relative rounded-3xl overflow-hidden border-2 border-gray-100 hover:border-brand-red/50 hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white animate-in fade-in slide-in-from-bottom-8 duration-700">
                   <div className="grid lg:grid-cols-2 gap-0">
                     {/* Image */}
