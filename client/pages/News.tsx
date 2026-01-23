@@ -10,6 +10,8 @@ import {
   Newspaper,
   Calendar,
   User,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { fetchNews, type NewsArticle } from '../lib/supabase';
 
