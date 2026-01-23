@@ -235,7 +235,7 @@ export default function Contact() {
 
       ru: {
         nav_home: 'Главная',
-        nav_events: 'События',
+        nav_news: 'Новости',
         nav_about: 'О нас',
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
