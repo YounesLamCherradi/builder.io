@@ -78,17 +78,17 @@ export function AboutHistory({ t }: AboutHistoryProps) {
                   {/* Timeline Connector - Vertical line from dot to card */}
                   <div className="flex flex-col items-center">
                     {/* Timeline Dot */}
-                    <div className="relative z-10 mb-4">
-                      <div className={`flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br ${point.color} text-white font-bold text-3xl shadow-xl ring-4 ring-white`}>
+                    <div className="relative z-10 mb-3">
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${point.color} text-white font-bold text-2xl shadow-lg ring-4 ring-white`}>
                         {point.icon}
                       </div>
                     </div>
 
                     {/* Connector line from dot to card */}
-                    <div className="w-1 h-3 bg-gradient-to-b from-gray-900 to-transparent" />
+                    <div className="w-0.5 h-2 bg-gradient-to-b from-gray-400 to-transparent" />
 
                     {/* Content Card */}
-                    <div className={`relative w-full rounded-2xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border-2 border-gray-200 p-5 sm:p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 overflow-hidden flex flex-col h-full`}>
+                    <div className={`relative w-full rounded-xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border border-gray-300 p-4 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden flex flex-col h-full`}>
                       {/* Decorative top bar */}
                       <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${point.color}`} />
 
