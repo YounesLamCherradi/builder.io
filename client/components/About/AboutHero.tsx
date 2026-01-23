@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Users, Globe, TrendingUp, Zap } from 'lucide-react';
 
 interface AboutHeroProps {
   t: (key: string) => string;
