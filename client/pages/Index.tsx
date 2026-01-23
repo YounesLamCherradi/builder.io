@@ -1362,26 +1362,17 @@ export default function Index() {
               </div>
 
               {/* News Scroll - Right Side */}
-              <div className="lg:col-span-2 relative">
-                {/* Left Arrow - Desktop only */}
-                <button
-                  onClick={() => scrollNews('left')}
-                  className="hidden lg:flex absolute left-0 top-1/3 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
-                  aria-label="Scroll left"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-
+              <div className="lg:col-span-2 relative h-[600px] lg:h-auto">
                 {/* Scroll Container */}
                 <div
                   ref={newsScrollRef}
-                  className="flex lg:flex-col overflow-x-auto lg:overflow-x-visible lg:overflow-y-hidden gap-6 pb-4 lg:pb-0 scrollbar-hide"
+                  className="flex flex-col overflow-y-auto h-full gap-6 pr-2 scrollbar-thin scrollbar-thumb-brand-red/30 scrollbar-track-transparent hover:scrollbar-thumb-brand-red/50"
                 >
                   {newsList.slice(1).map((article, idx) => (
                     <div
                       key={article.id}
                       onClick={() => setSelectedNews(article)}
-                      className="group animate-in fade-in slide-in-from-right-8 duration-700 rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex gap-4 p-4 sm:p-5 hover:-translate-y-1 hover:bg-gray-50 relative flex-shrink-0 w-full lg:w-auto"
+                      className="group animate-in fade-in slide-in-from-right-8 duration-700 rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex gap-4 p-4 sm:p-5 hover:-translate-y-1 hover:bg-gray-50 relative flex-shrink-0"
                       style={{ animationDelay: `${idx * 100}ms` }}
                     >
                       {/* Hover gradient effect */}
