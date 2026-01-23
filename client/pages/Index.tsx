@@ -1007,7 +1007,7 @@ export default function Index() {
             </div>
 
             <div className="relative hidden sm:flex flex-col items-center lg:items-end justify-center">
-              <div className="relative w-80 sm:w-96 lg:w-full lg:max-w-lg">
+              <div className="relative w-96 sm:w-full lg:w-full lg:max-w-2xl">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
                   alt="Portrait"
