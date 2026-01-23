@@ -106,6 +106,7 @@ export default function News() {
         news_subtitle: 'Stay updated with our latest news, announcements, and insights',
         read_more: 'Read More',
         no_articles: 'No articles available',
+        loading: 'Loading articles...',
         footer_tagline: 'Empowering Moroccans to achieve their global dreams.',
         platform: 'Platform',
         company: 'Company',
