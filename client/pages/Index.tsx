@@ -1294,7 +1294,7 @@ export default function Index() {
           </div>
 
           {newsList.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="flex flex-col lg:grid lg:grid-cols-4 gap-6 sm:gap-8">
               {/* Featured News - Left Side (2 columns on desktop) */}
               <div className="lg:col-span-2 lg:row-span-2 animate-in fade-in slide-in-from-left-8 duration-700">
                 <div
