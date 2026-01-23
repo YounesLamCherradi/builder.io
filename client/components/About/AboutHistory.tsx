@@ -90,28 +90,24 @@ export function AboutHistory({ t }: AboutHistoryProps) {
                     {/* Content Card */}
                     <div className={`relative w-full rounded-xl backdrop-blur-sm bg-gradient-to-br ${point.bg} border border-gray-300 p-4 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 overflow-hidden flex flex-col h-full`}>
                       {/* Decorative top bar */}
-                      <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${point.color}`} />
-
-                      {/* Background gradient accent */}
-                      <div className={`absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br ${point.color} opacity-5 rounded-full blur-xl`} />
+                      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${point.color}`} />
 
                       <div className="relative z-10 flex-grow flex flex-col">
                         {/* Year Badge */}
-                        <div className={`inline-flex items-center gap-1 bg-gradient-to-r ${point.color} text-white px-3 py-1 rounded-full text-xs font-bold mb-3 w-fit`}>
-                          <span className="text-sm">📅</span>
+                        <div className={`inline-flex items-center gap-1 bg-gradient-to-r ${point.color} text-white px-2.5 py-0.5 rounded-full text-xs font-semibold mb-2 w-fit`}>
                           {point.year}
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2">
+                        <h3 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2">
                           {point.title}
                         </h3>
 
                         {/* Divider */}
-                        <div className={`h-1 w-8 bg-gradient-to-r ${point.color} rounded-full mb-3`} />
+                        <div className={`h-0.5 w-6 bg-gradient-to-r ${point.color} rounded-full mb-2`} />
 
                         {/* Description */}
-                        <p className="text-gray-700 leading-relaxed text-xs sm:text-sm flex-grow">
+                        <p className="text-gray-700 leading-snug text-xs flex-grow">
                           {point.description}
                         </p>
                       </div>
