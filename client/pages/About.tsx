@@ -667,9 +667,9 @@ export default function About() {
             {/* Left side - Profile Image */}
             <div className="flex justify-center lg:justify-start order-2 lg:order-1 animate-in fade-in slide-in-from-left-8 duration-1000">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=1000"
                 alt="Maria Zakharova"
-                className="w-full max-w-md h-auto"
+                className="w-full max-w-2xl h-auto"
               />
             </div>
 
