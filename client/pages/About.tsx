@@ -235,7 +235,7 @@ export default function About() {
 
       ar: {
         nav_home: 'الرئيسية',
-        nav_events: 'الفعاليات',
+        nav_news: 'الأخبار',
         nav_about: 'عننا',
         nav_stories: 'قصص النجاح',
         nav_resources: 'الموارد',
