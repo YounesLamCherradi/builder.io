@@ -7,14 +7,15 @@ interface AboutHeroProps {
 
 export function AboutHero({ t }: AboutHeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white">
+    <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
+      {/* Main Hero Content */}
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10 pt-20 sm:pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left side - Profile Image */}
           <div className="flex justify-center lg:justify-start order-2 lg:order-1 animate-in fade-in slide-in-from-left-8 duration-1000">
@@ -58,7 +59,7 @@ export function AboutHero({ t }: AboutHeroProps) {
         </div>
       </div>
 
-      {/* Statistics Section */}
+      {/* Statistics Section - Full Width with Better Layout */}
       <AboutStats t={t} />
     </section>
   );
