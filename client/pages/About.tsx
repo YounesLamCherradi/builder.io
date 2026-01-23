@@ -654,30 +654,6 @@ export default function About() {
         )}
       </nav>
 
-      {/* About Hero Section */}
-      <section className="relative py-20 sm:py-24 lg:py-28 overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="space-y-6 sm:space-y-8 text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-brand-red/10 backdrop-blur-md px-4 py-2 rounded-full shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700 border border-brand-red/30">
-              <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-              <span className="text-xs sm:text-sm font-medium text-brand-red truncate">
-                {t('about_hero_subtitle')}
-              </span>
-            </div>
-
-            <h1 className="font-bold leading-[1.05] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              <span className="block text-gray-900 text-4xl sm:text-5xl lg:text-6xl">
-                {t('about_hero_title')}
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-              {t('about_hero_desc')}
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Testimonial Section */}
       <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white">
         {/* Decorative background elements */}
