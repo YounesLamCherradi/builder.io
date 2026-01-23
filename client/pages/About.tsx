@@ -654,45 +654,62 @@ export default function About() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 sm:pt-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F777feb4da2644478bce44a65dfd42f41?format=webp&width=800)',
-          }}
-        >
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
+      {/* Hero Testimonial Section */}
+      <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-20 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="space-y-6 sm:space-y-8 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full shadow-lg max-w-full animate-in fade-in slide-in-from-bottom-4 duration-700 border border-white/30">
-              <div className="w-2 h-2 bg-brand-red rounded-full animate-pulse shrink-0" />
-              <span className="text-xs sm:text-sm font-medium text-white truncate">
-                {t('about_hero_subtitle')}
-              </span>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left side - Profile Image */}
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1 animate-in fade-in slide-in-from-left-8 duration-1000">
+              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-full lg:max-w-md">
+                {/* Decorative circle background */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/10 blur-2xl animate-pulse" style={{ animationDuration: '3s' }} />
+
+                {/* Profile Image with border */}
+                <div className="relative rounded-full overflow-hidden border-8 border-brand-red shadow-2xl shadow-brand-red/50 aspect-square">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
+                    alt="Maria Zakharova"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
 
-            <h1 className="font-bold leading-[1.05] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              <span className="block text-white text-4xl sm:text-5xl lg:text-7xl drop-shadow-xl">
-                {t('about_hero_title')}
-              </span>
-            </h1>
+            {/* Right side - Quote and Attribution */}
+            <div className="space-y-6 sm:space-y-8 order-1 lg:order-2 animate-in fade-in slide-in-from-right-8 duration-1000">
+              {/* Quote */}
+              <div className="space-y-6">
+                <blockquote className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-white leading-relaxed">
+                  {t('about_testimonial_quote')}
+                </blockquote>
 
-            <p className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200 drop-shadow-lg">
-              {t('about_hero_desc')}
-            </p>
+                {/* Attribution */}
+                <div className="space-y-2 pt-4 border-t border-white/20">
+                  <p className="text-lg sm:text-xl font-bold text-white">
+                    {t('about_testimonial_author')}
+                  </p>
+                  <p className="text-sm sm:text-base text-white/80">
+                    {t('about_testimonial_role')}
+                  </p>
+                </div>
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-8 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
-              <Link
-                to="/events"
-                className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-red to-brand-red text-white rounded-full font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 hover:brightness-110"
-              >
-                <span>{t('about_cta_button')}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </Link>
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  to="/events"
+                  className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-brand-red to-red-700 text-white rounded-full font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 hover:brightness-110"
+                >
+                  <span>{t('about_cta_button')}</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
