@@ -1644,7 +1644,7 @@ export default function Index() {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {
