@@ -148,7 +148,7 @@ export default function Contact() {
         tagline: 'Your World Awaits',
         footer_tagline: 'Helping Moroccans achieve global dreams.',
         platform: 'Platform',
-        company: 'Company',
+        company: 'Organization',
         legal: 'Legal',
         scholarships: 'Scholarships',
         jobs: 'Jobs',
