@@ -1165,7 +1165,7 @@ export default function Index() {
           </div>
         </div>
 
-        <style jsx>{`
+        <style>{`
           @keyframes shimmer {
             0% {
               transform: translateX(-100%);
