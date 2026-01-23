@@ -43,20 +43,19 @@ export function AboutHistory({ t }: AboutHistoryProps) {
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute inset-0 opacity-8">
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-red rounded-full blur-3xl" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gray-900/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-red rounded-full blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
         {/* Section Title */}
-        <div className="mb-10 animate-in fade-in slide-in-from-top-6 duration-700">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+        <div className="mb-8 sm:mb-10 animate-in fade-in slide-in-from-top-6 duration-700">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
             WYF, a long history since 1957!
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base">
+          <p className="text-gray-600 text-xs sm:text-sm">
             World Youth Festival started originally many decades ago
           </p>
         </div>
