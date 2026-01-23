@@ -133,7 +133,17 @@ export default function Index() {
       ]);
       if (gallery.length > 0) setGalleryItems(gallery);
       if (partners.length > 0) setPartnersList(partners);
-      if (news.length > 0) setNewsList(news);
+      if (news.length > 0) {
+        // Sort articles by order_index first, then by date
+        const sortedNews = [...news].sort((a, b) => {
+          const aIndex = a.order_index ?? 999;
+          const bIndex = b.order_index ?? 999;
+          if (aIndex !== bIndex) return aIndex - bIndex;
+          // If both have same order_index, sort by date (newest first)
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
+        setNewsList(sortedNews);
+      }
     };
     loadData();
   }, []);
