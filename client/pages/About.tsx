@@ -538,7 +538,7 @@ export default function About() {
               </div>
 
               {/* Language Selector */}
-              <div className="relative" data-lang-menu="true">
+              <div className="relative" data-lang-menu>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
