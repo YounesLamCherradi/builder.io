@@ -988,22 +988,22 @@ export default function About() {
             </div>
 
             {/* Bottom Highlights - Full Width */}
-            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 grid sm:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 pt-8 sm:pt-12 border-t-2 border-gray-200">
+            <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 grid sm:grid-cols-2 gap-6 sm:gap-8 pt-10 sm:pt-14 border-t-2 border-gray-200">
               <div className="group cursor-default">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-6">
-                  <Globe className="w-10 h-10 text-brand-red" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-4">
+                  <Globe className="w-8 h-8 text-brand-red" />
                 </div>
-                <h4 className="font-bold text-gray-900 mb-3 text-2xl">Global Perspective</h4>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <h4 className="font-bold text-gray-900 mb-2 text-lg">Global Perspective</h4>
+                <p className="text-gray-700 text-base leading-relaxed">
                   A world where nations cooperate as equal partners on the global stage, respecting sovereign choices and fostering genuine dialogue.
                 </p>
               </div>
               <div className="group cursor-default">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-6">
-                  <Heart className="w-10 h-10 text-brand-red" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-4">
+                  <Heart className="w-8 h-8 text-brand-red" />
                 </div>
-                <h4 className="font-bold text-gray-900 mb-3 text-2xl">Cultural Pride</h4>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <h4 className="font-bold text-gray-900 mb-2 text-lg">Cultural Pride</h4>
+                <p className="text-gray-700 text-base leading-relaxed">
                   Celebrating and preserving the unique identities and traditions of all civilizations while building bridges of understanding.
                 </p>
               </div>
