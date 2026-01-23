@@ -1169,7 +1169,7 @@ export default function About() {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         @keyframes slideUp {
           from {
             opacity: 0;
