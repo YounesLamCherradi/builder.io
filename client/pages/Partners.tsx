@@ -807,8 +807,8 @@ export default function Partners() {
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(187,9,9,0.08)_0%,transparent_50%)]" />
                   {/* Image will be placed here - currently showing placeholder */}
                   <img
-                    src="https://via.placeholder.com/600x400/0EA5A5/FFFFFF?text=World+Peoples+Assembly"
-                    alt="World Peoples Assembly"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F55a1780ab7e449748f51c1c80bd797e5?format=webp&width=800&height=1200"
+                    alt="World Peoples Assembly Conference"
                     className="w-full h-full object-cover"
                   />
                 </div>
