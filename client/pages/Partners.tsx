@@ -369,12 +369,12 @@ export default function Partners() {
               <ChevronLeft className="w-6 h-6" />
             </button>
 
-            {/* Scroll Container - Show ALL partners */}
+            {/* Scroll Container - Show Institutional partners */}
             <div
               ref={sponsorsScrollRef}
               className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
             >
-              {partnersList.map((partner, index) => (
+              {partnersList.filter(p => p.type === 'institutional').map((partner, index) => (
               <div
                 key={partner.id}
                 className="group flex flex-col items-center flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500"
