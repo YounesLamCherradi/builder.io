@@ -130,6 +130,7 @@ export default function News() {
         nav_home: 'الرئيسية',
         nav_news: 'الأخبار',
         nav_about: 'عننا',
+        nav_partners: 'الشركاء',
         nav_contact: 'اتصل بنا',
         news_title: 'أحدث الأخبار والمقالات',
         news_subtitle: 'ابقَ محدثاً مع أحدث أخبارنا والإعلانات والرؤى',
