@@ -853,19 +853,19 @@ export default function Contact() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('scholarships')}
-                    </a>
+                    <Link to="/" className="hover:text-brand-red transition-colors">
+                      {t('nav_home')}
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('jobs')}
-                    </a>
+                    <Link to="/news" className="hover:text-brand-red transition-colors">
+                      {t('nav_news')}
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('programs')}
-                    </a>
+                    <Link to="/partners" className="hover:text-brand-red transition-colors">
+                      {t('nav_partners')}
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -876,19 +876,14 @@ export default function Contact() {
                 </h4>
                 <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
                   <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
+                    <Link to="/about" className="hover:text-brand-red transition-colors">
                       {t('about_us')}
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
+                    <Link to="/contact" className="hover:text-brand-red transition-colors">
                       {t('contact')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('careers')}
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
