@@ -62,6 +62,14 @@ export default function Partners() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const loadPartners = async () => {
+      const data = await fetchPartners();
+      if (data.length > 0) setPartnersList(data);
+    };
+    loadPartners();
+  }, []);
+
   // Set RTL direction for Arabic language
   useEffect(() => {
     if (typeof document !== 'undefined') {
