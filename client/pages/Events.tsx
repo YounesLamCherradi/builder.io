@@ -146,7 +146,7 @@ export default function Events() {
         faq_subtitle: 'Find answers to common questions about our events',
         footer_tagline: 'Empowering Moroccans to achieve their global dreams.',
         platform: 'Platform',
-        company: 'Company',
+        company: 'Organization',
         legal: 'Legal',
         scholarships: 'Scholarships',
         jobs: 'Jobs',
