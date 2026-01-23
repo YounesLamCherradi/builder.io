@@ -705,6 +705,51 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        {/* Statistics Section */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10 pt-12 sm:pt-16 lg:pt-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            {/* Stat 1 */}
+            <div className="text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
+                50K+
+              </div>
+              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
+                {t('about_achievements_1_desc')}
+              </p>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="text-center animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
+                150+
+              </div>
+              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
+                {t('about_achievements_2_desc')}
+              </p>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="text-center animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
+                95%
+              </div>
+              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
+                {t('about_achievements_4_desc')}
+              </p>
+            </div>
+
+            {/* Stat 4 */}
+            <div className="text-center animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-red mb-2">
+                24/7
+              </div>
+              <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
+                {t('stat_support')}
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Our Story Section */}
