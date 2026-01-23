@@ -114,6 +114,7 @@ export interface Partner {
   logo_url: string;
   name: string;
   link: string;
+  type: 'institutional' | 'informational';
   order_index: number;
   created_at: string;
 }
