@@ -1372,45 +1372,47 @@ export default function Index() {
                     {/* Hover gradient effect */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-r from-brand-red to-transparent pointer-events-none" />
                     {article.image_url && (
-                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden rounded-xl ring-2 ring-white/50 group-hover:ring-brand-red/50 transition-all">
+                      <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden rounded-2xl ring-2 ring-gray-200 group-hover:ring-brand-red transition-all duration-300 shadow-md group-hover:shadow-lg">
                         <img
                           src={article.image_url}
                           alt={article.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                         {/* Index Badge */}
-                        <div className="absolute top-2 right-2 w-7 h-7 bg-brand-red text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg">
+                        <div className="absolute top-2 right-2 w-8 h-8 bg-gradient-to-br from-brand-red to-red-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
                           {idx + 2}
                         </div>
                       </div>
                     )}
 
-                    <div className="flex-grow flex flex-col justify-between min-w-0">
+                    <div className="flex-grow flex flex-col justify-between min-w-0 relative z-10">
                       <div>
                         {article.category && (
-                          <span className="inline-block text-xs font-bold text-brand-red mb-2 bg-brand-red/10 px-2 py-1 rounded-md">
+                          <span className="inline-block text-xs font-bold text-brand-red mb-2 bg-gradient-to-r from-brand-red/10 to-brand-red/5 px-3 py-1.5 rounded-lg border border-brand-red/20 group-hover:bg-brand-red/15 transition-colors duration-300">
                             {article.category}
                           </span>
                         )}
                         <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors line-clamp-2 mb-2">
                           {(article.title_i18n?.[currentLanguage as any]) || article.title}
                         </h3>
-                        <p className="text-xs text-gray-600 line-clamp-1">
+                        <p className="text-xs text-gray-600 line-clamp-1 group-hover:text-gray-700 transition-colors">
                           {(article.description_i18n?.[currentLanguage as any]) || article.description}
                         </p>
                       </div>
 
-                      <div className="flex items-center gap-2 mt-3 pt-3 border-t border-white/50">
-                        <span className="text-xs text-gray-500 flex items-center gap-1">
+                      <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-200 group-hover:border-brand-red/30 transition-colors">
+                        <span className="text-xs text-gray-500 flex items-center gap-1 group-hover:text-gray-700 transition-colors">
                           📅 {new Date(article.date || article.created_at).toLocaleDateString('en-US', {
                             month: 'short',
                             day: 'numeric'
                           })}
                         </span>
-                        <span className="text-xs text-brand-red font-semibold">→ Read</span>
+                        <span className="text-xs text-brand-red font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">
+                          Read <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                        </span>
                       </div>
                     </div>
                   </div>
