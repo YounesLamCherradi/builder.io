@@ -655,10 +655,10 @@ export default function About() {
       </nav>
 
       {/* Hero Testimonial Section */}
-      <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-20 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <section className="relative min-h-screen flex items-center pt-20 sm:pt-24 pb-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white">
         {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl" />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl" />
         </div>
 
