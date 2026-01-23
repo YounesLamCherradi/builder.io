@@ -42,6 +42,7 @@ export default function Admin() {
     role: '',
     partnerName: '',
     partnerLink: '',
+    partnerType: 'institutional',
     question: '',
     answer: '',
     bio: '',
