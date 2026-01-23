@@ -40,6 +40,7 @@ export default function Index() {
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [selectedNews, setSelectedNews] = useState<NewsArticle | null>(null);
   const sponsorsScrollRef = useRef<HTMLDivElement>(null);
+  const newsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
