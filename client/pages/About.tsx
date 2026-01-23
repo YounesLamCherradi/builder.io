@@ -304,6 +304,11 @@ export default function About() {
         about_cta_desc: 'انضم إلى آلاف الطلاب المغاربة الذين بدأوا رحلتهم العالمية',
         about_cta_button: 'استكشف الفرص الآن',
 
+        // Testimonial section
+        about_testimonial_quote: '"لقد أصبح مهرجان الشباب العالمي المغربي منصة دولية قوية توحد القادة الشباب وتعزز التعاون والحوار طويل الأجل بين الدول."',
+        about_testimonial_author: 'ماريا زاخاروفا',
+        about_testimonial_role: 'المتحدثة الرسمية لوزارة الخارجية للاتحاد الروسي',
+
         home_stay_updated_title: 'ابقَ محدثاً مع',
         home_stay_updated_highlight: 'الفرص العالمية',
         home_stay_updated_desc: 'احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.',
