@@ -217,13 +217,13 @@ export async function updateNews(id: string, updates: Partial<Omit<NewsArticle, 
 
     if (error) {
       console.error('Error updating news:', error);
-      return null;
+      throw new Error(`Failed to update news: ${error.message}`);
     }
 
     return data;
   } catch (err) {
     console.error('Unexpected error:', err);
-    return null;
+    throw err;
   }
 }
 
