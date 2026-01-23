@@ -134,11 +134,8 @@ export default function Index() {
       if (gallery.length > 0) setGalleryItems(gallery);
       if (partners.length > 0) setPartnersList(partners);
       if (news.length > 0) {
-        // Sort articles by date (newest first)
-        const sortedNews = [...news].sort((a, b) => {
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
-        });
-        setNewsList(sortedNews);
+        // Data is already sorted by order_index from Supabase query
+        setNewsList(news);
       }
     };
     loadData();
