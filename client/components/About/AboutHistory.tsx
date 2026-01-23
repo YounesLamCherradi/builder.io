@@ -123,8 +123,12 @@ export function AboutHistory({ t }: AboutHistoryProps) {
           <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-brand-red to-red-700 border border-brand-red/30">
             {/* Content */}
             <div className="relative px-5 sm:px-6 py-5 sm:py-6 text-white">
-              <div className="flex items-start gap-2">
-                <div className="text-xl flex-shrink-0">🎊</div>
+              <div className="flex items-start gap-3">
+                <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                  </svg>
+                </div>
                 <div>
                   <h3 className="text-sm sm:text-base font-bold mb-1">
                     Within this festival, WYF Morocco was officially created!
