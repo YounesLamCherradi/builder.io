@@ -737,62 +737,100 @@ export default function Partners() {
         `}</style>
       </section>
 
-      {/* International Affiliation Section */}
-      <section className="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
+      {/* International Affiliations Section */}
+      <section className="py-16 sm:py-20 lg:py-28 bg-gradient-to-br from-white via-amber-50/30 to-green-50/20 relative overflow-hidden">
         {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl" />
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(187,9,9,0.15)_1px,transparent_1px)] bg-[length:60px_60px]" />
         </div>
 
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="inline-block px-4 py-2 bg-brand-red/20 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/50 animate-pulse" style={{ animationDuration: '3s' }}>
-              International Affiliation
+        {/* Floating animated orbs */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-green-100/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <span className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30 animate-pulse" style={{ animationDuration: '3s' }}>
+              International Affiliations
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              International Affiliation
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+              International Affiliations
             </h2>
           </div>
 
-          {/* Main Content Card */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 sm:p-10 lg:p-12 hover:border-brand-red/50 transition-all duration-500 shadow-2xl">
-            {/* Quote Section */}
-            <div className="mb-10 sm:mb-12 lg:mb-14">
-              <blockquote className="text-lg sm:text-xl lg:text-2xl text-white font-light leading-relaxed mb-6">
-                <span className="text-brand-red text-3xl sm:text-4xl font-bold">"</span>
-                The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust
-                <span className="text-brand-red text-3xl sm:text-4xl font-bold">"</span>
-              </blockquote>
+          {/* Affiliations Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+            {/* First Affiliation - Youth Assembly */}
+            <div className="group animate-in fade-in slide-in-from-bottom-8 duration-700">
+              <div className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-500 border border-gray-100 h-full flex flex-col">
+                {/* Image Container */}
+                <div className="relative w-full h-56 sm:h-64 lg:h-72 bg-gradient-to-br from-brand-red/10 to-amber-100/20 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(187,9,9,0.1)_0%,transparent_50%)]" />
+                  {/* Image will be placed here - currently showing placeholder */}
+                  <img
+                    src="https://via.placeholder.com/600x400/BB0909/FFFFFF?text=Youth+Assembly"
+                    alt="Youth Assembly Affiliation"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              {/* Speaker Attribution */}
-              <div className="flex items-center gap-4 pt-6 border-t border-white/20">
-                <div className="flex-1">
-                  <p className="text-white font-semibold text-base sm:text-lg">Anastasia Shishkina</p>
-                  <p className="text-brand-red text-sm sm:text-base">Head of the Directorate for Youth Cooperation</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">World Peoples Assembly</p>
+                {/* Content */}
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-grow">
+                  {/* Quote */}
+                  <blockquote className="text-lg sm:text-xl font-light text-gray-900 leading-relaxed mb-6">
+                    <span className="text-brand-red font-bold text-2xl">"</span>
+                    The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust
+                    <span className="text-brand-red font-bold text-2xl">"</span>
+                  </blockquote>
+
+                  {/* Divider */}
+                  <div className="h-1 bg-gradient-to-r from-brand-red/20 via-brand-red to-brand-red/20 rounded-full my-6" />
+
+                  {/* Attribution */}
+                  <div className="pt-2">
+                    <p className="text-gray-900 font-bold text-base sm:text-lg">Anastasia Shishkina</p>
+                    <p className="text-brand-red font-semibold text-sm sm:text-base mt-1">
+                      Head of the Directorate for Youth Cooperation
+                    </p>
+                    <p className="text-gray-600 text-xs sm:text-sm mt-1">World Peoples Assembly</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Divider */}
-            <div className="h-1 bg-gradient-to-r from-brand-red/30 via-brand-red to-brand-red/30 rounded-full mb-10 sm:mb-12 lg:mb-14" />
+            {/* Second Affiliation - World Peoples Assembly */}
+            <div className="group animate-in fade-in slide-in-from-bottom-8 duration-700" style={{ animationDelay: '100ms' }}>
+              <div className="bg-white rounded-3xl overflow-hidden hover:shadow-2xl hover:shadow-brand-red/20 transition-all duration-500 border border-gray-100 h-full flex flex-col">
+                {/* Image Container */}
+                <div className="relative w-full h-56 sm:h-64 lg:h-72 bg-gradient-to-br from-green-100/20 to-brand-red/10 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(187,9,9,0.08)_0%,transparent_50%)]" />
+                  {/* Image will be placed here - currently showing placeholder */}
+                  <img
+                    src="https://via.placeholder.com/600x400/0EA5A5/FFFFFF?text=World+Peoples+Assembly"
+                    alt="World Peoples Assembly"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-            {/* Organization Info */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="w-1 h-8 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
-                World Peoples Assembly
-              </h3>
-              <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
-                The World Peoples Youth Assembly is an international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum <span className="text-brand-red font-semibold">"Generation of Unity"</span> and the Public Talk <span className="text-brand-red font-semibold">"The Voice of Time"</span>, strengthening global youth partnerships.
-              </p>
+                {/* Content */}
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col flex-grow">
+                  {/* Title */}
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 flex items-center gap-3">
+                    <span className="w-1 h-8 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
+                    World Peoples Assembly
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg flex-grow">
+                    The World Peoples Youth Assembly is an international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum <span className="text-brand-red font-semibold">"Generation of Unity"</span> and the Public Talk <span className="text-brand-red font-semibold">"The Voice of Time"</span>, strengthening global youth partnerships.
+                  </p>
+
+                  {/* Accent line */}
+                  <div className="h-1 bg-gradient-to-r from-brand-red/20 via-brand-red to-brand-red/20 rounded-full mt-6" />
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Bottom accent line */}
-          <div className="mt-10 sm:mt-12 flex justify-center">
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-brand-red to-transparent rounded-full" />
           </div>
         </div>
       </section>
