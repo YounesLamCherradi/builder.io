@@ -6,7 +6,10 @@ import {
   Menu,
   X,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
+import { fetchPartners, type Partner } from '../lib/supabase';
 
 export default function Partners() {
   const [scrollY, setScrollY] = useState(0);
