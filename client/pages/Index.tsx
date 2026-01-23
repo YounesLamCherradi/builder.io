@@ -1366,8 +1366,11 @@ export default function Index() {
                   <div
                     key={article.id}
                     onClick={() => setSelectedNews(article)}
-                    className="group rounded-2xl overflow-hidden backdrop-blur-xl bg-gradient-to-br from-white/90 to-white/70 border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex gap-4 p-4 sm:p-5 hover:scale-105 hover:bg-white/95"
+                    className="group animate-in fade-in slide-in-from-right-8 duration-700 rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex gap-4 p-4 sm:p-5 hover:-translate-y-1 hover:bg-gray-50 relative"
+                    style={{ animationDelay: `${idx * 100}ms` }}
                   >
+                    {/* Hover gradient effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-r from-brand-red to-transparent pointer-events-none" />
                     {article.image_url && (
                       <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden rounded-xl ring-2 ring-white/50 group-hover:ring-brand-red/50 transition-all">
                         <img
