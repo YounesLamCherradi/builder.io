@@ -1318,15 +1318,16 @@ export default function Index() {
                     // Articles are already sorted by order_index from Supabase
                     if (!newsList[0]) return null;
                     return (
-                      <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                        <div className="flex items-center gap-3 mb-4">
+                      <div className="p-6 sm:p-8 flex flex-col flex-grow relative z-10">
+                        <div className="flex items-center gap-3 mb-4 flex-wrap">
                           {newsList[0].category && (
-                            <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg">
+                            <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                               {newsList[0].category}
                             </span>
                           )}
-                          <span className="text-sm text-gray-500 flex items-center gap-1">
-                            📅 {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
+                          <span className="text-sm text-gray-600 flex items-center gap-2 group-hover:text-gray-900 transition-colors">
+                            <Calendar className="w-4 h-4 text-brand-red" />
+                            {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
                               year: 'numeric',
                               month: 'short',
                               day: 'numeric'
@@ -1334,24 +1335,23 @@ export default function Index() {
                           </span>
                         </div>
 
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors leading-tight">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors duration-300 leading-tight">
                           {(newsList[0].title_i18n?.[currentLanguage as any]) || newsList[0].title}
                         </h2>
 
-                        <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3">
+                        <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3 group-hover:text-gray-900 transition-colors duration-300 leading-relaxed">
                           {(newsList[0].description_i18n?.[currentLanguage as any]) || newsList[0].description}
                         </p>
 
                         {newsList[0].author && (
-                          <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                            <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                              {newsList[0].author.charAt(0)}
+                          <div className="flex items-center gap-3 pt-4 border-t border-gray-200 group-hover:border-brand-red/30 transition-colors duration-300">
+                            <div className="w-12 h-12 bg-gradient-to-br from-brand-red to-red-800 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                              {newsList[0].author.charAt(0).toUpperCase()}
                             </div>
-                            <p className="text-sm">
-                              <span className="font-semibold text-gray-900">{newsList[0].author}</span>
-                              <br/>
-                              <span className="text-gray-500">Author</span>
-                            </p>
+                            <div>
+                              <p className="text-sm font-semibold text-gray-900 group-hover:text-brand-red transition-colors">By {newsList[0].author}</p>
+                              <p className="text-xs text-gray-500">Author</p>
+                            </div>
                           </div>
                         )}
                       </div>
