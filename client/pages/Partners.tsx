@@ -809,6 +809,15 @@ export default function Partners() {
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   An international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum <span className="text-brand-red font-semibold">"Generation of Unity"</span> and the Public Talk <span className="text-brand-red font-semibold">"The Voice of Time"</span>, strengthening global youth partnerships.
                 </p>
+
+                {/* World Peoples Assembly Image */}
+                <div className="pt-4 sm:pt-6 rounded-2xl overflow-hidden border border-brand-red/20 hover:border-brand-red/50 transition-all duration-300">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F8bea44c5c4fc4bd3ac9176a0feed3f6c?format=webp&width=800&height=1200"
+                    alt="World Peoples Assembly Conference"
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
               </div>
             </div>
           </div>
