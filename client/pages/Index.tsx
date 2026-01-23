@@ -1277,7 +1277,7 @@ export default function Index() {
                   className="group rounded-3xl overflow-hidden backdrop-blur-xl bg-white/80 border border-white/20 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:bg-white/90 h-full flex flex-col cursor-pointer hover:border-brand-red/50"
                 >
                   {(() => {
-                    // Articles are already sorted by loadData, just use the first one
+                    // Articles are already sorted by order_index from Supabase
                     return newsList[0]?.image_url && (
                       <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
                         <img
