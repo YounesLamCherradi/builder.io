@@ -971,32 +971,35 @@ export default function About() {
             {/* Right Column - Main Vision Text */}
             <div className="animate-in fade-in slide-in-from-right-8 duration-700 delay-100">
               <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-8 sm:p-10 border-2 border-gray-200 hover:border-brand-red/30 hover:shadow-2xl transition-all duration-300">
-                <div className="space-y-6">
+                <div className="space-y-6 text-lg leading-relaxed">
                   <div>
                     <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4 flex items-center gap-3">
                       <span className="inline-block w-1 h-8 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
                       Reimagining Global Cooperation
                     </h3>
-                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg mb-4">
-                      Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of diversity among civilizations.
-                    </p>
                   </div>
 
-                  <div className="border-l-4 border-brand-red/30 pl-5 py-2">
-                    <p className="text-gray-700 leading-relaxed text-base italic">
+                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg font-medium">
+                    Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of <span className="font-bold text-gray-900">diversity among civilizations.</span>
+                  </p>
+
+                  <div className="border-l-4 border-brand-red rounded-l p-5 bg-brand-red/5">
+                    <p className="text-gray-800 leading-relaxed text-base sm:text-lg font-semibold italic">
                       "We believe that each nation and society has the right to follow its own historical path, shaped by its culture, traditions, values, and collective memory, without external pressure or imposed standards."
                     </p>
                   </div>
 
-                  <div className="space-y-4 pt-4">
+                  <div className="space-y-5 pt-2">
                     <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                      We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order</span>, where cooperation is based on equality, mutual respect, and recognition of sovereign choices.
+                      We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order,</span> where cooperation is based on <span className="font-semibold text-brand-red">equality, mutual respect, and recognition of sovereign choices.</span>
                     </p>
+
                     <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                      In such a world, <span className="font-semibold text-brand-red">dialogue replaces domination, partnership replaces hierarchy, and long-term stability prevails over short-term interests.</span>
+                      In such a world, <span className="font-bold text-brand-red">dialogue replaces domination, partnership replaces hierarchy,</span> and <span className="font-semibold text-gray-900">long-term stability prevails over short-term interests.</span>
                     </p>
+
                     <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
-                      True international cooperation can only exist when different civilizations engage with one another as <span className="font-bold text-gray-900">equals, preserving their identities while working toward shared goals.</span>
+                      <span className="font-bold text-gray-900">True international cooperation</span> can only exist when <span className="font-semibold">different civilizations engage with one another as equals,</span> <span className="text-brand-red font-bold">preserving their identities</span> while <span className="font-semibold text-gray-900">working toward shared goals.</span>
                     </p>
                   </div>
                 </div>
