@@ -948,19 +948,50 @@ export default function About() {
             </div>
           </div>
 
-          {/* Bottom accent elements */}
-          <div className="mt-12 sm:mt-14 pt-10 sm:pt-12 border-t border-gray-200 flex justify-center gap-6 sm:gap-8">
-            <div className="inline-flex items-center gap-2">
-              <Check className="w-5 h-5 text-brand-red" />
-              <span className="text-sm text-gray-700 font-medium">Equality</span>
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <Check className="w-5 h-5 text-brand-red" />
-              <span className="text-sm text-gray-700 font-medium">Respect</span>
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <Check className="w-5 h-5 text-brand-red" />
-              <span className="text-sm text-gray-700 font-medium">Cooperation</span>
+          {/* Core Values Section */}
+          <div className="mt-14 sm:mt-16 pt-12 sm:pt-14 border-t-2 border-gray-200 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+            <h3 className="text-center text-lg sm:text-xl font-bold text-gray-900 mb-10">
+              Core Principles
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-6 sm:gap-8">
+              {/* Equality */}
+              <div className="group text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-red/10 to-red-50 border-2 border-brand-red/20 group-hover:border-brand-red/50 group-hover:bg-brand-red/20 transition-all duration-300 mb-4 group-hover:shadow-lg">
+                  <Handshake className="w-8 h-8 text-brand-red" />
+                </div>
+                <h4 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-brand-red transition-colors">
+                  Equality
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Nations cooperate as equal partners
+                </p>
+              </div>
+
+              {/* Respect */}
+              <div className="group text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-red/10 to-red-50 border-2 border-brand-red/20 group-hover:border-brand-red/50 group-hover:bg-brand-red/20 transition-all duration-300 mb-4 group-hover:shadow-lg">
+                  <Heart className="w-8 h-8 text-brand-red" />
+                </div>
+                <h4 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-brand-red transition-colors">
+                  Respect
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Recognition of sovereign choices
+                </p>
+              </div>
+
+              {/* Cooperation */}
+              <div className="group text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-red/10 to-red-50 border-2 border-brand-red/20 group-hover:border-brand-red/50 group-hover:bg-brand-red/20 transition-all duration-300 mb-4 group-hover:shadow-lg">
+                  <Globe className="w-8 h-8 text-brand-red" />
+                </div>
+                <h4 className="font-bold text-gray-900 text-lg mb-2 group-hover:text-brand-red transition-colors">
+                  Cooperation
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Preserving identities, sharing goals
+                </p>
+              </div>
             </div>
           </div>
         </div>
