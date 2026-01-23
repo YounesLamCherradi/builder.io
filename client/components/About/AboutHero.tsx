@@ -63,7 +63,7 @@ export function AboutHero({ t }: AboutHeroProps) {
             {/* CTA Button */}
             <div className="pt-2">
               <Link
-                to="/events"
+                to="/news"
                 className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-brand-red to-red-700 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base"
               >
                 <span>{t('about_cta_button')}</span>
