@@ -123,7 +123,7 @@ export default function Partners() {
         get_in_touch: 'Get in Touch',
         footer_tagline: 'Empowering Moroccans to achieve their global dreams.',
         platform: 'Platform',
-        company: 'Company',
+        company: 'Organization',
         legal: 'Legal',
         scholarships: 'Scholarships',
         jobs: 'Jobs',
