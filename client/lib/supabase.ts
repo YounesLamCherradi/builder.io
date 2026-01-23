@@ -149,6 +149,7 @@ export async function fetchNews(): Promise<NewsArticle[]> {
     const { data, error } = await supabase
       .from('news')
       .select('*')
+      .order('order_index', { ascending: true, nullsFirst: false })
       .order('date', { ascending: false });
 
     if (error) {
