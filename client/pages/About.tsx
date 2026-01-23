@@ -25,7 +25,10 @@ import {
   Star,
 } from 'lucide-react';
 import { fetchTeam, type TeamMember } from '../lib/supabase';
-import { AboutHero, AboutStory, AboutValues } from '../components/About';
+import { AboutHero } from '../components/About';
+import { AboutIntroduction } from '../components/About/AboutIntroduction';
+import { AboutMembers } from '../components/About/AboutMembers';
+import { AboutHistory } from '../components/About/AboutHistory';
 
 export default function About() {
   const [scrollY, setScrollY] = useState(0);
