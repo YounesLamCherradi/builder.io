@@ -309,6 +309,7 @@ export default function Index() {
         nav_home: 'الرئيسية',
         nav_news: 'الأخبار',
         nav_about: 'عننا',
+        nav_partners: 'الشركاء',
         nav_stories: 'قصص النجاح',
         nav_resources: 'الموارد',
         nav_contact: 'اتصل بنا',
