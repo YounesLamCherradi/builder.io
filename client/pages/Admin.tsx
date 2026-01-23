@@ -225,19 +225,23 @@ export default function Admin() {
             order_index: formData.orderIndex,
           });
         } else {
-          await createNews({
+          const newsData: any = {
             title: i18nData.title_i18n.en,
             description: i18nData.description_i18n.en,
             content: i18nData.content_i18n.en,
             category: formData.category,
             author: formData.author,
-            image_url: formData.image_url,
+            image_url: formData.image_url || null,
             date: formData.date,
             title_i18n: i18nData.title_i18n,
             description_i18n: i18nData.description_i18n,
             content_i18n: i18nData.content_i18n,
-            order_index: formData.orderIndex,
-          });
+          };
+          // Only include order_index if the database column exists
+          if (formData.orderIndex !== undefined) {
+            newsData.order_index = formData.orderIndex;
+          }
+          await createNews(newsData);
         }
       } else if (activeTab === 'events') {
         if (editingId) {
