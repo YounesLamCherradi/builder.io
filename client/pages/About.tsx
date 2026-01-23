@@ -673,7 +673,7 @@ export default function About() {
                 {/* Profile Image with border */}
                 <div className="relative rounded-full overflow-hidden border-8 border-brand-red shadow-2xl shadow-brand-red/50 aspect-square">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F558607bd11ef4f5c96a63357270e2bfa%2F882163bb87e74b3088c9613fd2364dcc?format=webp&width=800"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=800"
                     alt="Maria Zakharova"
                     className="w-full h-full object-cover"
                   />
