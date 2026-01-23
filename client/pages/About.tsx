@@ -198,6 +198,11 @@ export default function About() {
         about_cta_desc: 'Join thousands of Moroccan students who have already begun their global journey',
         about_cta_button: 'Explore Opportunities Now',
 
+        // Testimonial section
+        about_testimonial_quote: '"WYF Morocco has grown into a strong international platform that unites young leaders and strengthens long-term cooperation and dialogue between nations."',
+        about_testimonial_author: 'Maria Zakharova',
+        about_testimonial_role: 'Official Spokesperson of the Ministry of Foreign Affairs of the Russian Federation',
+
         home_stay_updated_title: 'Stay Updated with',
         home_stay_updated_highlight: 'Global Opportunities',
         home_stay_updated_desc: 'Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.',
