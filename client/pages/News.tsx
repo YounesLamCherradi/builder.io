@@ -159,6 +159,7 @@ export default function News() {
         nav_home: 'Главная',
         nav_news: 'Новости',
         nav_about: 'О нас',
+        nav_partners: 'Партнёры',
         nav_contact: 'Контакты',
         news_title: 'Последние новости и статьи',
         news_subtitle: 'Будьте в курсе наших последних новостей, объявлений и рекомендаций',
