@@ -669,7 +669,7 @@ export default function About() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=800"
                 alt="Maria Zakharova"
-                className="w-full max-w-md h-auto shadow-lg"
+                className="w-full max-w-md h-auto"
               />
             </div>
 
