@@ -1626,29 +1626,6 @@ export default function Index() {
                   </li>
                 </ul>
               </div>
-
-              <div className="col-span-2 sm:col-span-1">
-                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-5 tracking-wide">
-                  {t('legal')}
-                </h4>
-                <ul className="space-y-2.5 sm:space-y-3 text-gray-700 text-sm sm:text-base">
-                  <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('privacy')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('terms')}
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-brand-red transition-colors">
-                      {t('cookies')}
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
 
