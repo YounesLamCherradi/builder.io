@@ -79,7 +79,7 @@ export default function News() {
       setLoading(true);
       try {
         const data = await fetchNews();
-        // Data is already sorted by date from Supabase query
+        // Data is already sorted by order_index from Supabase query
         setArticles(data);
       } catch (error) {
         console.error('Error loading news articles:', error);
