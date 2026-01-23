@@ -948,10 +948,10 @@ export default function About() {
 
             {/* Key Pillars - Full Width Grid */}
             <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-12 text-center">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-10 text-center">
                 Core Principles
               </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
                 {[
                   {
                     title: 'Cultural Sovereignty',
@@ -970,16 +970,16 @@ export default function About() {
                     desc: 'True cooperation emerges when civilizations engage as equals while preserving their identities'
                   }
                 ].map((pillar, idx) => (
-                  <div key={idx} className="group bg-white rounded-2xl p-7 sm:p-8 border-2 border-gray-100 hover:border-brand-red/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-brand-red/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red/20 transition-all duration-300">
-                        <Check className="w-6 h-6 text-brand-red font-bold" />
+                  <div key={idx} className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-brand-red/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red/20 transition-all duration-300">
+                        <Check className="w-5 h-5 text-brand-red font-bold" />
                       </div>
                     </div>
-                    <h4 className="font-bold text-gray-900 text-lg mb-3 group-hover:text-brand-red transition-colors">
+                    <h4 className="font-bold text-gray-900 text-base mb-2 group-hover:text-brand-red transition-colors">
                       {pillar.title}
                     </h4>
-                    <p className="text-gray-700 text-base leading-relaxed">
+                    <p className="text-gray-700 text-sm leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>
