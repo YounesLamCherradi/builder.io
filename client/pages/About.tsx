@@ -661,14 +661,17 @@ export default function About() {
       {/* Hero Section with Testimonial and Statistics */}
       <AboutHero t={t} />
 
-      {/* Our Story Section */}
-      <AboutStory t={t} />
+      {/* Introduction Section */}
+      <AboutIntroduction t={t} />
 
-      {/* Mission, Vision, and Core Values Sections */}
-      <AboutValues t={t} />
+      {/* Our Members Section */}
+      <AboutMembers t={t} />
 
-      {/* Why Choose Us */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+      {/* WYF History Section */}
+      <AboutHistory t={t} />
+
+      {/* Why Choose Us - REMOVED */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
