@@ -116,6 +116,10 @@ export default function Partners() {
         partners_quote_2: 'constructive point and shape this new world architecture',
         partners_attribution: '— Leonid Slutsky',
         partners_attribution_role: 'Chairman of the State Duma Committee on International Affairs',
+        institutional_partners: 'Institutional Partners',
+        institutional_partners_desc: 'Trusted by leading organizations worldwide',
+        partners_desc_call: 'Partner with us or list your organization',
+        get_in_touch: 'Get in Touch',
       },
       ar: {
         nav_home: 'الرئيسية',
