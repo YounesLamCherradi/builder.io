@@ -553,6 +553,7 @@ export default function Admin() {
         role: '',
         partnerName: partner.name,
         partnerLink: partner.link,
+        partnerType: partner.type || 'institutional',
         question: '',
         answer: '',
         bio: '',
