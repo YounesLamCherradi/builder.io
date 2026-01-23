@@ -22,6 +22,8 @@ export default function Partners() {
     return 'en';
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [partnersList, setPartnersList] = useState<Partner[]>([]);
+  const sponsorsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
