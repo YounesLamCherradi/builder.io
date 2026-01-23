@@ -763,6 +763,9 @@ export default function About() {
         </div>
       </section>
 
+      {/* WYF History Section */}
+      <AboutHistory t={t} />
+
       {/* CTA Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
         <div
