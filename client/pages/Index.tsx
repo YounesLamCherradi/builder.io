@@ -627,7 +627,7 @@ export default function Index() {
 
   const menuItems = [
     { name: t('nav_home'), path: '/' },
-    { name: t('nav_events'), path: '/events' },
+    { name: t('nav_news'), path: '/news' },
     { name: t('nav_about'), path: '/about' },
     { name: t('nav_contact'), path: '/contact' },
   ];
