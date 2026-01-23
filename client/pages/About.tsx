@@ -667,11 +667,8 @@ export default function About() {
             {/* Left side - Profile Image */}
             <div className="flex justify-center lg:justify-start order-2 lg:order-1 animate-in fade-in slide-in-from-left-8 duration-1000">
               <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-full lg:max-w-md">
-                {/* Decorative circle background */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-red/30 to-brand-red/10 blur-2xl animate-pulse" style={{ animationDuration: '3s' }} />
-
-                {/* Profile Image with border */}
-                <div className="relative rounded-full overflow-hidden border-8 border-brand-red shadow-2xl shadow-brand-red/50 aspect-square">
+                {/* Profile Image - Simple circle */}
+                <div className="relative rounded-full overflow-hidden shadow-2xl aspect-square">
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F2b3e67eefa4d409d9735a3189d2b923e?format=webp&width=800"
                     alt="Maria Zakharova"
