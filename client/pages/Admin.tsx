@@ -1175,6 +1175,20 @@ export default function Admin() {
                     </div>
                   </div>
 
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Partner Type *</label>
+                      <select
+                        value={formData.partnerType}
+                        onChange={(e) => setFormData(prev => ({ ...prev, partnerType: e.target.value }))}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      >
+                        <option value="institutional">Institutional</option>
+                        <option value="informational">Informational</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Display Order Position</label>
                     <input
