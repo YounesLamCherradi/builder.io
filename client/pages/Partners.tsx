@@ -428,7 +428,7 @@ export default function Partners() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white pt-20">
         {/* Background image with overlay */}
         <div
           className="absolute inset-0"
