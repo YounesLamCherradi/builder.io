@@ -508,11 +508,11 @@ export default function News() {
               )}
 
               {/* Other Articles Grid */}
-              {articles.length > 1 && (
+              {otherArticles.length > 0 && (
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">More Stories</h3>
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">{currentPage === 1 ? 'More Stories' : 'Articles'}</h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {articles.slice(1).map((article, idx) => (
+                    {otherArticles.map((article, idx) => (
                       <div
                         key={article.id}
                         className="group bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-brand-red/50 hover:shadow-xl transition-all duration-300 cursor-pointer animate-in fade-in slide-in-from-bottom-8 duration-700"
