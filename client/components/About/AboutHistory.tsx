@@ -12,7 +12,7 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       color: 'from-gray-700 to-gray-900',
       bg: 'from-gray-50 to-gray-100',
       border: 'from-gray-300 to-gray-400',
-      image: null,
+      image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2Fc6c2bf3b2f5d4abdaa10db27bc5ad81c?format=webp&width=800&height=1200',
     },
     {
       year: '1957',
