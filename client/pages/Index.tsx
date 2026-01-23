@@ -1249,14 +1249,26 @@ export default function Index() {
       {/* Latest News Section */}
       <section
         id="latest-news"
-        className="scroll-section py-16 sm:py-20 md:py-28 bg-white relative overflow-hidden"
+        className="scroll-section py-16 sm:py-20 md:py-28 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-brand-red/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-brand-red/5 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }} />
+        </div>
+
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(220,38,38,0.08)_1px,transparent_1px)] bg-[length:40px_40px]" />
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-10 sm:mb-14 md:mb-20">
+          <div className="text-center mb-10 sm:mb-14 md:mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="inline-block mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 text-brand-red text-sm font-bold rounded-full border border-brand-red/30 animate-pulse">
+                <Zap className="w-4 h-4" />
+                LATEST UPDATES
+              </span>
+            </div>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
               Latest{' '}
               <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
@@ -1271,11 +1283,15 @@ export default function Index() {
           {newsList.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
               {/* Featured News - Left Side (2 columns on desktop) */}
-              <div className="lg:col-span-2 lg:row-span-2">
+              <div className="lg:col-span-2 lg:row-span-2 animate-in fade-in slide-in-from-left-8 duration-700">
                 <div
                   onClick={() => setSelectedNews([...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0])}
-                  className="group rounded-3xl overflow-hidden backdrop-blur-xl bg-white/80 border border-white/20 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:bg-white/90 h-full flex flex-col cursor-pointer hover:border-brand-red/50"
+                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col cursor-pointer hover:border-brand-red/50 relative"
                 >
+                  {/* Gradient border effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl p-[2px] pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-red to-transparent rounded-3xl" />
+                  </div>
                   {(() => {
                     // Articles are already sorted by order_index from Supabase
                     if (!newsList[0]) return null;
