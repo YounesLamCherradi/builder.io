@@ -131,7 +131,7 @@ function AboutStats({ t }: AboutStatsProps) {
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {/* Card Container */}
-              <div className={`relative h-full rounded-2xl backdrop-blur-md ${stat.lightBg} border-2 bg-white/60 ${stat.borderColor} p-5 sm:p-6 overflow-hidden transition-all duration-500 group-hover:shadow-xl group-hover:bg-white/80 group-hover:-translate-y-1`}>
+              <div className={`relative h-full rounded-xl backdrop-blur-md ${stat.lightBg} border border-gray-300 bg-white/60 p-4 sm:p-5 overflow-hidden transition-all duration-500 group-hover:shadow-lg group-hover:bg-white/80 group-hover:-translate-y-1`}>
 
                 {/* Animated Background Orb */}
                 <div className={`absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-15 rounded-full blur-3xl transition-all duration-700`} />
