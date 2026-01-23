@@ -155,6 +155,29 @@ export default function Admin() {
     setLoading(true);
 
     // Validation
+    if (activeTab === 'news') {
+      if (!i18nData.title_i18n.en) {
+        toast.error('Please enter the article title in English');
+        setLoading(false);
+        return;
+      }
+      if (!i18nData.description_i18n.en) {
+        toast.error('Please enter the article description in English');
+        setLoading(false);
+        return;
+      }
+      if (!i18nData.content_i18n.en) {
+        toast.error('Please enter the article content in English');
+        setLoading(false);
+        return;
+      }
+      if (!formData.date) {
+        toast.error('Please select an article date');
+        setLoading(false);
+        return;
+      }
+    }
+
     if (activeTab === 'gallery' && !formData.image_url) {
       toast.error('Please upload an image for the gallery');
       setLoading(false);
