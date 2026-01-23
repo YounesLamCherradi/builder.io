@@ -903,6 +903,133 @@ export default function About() {
         </div>
       </section>
 
+      {/* Our Vision Section */}
+      <section className="scroll-section py-16 sm:py-20 lg:py-28 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 right-0 w-96 h-96 bg-brand-red/3 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray-900/3 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
+          {/* Section Header */}
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="inline-flex items-center gap-3 bg-brand-red/10 px-5 py-3 rounded-full border border-brand-red/20 mb-6">
+              <Lightbulb className="w-5 h-5 text-brand-red" />
+              <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">Vision & Values</span>
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight max-w-3xl mx-auto">
+              Our <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">Vision</span> for a Multipolar World
+            </h2>
+
+            <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-transparent rounded-full mx-auto" />
+          </div>
+
+          {/* Vision Content - Two Column Layout */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Column - Key Pillars */}
+            <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-700 delay-100">
+              <div className="space-y-5">
+                {[
+                  {
+                    title: 'Cultural Sovereignty',
+                    desc: 'Each nation has the right to follow its own historical path, shaped by its culture, traditions, and values'
+                  },
+                  {
+                    title: 'Multipolar Order',
+                    desc: 'We support a balanced international system based on equality, mutual respect, and sovereign choices'
+                  },
+                  {
+                    title: 'Equality & Partnership',
+                    desc: 'Dialogue replaces domination, partnership replaces hierarchy in international cooperation'
+                  },
+                  {
+                    title: 'Long-term Stability',
+                    desc: 'True cooperation emerges when civilizations engage as equals while preserving their identities'
+                  }
+                ].map((pillar, idx) => (
+                  <div key={idx} className="group bg-white rounded-2xl p-6 sm:p-7 border-2 border-gray-100 hover:border-brand-red/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-red/20 transition-all duration-300">
+                        <Check className="w-5 h-5 text-brand-red font-bold" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-base sm:text-lg mb-2 group-hover:text-brand-red transition-colors">
+                          {pillar.title}
+                        </h4>
+                        <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                          {pillar.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Main Vision Text */}
+            <div className="animate-in fade-in slide-in-from-right-8 duration-700 delay-100">
+              <div className="bg-gradient-to-br from-gray-50 via-white to-gray-50 rounded-3xl p-8 sm:p-10 border-2 border-gray-200 hover:border-brand-red/30 hover:shadow-2xl transition-all duration-300">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-4 flex items-center gap-3">
+                      <span className="inline-block w-1 h-8 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
+                      Reimagining Global Cooperation
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg mb-4">
+                      Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of diversity among civilizations.
+                    </p>
+                  </div>
+
+                  <div className="border-l-4 border-brand-red/30 pl-5 py-2">
+                    <p className="text-gray-700 leading-relaxed text-base italic">
+                      "We believe that each nation and society has the right to follow its own historical path, shaped by its culture, traditions, values, and collective memory, without external pressure or imposed standards."
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 pt-4">
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                      We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order</span>, where cooperation is based on equality, mutual respect, and recognition of sovereign choices.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                      In such a world, <span className="font-semibold text-brand-red">dialogue replaces domination, partnership replaces hierarchy, and long-term stability prevails over short-term interests.</span>
+                    </p>
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                      True international cooperation can only exist when different civilizations engage with one another as <span className="font-bold text-gray-900">equals, preserving their identities while working toward shared goals.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Accent */}
+          <div className="mt-16 sm:mt-20 pt-16 sm:pt-20 border-t-2 border-gray-200">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+              <div className="text-center group cursor-default">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-4 mx-auto">
+                  <Globe className="w-8 h-8 text-brand-red" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2 text-lg">Global Perspective</h4>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  A world where nations cooperate as equal partners on the global stage
+                </p>
+              </div>
+              <div className="text-center group cursor-default">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 group-hover:bg-brand-red/20 transition-all duration-300 mb-4 mx-auto">
+                  <Heart className="w-8 h-8 text-brand-red" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2 text-lg">Cultural Pride</h4>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Celebrating and preserving the unique identities and traditions of all civilizations
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
         <div
