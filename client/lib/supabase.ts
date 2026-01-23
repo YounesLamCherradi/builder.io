@@ -195,13 +195,13 @@ export async function createNews(article: Omit<NewsArticle, 'id' | 'created_at'>
 
     if (error) {
       console.error('Error creating news:', error);
-      return null;
+      throw new Error(`Failed to create news: ${error.message}`);
     }
 
     return data;
   } catch (err) {
     console.error('Unexpected error:', err);
-    return null;
+    throw err;
   }
 }
 
