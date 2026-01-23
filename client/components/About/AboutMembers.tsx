@@ -47,29 +47,26 @@ export function AboutMembers({ t }: AboutMembersProps) {
               style={{ animationDelay: `${idx * 100}ms` }}
             >
               {/* Card */}
-              <div className={`relative rounded-2xl backdrop-blur-md bg-gradient-to-br ${stat.bg} border-2 bg-gradient-to-br ${stat.border} p-6 sm:p-7 overflow-hidden transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2`}>
-
-                {/* Animated background orb */}
-                <div className={`absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-15 rounded-full blur-3xl transition-all duration-700`} />
+              <div className={`relative rounded-xl backdrop-blur-md bg-gradient-to-br ${stat.bg} border border-gray-300 p-4 sm:p-5 overflow-hidden transition-all duration-500 group-hover:shadow-lg group-hover:-translate-y-1`}>
 
                 {/* Top accent bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.gradient}`} />
+                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${stat.gradient}`} />
 
-                <div className="relative z-10 flex items-start gap-4">
+                <div className="relative z-10 flex items-start gap-3">
                   {/* Icon */}
-                  <div className={`flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} text-white text-2xl group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`flex-shrink-0 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${stat.gradient} text-white text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300`}>
                     {stat.icon}
                   </div>
 
                   {/* Content */}
                   <div className="flex-grow">
                     {/* Count */}
-                    <p className={`text-3xl sm:text-4xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent leading-none mb-1`}>
+                    <p className={`text-2xl sm:text-3xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent leading-none mb-0.5`}>
                       {stat.count}
                     </p>
 
                     {/* Title */}
-                    <p className="text-sm sm:text-base font-bold text-gray-800 leading-snug">
+                    <p className="text-xs sm:text-sm font-bold text-gray-800 leading-snug">
                       {stat.title}
                     </p>
                   </div>
