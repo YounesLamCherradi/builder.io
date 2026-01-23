@@ -78,8 +78,8 @@ export function AboutHistory({ t }: AboutHistoryProps) {
                   <div className="flex flex-col items-center">
                     {/* Timeline Dot */}
                     <div className="relative z-10 mb-3">
-                      <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${point.color} text-white font-bold text-2xl shadow-lg ring-4 ring-white`}>
-                        {point.icon}
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br ${point.color} text-white font-bold text-xl shadow-lg ring-4 ring-white`}>
+                        {point.number}
                       </div>
                     </div>
 
