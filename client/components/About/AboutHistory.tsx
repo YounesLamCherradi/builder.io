@@ -52,24 +52,13 @@ export function AboutHistory({ t }: AboutHistoryProps) {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
         {/* Section Title */}
-        <div className="mb-12 sm:mb-16 animate-in fade-in slide-in-from-top-6 duration-700">
-          <div className="flex items-start gap-4 sm:gap-6">
-            <div className="flex-shrink-0">
-              <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-brand-red to-red-600">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-            </div>
-            <div className="flex-grow">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
-                WYF, a long history since 1957!
-              </h2>
-              <p className="text-gray-600 font-semibold text-base sm:text-lg">
-                World Youth Festival started originally many decades ago
-              </p>
-            </div>
-          </div>
+        <div className="mb-10 animate-in fade-in slide-in-from-top-6 duration-700">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+            WYF, a long history since 1957!
+          </h2>
+          <p className="text-gray-600 text-sm sm:text-base">
+            World Youth Festival started originally many decades ago
+          </p>
         </div>
 
         {/* Horizontal Timeline */}
