@@ -1305,17 +1305,17 @@ export default function Index() {
                   })()}
 
                   {(() => {
-                    const sortedNews = [...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0));
+                    // Articles are already sorted by loadData
                     return (
                       <div className="p-6 sm:p-8 flex flex-col flex-grow">
                         <div className="flex items-center gap-3 mb-4">
-                          {sortedNews[0].category && (
+                          {newsList[0].category && (
                             <span className="inline-block px-4 py-2 bg-gradient-to-r from-brand-red to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-lg">
-                              {sortedNews[0].category}
+                              {newsList[0].category}
                             </span>
                           )}
                           <span className="text-sm text-gray-500 flex items-center gap-1">
-                            📅 {new Date(sortedNews[0].date || sortedNews[0].created_at).toLocaleDateString('en-US', {
+                            📅 {new Date(newsList[0].date || newsList[0].created_at).toLocaleDateString('en-US', {
                               year: 'numeric',
                               month: 'short',
                               day: 'numeric'
@@ -1324,20 +1324,20 @@ export default function Index() {
                         </div>
 
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 group-hover:text-brand-red transition-colors leading-tight">
-                          {(sortedNews[0].title_i18n?.[currentLanguage as any]) || sortedNews[0].title}
+                          {(newsList[0].title_i18n?.[currentLanguage as any]) || newsList[0].title}
                         </h2>
 
                         <p className="text-base sm:text-lg text-gray-700 mb-6 flex-grow line-clamp-3">
-                          {(sortedNews[0].description_i18n?.[currentLanguage as any]) || sortedNews[0].description}
+                          {(newsList[0].description_i18n?.[currentLanguage as any]) || newsList[0].description}
                         </p>
 
-                        {sortedNews[0].author && (
+                        {newsList[0].author && (
                           <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                             <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                              {sortedNews[0].author.charAt(0)}
+                              {newsList[0].author.charAt(0)}
                             </div>
                             <p className="text-sm">
-                              <span className="font-semibold text-gray-900">{sortedNews[0].author}</span>
+                              <span className="font-semibold text-gray-900">{newsList[0].author}</span>
                               <br/>
                               <span className="text-gray-500">Author</span>
                             </p>
