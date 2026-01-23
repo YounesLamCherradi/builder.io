@@ -119,17 +119,17 @@ export function AboutHistory({ t }: AboutHistoryProps) {
         </div>
 
         {/* WYF Morocco Creation - Featured Box */}
-        <div className="mt-10 relative animate-in fade-in slide-in-from-bottom-6 duration-700" style={{ animationDelay: '400ms' }}>
-          <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-brand-red to-red-700 border-2 border-brand-red/20">
+        <div className="mt-8 relative animate-in fade-in slide-in-from-bottom-6 duration-700" style={{ animationDelay: '400ms' }}>
+          <div className="relative rounded-xl overflow-hidden bg-gradient-to-r from-brand-red to-red-700 border border-brand-red/30">
             {/* Content */}
-            <div className="relative px-6 sm:px-8 py-6 sm:py-8 text-white">
-              <div className="flex items-start gap-3">
-                <div className="text-2xl flex-shrink-0">🎊</div>
+            <div className="relative px-5 sm:px-6 py-5 sm:py-6 text-white">
+              <div className="flex items-start gap-2">
+                <div className="text-xl flex-shrink-0">🎊</div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-2">
+                  <h3 className="text-sm sm:text-base font-bold mb-1">
                     Within this festival, WYF Morocco was officially created!
                   </h3>
-                  <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+                  <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
                     The main idea was to unite countries to create a multipolar world based on the principles of justice and equality.
                   </p>
                 </div>
