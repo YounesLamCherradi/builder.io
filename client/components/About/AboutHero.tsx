@@ -120,47 +120,47 @@ function AboutStats({ t }: AboutStatsProps) {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10 pt-16 sm:pt-20 lg:pt-28 pb-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 relative z-10 pt-12 sm:pt-16 pb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
         {stats.map((stat, idx) => {
           const Icon = stat.icon;
           return (
             <div
               key={idx}
-              className="group animate-in fade-in slide-in-from-bottom-4 duration-500"
-              style={{ animationDelay: `${idx * 100}ms` }}
+              className="group animate-in fade-in slide-in-from-bottom-6 duration-700"
+              style={{ animationDelay: `${idx * 120}ms` }}
             >
-              {/* Card Container */}
-              <div className={`relative h-full rounded-3xl backdrop-blur-xl ${stat.lightBg} border-2 bg-gradient-to-br from-white/80 to-white/40 ${stat.borderColor} p-6 sm:p-8 overflow-hidden transition-all duration-500 group-hover:shadow-2xl group-hover:from-white/90 group-hover:to-white/60 group-hover:-translate-y-2`}>
+              {/* Card Container - Larger Design */}
+              <div className={`relative h-full rounded-3xl backdrop-blur-xl ${stat.lightBg} border-2 bg-gradient-to-br from-white/80 to-white/40 ${stat.borderColor} p-8 sm:p-10 lg:p-12 overflow-hidden transition-all duration-500 group-hover:shadow-3xl group-hover:from-white/95 group-hover:to-white/70 group-hover:-translate-y-3`}>
 
                 {/* Animated Background Orb */}
-                <div className={`absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-20 rounded-full blur-3xl transition-all duration-700 group-hover:scale-150`} />
+                <div className={`absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-25 rounded-full blur-3xl transition-all duration-700 group-hover:scale-150`} />
 
                 {/* Decorative Line */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${stat.gradient} p-2.5 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  {/* Icon - Larger */}
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${stat.gradient} p-3 sm:p-4 mb-6 group-hover:scale-125 transition-transform duration-300`}>
                     <Icon className="w-full h-full text-white" />
                   </div>
 
-                  {/* Value */}
-                  <div className={`text-5xl sm:text-6xl lg:text-7xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2 tracking-tight`}>
+                  {/* Value - Larger */}
+                  <div className={`text-6xl sm:text-7xl lg:text-8xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3 tracking-tight leading-none`}>
                     {stat.value}
                   </div>
 
                   {/* Divider */}
-                  <div className={`h-1 w-12 bg-gradient-to-r ${stat.gradient} rounded-full mb-4 group-hover:w-full transition-all duration-500`} />
+                  <div className={`h-1.5 w-16 bg-gradient-to-r ${stat.gradient} rounded-full mb-6 group-hover:w-full transition-all duration-500`} />
 
-                  {/* Label */}
-                  <p className="text-sm sm:text-base font-bold text-gray-800 leading-snug">
+                  {/* Label - Larger Text */}
+                  <p className="text-base sm:text-lg font-bold text-gray-800 leading-relaxed">
                     {stat.label}
                   </p>
                 </div>
 
                 {/* Bottom accent bar */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r ${stat.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+                <div className={`absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r ${stat.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
               </div>
             </div>
           );
