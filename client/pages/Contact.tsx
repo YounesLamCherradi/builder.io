@@ -239,6 +239,7 @@ export default function Contact() {
         nav_home: 'Главная',
         nav_news: 'Новости',
         nav_about: 'О нас',
+        nav_partners: 'Партнёры',
         nav_stories: 'Истории успеха',
         nav_resources: 'Ресурсы',
         nav_contact: 'Контакты',
