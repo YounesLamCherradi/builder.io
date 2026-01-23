@@ -115,7 +115,7 @@ export default function News() {
         loading: 'Loading articles...',
         footer_tagline: 'Empowering Moroccans to achieve their global dreams.',
         platform: 'Platform',
-        company: 'Company',
+        company: 'Organization',
         legal: 'Legal',
         scholarships: 'Scholarships',
         jobs: 'Jobs',
