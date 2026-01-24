@@ -343,6 +343,10 @@ export default function About() {
         rights: '© 2026 MoroccoGlobal. جميع الحقوق محفوظة.',
         made_with: 'صُنع بـ ❤️ في المغرب',
         sitemap: 'خريطة الموقع',
+        language: 'اللغة',
+        telegram: 'تيليجرام',
+        instagram: 'إنستغرام',
+        version: 'v1.0.0 • 2026',
       },
 
       ru: {
