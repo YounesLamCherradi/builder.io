@@ -1391,7 +1391,7 @@ export default function Index() {
                         {/* Trending Badge */}
                         <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-brand-red via-red-600 to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-xl animate-pulse hover:animate-none group-hover:animate-none transition-all">
                           <Zap className="w-5 h-5" />
-                          <span>Trending Now</span>
+                          <span>{t('trending_now')}</span>
                         </div>
                       </div>
                     );
