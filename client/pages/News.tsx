@@ -527,7 +527,7 @@ export default function News() {
               {/* Other Articles Grid */}
               {otherArticles.length > 0 && (
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">{currentPage === 1 ? 'More Stories' : 'Articles'}</h3>
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">{currentPage === 1 ? t('more_stories') : t('articles_label')}</h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {otherArticles.map((article, idx) => (
                       <div
