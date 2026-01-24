@@ -722,12 +722,16 @@ export default function Contact() {
                 </h2>
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      {t('contact_form_name')}
-                    </label>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="block text-sm font-semibold text-gray-700">
+                        {t('contact_form_name')}
+                      </label>
+                      <span className="text-xs text-gray-500">{formData.name.length}/100</span>
+                    </div>
                     <input
                       type="text"
                       required
+                      maxLength={100}
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors"
@@ -743,17 +747,28 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors"
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${
+                        formData.email && !isValidEmail(formData.email)
+                          ? 'border-red-500 focus:border-red-500'
+                          : 'border-gray-200 focus:border-brand-red'
+                      }`}
                       placeholder="john@example.com"
                     />
+                    {formData.email && !isValidEmail(formData.email) && (
+                      <p className="text-xs text-red-500 mt-1">Please enter a valid email address</p>
+                    )}
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      {t('contact_form_subject')}
-                    </label>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="block text-sm font-semibold text-gray-700">
+                        {t('contact_form_subject')}
+                      </label>
+                      <span className="text-xs text-gray-500">{formData.subject.length}/200</span>
+                    </div>
                     <input
                       type="text"
                       required
+                      maxLength={200}
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-brand-red focus:outline-none transition-colors"
@@ -761,11 +776,15 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      {t('contact_form_message')}
-                    </label>
+                    <div className="flex justify-between items-center mb-2">
+                      <label className="block text-sm font-semibold text-gray-700">
+                        {t('contact_form_message')}
+                      </label>
+                      <span className="text-xs text-gray-500">{formData.message.length}/5000</span>
+                    </div>
                     <textarea
                       required
+                      maxLength={5000}
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
