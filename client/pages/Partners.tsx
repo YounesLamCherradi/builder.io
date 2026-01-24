@@ -178,6 +178,10 @@ export default function Partners() {
         made_with: 'صُنع بـ ❤️ في المغرب',
         sitemap: 'خريطة الموقع',
         nav_resources: 'الموارد',
+        language: 'اللغة',
+        telegram: 'تيليجرام',
+        instagram: 'إنستغرام',
+        version: 'v1.0.0 • 2026',
       },
       ru: {
         nav_home: 'Главная',
