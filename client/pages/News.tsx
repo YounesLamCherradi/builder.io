@@ -196,6 +196,10 @@ export default function News() {
         rights: '© 2026 Мировой фестиваль молодежи Марокко. Все права защищены.',
         made_with: 'Сделано с ❤️ в Марокко',
         sitemap: 'Карта сайта',
+        language: 'Язык',
+        telegram: 'Телеграм',
+        instagram: 'Инстаграм',
+        version: 'v1.0.0 • 2026',
       },
     }),
     []
