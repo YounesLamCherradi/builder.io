@@ -16,22 +16,27 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      // Get credentials from environment variables
-      const adminUsername = import.meta.env.VITE_ADMIN_USERNAME || 'admin';
-      const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'password';
+      // Send login request to server
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-      // Verify credentials
-      if (username === adminUsername && password === adminPassword) {
-        // Store auth token in localStorage
-        const token = btoa(`${username}:${password}`);
-        localStorage.setItem('adminToken', token);
-        localStorage.setItem('adminUsername', username);
-        
+      const result = await response.json();
+
+      if (response.ok && result.token) {
+        // Store auth token in sessionStorage (more secure than localStorage)
+        sessionStorage.setItem('adminToken', result.token);
+        sessionStorage.setItem('adminUsername', result.username);
+
         toast.success('Login successful!');
         navigate('/admin');
       } else {
-        setError('Invalid username or password');
-        toast.error('Invalid credentials');
+        setError(result.error || 'Invalid username or password');
+        toast.error(result.error || 'Invalid credentials');
       }
     } catch (err) {
       console.error('Login error:', err);
