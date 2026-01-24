@@ -1434,7 +1434,7 @@ export default function Index() {
               </div>
 
               {/* News Scroll - Right Side */}
-              <div className="lg:col-span-2 relative h-[600px] lg:h-auto">
+              <div className="lg:col-span-2 relative h-[600px] lg:max-h-[800px]">
                 {/* Scroll Container */}
                 <div
                   ref={newsScrollRef}
