@@ -998,7 +998,7 @@ export default function Index() {
                 <span className="block text-gray-900 text-lg sm:text-4xl lg:text-6xl mt-0.5 sm:mt-2">
                   {t('putin_quote_2')}"
                 </span>
-                <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-5 sm:mt-3 block sm:inline-block sm:ml-3 w-full sm:w-auto" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif' }}>
+                <span className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-8 sm:mt-6 block sm:inline-block sm:ml-3 w-full sm:w-auto" style={{ letterSpacing: '0.05em', fontStyle: 'italic', fontWeight: '600', fontFamily: 'Georgia, serif' }}>
                   {t('putin_attribution')}
                 </span>
               </h1>
