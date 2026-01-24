@@ -1,15 +1,15 @@
-import type { Context } from '@netlify/functions';
+import type { Context } from "@netlify/functions";
 
 // Sanitize HTML to prevent XSS attacks
 function sanitizeHTML(input: string): string {
-  if (!input) return '';
+  if (!input) return "";
   return input
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .replace(/\//g, '&#x2F;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;");
 }
 
 // Validate email format (basic RFC 5322 compliance)
@@ -25,10 +25,10 @@ function validateInputLength(input: string, maxLength: number): boolean {
 
 export default async (req: Request, context: Context) => {
   // Only allow POST requests
-  if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     });
   }
 
@@ -39,40 +39,44 @@ export default async (req: Request, context: Context) => {
     // Validate required fields
     if (!name || !email || !subject || !message) {
       return new Response(
-        JSON.stringify({ error: 'Missing required fields' }),
+        JSON.stringify({ error: "Missing required fields" }),
         {
           status: 400,
-          headers: { 'Content-Type': 'application/json' },
-        }
+          headers: { "Content-Type": "application/json" },
+        },
       );
     }
 
     // Validate input lengths
     if (!validateInputLength(name, 100)) {
       return new Response(
-        JSON.stringify({ error: 'Name must be between 1 and 100 characters' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: "Name must be between 1 and 100 characters" }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
     if (!validateInputLength(subject, 200)) {
       return new Response(
-        JSON.stringify({ error: 'Subject must be between 1 and 200 characters' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        JSON.stringify({
+          error: "Subject must be between 1 and 200 characters",
+        }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
     if (!validateInputLength(message, 5000)) {
       return new Response(
-        JSON.stringify({ error: 'Message must be between 1 and 5000 characters' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
+        JSON.stringify({
+          error: "Message must be between 1 and 5000 characters",
+        }),
+        { status: 400, headers: { "Content-Type": "application/json" } },
       );
     }
 
     // Validate email format
     if (!isValidEmail(email)) {
-      return new Response(
-        JSON.stringify({ error: 'Invalid email address' }),
-        { status: 400, headers: { 'Content-Type': 'application/json' } }
-      );
+      return new Response(JSON.stringify({ error: "Invalid email address" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     // Get Resend API key and recipient email from environment
@@ -80,24 +84,24 @@ export default async (req: Request, context: Context) => {
     const recipientEmail = process.env.CONTACT_FORM_EMAIL;
 
     if (!resendApiKey) {
-      console.error('RESEND_API_KEY not configured');
+      console.error("RESEND_API_KEY not configured");
       return new Response(
-        JSON.stringify({ error: 'Email service not configured' }),
+        JSON.stringify({ error: "Email service not configured" }),
         {
           status: 500,
-          headers: { 'Content-Type': 'application/json' },
-        }
+          headers: { "Content-Type": "application/json" },
+        },
       );
     }
 
     if (!recipientEmail) {
-      console.error('CONTACT_FORM_EMAIL not configured');
+      console.error("CONTACT_FORM_EMAIL not configured");
       return new Response(
-        JSON.stringify({ error: 'Email service not properly configured' }),
+        JSON.stringify({ error: "Email service not properly configured" }),
         {
           status: 500,
-          headers: { 'Content-Type': 'application/json' },
-        }
+          headers: { "Content-Type": "application/json" },
+        },
       );
     }
 
@@ -107,14 +111,14 @@ export default async (req: Request, context: Context) => {
     const sanitizedMessage = sanitizeHTML(message.trim());
 
     // Send email via Resend API
-    const resendResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
+    const resendResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: 'noreply@resend.dev',
+        from: "noreply@resend.dev",
         to: recipientEmail,
         replyTo: email,
         subject: `New Contact Form Submission: ${sanitizedSubject}`,
@@ -140,15 +144,15 @@ export default async (req: Request, context: Context) => {
 
     if (!resendResponse.ok) {
       const error = await resendResponse.json();
-      console.error('Resend API error:', error);
+      console.error("Resend API error:", error);
       return new Response(
         JSON.stringify({
-          error: 'Failed to send email',
+          error: "Failed to send email",
         }),
         {
           status: 500,
-          headers: { 'Content-Type': 'application/json' },
-        }
+          headers: { "Content-Type": "application/json" },
+        },
       );
     }
 
@@ -157,24 +161,24 @@ export default async (req: Request, context: Context) => {
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Email sent successfully',
+        message: "Email sent successfully",
         id: result.id,
       }),
       {
         status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      }
+        headers: { "Content-Type": "application/json" },
+      },
     );
   } catch (error) {
-    console.error('Error in send-email function:', error);
+    console.error("Error in send-email function:", error);
     return new Response(
       JSON.stringify({
-        error: 'Internal server error',
+        error: "Internal server error",
       }),
       {
         status: 500,
-        headers: { 'Content-Type': 'application/json' },
-      }
+        headers: { "Content-Type": "application/json" },
+      },
     );
   }
 };

@@ -1,5 +1,5 @@
-import React, { ReactNode, ErrorInfo } from 'react';
-import { AlertCircle, RefreshCw } from 'lucide-react';
+import React, { ReactNode, ErrorInfo } from "react";
+import { AlertCircle, RefreshCw } from "lucide-react";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -11,7 +11,10 @@ interface ErrorBoundaryState {
   error: Error | null;
 }
 
-export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export default class ErrorBoundary extends React.Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false, error: null };
@@ -23,7 +26,7 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log error details for debugging
-    console.error('Error Boundary caught an error:', error, errorInfo);
+    console.error("Error Boundary caught an error:", error, errorInfo);
   }
 
   handleReset = () => {
@@ -43,11 +46,14 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
                   <AlertCircle className="w-8 h-8 text-red-600" />
                 </div>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Something went wrong</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">
+                Something went wrong
+              </h2>
               <p className="text-gray-600 text-center mb-6">
-                We encountered an unexpected error. Please try refreshing the page.
+                We encountered an unexpected error. Please try refreshing the
+                page.
               </p>
-              {process.env.NODE_ENV === 'development' && this.state.error && (
+              {process.env.NODE_ENV === "development" && this.state.error && (
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
                   <p className="text-xs font-mono text-red-600 break-words">
                     {this.state.error.message}

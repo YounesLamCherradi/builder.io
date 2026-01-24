@@ -1,5 +1,10 @@
-import { Request, Response } from 'express';
-import { validateCredentials, createSession, destroySession, validateSession } from '../auth';
+import { Request, Response } from "express";
+import {
+  validateCredentials,
+  createSession,
+  destroySession,
+  validateSession,
+} from "../auth";
 
 export async function login(req: Request, res: Response) {
   try {
@@ -8,14 +13,14 @@ export async function login(req: Request, res: Response) {
     // Validate required fields
     if (!username || !password) {
       return res.status(400).json({
-        error: 'Missing username or password',
+        error: "Missing username or password",
       });
     }
 
     // Validate credentials
     if (!validateCredentials(username, password)) {
       return res.status(401).json({
-        error: 'Invalid credentials',
+        error: "Invalid credentials",
       });
     }
 
@@ -24,14 +29,14 @@ export async function login(req: Request, res: Response) {
 
     return res.status(200).json({
       success: true,
-      message: 'Login successful',
+      message: "Login successful",
       token,
       username,
     });
   } catch (error) {
-    console.error('Error in login route:', error);
+    console.error("Error in login route:", error);
     return res.status(500).json({
-      error: 'Internal server error',
+      error: "Internal server error",
     });
   }
 }
@@ -42,7 +47,7 @@ export async function logout(req: Request, res: Response) {
 
     if (!token) {
       return res.status(400).json({
-        error: 'Token is required',
+        error: "Token is required",
       });
     }
 
@@ -50,24 +55,24 @@ export async function logout(req: Request, res: Response) {
 
     return res.status(200).json({
       success: true,
-      message: 'Logout successful',
+      message: "Logout successful",
     });
   } catch (error) {
-    console.error('Error in logout route:', error);
+    console.error("Error in logout route:", error);
     return res.status(500).json({
-      error: 'Internal server error',
+      error: "Internal server error",
     });
   }
 }
 
 export async function validateToken(req: Request, res: Response) {
   try {
-    const token = req.headers.authorization?.replace('Bearer ', '');
+    const token = req.headers.authorization?.replace("Bearer ", "");
 
     if (!token) {
       return res.status(401).json({
         valid: false,
-        error: 'No token provided',
+        error: "No token provided",
       });
     }
 
@@ -76,7 +81,7 @@ export async function validateToken(req: Request, res: Response) {
     if (!validation.valid) {
       return res.status(401).json({
         valid: false,
-        error: 'Invalid or expired token',
+        error: "Invalid or expired token",
       });
     }
 
@@ -85,10 +90,10 @@ export async function validateToken(req: Request, res: Response) {
       username: validation.username,
     });
   } catch (error) {
-    console.error('Error in validate-token route:', error);
+    console.error("Error in validate-token route:", error);
     return res.status(500).json({
       valid: false,
-      error: 'Internal server error',
+      error: "Internal server error",
     });
   }
 }

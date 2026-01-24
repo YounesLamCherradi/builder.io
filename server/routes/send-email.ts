@@ -2,14 +2,14 @@ import { Request, Response } from "express";
 
 // Sanitize HTML to prevent XSS attacks
 function sanitizeHTML(input: string): string {
-  if (!input) return '';
+  if (!input) return "";
   return input
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;')
-    .replace(/\//g, '&#x2F;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;");
 }
 
 // Validate email format (basic RFC 5322 compliance)
@@ -36,13 +36,19 @@ export async function sendEmail(req: Request, res: Response) {
 
   // Validate input lengths
   if (!validateInputLength(name, 100)) {
-    return res.status(400).json({ error: "Name must be between 1 and 100 characters" });
+    return res
+      .status(400)
+      .json({ error: "Name must be between 1 and 100 characters" });
   }
   if (!validateInputLength(subject, 200)) {
-    return res.status(400).json({ error: "Subject must be between 1 and 200 characters" });
+    return res
+      .status(400)
+      .json({ error: "Subject must be between 1 and 200 characters" });
   }
   if (!validateInputLength(message, 5000)) {
-    return res.status(400).json({ error: "Message must be between 1 and 5000 characters" });
+    return res
+      .status(400)
+      .json({ error: "Message must be between 1 and 5000 characters" });
   }
 
   // Validate email format
@@ -53,7 +59,8 @@ export async function sendEmail(req: Request, res: Response) {
   try {
     // Get Resend API key and recipient email from environment
     const resendApiKey = process.env.RESEND_API_KEY;
-    const recipientEmail = process.env.CONTACT_FORM_EMAIL || process.env.VITE_CONTACT_EMAIL;
+    const recipientEmail =
+      process.env.CONTACT_FORM_EMAIL || process.env.VITE_CONTACT_EMAIL;
 
     if (!resendApiKey) {
       console.error("RESEND_API_KEY not configured");

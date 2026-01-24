@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
 
   useEffect(() => {
     const validateToken = async () => {
-      const token = sessionStorage.getItem('adminToken');
+      const token = sessionStorage.getItem("adminToken");
 
       if (!token) {
         setIsValid(false);
@@ -18,11 +18,11 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
       }
 
       try {
-        const response = await fetch('/api/auth/validate', {
-          method: 'GET',
+        const response = await fetch("/api/auth/validate", {
+          method: "GET",
           headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
           },
         });
 
@@ -31,14 +31,14 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
 
         // If token is invalid, clear it
         if (!result.valid) {
-          sessionStorage.removeItem('adminToken');
-          sessionStorage.removeItem('adminUsername');
+          sessionStorage.removeItem("adminToken");
+          sessionStorage.removeItem("adminUsername");
         }
       } catch (error) {
-        console.error('Token validation error:', error);
+        console.error("Token validation error:", error);
         setIsValid(false);
-        sessionStorage.removeItem('adminToken');
-        sessionStorage.removeItem('adminUsername');
+        sessionStorage.removeItem("adminToken");
+        sessionStorage.removeItem("adminUsername");
       }
     };
 

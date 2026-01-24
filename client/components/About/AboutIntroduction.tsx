@@ -22,14 +22,24 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
             <div className="flex items-start gap-3 sm:gap-4 mb-6 sm:mb-8">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-brand-red to-red-600">
-                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    className="w-6 h-6 sm:w-7 sm:h-7 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                 </div>
               </div>
               <div className="flex-grow">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1">
-                  {t('intro_title')}
+                  {t("intro_title")}
                 </h2>
                 <div className="h-0.5 w-16 bg-gradient-to-r from-brand-red to-red-600 rounded-full" />
               </div>
@@ -39,19 +49,23 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
             <div className="space-y-4 sm:space-y-5">
               <div className="flex gap-3">
                 <div className="flex-shrink-0 mt-0.5">
-                  <span className="flex items-center justify-center h-5 w-5 rounded-full bg-brand-red/20 text-brand-red font-bold text-xs">•</span>
+                  <span className="flex items-center justify-center h-5 w-5 rounded-full bg-brand-red/20 text-brand-red font-bold text-xs">
+                    •
+                  </span>
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-                  {t('intro_point_1')}
+                  {t("intro_point_1")}
                 </p>
               </div>
 
               <div className="flex gap-3">
                 <div className="flex-shrink-0 mt-0.5">
-                  <span className="flex items-center justify-center h-5 w-5 rounded-full bg-gray-900/20 text-gray-900 font-bold text-xs">•</span>
+                  <span className="flex items-center justify-center h-5 w-5 rounded-full bg-gray-900/20 text-gray-900 font-bold text-xs">
+                    •
+                  </span>
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-                  {t('intro_point_2')}
+                  {t("intro_point_2")}
                 </p>
               </div>
             </div>
@@ -60,16 +74,28 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
             <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-gray-200">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent">{t('intro_metric_1')}</p>
-                  <p className="text-xs text-gray-600 font-semibold mt-1">{t('intro_metric_1_label')}</p>
+                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent">
+                    {t("intro_metric_1")}
+                  </p>
+                  <p className="text-xs text-gray-600 font-semibold mt-1">
+                    {t("intro_metric_1_label")}
+                  </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{t('intro_metric_2')}</p>
-                  <p className="text-xs text-gray-600 font-semibold mt-1">{t('intro_metric_2_label')}</p>
+                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                    {t("intro_metric_2")}
+                  </p>
+                  <p className="text-xs text-gray-600 font-semibold mt-1">
+                    {t("intro_metric_2_label")}
+                  </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">{t('intro_metric_3')}</p>
-                  <p className="text-xs text-gray-600 font-semibold mt-1">{t('intro_metric_3_label')}</p>
+                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">
+                    {t("intro_metric_3")}
+                  </p>
+                  <p className="text-xs text-gray-600 font-semibold mt-1">
+                    {t("intro_metric_3_label")}
+                  </p>
                 </div>
               </div>
             </div>
