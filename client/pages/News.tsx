@@ -130,6 +130,10 @@ export default function News() {
         rights: '© 2026 WYF Morocco. All rights reserved.',
         made_with: 'Made with ❤️ in Morocco',
         sitemap: 'Sitemap',
+        language: 'Language',
+        telegram: 'Telegram',
+        instagram: 'Instagram',
+        version: 'v1.0.0 • 2026',
       },
       ar: {
         nav_home: 'الرئيسية',
