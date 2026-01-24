@@ -163,6 +163,10 @@ export default function News() {
         rights: '© 2026 مهرجان الشباب العالمي المغربي. جميع الحقوق محفوظة.',
         made_with: 'صُنع بـ ❤️ في المغرب',
         sitemap: 'خريطة الموقع',
+        language: 'اللغة',
+        telegram: 'تيليجرام',
+        instagram: 'إنستغرام',
+        version: 'v1.0.0 • 2026',
       },
       ru: {
         nav_home: 'Главная',
