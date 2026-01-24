@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
 import { sendEmail } from "./routes/send-email";
+import { login, logout, validateToken } from "./routes/auth";
 
 // Simple in-memory rate limiter
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
