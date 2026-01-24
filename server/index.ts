@@ -29,12 +29,38 @@ export function createServer() {
 
   // Security headers
   app.use((req, res, next) => {
+    // Prevent MIME type sniffing
     res.setHeader('X-Content-Type-Options', 'nosniff');
+
+    // Prevent clickjacking attacks
     res.setHeader('X-Frame-Options', 'DENY');
+
+    // Enable XSS protection
     res.setHeader('X-XSS-Protection', '1; mode=block');
+
+    // HSTS (force HTTPS)
     res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+
+    // Control referrer information
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+
+    // Disable powerful features
+    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=()');
+
+    // Content Security Policy - prevents inline scripts and restricts resource loading
+    const cspHeader = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
+      "font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net data:",
+      "img-src 'self' https: data: blob:",
+      "connect-src 'self' https: wss:",
+      "frame-ancestors 'none'",
+      "base-uri 'self'",
+      "form-action 'self'"
+    ].join('; ');
+    res.setHeader('Content-Security-Policy', cspHeader);
+
     next();
   });
 
