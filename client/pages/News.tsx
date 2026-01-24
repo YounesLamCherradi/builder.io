@@ -134,6 +134,13 @@ export default function News() {
         telegram: 'Telegram',
         instagram: 'Instagram',
         version: 'v1.0.0 • 2026',
+        more_stories: 'More Stories',
+        articles_label: 'Articles',
+        close_article: 'Close Article',
+        stay_updated: 'Stay Updated',
+        subscribe_desc: 'Subscribe to get the latest news and updates',
+        subscribe_email: 'Enter your email',
+        subscribe_button: 'Subscribe',
       },
       ar: {
         nav_home: 'الرئيسية',
