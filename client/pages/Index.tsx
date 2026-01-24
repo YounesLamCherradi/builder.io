@@ -504,6 +504,11 @@ export default function Index() {
         stat_success: 'Успешность',
         stat_support: 'Поддержка',
 
+        hero_stat_users: 'Молодёжь охвачена',
+        hero_stat_countries: 'Страны охвачены',
+        hero_stat_success: 'Успешность',
+        hero_stat_support: 'Поддержка',
+
         opps_title_1: 'Найди свой',
         opps_title_2: 'идеальный вариант',
         opps_desc: 'Тысячи проверенных возможностей в разных категориях',
