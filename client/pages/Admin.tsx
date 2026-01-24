@@ -65,6 +65,7 @@ export default function Admin() {
     answer: '',
     bio: '',
     orderIndex: 0,
+    redirectUrl: '',
   });
 
   // Multilingual form data
