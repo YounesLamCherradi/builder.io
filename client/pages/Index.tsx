@@ -297,7 +297,7 @@ export default function Index() {
         putin_quote_1: 'Russia is now your friend.',
         putin_quote_2: 'Our doors are always open to you.',
         putin_attribution: '— Vladimir Putin, Closing Ceremony of World Youth Festival (2024)',
-        wyf_description: 'The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa..',
+        wyf_description: 'The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa.',
         watch_demo: 'Watch Demo',
 
         // Sponsors section strings
