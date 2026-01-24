@@ -182,6 +182,7 @@ export default function News() {
         subscribe_desc: 'اشترك للحصول على أحدث الأخبار والتحديثات',
         subscribe_email: 'أدخل بريدك الإلكتروني',
         subscribe_button: 'اشترك',
+        featured: 'مميز',
       },
       ru: {
         nav_home: 'Главная',
