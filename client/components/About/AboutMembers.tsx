@@ -39,7 +39,7 @@ export function AboutMembers({ t }: AboutMembersProps) {
         {/* Section Title */}
         <div className="mb-7 sm:mb-9 animate-in fade-in slide-in-from-top-6 duration-700">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1.5">
-            Our Members
+            {t('members_title')}
           </h2>
           <div className="h-0.5 w-12 bg-brand-red rounded-full" />
         </div>
