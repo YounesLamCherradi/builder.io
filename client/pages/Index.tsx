@@ -522,6 +522,7 @@ export default function Index() {
         latest_updates: 'Последние обновления',
         trending_now: 'Актуально сейчас',
         read: 'Читать',
+        back_to_news: 'Вернуться к новостям',
 
         opps_title_1: 'Найди свой',
         opps_title_2: 'идеальный вариант',
