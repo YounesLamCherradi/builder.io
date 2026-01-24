@@ -90,4 +90,21 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* RTL Support */
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+
+  html[dir="rtl"] body {
+    direction: rtl;
+  }
+
+  html[dir="ltr"] {
+    direction: ltr;
+  }
+
+  html[dir="ltr"] body {
+    direction: ltr;
+  }
 }
