@@ -203,6 +203,35 @@ export default function About() {
         about_cta_desc: 'Join thousands of Moroccan students who have already begun their global journey',
         about_cta_button: 'Explore Opportunities Now',
 
+        // About History Section
+        history_title: 'WYF, a long history since 1957!',
+        history_subtitle: 'World Youth Festival started originally many decades ago',
+        history_1945_year: '1945',
+        history_1945_title: 'A World Conference for Peace',
+        history_1945_desc: 'After the end of World War II, a world conference of youth for peace was held in London, where a decision was made to begin holding world festivals of youth and students.',
+        history_1957_year: '1957',
+        history_1957_title: 'The First World Youth Festival',
+        history_1957_desc: 'Moscow hosted the World Festival of 1957, which became the largest in the history of the festival movement with 34,000 people participating from 130+ countries including Morocco and other African Nations.',
+        history_2017_year: '2017',
+        history_2017_title: 'Festival Relocation',
+        history_2017_desc: 'Moscow hosted the Festival in Sochi before starting the new version of the World Youth Festival in 2024.',
+        history_2024_year: '2024',
+        history_2024_title: 'The New Era Begins',
+        history_2024_desc: 'By decree of the President of the Russian Federation, the largest World Youth Festival was held on the federal territory "Sirius", from March 1 to 7, 2024, under the motto "Let\'s start the future together!"',
+        history_wyf_morocco_title: 'Within this festival, WYF Morocco was officially created!',
+        history_wyf_morocco_desc: 'The main idea was to unite countries to create a multipolar world based on the principles of justice and equality.',
+
+        // About Introduction Section
+        intro_title: 'Introduction',
+        intro_point_1: 'The National Committee of Morocco of the World Youth Festival (WYF Morocco) is an International Russian Youth Network created for the first time within the World Youth Festival 2024 in Sochi according to the Instructions of Russian President Vladimir Putin on developing the work and the legacy of the festival.',
+        intro_point_2: 'Currently our committee is considered as the largest Russian youth network in Africa, reaching millions of Youth in Morocco and beyond and providing hundreds of opportunities through an emerging wide network of members and partners.',
+        intro_metric_1: '2024',
+        intro_metric_1_label: 'Year Founded',
+        intro_metric_2: '∞',
+        intro_metric_2_label: 'Growing Impact',
+        intro_metric_3: 'Africa',
+        intro_metric_3_label: 'Our Base',
+
         // Testimonial section
         about_testimonial_quote: '"WYF Morocco has grown into a strong international platform that unites young leaders and strengthens long-term cooperation and dialogue between nations."',
         about_testimonial_author: 'Maria Zakharova',
