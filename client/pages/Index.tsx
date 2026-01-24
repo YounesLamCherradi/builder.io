@@ -1583,7 +1583,7 @@ export default function Index() {
                   onClick={() => setSelectedNews(null)}
                   className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
                 >
-                  <span>Back to News</span>
+                  <span>{t('back_to_news')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
