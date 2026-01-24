@@ -141,6 +141,7 @@ export default function News() {
         subscribe_desc: 'Subscribe to get the latest news and updates',
         subscribe_email: 'Enter your email',
         subscribe_button: 'Subscribe',
+        featured: 'Featured',
       },
       ar: {
         nav_home: 'الرئيسية',
