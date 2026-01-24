@@ -37,6 +37,17 @@ export default function News() {
     }
   };
 
+  const scrollNews = (direction: 'left' | 'right') => {
+    if (newsScrollRef.current) {
+      const scrollAmount = 400;
+      if (direction === 'left') {
+        newsScrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        newsScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
