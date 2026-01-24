@@ -98,5 +98,10 @@ export function createServer() {
   // Email route
   app.post("/api/send-email", sendEmail);
 
+  // Authentication routes
+  app.post("/api/auth/login", login);
+  app.post("/api/auth/logout", logout);
+  app.get("/api/auth/validate", validateToken);
+
   return app;
 }
