@@ -315,9 +315,9 @@ export default function Contact() {
         contact_location_address: 'Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2',
 
         contact_hours_title: 'Время работы',
-        contact_hours_weekdays: 'Пн-Пт: 9:00 - 18:00',
-        contact_hours_saturday: 'Сб: 10:00 - 16:00',
-        contact_hours_sunday: 'Вс: Закрыто',
+        contact_hours_weekdays: '24/7',
+        contact_hours_saturday: '',
+        contact_hours_sunday: '',
 
         contact_faq_title: 'Часто задаваемые вопросы',
         contact_faq_q1: 'Сколько времени занимает получение ответа?',
