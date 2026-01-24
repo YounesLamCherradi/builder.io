@@ -543,7 +543,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between bg-white rounded-2xl border border-gray-100 p-3">
                   <div className="flex items-center gap-2">
                     <Globe className="w-5 h-5 text-gray-700" />
-                    <span className="text-sm text-gray-700">Language</span>
+                    <span className="text-sm text-gray-700">{t('language')}</span>
                   </div>
                   <select
                     value={currentLanguage}
