@@ -493,7 +493,12 @@ export default function Contact() {
   const contactInfo = [
     { icon: Mail, label: t('contact_email'), value: t('contact_email_address') },
     { icon: Phone, label: t('contact_phone'), value: t('contact_phone_number') },
-    { icon: MapPin, label: t('contact_location'), value: t('contact_location_address') },
+    {
+      icon: MapPin,
+      label: t('contact_location'),
+      value: 'Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2',
+      url: 'https://yandex.ru/maps/org/direktsiya_vsemirnogo_festivalya_molodezhi/4837929064?si=4um6krn4vrnc3mub8n7bzta47w'
+    },
   ];
 
   return (
