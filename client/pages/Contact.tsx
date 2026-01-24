@@ -16,6 +16,38 @@ import {
   ArrowRight,
 } from 'lucide-react';
 
+// Email validation helper
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 254;
+}
+
+// Form validation helper
+function validateFormData(formData: { name: string; email: string; subject: string; message: string }): string | null {
+  if (!formData.name || formData.name.trim().length === 0) {
+    return 'Name is required';
+  }
+  if (formData.name.length > 100) {
+    return 'Name must be less than 100 characters';
+  }
+  if (!formData.email || !isValidEmail(formData.email)) {
+    return 'Please enter a valid email address';
+  }
+  if (!formData.subject || formData.subject.trim().length === 0) {
+    return 'Subject is required';
+  }
+  if (formData.subject.length > 200) {
+    return 'Subject must be less than 200 characters';
+  }
+  if (!formData.message || formData.message.trim().length === 0) {
+    return 'Message is required';
+  }
+  if (formData.message.length > 5000) {
+    return 'Message must be less than 5000 characters';
+  }
+  return null;
+}
+
 export default function Contact() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
