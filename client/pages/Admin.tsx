@@ -243,6 +243,7 @@ export default function Admin() {
           description_i18n: i18nData.description_i18n,
           content_i18n: i18nData.content_i18n,
           order_index: formData.orderIndex,
+          redirect_url: formData.redirectUrl || null,
         };
 
         if (editingId) {
