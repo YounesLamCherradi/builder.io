@@ -234,6 +234,14 @@ export default function Events() {
 
         about_event: 'About This Event',
         what_expect: 'What to Expect',
+        loading_events: 'Loading events...',
+        showing_events: 'Showing',
+        of_events: 'of',
+        events_text: 'events',
+        language: 'Language',
+        telegram: 'Telegram',
+        instagram: 'Instagram',
+        version: 'v1.0.0 • 2026',
       },
       ar: {
         nav_home: 'الرئيسية',
