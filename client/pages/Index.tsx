@@ -181,6 +181,10 @@ export default function Index() {
         hero_stat_success: 'Success Rate',
         hero_stat_support: 'Support',
 
+        latest_updates: 'Latest Updates',
+        trending_now: 'Trending Now',
+        read: 'Read',
+
         opps_title_1: 'Discover Your',
         opps_title_2: 'Perfect Match',
         opps_desc: 'Browse thousands of verified opportunities across multiple categories',
