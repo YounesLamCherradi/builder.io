@@ -176,6 +176,11 @@ export default function Index() {
         stat_success: 'Success Rate',
         stat_support: 'Support',
 
+        hero_stat_users: 'Youth Reached',
+        hero_stat_countries: 'Countries Reached',
+        hero_stat_success: 'Success Rate',
+        hero_stat_support: 'Support',
+
         opps_title_1: 'Discover Your',
         opps_title_2: 'Perfect Match',
         opps_desc: 'Browse thousands of verified opportunities across multiple categories',
