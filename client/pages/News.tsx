@@ -691,10 +691,21 @@ export default function News() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-gray-200">
+              <div className="mt-8 pt-8 border-t border-gray-200 flex items-center gap-4 flex-wrap">
+                {selectedArticle.redirect_url && (
+                  <a
+                    href={selectedArticle.redirect_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white rounded-full font-semibold hover:bg-red-700 transition-colors"
+                  >
+                    <span>{t('read_more')}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                )}
                 <button
                   onClick={() => setSelectedArticle(null)}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white rounded-full font-semibold hover:bg-red-700 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-900 rounded-full font-semibold hover:bg-gray-300 transition-colors"
                 >
                   <span>{t('close_article')}</span>
                   <X className="w-4 h-4" />
