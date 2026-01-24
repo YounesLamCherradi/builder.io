@@ -353,6 +353,7 @@ export default function Index() {
         latest_updates: 'أحدث التحديثات',
         trending_now: 'الاتجاه الحالي',
         read: 'اقرأ',
+        back_to_news: 'العودة إلى الأخبار',
 
         opps_title_1: 'ابحث عن',
         opps_title_2: 'مطابقتك المثالية',
