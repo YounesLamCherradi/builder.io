@@ -223,6 +223,7 @@ export default function News() {
         subscribe_desc: 'Подпишитесь, чтобы получать последние новости и обновления',
         subscribe_email: 'Введите ваш email',
         subscribe_button: 'Подписаться',
+        featured: 'Главное',
       },
     }),
     []
