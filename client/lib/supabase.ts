@@ -60,6 +60,7 @@ export interface NewsArticle {
   description_i18n?: I18nString;
   content_i18n?: I18nString;
   order_index?: number;
+  redirect_url?: string | null;
   created_at: string;
 }
 
