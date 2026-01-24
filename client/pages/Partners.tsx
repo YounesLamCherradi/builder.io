@@ -217,6 +217,10 @@ export default function Partners() {
         made_with: 'Сделано с ❤️ в Марокко',
         sitemap: 'Карта сайта',
         nav_resources: 'Ресурсы',
+        language: 'Язык',
+        telegram: 'Телеграм',
+        instagram: 'Инстаграм',
+        version: 'v1.0.0 • 2026',
       },
     }),
     []
