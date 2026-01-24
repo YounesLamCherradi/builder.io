@@ -382,6 +382,15 @@ export default function Contact() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate form data first
+    const validationError = validateFormData(formData);
+    if (validationError) {
+      const { toast } = await import('sonner');
+      toast.error(validationError);
+      return;
+    }
+
     setFormSubmitted(true);
 
     try {
