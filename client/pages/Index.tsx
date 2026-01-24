@@ -319,7 +319,6 @@ export default function Index() {
         putin_quote_2: 'Our doors are always open to you.',
         putin_attribution: '— Vladimir Putin, Closing Ceremony of World Youth Festival (2024)',
         wyf_description: 'The official page of the National Committee of Morocco for the World Youth Festival, the largest youth network in Africa.',
-        watch_demo: 'Watch Demo',
 
         // Sponsors section strings
         partners_desc_call: 'Partner with us or list your organization',
@@ -487,8 +486,7 @@ export default function Index() {
         putin_quote_1: 'روسيا أصبحت صديقتك الآن.',
         putin_quote_2: 'أبوابنا مفتوحة أمامك دائماً.',
         putin_attribution: '— فلاديمير بوتين، حفل الإغلاق لمهرجان الشباب العالمي (2024)',
-        wyf_description: 'الصفحة الرسمية للجنة الوطنية المغربية لمهرجان الشباب العالمي، أكبر شبكة شبابية في أفريقيا..',
-        watch_demo: 'شاهد العرض التوضيحي',
+        wyf_description: 'الصفحة الرسمية للجنة الوطنية المغربية لمهرجان الشباب العالمي، أكبر شبكة شبابية في أفريقيا..\',',
 
         // Sponsors section strings
         partners_desc_call: 'شارك معنا أو اعرض مؤسستك',
@@ -655,8 +653,7 @@ export default function Index() {
         putin_quote_1: 'Россия теперь ваш друг.',
         putin_quote_2: 'Наши двери всегда открыты для вас.',
         putin_attribution: '— Владимир Путин, Церемония закрытия Всемирного фестиваля молодёжи (2024)',
-        wyf_description: 'Официальная страница национального комитета Марокко по Всемирному фестивалю молодёжи, крупнейшей молодёжной сети в Африке..',
-        watch_demo: 'Посмотреть демо',
+        wyf_description: 'Официальная страница национального комитета Марокко по Всемирному фестивалю молодёжи, крупнейшей молодёжной сети в Африке..\',',
 
         // Sponsors section strings
         partners_desc_call: 'Сотрудничайте с нами или зарегистрируйте вашу организацию',
