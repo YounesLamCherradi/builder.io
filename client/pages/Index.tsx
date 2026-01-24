@@ -184,6 +184,7 @@ export default function Index() {
         latest_updates: 'Latest Updates',
         trending_now: 'Trending Now',
         read: 'Read',
+        back_to_news: 'Back to News',
 
         opps_title_1: 'Discover Your',
         opps_title_2: 'Perfect Match',
