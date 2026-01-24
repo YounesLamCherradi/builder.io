@@ -979,7 +979,7 @@ export default function About() {
                     rel="noopener noreferrer"
                     className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-brand-red via-red-600 to-red-700 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-brand-red/40 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                   >
-                    <span className="relative z-10">Explore Our Global Impact</span>
+                    <span className="relative z-10">{t('patriot_cta_button')}</span>
                     <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-2 transition-transform" />
                     <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
