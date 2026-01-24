@@ -5,9 +5,9 @@ interface AboutHistoryProps {
 export function AboutHistory({ t }: AboutHistoryProps) {
   const historyPoints = [
     {
-      year: '1945',
-      title: 'A World Conference for Peace',
-      description: 'After the end of World War II, a world conference of youth for peace was held in London, where a decision was made to begin holding world festivals of youth and students.',
+      year: t('history_1945_year'),
+      title: t('history_1945_title'),
+      description: t('history_1945_desc'),
       number: '1',
       color: 'from-gray-700 to-gray-900',
       bg: 'from-gray-50 to-gray-100',
@@ -15,9 +15,9 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2Fc6c2bf3b2f5d4abdaa10db27bc5ad81c?format=webp&width=800&height=1200',
     },
     {
-      year: '1957',
-      title: 'The First World Youth Festival',
-      description: 'Moscow hosted the World Festival of 1957, which became the largest in the history of the festival movement with 34,000 people participating from 130+ countries including Morocco and other African Nations.',
+      year: t('history_1957_year'),
+      title: t('history_1957_title'),
+      description: t('history_1957_desc'),
       number: '2',
       color: 'from-brand-red to-red-700',
       bg: 'from-brand-red/10 to-red-100/5',
@@ -25,9 +25,9 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F53096ecbc5164b5f8396f908b5ccec06?format=webp&width=800&height=1200',
     },
     {
-      year: '2017',
-      title: 'Festival Relocation',
-      description: 'Moscow hosted the Festival in Sochi before starting the new version of the World Youth Festival in 2024.',
+      year: t('history_2017_year'),
+      title: t('history_2017_title'),
+      description: t('history_2017_desc'),
       number: '3',
       color: 'from-gray-600 to-gray-800',
       bg: 'from-gray-50 to-gray-100',
@@ -35,9 +35,9 @@ export function AboutHistory({ t }: AboutHistoryProps) {
       image: 'https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F0361737ffc9545eeb55e8ac90d38391d?format=webp&width=800&height=1200',
     },
     {
-      year: '2024',
-      title: 'The New Era Begins',
-      description: 'By decree of the President of the Russian Federation, the largest World Youth Festival was held on the federal territory "Sirius", from March 1 to 7, 2024, under the motto "Let\'s start the future together!"',
+      year: t('history_2024_year'),
+      title: t('history_2024_title'),
+      description: t('history_2024_desc'),
       number: '4',
       color: 'from-brand-red to-red-700',
       bg: 'from-brand-red/10 to-red-100/5',
