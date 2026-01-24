@@ -827,20 +827,19 @@ export default function Partners() {
               {/* First Quote - Youth Assembly */}
               <div className="space-y-4">
                 <blockquote className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 leading-snug">
-                  "The Youth Assembly is a space for real dialogue and joint action,
-                  <span className="block text-brand-red mt-2">where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust"</span>
+                  {t('affiliation_quote')}
                 </blockquote>
 
                 {/* Attribution */}
                 <div className="space-y-1 pt-3 border-t border-brand-red/30">
                   <p className="text-base sm:text-lg font-bold text-gray-900">
-                    Anastasia Shishkina
+                    {t('affiliation_author')}
                   </p>
                   <p className="text-xs sm:text-sm text-gray-600">
-                    Head of the Directorate for Youth Cooperation
+                    {t('affiliation_role')}
                   </p>
                   <p className="text-xs sm:text-sm text-gray-600 font-semibold mt-1">
-                    World Peoples Assembly
+                    {t('affiliation_org')}
                   </p>
                 </div>
               </div>
