@@ -363,6 +363,14 @@ export default function Events() {
 
         about_event: 'عن هذه الفعالية',
         what_expect: 'ماذا تتوقع',
+        loading_events: 'جارٍ تحميل الفعاليات...',
+        showing_events: 'عرض',
+        of_events: 'من',
+        events_text: 'الفعاليات',
+        language: 'اللغة',
+        telegram: 'تيليجرام',
+        instagram: 'إنستغرام',
+        version: 'v1.0.0 • 2026',
       },
       ru: {
         nav_home: 'Главная',
