@@ -928,39 +928,39 @@ export default function About() {
                 {/* Animated header badge */}
                 <div className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-red/10 to-red-50/10 px-5 py-3 rounded-full border border-brand-red/20 hover:border-brand-red/50 transition-all duration-300">
                   <Award className="w-5 h-5 text-brand-red flex-shrink-0" />
-                  <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">Official Recognition</span>
+                  <span className="text-xs sm:text-sm font-bold text-brand-red uppercase tracking-widest">{t('patriot_official_recognition')}</span>
                 </div>
 
                 {/* Main Heading with accent */}
                 <div className="space-y-4">
                   <div className="inline-block">
-                    <span className="text-xs sm:text-sm font-bold text-brand-red bg-brand-red/5 px-4 py-2 rounded-full uppercase tracking-widest">Award Title</span>
+                    <span className="text-xs sm:text-sm font-bold text-brand-red bg-brand-red/5 px-4 py-2 rounded-full uppercase tracking-widest">{t('patriot_award_title')}</span>
                   </div>
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
-                    Best International Project <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">in Russia</span>
+                    {t('patriot_award_label')} <span className="bg-gradient-to-r from-brand-red to-red-700 bg-clip-text text-transparent">{t('patriot_award_location')}</span>
                   </h2>
                   <div className="flex items-center gap-3 pt-2">
                     <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-transparent rounded-full" />
-                    <span className="text-xs text-gray-600 font-semibold uppercase">2025</span>
+                    <span className="text-xs text-gray-600 font-semibold uppercase">{t('patriot_award_year')}</span>
                   </div>
                 </div>
 
                 {/* Main Description */}
                 <div className="space-y-5">
                   <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-medium">
-                    The National Committee of Morocco of the <span className="font-bold text-brand-red">World Youth Festival (WYF Morocco)</span> has been honored with the prestigious PATRIOT Award for outstanding contributions to international youth cooperation.
+                    {t('patriot_description_1')}
                   </p>
                   <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                    This remarkable recognition was presented by <span className="font-semibold text-gray-900">Maria Zakharova</span>, Official Spokesperson of the Russian Foreign Ministry, during the exclusive ROSPATRIOT award ceremony in <span className="font-semibold text-brand-red">Moscow on December 9, 2025.</span>
+                    {t('patriot_description_2')}
                   </p>
                 </div>
 
                 {/* Achievement highlights with better animation */}
                 <div className="space-y-3 pt-4">
                   {[
-                    'International recognition for exceptional youth diplomacy',
-                    'Presented by Russian Foreign Ministry leadership',
-                    'Strengthening global cooperation & cultural exchange'
+                    t('patriot_highlight_1'),
+                    t('patriot_highlight_2'),
+                    t('patriot_highlight_3')
                   ].map((text, idx) => (
                     <div key={idx} className="flex items-start gap-4 group cursor-default">
                       <div className="w-6 h-6 rounded-full bg-brand-red/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-brand-red/20 transition-all duration-300">
