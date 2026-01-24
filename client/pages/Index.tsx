@@ -948,7 +948,7 @@ export default function Index() {
       {/* Hero Section */}
       <section
         id="home"
-        className="scroll-section relative min-h-[100svh] flex items-center pt-12 sm:pt-16 overflow-hidden"
+        className="scroll-section relative min-h-[100svh] flex items-center pt-20 sm:pt-24 md:pt-16 lg:pt-24 overflow-hidden"
       >
         <div className="absolute inset-0 bg-white">
           <div className="absolute inset-0 opacity-0">
@@ -974,7 +974,7 @@ export default function Index() {
           {/* Mobile: Stack vertically (image first), Desktop: 2-column grid */}
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-24 items-center">
             {/* Image - appears first on mobile */}
-            <div className="relative w-full max-w-sm mx-auto lg:max-w-2xl lg:mx-0 order-1 lg:order-2 animate-in fade-in slide-in-from-top-8 duration-1000">
+            <div className="relative w-full max-w-sm mx-auto lg:max-w-2xl lg:mx-0 order-1 lg:order-2 animate-in fade-in slide-in-from-top-8 duration-1000 pt-4 sm:pt-0">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
                 alt="Portrait"
