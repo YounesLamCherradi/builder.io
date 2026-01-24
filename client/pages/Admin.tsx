@@ -710,6 +710,7 @@ export default function Admin() {
       answer: '',
       bio: '',
       orderIndex: 0,
+      redirectUrl: '',
     });
     setI18nData({
       title_i18n: { en: '', ar: '', ru: '' },
