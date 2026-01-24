@@ -836,24 +836,49 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-brand-red/10 to-brand-red/5 rounded-2xl border-2 border-brand-red/20 p-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {t('contact_hours_title')}
-                </h3>
-                <ul className="space-y-3 text-gray-700">
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-brand-red rounded-full" />
-                    {t('contact_hours_weekdays')}
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-brand-red rounded-full" />
-                    {t('contact_hours_saturday')}
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full" />
-                    {t('contact_hours_sunday')}
-                  </li>
-                </ul>
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-brand-red/10 to-brand-red/5 rounded-2xl border-2 border-brand-red/20 p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {t('contact_hours_title')}
+                  </h3>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-brand-red rounded-full" />
+                      {t('contact_hours_weekdays')}
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-brand-red rounded-full" />
+                      {t('contact_hours_saturday')}
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full" />
+                      {t('contact_hours_sunday')}
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-blue-5 rounded-2xl border-2 border-blue-200 p-8">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    Дирекция Всемирного фестиваля молодежи
+                  </h3>
+                  <ul className="space-y-3 text-gray-700">
+                    <li className="flex items-center gap-3">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full" />
+                      <span className="font-semibold">24/7</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-1 flex-shrink-0" />
+                      <a
+                        href="https://yandex.ru/maps/org/direktsiya_vsemirnogo_festivalya_molodezhi/4837929064?si=4um6krn4vrnc3mub8n7bzta47wand"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors break-words"
+                      >
+                        Подколокольный пер., 10А/2, Москва, Россия
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
