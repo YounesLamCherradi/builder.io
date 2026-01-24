@@ -241,19 +241,6 @@ export default function News() {
 
   const t = (key) => I18N[currentLanguage]?.[key] ?? I18N.en[key] ?? key;
 
-  // Pagination calculations
-  const totalPages = Math.ceil(articles.length / articlesPerPage);
-  const startIndex = (currentPage - 1) * articlesPerPage;
-  const endIndex = startIndex + articlesPerPage;
-  const currentArticles = articles.slice(startIndex, endIndex);
-  const displayFeaturedArticle = currentPage === 1 && articles[0]; // Featured article only on first page
-  const otherArticles = currentPage === 1 ? articles.slice(1, articlesPerPage) : currentArticles;
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const menuItems = [
     { name: t('nav_home'), path: '/' },
     { name: t('nav_news'), path: '/news' },
