@@ -1628,7 +1628,18 @@ export default function Index() {
               )}
 
               {/* Footer Action */}
-              <div className="mt-10 pt-8 border-t border-gray-200">
+              <div className="mt-10 pt-8 border-t border-gray-200 flex items-center gap-4 flex-wrap">
+                {selectedNews.redirect_url && (
+                  <a
+                    href={selectedNews.redirect_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-brand-red text-white hover:bg-red-700 rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
+                  >
+                    <span>Read More</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                )}
                 <button
                   onClick={() => setSelectedNews(null)}
                   className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
