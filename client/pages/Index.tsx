@@ -1382,11 +1382,11 @@ export default function Index() {
               <div className="lg:col-span-2 animate-in fade-in slide-in-from-left-8 duration-700">
                 <div
                   onClick={() => setSelectedNews([...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0])}
-                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full max-h-[600px] lg:max-h-[800px] flex flex-col cursor-pointer hover:border-brand-red/50 relative"
+                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 h-full max-h-[600px] lg:max-h-[800px] flex flex-col cursor-pointer hover:border-brand-red/70 relative"
                 >
                   {/* Gradient border effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl p-[2px] pointer-events-none">
-                    <div className="absolute inset-0 bg-gradient-to-r from-brand-red to-transparent rounded-3xl" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-red via-red-500 to-brand-red rounded-3xl" />
                   </div>
                   {(() => {
                     // Articles are already sorted by order_index from Supabase
