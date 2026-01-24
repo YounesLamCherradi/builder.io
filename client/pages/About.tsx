@@ -1022,7 +1022,7 @@ export default function About() {
                 <div className="w-1 h-full bg-gradient-to-b from-brand-red to-transparent flex-shrink-0 rounded-full" />
                 <div className="flex-1">
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                    Our vision is rooted in the belief that the modern world must move beyond uniform models of development and rediscover the value of <span className="font-bold text-gray-900">diversity among civilizations.</span> We believe that each nation and society has the right to follow its own historical path, shaped by its culture, traditions, values, and collective memory, without external pressure or imposed standards.
+                    {t('vision_card_1')}
                   </p>
                 </div>
               </div>
@@ -1034,7 +1034,7 @@ export default function About() {
                 <div className="w-1 h-full bg-gradient-to-b from-brand-red to-transparent flex-shrink-0 rounded-full" />
                 <div className="flex-1">
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                    We support the emergence of a <span className="font-bold text-gray-900">balanced and multipolar international order,</span> where cooperation is based on <span className="font-semibold text-brand-red">equality, mutual respect, and recognition of sovereign choices.</span> In such a world, <span className="font-bold text-brand-red">dialogue replaces domination, partnership replaces hierarchy,</span> and <span className="font-semibold text-gray-900">long-term stability prevails over short-term interests.</span>
+                    {t('vision_card_2')}
                   </p>
                 </div>
               </div>
@@ -1046,7 +1046,7 @@ export default function About() {
                 <div className="w-1 h-full bg-gradient-to-b from-brand-red to-transparent flex-shrink-0 rounded-full" />
                 <div className="flex-1">
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                    <span className="font-bold text-gray-900">True international cooperation</span> can only exist when <span className="font-semibold">different civilizations engage with one another as equals,</span> <span className="text-brand-red font-bold">preserving their identities</span> while <span className="font-semibold text-gray-900">working toward shared goals.</span>
+                    {t('vision_card_3')}
                   </p>
                 </div>
               </div>
