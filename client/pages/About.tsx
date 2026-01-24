@@ -440,6 +440,13 @@ export default function About() {
         vision_principle_3: 'التعاون',
         vision_principle_3_desc: 'الحفاظ على الهويات، تبادل الأهداف',
 
+        // Our Members Section
+        members_title: 'أعضاء اللجنة',
+        members_exec_title: 'اللجنة التنفيذية',
+        members_exec_subtitle: 'فريق القيادة',
+        members_council_title: 'المجلس العام',
+        members_council_subtitle: 'أعضاء المجتمع',
+
         home_stay_updated_title: 'ابقَ محدثاً مع',
         home_stay_updated_highlight: 'الفرص العالمية',
         home_stay_updated_desc: 'احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.',
