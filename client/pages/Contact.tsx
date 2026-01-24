@@ -313,6 +313,10 @@ export default function Contact() {
         terms: 'Условия',
         cookies: 'Куки',
         rights: '© 2026 MoroccoGlobal. Все права защищены.',
+        language: 'Язык',
+        telegram: 'Телеграм',
+        instagram: 'Инстаграм',
+        version: 'v1.0.0 • 2026',
       },
     }),
     []
