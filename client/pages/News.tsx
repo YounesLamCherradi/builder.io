@@ -174,6 +174,13 @@ export default function News() {
         telegram: 'تيليجرام',
         instagram: 'إنستغرام',
         version: 'v1.0.0 • 2026',
+        more_stories: 'المزيد من القصص',
+        articles_label: 'المقالات',
+        close_article: 'إغلاق المقال',
+        stay_updated: 'ابقَ محدثاً',
+        subscribe_desc: 'اشترك للحصول على أحدث الأخبار والتحديثات',
+        subscribe_email: 'أدخل بريدك الإلكتروني',
+        subscribe_button: 'اشترك',
       },
       ru: {
         nav_home: 'Главная',
