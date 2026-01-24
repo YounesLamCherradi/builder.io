@@ -143,6 +143,18 @@ export default function Partners() {
         telegram: 'Telegram',
         instagram: 'Instagram',
         version: 'v1.0.0 • 2026',
+
+        // Informational Partners Section
+        informational_partners: 'Informational Partners',
+        informational_partners_desc: 'Knowledge partners and information sources supporting our mission',
+
+        // International Affiliation Section
+        affiliation_quote: '"The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust"',
+        affiliation_author: 'Anastasia Shishkina',
+        affiliation_role: 'Head of the Directorate for Youth Cooperation',
+        affiliation_org: 'World Peoples Assembly',
+        world_assembly_title: 'World Peoples Assembly',
+        world_assembly_desc: 'An international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum "Generation of Unity" and the Public Talk "The Voice of Time", strengthening global youth partnerships.',
       },
       ar: {
         nav_home: 'الرئيسية',
