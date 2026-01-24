@@ -42,7 +42,7 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
                   <span className="flex items-center justify-center h-5 w-5 rounded-full bg-brand-red/20 text-brand-red font-bold text-xs">•</span>
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-                  The National Committee of Morocco of the <span className="font-bold text-brand-red">World Youth Festival (WYF Morocco)</span> is an International Russian Youth Network created for the first time within the World Youth Festival 2024 in Sochi according to the Instructions of Russian President Vladimir Putin on developing the work and the legacy of the festival.
+                  {t('intro_point_1')}
                 </p>
               </div>
 
@@ -51,7 +51,7 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
                   <span className="flex items-center justify-center h-5 w-5 rounded-full bg-gray-900/20 text-gray-900 font-bold text-xs">•</span>
                 </div>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-                  Currently our committee is considered as the <span className="font-bold text-gray-900">largest Russian youth network in Africa</span>, reaching millions of Youth in Morocco and beyond and providing hundreds of opportunities through an emerging wide network of members and partners.
+                  {t('intro_point_2')}
                 </p>
               </div>
             </div>
