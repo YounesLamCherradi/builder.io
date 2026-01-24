@@ -1050,7 +1050,7 @@ export default function Index() {
                     50K+
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-brand-red to-red-600 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
-                  <p className="text-xs font-semibold text-gray-700 leading-snug">Youth Reached</p>
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">{t('hero_stat_users')}</p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
