@@ -6,8 +6,8 @@ export function AboutMembers({ t }: AboutMembersProps) {
   const memberStats = [
     {
       count: '+20',
-      title: 'Executive Committee',
-      subtitle: 'Leadership Team',
+      title: t('members_exec_title'),
+      subtitle: t('members_exec_subtitle'),
       isRed: true,
       icon: (
         <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -17,8 +17,8 @@ export function AboutMembers({ t }: AboutMembersProps) {
     },
     {
       count: '+220',
-      title: 'General Council',
-      subtitle: 'Community Members',
+      title: t('members_council_title'),
+      subtitle: t('members_council_subtitle'),
       isRed: false,
       icon: (
         <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
