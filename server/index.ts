@@ -65,13 +65,26 @@ export function createServer() {
     next();
   });
 
-  // CORS configuration - only allow your domain
-  const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,http://localhost:3000').split(',');
+  // CORS configuration - allow development and production domains
+  const allowedOrigins = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,http://localhost:3000,http://localhost:8080').split(',');
   app.use(cors({
     origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin) {
+        callback(null, true);
+        return;
+      }
+
+      // Check if origin is in allowed list
+      if (allowedOrigins.some(allowed => {
+        const cleanOrigin = origin.trim();
+        const cleanAllowed = allowed.trim();
+        return cleanOrigin === cleanAllowed || cleanOrigin.includes(cleanAllowed);
+      })) {
         callback(null, true);
       } else {
+        // Log CORS rejections for debugging
+        console.warn(`CORS rejected origin: ${origin}`);
         callback(new Error('Not allowed by CORS'));
       }
     },
