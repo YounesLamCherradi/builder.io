@@ -825,7 +825,7 @@ export default function Contact() {
                   {t('contact_info_title')}
                 </h2>
                 <div className="space-y-6">
-                  {contactInfo.map((info, idx) => (
+                  {contactInfo.map((info: any, idx) => (
                     <div key={idx} className="flex gap-4 p-6 bg-gray-50 rounded-2xl border-2 border-gray-200 hover:border-brand-red hover:bg-brand-red/5 transition-all duration-300">
                       <div className="flex-shrink-0">
                         <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-brand-red/10">
@@ -834,7 +834,18 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">{info.label}</h3>
-                        <p className="text-gray-600 mt-1">{info.value}</p>
+                        {info.url ? (
+                          <a
+                            href={info.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-brand-red hover:text-red-700 hover:underline mt-1 block font-semibold transition-colors whitespace-pre-line"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-gray-600 mt-1">{info.value}</p>
+                        )}
                       </div>
                     </div>
                   ))}
