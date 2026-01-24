@@ -1368,10 +1368,10 @@ export default function Index() {
           {newsList.length > 0 ? (
             <div className="flex flex-col lg:grid lg:grid-cols-4 gap-6 sm:gap-8">
               {/* Featured News - Left Side (2 columns on desktop) */}
-              <div className="lg:col-span-2 lg:row-span-2 animate-in fade-in slide-in-from-left-8 duration-700">
+              <div className="lg:col-span-2 animate-in fade-in slide-in-from-left-8 duration-700">
                 <div
                   onClick={() => setSelectedNews([...newsList].sort((a, b) => (a.order_index || 0) - (b.order_index || 0))[0])}
-                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col cursor-pointer hover:border-brand-red/50 relative"
+                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full max-h-[600px] lg:max-h-[800px] flex flex-col cursor-pointer hover:border-brand-red/50 relative"
                 >
                   {/* Gradient border effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl p-[2px] pointer-events-none">
