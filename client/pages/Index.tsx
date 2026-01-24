@@ -1487,7 +1487,7 @@ export default function Index() {
                             })}
                           </span>
                           <span className="text-xs text-brand-red font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">
-                            Read <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                            {t('read')} <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                           </span>
                         </div>
                       </div>
