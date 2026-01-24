@@ -454,6 +454,10 @@ export default function About() {
         rights: '© 2026 MoroccoGlobal. Все права защищены.',
         made_with: 'Сделано с ❤️ в Марокко',
         sitemap: 'Карта сайта',
+        language: 'Язык',
+        telegram: 'Телеграм',
+        instagram: 'Инстаграм',
+        version: 'v1.0.0 • 2026',
       },
     }),
     []
