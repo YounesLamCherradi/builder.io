@@ -300,6 +300,11 @@ export default function Contact() {
         contact_social_title: 'Свяжитесь с нами',
         contact_social_desc: 'Следите за нами в социальных сетях для новостей и историй успеха',
 
+        // Form messages
+        email_sent_success: 'Электронное письмо отправлено успешно! Мы свяжемся с вами в ближайшее время.',
+        email_send_error: 'Ошибка при отправке электронного письма. Пожалуйста, попробуйте еще раз.',
+        email_send_failed: 'Ошибка при отправке электронного письма',
+
         home_stay_updated_title: 'Оставайтесь в курсе',
         home_stay_updated_highlight: 'Глобальные возможности',
         home_stay_updated_desc: 'Получайте последние новости о стипендиях, визах и возможностях каждый месяц.',
