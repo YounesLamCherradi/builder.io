@@ -138,6 +138,11 @@ export default function Contact() {
         contact_social_title: 'Connect With Us',
         contact_social_desc: 'Follow us on social media for updates and success stories',
 
+        // Form messages
+        email_sent_success: 'Email sent successfully! We will get back to you soon.',
+        email_send_error: 'Failed to send email. Please try again.',
+        email_send_failed: 'Failed to send email',
+
         home_stay_updated_title: 'Stay Updated with',
         home_stay_updated_highlight: 'Global Opportunities',
         home_stay_updated_desc: 'Get the latest news about scholarships, visas, and opportunities delivered to your inbox every month.',
