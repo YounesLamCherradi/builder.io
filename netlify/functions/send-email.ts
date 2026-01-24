@@ -144,7 +144,6 @@ export default async (req: Request, context: Context) => {
       return new Response(
         JSON.stringify({
           error: 'Failed to send email',
-          details: error.message,
         }),
         {
           status: 500,
@@ -171,7 +170,6 @@ export default async (req: Request, context: Context) => {
     return new Response(
       JSON.stringify({
         error: 'Internal server error',
-        message: error instanceof Error ? error.message : 'Unknown error',
       }),
       {
         status: 500,
