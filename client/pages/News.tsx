@@ -509,10 +509,10 @@ export default function News() {
                           )}
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4 leading-tight group-hover:text-brand-red transition-colors">
-                          {articles[0].title}
+                          {(articles[0].title_i18n?.[currentLanguage as any]) || articles[0].title}
                         </h2>
                         <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
-                          {articles[0].content.substring(0, 200)}...
+                          {((articles[0].content_i18n?.[currentLanguage as any]) || articles[0].content).substring(0, 200)}...
                         </p>
                       </div>
                       <button onClick={() => setSelectedArticle(articles[0])} className="inline-flex items-center gap-3 text-brand-red font-bold hover:gap-4 transition-all group/btn">
