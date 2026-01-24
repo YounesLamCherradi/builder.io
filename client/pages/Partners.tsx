@@ -653,13 +653,13 @@ export default function Partners() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             <span className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30 animate-pulse" style={{ animationDuration: '3s' }}>
-              Informational Partners
+              {t('informational_partners')}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-              Informational Partners
+              {t('informational_partners')}
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              Knowledge partners and information sources supporting our mission
+              {t('informational_partners_desc')}
             </p>
           </div>
 
