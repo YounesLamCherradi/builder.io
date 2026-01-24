@@ -367,7 +367,7 @@ export default function Contact() {
       if (response.ok) {
         // Show success message
         const { toast } = await import('sonner');
-        toast.success('Email sent successfully! We will get back to you soon.');
+        toast.success(t('email_sent_success'));
 
         // Reset form
         setTimeout(() => {
@@ -376,13 +376,13 @@ export default function Contact() {
         }, 3000);
       } else {
         const { toast } = await import('sonner');
-        toast.error(result.error || 'Failed to send email');
+        toast.error(result.error || t('email_send_failed'));
         setFormSubmitted(false);
       }
     } catch (error) {
       console.error('Error sending email:', error);
       const { toast } = await import('sonner');
-      toast.error('Failed to send email. Please try again.');
+      toast.error(t('email_send_error'));
       setFormSubmitted(false);
     }
   };
