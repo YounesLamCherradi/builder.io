@@ -1,5 +1,28 @@
 import type { Context } from '@netlify/functions';
 
+// Sanitize HTML to prevent XSS attacks
+function sanitizeHTML(input: string): string {
+  if (!input) return '';
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
+
+// Validate email format (basic RFC 5322 compliance)
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 254;
+}
+
+// Validate input length
+function validateInputLength(input: string, maxLength: number): boolean {
+  return input && input.length > 0 && input.length <= maxLength;
+}
+
 export default async (req: Request, context: Context) => {
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -21,6 +44,34 @@ export default async (req: Request, context: Context) => {
           status: 400,
           headers: { 'Content-Type': 'application/json' },
         }
+      );
+    }
+
+    // Validate input lengths
+    if (!validateInputLength(name, 100)) {
+      return new Response(
+        JSON.stringify({ error: 'Name must be between 1 and 100 characters' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    if (!validateInputLength(subject, 200)) {
+      return new Response(
+        JSON.stringify({ error: 'Subject must be between 1 and 200 characters' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+    if (!validateInputLength(message, 5000)) {
+      return new Response(
+        JSON.stringify({ error: 'Message must be between 1 and 5000 characters' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Validate email format
+    if (!isValidEmail(email)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid email address' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
