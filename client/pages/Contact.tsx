@@ -234,9 +234,9 @@ export default function Contact() {
         contact_location_address: 'دائرة مهرجان الشباب العالمي\nممر بودكولوكولني، 10 أ/2',
 
         contact_hours_title: 'ساعات العمل',
-        contact_hours_weekdays: 'الاثنين - الجمعة: 9:00 صباحاً - 6:00 مساءً',
-        contact_hours_saturday: 'السبت: 10:00 صباحاً - 4:00 مساءً',
-        contact_hours_sunday: 'الأحد: مغلق',
+        contact_hours_weekdays: '24/7',
+        contact_hours_saturday: '',
+        contact_hours_sunday: '',
 
         contact_faq_title: 'الأسئلة الشائعة',
         contact_faq_q1: 'كم من الوقت يستغرق للحصول على رد؟',
