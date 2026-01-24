@@ -139,6 +139,10 @@ export default function Partners() {
         made_with: 'Made with ❤️ in Morocco',
         sitemap: 'Sitemap',
         nav_resources: 'Team',
+        language: 'Language',
+        telegram: 'Telegram',
+        instagram: 'Instagram',
+        version: 'v1.0.0 • 2026',
       },
       ar: {
         nav_home: 'الرئيسية',
