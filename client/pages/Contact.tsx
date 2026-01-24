@@ -237,6 +237,10 @@ export default function Contact() {
         terms: 'الشروط',
         cookies: 'ملفات تعريف الارتباط',
         rights: '© 2026 MoroccoGlobal. جميع الحقوق محفوظة.',
+        language: 'اللغة',
+        telegram: 'تيليجرام',
+        instagram: 'إنستغرام',
+        version: 'v1.0.0 • 2026',
       },
 
       ru: {
