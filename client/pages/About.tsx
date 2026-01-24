@@ -1005,11 +1005,11 @@ export default function About() {
           <div className="text-center mb-10 sm:mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div className="inline-flex items-center gap-2 bg-brand-red/10 px-5 py-2 rounded-full border border-brand-red/20 mb-6">
               <Lightbulb className="w-4 h-4 text-brand-red" />
-              <span className="text-xs font-bold text-brand-red uppercase tracking-widest">Our Vision</span>
+              <span className="text-xs font-bold text-brand-red uppercase tracking-widest">{t('vision_badge')}</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black text-gray-900 mb-2 leading-tight">
-              Our Vision for a <span className="bg-gradient-to-r from-brand-red via-red-600 to-red-700 bg-clip-text text-transparent">Multipolar World</span>
+              {t('vision_title')} <span className="bg-gradient-to-r from-brand-red via-red-600 to-red-700 bg-clip-text text-transparent">{t('vision_title_highlight')}</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-transparent rounded-full mx-auto" />
           </div>
