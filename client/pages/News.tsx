@@ -508,7 +508,7 @@ export default function News() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute top-6 left-6">
-                          <span className="bg-brand-red text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Featured</span>
+                          <span className="bg-brand-red text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">{t('featured')}</span>
                         </div>
                       </div>
                     )}
