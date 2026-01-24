@@ -349,6 +349,10 @@ export default function Index() {
         hero_stat_success: 'معدل النجاح',
         hero_stat_support: 'الدعم',
 
+        latest_updates: 'أحدث التحديثات',
+        trending_now: 'الاتجاه الحالي',
+        read: 'اقرأ',
+
         opps_title_1: 'ابحث عن',
         opps_title_2: 'مطابقتك المثالية',
         opps_desc: "استكشف آلاف الفرص المتحققة في فئات متعددة",
