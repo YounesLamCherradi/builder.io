@@ -517,6 +517,10 @@ export default function Index() {
         hero_stat_success: 'Успешность',
         hero_stat_support: 'Поддержка',
 
+        latest_updates: 'Последние обновления',
+        trending_now: 'Актуально сейчас',
+        read: 'Читать',
+
         opps_title_1: 'Найди свой',
         opps_title_2: 'идеальный вариант',
         opps_desc: 'Тысячи проверенных возможностей в разных категориях',
