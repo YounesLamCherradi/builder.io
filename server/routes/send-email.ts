@@ -1,5 +1,28 @@
 import { Request, Response } from "express";
 
+// Sanitize HTML to prevent XSS attacks
+function sanitizeHTML(input: string): string {
+  if (!input) return '';
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
+
+// Validate email format (basic RFC 5322 compliance)
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 254;
+}
+
+// Validate input length
+function validateInputLength(input: string, maxLength: number): boolean {
+  return input && input.length > 0 && input.length <= maxLength;
+}
+
 export async function sendEmail(req: Request, res: Response) {
   const { name, email, subject, message } = req.body;
 
@@ -9,6 +32,22 @@ export async function sendEmail(req: Request, res: Response) {
       error: "Missing required fields",
       required: ["name", "email", "subject", "message"],
     });
+  }
+
+  // Validate input lengths
+  if (!validateInputLength(name, 100)) {
+    return res.status(400).json({ error: "Name must be between 1 and 100 characters" });
+  }
+  if (!validateInputLength(subject, 200)) {
+    return res.status(400).json({ error: "Subject must be between 1 and 200 characters" });
+  }
+  if (!validateInputLength(message, 5000)) {
+    return res.status(400).json({ error: "Message must be between 1 and 5000 characters" });
+  }
+
+  // Validate email format
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ error: "Invalid email address" });
   }
 
   try {
