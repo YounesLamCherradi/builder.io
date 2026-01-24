@@ -971,19 +971,23 @@ export default function Index() {
         </div>
 
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-24 items-center">
-            <div className="space-y-3 sm:space-y-5 lg:space-y-8 w-full">
-              <div className="flex items-center justify-between gap-3 mb-2 sm:mb-3">
+          {/* Mobile: Stack vertically (image first), Desktop: 2-column grid */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-24 items-center">
+            {/* Image - appears first on mobile */}
+            <div className="relative w-full max-w-sm mx-auto lg:max-w-2xl lg:mx-0 order-1 lg:order-2 animate-in fade-in slide-in-from-top-8 duration-1000">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
+                alt="Portrait"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* Content - appears second on mobile */}
+            <div className="space-y-3 sm:space-y-5 lg:space-y-8 w-full order-2 lg:order-1 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+              <div className="flex items-center justify-start gap-3 mb-2 sm:mb-3">
                 <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1 sm:py-2 bg-brand-red/10 rounded-full border border-brand-red/30">
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-red rounded-full animate-pulse" />
                   <span className="text-[10px] sm:text-sm font-semibold text-brand-red">{t('official_page_wyf')}</span>
-                </div>
-                <div className="relative w-24 h-auto sm:hidden flex-shrink-0">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
-                    alt="Portrait"
-                    className="w-full h-auto object-contain"
-                  />
                 </div>
               </div>
 
@@ -1012,16 +1016,6 @@ export default function Index() {
                   <span>{t('watch_demo')}</span>
                   <ArrowRight className="w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-              </div>
-            </div>
-
-            <div className="relative hidden sm:flex flex-col items-center lg:items-end justify-center">
-              <div className="relative w-96 sm:w-full lg:w-full lg:max-w-2xl">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
-                  alt="Portrait"
-                  className="w-full h-auto object-contain"
-                />
               </div>
             </div>
           </div>
