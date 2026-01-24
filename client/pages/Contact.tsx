@@ -219,6 +219,11 @@ export default function Contact() {
         contact_social_title: 'تواصل معنا',
         contact_social_desc: 'تابعنا على وسائل التواصل الاجتماعي للحصول على التحديثات وقصص النجاح',
 
+        // Form messages
+        email_sent_success: 'تم إرسال البريد الإلكتروني بنجاح! سنرد عليك قريباً.',
+        email_send_error: 'فشل إرسال البريد الإلكتروني. يرجى المحاولة مرة أخرى.',
+        email_send_failed: 'فشل إرسال البريد الإلكتروني',
+
         home_stay_updated_title: 'ابقَ محدثاً مع',
         home_stay_updated_highlight: 'الفرص العالمية',
         home_stay_updated_desc: 'احصل على أحدث الأخبار عن المنح والتأشيرات والفرص كل شهر في صندوق بريدك.',
