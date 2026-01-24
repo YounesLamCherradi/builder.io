@@ -340,6 +340,11 @@ export default function Index() {
         stat_success: 'معدل النجاح',
         stat_support: 'الدعم',
 
+        hero_stat_users: 'الشباب المستهدفون',
+        hero_stat_countries: 'الدول المستهدفة',
+        hero_stat_success: 'معدل النجاح',
+        hero_stat_support: 'الدعم',
+
         opps_title_1: 'ابحث عن',
         opps_title_2: 'مطابقتك المثالية',
         opps_desc: "استكشف آلاف الفرص المتحققة في فئات متعددة",
