@@ -29,7 +29,7 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
               </div>
               <div className="flex-grow">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1">
-                  Introduction
+                  {t('intro_title')}
                 </h2>
                 <div className="h-0.5 w-16 bg-gradient-to-r from-brand-red to-red-600 rounded-full" />
               </div>
