@@ -1020,22 +1020,82 @@ export default function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 lg:gap-6 mt-4 sm:mt-6 lg:mt-10 w-full">
-            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
-              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 8M</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Youth Reached</p>
+          {/* Statistics Grid - Desktop 4 columns, Mobile stacked cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mt-4 sm:mt-6 lg:mt-10 w-full">
+            {/* Stat 1 - Users */}
+            <div className="group animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <div className="relative h-full rounded-xl backdrop-blur-md bg-gradient-to-br from-brand-red/5 to-red-100/5 border border-gray-300 bg-white/60 p-4 sm:p-5 overflow-hidden transition-all duration-500 group-hover:shadow-lg group-hover:bg-white/80 group-hover:-translate-y-1">
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br from-brand-red to-red-600 opacity-0 group-hover:opacity-15 rounded-full blur-3xl transition-all duration-700" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red to-red-600 opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-brand-red to-red-600 p-2 mb-2 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    <Users className="w-full h-full text-white" />
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
+                    50K+
+                  </div>
+                  <div className="h-0.5 w-8 bg-gradient-to-r from-brand-red to-red-600 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">Youth Reached</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
-              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 115</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Partners Worldwide</p>
+
+            {/* Stat 2 - Countries */}
+            <div className="group animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '100ms' }}>
+              <div className="relative h-full rounded-xl backdrop-blur-md bg-gradient-to-br from-slate-700/5 to-slate-900/5 border border-gray-300 bg-white/60 p-4 sm:p-5 overflow-hidden transition-all duration-500 group-hover:shadow-lg group-hover:bg-white/80 group-hover:-translate-y-1">
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br from-slate-700 to-slate-900 opacity-0 group-hover:opacity-15 rounded-full blur-3xl transition-all duration-700" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-slate-700 to-slate-900 p-2 mb-2 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    <Globe className="w-full h-full text-white" />
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
+                    150+
+                  </div>
+                  <div className="h-0.5 w-8 bg-gradient-to-r from-slate-700 to-slate-900 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">Countries Reached</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
-              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">+ 80</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Events Each Year</p>
+
+            {/* Stat 3 - Success */}
+            <div className="group animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '200ms' }}>
+              <div className="relative h-full rounded-xl backdrop-blur-md bg-gradient-to-br from-brand-red/5 to-red-100/5 border border-gray-300 bg-white/60 p-4 sm:p-5 overflow-hidden transition-all duration-500 group-hover:shadow-lg group-hover:bg-white/80 group-hover:-translate-y-1">
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br from-brand-red to-red-600 opacity-0 group-hover:opacity-15 rounded-full blur-3xl transition-all duration-700" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red to-red-600 opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-brand-red to-red-600 p-2 mb-2 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    <TrendingUp className="w-full h-full text-white" />
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
+                    95%
+                  </div>
+                  <div className="h-0.5 w-8 bg-gradient-to-r from-brand-red to-red-600 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">Success Rate</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-red to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-center min-h-[120px] sm:min-h-[140px] p-3 sm:p-5 rounded-lg bg-gradient-to-br from-brand-red/10 to-transparent border border-brand-red/20 hover:border-brand-red/40 transition-all duration-300 hover:shadow-md">
-              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-brand-red">24/7</div>
-              <p className="text-xs sm:text-sm text-gray-700 mt-2 sm:mt-3 font-medium">Support</p>
+
+            {/* Stat 4 - Support */}
+            <div className="group animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '300ms' }}>
+              <div className="relative h-full rounded-xl backdrop-blur-md bg-gradient-to-br from-slate-700/5 to-slate-900/5 border border-gray-300 bg-white/60 p-4 sm:p-5 overflow-hidden transition-all duration-500 group-hover:shadow-lg group-hover:bg-white/80 group-hover:-translate-y-1">
+                <div className="absolute -top-12 -right-12 w-40 h-40 bg-gradient-to-br from-slate-700 to-slate-900 opacity-0 group-hover:opacity-15 rounded-full blur-3xl transition-all duration-700" />
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-slate-700 to-slate-900 p-2 mb-2 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    <Sparkles className="w-full h-full text-white" />
+                  </div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
+                    24/7
+                  </div>
+                  <div className="h-0.5 w-8 bg-gradient-to-r from-slate-700 to-slate-900 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">Support</p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </div>
             </div>
           </div>
         </div>
