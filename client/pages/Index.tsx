@@ -1,4 +1,4 @@
-good now translated all pages allwritings i nall pages to the translation of artciels ae already provided when enterin gartciles in admin dashboardrussianand arabic translationare already provided when creating artciles in admi ndahsboardimport React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { subscribeNewsletter, fetchGallery, fetchPartners, fetchNews, type GalleryItem, type Partner, type NewsArticle } from '../lib/supabase';
 import { toast } from 'sonner';
