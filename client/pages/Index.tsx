@@ -1396,16 +1396,20 @@ export default function Index() {
                         <img
                           src={newsList[0].image_url}
                           alt={newsList[0].title}
-                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125"
+                          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 group-hover:via-black/40" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-all duration-300 group-hover:via-black/50" />
 
-                        {/* Trending Badge */}
-                        <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-brand-red via-red-600 to-pink-600 text-white text-xs sm:text-sm font-bold rounded-full shadow-xl animate-pulse hover:animate-none group-hover:animate-none transition-all">
+                        {/* Trending Badge with enhanced styling */}
+                        <div className="absolute top-6 left-6 inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-brand-red via-red-600 to-red-700 text-white text-xs sm:text-sm font-bold rounded-full shadow-2xl animate-pulse hover:animate-none group-hover:animate-none transition-all duration-300 ring-2 ring-white/30">
                           <Zap className="w-5 h-5" />
                           <span>{t('trending_now')}</span>
                         </div>
+
+                        {/* Accent corner elements */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-brand-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       </div>
                     );
                   })()}
