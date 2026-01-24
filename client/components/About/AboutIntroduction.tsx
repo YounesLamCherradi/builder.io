@@ -60,16 +60,16 @@ export function AboutIntroduction({ t }: AboutIntroductionProps) {
             <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-gray-200">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent">2024</p>
-                  <p className="text-xs text-gray-600 font-semibold mt-1">Year Founded</p>
+                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent">{t('intro_metric_1')}</p>
+                  <p className="text-xs text-gray-600 font-semibold mt-1">{t('intro_metric_1_label')}</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">∞</p>
-                  <p className="text-xs text-gray-600 font-semibold mt-1">Growing Impact</p>
+                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">{t('intro_metric_2')}</p>
+                  <p className="text-xs text-gray-600 font-semibold mt-1">{t('intro_metric_2_label')}</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">Africa</p>
-                  <p className="text-xs text-gray-600 font-semibold mt-1">Our Base</p>
+                  <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-brand-red to-gray-900 bg-clip-text text-transparent">{t('intro_metric_3')}</p>
+                  <p className="text-xs text-gray-600 font-semibold mt-1">{t('intro_metric_3_label')}</p>
                 </div>
               </div>
             </div>
