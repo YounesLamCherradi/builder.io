@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+good now translated all pages allwritings i nall pages to the translation of artciels ae already provided when enterin gartciles in admin dashboardrussianand arabic translationare already provided when creating artciles in admi ndahsboardimport React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { subscribeNewsletter, fetchGallery, fetchPartners, fetchNews, type GalleryItem, type Partner, type NewsArticle } from '../lib/supabase';
 import { toast } from 'sonner';
@@ -522,7 +522,6 @@ export default function Index() {
         latest_updates: 'Последние обновления',
         trending_now: 'Актуально сейчас',
         read: 'Читать',
-        back_to_news: 'Вернуться к новостям',
 
         opps_title_1: 'Найди свой',
         opps_title_2: 'идеальный вариант',
@@ -1583,7 +1582,7 @@ export default function Index() {
                   onClick={() => setSelectedNews(null)}
                   className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
                 >
-                  <span>{t('back_to_news')}</span>
+                  <span>Back to News</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
