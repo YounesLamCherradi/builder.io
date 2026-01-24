@@ -1349,7 +1349,7 @@ export default function Index() {
             <div className="inline-block mb-4">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 text-brand-red text-sm font-bold rounded-full border border-brand-red/30 animate-pulse">
                 <Zap className="w-4 h-4" />
-                LATEST UPDATES
+                {t('latest_updates').toUpperCase()}
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
