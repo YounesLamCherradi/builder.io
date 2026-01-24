@@ -711,7 +711,7 @@ export default function News() {
                   onClick={() => setSelectedArticle(null)}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white rounded-full font-semibold hover:bg-red-700 transition-colors"
                 >
-                  <span>Close Article</span>
+                  <span>{t('close_article')}</span>
                   <X className="w-4 h-4" />
                 </button>
               </div>
