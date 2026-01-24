@@ -2,6 +2,7 @@
   command = "pnpm install --frozen-lockfile && pnpm run build"
   functions = "netlify/functions"
   publish = "dist/spa"
+  cache_dir = "/root/.local/share/pnpm/store"
 
 
 [functions]
