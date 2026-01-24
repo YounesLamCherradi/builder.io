@@ -162,10 +162,10 @@ export function AboutHistory({ t }: AboutHistoryProps) {
                 </div>
                 <div>
                   <h3 className="text-sm sm:text-base font-bold mb-1">
-                    Within this festival, WYF Morocco was officially created!
+                    {t('history_wyf_morocco_title')}
                   </h3>
                   <p className="text-white/90 text-xs sm:text-sm leading-relaxed">
-                    The main idea was to unite countries to create a multipolar world based on the principles of justice and equality.
+                    {t('history_wyf_morocco_desc')}
                   </p>
                 </div>
               </div>
