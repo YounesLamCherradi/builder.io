@@ -72,10 +72,10 @@ export function AboutHistory({ t }: AboutHistoryProps) {
         {/* Section Title */}
         <div className="mb-8 sm:mb-10 animate-in fade-in slide-in-from-top-6 duration-700">
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
-            WYF, a long history since 1957!
+            {t('history_title')}
           </h2>
           <p className="text-gray-600 text-xs sm:text-sm">
-            World Youth Festival started originally many decades ago
+            {t('history_subtitle')}
           </p>
         </div>
 
