@@ -449,6 +449,7 @@ export default function Admin() {
         answer: '',
         bio: '',
         orderIndex: news.order_index || 0,
+        redirectUrl: news.redirect_url || '',
       });
       setI18nData({
         title_i18n: news.title_i18n || { en: news.title, ar: '', ru: '' },
