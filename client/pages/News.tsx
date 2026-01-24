@@ -214,6 +214,13 @@ export default function News() {
         telegram: 'Телеграм',
         instagram: 'Инстаграм',
         version: 'v1.0.0 • 2026',
+        more_stories: 'Больше историй',
+        articles_label: 'Статьи',
+        close_article: 'Закрыть статью',
+        stay_updated: 'Будьте в курсе',
+        subscribe_desc: 'Подпишитесь, чтобы получать последние новости и обновления',
+        subscribe_email: 'Введите ваш email',
+        subscribe_button: 'Подписаться',
       },
     }),
     []
