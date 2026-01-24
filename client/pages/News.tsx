@@ -676,12 +676,12 @@ export default function News() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mb-6 leading-tight">
-                {selectedArticle.title}
+                {(selectedArticle.title_i18n?.[currentLanguage as any]) || selectedArticle.title}
               </h1>
 
               <div className="prose prose-sm max-w-none">
                 <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-wrap">
-                  {selectedArticle.content}
+                  {(selectedArticle.content_i18n?.[currentLanguage as any]) || selectedArticle.content}
                 </p>
               </div>
 
