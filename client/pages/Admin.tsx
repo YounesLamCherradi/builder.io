@@ -1079,17 +1079,32 @@ export default function Admin() {
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Display Order Position</label>
-                    <input
-                      type="number"
-                      value={formData.orderIndex}
-                      onChange={(e) => setFormData(prev => ({ ...prev, orderIndex: parseInt(e.target.value) || 0 }))}
-                      min="0"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
-                      placeholder="0 (first position), 1 (second), etc..."
-                    />
-                    <p className="text-xs text-gray-500 mt-1">Set the position number to control where this article appears. Lower numbers appear first.</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Display Order Position</label>
+                      <input
+                        type="number"
+                        value={formData.orderIndex}
+                        onChange={(e) => setFormData(prev => ({ ...prev, orderIndex: parseInt(e.target.value) || 0 }))}
+                        min="0"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="0 (first position), 1 (second), etc..."
+                      />
+                      <p className="text-xs text-gray-500 mt-1">Set the position number to control where this article appears. Lower numbers appear first.</p>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Redirect Link (Optional)</label>
+                      <input
+                        type="url"
+                        name="redirectUrl"
+                        value={formData.redirectUrl}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="https://example.com"
+                      />
+                      <p className="text-xs text-gray-500 mt-1">Add a link that readers can click from the article. It will appear as a button.</p>
+                    </div>
                   </div>
                 </>
               )}
