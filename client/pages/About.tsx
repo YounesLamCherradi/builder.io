@@ -615,6 +615,13 @@ export default function About() {
         vision_principle_3: 'Сотрудничество',
         vision_principle_3_desc: 'Сохранение идентичностей, общие цели',
 
+        // Our Members Section
+        members_title: 'Наши члены',
+        members_exec_title: 'Исполнительный комитет',
+        members_exec_subtitle: 'Команда лидеров',
+        members_council_title: 'Генеральный совет',
+        members_council_subtitle: 'Члены сообщества',
+
         home_stay_updated_title: 'Будьте в курсе',
         home_stay_updated_highlight: 'Глобальные возможности',
         home_stay_updated_desc: 'Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.',
