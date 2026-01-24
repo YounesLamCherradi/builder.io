@@ -19,9 +19,27 @@ export default function Admin() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [activeLanguage, setActiveLanguage] = useState<'en' | 'ar' | 'ru'>('en');
 
-  const handleLogout = () => {
-    localStorage.removeItem('adminToken');
-    localStorage.removeItem('adminUsername');
+  const handleLogout = async () => {
+    const token = sessionStorage.getItem('adminToken');
+
+    try {
+      // Notify server about logout
+      if (token) {
+        await fetch('/api/auth/logout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+      }
+    } catch (error) {
+      console.error('Error notifying server of logout:', error);
+    }
+
+    // Clear local session storage
+    sessionStorage.removeItem('adminToken');
+    sessionStorage.removeItem('adminUsername');
     toast.success('Logged out successfully');
     navigate('/admin-login');
   };
