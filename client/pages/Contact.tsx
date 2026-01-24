@@ -148,9 +148,9 @@ export default function Contact() {
         contact_phone: 'Phone',
         contact_location: 'Location',
         contact_office: 'WYF Morocco Main Office',
-        contact_email_address: ' wyfmorocco@gmail.com',
+        contact_email_address: 'wyfmorocco@gmail.com',
         contact_phone_number: '+212 7 73 70 64 47 / +212 6 49 57 43 26',
-        contact_location_address: 'Moscow, Russia',
+        contact_location_address: 'Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2',
 
         contact_hours_title: 'Business Hours',
         contact_hours_weekdays: 'Monday - Friday: 9:00 AM - 6:00 PM',
