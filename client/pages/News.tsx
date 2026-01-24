@@ -494,8 +494,8 @@ export default function News() {
             </div>
           ) : articles.length > 0 ? (
             <div className="space-y-12">
-              {/* Featured Article - Only on first page */}
-              {displayFeaturedArticle && (
+              {/* Featured Article */}
+              {articles[0] && (
                 <div className="group relative rounded-3xl overflow-hidden border-2 border-gray-100 hover:border-brand-red/50 hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white animate-in fade-in slide-in-from-bottom-8 duration-700">
                   <div className="grid lg:grid-cols-2 gap-0">
                     {/* Image */}
@@ -545,98 +545,83 @@ export default function News() {
                 </div>
               )}
 
-              {/* Other Articles Grid */}
-              {otherArticles.length > 0 && (
+              {/* Articles Horizontal Scroll */}
+              {articles.length > 1 && (
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">{currentPage === 1 ? t('more_stories') : t('articles_label')}</h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {otherArticles.map((article, idx) => (
-                      <div
-                        key={article.id}
-                        className="group bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-brand-red/50 hover:shadow-xl transition-all duration-300 cursor-pointer animate-in fade-in slide-in-from-bottom-8 duration-700"
-                        style={{ animationDelay: `${(idx + 1) * 100}ms` }}
-                        onClick={() => setSelectedArticle(article)}
-                      >
-                        {/* Image */}
-                        {article.image_url && (
-                          <div className="relative h-48 overflow-hidden bg-gray-200">
-                            <img
-                              src={article.image_url}
-                              alt={article.title}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          </div>
-                        )}
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-8">{t('more_stories')}</h3>
+                  <div className="relative">
+                    {/* Left Arrow */}
+                    <button
+                      onClick={() => scrollNews('left')}
+                      className="hidden lg:flex absolute left-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+                      aria-label="Scroll left"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
 
-                        {/* Content */}
-                        <div className="p-6 sm:p-7">
-                          <div className="flex items-center gap-3 text-xs text-gray-600 mb-3 flex-wrap">
-                            {article.category && (
-                              <span className="inline-block px-3 py-1.5 bg-brand-red/10 text-brand-red font-bold rounded-lg border border-brand-red/30">
-                                {article.category}
-                              </span>
-                            )}
-                            {article.date && (
-                              <div className="flex items-center gap-1.5">
-                                <Calendar className="w-3.5 h-3.5 text-brand-red" />
-                                <span className="font-semibold">{new Date(article.date).toLocaleDateString()}</span>
-                              </div>
-                            )}
-                          </div>
-                          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2 leading-tight">
-                            {(article.title_i18n?.[currentLanguage as any]) || article.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
-                            {(article.description_i18n?.[currentLanguage as any]) || article.description || article.content}
-                          </p>
-                          <div className="flex items-center gap-2 text-brand-red font-semibold text-sm group-hover:gap-3 transition-all">
-                            <span>{t('read_more')}</span>
-                            <ArrowRight className="w-3.5 h-3.5" />
+                    {/* Scroll Container */}
+                    <div
+                      ref={newsScrollRef}
+                      className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
+                    >
+                      {articles.slice(1).map((article, idx) => (
+                        <div
+                          key={article.id}
+                          className="group bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-brand-red/50 hover:shadow-xl transition-all duration-300 cursor-pointer flex-shrink-0 w-80 sm:w-96 animate-in fade-in slide-in-from-bottom-8 duration-700"
+                          style={{ animationDelay: `${idx * 50}ms` }}
+                          onClick={() => setSelectedArticle(article)}
+                        >
+                          {/* Image */}
+                          {article.image_url && (
+                            <div className="relative h-48 overflow-hidden bg-gray-200">
+                              <img
+                                src={article.image_url}
+                                alt={article.title}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            </div>
+                          )}
+
+                          {/* Content */}
+                          <div className="p-6 sm:p-7">
+                            <div className="flex items-center gap-3 text-xs text-gray-600 mb-3 flex-wrap">
+                              {article.category && (
+                                <span className="inline-block px-3 py-1.5 bg-brand-red/10 text-brand-red font-bold rounded-lg border border-brand-red/30">
+                                  {article.category}
+                                </span>
+                              )}
+                              {article.date && (
+                                <div className="flex items-center gap-1.5">
+                                  <Calendar className="w-3.5 h-3.5 text-brand-red" />
+                                  <span className="font-semibold">{new Date(article.date).toLocaleDateString()}</span>
+                                </div>
+                              )}
+                            </div>
+                            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2 leading-tight">
+                              {(article.title_i18n?.[currentLanguage as any]) || article.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
+                              {(article.description_i18n?.[currentLanguage as any]) || article.description || article.content}
+                            </p>
+                            <div className="flex items-center gap-2 text-brand-red font-semibold text-sm group-hover:gap-3 transition-all">
+                              <span>{t('read_more')}</span>
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+
+                    {/* Right Arrow */}
+                    <button
+                      onClick={() => scrollNews('right')}
+                      className="hidden lg:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+                      aria-label="Scroll right"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
                   </div>
-                </div>
-              )}
-
-              {/* Pagination Controls */}
-              {articles.length > articlesPerPage && (
-                <div className="mt-16 flex items-center justify-center gap-2 sm:gap-3">
-                  <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="p-3 rounded-full border-2 border-gray-200 text-gray-700 hover:border-brand-red hover:text-brand-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:disabled:border-gray-200 hover:disabled:text-gray-700"
-                    aria-label="Previous page"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-
-                  <div className="flex items-center gap-1 sm:gap-2 flex-wrap justify-center">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                      <button
-                        key={page}
-                        onClick={() => handlePageChange(page)}
-                        className={`px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
-                          currentPage === page
-                            ? 'bg-brand-red text-white shadow-lg'
-                            : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-brand-red hover:text-brand-red'
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="p-3 rounded-full border-2 border-gray-200 text-gray-700 hover:border-brand-red hover:text-brand-red transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:disabled:border-gray-200 hover:disabled:text-gray-700"
-                    aria-label="Next page"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
                 </div>
               )}
             </div>
