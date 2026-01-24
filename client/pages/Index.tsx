@@ -1433,68 +1433,89 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* News Scroll - Right Side */}
-              <div className="lg:col-span-2 relative h-[600px] lg:max-h-[800px]">
-                {/* Scroll Container */}
-                <div
-                  ref={newsScrollRef}
-                  className="flex flex-col overflow-y-auto h-full gap-6 pr-2 scrollbar-thin scrollbar-thumb-brand-red/30 scrollbar-track-transparent hover:scrollbar-thumb-brand-red/50"
-                >
-                  {newsList.slice(1).map((article, idx) => (
-                    <div
-                      key={article.id}
-                      onClick={() => setSelectedNews(article)}
-                      className="group animate-in fade-in slide-in-from-right-8 duration-700 rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex gap-4 p-4 sm:p-5 hover:-translate-y-1 hover:bg-gray-50 relative flex-shrink-0"
-                      style={{ animationDelay: `${idx * 100}ms` }}
-                    >
-                      {/* Hover gradient effect */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-r from-brand-red to-transparent pointer-events-none" />
-                      {article.image_url && (
-                        <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden rounded-2xl ring-2 ring-gray-200 group-hover:ring-brand-red transition-all duration-300 shadow-md group-hover:shadow-lg">
-                          <img
-                            src={article.image_url}
-                            alt={article.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-125"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* News Carousel - Right Side */}
+              <div className="lg:col-span-2">
+                <div className="relative">
+                  {/* Left Arrow */}
+                  <button
+                    onClick={() => scrollNews('left')}
+                    className="hidden lg:flex absolute left-0 top-1/2 z-20 -translate-y-1/2 -translate-x-16 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+                    aria-label="Scroll left"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
 
-                          {/* Index Badge */}
-                          <div className="absolute top-2 right-2 w-8 h-8 bg-gradient-to-br from-brand-red to-red-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
-                            {idx + 2}
+                  {/* Scroll Container */}
+                  <div
+                    ref={newsScrollRef}
+                    className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 scrollbar-hide"
+                  >
+                    {newsList.slice(1).map((article, idx) => (
+                      <div
+                        key={article.id}
+                        onClick={() => setSelectedNews(article)}
+                        className="group animate-in fade-in slide-in-from-bottom-8 duration-700 rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:border-brand-red/50 cursor-pointer flex-shrink-0 w-80 flex flex-col hover:bg-gray-50 relative"
+                        style={{ animationDelay: `${idx * 50}ms` }}
+                      >
+                        {/* Hover gradient effect */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 bg-gradient-to-r from-brand-red to-transparent pointer-events-none" />
+
+                        {article.image_url && (
+                          <div className="relative h-48 overflow-hidden bg-gray-200">
+                            <img
+                              src={article.image_url}
+                              alt={article.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              loading="lazy"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                            {/* Index Badge */}
+                            <div className="absolute top-3 right-3 w-8 h-8 bg-gradient-to-br from-brand-red to-red-700 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                              {idx + 2}
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
 
-                      <div className="flex-grow flex flex-col justify-between min-w-0 relative z-10">
-                        <div>
-                          {article.category && (
-                            <span className="inline-block text-xs font-bold text-brand-red mb-2 bg-gradient-to-r from-brand-red/10 to-brand-red/5 px-3 py-1.5 rounded-lg border border-brand-red/20 group-hover:bg-brand-red/15 transition-colors duration-300">
-                              {article.category}
-                            </span>
-                          )}
-                          <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors line-clamp-2 mb-2">
+                        <div className="p-4 sm:p-5 flex flex-col flex-grow relative z-10">
+                          <div className="flex items-center gap-2 mb-2 flex-wrap">
+                            {article.category && (
+                              <span className="inline-block text-xs font-bold text-brand-red bg-gradient-to-r from-brand-red/10 to-brand-red/5 px-3 py-1.5 rounded-lg border border-brand-red/20 group-hover:bg-brand-red/15 transition-colors duration-300">
+                                {article.category}
+                              </span>
+                            )}
+                          </div>
+                          <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors line-clamp-2 mb-2 leading-tight">
                             {(article.title_i18n?.[currentLanguage as any]) || article.title}
                           </h3>
-                          <p className="text-xs text-gray-600 line-clamp-1 group-hover:text-gray-700 transition-colors">
+                          <p className="text-xs text-gray-600 line-clamp-2 group-hover:text-gray-700 transition-colors mb-3 flex-grow">
                             {(article.description_i18n?.[currentLanguage as any]) || article.description}
                           </p>
-                        </div>
 
-                        <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-200 group-hover:border-brand-red/30 transition-colors">
-                          <span className="text-xs text-gray-500 flex items-center gap-1 group-hover:text-gray-700 transition-colors">
-                            📅 {new Date(article.date || article.created_at).toLocaleDateString('en-US', {
-                              month: 'short',
-                              day: 'numeric'
-                            })}
-                          </span>
-                          <span className="text-xs text-brand-red font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">
-                            {t('read')} <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                          </span>
+                          <div className="flex items-center justify-between pt-3 border-t border-gray-200 group-hover:border-brand-red/30 transition-colors">
+                            <span className="text-xs text-gray-500 flex items-center gap-1 group-hover:text-gray-700 transition-colors">
+                              {new Date(article.date || article.created_at).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric'
+                              })}
+                            </span>
+                            <span className="text-xs text-brand-red font-semibold group-hover:gap-2 flex items-center gap-1 transition-all">
+                              {t('read')} <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  {/* Right Arrow */}
+                  <button
+                    onClick={() => scrollNews('right')}
+                    className="hidden lg:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 translate-x-16 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+                    aria-label="Scroll right"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
                 </div>
               </div>
             </div>
