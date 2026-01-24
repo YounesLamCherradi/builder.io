@@ -844,15 +844,7 @@ export default function Contact() {
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-brand-red rounded-full" />
-                      {t('contact_hours_weekdays')}
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand-red rounded-full" />
-                      {t('contact_hours_saturday')}
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full" />
-                      {t('contact_hours_sunday')}
+                      <span className="text-2xl font-bold text-brand-red">24/7</span>
                     </li>
                   </ul>
                 </div>
