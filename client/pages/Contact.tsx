@@ -388,10 +388,42 @@ export default function Contact() {
   };
 
   const faqs = dbFaqs.length > 0
-    ? dbFaqs.map(faq => ({
-        q: (faq.question_i18n?.[currentLanguage] || faq.question) as string,
-        a: (faq.answer_i18n?.[currentLanguage] || faq.answer) as string
-      }))
+    ? dbFaqs.map(faq => {
+        // Parse question and answer translations
+        let questionText = faq.question;
+        let answerText = faq.answer;
+
+        // Handle question_i18n - could be object or JSON string
+        if (faq.question_i18n) {
+          try {
+            const questionI18n = typeof faq.question_i18n === 'string'
+              ? JSON.parse(faq.question_i18n)
+              : faq.question_i18n;
+            questionText = questionI18n[currentLanguage] || faq.question;
+          } catch (e) {
+            console.warn('Error parsing question_i18n:', e);
+            questionText = faq.question;
+          }
+        }
+
+        // Handle answer_i18n - could be object or JSON string
+        if (faq.answer_i18n) {
+          try {
+            const answerI18n = typeof faq.answer_i18n === 'string'
+              ? JSON.parse(faq.answer_i18n)
+              : faq.answer_i18n;
+            answerText = answerI18n[currentLanguage] || faq.answer;
+          } catch (e) {
+            console.warn('Error parsing answer_i18n:', e);
+            answerText = faq.answer;
+          }
+        }
+
+        return {
+          q: questionText,
+          a: answerText
+        };
+      })
     : [
         { q: t('contact_faq_q1'), a: t('contact_faq_a1') },
         { q: t('contact_faq_q2'), a: t('contact_faq_a2') },
