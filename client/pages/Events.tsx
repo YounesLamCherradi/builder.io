@@ -492,6 +492,14 @@ export default function Events() {
 
         about_event: 'Об этом событии',
         what_expect: 'Чего ожидать',
+        loading_events: 'Загрузка событий...',
+        showing_events: 'Показано',
+        of_events: 'из',
+        events_text: 'событий',
+        language: 'Язык',
+        telegram: 'Телеграм',
+        instagram: 'Инстаграм',
+        version: 'v1.0.0 • 2026',
       },
     }),
     []
