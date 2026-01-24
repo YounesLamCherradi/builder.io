@@ -851,10 +851,10 @@ export default function Partners() {
               <div className="space-y-4">
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 flex items-center gap-3">
                   <span className="w-1 h-8 bg-gradient-to-b from-brand-red to-transparent rounded-full" />
-                  World Peoples Assembly
+                  {t('world_assembly_title')}
                 </h3>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                  An international platform uniting young leaders and organizations from across the globe to promote dialogue, public diplomacy, and sustainable international cooperation. In 2025, the Assembly brought together representatives from over 25 countries through the International Youth Forum <span className="text-brand-red font-semibold">"Generation of Unity"</span> and the Public Talk <span className="text-brand-red font-semibold">"The Voice of Time"</span>, strengthening global youth partnerships.
+                  {t('world_assembly_desc')}
                 </p>
 
                 {/* World Peoples Assembly Image */}
