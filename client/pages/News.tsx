@@ -564,10 +564,10 @@ export default function News() {
                             )}
                           </div>
                           <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2 leading-tight">
-                            {article.title}
+                            {(article.title_i18n?.[currentLanguage as any]) || article.title}
                           </h3>
                           <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
-                            {article.content}
+                            {(article.description_i18n?.[currentLanguage as any]) || article.description || article.content}
                           </p>
                           <div className="flex items-center gap-2 text-brand-red font-semibold text-sm group-hover:gap-3 transition-all">
                             <span>{t('read_more')}</span>
