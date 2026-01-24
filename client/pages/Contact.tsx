@@ -161,6 +161,10 @@ export default function Contact() {
         terms: 'Terms',
         cookies: 'Cookies',
         rights: '© 2026 WYF Morocco. All rights reserved.',
+        language: 'Language',
+        telegram: 'Telegram',
+        instagram: 'Instagram',
+        version: 'v1.0.0 • 2026',
       },
 
       ar: {
