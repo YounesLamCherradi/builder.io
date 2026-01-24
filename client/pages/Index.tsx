@@ -1107,7 +1107,7 @@ export default function Index() {
                     24/7
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-slate-700 to-slate-900 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
-                  <p className="text-xs font-semibold text-gray-700 leading-snug">Support</p>
+                  <p className="text-xs font-semibold text-gray-700 leading-snug">{t('hero_stat_support')}</p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-slate-700 to-slate-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
