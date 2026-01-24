@@ -153,8 +153,9 @@ export default function Contact() {
         contact_location_address: 'Moscow, Russia',
 
         contact_hours_title: 'Business Hours',
-        contact_hours_weekdays: '24/7 '
-        
+        contact_hours_weekdays: 'Monday - Friday: 9:00 AM - 6:00 PM',
+        contact_hours_saturday: 'Saturday: 10:00 AM - 4:00 PM',
+        contact_hours_sunday: 'Sunday: Closed',
 
         contact_faq_title: 'Frequently Asked Questions',
         contact_faq_q1: 'How long does it take to get a response?',
