@@ -1358,20 +1358,20 @@ export default function Index() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-10 sm:mb-14 md:mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <div className="inline-block mb-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-red/10 text-brand-red text-sm font-bold rounded-full border border-brand-red/30 animate-pulse">
-                <Zap className="w-4 h-4" />
+          <div className="text-center mb-12 sm:mb-16 md:mb-24 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div className="inline-block mb-6">
+              <span className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-brand-red/10 to-red-100/10 text-brand-red text-sm font-bold rounded-full border border-brand-red/40 animate-pulse hover:animate-none transition-all duration-300 shadow-lg">
+                <Zap className="w-5 h-5 animate-bounce" />
                 {t('latest_updates').toUpperCase()}
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-4 sm:mb-5">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-gray-900 mb-6 sm:mb-8">
               Latest{' '}
-              <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-red via-red-600 to-red-800 bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '100ms' }}>
                 {t('news_title')}
               </span>
             </h2>
-            <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light">
+            <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '200ms' }}>
               {t('news_desc')}
             </p>
           </div>
