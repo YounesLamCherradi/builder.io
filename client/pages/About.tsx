@@ -265,6 +265,13 @@ export default function About() {
         vision_principle_3: 'Cooperation',
         vision_principle_3_desc: 'Preserving identities, sharing goals',
 
+        // Our Members Section
+        members_title: 'Our Members',
+        members_exec_title: 'Executive Committee',
+        members_exec_subtitle: 'Leadership Team',
+        members_council_title: 'General Council',
+        members_council_subtitle: 'Community Members',
+
         home_stay_updated_title: 'Stay Updated with',
         home_stay_updated_highlight: 'Global Opportunities',
         home_stay_updated_desc: 'Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.',
