@@ -396,12 +396,21 @@ export default function Contact() {
         // Handle question_i18n - could be object or JSON string
         if (faq.question_i18n) {
           try {
-            const questionI18n = typeof faq.question_i18n === 'string'
-              ? JSON.parse(faq.question_i18n)
-              : faq.question_i18n;
-            questionText = questionI18n[currentLanguage] || faq.question;
+            let questionI18n = faq.question_i18n;
+            if (typeof questionI18n === 'string') {
+              questionI18n = JSON.parse(questionI18n);
+            }
+            if (typeof questionI18n === 'object' && questionI18n !== null) {
+              // Try to get translation for current language
+              if (questionI18n[currentLanguage]) {
+                questionText = questionI18n[currentLanguage];
+              } else if (currentLanguage !== 'en' && questionI18n.en) {
+                // Fallback to English if translation not found
+                questionText = questionI18n.en;
+              }
+            }
           } catch (e) {
-            console.warn('Error parsing question_i18n:', e);
+            console.warn('Error parsing question_i18n:', e, faq.question_i18n);
             questionText = faq.question;
           }
         }
@@ -409,12 +418,21 @@ export default function Contact() {
         // Handle answer_i18n - could be object or JSON string
         if (faq.answer_i18n) {
           try {
-            const answerI18n = typeof faq.answer_i18n === 'string'
-              ? JSON.parse(faq.answer_i18n)
-              : faq.answer_i18n;
-            answerText = answerI18n[currentLanguage] || faq.answer;
+            let answerI18n = faq.answer_i18n;
+            if (typeof answerI18n === 'string') {
+              answerI18n = JSON.parse(answerI18n);
+            }
+            if (typeof answerI18n === 'object' && answerI18n !== null) {
+              // Try to get translation for current language
+              if (answerI18n[currentLanguage]) {
+                answerText = answerI18n[currentLanguage];
+              } else if (currentLanguage !== 'en' && answerI18n.en) {
+                // Fallback to English if translation not found
+                answerText = answerI18n.en;
+              }
+            }
           } catch (e) {
-            console.warn('Error parsing answer_i18n:', e);
+            console.warn('Error parsing answer_i18n:', e, faq.answer_i18n);
             answerText = faq.answer;
           }
         }
