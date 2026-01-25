@@ -210,8 +210,8 @@ export default function Index() {
         stat_support: "Support",
 
         hero_stat_users: "Youth Reached",
-        hero_stat_countries: "Countries Reached",
-        hero_stat_success: "Success Rate",
+        hero_stat_countries: "Partners",
+        hero_stat_success: "Countries",
         hero_stat_support: "Support",
 
         latest_updates: "Latest Updates",
@@ -753,9 +753,9 @@ export default function Index() {
   ];
 
   const stats = [
-    { number: "50K+", label: t("stat_users"), icon: Users },
-    { number: "150+", label: t("stat_countries"), icon: Globe },
-    { number: "95%", label: t("stat_success"), icon: TrendingUp },
+    { number: "8M+", label: t("stat_users"), icon: Users },
+    { number: "155+", label: t("stat_countries"), icon: Globe },
+    { number: "35+", label: t("stat_success"), icon: TrendingUp },
     { number: "24/7", label: t("stat_support"), icon: Sparkles },
   ];
 
