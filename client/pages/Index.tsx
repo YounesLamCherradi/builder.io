@@ -1186,7 +1186,7 @@ export default function Index() {
                     <Globe className="w-full h-full text-white" />
                   </div>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
-                    150+
+                    155+
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-slate-700 to-slate-900 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
                   <p className="text-xs font-semibold text-gray-700 leading-snug">
