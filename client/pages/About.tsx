@@ -192,7 +192,7 @@ export default function About() {
         about_achievements_1: "8M+",
         about_achievements_1_desc: "Youth Reached",
         about_achievements_2: "115+",
-        about_achievements_2_desc: "partners",
+        about_achievements_2_desc: "Partners",
         about_achievements_3: "5,000+",
         about_achievements_3_desc: "Opportunities Shared",
         about_achievements_4: "35+",
