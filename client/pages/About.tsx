@@ -189,8 +189,8 @@ export default function About() {
         about_achievements_title: "Impact by the Numbers",
         about_achievements_subtitle:
           "Measurable change in the lives of Moroccan students",
-        about_achievements_1: "50K+",
-        about_achievements_1_desc: "Active Users",
+        about_achievements_1: "8M+",
+        about_achievements_1_desc: "Youth Reached",
         about_achievements_2: "150+",
         about_achievements_2_desc: "Countries Reached",
         about_achievements_3: "5,000+",
