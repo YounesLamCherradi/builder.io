@@ -1210,7 +1210,7 @@ export default function Index() {
                     <TrendingUp className="w-full h-full text-white" />
                   </div>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
-                    95%
+                    35+
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-brand-red to-red-600 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
                   <p className="text-xs font-semibold text-gray-700 leading-snug">
