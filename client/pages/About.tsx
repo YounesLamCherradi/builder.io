@@ -195,7 +195,7 @@ export default function About() {
         about_achievements_2_desc: "partners",
         about_achievements_3: "5,000+",
         about_achievements_3_desc: "Opportunities Shared",
-        about_achievements_4: "95%",
+        about_achievements_4: "35+",
         about_achievements_4_desc: "Countries",
         about_achievements_5: "₹10M+",
         about_achievements_5_desc: "Scholarships Connected",
