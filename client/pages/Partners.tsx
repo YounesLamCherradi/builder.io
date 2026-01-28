@@ -86,6 +86,8 @@ export default function Partners() {
     const loadPartners = async () => {
       const data = await fetchPartners();
       if (data.length > 0) setPartnersList(data);
+      const visionsData = await fetchPartnerVisions();
+      if (visionsData.length > 0) setPartnerVisionsList(visionsData);
     };
     loadPartners();
   }, []);
