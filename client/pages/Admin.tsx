@@ -1891,6 +1891,7 @@ export default function Admin() {
                   Upload
                   {(activeTab === "gallery" ||
                     activeTab === "partners" ||
+                    activeTab === "partner_visions" ||
                     activeTab === "past_events") && (
                     <span className="text-red-600"> *</span>
                   )}
