@@ -897,6 +897,137 @@ export default function Partners() {
         `}</style>
       </section>
 
+      {/* Vision of our Partners Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(187,9,9,0.15)_1px,transparent_1px)] bg-[length:60px_60px]" />
+        </div>
+
+        {/* Floating animated orbs */}
+        <div
+          className="absolute -top-32 -right-32 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "4s" }}
+        />
+        <div
+          className="absolute -bottom-32 -left-32 w-96 h-96 bg-gray-900/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "5s", animationDelay: "1s" }}
+        />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <span
+              className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30 animate-pulse"
+              style={{ animationDuration: "3s" }}
+            >
+              {t("vision_of_partners")}
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+              {t("vision_of_partners")}
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+              {t("vision_of_partners_desc")}
+            </p>
+          </div>
+
+          {/* Partner Visions Horizontal Scroll with Navigation */}
+          <div className="relative">
+            {/* Left Arrow */}
+            <button
+              onClick={() => {
+                if (visionsScrollRef.current) {
+                  visionsScrollRef.current.scrollBy({
+                    left: -400,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="hidden lg:flex absolute left-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Scroll Container - Show Partner Visions */}
+            <div
+              ref={visionsScrollRef}
+              className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
+            >
+              {partnerVisionsList.map((vision, index) => (
+                <div
+                  key={vision.id}
+                  className="group flex flex-col flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500 w-80 sm:w-96"
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                  }}
+                >
+                  {/* Vision Card */}
+                  <div className="relative rounded-2xl border-2 border-gray-200 group-hover:border-brand-red transition-all duration-500 bg-white overflow-hidden hover:shadow-2xl hover:shadow-red-200/40 h-full flex flex-col">
+                    {/* Gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 via-transparent to-brand-silver/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    {/* Accent bar with animation */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-500 group-hover:drop-shadow-lg" />
+
+                    {/* Image */}
+                    <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-gray-100">
+                      {vision.image_url && (
+                        <img
+                          src={vision.image_url}
+                          alt={vision.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
+                        />
+                      )}
+                      {/* Image overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative z-10 flex-1 p-5 sm:p-6 flex flex-col justify-between">
+                      {/* Name and Position */}
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-brand-red transition-colors duration-300">
+                          {vision.name}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1">
+                          {vision.position}
+                        </p>
+                      </div>
+
+                      {/* Quote */}
+                      <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-brand-red/30 transition-colors duration-300">
+                        <p className="text-sm sm:text-base text-gray-600 italic group-hover:text-gray-700 transition-colors duration-300 line-clamp-4">
+                          "{vision.quote}"
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Glow effect on hover */}
+                    <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={() => {
+                if (visionsScrollRef.current) {
+                  visionsScrollRef.current.scrollBy({
+                    left: 400,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="hidden lg:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* International Affiliation Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-50 to-white py-16 sm:py-20 lg:py-28">
         {/* Background image with overlay */}
