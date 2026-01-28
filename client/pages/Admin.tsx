@@ -720,6 +720,46 @@ export default function Admin() {
         caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(partner.logo_url || null);
+    } else if (activeTab === "partner_visions") {
+      const vision = item as PartnerVision;
+      setFormData({
+        title: "",
+        description: "",
+        content: "",
+        category: "Visa Updates",
+        author: "",
+        image_url: vision.image_url || "",
+        location: "",
+        date: new Date().toISOString().split("T")[0],
+        time: "18:00",
+        about_event: "",
+        name: "",
+        role: "",
+        partnerName: "",
+        partnerLink: "",
+        partnerType: "institutional",
+        visionName: vision.name,
+        visionPosition: vision.position,
+        visionQuote: vision.quote,
+        question: "",
+        answer: "",
+        bio: "",
+        orderIndex: vision.order_index || 0,
+      });
+      setI18nData({
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        name_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
+        quote_i18n: vision.quote_i18n || { en: vision.quote, ar: "", ru: "" },
+        question_i18n: { en: "", ar: "", ru: "" },
+        answer_i18n: { en: "", ar: "", ru: "" },
+      });
+      setImagePreview(vision.image_url || null);
     } else if (activeTab === "faqs") {
       const faq = item as FAQ;
       setFormData({
