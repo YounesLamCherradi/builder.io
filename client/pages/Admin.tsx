@@ -31,6 +31,10 @@ import {
   createPartner,
   updatePartner,
   deletePartner,
+  fetchPartnerVisions,
+  createPartnerVision,
+  updatePartnerVision,
+  deletePartnerVision,
   fetchFAQs,
   createFAQ,
   updateFAQ,
@@ -45,6 +49,7 @@ import {
   type TeamMember,
   type GalleryItem,
   type Partner,
+  type PartnerVision,
   type FAQ,
   type PastEvent,
 } from "../lib/supabase";
