@@ -1975,9 +1975,13 @@ export default function Admin() {
                         ? "Please upload a logo"
                         : activeTab === "partners" && !formData.partnerName
                           ? "Please enter partner name"
-                          : activeTab === "past_events" && !formData.image_url
-                            ? "Please upload an event image"
-                            : ""
+                          : activeTab === "partner_visions" && !formData.image_url
+                            ? "Please upload a partner image"
+                            : activeTab === "partner_visions" && !formData.visionName
+                              ? "Please enter partner name"
+                              : activeTab === "past_events" && !formData.image_url
+                                ? "Please upload an event image"
+                                : ""
                   }
                 >
                   {loading ? (
