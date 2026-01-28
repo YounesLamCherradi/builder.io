@@ -1055,9 +1055,11 @@ export default function Admin() {
                       ? "Gallery Item"
                       : activeTab === "partners"
                         ? "Partner"
-                        : activeTab === "faqs"
-                          ? "FAQ"
-                          : "Past Event"}
+                        : activeTab === "partner_visions"
+                          ? "Partner Vision"
+                          : activeTab === "faqs"
+                            ? "FAQ"
+                            : "Past Event"}
             </h2>
             {showForm && (
               <button
