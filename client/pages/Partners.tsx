@@ -24,7 +24,9 @@ export default function Partners() {
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
+  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>([]);
   const sponsorsScrollRef = useRef<HTMLDivElement>(null);
+  const visionsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
