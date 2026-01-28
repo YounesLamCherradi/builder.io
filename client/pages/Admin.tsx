@@ -850,6 +850,10 @@ export default function Admin() {
       role: "",
       partnerName: "",
       partnerLink: "",
+      partnerType: "institutional",
+      visionName: "",
+      visionPosition: "",
+      visionQuote: "",
       question: "",
       answer: "",
       bio: "",
@@ -865,6 +869,7 @@ export default function Admin() {
       role_i18n: { en: "", ar: "", ru: "" },
       bio_i18n: { en: "", ar: "", ru: "" },
       caption_i18n: { en: "", ar: "", ru: "" },
+      quote_i18n: { en: "", ar: "", ru: "" },
       question_i18n: { en: "", ar: "", ru: "" },
       answer_i18n: { en: "", ar: "", ru: "" },
     });
