@@ -162,6 +162,11 @@ export default function Partners() {
         informational_partners_desc:
           "Knowledge partners and information sources supporting our mission",
 
+        // Vision of our Partners Section
+        vision_of_partners: "Vision of Our Partners",
+        vision_of_partners_desc:
+          "Hear from our partners about their vision of cooperation and partnership",
+
         // International Affiliation Section
         affiliation_quote:
           '"The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust"',
