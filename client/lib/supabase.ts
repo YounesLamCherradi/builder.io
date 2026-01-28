@@ -716,6 +716,94 @@ export async function deletePartner(id: string): Promise<boolean> {
   }
 }
 
+// Fetch all partner visions
+export async function fetchPartnerVisions(): Promise<PartnerVision[]> {
+  try {
+    const { data, error } = await supabase
+      .from("partner_visions")
+      .select("*")
+      .order("order_index", { ascending: true });
+
+    if (error) {
+      console.error("Error fetching partner visions:", error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error("Unexpected error fetching partner visions:", err);
+    return [];
+  }
+}
+
+// Create partner vision
+export async function createPartnerVision(
+  vision: Omit<PartnerVision, "id" | "created_at">,
+): Promise<PartnerVision | null> {
+  try {
+    const { data, error } = await supabase
+      .from("partner_visions")
+      .insert([vision])
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Error creating partner vision:", error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    return null;
+  }
+}
+
+// Update partner vision
+export async function updatePartnerVision(
+  id: string,
+  updates: Partial<Omit<PartnerVision, "id" | "created_at">>,
+): Promise<PartnerVision | null> {
+  try {
+    const { data, error } = await supabase
+      .from("partner_visions")
+      .update(updates)
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Error updating partner vision:", error);
+      return null;
+    }
+
+    return data;
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    return null;
+  }
+}
+
+// Delete partner vision
+export async function deletePartnerVision(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from("partner_visions")
+      .delete()
+      .eq("id", id);
+
+    if (error) {
+      console.error("Error deleting partner vision:", error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    return false;
+  }
+}
+
 // Fetch all FAQs
 export async function fetchFAQs(): Promise<FAQ[]> {
   try {
