@@ -2042,8 +2042,8 @@ export default function Admin() {
                     ? `Team Members (${teamList.length})`
                     : activeTab === "gallery"
                       ? `Gallery Items (${galleryList.length})`
-                  : activeTab === "partners"
-                    ? `Partners (${partnersList.length})`
+                      : activeTab === "partners"
+                        ? `Partners (${partnersList.length})`
                     : activeTab === "partner_visions"
                       ? `Partner Visions (${partnerVisionsList.length})`
                       : activeTab === "faqs"
