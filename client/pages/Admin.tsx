@@ -172,6 +172,9 @@ export default function Admin() {
     } else if (activeTab === "partners") {
       const data = await fetchPartners();
       setPartnersList(data);
+    } else if (activeTab === "partner_visions") {
+      const data = await fetchPartnerVisions();
+      setPartnerVisionsList(data);
     } else if (activeTab === "faqs") {
       const data = await fetchFAQs();
       setFaqsList(data);
