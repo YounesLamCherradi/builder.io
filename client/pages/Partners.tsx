@@ -222,6 +222,11 @@ export default function Partners() {
         informational_partners_desc:
           "شركاء المعرفة ومصادر المعلومات الداعمة لمهمتنا",
 
+        // Vision of our Partners Section
+        vision_of_partners: "رؤية شركائنا",
+        vision_of_partners_desc:
+          "استمع إلى شركائنا حول رؤيتهم للتعاون والشراكة",
+
         // International Affiliation Section
         affiliation_quote:
           '"جمعية الشباب هي مساحة للحوار الحقيقي والعمل المشترك، حيث يتجمع الشباب من دول مختلفة لتبادل الخبرات والعثور على أرضية مشتركة وإنشاء مشاريع مشتركة بناءً على التعاون والثقة"',
