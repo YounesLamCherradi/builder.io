@@ -278,6 +278,30 @@ export default function Admin() {
       return;
     }
 
+    if (activeTab === "partner_visions" && !formData.image_url) {
+      toast.error("Please upload an image for the partner vision");
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === "partner_visions" && !formData.visionName) {
+      toast.error("Please enter the partner name");
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === "partner_visions" && !formData.visionPosition) {
+      toast.error("Please enter the partner position");
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === "partner_visions" && !i18nData.quote_i18n.en) {
+      toast.error("Please enter the partner quote in English");
+      setLoading(false);
+      return;
+    }
+
     if (activeTab === "team" && !i18nData.name_i18n.en) {
       toast.error("Please enter the team member name in English");
       setLoading(false);
