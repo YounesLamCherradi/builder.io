@@ -10,7 +10,7 @@ import {
   ChevronRight,
   Check,
 } from "lucide-react";
-import { fetchPartners, type Partner } from "../lib/supabase";
+import { fetchPartners, type Partner, fetchPartnerVisions, type PartnerVision } from "../lib/supabase";
 
 export default function Partners() {
   const [scrollY, setScrollY] = useState(0);
