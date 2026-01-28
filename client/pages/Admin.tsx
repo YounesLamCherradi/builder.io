@@ -1885,9 +1885,11 @@ export default function Admin() {
                     ? "Image"
                     : activeTab === "partners"
                       ? "Logo"
-                      : activeTab === "past_events"
-                        ? "Event Image"
-                        : "Image"}{" "}
+                      : activeTab === "partner_visions"
+                        ? "Partner Image"
+                        : activeTab === "past_events"
+                          ? "Event Image"
+                          : "Image"}{" "}
                   Upload
                   {(activeTab === "gallery" ||
                     activeTab === "partners" ||
