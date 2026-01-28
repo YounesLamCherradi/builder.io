@@ -409,6 +409,27 @@ export default function Admin() {
             order_index: formData.orderIndex,
           });
         }
+      } else if (activeTab === "partner_visions") {
+        // Partner visions handling
+        if (editingId) {
+          await updatePartnerVision(editingId, {
+            image_url: formData.image_url,
+            name: formData.visionName,
+            position: formData.visionPosition,
+            quote: i18nData.quote_i18n?.en || formData.visionQuote,
+            quote_i18n: i18nData.quote_i18n || { en: formData.visionQuote, ar: "", ru: "" },
+            order_index: formData.orderIndex,
+          });
+        } else {
+          await createPartnerVision({
+            image_url: formData.image_url,
+            name: formData.visionName,
+            position: formData.visionPosition,
+            quote: i18nData.quote_i18n?.en || formData.visionQuote,
+            quote_i18n: i18nData.quote_i18n || { en: formData.visionQuote, ar: "", ru: "" },
+            order_index: formData.orderIndex,
+          });
+        }
       } else if (activeTab === "faqs") {
         // FAQs handling
         if (editingId) {
