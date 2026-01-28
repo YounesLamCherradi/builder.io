@@ -1592,6 +1592,87 @@ export default function Admin() {
                 </>
               )}
 
+              {activeTab === "partner_visions" && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Partner Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="visionName"
+                        value={formData.visionName}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="Partner/Person name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Position/Title *
+                      </label>
+                      <input
+                        type="text"
+                        name="visionPosition"
+                        value={formData.visionPosition}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="e.g., CEO, Director, etc."
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Quote * ({activeLanguage.toUpperCase()})
+                    </label>
+                    <textarea
+                      value={i18nData.quote_i18n[activeLanguage]}
+                      onChange={(e) =>
+                        setI18nData((prev) => ({
+                          ...prev,
+                          quote_i18n: {
+                            ...prev.quote_i18n,
+                            [activeLanguage]: e.target.value,
+                          },
+                        }))
+                      }
+                      required
+                      rows={3}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Partner's quote or vision about cooperation"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Display Order Position
+                    </label>
+                    <input
+                      type="number"
+                      value={formData.orderIndex}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          orderIndex: parseInt(e.target.value) || 0,
+                        }))
+                      }
+                      min="0"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="0 (first position), 1 (second), etc..."
+                    />
+                    <p className="text-xs text-gray-500 mt-1">
+                      Set the position number to control where this partner vision
+                      appears. Lower numbers appear first.
+                    </p>
+                  </div>
+                </>
+              )}
+
               {activeTab === "gallery" && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
