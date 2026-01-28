@@ -129,6 +129,18 @@ export interface Partner {
   created_at: string;
 }
 
+// Partner Visions types
+export interface PartnerVision {
+  id: string;
+  name: string;
+  position: string;
+  image_url: string;
+  quote: string;
+  quote_i18n?: I18nString;
+  order_index: number;
+  created_at: string;
+}
+
 // FAQ types
 export interface FAQ {
   id: string;
