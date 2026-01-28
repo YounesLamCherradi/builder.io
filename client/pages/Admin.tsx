@@ -2044,11 +2044,11 @@ export default function Admin() {
                       ? `Gallery Items (${galleryList.length})`
                       : activeTab === "partners"
                         ? `Partners (${partnersList.length})`
-                    : activeTab === "partner_visions"
-                      ? `Partner Visions (${partnerVisionsList.length})`
-                      : activeTab === "faqs"
-                          ? `FAQs (${faqsList.length})`
-                          : `Past Events (${pastEventsList.length})`}
+                        : activeTab === "partner_visions"
+                          ? `Partner Visions (${partnerVisionsList.length})`
+                          : activeTab === "faqs"
+                            ? `FAQs (${faqsList.length})`
+                            : `Past Events (${pastEventsList.length})`}
             </h2>
           </div>
 
