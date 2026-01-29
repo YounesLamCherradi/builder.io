@@ -445,18 +445,18 @@ export default function Admin() {
         // FAQs handling
         if (editingId) {
           await updateFAQ(editingId, {
-            question: i18nData.question_i18n.en,
-            answer: i18nData.answer_i18n.en,
-            question_i18n: i18nData.question_i18n,
-            answer_i18n: i18nData.answer_i18n,
+            question: i18nData.question_i18n?.en || formData.question,
+            answer: i18nData.answer_i18n?.en || formData.answer,
+            question_i18n: i18nData.question_i18n || { en: formData.question, ar: "", ru: "" },
+            answer_i18n: i18nData.answer_i18n || { en: formData.answer, ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         } else {
           await createFAQ({
-            question: i18nData.question_i18n.en,
-            answer: i18nData.answer_i18n.en,
-            question_i18n: i18nData.question_i18n,
-            answer_i18n: i18nData.answer_i18n,
+            question: i18nData.question_i18n?.en || formData.question,
+            answer: i18nData.answer_i18n?.en || formData.answer,
+            question_i18n: i18nData.question_i18n || { en: formData.question, ar: "", ru: "" },
+            answer_i18n: i18nData.answer_i18n || { en: formData.answer, ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         }
