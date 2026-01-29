@@ -2334,7 +2334,7 @@ export default function Admin() {
                 pastEventsList.map((event) => (
                   <div
                     key={event.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2342,21 +2342,21 @@ export default function Admin() {
                           <img
                             src={event.image_url}
                             alt={event.title}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900">
+                          <h3 className="text-lg font-semibold text-gray-100">
                             {event.title}
                           </h3>
-                          <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                          <p className="text-sm text-gray-400 mt-1 line-clamp-2">
                             {event.description}
                           </p>
                           <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
                             <span>{event.location}</span>
                             <span>{event.date}</span>
                           </div>
-                          <p className="text-xs text-gray-500 mt-2">
+                          <p className="text-xs text-gray-600 mt-2">
                             ID: {event.id}
                           </p>
                         </div>
@@ -2364,13 +2364,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(event)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(event.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
