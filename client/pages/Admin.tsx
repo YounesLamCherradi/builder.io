@@ -917,23 +917,23 @@ export default function Admin() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Header */}
-      <div className="bg-gradient-to-r from-white to-gray-50 border-b border-gray-200 shadow-sm">
+      <div className="bg-gradient-to-r from-brand-red/95 via-brand-red to-brand-red/90 border-b-4 border-brand-red shadow-xl">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link
               to="/"
-              className="flex items-center gap-2 text-brand-red hover:text-brand-red/80 transition-colors font-semibold"
+              className="flex items-center gap-2 text-white hover:text-white/80 transition-colors font-semibold hover:scale-105 duration-300"
             >
               <ArrowLeft className="w-5 h-5" />
               Back to Site
             </Link>
           </div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">Admin Dashboard</h1>
+          <h1 className="text-4xl font-bold text-white drop-shadow-lg">Admin Dashboard</h1>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2.5 text-gray-700 hover:bg-red-50 hover:text-brand-red rounded-lg transition-all border border-gray-200 hover:border-brand-red/30 font-medium"
+            className="flex items-center gap-2 px-4 py-2.5 text-white hover:bg-white/20 rounded-lg transition-all border-2 border-white hover:border-white font-medium hover:shadow-lg hover:scale-105 duration-300"
             title="Logout"
           >
             <LogOut className="w-5 h-5" />
@@ -943,54 +943,54 @@ export default function Admin() {
       </div>
 
       {/* Tabs */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-gray-800/50 border-b-2 border-brand-red/30 backdrop-blur">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 flex gap-6 overflow-x-auto scrollbar-hide">
           <button
             onClick={() => setActiveTab("news")}
-            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "news"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             News Articles
           </button>
           <button
             onClick={() => setActiveTab("team")}
-            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "team"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             Team Members
           </button>
           <button
             onClick={() => setActiveTab("partners")}
-            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "partners"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             Partners
           </button>
           <button
             onClick={() => setActiveTab("partner_visions")}
-            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "partner_visions"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             Partner Visions
           </button>
           <button
             onClick={() => setActiveTab("faqs")}
-            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "faqs"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             FAQs
