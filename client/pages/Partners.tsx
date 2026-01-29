@@ -951,7 +951,7 @@ export default function Partners() {
             {/* Scroll Container - Show Partner Visions */}
             <div
               ref={visionsScrollRef}
-              className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide"
+              className="flex overflow-x-auto gap-4 sm:gap-6 md:gap-8 pb-4 scrollbar-hide px-2 sm:px-0"
             >
               {partnerVisionsList.map((vision, index) => (
                 <div
