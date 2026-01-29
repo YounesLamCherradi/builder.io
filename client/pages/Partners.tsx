@@ -1032,7 +1032,7 @@ export default function Partners() {
                         }}
                       >
                         {/* Opening quote mark with animation */}
-                        <div className="text-brand-red/40 text-2xl sm:text-3xl leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/90 group-hover:scale-125 group-hover:-translate-y-1 origin-left">
+                        <div className="text-brand-red/40 text-2xl sm:text-3xl leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/80">
                           "
                         </div>
 
