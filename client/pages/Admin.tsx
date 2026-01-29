@@ -943,8 +943,8 @@ export default function Admin() {
       </div>
 
       {/* Tabs */}
-      <div className="bg-white border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 flex gap-8">
+      <div className="bg-white border-b border-gray-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 flex gap-6 overflow-x-auto scrollbar-hide">
           <button
             onClick={() => setActiveTab("news")}
             className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
