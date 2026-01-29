@@ -436,24 +436,19 @@ export default function Admin() {
         }
       } else if (activeTab === "partner_visions") {
         // Partner visions handling
+        const visionData = {
+          image_url: formData.image_url,
+          name: formData.visionName,
+          position: formData.visionPosition,
+          quote: i18nData.quote_i18n?.en || formData.visionQuote,
+          quote_i18n: i18nData.quote_i18n || { en: formData.visionQuote, ar: "", ru: "" },
+          order_index: formData.orderIndex,
+        };
+        console.log("Creating partner vision with data:", visionData);
         if (editingId) {
-          await updatePartnerVision(editingId, {
-            image_url: formData.image_url,
-            name: formData.visionName,
-            position: formData.visionPosition,
-            quote: i18nData.quote_i18n?.en || formData.visionQuote,
-            quote_i18n: i18nData.quote_i18n || { en: formData.visionQuote, ar: "", ru: "" },
-            order_index: formData.orderIndex,
-          });
+          await updatePartnerVision(editingId, visionData);
         } else {
-          await createPartnerVision({
-            image_url: formData.image_url,
-            name: formData.visionName,
-            position: formData.visionPosition,
-            quote: i18nData.quote_i18n?.en || formData.visionQuote,
-            quote_i18n: i18nData.quote_i18n || { en: formData.visionQuote, ar: "", ru: "" },
-            order_index: formData.orderIndex,
-          });
+          await createPartnerVision(visionData);
         }
       } else if (activeTab === "faqs") {
         // FAQs handling
