@@ -961,8 +961,8 @@ export default function Partners() {
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
                     perspective: "1000px",
-                    minHeight: "700px",
-                    height: "700px",
+                    minHeight: "750px",
+                    height: "750px",
                   }}
                 >
                   {/* Vision Card */}
