@@ -741,6 +741,13 @@ export async function createPartnerVision(
   vision: Omit<PartnerVision, "id" | "created_at">,
 ): Promise<PartnerVision | null> {
   try {
+    if (!supabase || !supabaseUrl || !supabaseKey) {
+      console.error("Supabase is not initialized. Check environment variables.");
+      return null;
+    }
+
+    console.log("Creating partner vision:", vision);
+
     const { data, error } = await supabase
       .from("partner_visions")
       .insert([vision])
@@ -749,13 +756,17 @@ export async function createPartnerVision(
 
     if (error) {
       console.error("Error creating partner vision:", error);
-      return null;
+      throw new Error(error.message || "Failed to create partner vision");
     }
 
+    console.log("Partner vision created successfully:", data);
     return data;
   } catch (err) {
-    console.error("Unexpected error:", err);
-    return null;
+    console.error("Unexpected error creating partner vision:", err);
+    if (err instanceof Error) {
+      throw new Error(`Failed to create partner vision: ${err.message}`);
+    }
+    throw err;
   }
 }
 
