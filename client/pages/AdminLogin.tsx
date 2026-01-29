@@ -1,42 +1,47 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { LogIn, AlertCircle } from 'lucide-react';
-import { toast } from 'sonner';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { LogIn, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
 
 export default function AdminLogin() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
 
     try {
-      // Get credentials from environment variables
-      const adminUsername = import.meta.env.VITE_ADMIN_USERNAME || 'admin';
-      const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'password';
+      // Send login request to server
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-      // Verify credentials
-      if (username === adminUsername && password === adminPassword) {
-        // Store auth token in localStorage
-        const token = btoa(`${username}:${password}`);
-        localStorage.setItem('adminToken', token);
-        localStorage.setItem('adminUsername', username);
-        
-        toast.success('Login successful!');
-        navigate('/admin');
+      const result = await response.json();
+
+      if (response.ok && result.token) {
+        // Store auth token in sessionStorage (more secure than localStorage)
+        sessionStorage.setItem("adminToken", result.token);
+        sessionStorage.setItem("adminUsername", result.username);
+
+        toast.success("Login successful!");
+        navigate("/admin");
       } else {
-        setError('Invalid username or password');
-        toast.error('Invalid credentials');
+        setError(result.error || "Invalid username or password");
+        toast.error(result.error || "Invalid credentials");
       }
     } catch (err) {
-      console.error('Login error:', err);
-      setError('An error occurred during login');
-      toast.error('Login failed');
+      console.error("Login error:", err);
+      setError("An error occurred during login");
+      toast.error("Login failed");
     } finally {
       setLoading(false);
     }
@@ -50,7 +55,9 @@ export default function AdminLogin() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-brand-red to-gray-900 rounded-2xl mb-4">
             <LogIn className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Admin Dashboard</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">
+            Admin Dashboard
+          </h1>
           <p className="text-gray-400">Enter your credentials to continue</p>
         </div>
 
@@ -103,7 +110,7 @@ export default function AdminLogin() {
               disabled={loading}
               className="w-full px-6 py-3 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-brand-red/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
 
