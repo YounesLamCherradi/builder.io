@@ -164,15 +164,9 @@ export default function Admin() {
     if (activeTab === "news") {
       const data = await fetchNews();
       setNewsList(data);
-    } else if (activeTab === "events") {
-      const data = await fetchEvents();
-      setEventsList(data);
     } else if (activeTab === "team") {
       const data = await fetchTeam();
       setTeamList(data);
-    } else if (activeTab === "gallery") {
-      const data = await fetchGallery();
-      setGalleryList(data);
     } else if (activeTab === "partners") {
       const data = await fetchPartners();
       setPartnersList(data);
@@ -182,9 +176,6 @@ export default function Admin() {
     } else if (activeTab === "faqs") {
       const data = await fetchFAQs();
       setFaqsList(data);
-    } else if (activeTab === "past_events") {
-      const data = await fetchPastEvents();
-      setPastEventsList(data);
     }
     setLoading(false);
   };
