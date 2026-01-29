@@ -1044,7 +1044,7 @@ export default function Partners() {
                             opacity: 0,
                           }}
                         >
-                          {vision.quote}
+                          {vision.quote_i18n && vision.quote_i18n[currentLanguage] ? vision.quote_i18n[currentLanguage] : vision.quote}
                         </p>
 
                         {/* Closing quote mark with animation */}
