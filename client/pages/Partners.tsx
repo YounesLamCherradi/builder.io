@@ -956,19 +956,24 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-col flex-shrink-0 w-96 sm:w-[480px] perspective"
+                  className="group flex flex-col flex-shrink-0 w-80 sm:w-96 perspective"
                   style={{
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
                     perspective: "1000px",
+                    minHeight: "700px",
+                    height: "700px",
                   }}
                 >
                   {/* Vision Card */}
                   <div
-                    className="relative rounded-3xl overflow-hidden bg-white h-full flex flex-col border border-gray-100 transition-all duration-700 ease-out group-hover:border-brand-red/50 group-hover:shadow-2xl group-hover:-translate-y-3"
+                    className="relative rounded-3xl overflow-hidden bg-white flex flex-col border border-gray-100 transition-all duration-700 ease-out group-hover:border-brand-red/50 group-hover:shadow-2xl group-hover:-translate-y-3"
                     style={{
                       transformStyle: "preserve-3d",
-                      transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)"
+                      transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
                     }}
                   >
                     {/* Animated background gradient */}
