@@ -309,16 +309,16 @@ export default function Admin() {
       if (activeTab === "news") {
         // Create article data with order_index
         const newsData: any = {
-          title: i18nData.title_i18n.en,
-          description: i18nData.description_i18n.en,
-          content: i18nData.content_i18n.en,
+          title: i18nData.title_i18n?.en || formData.title,
+          description: i18nData.description_i18n?.en || formData.description,
+          content: i18nData.content_i18n?.en || formData.content,
           category: formData.category || "General",
           author: formData.author || "",
           image_url: formData.image_url || null,
           date: formData.date,
-          title_i18n: i18nData.title_i18n,
-          description_i18n: i18nData.description_i18n,
-          content_i18n: i18nData.content_i18n,
+          title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
+          description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
+          content_i18n: i18nData.content_i18n || { en: formData.content, ar: "", ru: "" },
           order_index: formData.orderIndex,
           redirect_url: formData.redirectUrl || null,
         };
