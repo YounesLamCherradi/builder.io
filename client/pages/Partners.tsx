@@ -1034,14 +1034,32 @@ export default function Partners() {
                       </div>
 
                       {/* Quote with sophisticated animations and brand colors */}
-                      <div className="space-y-2 transition-all duration-700 group-hover:translate-y-0.5 flex flex-col min-h-0 p-3 rounded-lg bg-gradient-to-r from-brand-red/8 to-brand-silver/5 group-hover:from-brand-red/12 group-hover:to-brand-silver/8 transition-all duration-700 border border-brand-red/10 group-hover:border-brand-red/30">
-                        <div className="text-brand-red/40 text-3xl leading-none transition-all duration-700 group-hover:text-brand-red/80 group-hover:translate-y-0.5 flex-shrink-0 font-bold">
+                      <div
+                        className="space-y-2 flex flex-col min-h-0 p-3 rounded-lg bg-gradient-to-r from-brand-red/8 to-brand-silver/5 border border-brand-red/10 transition-all duration-700 ease-out group-hover:from-brand-red/15 group-hover:to-brand-silver/12 group-hover:border-brand-red/50 group-hover:shadow-lg group-hover:shadow-brand-red/30"
+                        style={{
+                          animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
+                          opacity: 0,
+                          transform: "translateY(10px)",
+                        }}
+                      >
+                        {/* Opening quote mark with animation */}
+                        <div className="text-brand-red/40 text-3xl leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/90 group-hover:scale-125 group-hover:-translate-y-1 origin-left">
                           "
                         </div>
-                        <p className="text-xs sm:text-sm text-gray-700 italic font-light leading-relaxed transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight group-hover:text-brand-red/70 flex-1 overflow-y-auto">
+
+                        {/* Quote text with reveal animation */}
+                        <p
+                          className="text-xs sm:text-sm text-gray-700 italic font-light leading-relaxed flex-1 overflow-y-auto transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight group-hover:text-brand-red/80 group-hover:font-medium"
+                          style={{
+                            animation: `textReveal 0.9s ease-out 400ms forwards`,
+                            opacity: 0,
+                          }}
+                        >
                           {vision.quote}
                         </p>
-                        <div className="text-brand-red/40 text-3xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/80 group-hover:-translate-y-0.5 flex-shrink-0 font-bold">
+
+                        {/* Closing quote mark with animation */}
+                        <div className="text-brand-red/40 text-3xl leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/90 group-hover:scale-125 group-hover:translate-y-1 origin-right">
                           "
                         </div>
                       </div>
