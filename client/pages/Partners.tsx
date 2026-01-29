@@ -1074,7 +1074,7 @@ export default function Partners() {
               ))}
             </div>
 
-            {/* Right Arrow */}
+            {/* Right Arrow - Hidden on mobile, visible on desktop */}
             <button
               onClick={() => {
                 if (visionsScrollRef.current) {
@@ -1084,10 +1084,10 @@ export default function Partners() {
                   });
                 }
               }}
-              className="hidden lg:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              className="hidden xl:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
             </button>
           </div>
         </div>
