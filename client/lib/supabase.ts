@@ -129,6 +129,18 @@ export interface Partner {
   created_at: string;
 }
 
+// Partner Visions types
+export interface PartnerVision {
+  id: string;
+  name: string;
+  position: string;
+  image_url: string;
+  quote: string;
+  quote_i18n?: I18nString;
+  order_index: number;
+  created_at: string;
+}
+
 // FAQ types
 export interface FAQ {
   id: string;
@@ -694,6 +706,120 @@ export async function deletePartner(id: string): Promise<boolean> {
 
     if (error) {
       console.error("Error deleting partner:", error);
+      return false;
+    }
+
+    return true;
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    return false;
+  }
+}
+
+// Fetch all partner visions
+export async function fetchPartnerVisions(): Promise<PartnerVision[]> {
+  try {
+    const { data, error } = await supabase
+      .from("partner_visions")
+      .select("*")
+      .order("order_index", { ascending: true });
+
+    if (error) {
+      console.error("Error fetching partner visions:", error);
+      return [];
+    }
+
+    return data || [];
+  } catch (err) {
+    console.error("Unexpected error fetching partner visions:", err);
+    return [];
+  }
+}
+
+// Create partner vision
+export async function createPartnerVision(
+  vision: Omit<PartnerVision, "id" | "created_at">,
+): Promise<PartnerVision | null> {
+  try {
+    if (!supabase || !supabaseUrl || !supabaseKey) {
+      console.error(
+        "Supabase is not initialized. Check environment variables.",
+      );
+      return null;
+    }
+
+    console.log("Creating partner vision:", vision);
+
+    const { data, error } = await supabase
+      .from("partner_visions")
+      .insert([vision])
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Error creating partner vision:", error);
+      throw new Error(error.message || "Failed to create partner vision");
+    }
+
+    console.log("Partner vision created successfully:", data);
+    return data;
+  } catch (err) {
+    console.error("Unexpected error creating partner vision:", err);
+    if (err instanceof Error) {
+      throw new Error(`Failed to create partner vision: ${err.message}`);
+    }
+    throw err;
+  }
+}
+
+// Update partner vision
+export async function updatePartnerVision(
+  id: string,
+  updates: Partial<Omit<PartnerVision, "id" | "created_at">>,
+): Promise<PartnerVision | null> {
+  try {
+    if (!supabase || !supabaseUrl || !supabaseKey) {
+      console.error(
+        "Supabase is not initialized. Check environment variables.",
+      );
+      return null;
+    }
+
+    console.log("Updating partner vision with ID:", id, "Updates:", updates);
+
+    const { data, error } = await supabase
+      .from("partner_visions")
+      .update(updates)
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Error updating partner vision:", error);
+      throw new Error(error.message || "Failed to update partner vision");
+    }
+
+    console.log("Partner vision updated successfully:", data);
+    return data;
+  } catch (err) {
+    console.error("Unexpected error updating partner vision:", err);
+    if (err instanceof Error) {
+      throw new Error(`Failed to update partner vision: ${err.message}`);
+    }
+    throw err;
+  }
+}
+
+// Delete partner vision
+export async function deletePartnerVision(id: string): Promise<boolean> {
+  try {
+    const { error } = await supabase
+      .from("partner_visions")
+      .delete()
+      .eq("id", id);
+
+    if (error) {
+      console.error("Error deleting partner vision:", error);
       return false;
     }
 

@@ -10,7 +10,12 @@ import {
   ChevronRight,
   Check,
 } from "lucide-react";
-import { fetchPartners, type Partner } from "../lib/supabase";
+import {
+  fetchPartners,
+  type Partner,
+  fetchPartnerVisions,
+  type PartnerVision,
+} from "../lib/supabase";
 
 export default function Partners() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +29,11 @@ export default function Partners() {
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
+  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>(
+    [],
+  );
   const sponsorsScrollRef = useRef<HTMLDivElement>(null);
+  const visionsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
@@ -84,6 +93,8 @@ export default function Partners() {
     const loadPartners = async () => {
       const data = await fetchPartners();
       if (data.length > 0) setPartnersList(data);
+      const visionsData = await fetchPartnerVisions();
+      if (visionsData.length > 0) setPartnerVisionsList(visionsData);
     };
     loadPartners();
   }, []);
@@ -158,6 +169,11 @@ export default function Partners() {
         informational_partners_desc:
           "Knowledge partners and information sources supporting our mission",
 
+        // Vision of our Partners Section
+        vision_of_partners: "Vision of Our Partners",
+        vision_of_partners_desc:
+          "Hear from our partners about their vision of cooperation and partnership",
+
         // International Affiliation Section
         affiliation_quote:
           '"The Youth Assembly is a space for real dialogue and joint action, where young people from different countries come together to exchange experiences, find common ground, and co-create projects based on cooperation and trust"',
@@ -212,6 +228,11 @@ export default function Partners() {
         informational_partners: "شركاء المعلومات",
         informational_partners_desc:
           "شركاء المعرفة ومصادر المعلومات الداعمة لمهمتنا",
+
+        // Vision of our Partners Section
+        vision_of_partners: "رؤية شركائنا",
+        vision_of_partners_desc:
+          "استمع إلى شركائنا حول رؤيتهم للتعاون والشراكة",
 
         // International Affiliation Section
         affiliation_quote:
@@ -271,6 +292,11 @@ export default function Partners() {
         informational_partners: "Информационные партнёры",
         informational_partners_desc:
           "Партнёры по знаниям и информационные источники, поддерживающие нашу миссию",
+
+        // Vision of our Partners Section
+        vision_of_partners: "Видение наших партнёров",
+        vision_of_partners_desc:
+          "Услышьте от наших партнёров об их видении сотрудничества и партнёрства",
 
         // International Affiliation Section
         affiliation_quote:
@@ -874,6 +900,303 @@ export default function Partners() {
               opacity: 1;
               transform: translateY(0);
             }
+          }
+        `}</style>
+      </section>
+
+      {/* Vision of our Partners Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_50%,rgba(187,9,9,0.15)_1px,transparent_1px)] bg-[length:60px_60px]" />
+        </div>
+
+        {/* Floating animated orbs */}
+        <div
+          className="absolute -top-32 -right-32 w-96 h-96 bg-brand-red/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "4s" }}
+        />
+        <div
+          className="absolute -bottom-32 -left-32 w-96 h-96 bg-gray-900/5 rounded-full blur-3xl animate-pulse"
+          style={{ animationDuration: "5s", animationDelay: "1s" }}
+        />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <span
+              className="inline-block px-4 py-2 bg-brand-red/10 text-brand-red text-xs sm:text-sm font-semibold rounded-full mb-4 border border-brand-red/30 animate-pulse"
+              style={{ animationDuration: "3s" }}
+            >
+              {t("vision_of_partners")}
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+              {t("vision_of_partners")}
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+              {t("vision_of_partners_desc")}
+            </p>
+          </div>
+
+          {/* Partner Visions Horizontal Scroll with Navigation */}
+          <div className="relative">
+            {/* Left Arrow - Hidden on mobile, visible on desktop */}
+            <button
+              onClick={() => {
+                if (visionsScrollRef.current) {
+                  visionsScrollRef.current.scrollBy({
+                    left: -400,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="hidden xl:flex absolute left-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
+            </button>
+
+            {/* Scroll Container - Show Partner Visions */}
+            <div
+              ref={visionsScrollRef}
+              className="flex overflow-x-auto gap-4 sm:gap-6 md:gap-8 pb-4 scrollbar-hide px-2 sm:px-0"
+            >
+              {partnerVisionsList.map((vision, index) => (
+                <div
+                  key={vision.id}
+                  className="group flex flex-col flex-shrink-0 w-72 sm:w-80 md:w-96 perspective min-h-[650px] sm:min-h-[680px] md:min-h-[820px]"
+                  style={{
+                    animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
+                    opacity: 0,
+                    perspective: "1000px",
+                    height: "auto",
+                  }}
+                >
+                  {/* Vision Card - Premium Design */}
+                  <div
+                    className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white flex flex-col border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
+                    style={{
+                      transformStyle: "preserve-3d",
+                      transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+                    }}
+                  >
+                    {/* Animated background gradient - enhanced with brand colors */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 via-brand-silver/5 to-brand-red/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+
+                    {/* Dynamic top accent line - slides and glows with brand colors */}
+                    <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
+
+                    {/* Image Section with advanced hover effects - full width, no cropping */}
+                    <div className="relative w-full h-56 sm:h-64 md:h-72 bg-gradient-to-b from-white to-gray-50 flex items-center justify-center flex-shrink-0 transition-all duration-500 border-b-2 border-gray-100 group-hover:border-brand-red/20">
+                      {vision.image_url && (
+                        <>
+                          {/* Base image - fills full container without cropping */}
+                          <img
+                            src={vision.image_url}
+                            alt={vision.name}
+                            className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:drop-shadow-xl"
+                            style={{
+                              filter: "brightness(1) contrast(1.05)",
+                              transition: "filter 600ms ease-out",
+                            }}
+                          />
+
+                          {/* Enhanced overlay on hover */}
+                          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-700 ease-out pointer-events-none" />
+                        </>
+                      )}
+
+                      {/* Subtle top gradient - not too dark */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-out pointer-events-none" />
+
+                      {/* Subtle glow on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-brand-red/0 via-transparent to-brand-red/0 opacity-0 group-hover:opacity-5 transition-opacity duration-700 ease-out pointer-events-none" />
+                    </div>
+
+                    {/* Content Section with staggered animations */}
+                    <div className="relative z-10 flex-1 p-4 sm:p-5 md:p-6 flex flex-col gap-3 sm:gap-4 md:gap-5 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700 overflow-hidden">
+                      {/* Name and Position with enhanced effects */}
+                      <div className="mb-2 sm:mb-3 md:mb-4 transition-all duration-700 group-hover:translate-x-1 p-3 sm:p-4 md:p-3 rounded-2xl bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30 transition-all duration-700">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-2">
+                          {vision.name}
+                        </h3>
+                        <p className="text-[10px] sm:text-xs md:text-sm text-brand-red font-semibold mt-1 sm:mt-1.5 tracking-widest uppercase transition-all duration-700 group-hover:tracking-[0.15em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-1">
+                          {vision.position}
+                        </p>
+                        <div className="h-0.5 sm:h-1 w-8 sm:w-10 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red mt-1.5 sm:mt-2.5 transition-all duration-700 ease-out group-hover:w-full group-hover:shadow-lg group-hover:shadow-brand-red/50 rounded-full" />
+                      </div>
+
+                      {/* Quote with sophisticated animations and brand colors */}
+                      <div
+                        className="space-y-2 sm:space-y-3 flex flex-col min-h-0 p-4 sm:p-5 md:p-4 rounded-2xl bg-gradient-to-br from-brand-red/10 via-transparent to-brand-silver/8 border-2 border-brand-red/20 transition-all duration-700 ease-out group-hover:from-brand-red/20 group-hover:to-brand-silver/15 group-hover:border-brand-red/40 group-hover:shadow-lg group-hover:shadow-brand-red/25 group-hover:backdrop-blur-sm"
+                        style={{
+                          animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
+                          opacity: 0,
+                          transform: "translateY(10px)",
+                        }}
+                      >
+                        {/* Opening quote mark with animation */}
+                        <div className="text-brand-red/40 text-2xl sm:text-3xl leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/80">
+                          "
+                        </div>
+
+                        {/* Quote text with reveal animation */}
+                        <p
+                          className="text-[11px] sm:text-xs md:text-sm text-gray-700 italic font-light leading-snug sm:leading-relaxed transition-colors duration-700 ease-out group-hover:text-brand-red/90"
+                          style={{
+                            animation: `textReveal 0.9s ease-out 400ms forwards`,
+                            opacity: 0,
+                          }}
+                        >
+                          {vision.quote_i18n &&
+                          vision.quote_i18n[currentLanguage]
+                            ? vision.quote_i18n[currentLanguage]
+                            : vision.quote}
+                        </p>
+
+                        {/* Closing quote mark with animation */}
+                        <div className="text-brand-red/40 text-2xl sm:text-3xl leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/80">
+                          "
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Premium glow effect with brand colors */}
+                    <div
+                      className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                      style={{
+                        boxShadow:
+                          "inset 0 0 40px rgba(187, 9, 9, 0.12), 0 15px 50px rgba(187, 9, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
+                      }}
+                    />
+
+                    {/* Top rim light effect on hover */}
+                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Arrow - Hidden on mobile, visible on desktop */}
+            <button
+              onClick={() => {
+                if (visionsScrollRef.current) {
+                  visionsScrollRef.current.scrollBy({
+                    left: 400,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="hidden xl:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
+            </button>
+          </div>
+        </div>
+
+        <style>{`
+          @keyframes slideInUp {
+            from {
+              opacity: 0;
+              transform: translateY(50px) scale(0.95);
+              filter: blur(4px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+              filter: blur(0px);
+            }
+          }
+
+          @keyframes quoteSlideIn {
+            from {
+              opacity: 0;
+              transform: translateY(15px) scale(0.98);
+              filter: blur(2px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+              filter: blur(0px);
+            }
+          }
+
+          @keyframes textReveal {
+            0% {
+              opacity: 0;
+              transform: translateX(-10px);
+              filter: blur(3px);
+            }
+            50% {
+              opacity: 0.7;
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(0);
+              filter: blur(0px);
+            }
+          }
+
+          @keyframes shimmer {
+            0% {
+              transform: translateX(-120%);
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(120%);
+              opacity: 0;
+            }
+          }
+
+          @keyframes glow {
+            0%, 100% {
+              box-shadow: 0 0 20px rgba(187, 9, 9, 0);
+            }
+            50% {
+              box-shadow: 0 0 40px rgba(187, 9, 9, 0.4);
+            }
+          }
+
+          @keyframes floatGlow {
+            0%, 100% {
+              opacity: 0;
+              transform: translate(0, 0) scale(0.9);
+            }
+            50% {
+              opacity: 1;
+              transform: translate(10px, -10px) scale(1);
+            }
+          }
+
+          @keyframes pulseGlow {
+            0%, 100% {
+              box-shadow: 0 0 10px rgba(187, 9, 9, 0.2);
+            }
+            50% {
+              box-shadow: 0 0 25px rgba(187, 9, 9, 0.5);
+            }
+          }
+
+          /* Quote box hover glow */
+          .group:hover > div > div:has(> p[style*="animation"]) {
+            animation: pulseGlow 2s ease-in-out infinite;
+          }
+
+          /* Smooth easing for premium feel */
+          .group:hover {
+            --transition-timing: cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+
+          /* Image blur and focus effect */
+          .group:hover img {
+            filter: brightness(1.1) contrast(1.05) saturate(1.1);
           }
         `}</style>
       </section>

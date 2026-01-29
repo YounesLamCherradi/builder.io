@@ -31,6 +31,10 @@ import {
   createPartner,
   updatePartner,
   deletePartner,
+  fetchPartnerVisions,
+  createPartnerVision,
+  updatePartnerVision,
+  deletePartnerVision,
   fetchFAQs,
   createFAQ,
   updateFAQ,
@@ -45,6 +49,7 @@ import {
   type TeamMember,
   type GalleryItem,
   type Partner,
+  type PartnerVision,
   type FAQ,
   type PastEvent,
 } from "../lib/supabase";
@@ -53,13 +58,16 @@ import { toast } from "sonner";
 export default function Admin() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<
-    "news" | "events" | "team" | "gallery" | "partners" | "faqs" | "past_events"
+    "news" | "team" | "partners" | "partner_visions" | "faqs"
   >("news");
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [eventsList, setEventsList] = useState<Event[]>([]);
   const [teamList, setTeamList] = useState<TeamMember[]>([]);
   const [galleryList, setGalleryList] = useState<GalleryItem[]>([]);
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
+  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>(
+    [],
+  );
   const [faqsList, setFaqsList] = useState<FAQ[]>([]);
   const [pastEventsList, setPastEventsList] = useState<PastEvent[]>([]);
   const [loading, setLoading] = useState(false);
@@ -111,6 +119,9 @@ export default function Admin() {
     partnerName: "",
     partnerLink: "",
     partnerType: "institutional",
+    visionName: "",
+    visionPosition: "",
+    visionQuote: "",
     question: "",
     answer: "",
     bio: "",
@@ -128,6 +139,7 @@ export default function Admin() {
     role_i18n: { en: "", ar: "", ru: "" },
     bio_i18n: { en: "", ar: "", ru: "" },
     caption_i18n: { en: "", ar: "", ru: "" },
+    quote_i18n: { en: "", ar: "", ru: "" },
     question_i18n: { en: "", ar: "", ru: "" },
     answer_i18n: { en: "", ar: "", ru: "" },
   });
@@ -154,24 +166,18 @@ export default function Admin() {
     if (activeTab === "news") {
       const data = await fetchNews();
       setNewsList(data);
-    } else if (activeTab === "events") {
-      const data = await fetchEvents();
-      setEventsList(data);
     } else if (activeTab === "team") {
       const data = await fetchTeam();
       setTeamList(data);
-    } else if (activeTab === "gallery") {
-      const data = await fetchGallery();
-      setGalleryList(data);
     } else if (activeTab === "partners") {
       const data = await fetchPartners();
       setPartnersList(data);
+    } else if (activeTab === "partner_visions") {
+      const data = await fetchPartnerVisions();
+      setPartnerVisionsList(data);
     } else if (activeTab === "faqs") {
       const data = await fetchFAQs();
       setFaqsList(data);
-    } else if (activeTab === "past_events") {
-      const data = await fetchPastEvents();
-      setPastEventsList(data);
     }
     setLoading(false);
   };
@@ -265,6 +271,30 @@ export default function Admin() {
       return;
     }
 
+    if (activeTab === "partner_visions" && !formData.image_url) {
+      toast.error("Please upload an image for the partner vision");
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === "partner_visions" && !formData.visionName) {
+      toast.error("Please enter the partner name");
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === "partner_visions" && !formData.visionPosition) {
+      toast.error("Please enter the partner position");
+      setLoading(false);
+      return;
+    }
+
+    if (activeTab === "partner_visions" && !i18nData.quote_i18n.en) {
+      toast.error("Please enter the partner quote in English");
+      setLoading(false);
+      return;
+    }
+
     if (activeTab === "team" && !i18nData.name_i18n.en) {
       toast.error("Please enter the team member name in English");
       setLoading(false);
@@ -281,16 +311,28 @@ export default function Admin() {
       if (activeTab === "news") {
         // Create article data with order_index
         const newsData: any = {
-          title: i18nData.title_i18n.en,
-          description: i18nData.description_i18n.en,
-          content: i18nData.content_i18n.en,
+          title: i18nData.title_i18n?.en || formData.title,
+          description: i18nData.description_i18n?.en || formData.description,
+          content: i18nData.content_i18n?.en || formData.content,
           category: formData.category || "General",
           author: formData.author || "",
           image_url: formData.image_url || null,
           date: formData.date,
-          title_i18n: i18nData.title_i18n,
-          description_i18n: i18nData.description_i18n,
-          content_i18n: i18nData.content_i18n,
+          title_i18n: i18nData.title_i18n || {
+            en: formData.title,
+            ar: "",
+            ru: "",
+          },
+          description_i18n: i18nData.description_i18n || {
+            en: formData.description,
+            ar: "",
+            ru: "",
+          },
+          content_i18n: i18nData.content_i18n || {
+            en: formData.content,
+            ar: "",
+            ru: "",
+          },
           order_index: formData.orderIndex,
           redirect_url: formData.redirectUrl || null,
         };
@@ -303,9 +345,9 @@ export default function Admin() {
       } else if (activeTab === "events") {
         if (editingId) {
           await updateEvent(editingId, {
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
-            about_event: i18nData.about_event_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
+            about_event: i18nData.about_event_i18n?.en || formData.about_event,
             location: formData.location,
             date: formData.date,
             time: formData.time,
@@ -315,15 +357,27 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
-            about_event_i18n: i18nData.about_event_i18n,
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
+            about_event_i18n: i18nData.about_event_i18n || {
+              en: formData.about_event,
+              ar: "",
+              ru: "",
+            },
           });
         } else {
           await createEvent({
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
-            about_event: i18nData.about_event_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
+            about_event: i18nData.about_event_i18n?.en || formData.about_event,
             location: formData.location,
             date: formData.date,
             time: formData.time,
@@ -333,32 +387,60 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
-            about_event_i18n: i18nData.about_event_i18n,
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
+            about_event_i18n: i18nData.about_event_i18n || {
+              en: formData.about_event,
+              ar: "",
+              ru: "",
+            },
           });
         }
       } else if (activeTab === "team") {
         // Team member handling
         if (editingId) {
           await updateTeamMember(editingId, {
-            name: i18nData.name_i18n.en,
-            name_i18n: i18nData.name_i18n,
-            role: i18nData.role_i18n.en,
-            role_i18n: i18nData.role_i18n,
-            bio: i18nData.bio_i18n.en,
-            bio_i18n: i18nData.bio_i18n,
+            name: i18nData.name_i18n?.en || formData.name,
+            name_i18n: i18nData.name_i18n || {
+              en: formData.name,
+              ar: "",
+              ru: "",
+            },
+            role: i18nData.role_i18n?.en || formData.role,
+            role_i18n: i18nData.role_i18n || {
+              en: formData.role,
+              ar: "",
+              ru: "",
+            },
+            bio: i18nData.bio_i18n?.en || formData.bio,
+            bio_i18n: i18nData.bio_i18n || { en: formData.bio, ar: "", ru: "" },
             image_url: formData.image_url,
             order_index: formData.orderIndex,
           });
         } else {
           await createTeamMember({
-            name: i18nData.name_i18n.en,
-            name_i18n: i18nData.name_i18n,
-            role: i18nData.role_i18n.en,
-            role_i18n: i18nData.role_i18n,
-            bio: i18nData.bio_i18n.en,
-            bio_i18n: i18nData.bio_i18n,
+            name: i18nData.name_i18n?.en || formData.name,
+            name_i18n: i18nData.name_i18n || {
+              en: formData.name,
+              ar: "",
+              ru: "",
+            },
+            role: i18nData.role_i18n?.en || formData.role,
+            role_i18n: i18nData.role_i18n || {
+              en: formData.role,
+              ar: "",
+              ru: "",
+            },
+            bio: i18nData.bio_i18n?.en || formData.bio,
+            bio_i18n: i18nData.bio_i18n || { en: formData.bio, ar: "", ru: "" },
             image_url: formData.image_url,
             order_index: formData.orderIndex,
           });
@@ -368,13 +450,13 @@ export default function Admin() {
         if (editingId) {
           await updateGalleryItem(editingId, {
             image_url: formData.image_url,
-            caption_i18n: i18nData.caption_i18n,
+            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         } else {
           await createGalleryItem({
             image_url: formData.image_url,
-            caption_i18n: i18nData.caption_i18n,
+            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         }
@@ -397,22 +479,58 @@ export default function Admin() {
             order_index: formData.orderIndex,
           });
         }
+      } else if (activeTab === "partner_visions") {
+        // Partner visions handling
+        const visionData = {
+          image_url: formData.image_url,
+          name: formData.visionName,
+          position: formData.visionPosition,
+          quote: i18nData.quote_i18n?.en || formData.visionQuote,
+          quote_i18n: i18nData.quote_i18n || {
+            en: formData.visionQuote,
+            ar: "",
+            ru: "",
+          },
+          order_index: formData.orderIndex,
+        };
+        console.log("Creating partner vision with data:", visionData);
+        if (editingId) {
+          await updatePartnerVision(editingId, visionData);
+        } else {
+          await createPartnerVision(visionData);
+        }
       } else if (activeTab === "faqs") {
         // FAQs handling
         if (editingId) {
           await updateFAQ(editingId, {
-            question: i18nData.question_i18n.en,
-            answer: i18nData.answer_i18n.en,
-            question_i18n: i18nData.question_i18n,
-            answer_i18n: i18nData.answer_i18n,
+            question: i18nData.question_i18n?.en || formData.question,
+            answer: i18nData.answer_i18n?.en || formData.answer,
+            question_i18n: i18nData.question_i18n || {
+              en: formData.question,
+              ar: "",
+              ru: "",
+            },
+            answer_i18n: i18nData.answer_i18n || {
+              en: formData.answer,
+              ar: "",
+              ru: "",
+            },
             order_index: formData.orderIndex,
           });
         } else {
           await createFAQ({
-            question: i18nData.question_i18n.en,
-            answer: i18nData.answer_i18n.en,
-            question_i18n: i18nData.question_i18n,
-            answer_i18n: i18nData.answer_i18n,
+            question: i18nData.question_i18n?.en || formData.question,
+            answer: i18nData.answer_i18n?.en || formData.answer,
+            question_i18n: i18nData.question_i18n || {
+              en: formData.question,
+              ar: "",
+              ru: "",
+            },
+            answer_i18n: i18nData.answer_i18n || {
+              en: formData.answer,
+              ar: "",
+              ru: "",
+            },
             order_index: formData.orderIndex,
           });
         }
@@ -420,24 +538,40 @@ export default function Admin() {
         // Past Events handling
         if (editingId) {
           await updatePastEvent(editingId, {
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
             order_index: formData.orderIndex,
           });
         } else {
           await createPastEvent({
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
             order_index: pastEventsList.length,
           });
         }
@@ -452,6 +586,7 @@ export default function Admin() {
         team: "Team member",
         gallery: "Gallery item",
         partners: "Partner",
+        partner_visions: "Partner Vision",
         faqs: "FAQ",
         past_events: "Past Event",
       };
@@ -461,15 +596,32 @@ export default function Admin() {
     } catch (error) {
       console.error("Error saving:", error);
       let errorMessage = "Failed to save";
+
       if (error instanceof Error) {
         errorMessage = error.message;
       } else if (typeof error === "object" && error !== null) {
         if ("message" in error) {
           errorMessage = (error as any).message;
+        } else if ("error_description" in error) {
+          errorMessage = (error as any).error_description;
+        } else if ("hint" in error) {
+          errorMessage = (error as any).hint;
+        } else if ("status" in error) {
+          errorMessage = `Status ${(error as any).status}: ${(error as any).statusText || "Request failed"}`;
         } else {
           errorMessage = JSON.stringify(error);
         }
       }
+
+      // Provide helpful error messages
+      if (errorMessage.includes("Failed to fetch")) {
+        errorMessage =
+          "Network error - Please check your internet connection and Supabase configuration";
+      } else if (errorMessage.includes("401") || errorMessage.includes("403")) {
+        errorMessage =
+          "Permission denied - Please check your Supabase API key and RLS policies";
+      }
+
       console.error("Full error object:", error);
       console.error("Error details:", errorMessage);
       toast.error(`❌ Error: ${errorMessage}`);
@@ -662,6 +814,46 @@ export default function Admin() {
         caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(partner.logo_url || null);
+    } else if (activeTab === "partner_visions") {
+      const vision = item as PartnerVision;
+      setFormData({
+        title: "",
+        description: "",
+        content: "",
+        category: "Visa Updates",
+        author: "",
+        image_url: vision.image_url || "",
+        location: "",
+        date: new Date().toISOString().split("T")[0],
+        time: "18:00",
+        about_event: "",
+        name: "",
+        role: "",
+        partnerName: "",
+        partnerLink: "",
+        partnerType: "institutional",
+        visionName: vision.name,
+        visionPosition: vision.position,
+        visionQuote: vision.quote,
+        question: "",
+        answer: "",
+        bio: "",
+        orderIndex: vision.order_index || 0,
+      });
+      setI18nData({
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        name_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
+        quote_i18n: vision.quote_i18n || { en: vision.quote, ar: "", ru: "" },
+        question_i18n: { en: "", ar: "", ru: "" },
+        answer_i18n: { en: "", ar: "", ru: "" },
+      });
+      setImagePreview(vision.image_url || null);
     } else if (activeTab === "faqs") {
       const faq = item as FAQ;
       setFormData({
@@ -759,6 +951,8 @@ export default function Admin() {
         await deleteGalleryItem(id);
       } else if (activeTab === "partners") {
         await deletePartner(id);
+      } else if (activeTab === "partner_visions") {
+        await deletePartnerVision(id);
       } else if (activeTab === "faqs") {
         await deleteFAQ(id);
       } else if (activeTab === "past_events") {
@@ -790,6 +984,10 @@ export default function Admin() {
       role: "",
       partnerName: "",
       partnerLink: "",
+      partnerType: "institutional",
+      visionName: "",
+      visionPosition: "",
+      visionQuote: "",
       question: "",
       answer: "",
       bio: "",
@@ -805,6 +1003,7 @@ export default function Admin() {
       role_i18n: { en: "", ar: "", ru: "" },
       bio_i18n: { en: "", ar: "", ru: "" },
       caption_i18n: { en: "", ar: "", ru: "" },
+      quote_i18n: { en: "", ar: "", ru: "" },
       question_i18n: { en: "", ar: "", ru: "" },
       answer_i18n: { en: "", ar: "", ru: "" },
     });
@@ -822,127 +1021,105 @@ export default function Admin() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Header */}
-      <div className="bg-white shadow">
+      <div className="bg-gradient-to-r from-brand-red/95 via-brand-red to-brand-red/90 border-b-4 border-brand-red shadow-xl">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link
               to="/"
-              className="flex items-center gap-2 text-brand-red hover:opacity-80"
+              className="flex items-center gap-2 text-white hover:text-white/80 transition-colors font-semibold hover:scale-105 duration-300"
             >
               <ArrowLeft className="w-5 h-5" />
               Back to Site
             </Link>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+          <h1 className="text-4xl font-bold text-white drop-shadow-lg">
+            Admin Dashboard
+          </h1>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+            className="flex items-center gap-2 px-4 py-2.5 text-white hover:bg-white/20 rounded-lg transition-all border-2 border-white hover:border-white font-medium hover:shadow-lg hover:scale-105 duration-300"
             title="Logout"
           >
             <LogOut className="w-5 h-5" />
-            <span className="text-sm font-medium">Logout</span>
+            <span className="text-sm">Logout</span>
           </button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="bg-white border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 flex gap-8">
+      <div className="bg-gray-800/50 border-b-2 border-brand-red/30 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 flex gap-6 overflow-x-auto scrollbar-hide">
           <button
             onClick={() => setActiveTab("news")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "news"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             News Articles
           </button>
           <button
-            onClick={() => setActiveTab("events")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
-              activeTab === "events"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Events
-          </button>
-          <button
             onClick={() => setActiveTab("team")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "team"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             Team Members
           </button>
           <button
-            onClick={() => setActiveTab("gallery")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
-              activeTab === "gallery"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Gallery
-          </button>
-          <button
             onClick={() => setActiveTab("partners")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "partners"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             Partners
           </button>
           <button
+            onClick={() => setActiveTab("partner_visions")}
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
+              activeTab === "partner_visions"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
+            }`}
+          >
+            Partner Visions
+          </button>
+          <button
             onClick={() => setActiveTab("faqs")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
+            className={`py-4 px-4 border-b-3 font-semibold transition-all whitespace-nowrap ${
               activeTab === "faqs"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
+                ? "border-brand-red text-brand-red text-lg"
+                : "border-transparent text-gray-400 hover:text-gray-200"
             }`}
           >
             FAQs
-          </button>
-          <button
-            onClick={() => setActiveTab("past_events")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
-              activeTab === "past_events"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Past Events
           </button>
         </div>
       </div>
 
       {/* Content */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
         {/* Form Section */}
-        <div className="bg-white rounded-lg shadow mb-8">
-          <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-gray-900">
+        <div className="bg-gray-800/80 rounded-2xl shadow-2xl border border-gray-700/50 mb-10 backdrop-blur-sm hover:bg-gray-800/90 transition-all duration-300">
+          <div className="px-6 py-5 border-b border-brand-red/20 flex items-center justify-between bg-gradient-to-r from-gray-800/90 via-gray-800/80 to-gray-800/70 rounded-t-2xl border-t-4 border-t-brand-red/30">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-brand-red via-orange-400 to-brand-red bg-clip-text text-transparent">
               {showForm ? (editingId ? "Edit" : "Create New") : "Add New"}{" "}
               {activeTab === "news"
                 ? "Article"
-                : activeTab === "events"
-                  ? "Event"
-                  : activeTab === "team"
-                    ? "Team Member"
-                    : activeTab === "gallery"
-                      ? "Gallery Item"
-                      : activeTab === "partners"
-                        ? "Partner"
-                        : activeTab === "faqs"
-                          ? "FAQ"
-                          : "Past Event"}
+                : activeTab === "team"
+                  ? "Team Member"
+                  : activeTab === "partners"
+                    ? "Partner"
+                    : activeTab === "partner_visions"
+                      ? "Partner Vision"
+                      : "FAQ"}
             </h2>
             {showForm && (
               <button
@@ -1475,6 +1652,87 @@ export default function Admin() {
                 </>
               )}
 
+              {activeTab === "partner_visions" && (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Partner Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="visionName"
+                        value={formData.visionName}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="Partner/Person name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Position/Title *
+                      </label>
+                      <input
+                        type="text"
+                        name="visionPosition"
+                        value={formData.visionPosition}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                        placeholder="e.g., CEO, Director, etc."
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Quote * ({activeLanguage.toUpperCase()})
+                    </label>
+                    <textarea
+                      value={i18nData.quote_i18n[activeLanguage]}
+                      onChange={(e) =>
+                        setI18nData((prev) => ({
+                          ...prev,
+                          quote_i18n: {
+                            ...prev.quote_i18n,
+                            [activeLanguage]: e.target.value,
+                          },
+                        }))
+                      }
+                      required
+                      rows={3}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="Partner's quote or vision about cooperation"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Display Order Position
+                    </label>
+                    <input
+                      type="number"
+                      value={formData.orderIndex}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          orderIndex: parseInt(e.target.value) || 0,
+                        }))
+                      }
+                      min="0"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
+                      placeholder="0 (first position), 1 (second), etc..."
+                    />
+                    <p className="text-xs text-gray-500 mt-1">
+                      Set the position number to control where this partner
+                      vision appears. Lower numbers appear first.
+                    </p>
+                  </div>
+                </>
+              )}
+
               {activeTab === "gallery" && (
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -1687,12 +1945,15 @@ export default function Admin() {
                     ? "Image"
                     : activeTab === "partners"
                       ? "Logo"
-                      : activeTab === "past_events"
-                        ? "Event Image"
-                        : "Image"}{" "}
+                      : activeTab === "partner_visions"
+                        ? "Partner Image"
+                        : activeTab === "past_events"
+                          ? "Event Image"
+                          : "Image"}{" "}
                   Upload
                   {(activeTab === "gallery" ||
                     activeTab === "partners" ||
+                    activeTab === "partner_visions" ||
                     activeTab === "past_events") && (
                     <span className="text-red-600"> *</span>
                   )}
@@ -1764,6 +2025,8 @@ export default function Admin() {
                     (activeTab === "gallery" && !formData.image_url) ||
                     (activeTab === "partners" &&
                       (!formData.image_url || !formData.partnerName)) ||
+                    (activeTab === "partner_visions" &&
+                      (!formData.image_url || !formData.visionName)) ||
                     (activeTab === "past_events" && !formData.image_url)
                   }
                   className="flex-1 px-6 py-2 bg-brand-red text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-2"
@@ -1774,9 +2037,16 @@ export default function Admin() {
                         ? "Please upload a logo"
                         : activeTab === "partners" && !formData.partnerName
                           ? "Please enter partner name"
-                          : activeTab === "past_events" && !formData.image_url
-                            ? "Please upload an event image"
-                            : ""
+                          : activeTab === "partner_visions" &&
+                              !formData.image_url
+                            ? "Please upload a partner image"
+                            : activeTab === "partner_visions" &&
+                                !formData.visionName
+                              ? "Please enter partner name"
+                              : activeTab === "past_events" &&
+                                  !formData.image_url
+                                ? "Please upload an event image"
+                                : ""
                   }
                 >
                   {loading ? (
@@ -1824,9 +2094,9 @@ export default function Admin() {
         </div>
 
         {/* List Section */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900">
+        <div className="bg-gray-800/80 rounded-2xl shadow-2xl border border-gray-700/50 backdrop-blur-sm">
+          <div className="px-6 py-5 border-b border-brand-red/20 bg-gradient-to-r from-gray-800/90 via-gray-800/80 to-gray-800/70 rounded-t-2xl border-t-4 border-t-brand-red/30">
+            <h2 className="text-lg font-bold bg-gradient-to-r from-brand-red via-orange-400 to-brand-red bg-clip-text text-transparent">
               {activeTab === "news"
                 ? `Articles (${newsList.length})`
                 : activeTab === "events"
@@ -1837,9 +2107,11 @@ export default function Admin() {
                       ? `Gallery Items (${galleryList.length})`
                       : activeTab === "partners"
                         ? `Partners (${partnersList.length})`
-                        : activeTab === "faqs"
-                          ? `FAQs (${faqsList.length})`
-                          : `Past Events (${pastEventsList.length})`}
+                        : activeTab === "partner_visions"
+                          ? `Partner Visions (${partnerVisionsList.length})`
+                          : activeTab === "faqs"
+                            ? `FAQs (${faqsList.length})`
+                            : `Past Events (${pastEventsList.length})`}
             </h2>
           </div>
 
@@ -1848,33 +2120,38 @@ export default function Admin() {
               <Loader className="w-8 h-8 animate-spin mx-auto text-brand-red" />
             </div>
           ) : (
-            <div className="divide-y divide-gray-200">
+            <div className="divide-y divide-gray-700/30">
               {activeTab === "news" && newsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No articles yet. Create your first one!
                 </div>
               ) : activeTab === "events" && eventsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No events yet. Create your first one!
                 </div>
               ) : activeTab === "team" && teamList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No team members yet. Create your first one!
                 </div>
               ) : activeTab === "gallery" && galleryList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No gallery items yet. Create your first one!
                 </div>
               ) : activeTab === "partners" && partnersList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No partners yet. Create your first one!
                 </div>
+              ) : activeTab === "partner_visions" &&
+                partnerVisionsList.length === 0 ? (
+                <div className="p-12 text-center text-gray-400">
+                  No partner visions yet. Create your first one!
+                </div>
               ) : activeTab === "faqs" && faqsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No FAQs yet. Create your first one!
                 </div>
               ) : activeTab === "past_events" && pastEventsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No past events yet. Create your first one!
                 </div>
               ) : null}
@@ -1883,20 +2160,20 @@ export default function Admin() {
                 newsList.map((article) => (
                   <div
                     key={article.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-100">
                           {article.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-sm text-gray-400 mt-1">
                           {article.description}
                         </p>
                         <div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
                           <span>{article.author}</span>
                           <span>{article.date}</span>
-                          <span className="bg-brand-red text-white px-2 py-1 rounded text-xs font-semibold">
+                          <span className="bg-gradient-to-r from-brand-red to-orange-500 text-white px-2 py-1 rounded text-xs font-semibold shadow-lg">
                             {article.category}
                           </span>
                         </div>
@@ -1904,13 +2181,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(article)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(article.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -1923,14 +2200,14 @@ export default function Admin() {
                 eventsList.map((event) => (
                   <div
                     key={event.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-100">
                           {event.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-sm text-gray-400 mt-1">
                           {event.description}
                         </p>
                         <div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
@@ -1941,13 +2218,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(event)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(event.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -1960,14 +2237,14 @@ export default function Admin() {
                 teamList.map((member) => (
                   <div
                     key={member.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-100">
                           {member.name}
                         </h3>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-sm text-gray-400 mt-1">
                           {member.role}
                         </p>
                         <p className="text-sm text-gray-500 mt-2 line-clamp-2">
@@ -1977,13 +2254,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(member)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(member.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -1996,7 +2273,7 @@ export default function Admin() {
                 galleryList.map((item) => (
                   <div
                     key={item.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2004,14 +2281,14 @@ export default function Admin() {
                           <img
                             src={item.image_url}
                             alt={item.caption_i18n?.en || "Gallery item"}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-400">
                             {item.caption_i18n?.en || "No caption"}
                           </p>
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-xs text-gray-600 mt-1">
                             ID: {item.id}
                           </p>
                         </div>
@@ -2019,13 +2296,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(item)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(item.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -2038,7 +2315,7 @@ export default function Admin() {
                 partnersList.map((partner) => (
                   <div
                     key={partner.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2046,17 +2323,17 @@ export default function Admin() {
                           <img
                             src={partner.logo_url}
                             alt={partner.name}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900">
+                          <h3 className="text-lg font-semibold text-gray-100">
                             {partner.name}
                           </h3>
-                          <p className="text-sm text-gray-600 mt-1">
+                          <p className="text-sm text-gray-400 mt-1">
                             {partner.link}
                           </p>
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-xs text-gray-600 mt-1">
                             ID: {partner.id}
                           </p>
                         </div>
@@ -2064,13 +2341,61 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(partner)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(partner.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+              {activeTab === "partner_visions" &&
+                partnerVisionsList.map((vision) => (
+                  <div
+                    key={vision.id}
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1 flex gap-4">
+                        {vision.image_url && (
+                          <img
+                            src={vision.image_url}
+                            alt={vision.name}
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
+                          />
+                        )}
+                        <div>
+                          <h3 className="text-lg font-semibold text-gray-100">
+                            {vision.name}
+                          </h3>
+                          <p className="text-sm text-gray-400 mt-1">
+                            {vision.position}
+                          </p>
+                          <p className="text-sm text-gray-500 mt-2 line-clamp-2 italic">
+                            "{vision.quote}"
+                          </p>
+                          <p className="text-xs text-gray-600 mt-1">
+                            ID: {vision.id}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleEdit(vision)}
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
+                        >
+                          <Edit2 className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={() => handleDelete(vision.id)}
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -2083,30 +2408,30 @@ export default function Admin() {
                 faqsList.map((faq) => (
                   <div
                     key={faq.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-100">
                           {faq.question}
                         </h3>
-                        <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+                        <p className="text-sm text-gray-400 mt-2 line-clamp-2">
                           {faq.answer}
                         </p>
-                        <p className="text-xs text-gray-500 mt-2">
+                        <p className="text-xs text-gray-600 mt-2">
                           ID: {faq.id}
                         </p>
                       </div>
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(faq)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(faq.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -2119,7 +2444,7 @@ export default function Admin() {
                 pastEventsList.map((event) => (
                   <div
                     key={event.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2127,21 +2452,21 @@ export default function Admin() {
                           <img
                             src={event.image_url}
                             alt={event.title}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900">
+                          <h3 className="text-lg font-semibold text-gray-100">
                             {event.title}
                           </h3>
-                          <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                          <p className="text-sm text-gray-400 mt-1 line-clamp-2">
                             {event.description}
                           </p>
                           <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
                             <span>{event.location}</span>
                             <span>{event.date}</span>
                           </div>
-                          <p className="text-xs text-gray-500 mt-2">
+                          <p className="text-xs text-gray-600 mt-2">
                             ID: {event.id}
                           </p>
                         </div>
@@ -2149,13 +2474,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(event)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(event.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>

@@ -210,8 +210,8 @@ export default function Index() {
         stat_support: "Support",
 
         hero_stat_users: "Youth Reached",
-        hero_stat_countries: "Countries Reached",
-        hero_stat_success: "Success Rate",
+        hero_stat_countries: "Partners",
+        hero_stat_success: "Countries",
         hero_stat_support: "Support",
 
         latest_updates: "Latest Updates",
@@ -753,9 +753,9 @@ export default function Index() {
   ];
 
   const stats = [
-    { number: "50K+", label: t("stat_users"), icon: Users },
-    { number: "150+", label: t("stat_countries"), icon: Globe },
-    { number: "95%", label: t("stat_success"), icon: TrendingUp },
+    { number: "8M+", label: t("stat_users"), icon: Users },
+    { number: "155+", label: t("stat_countries"), icon: Globe },
+    { number: "35+", label: t("stat_success"), icon: TrendingUp },
     { number: "24/7", label: t("stat_support"), icon: Sparkles },
   ];
 
@@ -1162,7 +1162,7 @@ export default function Index() {
                     <Users className="w-full h-full text-white" />
                   </div>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
-                    50K+
+                    8M+
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-brand-red to-red-600 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
                   <p className="text-xs font-semibold text-gray-700 leading-snug">
@@ -1186,7 +1186,7 @@ export default function Index() {
                     <Globe className="w-full h-full text-white" />
                   </div>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
-                    150+
+                    115+
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-slate-700 to-slate-900 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
                   <p className="text-xs font-semibold text-gray-700 leading-snug">
@@ -1210,7 +1210,7 @@ export default function Index() {
                     <TrendingUp className="w-full h-full text-white" />
                   </div>
                   <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-brand-red to-red-600 bg-clip-text text-transparent mb-1 tracking-tight leading-none">
-                    95%
+                    35+
                   </div>
                   <div className="h-0.5 w-8 bg-gradient-to-r from-brand-red to-red-600 rounded-full mb-2 group-hover:w-full transition-all duration-500" />
                   <p className="text-xs font-semibold text-gray-700 leading-snug">
