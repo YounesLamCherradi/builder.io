@@ -496,6 +496,7 @@ export default function Admin() {
         team: "Team member",
         gallery: "Gallery item",
         partners: "Partner",
+        partner_visions: "Partner Vision",
         faqs: "FAQ",
         past_events: "Past Event",
       };
