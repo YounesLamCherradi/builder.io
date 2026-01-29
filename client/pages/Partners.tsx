@@ -1034,14 +1034,14 @@ export default function Partners() {
                       </div>
 
                       {/* Quote with sophisticated animations */}
-                      <div className="space-y-2 transition-all duration-700 group-hover:translate-y-0.5">
-                        <div className="text-brand-red/30 text-3xl leading-none transition-all duration-700 group-hover:text-brand-red/70 group-hover:translate-y-0.5">
+                      <div className="space-y-2 transition-all duration-700 group-hover:translate-y-0.5 flex flex-col min-h-0">
+                        <div className="text-brand-red/30 text-2xl leading-none transition-all duration-700 group-hover:text-brand-red/70 group-hover:translate-y-0.5 flex-shrink-0">
                           "
                         </div>
-                        <p className="text-sm sm:text-base text-gray-700 italic font-light leading-snug transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight group-hover:leading-relaxed">
+                        <p className="text-xs sm:text-sm text-gray-700 italic font-light leading-relaxed transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight flex-1 overflow-y-auto">
                           {vision.quote}
                         </p>
-                        <div className="text-brand-red/30 text-3xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/70 group-hover:-translate-y-0.5">
+                        <div className="text-brand-red/30 text-2xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/70 group-hover:-translate-y-0.5 flex-shrink-0">
                           "
                         </div>
                       </div>
