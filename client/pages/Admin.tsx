@@ -975,16 +975,6 @@ export default function Admin() {
             Team Members
           </button>
           <button
-            onClick={() => setActiveTab("gallery")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
-              activeTab === "gallery"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Gallery
-          </button>
-          <button
             onClick={() => setActiveTab("partners")}
             className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
               activeTab === "partners"
