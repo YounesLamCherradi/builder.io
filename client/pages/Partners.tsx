@@ -1023,25 +1023,25 @@ export default function Partners() {
                     {/* Content Section with staggered animations */}
                     <div className="relative z-10 flex-1 p-5 sm:p-6 flex flex-col justify-between bg-white/98 backdrop-blur-sm transition-all duration-700 overflow-hidden">
                       {/* Name and Position with enhanced effects */}
-                      <div className="mb-6 transition-all duration-700 group-hover:translate-x-2">
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 transition-all duration-700 ease-out group-hover:text-brand-red group-hover:tracking-wide leading-tight">
+                      <div className="mb-4 transition-all duration-700 group-hover:translate-x-2">
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 transition-all duration-700 ease-out group-hover:text-brand-red group-hover:tracking-wide leading-tight">
                           {vision.name}
                         </h3>
-                        <p className="text-sm sm:text-base text-brand-red font-semibold mt-2 tracking-widest uppercase transition-all duration-700 group-hover:tracking-[0.2em] group-hover:text-opacity-90">
+                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1.5 tracking-widest uppercase transition-all duration-700 group-hover:tracking-[0.15em] group-hover:text-opacity-90">
                           {vision.position}
                         </p>
-                        <div className="h-1 w-12 bg-gradient-to-r from-brand-red via-brand-red to-transparent mt-3 transition-all duration-700 ease-out group-hover:w-32 group-hover:shadow-lg group-hover:shadow-brand-red/40" />
+                        <div className="h-0.5 w-10 bg-gradient-to-r from-brand-red via-brand-red to-transparent mt-2.5 transition-all duration-700 ease-out group-hover:w-24 group-hover:shadow-lg group-hover:shadow-brand-red/40" />
                       </div>
 
                       {/* Quote with sophisticated animations */}
-                      <div className="space-y-4 transition-all duration-700 group-hover:translate-y-0.5">
-                        <div className="text-brand-red/30 text-5xl leading-none transition-all duration-700 group-hover:text-brand-red/70 group-hover:translate-y-1">
+                      <div className="space-y-2 transition-all duration-700 group-hover:translate-y-0.5">
+                        <div className="text-brand-red/30 text-3xl leading-none transition-all duration-700 group-hover:text-brand-red/70 group-hover:translate-y-0.5">
                           "
                         </div>
-                        <p className="text-base sm:text-lg text-gray-700 italic font-light leading-relaxed transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-wide group-hover:leading-8">
+                        <p className="text-sm sm:text-base text-gray-700 italic font-light leading-snug transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight group-hover:leading-relaxed">
                           {vision.quote}
                         </p>
-                        <div className="text-brand-red/30 text-5xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/70 group-hover:-translate-y-1">
+                        <div className="text-brand-red/30 text-3xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/70 group-hover:-translate-y-0.5">
                           "
                         </div>
                       </div>
