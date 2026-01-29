@@ -983,7 +983,7 @@ export default function Partners() {
                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-brand-red to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/50" />
 
                     {/* Image Section with advanced hover effects */}
-                    <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 group-hover:[filter:brightness(1.1)]">
+                    <div className="relative w-full h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 group-hover:[filter:brightness(1.1)] flex-shrink-0">
                       {vision.image_url && (
                         <>
                           {/* Base image with zoom and blur on hover */}
