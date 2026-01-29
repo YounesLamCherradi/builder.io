@@ -2011,37 +2011,37 @@ export default function Admin() {
               <Loader className="w-8 h-8 animate-spin mx-auto text-brand-red" />
             </div>
           ) : (
-            <div className="divide-y divide-gray-200">
+            <div className="divide-y divide-gray-700/30">
               {activeTab === "news" && newsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No articles yet. Create your first one!
                 </div>
               ) : activeTab === "events" && eventsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No events yet. Create your first one!
                 </div>
               ) : activeTab === "team" && teamList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No team members yet. Create your first one!
                 </div>
               ) : activeTab === "gallery" && galleryList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No gallery items yet. Create your first one!
                 </div>
               ) : activeTab === "partners" && partnersList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No partners yet. Create your first one!
                 </div>
               ) : activeTab === "partner_visions" && partnerVisionsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No partner visions yet. Create your first one!
                 </div>
               ) : activeTab === "faqs" && faqsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No FAQs yet. Create your first one!
                 </div>
               ) : activeTab === "past_events" && pastEventsList.length === 0 ? (
-                <div className="p-12 text-center text-gray-500">
+                <div className="p-12 text-center text-gray-400">
                   No past events yet. Create your first one!
                 </div>
               ) : null}
