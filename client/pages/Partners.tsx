@@ -981,23 +981,23 @@ export default function Partners() {
                     {/* Dynamic top accent line - slides and glows with brand colors */}
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
-                    {/* Image Section with advanced hover effects */}
-                    <div className="relative w-full h-44 sm:h-48 md:h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 group-hover:[filter:brightness(1.1)] flex-shrink-0">
+                    {/* Image Section with advanced hover effects - no cropping */}
+                    <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-gray-50 group-hover:to-gray-150 flex-shrink-0 transition-all duration-500">
                       {vision.image_url && (
                         <>
-                          {/* Base image with zoom and blur on hover */}
+                          {/* Base image - full display without cropping */}
                           <img
                             src={vision.image_url}
                             alt={vision.name}
-                            className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-125"
+                            className="w-full h-full object-contain p-3 sm:p-4 md:p-5 transition-all duration-700 ease-out group-hover:p-2 sm:group-hover:p-3 group-hover:drop-shadow-lg"
                             style={{
-                              filter: "brightness(1) contrast(1) blur(0px)",
-                              transition: "filter 800ms ease-out",
+                              filter: "brightness(1) contrast(1.05)",
+                              transition: "filter 600ms ease-out, padding 600ms ease-out",
                             }}
                           />
 
-                          {/* Foreground blur layer */}
-                          <div className="absolute inset-0 backdrop-blur-0 group-hover:backdrop-blur-[2px] transition-all duration-700 ease-out opacity-0 group-hover:opacity-30" />
+                          {/* Enhanced overlay on hover */}
+                          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-700 ease-out pointer-events-none" />
                         </>
                       )}
 
