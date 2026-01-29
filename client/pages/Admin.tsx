@@ -1985,9 +1985,9 @@ export default function Admin() {
         </div>
 
         {/* List Section */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100">
+          <div className="px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white rounded-t-2xl">
+            <h2 className="text-lg font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
               {activeTab === "news"
                 ? `Articles (${newsList.length})`
                 : activeTab === "events"
