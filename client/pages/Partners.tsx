@@ -10,7 +10,12 @@ import {
   ChevronRight,
   Check,
 } from "lucide-react";
-import { fetchPartners, type Partner, fetchPartnerVisions, type PartnerVision } from "../lib/supabase";
+import {
+  fetchPartners,
+  type Partner,
+  fetchPartnerVisions,
+  type PartnerVision,
+} from "../lib/supabase";
 
 export default function Partners() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +29,9 @@ export default function Partners() {
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
-  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>([]);
+  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>(
+    [],
+  );
   const sponsorsScrollRef = useRef<HTMLDivElement>(null);
   const visionsScrollRef = useRef<HTMLDivElement>(null);
 
@@ -1044,7 +1051,10 @@ export default function Partners() {
                             opacity: 0,
                           }}
                         >
-                          {vision.quote_i18n && vision.quote_i18n[currentLanguage] ? vision.quote_i18n[currentLanguage] : vision.quote}
+                          {vision.quote_i18n &&
+                          vision.quote_i18n[currentLanguage]
+                            ? vision.quote_i18n[currentLanguage]
+                            : vision.quote}
                         </p>
 
                         {/* Closing quote mark with animation */}
@@ -1055,9 +1065,13 @@ export default function Partners() {
                     </div>
 
                     {/* Premium glow effect with brand colors */}
-                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{
-                      boxShadow: "inset 0 0 40px rgba(187, 9, 9, 0.12), 0 15px 50px rgba(187, 9, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)"
-                    }} />
+                    <div
+                      className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                      style={{
+                        boxShadow:
+                          "inset 0 0 40px rgba(187, 9, 9, 0.12), 0 15px 50px rgba(187, 9, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
+                      }}
+                    />
 
                     {/* Top rim light effect on hover */}
                     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />

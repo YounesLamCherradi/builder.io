@@ -742,7 +742,9 @@ export async function createPartnerVision(
 ): Promise<PartnerVision | null> {
   try {
     if (!supabase || !supabaseUrl || !supabaseKey) {
-      console.error("Supabase is not initialized. Check environment variables.");
+      console.error(
+        "Supabase is not initialized. Check environment variables.",
+      );
       return null;
     }
 
@@ -777,7 +779,9 @@ export async function updatePartnerVision(
 ): Promise<PartnerVision | null> {
   try {
     if (!supabase || !supabaseUrl || !supabaseKey) {
-      console.error("Supabase is not initialized. Check environment variables.");
+      console.error(
+        "Supabase is not initialized. Check environment variables.",
+      );
       return null;
     }
 

@@ -65,7 +65,9 @@ export default function Admin() {
   const [teamList, setTeamList] = useState<TeamMember[]>([]);
   const [galleryList, setGalleryList] = useState<GalleryItem[]>([]);
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
-  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>([]);
+  const [partnerVisionsList, setPartnerVisionsList] = useState<PartnerVision[]>(
+    [],
+  );
   const [faqsList, setFaqsList] = useState<FAQ[]>([]);
   const [pastEventsList, setPastEventsList] = useState<PastEvent[]>([]);
   const [loading, setLoading] = useState(false);
@@ -316,9 +318,21 @@ export default function Admin() {
           author: formData.author || "",
           image_url: formData.image_url || null,
           date: formData.date,
-          title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
-          description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
-          content_i18n: i18nData.content_i18n || { en: formData.content, ar: "", ru: "" },
+          title_i18n: i18nData.title_i18n || {
+            en: formData.title,
+            ar: "",
+            ru: "",
+          },
+          description_i18n: i18nData.description_i18n || {
+            en: formData.description,
+            ar: "",
+            ru: "",
+          },
+          content_i18n: i18nData.content_i18n || {
+            en: formData.content,
+            ar: "",
+            ru: "",
+          },
           order_index: formData.orderIndex,
           redirect_url: formData.redirectUrl || null,
         };
@@ -343,9 +357,21 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
-            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
-            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
-            about_event_i18n: i18nData.about_event_i18n || { en: formData.about_event, ar: "", ru: "" },
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
+            about_event_i18n: i18nData.about_event_i18n || {
+              en: formData.about_event,
+              ar: "",
+              ru: "",
+            },
           });
         } else {
           await createEvent({
@@ -361,9 +387,21 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
-            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
-            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
-            about_event_i18n: i18nData.about_event_i18n || { en: formData.about_event, ar: "", ru: "" },
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
+            about_event_i18n: i18nData.about_event_i18n || {
+              en: formData.about_event,
+              ar: "",
+              ru: "",
+            },
           });
         }
       } else if (activeTab === "team") {
@@ -371,9 +409,17 @@ export default function Admin() {
         if (editingId) {
           await updateTeamMember(editingId, {
             name: i18nData.name_i18n?.en || formData.name,
-            name_i18n: i18nData.name_i18n || { en: formData.name, ar: "", ru: "" },
+            name_i18n: i18nData.name_i18n || {
+              en: formData.name,
+              ar: "",
+              ru: "",
+            },
             role: i18nData.role_i18n?.en || formData.role,
-            role_i18n: i18nData.role_i18n || { en: formData.role, ar: "", ru: "" },
+            role_i18n: i18nData.role_i18n || {
+              en: formData.role,
+              ar: "",
+              ru: "",
+            },
             bio: i18nData.bio_i18n?.en || formData.bio,
             bio_i18n: i18nData.bio_i18n || { en: formData.bio, ar: "", ru: "" },
             image_url: formData.image_url,
@@ -382,9 +428,17 @@ export default function Admin() {
         } else {
           await createTeamMember({
             name: i18nData.name_i18n?.en || formData.name,
-            name_i18n: i18nData.name_i18n || { en: formData.name, ar: "", ru: "" },
+            name_i18n: i18nData.name_i18n || {
+              en: formData.name,
+              ar: "",
+              ru: "",
+            },
             role: i18nData.role_i18n?.en || formData.role,
-            role_i18n: i18nData.role_i18n || { en: formData.role, ar: "", ru: "" },
+            role_i18n: i18nData.role_i18n || {
+              en: formData.role,
+              ar: "",
+              ru: "",
+            },
             bio: i18nData.bio_i18n?.en || formData.bio,
             bio_i18n: i18nData.bio_i18n || { en: formData.bio, ar: "", ru: "" },
             image_url: formData.image_url,
@@ -432,7 +486,11 @@ export default function Admin() {
           name: formData.visionName,
           position: formData.visionPosition,
           quote: i18nData.quote_i18n?.en || formData.visionQuote,
-          quote_i18n: i18nData.quote_i18n || { en: formData.visionQuote, ar: "", ru: "" },
+          quote_i18n: i18nData.quote_i18n || {
+            en: formData.visionQuote,
+            ar: "",
+            ru: "",
+          },
           order_index: formData.orderIndex,
         };
         console.log("Creating partner vision with data:", visionData);
@@ -447,16 +505,32 @@ export default function Admin() {
           await updateFAQ(editingId, {
             question: i18nData.question_i18n?.en || formData.question,
             answer: i18nData.answer_i18n?.en || formData.answer,
-            question_i18n: i18nData.question_i18n || { en: formData.question, ar: "", ru: "" },
-            answer_i18n: i18nData.answer_i18n || { en: formData.answer, ar: "", ru: "" },
+            question_i18n: i18nData.question_i18n || {
+              en: formData.question,
+              ar: "",
+              ru: "",
+            },
+            answer_i18n: i18nData.answer_i18n || {
+              en: formData.answer,
+              ar: "",
+              ru: "",
+            },
             order_index: formData.orderIndex,
           });
         } else {
           await createFAQ({
             question: i18nData.question_i18n?.en || formData.question,
             answer: i18nData.answer_i18n?.en || formData.answer,
-            question_i18n: i18nData.question_i18n || { en: formData.question, ar: "", ru: "" },
-            answer_i18n: i18nData.answer_i18n || { en: formData.answer, ar: "", ru: "" },
+            question_i18n: i18nData.question_i18n || {
+              en: formData.question,
+              ar: "",
+              ru: "",
+            },
+            answer_i18n: i18nData.answer_i18n || {
+              en: formData.answer,
+              ar: "",
+              ru: "",
+            },
             order_index: formData.orderIndex,
           });
         }
@@ -469,8 +543,16 @@ export default function Admin() {
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
-            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
-            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
             order_index: formData.orderIndex,
           });
         } else {
@@ -480,8 +562,16 @@ export default function Admin() {
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
-            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
-            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
+            title_i18n: i18nData.title_i18n || {
+              en: formData.title,
+              ar: "",
+              ru: "",
+            },
+            description_i18n: i18nData.description_i18n || {
+              en: formData.description,
+              ar: "",
+              ru: "",
+            },
             order_index: pastEventsList.length,
           });
         }
@@ -525,9 +615,11 @@ export default function Admin() {
 
       // Provide helpful error messages
       if (errorMessage.includes("Failed to fetch")) {
-        errorMessage = "Network error - Please check your internet connection and Supabase configuration";
+        errorMessage =
+          "Network error - Please check your internet connection and Supabase configuration";
       } else if (errorMessage.includes("401") || errorMessage.includes("403")) {
-        errorMessage = "Permission denied - Please check your Supabase API key and RLS policies";
+        errorMessage =
+          "Permission denied - Please check your Supabase API key and RLS policies";
       }
 
       console.error("Full error object:", error);
@@ -942,7 +1034,9 @@ export default function Admin() {
               Back to Site
             </Link>
           </div>
-          <h1 className="text-4xl font-bold text-white drop-shadow-lg">Admin Dashboard</h1>
+          <h1 className="text-4xl font-bold text-white drop-shadow-lg">
+            Admin Dashboard
+          </h1>
           <button
             onClick={handleLogout}
             className="flex items-center gap-2 px-4 py-2.5 text-white hover:bg-white/20 rounded-lg transition-all border-2 border-white hover:border-white font-medium hover:shadow-lg hover:scale-105 duration-300"
@@ -1632,8 +1726,8 @@ export default function Admin() {
                       placeholder="0 (first position), 1 (second), etc..."
                     />
                     <p className="text-xs text-gray-500 mt-1">
-                      Set the position number to control where this partner vision
-                      appears. Lower numbers appear first.
+                      Set the position number to control where this partner
+                      vision appears. Lower numbers appear first.
                     </p>
                   </div>
                 </>
@@ -1943,11 +2037,14 @@ export default function Admin() {
                         ? "Please upload a logo"
                         : activeTab === "partners" && !formData.partnerName
                           ? "Please enter partner name"
-                          : activeTab === "partner_visions" && !formData.image_url
+                          : activeTab === "partner_visions" &&
+                              !formData.image_url
                             ? "Please upload a partner image"
-                            : activeTab === "partner_visions" && !formData.visionName
+                            : activeTab === "partner_visions" &&
+                                !formData.visionName
                               ? "Please enter partner name"
-                              : activeTab === "past_events" && !formData.image_url
+                              : activeTab === "past_events" &&
+                                  !formData.image_url
                                 ? "Please upload an event image"
                                 : ""
                   }
@@ -2044,7 +2141,8 @@ export default function Admin() {
                 <div className="p-12 text-center text-gray-400">
                   No partners yet. Create your first one!
                 </div>
-              ) : activeTab === "partner_visions" && partnerVisionsList.length === 0 ? (
+              ) : activeTab === "partner_visions" &&
+                partnerVisionsList.length === 0 ? (
                 <div className="p-12 text-center text-gray-400">
                   No partner visions yet. Create your first one!
                 </div>
