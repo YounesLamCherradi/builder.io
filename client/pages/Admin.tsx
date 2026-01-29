@@ -524,6 +524,10 @@ export default function Admin() {
       } else if (typeof error === "object" && error !== null) {
         if ("message" in error) {
           errorMessage = (error as any).message;
+        } else if ("error_description" in error) {
+          errorMessage = (error as any).error_description;
+        } else if ("hint" in error) {
+          errorMessage = (error as any).hint;
         } else {
           errorMessage = JSON.stringify(error);
         }
