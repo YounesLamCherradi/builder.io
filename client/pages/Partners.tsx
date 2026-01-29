@@ -1021,7 +1021,7 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-5 sm:p-6 flex flex-col gap-4 bg-gradient-to-b from-white/98 to-brand-red/2 backdrop-blur-sm transition-all duration-700">
+                    <div className="relative z-10 flex-1 p-3 sm:p-4 md:p-6 flex flex-col gap-3 sm:gap-4 bg-gradient-to-b from-white/98 to-brand-red/2 backdrop-blur-sm transition-all duration-700">
                       {/* Name and Position with enhanced effects */}
                       <div className="mb-4 transition-all duration-700 group-hover:translate-x-2 p-3 rounded-xl bg-gradient-to-r from-brand-red/5 to-transparent group-hover:from-brand-red/10 group-hover:to-brand-red/5 transition-all duration-700">
                         <h3 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight">
