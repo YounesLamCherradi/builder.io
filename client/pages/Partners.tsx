@@ -1106,6 +1106,35 @@ export default function Partners() {
             }
           }
 
+          @keyframes quoteSlideIn {
+            from {
+              opacity: 0;
+              transform: translateY(15px) scale(0.98);
+              filter: blur(2px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+              filter: blur(0px);
+            }
+          }
+
+          @keyframes textReveal {
+            0% {
+              opacity: 0;
+              transform: translateX(-10px);
+              filter: blur(3px);
+            }
+            50% {
+              opacity: 0.7;
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(0);
+              filter: blur(0px);
+            }
+          }
+
           @keyframes shimmer {
             0% {
               transform: translateX(-120%);
@@ -1138,6 +1167,20 @@ export default function Partners() {
               opacity: 1;
               transform: translate(10px, -10px) scale(1);
             }
+          }
+
+          @keyframes pulseGlow {
+            0%, 100% {
+              box-shadow: 0 0 10px rgba(187, 9, 9, 0.2);
+            }
+            50% {
+              box-shadow: 0 0 25px rgba(187, 9, 9, 0.5);
+            }
+          }
+
+          /* Quote box hover glow */
+          .group:hover > div > div:has(> p[style*="animation"]) {
+            animation: pulseGlow 2s ease-in-out infinite;
           }
 
           /* Smooth easing for premium feel */
