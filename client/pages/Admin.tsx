@@ -977,7 +977,7 @@ export default function Admin() {
           </button>
           <button
             onClick={() => setActiveTab("partner_visions")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
+            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
               activeTab === "partner_visions"
                 ? "border-brand-red text-brand-red"
                 : "border-transparent text-gray-600 hover:text-gray-900"
