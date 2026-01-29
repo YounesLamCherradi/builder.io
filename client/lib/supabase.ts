@@ -765,6 +765,13 @@ export async function updatePartnerVision(
   updates: Partial<Omit<PartnerVision, "id" | "created_at">>,
 ): Promise<PartnerVision | null> {
   try {
+    if (!supabase || !supabaseUrl || !supabaseKey) {
+      console.error("Supabase is not initialized. Check environment variables.");
+      return null;
+    }
+
+    console.log("Updating partner vision with ID:", id, "Updates:", updates);
+
     const { data, error } = await supabase
       .from("partner_visions")
       .update(updates)
@@ -774,13 +781,17 @@ export async function updatePartnerVision(
 
     if (error) {
       console.error("Error updating partner vision:", error);
-      return null;
+      throw new Error(error.message || "Failed to update partner vision");
     }
 
+    console.log("Partner vision updated successfully:", data);
     return data;
   } catch (err) {
-    console.error("Unexpected error:", err);
-    return null;
+    console.error("Unexpected error updating partner vision:", err);
+    if (err instanceof Error) {
+      throw new Error(`Failed to update partner vision: ${err.message}`);
+    }
+    throw err;
   }
 }
 
