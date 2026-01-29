@@ -1004,16 +1004,6 @@ export default function Admin() {
           >
             FAQs
           </button>
-          <button
-            onClick={() => setActiveTab("past_events")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
-              activeTab === "past_events"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Past Events
-          </button>
         </div>
       </div>
 
