@@ -1003,7 +1003,7 @@ export default function Admin() {
         {/* Form Section */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 mb-10">
           <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white rounded-t-2xl">
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
               {showForm ? (editingId ? "Edit" : "Create New") : "Add New"}{" "}
               {activeTab === "news"
                 ? "Article"
