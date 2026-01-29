@@ -1048,7 +1048,7 @@ export default function Partners() {
                         </p>
 
                         {/* Closing quote mark with animation */}
-                        <div className="text-brand-red/40 text-2xl sm:text-3xl leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/90 group-hover:scale-125 group-hover:translate-y-1 origin-right">
+                        <div className="text-brand-red/40 text-2xl sm:text-3xl leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/80">
                           "
                         </div>
                       </div>
