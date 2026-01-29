@@ -967,7 +967,7 @@ export default function Partners() {
                 >
                   {/* Vision Card */}
                   <div
-                    className="relative rounded-3xl overflow-hidden bg-white flex flex-col border border-gray-100 transition-all duration-700 ease-out group-hover:border-brand-red/50 group-hover:shadow-2xl group-hover:translate-y-3"
+                    className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white to-gray-50 flex flex-col border border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:shadow-brand-red/30 group-hover:translate-y-3"
                     style={{
                       transformStyle: "preserve-3d",
                       transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
@@ -976,8 +976,8 @@ export default function Partners() {
                       flexDirection: "column",
                     }}
                   >
-                    {/* Animated background gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+                    {/* Animated background gradient - enhanced with brand colors */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 via-brand-silver/5 to-brand-red/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
 
                     {/* Dynamic top accent line - slides and glows */}
                     <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-brand-red to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/50" />
