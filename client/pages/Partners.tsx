@@ -1073,20 +1073,27 @@ export default function Partners() {
           @keyframes slideInUp {
             from {
               opacity: 0;
-              transform: translateY(40px);
+              transform: translateY(50px) scale(0.95);
+              filter: blur(4px);
             }
             to {
               opacity: 1;
-              transform: translateY(0);
+              transform: translateY(0) scale(1);
+              filter: blur(0px);
             }
           }
 
           @keyframes shimmer {
             0% {
-              transform: translateX(-100%);
+              transform: translateX(-120%);
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
             }
             100% {
-              transform: translateX(100%);
+              transform: translateX(120%);
+              opacity: 0;
             }
           }
 
@@ -1095,8 +1102,29 @@ export default function Partners() {
               box-shadow: 0 0 20px rgba(187, 9, 9, 0);
             }
             50% {
-              box-shadow: 0 0 30px rgba(187, 9, 9, 0.3);
+              box-shadow: 0 0 40px rgba(187, 9, 9, 0.4);
             }
+          }
+
+          @keyframes floatGlow {
+            0%, 100% {
+              opacity: 0;
+              transform: translate(0, 0) scale(0.9);
+            }
+            50% {
+              opacity: 1;
+              transform: translate(10px, -10px) scale(1);
+            }
+          }
+
+          /* Smooth easing for premium feel */
+          .group:hover {
+            --transition-timing: cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+
+          /* Image blur and focus effect */
+          .group:hover img {
+            filter: brightness(1.1) contrast(1.05) saturate(1.1);
           }
         `}</style>
       </section>
