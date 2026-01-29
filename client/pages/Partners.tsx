@@ -1005,11 +1005,11 @@ export default function Partners() {
                       {/* Dynamic overlay - fades and shifts */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-700 ease-out" />
 
-                      {/* Animated corner glow - larger and more prominent */}
-                      <div className="absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br from-brand-red/30 via-brand-red/15 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out blur-3xl" />
+                      {/* Animated corner glow - larger and more prominent with brand colors */}
+                      <div className="absolute -top-20 -right-20 w-56 h-56 bg-gradient-to-br from-brand-red/40 via-brand-red/20 via-brand-silver/15 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out blur-3xl" />
 
-                      {/* Animated left side glow */}
-                      <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-gradient-to-tr from-brand-red/20 via-brand-silver/10 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out blur-3xl" />
+                      {/* Animated left side glow with silver accent */}
+                      <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-gradient-to-tr from-brand-red/30 via-brand-silver/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out blur-3xl" />
 
                       {/* Shimmer effect on hover - enhanced */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-1200 ease-out opacity-0 group-hover:opacity-100" />
