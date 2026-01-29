@@ -370,23 +370,23 @@ export default function Admin() {
         // Team member handling
         if (editingId) {
           await updateTeamMember(editingId, {
-            name: i18nData.name_i18n.en,
-            name_i18n: i18nData.name_i18n,
-            role: i18nData.role_i18n.en,
-            role_i18n: i18nData.role_i18n,
-            bio: i18nData.bio_i18n.en,
-            bio_i18n: i18nData.bio_i18n,
+            name: i18nData.name_i18n?.en || formData.name,
+            name_i18n: i18nData.name_i18n || { en: formData.name, ar: "", ru: "" },
+            role: i18nData.role_i18n?.en || formData.role,
+            role_i18n: i18nData.role_i18n || { en: formData.role, ar: "", ru: "" },
+            bio: i18nData.bio_i18n?.en || formData.bio,
+            bio_i18n: i18nData.bio_i18n || { en: formData.bio, ar: "", ru: "" },
             image_url: formData.image_url,
             order_index: formData.orderIndex,
           });
         } else {
           await createTeamMember({
-            name: i18nData.name_i18n.en,
-            name_i18n: i18nData.name_i18n,
-            role: i18nData.role_i18n.en,
-            role_i18n: i18nData.role_i18n,
-            bio: i18nData.bio_i18n.en,
-            bio_i18n: i18nData.bio_i18n,
+            name: i18nData.name_i18n?.en || formData.name,
+            name_i18n: i18nData.name_i18n || { en: formData.name, ar: "", ru: "" },
+            role: i18nData.role_i18n?.en || formData.role,
+            role_i18n: i18nData.role_i18n || { en: formData.role, ar: "", ru: "" },
+            bio: i18nData.bio_i18n?.en || formData.bio,
+            bio_i18n: i18nData.bio_i18n || { en: formData.bio, ar: "", ru: "" },
             image_url: formData.image_url,
             order_index: formData.orderIndex,
           });
