@@ -964,15 +964,16 @@ export default function Partners() {
                     height: "auto",
                   }}
                 >
-                  {/* Vision Card */}
+                  {/* Vision Card - Premium Design */}
                   <div
-                    className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white to-gray-50 flex flex-col border border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:shadow-brand-red/30 group-hover:translate-y-3"
+                    className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white flex flex-col border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
                     style={{
                       transformStyle: "preserve-3d",
                       transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
                       height: "100%",
                       display: "flex",
                       flexDirection: "column",
+                      boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
                     }}
                   >
                     {/* Animated background gradient - enhanced with brand colors */}
