@@ -956,64 +956,74 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-col flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500 w-96 sm:w-[480px]"
+                  className="group flex flex-col flex-shrink-0 w-96 sm:w-[480px]"
                   style={{
-                    animationDelay: `${index * 50}ms`,
+                    animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
+                    opacity: 0,
                   }}
                 >
                   {/* Vision Card */}
-                  <div className="relative rounded-3xl overflow-hidden bg-white h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group-hover:border-brand-red/30">
-                    {/* Gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-3xl overflow-hidden bg-white h-full flex flex-col border border-gray-100 transition-all duration-700 ease-out group-hover:border-brand-red/50 group-hover:shadow-2xl group-hover:-translate-y-2">
+                    {/* Animated background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
 
-                    {/* Top accent line */}
-                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-700" />
+                    {/* Dynamic top accent line - slides and glows */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-brand-red to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/50" />
 
-                    {/* Image - Larger */}
+                    {/* Image Section with parallax effect */}
                     <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
                       {vision.image_url && (
                         <img
                           src={vision.image_url}
                           alt={vision.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                          className="w-full h-full object-cover transition-all duration-1000 ease-out group-hover:scale-110"
+                          style={{
+                            filter: "brightness(1) contrast(1)",
+                            transition: "filter 0.7s ease-out",
+                          }}
                         />
                       )}
-                      {/* Image overlay - enhanced */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+                      {/* Dynamic overlay - fades and shifts */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-700 ease-out" />
 
-                      {/* Decorative corner accent */}
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-red/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      {/* Animated corner glow */}
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-brand-red/20 via-brand-red/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out blur-2xl" />
+
+                      {/* Shimmer effect on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-full group-hover:translate-x-0 transition-transform duration-1000 ease-out opacity-0 group-hover:opacity-100" />
                     </div>
 
-                    {/* Content - Enhanced spacing */}
-                    <div className="relative z-10 flex-1 p-7 sm:p-8 flex flex-col justify-between bg-white/95 backdrop-blur-sm">
-                      {/* Name and Position */}
-                      <div className="mb-6">
-                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-brand-red transition-colors duration-300 leading-tight">
+                    {/* Content Section with staggered animations */}
+                    <div className="relative z-10 flex-1 p-7 sm:p-8 flex flex-col justify-between bg-white/98 backdrop-blur-sm transition-all duration-700">
+                      {/* Name and Position with color shift */}
+                      <div className="mb-6 transition-all duration-700 group-hover:translate-x-1">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 transition-colors duration-700 ease-out group-hover:text-brand-red leading-tight">
                           {vision.name}
                         </h3>
-                        <p className="text-sm sm:text-base text-brand-red font-semibold mt-2 tracking-wide uppercase">
+                        <p className="text-sm sm:text-base text-brand-red font-semibold mt-2 tracking-widest uppercase transition-all duration-700 group-hover:tracking-[0.15em]">
                           {vision.position}
                         </p>
-                        <div className="h-1 w-12 bg-gradient-to-r from-brand-red to-transparent mt-3 group-hover:w-20 transition-all duration-300" />
+                        <div className="h-1 w-12 bg-gradient-to-r from-brand-red to-transparent mt-3 transition-all duration-700 ease-out group-hover:w-24 group-hover:shadow-lg group-hover:shadow-brand-red/30" />
                       </div>
 
-                      {/* Quote - Fully displayed */}
-                      <div className="space-y-4">
-                        <div className="text-brand-red/60 text-4xl leading-none">
+                      {/* Quote with fade-in and lift effect */}
+                      <div className="space-y-4 transition-all duration-700 group-hover:translate-y-1">
+                        <div className="text-brand-red/40 text-4xl leading-none transition-colors duration-700 group-hover:text-brand-red/60">
                           "
                         </div>
-                        <p className="text-base sm:text-lg text-gray-700 italic font-light leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
+                        <p className="text-base sm:text-lg text-gray-700 italic font-light leading-relaxed transition-all duration-700 ease-out group-hover:text-gray-900 group-hover:tracking-wider">
                           {vision.quote}
                         </p>
-                        <div className="text-brand-red/60 text-4xl leading-none text-right">
+                        <div className="text-brand-red/40 text-4xl leading-none text-right transition-colors duration-700 group-hover:text-brand-red/60">
                           "
                         </div>
                       </div>
                     </div>
 
-                    {/* Glow effect on hover */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-red/0 via-brand-red/0 to-brand-red/0 group-hover:from-brand-red/5 group-hover:via-transparent group-hover:to-brand-red/5 transition-all duration-500 pointer-events-none" />
+                    {/* Animated glow border effect */}
+                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-br from-brand-red/10 via-transparent to-brand-red/5 blur-xl" style={{
+                      boxShadow: "inset 0 0 30px rgba(187, 9, 9, 0)"
+                    }} />
                   </div>
                 </div>
               ))}
