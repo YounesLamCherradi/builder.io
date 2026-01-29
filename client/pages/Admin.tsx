@@ -58,7 +58,7 @@ import { toast } from "sonner";
 export default function Admin() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<
-    "news" | "events" | "team" | "gallery" | "partners" | "partner_visions" | "faqs" | "past_events"
+    "news" | "team" | "partners" | "partner_visions" | "faqs"
   >("news");
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [eventsList, setEventsList] = useState<Event[]>([]);
