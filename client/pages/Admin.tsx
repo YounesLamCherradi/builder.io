@@ -1001,9 +1001,9 @@ export default function Admin() {
       {/* Content */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
         {/* Form Section */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 mb-10">
-          <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white rounded-t-2xl">
-            <h2 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+        <div className="bg-gray-800/80 rounded-2xl shadow-2xl border border-gray-700/50 mb-10 backdrop-blur-sm hover:bg-gray-800/90 transition-all duration-300">
+          <div className="px-6 py-5 border-b border-brand-red/20 flex items-center justify-between bg-gradient-to-r from-gray-800/90 via-gray-800/80 to-gray-800/70 rounded-t-2xl border-t-4 border-t-brand-red/30">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-brand-red via-orange-400 to-brand-red bg-clip-text text-transparent">
               {showForm ? (editingId ? "Edit" : "Create New") : "Add New"}{" "}
               {activeTab === "news"
                 ? "Article"
