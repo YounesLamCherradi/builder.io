@@ -1038,7 +1038,7 @@ export default function Partners() {
 
                         {/* Quote text with reveal animation */}
                         <p
-                          className="text-[11px] sm:text-xs md:text-sm text-gray-700 italic font-light leading-snug sm:leading-relaxed flex-1 overflow-y-auto transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight group-hover:text-brand-red/80 group-hover:font-medium"
+                          className="text-[11px] sm:text-xs md:text-sm text-gray-700 italic font-light leading-snug sm:leading-relaxed transition-colors duration-700 ease-out group-hover:text-brand-red/90"
                           style={{
                             animation: `textReveal 0.9s ease-out 400ms forwards`,
                             opacity: 0,
