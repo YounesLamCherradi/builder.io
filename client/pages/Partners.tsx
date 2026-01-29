@@ -956,16 +956,12 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-col flex-shrink-0 w-72 sm:w-80 md:w-96 perspective"
+                  className="group flex flex-col flex-shrink-0 w-72 sm:w-80 md:w-96 perspective min-h-[650px] sm:min-h-[680px] md:min-h-[820px]"
                   style={{
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
                     perspective: "1000px",
-                    minHeight: "650px",
                     height: "auto",
-                    "@media (min-width: 768px)": {
-                      minHeight: "800px",
-                    }
                   }}
                 >
                   {/* Vision Card */}
