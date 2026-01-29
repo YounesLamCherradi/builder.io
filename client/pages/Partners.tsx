@@ -980,7 +980,7 @@ export default function Partners() {
                     <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 via-brand-silver/5 to-brand-red/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
 
                     {/* Dynamic top accent line - slides and glows with brand colors */}
-                    <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
+                    <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
                     {/* Image Section with advanced hover effects */}
                     <div className="relative w-full h-44 sm:h-48 md:h-56 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 group-hover:[filter:brightness(1.1)] flex-shrink-0">
