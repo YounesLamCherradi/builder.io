@@ -97,7 +97,7 @@ interface StatItemData {
 function AboutStats({ t }: AboutStatsProps) {
   const stats: StatItemData[] = [
     {
-      value: '50K+',
+      value: '8M+',
       label: t('about_achievements_1_desc'),
       icon: Users,
       gradient: 'from-brand-red to-red-600',
@@ -106,7 +106,7 @@ function AboutStats({ t }: AboutStatsProps) {
       lightBg: 'bg-gradient-to-br from-brand-red/5 to-red-100/5',
     },
     {
-      value: '150+',
+      value: '115+',
       label: t('about_achievements_2_desc'),
       icon: Globe,
       gradient: 'from-slate-700 to-slate-900',
@@ -115,7 +115,7 @@ function AboutStats({ t }: AboutStatsProps) {
       lightBg: 'bg-gradient-to-br from-slate-700/5 to-slate-900/5',
     },
     {
-      value: '95%',
+      value: '35+',
       label: t('about_achievements_4_desc'),
       icon: TrendingUp,
       gradient: 'from-brand-red to-red-600',
