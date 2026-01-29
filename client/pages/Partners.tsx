@@ -1033,15 +1033,15 @@ export default function Partners() {
                         <div className="h-1 w-10 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red mt-2.5 transition-all duration-700 ease-out group-hover:w-full group-hover:shadow-lg group-hover:shadow-brand-red/50 rounded-full" />
                       </div>
 
-                      {/* Quote with sophisticated animations */}
-                      <div className="space-y-2 transition-all duration-700 group-hover:translate-y-0.5 flex flex-col min-h-0">
-                        <div className="text-brand-red/30 text-2xl leading-none transition-all duration-700 group-hover:text-brand-red/70 group-hover:translate-y-0.5 flex-shrink-0">
+                      {/* Quote with sophisticated animations and brand colors */}
+                      <div className="space-y-2 transition-all duration-700 group-hover:translate-y-0.5 flex flex-col min-h-0 p-3 rounded-lg bg-gradient-to-r from-brand-red/8 to-brand-silver/5 group-hover:from-brand-red/12 group-hover:to-brand-silver/8 transition-all duration-700 border border-brand-red/10 group-hover:border-brand-red/30">
+                        <div className="text-brand-red/40 text-3xl leading-none transition-all duration-700 group-hover:text-brand-red/80 group-hover:translate-y-0.5 flex-shrink-0 font-bold">
                           "
                         </div>
-                        <p className="text-xs sm:text-sm text-gray-700 italic font-light leading-relaxed transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight flex-1 overflow-y-auto">
+                        <p className="text-xs sm:text-sm text-gray-700 italic font-light leading-relaxed transition-all duration-700 ease-out group-hover:text-gray-950 group-hover:tracking-tight group-hover:text-brand-red/70 flex-1 overflow-y-auto">
                           {vision.quote}
                         </p>
-                        <div className="text-brand-red/30 text-2xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/70 group-hover:-translate-y-0.5 flex-shrink-0">
+                        <div className="text-brand-red/40 text-3xl leading-none text-right transition-all duration-700 group-hover:text-brand-red/80 group-hover:-translate-y-0.5 flex-shrink-0 font-bold">
                           "
                         </div>
                       </div>
