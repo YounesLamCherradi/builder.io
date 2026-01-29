@@ -965,16 +965,6 @@ export default function Admin() {
             News Articles
           </button>
           <button
-            onClick={() => setActiveTab("events")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
-              activeTab === "events"
-                ? "border-brand-red text-brand-red"
-                : "border-transparent text-gray-600 hover:text-gray-900"
-            }`}
-          >
-            Events
-          </button>
-          <button
             onClick={() => setActiveTab("team")}
             className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
               activeTab === "team"
