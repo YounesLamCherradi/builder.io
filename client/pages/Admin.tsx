@@ -947,7 +947,7 @@ export default function Admin() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 flex gap-6 overflow-x-auto scrollbar-hide">
           <button
             onClick={() => setActiveTab("news")}
-            className={`py-4 px-2 border-b-2 font-semibold transition-colors ${
+            className={`py-4 px-3 border-b-2 font-semibold transition-all whitespace-nowrap ${
               activeTab === "news"
                 ? "border-brand-red text-brand-red"
                 : "border-transparent text-gray-600 hover:text-gray-900"
