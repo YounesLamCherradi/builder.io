@@ -2127,14 +2127,14 @@ export default function Admin() {
                 teamList.map((member) => (
                   <div
                     key={member.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-100">
                           {member.name}
                         </h3>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-sm text-gray-400 mt-1">
                           {member.role}
                         </p>
                         <p className="text-sm text-gray-500 mt-2 line-clamp-2">
@@ -2144,13 +2144,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(member)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(member.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -2163,7 +2163,7 @@ export default function Admin() {
                 galleryList.map((item) => (
                   <div
                     key={item.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2171,14 +2171,14 @@ export default function Admin() {
                           <img
                             src={item.image_url}
                             alt={item.caption_i18n?.en || "Gallery item"}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-400">
                             {item.caption_i18n?.en || "No caption"}
                           </p>
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-xs text-gray-600 mt-1">
                             ID: {item.id}
                           </p>
                         </div>
@@ -2186,13 +2186,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(item)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(item.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -2205,7 +2205,7 @@ export default function Admin() {
                 partnersList.map((partner) => (
                   <div
                     key={partner.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2213,17 +2213,17 @@ export default function Admin() {
                           <img
                             src={partner.logo_url}
                             alt={partner.name}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900">
+                          <h3 className="text-lg font-semibold text-gray-100">
                             {partner.name}
                           </h3>
-                          <p className="text-sm text-gray-600 mt-1">
+                          <p className="text-sm text-gray-400 mt-1">
                             {partner.link}
                           </p>
-                          <p className="text-xs text-gray-500 mt-1">
+                          <p className="text-xs text-gray-600 mt-1">
                             ID: {partner.id}
                           </p>
                         </div>
@@ -2231,13 +2231,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(partner)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(partner.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
@@ -2250,7 +2250,7 @@ export default function Admin() {
                 partnerVisionsList.map((vision) => (
                   <div
                     key={vision.id}
-                    className="p-6 hover:bg-gray-50 transition-colors"
+                    className="p-6 hover:bg-gray-700/30 transition-all duration-300 border-l-4 border-l-brand-red/50 hover:border-l-brand-red"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 flex gap-4">
@@ -2258,20 +2258,20 @@ export default function Admin() {
                           <img
                             src={vision.image_url}
                             alt={vision.name}
-                            className="w-24 h-24 object-cover rounded-lg"
+                            className="w-24 h-24 object-cover rounded-lg shadow-lg"
                           />
                         )}
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900">
+                          <h3 className="text-lg font-semibold text-gray-100">
                             {vision.name}
                           </h3>
-                          <p className="text-sm text-gray-600 mt-1">
+                          <p className="text-sm text-gray-400 mt-1">
                             {vision.position}
                           </p>
                           <p className="text-sm text-gray-500 mt-2 line-clamp-2 italic">
                             "{vision.quote}"
                           </p>
-                          <p className="text-xs text-gray-400 mt-1">
+                          <p className="text-xs text-gray-600 mt-1">
                             ID: {vision.id}
                           </p>
                         </div>
@@ -2279,13 +2279,13 @@ export default function Admin() {
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleEdit(vision)}
-                          className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                          className="p-2 text-blue-400 hover:bg-blue-900/30 rounded-lg transition-all hover:text-blue-300"
                         >
                           <Edit2 className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => handleDelete(vision.id)}
-                          className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                          className="p-2 text-red-400 hover:bg-red-900/30 rounded-lg transition-all hover:text-red-300"
                         >
                           <Trash2 className="w-5 h-5" />
                         </button>
