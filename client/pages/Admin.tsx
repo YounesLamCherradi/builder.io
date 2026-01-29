@@ -464,24 +464,24 @@ export default function Admin() {
         // Past Events handling
         if (editingId) {
           await updatePastEvent(editingId, {
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
+            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
+            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         } else {
           await createPastEvent({
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
             location: formData.location,
             date: formData.date,
             image_url: formData.image_url,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
+            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
+            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
             order_index: pastEventsList.length,
           });
         }
