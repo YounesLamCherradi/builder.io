@@ -1007,19 +1007,13 @@ export default function Admin() {
               {showForm ? (editingId ? "Edit" : "Create New") : "Add New"}{" "}
               {activeTab === "news"
                 ? "Article"
-                : activeTab === "events"
-                  ? "Event"
-                  : activeTab === "team"
-                    ? "Team Member"
-                    : activeTab === "gallery"
-                      ? "Gallery Item"
-                      : activeTab === "partners"
-                        ? "Partner"
-                        : activeTab === "partner_visions"
-                          ? "Partner Vision"
-                          : activeTab === "faqs"
-                            ? "FAQ"
-                            : "Past Event"}
+                : activeTab === "team"
+                  ? "Team Member"
+                  : activeTab === "partners"
+                    ? "Partner"
+                    : activeTab === "partner_visions"
+                      ? "Partner Vision"
+                      : "FAQ"}
             </h2>
             {showForm && (
               <button
