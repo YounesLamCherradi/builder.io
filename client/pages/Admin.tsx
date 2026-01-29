@@ -999,10 +999,10 @@ export default function Admin() {
       </div>
 
       {/* Content */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10">
         {/* Form Section */}
-        <div className="bg-white rounded-lg shadow mb-8">
-          <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 mb-10">
+          <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white rounded-t-2xl">
             <h2 className="text-xl font-semibold text-gray-900">
               {showForm ? (editingId ? "Edit" : "Create New") : "Add New"}{" "}
               {activeTab === "news"
