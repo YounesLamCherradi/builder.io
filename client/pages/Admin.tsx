@@ -396,13 +396,13 @@ export default function Admin() {
         if (editingId) {
           await updateGalleryItem(editingId, {
             image_url: formData.image_url,
-            caption_i18n: i18nData.caption_i18n,
+            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         } else {
           await createGalleryItem({
             image_url: formData.image_url,
-            caption_i18n: i18nData.caption_i18n,
+            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         }
