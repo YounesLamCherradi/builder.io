@@ -1056,8 +1056,11 @@ export default function Partners() {
 
                     {/* Premium glow effect with brand colors */}
                     <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{
-                      boxShadow: "inset 0 0 50px rgba(187, 9, 9, 0.15), 0 0 80px rgba(187, 9, 9, 0.25), inset 0 0 20px rgba(192, 132, 132, 0.1)"
+                      boxShadow: "inset 0 0 40px rgba(187, 9, 9, 0.12), 0 15px 50px rgba(187, 9, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)"
                     }} />
+
+                    {/* Top rim light effect on hover */}
+                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
                   </div>
                 </div>
               ))}
