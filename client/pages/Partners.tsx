@@ -962,7 +962,10 @@ export default function Partners() {
                     opacity: 0,
                     perspective: "1000px",
                     minHeight: "650px",
-                    height: "650px",
+                    height: "auto",
+                    "@media (min-width: 768px)": {
+                      minHeight: "800px",
+                    }
                   }}
                 >
                   {/* Vision Card */}
