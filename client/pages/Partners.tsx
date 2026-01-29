@@ -1046,6 +1046,37 @@ export default function Partners() {
             </button>
           </div>
         </div>
+
+        <style>{`
+          @keyframes slideInUp {
+            from {
+              opacity: 0;
+              transform: translateY(40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes shimmer {
+            0% {
+              transform: translateX(-100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+
+          @keyframes glow {
+            0%, 100% {
+              box-shadow: 0 0 20px rgba(187, 9, 9, 0);
+            }
+            50% {
+              box-shadow: 0 0 30px rgba(187, 9, 9, 0.3);
+            }
+          }
+        `}</style>
       </section>
 
       {/* International Affiliation Section */}
