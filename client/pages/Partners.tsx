@@ -1024,7 +1024,7 @@ export default function Partners() {
 
                       {/* Quote with sophisticated animations and brand colors */}
                       <div
-                        className="space-y-1 sm:space-y-2 flex flex-col min-h-0 p-2 sm:p-3 md:p-2 rounded-lg bg-gradient-to-r from-brand-red/8 to-brand-silver/5 border border-brand-red/10 transition-all duration-700 ease-out group-hover:from-brand-red/15 group-hover:to-brand-silver/12 group-hover:border-brand-red/50 group-hover:shadow-lg group-hover:shadow-brand-red/30"
+                        className="space-y-2 sm:space-y-3 flex flex-col min-h-0 p-4 sm:p-5 md:p-4 rounded-2xl bg-gradient-to-br from-brand-red/10 via-transparent to-brand-silver/8 border-2 border-brand-red/20 transition-all duration-700 ease-out group-hover:from-brand-red/20 group-hover:to-brand-silver/15 group-hover:border-brand-red/40 group-hover:shadow-lg group-hover:shadow-brand-red/25 group-hover:backdrop-blur-sm"
                         style={{
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
                           opacity: 0,
