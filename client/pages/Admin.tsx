@@ -505,6 +505,7 @@ export default function Admin() {
     } catch (error) {
       console.error("Error saving:", error);
       let errorMessage = "Failed to save";
+
       if (error instanceof Error) {
         errorMessage = error.message;
       } else if (typeof error === "object" && error !== null) {
@@ -514,10 +515,20 @@ export default function Admin() {
           errorMessage = (error as any).error_description;
         } else if ("hint" in error) {
           errorMessage = (error as any).hint;
+        } else if ("status" in error) {
+          errorMessage = `Status ${(error as any).status}: ${(error as any).statusText || "Request failed"}`;
         } else {
           errorMessage = JSON.stringify(error);
         }
       }
+
+      // Provide helpful error messages
+      if (errorMessage.includes("Failed to fetch")) {
+        errorMessage = "Network error - Please check your internet connection and Supabase configuration";
+      } else if (errorMessage.includes("401") || errorMessage.includes("403")) {
+        errorMessage = "Permission denied - Please check your Supabase API key and RLS policies";
+      }
+
       console.error("Full error object:", error);
       console.error("Error details:", errorMessage);
       toast.error(`❌ Error: ${errorMessage}`);
