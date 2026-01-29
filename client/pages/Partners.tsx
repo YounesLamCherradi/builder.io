@@ -1012,7 +1012,7 @@ export default function Partners() {
                     {/* Content Section with staggered animations */}
                     <div className="relative z-10 flex-1 p-4 sm:p-5 md:p-6 flex flex-col gap-3 sm:gap-4 md:gap-5 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700 overflow-y-auto">
                       {/* Name and Position with enhanced effects */}
-                      <div className="mb-1 sm:mb-2 md:mb-3 transition-all duration-700 group-hover:translate-x-2 p-2 sm:p-3 md:p-2 rounded-lg sm:rounded-xl bg-gradient-to-r from-brand-red/5 to-transparent group-hover:from-brand-red/10 group-hover:to-brand-red/5 transition-all duration-700">
+                      <div className="mb-2 sm:mb-3 md:mb-4 transition-all duration-700 group-hover:translate-x-1 p-3 sm:p-4 md:p-3 rounded-2xl bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30 transition-all duration-700">
                         <h3 className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-2">
                           {vision.name}
                         </h3>
