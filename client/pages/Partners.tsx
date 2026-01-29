@@ -983,7 +983,7 @@ export default function Partners() {
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
                     {/* Image Section with advanced hover effects - full width, no cropping */}
-                    <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden bg-gradient-to-b from-white to-gray-50 flex items-center justify-center flex-shrink-0 transition-all duration-500 border-b-2 border-gray-100 group-hover:border-brand-red/20">
+                    <div className="relative w-full h-56 sm:h-64 md:h-72 overflow-hidden bg-gradient-to-b from-white to-gray-50 flex items-center justify-center flex-shrink-0 transition-all duration-500 border-b-2 border-gray-100 group-hover:border-brand-red/20 rounded-t-3xl">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
