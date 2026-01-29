@@ -956,54 +956,64 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-col flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500 w-80 sm:w-96"
+                  className="group flex flex-col flex-shrink-0 animate-in fade-in slide-in-from-bottom-8 duration-500 w-96 sm:w-[480px]"
                   style={{
                     animationDelay: `${index * 50}ms`,
                   }}
                 >
                   {/* Vision Card */}
-                  <div className="relative rounded-2xl border-2 border-gray-200 group-hover:border-brand-red transition-all duration-500 bg-white overflow-hidden hover:shadow-2xl hover:shadow-red-200/40 h-full flex flex-col">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-red/8 via-transparent to-brand-silver/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative rounded-3xl overflow-hidden bg-white h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group-hover:border-brand-red/30">
+                    {/* Gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    {/* Accent bar with animation */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-500 group-hover:drop-shadow-lg" />
+                    {/* Top accent line */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red scale-x-0 group-hover:scale-x-100 transform origin-left transition-all duration-700" />
 
-                    {/* Image */}
-                    <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-gray-100">
+                    {/* Image - Larger */}
+                    <div className="relative w-full h-72 sm:h-80 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
                       {vision.image_url && (
                         <img
                           src={vision.image_url}
                           alt={vision.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-500"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                         />
                       )}
-                      {/* Image overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      {/* Image overlay - enhanced */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
+
+                      {/* Decorative corner accent */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-red/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
-                    {/* Content */}
-                    <div className="relative z-10 flex-1 p-5 sm:p-6 flex flex-col justify-between">
+                    {/* Content - Enhanced spacing */}
+                    <div className="relative z-10 flex-1 p-7 sm:p-8 flex flex-col justify-between bg-white/95 backdrop-blur-sm">
                       {/* Name and Position */}
-                      <div>
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-brand-red transition-colors duration-300">
+                      <div className="mb-6">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-brand-red transition-colors duration-300 leading-tight">
                           {vision.name}
                         </h3>
-                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1">
+                        <p className="text-sm sm:text-base text-brand-red font-semibold mt-2 tracking-wide uppercase">
                           {vision.position}
                         </p>
+                        <div className="h-1 w-12 bg-gradient-to-r from-brand-red to-transparent mt-3 group-hover:w-20 transition-all duration-300" />
                       </div>
 
-                      {/* Quote */}
-                      <div className="mt-4 pt-4 border-t border-gray-100 group-hover:border-brand-red/30 transition-colors duration-300">
-                        <p className="text-sm sm:text-base text-gray-600 italic group-hover:text-gray-700 transition-colors duration-300 line-clamp-4">
-                          "{vision.quote}"
+                      {/* Quote - Fully displayed */}
+                      <div className="space-y-4">
+                        <div className="text-brand-red/60 text-4xl leading-none">
+                          "
+                        </div>
+                        <p className="text-base sm:text-lg text-gray-700 italic font-light leading-relaxed group-hover:text-gray-900 transition-colors duration-300">
+                          {vision.quote}
                         </p>
+                        <div className="text-brand-red/60 text-4xl leading-none text-right">
+                          "
+                        </div>
                       </div>
                     </div>
 
                     {/* Glow effect on hover */}
-                    <div className="absolute inset-0 rounded-2xl bg-brand-red/0 group-hover:bg-brand-red/10 transition-all duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-red/0 via-brand-red/0 to-brand-red/0 group-hover:from-brand-red/5 group-hover:via-transparent group-hover:to-brand-red/5 transition-all duration-500 pointer-events-none" />
                   </div>
                 </div>
               ))}
