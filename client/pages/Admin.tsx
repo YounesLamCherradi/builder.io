@@ -331,9 +331,9 @@ export default function Admin() {
       } else if (activeTab === "events") {
         if (editingId) {
           await updateEvent(editingId, {
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
-            about_event: i18nData.about_event_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
+            about_event: i18nData.about_event_i18n?.en || formData.about_event,
             location: formData.location,
             date: formData.date,
             time: formData.time,
@@ -343,15 +343,15 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
-            about_event_i18n: i18nData.about_event_i18n,
+            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
+            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
+            about_event_i18n: i18nData.about_event_i18n || { en: formData.about_event, ar: "", ru: "" },
           });
         } else {
           await createEvent({
-            title: i18nData.title_i18n.en,
-            description: i18nData.description_i18n.en,
-            about_event: i18nData.about_event_i18n.en,
+            title: i18nData.title_i18n?.en || formData.title,
+            description: i18nData.description_i18n?.en || formData.description,
+            about_event: i18nData.about_event_i18n?.en || formData.about_event,
             location: formData.location,
             date: formData.date,
             time: formData.time,
@@ -361,9 +361,9 @@ export default function Admin() {
             register_url: buttonConfig.register_url || null,
             show_learn_more_button: buttonConfig.show_learn_more_button,
             learn_more_url: buttonConfig.learn_more_url || null,
-            title_i18n: i18nData.title_i18n,
-            description_i18n: i18nData.description_i18n,
-            about_event_i18n: i18nData.about_event_i18n,
+            title_i18n: i18nData.title_i18n || { en: formData.title, ar: "", ru: "" },
+            description_i18n: i18nData.description_i18n || { en: formData.description, ar: "", ru: "" },
+            about_event_i18n: i18nData.about_event_i18n || { en: formData.about_event, ar: "", ru: "" },
           });
         }
       } else if (activeTab === "team") {
