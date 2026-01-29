@@ -1021,7 +1021,7 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-5 sm:p-6 flex flex-col justify-between bg-white/98 backdrop-blur-sm transition-all duration-700">
+                    <div className="relative z-10 flex-1 p-5 sm:p-6 flex flex-col gap-4 bg-white/98 backdrop-blur-sm transition-all duration-700">
                       {/* Name and Position with enhanced effects */}
                       <div className="mb-4 transition-all duration-700 group-hover:translate-x-2">
                         <h3 className="text-lg sm:text-xl font-bold text-gray-900 transition-all duration-700 ease-out group-hover:text-brand-red group-hover:tracking-wide leading-tight">
