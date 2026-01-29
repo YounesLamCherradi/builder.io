@@ -1047,9 +1047,9 @@ export default function Partners() {
                       </div>
                     </div>
 
-                    {/* Premium glow effect */}
+                    {/* Premium glow effect with brand colors */}
                     <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{
-                      boxShadow: "inset 0 0 40px rgba(187, 9, 9, 0.1), 0 0 60px rgba(187, 9, 9, 0.15)"
+                      boxShadow: "inset 0 0 50px rgba(187, 9, 9, 0.15), 0 0 80px rgba(187, 9, 9, 0.25), inset 0 0 20px rgba(192, 132, 132, 0.1)"
                     }} />
                   </div>
                 </div>
