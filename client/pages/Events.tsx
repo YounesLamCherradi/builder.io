@@ -273,7 +273,7 @@ export default function Events() {
         stay_updated_title: "Stay Updated with",
         stay_updated_highlight: "Global Opportunities",
         stay_updated_desc:
-          "Subscribe to our newsletter and never miss an opportunity. Get early access to events, exclusive scholarships, and insider tips.",
+          "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         email_placeholder: "Enter your email address",
 
         about_event: "About This Event",
@@ -407,7 +407,7 @@ export default function Events() {
         stay_updated_title: "ابقَ محدثاً مع",
         stay_updated_highlight: "الفرص العالمية",
         stay_updated_desc:
-          "اشترك في نشرتنا الإخبارية ولا تفوّت أي فرصة. احصل على وصول مبكر للفعاليات والمنح الحصرية والنصائح من الداخل.",
+          "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         email_placeholder: "أدخل عنوان بريدك الإلكتروني",
 
         about_event: "عن هذه الفعالية",
@@ -549,7 +549,7 @@ export default function Events() {
         stay_updated_title: "Будьте в курсе",
         stay_updated_highlight: "Глобальные возможности",
         stay_updated_desc:
-          "Подпишитесь на нашу рассылку и не пропустите ни одной возможности. Получайте ранний доступ к событиям, эксклюзивным стипендиям и инсайдерским советам.",
+          "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         email_placeholder: "Введите свой адрес электронной почты",
 
         about_event: "Об этом событии",
