@@ -64,8 +64,7 @@ export async function sendEmail(req: Request, res: Response) {
 
     console.log("API Key length:", resendApiKey?.length);
     console.log("API Key first 10 chars:", resendApiKey?.substring(0, 10));
-    console.log("API Key full:", resendApiKey);
-    console.log("All env keys with RESEND:", Object.keys(process.env).filter(k => k.includes('RESEND')));
+    console.log("All process.env keys:", Object.keys(process.env).sort());
 
     if (!resendApiKey) {
       console.error("RESEND_API_KEY not configured");
