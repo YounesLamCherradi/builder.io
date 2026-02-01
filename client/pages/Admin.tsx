@@ -483,9 +483,19 @@ export default function Admin() {
         // Partner visions handling
         const visionData = {
           image_url: formData.image_url,
-          name: formData.visionName,
-          position: formData.visionPosition,
+          name: i18nData.name_i18n?.en || formData.visionName,
+          position: i18nData.role_i18n?.en || formData.visionPosition,
           quote: i18nData.quote_i18n?.en || formData.visionQuote,
+          name_i18n: i18nData.name_i18n || {
+            en: formData.visionName,
+            ar: "",
+            ru: "",
+          },
+          position_i18n: i18nData.role_i18n || {
+            en: formData.visionPosition,
+            ar: "",
+            ru: "",
+          },
           quote_i18n: i18nData.quote_i18n || {
             en: formData.visionQuote,
             ar: "",
