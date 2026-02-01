@@ -620,7 +620,7 @@ export default function Index() {
         sitemap: "Карта сайта",
         subscribe_privacy:
           "Мы уважаем вашу приватность. Отпишитесь в любой момент. Без спама.",
-        subscribe_now: "Подписаться",
+        subscribe_now: "Подписаться сейчас",
 
         morocco: "Марокко",
         morocco_subtitle: "Информационный центр",
