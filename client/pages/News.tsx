@@ -31,6 +31,8 @@ export default function News() {
     null,
   );
   const [loading, setLoading] = useState(true);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
   const newsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
