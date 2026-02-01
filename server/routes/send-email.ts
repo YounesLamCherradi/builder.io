@@ -117,7 +117,7 @@ export async function sendEmail(req: Request, res: Response) {
         Authorization: `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: "noreply@resend.dev",
+        from: "noreply@wyfmorocco.com",
         to: recipientEmail,
         replyTo: email,
         subject: `New Contact Form Submission: ${sanitizedSubject}`,
