@@ -106,7 +106,7 @@ export async function sendEmail(req: Request, res: Response) {
     // Send email via Resend API
     console.log("Sending email via Resend API...", {
       to: recipientEmail,
-      from: "noreply@resend.dev",
+      from: "noreply@wyfmorocco.com",
       subject: sanitizedSubject,
     });
 
