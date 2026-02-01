@@ -215,7 +215,7 @@ export default function Partners() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 مهرجان الشباب العالمي المغربي. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
         made_with: "صُنع بـ ❤️ في المغرب",
         sitemap: "خريطة الموقع",
         nav_resources: "الموارد",
