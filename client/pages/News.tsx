@@ -183,6 +183,8 @@ export default function News() {
         articles_label: "Articles",
         close_article: "Close Article",
         stay_updated: "Stay Updated",
+        stay_updated_title: "Stay Updated with",
+        stay_updated_highlight: "Global Opportunities",
         subscribe_desc: "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         subscribe_email: "Enter your email",
         subscribe_button: "Subscribe",
