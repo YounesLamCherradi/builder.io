@@ -1472,18 +1472,24 @@ export default function About() {
                 </p>
               </div>
 
-              <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto"
+              >
                 <input
                   type="email"
                   placeholder={t("home_email_placeholder")}
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
                   required
                 />
                 <button
                   type="submit"
-                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
+                  disabled={submittingNewsletter}
+                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{t("subscribe_now")}</span>
+                  <span>{submittingNewsletter ? "Subscribing..." : t("subscribe_now")}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
