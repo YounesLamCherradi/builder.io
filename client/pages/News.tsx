@@ -271,6 +271,8 @@ export default function News() {
         articles_label: "Статьи",
         close_article: "Закрыть статью",
         stay_updated: "Будьте в курсе",
+        stay_updated_title: "Будьте в курсе",
+        stay_updated_highlight: "Глобальные возможности",
         subscribe_desc:
           "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         subscribe_email: "Введите ваш email",
