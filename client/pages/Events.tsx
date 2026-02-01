@@ -44,6 +44,8 @@ export default function Events() {
   const [loadingEvents, setLoadingEvents] = useState(true);
   const [fetchedFAQs, setFetchedFAQs] = useState<FAQ[]>([]);
   const [fetchedPastEvents, setFetchedPastEvents] = useState<PastEvent[]>([]);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
