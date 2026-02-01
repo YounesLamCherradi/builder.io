@@ -24,7 +24,8 @@ import {
   Brain,
   Star,
 } from "lucide-react";
-import { fetchTeam, type TeamMember } from "../lib/supabase";
+import { fetchTeam, subscribeNewsletter, type TeamMember } from "../lib/supabase";
+import { toast } from "sonner";
 import { AboutHero } from "../components/About";
 import { AboutIntroduction } from "../components/About/AboutIntroduction";
 import { AboutMembers } from "../components/About/AboutMembers";
