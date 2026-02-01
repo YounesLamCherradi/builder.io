@@ -304,7 +304,7 @@ export default function Events() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 MoroccoGlobal. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
         event_time: "وقت الفعالية",
 
         tagline: "عالمك ينتظرك",
@@ -441,7 +441,7 @@ export default function Events() {
         privacy: "Конфиденциальность",
         terms: "Условия",
         cookies: "Cookies",
-        rights: "© 2026 MoroccoGlobal. Все права защищены.",
+        rights: "© 2026 WYF Morocco. Все права защищены.",
         event_time: "Время События",
 
         tagline: "Ваш мир ждёт",
