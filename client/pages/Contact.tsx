@@ -224,7 +224,7 @@ export default function Contact() {
         home_stay_updated_desc:
           "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         home_email_placeholder: "Enter your email address",
-        subscribe_now: "Subscribe",
+        subscribe_now: "Subscribe Now",
         subscribe_privacy:
           "We respect your privacy. Unsubscribe at any time. No spam.",
 
