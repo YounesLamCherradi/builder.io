@@ -841,18 +841,24 @@ export default function News() {
                   {t("stay_updated")}
                 </h3>
                 <p className="text-gray-600 mb-6">{t("subscribe_desc")}</p>
-                <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+                <form
+                  onSubmit={handleNewsletterSubmit}
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto"
+                >
                   <input
                     type="email"
                     placeholder={t("subscribe_email")}
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
                     className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all"
                     required
                   />
                   <button
                     type="submit"
-                    className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold hover:shadow-lg transition-all"
+                    disabled={submittingNewsletter}
+                    className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {t("subscribe_button")}
+                    {submittingNewsletter ? "Subscribing..." : t("subscribe_button")}
                   </button>
                 </form>
               </div>
