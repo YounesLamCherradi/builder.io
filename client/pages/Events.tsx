@@ -202,7 +202,7 @@ export default function Events() {
         sitemap: "Sitemap",
         subscribe_privacy:
           "We respect your privacy. Unsubscribe anytime. No spam, ever.",
-        subscribe: "Subscribe",
+        subscribe: "Subscribe Now",
 
         // Event titles
         event_1_title: "Fulbright Scholarship Masterclass",
