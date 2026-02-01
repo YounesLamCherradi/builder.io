@@ -54,6 +54,29 @@ export default function Events() {
     }
   };
 
+  const handleNewsletterSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setSubmittingNewsletter(true);
+    try {
+      const success = await subscribeNewsletter(newsletterEmail);
+      if (success) {
+        toast.success("Thank you for subscribing!");
+        setNewsletterEmail("");
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast.error("Error subscribing to newsletter");
+    } finally {
+      setSubmittingNewsletter(false);
+    }
+  };
+
   React.useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
