@@ -13,7 +13,8 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { fetchNews, type NewsArticle } from "../lib/supabase";
+import { fetchNews, subscribeNewsletter, type NewsArticle } from "../lib/supabase";
+import { toast } from "sonner";
 
 export default function News() {
   const [scrollY, setScrollY] = useState(0);
