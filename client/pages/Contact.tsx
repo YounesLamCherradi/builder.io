@@ -185,7 +185,7 @@ export default function Contact() {
         contact_phone: "Phone",
         contact_location: "Location",
         contact_office: "WYF Morocco Main Office",
-        contact_email_address: "wyfmorocco@gmail.com",
+        contact_email_address: "info@wyfmorocco.com",
         contact_phone_number: "+212 7 73 70 64 47 / +212 6 49 57 43 26",
         contact_location_address:
           "Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2",
@@ -277,7 +277,7 @@ export default function Contact() {
         contact_phone: "الهاتف",
         contact_location: "الموقع",
         contact_office: "مكتب مهرجان الشباب العالمي الرئيسي",
-        contact_email_address: "wyfmorocco@gmail.com",
+        contact_email_address: "info@wyfmorocco.com",
         contact_phone_number: "+212 7 73 70 64 47 / +212 6 49 57 43 26",
         contact_location_address:
           "دائرة مهرجان الشباب العالمي\nممر بودكولوكولني، 10 أ/2",
@@ -368,7 +368,7 @@ export default function Contact() {
         contact_phone: "Телефон",
         contact_location: "Местоположение",
         contact_office: "Главный офис Всемирного фестиваля молодежи",
-        contact_email_address: "wyfmorocco@gmail.com",
+        contact_email_address: "info@wyfmorocco.com",
         contact_phone_number: "+212 7 73 70 64 47 / +212 6 49 57 43 26",
         contact_location_address:
           "Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2",
