@@ -1691,6 +1691,7 @@ export default function Admin() {
                       Quote * ({activeLanguage.toUpperCase()})
                     </label>
                     <textarea
+                      key={`quote-${activeLanguage}`}
                       value={i18nData.quote_i18n[activeLanguage]}
                       onChange={(e) =>
                         setI18nData((prev) => ({
