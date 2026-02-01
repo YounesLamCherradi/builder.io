@@ -222,7 +222,7 @@ export default function Contact() {
         home_stay_updated_title: "Stay Updated with",
         home_stay_updated_highlight: "Global Opportunities",
         home_stay_updated_desc:
-          "Get the latest news about scholarships, visas, and opportunities delivered to your inbox every month.",
+          "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         home_email_placeholder: "Enter your email address",
         subscribe_now: "Subscribe",
         subscribe_privacy:
@@ -313,7 +313,7 @@ export default function Contact() {
         home_stay_updated_title: "ابقَ محدثاً مع",
         home_stay_updated_highlight: "الفرص العالمية",
         home_stay_updated_desc:
-          "احصل على أحدث الأخبار عن المنح والتأشيرات والفرص كل شهر في صندوق بريدك.",
+          "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         home_email_placeholder: "أدخل عنوان بريدك الإلكتروني",
         subscribe_now: "اشترك الآن",
         subscribe_privacy:
@@ -406,7 +406,7 @@ export default function Contact() {
         home_stay_updated_title: "Оставайтесь в курсе",
         home_stay_updated_highlight: "Глобальные возможности",
         home_stay_updated_desc:
-          "Получайте последние новости о стипендиях, визах и возможностях каждый месяц.",
+          "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         home_email_placeholder: "Введите ваш адрес электронной почты",
         subscribe_now: "Подписаться",
         subscribe_privacy:
