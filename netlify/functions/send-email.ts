@@ -80,8 +80,8 @@ export default async (req: Request, context: Context) => {
     }
 
     // Get Resend API key and recipient email from environment
-    const resendApiKey = process.env.RESEND_API_KEY;
-    const recipientEmail = process.env.CONTACT_FORM_EMAIL;
+    const resendApiKey = process.env.VITE_RESEND_API_KEY || process.env.RESEND_API_KEY;
+    const recipientEmail = process.env.VITE_CONTACT_FORM_EMAIL || process.env.CONTACT_FORM_EMAIL;
 
     if (!resendApiKey) {
       console.error("RESEND_API_KEY not configured");
