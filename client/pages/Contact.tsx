@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { fetchFAQs, type FAQ } from "../lib/supabase";
+import { fetchFAQs, subscribeNewsletter, type FAQ } from "../lib/supabase";
+import { toast } from "sonner";
 import {
   Globe,
   Menu,
