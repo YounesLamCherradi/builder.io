@@ -1657,13 +1657,21 @@ export default function Admin() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Partner Name *
+                        Partner Name * ({activeLanguage.toUpperCase()})
                       </label>
                       <input
+                        key={`visionName-${activeLanguage}`}
                         type="text"
-                        name="visionName"
-                        value={formData.visionName}
-                        onChange={handleInputChange}
+                        value={i18nData.name_i18n[activeLanguage]}
+                        onChange={(e) =>
+                          setI18nData((prev) => ({
+                            ...prev,
+                            name_i18n: {
+                              ...prev.name_i18n,
+                              [activeLanguage]: e.target.value,
+                            },
+                          }))
+                        }
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
                         placeholder="Partner/Person name"
@@ -1672,13 +1680,21 @@ export default function Admin() {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Position/Title *
+                        Position/Title * ({activeLanguage.toUpperCase()})
                       </label>
                       <input
+                        key={`visionPosition-${activeLanguage}`}
                         type="text"
-                        name="visionPosition"
-                        value={formData.visionPosition}
-                        onChange={handleInputChange}
+                        value={i18nData.role_i18n[activeLanguage]}
+                        onChange={(e) =>
+                          setI18nData((prev) => ({
+                            ...prev,
+                            role_i18n: {
+                              ...prev.role_i18n,
+                              [activeLanguage]: e.target.value,
+                            },
+                          }))
+                        }
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
                         placeholder="e.g., CEO, Director, etc."
