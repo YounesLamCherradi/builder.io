@@ -910,12 +910,6 @@ export default function News() {
                 <span className="text-xs sm:text-sm text-gray-600">
                   {t("made_with")}
                 </span>
-                <a
-                  href="#"
-                  className="text-xs sm:text-sm text-gray-600 hover:text-brand-red transition-colors"
-                >
-                  {t("sitemap")}
-                </a>
               </div>
             </div>
           </div>
