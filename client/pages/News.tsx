@@ -226,6 +226,8 @@ export default function News() {
         articles_label: "المقالات",
         close_article: "إغلاق المقال",
         stay_updated: "ابقَ محدثاً",
+        stay_updated_title: "ابقَ محدثاً مع",
+        stay_updated_highlight: "الفرص العالمية",
         subscribe_desc: "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         subscribe_email: "أدخل بريدك الإلكتروني",
         subscribe_button: "اشترك",
