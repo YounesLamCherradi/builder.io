@@ -18,6 +18,7 @@ import {
   Loader,
 } from "lucide-react";
 import {
+  subscribeNewsletter,
   fetchEvents,
   fetchFAQs,
   fetchPastEvents,
@@ -25,6 +26,7 @@ import {
   type FAQ,
   type PastEvent,
 } from "../lib/supabase";
+import { toast } from "sonner";
 
 export default function Events() {
   const [scrollY, setScrollY] = useState(0);
