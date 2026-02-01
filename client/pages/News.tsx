@@ -837,8 +837,11 @@ export default function News() {
           <div className="mb-12 sm:mb-16">
             <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-brand-silver/40 p-6 sm:p-8">
               <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-                  {t("stay_updated")}
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  {t("stay_updated_title")}{" "}
+                  <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
+                    {t("stay_updated_highlight")}
+                  </span>
                 </h3>
                 <p className="text-gray-600 mb-6">{t("subscribe_desc")}</p>
                 <form
