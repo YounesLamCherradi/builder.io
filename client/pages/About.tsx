@@ -423,7 +423,7 @@ export default function About() {
         about_journey_milestone_3: "اليوم",
         about_journey_milestone_3_desc: "50,000+ تحول ونحن فقط نبدأ",
 
-        about_why_title: "لماذا اختيار MoroccoGlobal؟",
+        about_why_title: "لماذا اختيار WYF Morocco؟",
         about_why_1: "فرص منتقاة - أكثر من 50,000 مصدر تم التحقق منه",
         about_why_2: "مساعدة الخبير - مطابقة الذكاء الاصطناعي + التوجيه البشري",
         about_why_3: "مجتمع منخرط - تعلم من آلاف الأقران",
@@ -542,7 +542,7 @@ export default function About() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 MoroccoGlobal. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
         made_with: "صُنع بـ ❤️ في المغرب",
         sitemap: "خريطة الموقع",
         language: "اللغة",
@@ -631,7 +631,7 @@ export default function About() {
         about_journey_milestone_3_desc:
           "50 000+ трансформаций и мы только начинаем",
 
-        about_why_title: "Почему Выбирать MoroccoGlobal?",
+        about_why_title: "Почему Выбирать WYF Morocco?",
         about_why_1: "Отобранные Возможности - 50 000+ проверенных источников",
         about_why_2: "Экспертная Помощь - Подбор ИИ + менторство",
         about_why_3: "Сообщество Вовлечено - Учитесь у тысяч коллег",
@@ -754,7 +754,7 @@ export default function About() {
         privacy: "Конфиденциальность",
         terms: "Условия",
         cookies: "Cookies",
-        rights: "© 2026 MoroccoGlobal. Все права защищены.",
+        rights: "© 2026 WYF Morocco. Все права защищены.",
         made_with: "Сделано с ❤️ в Марокко",
         sitemap: "Карта сайта",
         language: "Язык",
