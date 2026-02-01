@@ -187,7 +187,7 @@ export default function News() {
         stay_updated_highlight: "Global Opportunities",
         subscribe_desc: "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         subscribe_email: "Enter your email",
-        subscribe_button: "Subscribe",
+        subscribe_button: "Subscribe Now",
         featured: "Featured",
       },
       ar: {
@@ -230,7 +230,7 @@ export default function News() {
         stay_updated_highlight: "الفرص العالمية",
         subscribe_desc: "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         subscribe_email: "أدخل بريدك الإلكتروني",
-        subscribe_button: "اشترك",
+        subscribe_button: "اشترك الآن",
         featured: "مميز",
       },
       ru: {
@@ -276,7 +276,7 @@ export default function News() {
         subscribe_desc:
           "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         subscribe_email: "Введите ваш email",
-        subscribe_button: "Подписаться",
+        subscribe_button: "Подписаться сейчас",
         featured: "Главное",
       },
     }),
