@@ -26,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <LaunchModal />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/news" element={<News />} />
