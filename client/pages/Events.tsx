@@ -476,7 +476,7 @@ export default function Events() {
         sitemap: "Карта сайта",
         subscribe_privacy:
           "Мы уважаем вашу приватность. Отпишитесь в любой момент. Без спама.",
-        subscribe: "Подписаться",
+        subscribe: "Подписаться сейчас",
 
         // Event titles
         event_1_title: "Мастер-класс Фулбрайта",
