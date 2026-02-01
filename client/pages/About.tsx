@@ -1415,7 +1415,7 @@ export default function About() {
             {t("about_cta_desc")}
           </p>
           <Link
-            to="/events"
+            to="/news"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-brand-red to-gray-900 text-white px-6 sm:px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200"
           >
             <span>{t("about_cta_button")}</span>
@@ -1549,9 +1549,6 @@ export default function About() {
               <p>{t("rights")}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>{t("made_with")}</span>
-                <a href="#" className="hover:text-brand-red transition-colors">
-                  {t("sitemap")}
-                </a>
                 <span>v1.0.0 • 2026</span>
               </div>
             </div>
