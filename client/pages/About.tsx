@@ -43,6 +43,8 @@ export default function About() {
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
   const teamScrollRef = useRef<HTMLDivElement>(null);
 
   const scrollTeam = (direction: "left" | "right") => {
