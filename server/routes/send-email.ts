@@ -62,6 +62,9 @@ export async function sendEmail(req: Request, res: Response) {
     const recipientEmail =
       process.env.CONTACT_FORM_EMAIL || process.env.VITE_CONTACT_EMAIL;
 
+    console.log("API Key length:", resendApiKey?.length);
+    console.log("API Key first 10 chars:", resendApiKey?.substring(0, 10));
+
     if (!resendApiKey) {
       console.error("RESEND_API_KEY not configured");
       return res.status(500).json({
