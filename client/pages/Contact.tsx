@@ -72,6 +72,8 @@ export default function Contact() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [dbFaqs, setDbFaqs] = useState<FAQ[]>([]);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
