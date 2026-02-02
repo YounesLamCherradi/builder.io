@@ -17,8 +17,14 @@ export async function login(req: Request, res: Response) {
       });
     }
 
+    // Log for debugging
+    console.log("Login attempt for:", username);
+    console.log("ADMIN_USERNAME env:", process.env.ADMIN_USERNAME ? "set" : "not set");
+    console.log("ADMIN_PASSWORD env:", process.env.ADMIN_PASSWORD ? "set" : "not set");
+
     // Validate credentials
     if (!validateCredentials(username, password)) {
+      console.log("Invalid credentials for user:", username);
       return res.status(401).json({
         error: "Invalid credentials",
       });
@@ -37,6 +43,7 @@ export async function login(req: Request, res: Response) {
     console.error("Error in login route:", error);
     return res.status(500).json({
       error: "Internal server error",
+      details: error instanceof Error ? error.message : String(error),
     });
   }
 }

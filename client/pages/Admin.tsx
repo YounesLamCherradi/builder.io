@@ -483,9 +483,19 @@ export default function Admin() {
         // Partner visions handling
         const visionData = {
           image_url: formData.image_url,
-          name: formData.visionName,
-          position: formData.visionPosition,
+          name: i18nData.name_i18n?.en || formData.visionName,
+          position: i18nData.role_i18n?.en || formData.visionPosition,
           quote: i18nData.quote_i18n?.en || formData.visionQuote,
+          name_i18n: i18nData.name_i18n || {
+            en: formData.visionName,
+            ar: "",
+            ru: "",
+          },
+          position_i18n: i18nData.role_i18n || {
+            en: formData.visionPosition,
+            ar: "",
+            ru: "",
+          },
           quote_i18n: i18nData.quote_i18n || {
             en: formData.visionQuote,
             ar: "",
@@ -845,8 +855,12 @@ export default function Admin() {
         description_i18n: { en: "", ar: "", ru: "" },
         content_i18n: { en: "", ar: "", ru: "" },
         about_event_i18n: { en: "", ar: "", ru: "" },
-        name_i18n: { en: "", ar: "", ru: "" },
-        role_i18n: { en: "", ar: "", ru: "" },
+        name_i18n: vision.name_i18n || { en: vision.name, ar: "", ru: "" },
+        role_i18n: vision.position_i18n || {
+          en: vision.position,
+          ar: "",
+          ru: "",
+        },
         bio_i18n: { en: "", ar: "", ru: "" },
         caption_i18n: { en: "", ar: "", ru: "" },
         quote_i18n: vision.quote_i18n || { en: vision.quote, ar: "", ru: "" },
@@ -1657,13 +1671,21 @@ export default function Admin() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Partner Name *
+                        Partner Name * ({activeLanguage.toUpperCase()})
                       </label>
                       <input
+                        key={`visionName-${activeLanguage}`}
                         type="text"
-                        name="visionName"
-                        value={formData.visionName}
-                        onChange={handleInputChange}
+                        value={i18nData.name_i18n[activeLanguage]}
+                        onChange={(e) =>
+                          setI18nData((prev) => ({
+                            ...prev,
+                            name_i18n: {
+                              ...prev.name_i18n,
+                              [activeLanguage]: e.target.value,
+                            },
+                          }))
+                        }
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
                         placeholder="Partner/Person name"
@@ -1672,13 +1694,21 @@ export default function Admin() {
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Position/Title *
+                        Position/Title * ({activeLanguage.toUpperCase()})
                       </label>
                       <input
+                        key={`visionPosition-${activeLanguage}`}
                         type="text"
-                        name="visionPosition"
-                        value={formData.visionPosition}
-                        onChange={handleInputChange}
+                        value={i18nData.role_i18n[activeLanguage]}
+                        onChange={(e) =>
+                          setI18nData((prev) => ({
+                            ...prev,
+                            role_i18n: {
+                              ...prev.role_i18n,
+                              [activeLanguage]: e.target.value,
+                            },
+                          }))
+                        }
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-brand-red focus:outline-none"
                         placeholder="e.g., CEO, Director, etc."
@@ -1691,6 +1721,7 @@ export default function Admin() {
                       Quote * ({activeLanguage.toUpperCase()})
                     </label>
                     <textarea
+                      key={`quote-${activeLanguage}`}
                       value={i18nData.quote_i18n[activeLanguage]}
                       onChange={(e) =>
                         setI18nData((prev) => ({

@@ -15,6 +15,7 @@ import AdminLogin from "./pages/AdminLogin";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ErrorBoundary from "./components/ErrorBoundary";
+import LaunchModal from "./components/LaunchModal";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <LaunchModal />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/news" element={<News />} />
