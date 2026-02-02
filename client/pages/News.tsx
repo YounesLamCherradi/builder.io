@@ -13,7 +13,12 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { fetchNews, type NewsArticle } from "../lib/supabase";
+import {
+  fetchNews,
+  subscribeNewsletter,
+  type NewsArticle,
+} from "../lib/supabase";
+import { toast } from "sonner";
 
 export default function News() {
   const [scrollY, setScrollY] = useState(0);
@@ -30,6 +35,8 @@ export default function News() {
     null,
   );
   const [loading, setLoading] = useState(true);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
   const newsScrollRef = useRef<HTMLDivElement>(null);
 
   const setCurrentLanguage = (lang) => {
@@ -53,6 +60,29 @@ export default function News() {
           behavior: "smooth",
         });
       }
+    }
+  };
+
+  const handleNewsletterSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setSubmittingNewsletter(true);
+    try {
+      const success = await subscribeNewsletter(newsletterEmail);
+      if (success) {
+        toast.success("Thank you for subscribing!");
+        setNewsletterEmail("");
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast.error("Error subscribing to newsletter");
+    } finally {
+      setSubmittingNewsletter(false);
     }
   };
 
@@ -157,9 +187,12 @@ export default function News() {
         articles_label: "Articles",
         close_article: "Close Article",
         stay_updated: "Stay Updated",
-        subscribe_desc: "Subscribe to get the latest news and updates",
+        stay_updated_title: "Stay Updated with",
+        stay_updated_highlight: "Global Opportunities",
+        subscribe_desc:
+          "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         subscribe_email: "Enter your email",
-        subscribe_button: "Subscribe",
+        subscribe_button: "Subscribe Now",
         featured: "Featured",
       },
       ar: {
@@ -187,7 +220,7 @@ export default function News() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 مهرجان الشباب العالمي المغربي. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
         made_with: "صُنع بـ ❤️ في المغرب",
         sitemap: "خريطة الموقع",
         language: "اللغة",
@@ -198,9 +231,12 @@ export default function News() {
         articles_label: "المقالات",
         close_article: "إغلاق المقال",
         stay_updated: "ابقَ محدثاً",
-        subscribe_desc: "اشترك للحصول على أحدث الأخبار والتحديثات",
+        stay_updated_title: "ابقَ محدثاً مع",
+        stay_updated_highlight: "الفرص العالمية",
+        subscribe_desc:
+          "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         subscribe_email: "أدخل بريدك الإلكتروني",
-        subscribe_button: "اشترك",
+        subscribe_button: "اشترك الآن",
         featured: "مميز",
       },
       ru: {
@@ -241,10 +277,12 @@ export default function News() {
         articles_label: "Статьи",
         close_article: "Закрыть статью",
         stay_updated: "Будьте в курсе",
+        stay_updated_title: "Будьте в курсе",
+        stay_updated_highlight: "Глобальные возможности",
         subscribe_desc:
-          "Подпишитесь, чтобы получать последние новости и обновления",
+          "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         subscribe_email: "Введите ваш email",
-        subscribe_button: "Подписаться",
+        subscribe_button: "Подписаться сейчас",
         featured: "Главное",
       },
     }),
@@ -811,22 +849,33 @@ export default function News() {
           <div className="mb-12 sm:mb-16">
             <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-md rounded-3xl shadow-xl border border-brand-silver/40 p-6 sm:p-8">
               <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-                  {t("stay_updated")}
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  {t("stay_updated_title")}{" "}
+                  <span className="bg-gradient-to-r from-brand-red via-gray-900 to-black bg-clip-text text-transparent">
+                    {t("stay_updated_highlight")}
+                  </span>
                 </h3>
                 <p className="text-gray-600 mb-6">{t("subscribe_desc")}</p>
-                <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+                <form
+                  onSubmit={handleNewsletterSubmit}
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto"
+                >
                   <input
                     type="email"
                     placeholder={t("subscribe_email")}
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
                     className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all"
                     required
                   />
                   <button
                     type="submit"
-                    className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold hover:shadow-lg transition-all"
+                    disabled={submittingNewsletter}
+                    className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {t("subscribe_button")}
+                    {submittingNewsletter
+                      ? "Subscribing..."
+                      : t("subscribe_button")}
                   </button>
                 </form>
               </div>
@@ -910,12 +959,6 @@ export default function News() {
                 <span className="text-xs sm:text-sm text-gray-600">
                   {t("made_with")}
                 </span>
-                <a
-                  href="#"
-                  className="text-xs sm:text-sm text-gray-600 hover:text-brand-red transition-colors"
-                >
-                  {t("sitemap")}
-                </a>
               </div>
             </div>
           </div>

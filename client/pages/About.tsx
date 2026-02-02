@@ -24,7 +24,12 @@ import {
   Brain,
   Star,
 } from "lucide-react";
-import { fetchTeam, type TeamMember } from "../lib/supabase";
+import {
+  fetchTeam,
+  subscribeNewsletter,
+  type TeamMember,
+} from "../lib/supabase";
+import { toast } from "sonner";
 import { AboutHero } from "../components/About";
 import { AboutIntroduction } from "../components/About/AboutIntroduction";
 import { AboutMembers } from "../components/About/AboutMembers";
@@ -42,6 +47,8 @@ export default function About() {
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
   const teamScrollRef = useRef<HTMLDivElement>(null);
 
   const scrollTeam = (direction: "left" | "right") => {
@@ -65,6 +72,29 @@ export default function About() {
     setCurrentLanguageState(lang);
     if (typeof window !== "undefined") {
       localStorage.setItem("selectedLanguage", lang);
+    }
+  };
+
+  const handleNewsletterSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setSubmittingNewsletter(true);
+    try {
+      const success = await subscribeNewsletter(newsletterEmail);
+      if (success) {
+        toast.success("Thank you for subscribing!");
+        setNewsletterEmail("");
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast.error("Error subscribing to newsletter");
+    } finally {
+      setSubmittingNewsletter(false);
     }
   };
 
@@ -423,7 +453,7 @@ export default function About() {
         about_journey_milestone_3: "اليوم",
         about_journey_milestone_3_desc: "50,000+ تحول ونحن فقط نبدأ",
 
-        about_why_title: "لماذا اختيار MoroccoGlobal؟",
+        about_why_title: "لماذا اختيار WYF Morocco؟",
         about_why_1: "فرص منتقاة - أكثر من 50,000 مصدر تم التحقق منه",
         about_why_2: "مساعدة الخبير - مطابقة الذكاء الاصطناعي + التوجيه البشري",
         about_why_3: "مجتمع منخرط - تعلم من آلاف الأقران",
@@ -542,7 +572,7 @@ export default function About() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 MoroccoGlobal. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
         made_with: "صُنع بـ ❤️ في المغرب",
         sitemap: "خريطة الموقع",
         language: "اللغة",
@@ -631,7 +661,7 @@ export default function About() {
         about_journey_milestone_3_desc:
           "50 000+ трансформаций и мы только начинаем",
 
-        about_why_title: "Почему Выбирать MoroccoGlobal?",
+        about_why_title: "Почему Выбирать WYF Morocco?",
         about_why_1: "Отобранные Возможности - 50 000+ проверенных источников",
         about_why_2: "Экспертная Помощь - Подбор ИИ + менторство",
         about_why_3: "Сообщество Вовлечено - Учитесь у тысяч коллег",
@@ -736,7 +766,7 @@ export default function About() {
         home_stay_updated_desc:
           "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         home_email_placeholder: "Введите свой адрес электронной почты",
-        subscribe_now: "Подписаться",
+        subscribe_now: "Подписаться сейчас",
         subscribe_privacy:
           "Мы уважаем вашу приватность. Отпишитесь в любой момент. Без спама.",
 
@@ -754,7 +784,7 @@ export default function About() {
         privacy: "Конфиденциальность",
         terms: "Условия",
         cookies: "Cookies",
-        rights: "© 2026 MoroccoGlobal. Все права защищены.",
+        rights: "© 2026 WYF Morocco. Все права защищены.",
         made_with: "Сделано с ❤️ в Марокко",
         sitemap: "Карта сайта",
         language: "Язык",
@@ -1415,7 +1445,7 @@ export default function About() {
             {t("about_cta_desc")}
           </p>
           <Link
-            to="/events"
+            to="/news"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-brand-red to-gray-900 text-white px-6 sm:px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 font-semibold animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200"
           >
             <span>{t("about_cta_button")}</span>
@@ -1446,18 +1476,28 @@ export default function About() {
                 </p>
               </div>
 
-              <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto"
+              >
                 <input
                   type="email"
                   placeholder={t("home_email_placeholder")}
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
                   required
                 />
                 <button
                   type="submit"
-                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
+                  disabled={submittingNewsletter}
+                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{t("subscribe_now")}</span>
+                  <span>
+                    {submittingNewsletter
+                      ? "Subscribing..."
+                      : t("subscribe_now")}
+                  </span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
@@ -1549,10 +1589,6 @@ export default function About() {
               <p>{t("rights")}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>{t("made_with")}</span>
-                <a href="#" className="hover:text-brand-red transition-colors">
-                  {t("sitemap")}
-                </a>
-                <span>v1.0.0 • 2026</span>
               </div>
             </div>
           </div>

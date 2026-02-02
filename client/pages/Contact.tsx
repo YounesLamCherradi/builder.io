@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { fetchFAQs, type FAQ } from "../lib/supabase";
+import { fetchFAQs, subscribeNewsletter, type FAQ } from "../lib/supabase";
+import { toast } from "sonner";
 import {
   Globe,
   Menu,
@@ -71,11 +72,36 @@ export default function Contact() {
   });
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [dbFaqs, setDbFaqs] = useState<FAQ[]>([]);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
     if (typeof window !== "undefined") {
       localStorage.setItem("selectedLanguage", lang);
+    }
+  };
+
+  const handleNewsletterSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setSubmittingNewsletter(true);
+    try {
+      const success = await subscribeNewsletter(newsletterEmail);
+      if (success) {
+        toast.success("Thank you for subscribing!");
+        setNewsletterEmail("");
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast.error("Error subscribing to newsletter");
+    } finally {
+      setSubmittingNewsletter(false);
     }
   };
 
@@ -159,7 +185,7 @@ export default function Contact() {
         contact_phone: "Phone",
         contact_location: "Location",
         contact_office: "WYF Morocco Main Office",
-        contact_email_address: "wyfmorocco@gmail.com",
+        contact_email_address: "info@wyfmorocco.com",
         contact_phone_number: "+212 7 73 70 64 47 / +212 6 49 57 43 26",
         contact_location_address:
           "Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2",
@@ -196,9 +222,9 @@ export default function Contact() {
         home_stay_updated_title: "Stay Updated with",
         home_stay_updated_highlight: "Global Opportunities",
         home_stay_updated_desc:
-          "Get the latest news about scholarships, visas, and opportunities delivered to your inbox every month.",
+          "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         home_email_placeholder: "Enter your email address",
-        subscribe_now: "Subscribe",
+        subscribe_now: "Subscribe Now",
         subscribe_privacy:
           "We respect your privacy. Unsubscribe at any time. No spam.",
 
@@ -218,6 +244,7 @@ export default function Contact() {
         terms: "Terms",
         cookies: "Cookies",
         rights: "© 2026 WYF Morocco. All rights reserved.",
+        made_with: "Made with ❤️ in Morocco",
         language: "Language",
         telegram: "Telegram",
         instagram: "Instagram",
@@ -250,7 +277,7 @@ export default function Contact() {
         contact_phone: "الهاتف",
         contact_location: "الموقع",
         contact_office: "مكتب مهرجان الشباب العالمي الرئيسي",
-        contact_email_address: "wyfmorocco@gmail.com",
+        contact_email_address: "info@wyfmorocco.com",
         contact_phone_number: "+212 7 73 70 64 47 / +212 6 49 57 43 26",
         contact_location_address:
           "دائرة مهرجان الشباب العالمي\nممر بودكولوكولني، 10 أ/2",
@@ -286,7 +313,7 @@ export default function Contact() {
         home_stay_updated_title: "ابقَ محدثاً مع",
         home_stay_updated_highlight: "الفرص العالمية",
         home_stay_updated_desc:
-          "احصل على أحدث الأخبار عن المنح والتأشيرات والفرص كل شهر في صندوق بريدك.",
+          "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         home_email_placeholder: "أدخل عنوان بريدك الإلكتروني",
         subscribe_now: "اشترك الآن",
         subscribe_privacy:
@@ -307,7 +334,8 @@ export default function Contact() {
         privacy: "الخصوصية",
         terms: "الشروط",
         cookies: "ملفات تعريف الارتباط",
-        rights: "© 2026 MoroccoGlobal. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
+        made_with: "صُنع بـ ❤️ في المغرب",
         language: "اللغة",
         telegram: "تيليجرام",
         instagram: "إنستغرام",
@@ -340,7 +368,7 @@ export default function Contact() {
         contact_phone: "Телефон",
         contact_location: "Местоположение",
         contact_office: "Главный офис Всемирного фестиваля молодежи",
-        contact_email_address: "wyfmorocco@gmail.com",
+        contact_email_address: "info@wyfmorocco.com",
         contact_phone_number: "+212 7 73 70 64 47 / +212 6 49 57 43 26",
         contact_location_address:
           "Дирекция Всемирного фестиваля молодежи\nПодколокольный пер., 10А/2",
@@ -378,9 +406,9 @@ export default function Contact() {
         home_stay_updated_title: "Оставайтесь в курсе",
         home_stay_updated_highlight: "Глобальные возможности",
         home_stay_updated_desc:
-          "Получайте последние новости о стипендиях, визах и возможностях каждый месяц.",
+          "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         home_email_placeholder: "Введите ваш адрес электронной почты",
-        subscribe_now: "Подписаться",
+        subscribe_now: "Подписаться сейчас",
         subscribe_privacy:
           "Мы уважаем вашу конфиденциальность. Отпишитесь в любой момент. Нет спама.",
 
@@ -399,7 +427,8 @@ export default function Contact() {
         privacy: "Приватность",
         terms: "Условия",
         cookies: "Куки",
-        rights: "© 2026 MoroccoGlobal. Все права защищены.",
+        rights: "© 2026 WYF Morocco. Все права защищены.",
+        made_with: "Сделано с ❤️ в Марокко",
         language: "Язык",
         telegram: "Телеграм",
         instagram: "Инстаграм",
@@ -1074,18 +1103,28 @@ export default function Contact() {
                 </p>
               </div>
 
-              <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto"
+              >
                 <input
                   type="email"
                   placeholder={t("home_email_placeholder")}
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
                   required
                 />
                 <button
                   type="submit"
-                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
+                  disabled={submittingNewsletter}
+                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{t("subscribe_now")}</span>
+                  <span>
+                    {submittingNewsletter
+                      ? "Subscribing..."
+                      : t("subscribe_now")}
+                  </span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
@@ -1175,10 +1214,6 @@ export default function Contact() {
               <p>{t("rights")}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>{t("made_with")}</span>
-                <a href="#" className="hover:text-brand-red transition-colors">
-                  {t("sitemap")}
-                </a>
-                <span>v1.0.0 • 2026</span>
               </div>
             </div>
           </div>

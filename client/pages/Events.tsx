@@ -18,6 +18,7 @@ import {
   Loader,
 } from "lucide-react";
 import {
+  subscribeNewsletter,
   fetchEvents,
   fetchFAQs,
   fetchPastEvents,
@@ -25,6 +26,7 @@ import {
   type FAQ,
   type PastEvent,
 } from "../lib/supabase";
+import { toast } from "sonner";
 
 export default function Events() {
   const [scrollY, setScrollY] = useState(0);
@@ -42,11 +44,36 @@ export default function Events() {
   const [loadingEvents, setLoadingEvents] = useState(true);
   const [fetchedFAQs, setFetchedFAQs] = useState<FAQ[]>([]);
   const [fetchedPastEvents, setFetchedPastEvents] = useState<PastEvent[]>([]);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [submittingNewsletter, setSubmittingNewsletter] = useState(false);
 
   const setCurrentLanguage = (lang) => {
     setCurrentLanguageState(lang);
     if (typeof window !== "undefined") {
       localStorage.setItem("selectedLanguage", lang);
+    }
+  };
+
+  const handleNewsletterSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setSubmittingNewsletter(true);
+    try {
+      const success = await subscribeNewsletter(newsletterEmail);
+      if (success) {
+        toast.success("Thank you for subscribing!");
+        setNewsletterEmail("");
+      } else {
+        toast.error("Failed to subscribe. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      toast.error("Error subscribing to newsletter");
+    } finally {
+      setSubmittingNewsletter(false);
     }
   };
 
@@ -175,7 +202,7 @@ export default function Events() {
         sitemap: "Sitemap",
         subscribe_privacy:
           "We respect your privacy. Unsubscribe anytime. No spam, ever.",
-        subscribe: "Subscribe",
+        subscribe: "Subscribe Now",
 
         // Event titles
         event_1_title: "Fulbright Scholarship Masterclass",
@@ -246,7 +273,7 @@ export default function Events() {
         stay_updated_title: "Stay Updated with",
         stay_updated_highlight: "Global Opportunities",
         stay_updated_desc:
-          "Subscribe to our newsletter and never miss an opportunity. Get early access to events, exclusive scholarships, and insider tips.",
+          "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         email_placeholder: "Enter your email address",
 
         about_event: "About This Event",
@@ -304,7 +331,7 @@ export default function Events() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 MoroccoGlobal. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
         event_time: "وقت الفعالية",
 
         tagline: "عالمك ينتظرك",
@@ -380,7 +407,7 @@ export default function Events() {
         stay_updated_title: "ابقَ محدثاً مع",
         stay_updated_highlight: "الفرص العالمية",
         stay_updated_desc:
-          "اشترك في نشرتنا الإخبارية ولا تفوّت أي فرصة. احصل على وصول مبكر للفعاليات والمنح الحصرية والنصائح من الداخل.",
+          "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         email_placeholder: "أدخل عنوان بريدك الإلكتروني",
 
         about_event: "عن هذه الفعالية",
@@ -441,7 +468,7 @@ export default function Events() {
         privacy: "Конфиденциальность",
         terms: "Условия",
         cookies: "Cookies",
-        rights: "© 2026 MoroccoGlobal. Все права защищены.",
+        rights: "© 2026 WYF Morocco. Все права защищены.",
         event_time: "Время События",
 
         tagline: "Ваш мир ждёт",
@@ -449,7 +476,7 @@ export default function Events() {
         sitemap: "Карта сайта",
         subscribe_privacy:
           "Мы уважаем вашу приватность. Отпишитесь в любой момент. Без спама.",
-        subscribe: "Подписаться",
+        subscribe: "Подписаться сейчас",
 
         // Event titles
         event_1_title: "Мастер-класс Фулбрайта",
@@ -522,7 +549,7 @@ export default function Events() {
         stay_updated_title: "Будьте в курсе",
         stay_updated_highlight: "Глобальные возможности",
         stay_updated_desc:
-          "Подпишитесь на нашу рассылку и не пропустите ни одной возможности. Получайте ранний доступ к событиям, эксклюзивным стипендиям и инсайдерским советам.",
+          "Получайте последние стипендии, стажировки, истории успеха и эксклюзивные советы в вашу почту каждый месяц.",
         email_placeholder: "Введите свой адрес электронной почты",
 
         about_event: "Об этом событии",
@@ -1415,18 +1442,28 @@ export default function Events() {
                 </p>
               </div>
 
-              <form className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto"
+              >
                 <input
                   type="email"
                   placeholder={t("email_placeholder")}
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 rounded-full border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 outline-none transition-all text-gray-800 placeholder-gray-500 shadow-sm"
                   required
                 />
                 <button
                   type="submit"
-                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px]"
+                  disabled={submittingNewsletter}
+                  className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{t("subscribe")}</span>
+                  <span>
+                    {submittingNewsletter
+                      ? t("subscribe_loading") || "Subscribing..."
+                      : t("subscribe")}
+                  </span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
@@ -1518,10 +1555,6 @@ export default function Events() {
               <p>{t("rights")}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>{t("made_with")}</span>
-                <a href="#" className="hover:text-brand-red transition-colors">
-                  {t("sitemap")}
-                </a>
-                <span>v1.0.0 • 2026</span>
               </div>
             </div>
           </div>

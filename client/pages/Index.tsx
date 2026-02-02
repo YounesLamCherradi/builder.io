@@ -202,7 +202,7 @@ export default function Index() {
         hero_desc:
           "Discover thousands of scholarships, jobs, and international programs tailored for talented Moroccans. Your passport to global success starts here.",
         explore_opps: "Explore Opportunities",
-        watch_demo: "Watch Demo",
+        who_we_are: "Who We Are",
 
         stat_users: "Active Users",
         stat_countries: "Countries",
@@ -380,7 +380,7 @@ export default function Index() {
         hero_desc:
           "اكتشف آلاف المنح الدراسية والوظائف والبرامج الدولية المخصصة للمواهب المغربية. تذكرتك نحو النجاح العالمي تبدأ هنا.",
         explore_opps: "استكشف الفرص",
-        watch_demo: "شاهد العرض التوضيحي",
+        who_we_are: "من نحن",
 
         stat_users: "المستخدمون النشطون",
         stat_countries: "دول",
@@ -416,7 +416,7 @@ export default function Index() {
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
         cookies: "سياسة ملفات تعريف الارتباط",
-        rights: "© 2026 MoroccoGlobal. جميع الحقوق محفوظة.",
+        rights: "© 2026 WYF Morocco. جميع الحقوق محفوظة.",
 
         opp_scholarships: "المنح الدراسية",
         opp_jobs: "الوظائف والتدريب",
@@ -553,7 +553,7 @@ export default function Index() {
         hero_desc:
           "Тысячи стипендий, вакансий и международных программ для талантливых марокканцев. Твой путь к успеху начинается здесь.",
         explore_opps: "Найти возможности",
-        watch_demo: "Смотреть демо",
+        who_we_are: "О нас",
 
         stat_users: "Пользователи",
         stat_countries: "Страны",
@@ -588,7 +588,7 @@ export default function Index() {
         privacy: "Конфиденциальность",
         terms: "Условия",
         cookies: "Cookies",
-        rights: "© 2026 MoroccoGlobal. Все права защищены.",
+        rights: "© 2026 WYF Morocco. Все права защищены.",
 
         opp_scholarships: "Стипендии",
         opp_jobs: "Работа и стажировки",
@@ -620,7 +620,7 @@ export default function Index() {
         sitemap: "Карта сайта",
         subscribe_privacy:
           "Мы уважаем вашу приватность. Отпишитесь в любой момент. Без спама.",
-        subscribe_now: "Подписаться",
+        subscribe_now: "Подписаться сейчас",
 
         morocco: "Марокко",
         morocco_subtitle: "Информационный центр",
@@ -1142,10 +1142,13 @@ export default function Index() {
                   <span>{t("explore_opps")}</span>
                   <ArrowRight className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <button className="group flex-1 sm:flex-none px-3 sm:px-6 lg:px-7 py-2 sm:py-3 lg:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-[11px] sm:text-sm lg:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-1.5 sm:gap-2">
-                  <span>{t("watch_demo")}</span>
+                <Link
+                  to="/about"
+                  className="group flex-1 sm:flex-none px-3 sm:px-6 lg:px-7 py-2 sm:py-3 lg:py-4 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white rounded-full font-semibold text-[11px] sm:text-sm lg:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-red-200/50 hover:scale-105 flex items-center justify-center gap-1.5 sm:gap-2"
+                >
+                  <span>{t("who_we_are")}</span>
                   <ArrowRight className="w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -1948,10 +1951,6 @@ export default function Index() {
               <p>{t("rights")}</p>
               <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-8 gap-y-2">
                 <span>{t("made_with")}</span>
-                <a href="#" className="hover:text-brand-red transition-colors">
-                  {t("sitemap")}
-                </a>
-                <span>v1.0.0 • 2026</span>
               </div>
             </div>
           </div>
