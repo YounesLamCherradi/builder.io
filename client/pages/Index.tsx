@@ -824,6 +824,55 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      {/* Welcome Modal */}
+      {showWelcomeModal && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-in fade-in scale-95">
+            {/* Confetti Icon */}
+            <div className="mb-6 flex justify-center">
+              <div className="text-5xl">
+                <svg className="w-16 h-16 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v8m-4-4h8M6 3l3 3m9 0l-3 3m-9 9l3-3m9 0l-3-3" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <span className="text-brand-red">Welcome!</span> WYF<br />
+              <span className="text-gray-900">Morocco is</span><br />
+              <span className="text-brand-red">officially live!</span>
+            </h2>
+
+            {/* Description */}
+            <p className="text-gray-600 mb-8 text-sm leading-relaxed">
+              You are special to us, and we're thrilled to<br />have you here
+            </p>
+
+            {/* Divider */}
+            <div className="w-12 h-1 bg-brand-red mx-auto mb-8"></div>
+
+            {/* CTA Button */}
+            <Link
+              to="/news"
+              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 w-full"
+              onClick={() => setShowWelcomeModal(false)}
+            >
+              <span>Explore Opportunities</span>
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowWelcomeModal(false)}
+              className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Navigation Bar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
