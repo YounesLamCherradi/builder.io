@@ -1021,10 +1021,16 @@ export default function Partners() {
                       {/* Name and Position with enhanced effects */}
                       <div className="mb-2 sm:mb-3 md:mb-4 transition-all duration-700 group-hover:translate-x-1 p-3 sm:p-4 md:p-3 rounded-2xl bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30 transition-all duration-700">
                         <h3 className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-2">
-                          {vision.name}
+                          {vision.name_i18n &&
+                          vision.name_i18n[currentLanguage]
+                            ? vision.name_i18n[currentLanguage]
+                            : vision.name}
                         </h3>
                         <p className="text-[10px] sm:text-xs md:text-sm text-brand-red font-semibold mt-1 sm:mt-1.5 tracking-widest uppercase transition-all duration-700 group-hover:tracking-[0.15em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-1">
-                          {vision.position}
+                          {vision.position_i18n &&
+                          vision.position_i18n[currentLanguage]
+                            ? vision.position_i18n[currentLanguage]
+                            : vision.position}
                         </p>
                         <div className="h-0.5 sm:h-1 w-8 sm:w-10 bg-gradient-to-r from-brand-red via-brand-silver to-brand-red mt-1.5 sm:mt-2.5 transition-all duration-700 ease-out group-hover:w-full group-hover:shadow-lg group-hover:shadow-brand-red/50 rounded-full" />
                       </div>
