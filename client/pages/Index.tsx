@@ -828,6 +828,13 @@ export default function Index() {
   const selectedLang =
     languages.find((l) => l.code === currentLanguage) ?? languages[0];
 
+  const closeWelcomeModal = () => {
+    setShowWelcomeModal(false);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("welcomeModalShown", "true");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Welcome Modal */}
