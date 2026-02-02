@@ -13,7 +13,11 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { fetchNews, subscribeNewsletter, type NewsArticle } from "../lib/supabase";
+import {
+  fetchNews,
+  subscribeNewsletter,
+  type NewsArticle,
+} from "../lib/supabase";
 import { toast } from "sonner";
 
 export default function News() {
@@ -185,7 +189,8 @@ export default function News() {
         stay_updated: "Stay Updated",
         stay_updated_title: "Stay Updated with",
         stay_updated_highlight: "Global Opportunities",
-        subscribe_desc: "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
+        subscribe_desc:
+          "Get the latest scholarships, internships, success stories and exclusive tips delivered to your inbox every month.",
         subscribe_email: "Enter your email",
         subscribe_button: "Subscribe Now",
         featured: "Featured",
@@ -228,7 +233,8 @@ export default function News() {
         stay_updated: "ابقَ محدثاً",
         stay_updated_title: "ابقَ محدثاً مع",
         stay_updated_highlight: "الفرص العالمية",
-        subscribe_desc: "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
+        subscribe_desc:
+          "احصل على أحدث المنح والتدريبات وقصص النجاح والنصائح الحصرية المرسلة إلى صندوق الوارد الخاص بك كل شهر.",
         subscribe_email: "أدخل بريدك الإلكتروني",
         subscribe_button: "اشترك الآن",
         featured: "مميز",
@@ -867,7 +873,9 @@ export default function News() {
                     disabled={submittingNewsletter}
                     className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {submittingNewsletter ? "Subscribing..." : t("subscribe_button")}
+                    {submittingNewsletter
+                      ? "Subscribing..."
+                      : t("subscribe_button")}
                   </button>
                 </form>
               </div>

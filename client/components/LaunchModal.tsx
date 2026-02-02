@@ -61,7 +61,9 @@ export default function LaunchModal() {
             className="group w-full px-8 py-3 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 flex items-center justify-center gap-2"
           >
             Explore Opportunities
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            <span className="group-hover:translate-x-1 transition-transform">
+              →
+            </span>
           </button>
         </div>
 

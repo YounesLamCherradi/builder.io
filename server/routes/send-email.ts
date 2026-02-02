@@ -58,9 +58,12 @@ export async function sendEmail(req: Request, res: Response) {
 
   try {
     // Get Resend API key and recipient email from environment
-    const resendApiKey = process.env.VITE_RESEND_API_KEY || process.env.RESEND_API_KEY;
+    const resendApiKey =
+      process.env.VITE_RESEND_API_KEY || process.env.RESEND_API_KEY;
     const recipientEmail =
-      process.env.VITE_CONTACT_FORM_EMAIL || process.env.CONTACT_FORM_EMAIL || process.env.VITE_CONTACT_EMAIL;
+      process.env.VITE_CONTACT_FORM_EMAIL ||
+      process.env.CONTACT_FORM_EMAIL ||
+      process.env.VITE_CONTACT_EMAIL;
 
     console.log("API Key length:", resendApiKey?.length);
     console.log("API Key first 10 chars:", resendApiKey?.substring(0, 10));

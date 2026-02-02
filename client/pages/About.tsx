@@ -24,7 +24,11 @@ import {
   Brain,
   Star,
 } from "lucide-react";
-import { fetchTeam, subscribeNewsletter, type TeamMember } from "../lib/supabase";
+import {
+  fetchTeam,
+  subscribeNewsletter,
+  type TeamMember,
+} from "../lib/supabase";
 import { toast } from "sonner";
 import { AboutHero } from "../components/About";
 import { AboutIntroduction } from "../components/About/AboutIntroduction";
@@ -1489,7 +1493,11 @@ export default function About() {
                   disabled={submittingNewsletter}
                   className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-brand-red to-black text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 sm:min-w-[180px] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>{submittingNewsletter ? "Subscribing..." : t("subscribe_now")}</span>
+                  <span>
+                    {submittingNewsletter
+                      ? "Subscribing..."
+                      : t("subscribe_now")}
+                  </span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
