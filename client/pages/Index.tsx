@@ -869,7 +869,7 @@ export default function Index() {
             <Link
               to="/news"
               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-brand-red to-gray-900 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 w-full"
-              onClick={() => setShowWelcomeModal(false)}
+              onClick={closeWelcomeModal}
             >
               <span>Explore Opportunities</span>
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -877,7 +877,7 @@ export default function Index() {
 
             {/* Close Button */}
             <button
-              onClick={() => setShowWelcomeModal(false)}
+              onClick={closeWelcomeModal}
               className="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
             >
               <X className="w-6 h-6" />
