@@ -47,6 +47,7 @@ export default function Index() {
   const [partnersList, setPartnersList] = useState<Partner[]>([]);
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [selectedNews, setSelectedNews] = useState<NewsArticle | null>(null);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
   const sponsorsScrollRef = useRef<HTMLDivElement>(null);
   const newsScrollRef = useRef<HTMLDivElement>(null);
 
