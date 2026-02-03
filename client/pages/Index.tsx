@@ -1114,7 +1114,7 @@ export default function Index() {
                 <span className="block text-brand-red text-lg sm:text-4xl lg:text-6xl">
                   "{t("putin_quote_1")}
                 </span>
-                <span className={`block text-gray-900 text-lg sm:text-4xl lg:text-6xl ${currentLanguage === "ar" ? "mt-3 sm:mt-4" : "mt-0.5 sm:mt-2"}`}>
+                <span className={`block text-gray-900 text-lg sm:text-4xl lg:text-6xl whitespace-pre-line ${currentLanguage === "ar" ? "mt-3 sm:mt-4" : "mt-0.5 sm:mt-2"}`}>
                   {t("putin_quote_2")}"
                 </span>
                 <span
