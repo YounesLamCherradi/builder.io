@@ -383,13 +383,13 @@ export default function Index() {
         who_we_are: "من نحن",
 
         stat_users: "المستخدمون النشطون",
-        stat_countries: "دول",
+        stat_countries: "الدول",
         stat_success: "معدل النجاح",
         stat_support: "الدعم",
 
         hero_stat_users: "الشباب المستهدفون",
-        hero_stat_countries: "الدول المستهدفة",
-        hero_stat_success: "معدل النجاح",
+        hero_stat_countries: "الشركاء",
+        hero_stat_success: "الدول",
         hero_stat_support: "الدعم",
 
         latest_updates: "أحدث التحديثات",
