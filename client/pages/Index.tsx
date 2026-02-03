@@ -561,8 +561,8 @@ export default function Index() {
         stat_support: "Поддержка",
 
         hero_stat_users: "Молодёжь охвачена",
-        hero_stat_countries: "Страны охвачены",
-        hero_stat_success: "Успешность",
+        hero_stat_countries: "Партнёры",
+        hero_stat_success: "Страны",
         hero_stat_support: "Поддержка",
 
         latest_updates: "Последние обновления",
