@@ -439,6 +439,7 @@ export default function About() {
         about_achievements_3_desc: "فرص مشتركة",
         about_achievements_4: "35+",
         about_achievements_4_desc: "الدول",
+        hero_stat_support: "الدعم",
         about_achievements_5: "₹10M+",
         about_achievements_5_desc: "منح متصلة",
         about_achievements_6: "4+",
