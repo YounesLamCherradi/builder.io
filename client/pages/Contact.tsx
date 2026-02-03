@@ -254,7 +254,7 @@ export default function Contact() {
       ar: {
         nav_home: "الرئيسية",
         nav_news: "الأخبار",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_partners: "الشركاء",
         nav_stories: "قصص النجاح",
         nav_resources: "الموارد",
