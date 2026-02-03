@@ -227,6 +227,7 @@ export default function About() {
         about_achievements_3_desc: "Opportunities Shared",
         about_achievements_4: "35+",
         about_achievements_4_desc: "Countries",
+        hero_stat_support: "Support",
         about_achievements_5: "₹10M+",
         about_achievements_5_desc: "Scholarships Connected",
         about_achievements_6: "4+",
