@@ -575,6 +575,10 @@ export default function Contact() {
       icon: Phone,
       label: t("contact_phone"),
       value: t("contact_phone_number"),
+      phones: [
+        "+212 7 73 70 64 47",
+        "+212 6 49 57 43 26"
+      ],
     },
     {
       icon: MapPin,
