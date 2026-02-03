@@ -983,7 +983,19 @@ export default function Contact() {
                         <h3 className="text-lg font-semibold text-gray-900">
                           {info.label}
                         </h3>
-                        {info.url ? (
+                        {info.phones ? (
+                          <div className="flex flex-col gap-2 mt-1">
+                            {info.phones.map((phone: string, pidx: number) => (
+                              <a
+                                key={pidx}
+                                href={`tel:${phone.replace(/\s/g, '')}`}
+                                className="text-brand-red hover:text-red-700 hover:underline font-semibold transition-colors"
+                              >
+                                {phone}
+                              </a>
+                            ))}
+                          </div>
+                        ) : info.url ? (
                           <a
                             href={info.url}
                             target="_blank"
