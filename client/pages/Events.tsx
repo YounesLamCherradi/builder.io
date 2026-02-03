@@ -290,7 +290,7 @@ export default function Events() {
       ar: {
         nav_home: "الرئيسية",
         nav_events: "الفعاليات",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_stories: "قصص النجاح",
         nav_resources: "الموارد",
         nav_contact: "اتصل بنا",
