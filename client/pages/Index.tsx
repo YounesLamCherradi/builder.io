@@ -519,7 +519,7 @@ export default function Index() {
         // Hero section strings
         official_page_wyf: "الصفحة الرسمية لمهرجان الشباب العالمي بالمغرب",
         putin_quote_1: "روسيا أصبحت صديقتك الآن.",
-        putin_quote_2: "أبوابنا مفتوحة أمامك دائماً.",
+        putin_quote_2: "أبوابنا مفتوحة أمامك\nدائماً.",
         putin_attribution:
           "— فلاديمير بوتين، خلال حفل اختتام مهرجان الشباب العالمي (2024)",
         wyf_description:
