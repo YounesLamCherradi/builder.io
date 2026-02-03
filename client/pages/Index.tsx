@@ -1118,7 +1118,7 @@ export default function Index() {
                   {t("putin_quote_2")}"
                 </span>
                 <span
-                  className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-8 sm:mt-6 block sm:inline-block sm:ml-3 w-full sm:w-auto"
+                  className={`text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold ${currentLanguage === "ar" ? "mt-6 sm:mt-8" : "mt-8 sm:mt-6"} block sm:inline-block sm:ml-3 w-full sm:w-auto`}
                   style={{
                     letterSpacing: "0.05em",
                     fontStyle: "italic",
