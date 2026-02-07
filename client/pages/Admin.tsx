@@ -2057,7 +2057,7 @@ export default function Admin() {
                     (activeTab === "partners" &&
                       (!formData.image_url || !formData.partnerName)) ||
                     (activeTab === "partner_visions" &&
-                      (!formData.image_url || !formData.visionName)) ||
+                      (!formData.image_url || !i18nData.name_i18n.en)) ||
                     (activeTab === "past_events" && !formData.image_url)
                   }
                   className="flex-1 px-6 py-2 bg-brand-red text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-2"
