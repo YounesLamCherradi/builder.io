@@ -2072,7 +2072,7 @@ export default function Admin() {
                               !formData.image_url
                             ? "Please upload a partner image"
                             : activeTab === "partner_visions" &&
-                                !formData.visionName
+                                !i18nData.name_i18n.en
                               ? "Please enter partner name"
                               : activeTab === "past_events" &&
                                   !formData.image_url
