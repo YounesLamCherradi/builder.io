@@ -277,14 +277,14 @@ export default function Admin() {
       return;
     }
 
-    if (activeTab === "partner_visions" && !formData.visionName) {
-      toast.error("Please enter the partner name");
+    if (activeTab === "partner_visions" && !i18nData.name_i18n.en) {
+      toast.error("Please enter the partner name in English");
       setLoading(false);
       return;
     }
 
-    if (activeTab === "partner_visions" && !formData.visionPosition) {
-      toast.error("Please enter the partner position");
+    if (activeTab === "partner_visions" && !i18nData.role_i18n.en) {
+      toast.error("Please enter the partner position in English");
       setLoading(false);
       return;
     }
