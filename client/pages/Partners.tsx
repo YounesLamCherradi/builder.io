@@ -130,9 +130,9 @@ export default function Partners() {
         nav_contact: "Contact",
         sign_in: "Sign In",
         get_started: "Get Started",
-        partners_quote_1: "The Youth of WYF are those who will make a",
+        partners_quote_1: "The Youth of WYF are those who will make",
         partners_quote_2:
-          "constructive point and shape this new world architecture",
+          "a constructive point and shape this new world architecture",
         partners_attribution: "— Leonid Slutsky",
         partners_attribution_role:
           "Chairman of the State Duma Committee on International Affairs",
