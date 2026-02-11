@@ -1007,7 +1007,7 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-2 sm:p-2.5 pt-2 sm:pt-2.5 pb-0 px-2 sm:px-2.5 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700">
+                    <div className="relative z-10 flex-1 p-2 sm:p-2.5 pb-0 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700">
                       {/* Name and Position with enhanced effects */}
                       <div className="pb-0.5 transition-all duration-700 group-hover:translate-x-1 px-1.5 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
                         <h3 className="text-[10px] sm:text-xs font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
@@ -1026,9 +1026,11 @@ export default function Partners() {
 
                       {/* Quote with sophisticated animations - no background box */}
                       <div
-                        className="space-y-0 flex flex-col flex-1 min-h-0 -mx-2 sm:-mx-2.5 px-2 sm:px-2.5 pb-0"
+                        className="space-y-0 flex flex-col flex-1"
                         style={{
                           marginTop: "-4px",
+                          marginBottom: "0",
+                          paddingBottom: "0",
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
                           opacity: 0,
                           transform: "translateY(10px)",
