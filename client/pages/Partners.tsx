@@ -997,7 +997,7 @@ export default function Partners() {
                           <img
                             src={vision.image_url}
                             alt={vision.name}
-                            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:drop-shadow-xl"
+                            className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:drop-shadow-xl"
                           />
 
                         </>
