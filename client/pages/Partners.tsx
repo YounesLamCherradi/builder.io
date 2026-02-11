@@ -1015,7 +1015,7 @@ export default function Partners() {
                             ? vision.name_i18n[currentLanguage]
                             : vision.name}
                         </h3>
-                        <p className="text-[6px] sm:text-[7px] text-brand-red font-semibold mt-0 tracking-wider uppercase transition-all duration-700 group-hover:tracking-[0.08em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-2 min-h-[1.75rem] sm:min-h-[2rem]">
+                        <p className="text-[6px] sm:text-[7px] text-brand-red font-semibold mt-0 tracking-wider uppercase transition-all duration-700 group-hover:tracking-[0.08em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-2 min-h-[2rem] sm:min-h-[2.25rem]">
                           {vision.position_i18n &&
                           vision.position_i18n[currentLanguage]
                             ? vision.position_i18n[currentLanguage]
