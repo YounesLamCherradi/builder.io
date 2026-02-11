@@ -1036,8 +1036,9 @@ export default function Partners() {
 
                       {/* Quote with sophisticated animations - no background box */}
                       <div
-                        className="space-y-0 flex flex-col min-h-0 overflow-hidden -mt-1.5"
+                        className="space-y-0 flex flex-col min-h-0 overflow-hidden"
                         style={{
+                          marginTop: "-4px",
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
                           opacity: 0,
                           transform: "translateY(10px)",
