@@ -973,7 +973,7 @@ export default function Partners() {
                 >
                   {/* Vision Card - Premium Design */}
                   <div
-                    className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white flex flex-row border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
+                    className="relative rounded-3xl overflow-hidden flex flex-row border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
                     style={{
                       transformStyle: "preserve-3d",
                       transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
