@@ -1017,9 +1017,9 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-3 sm:p-4 flex flex-col gap-1.5 sm:gap-2 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700 overflow-hidden justify-between">
+                    <div className="relative z-10 flex-1 p-2.5 sm:p-3 flex flex-col gap-0.5 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700 overflow-hidden justify-between">
                       {/* Name and Position with enhanced effects */}
-                      <div className="pb-1.5 transition-all duration-700 group-hover:translate-x-1 px-2 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
+                      <div className="pb-1 transition-all duration-700 group-hover:translate-x-1 px-2 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
                         <h3 className="text-xs sm:text-sm font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
                           {vision.name_i18n && vision.name_i18n[currentLanguage]
                             ? vision.name_i18n[currentLanguage]
