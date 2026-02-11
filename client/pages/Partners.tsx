@@ -990,7 +990,7 @@ export default function Partners() {
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
                     {/* Image Section with advanced hover effects - fixed width on left */}
-                    <div className="relative w-28 sm:w-32 md:w-36 h-full flex items-center justify-center flex-shrink-0 transition-all duration-500">
+                    <div className="relative w-28 sm:w-32 md:w-36 h-full flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
@@ -998,22 +998,12 @@ export default function Partners() {
                             src={vision.image_url}
                             alt={vision.name}
                             className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:drop-shadow-xl"
-                            style={{
-                              filter: "brightness(1) contrast(1.05)",
-                              transition: "filter 600ms ease-out",
-                            }}
                           />
 
-                          {/* Enhanced overlay on hover */}
-                          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-700 ease-out pointer-events-none" />
                         </>
                       )}
 
-                      {/* Subtle top gradient - not too dark */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-out pointer-events-none" />
 
-                      {/* Subtle glow on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-brand-red/0 via-transparent to-brand-red/0 opacity-0 group-hover:opacity-5 transition-opacity duration-700 ease-out pointer-events-none" />
                     </div>
 
                     {/* Content Section with staggered animations */}
