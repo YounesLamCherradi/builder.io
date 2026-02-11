@@ -1029,7 +1029,7 @@ export default function Partners() {
                         className="space-y-0 flex flex-col min-h-0 overflow-hidden"
                         style={{
                           marginTop: "-4px",
-                          marginBottom: "-8px",
+                          marginBottom: "-3px",
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
                           opacity: 0,
                           transform: "translateY(10px)",
