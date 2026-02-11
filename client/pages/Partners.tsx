@@ -963,7 +963,7 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-shrink-0 w-full sm:w-[420px] md:w-[480px] lg:w-[550px] perspective h-56 sm:h-64 md:h-72"
+                  className="group flex flex-shrink-0 w-full sm:w-[420px] md:w-[480px] lg:w-[550px] perspective h-52 sm:h-60 md:h-64"
                   style={{
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
