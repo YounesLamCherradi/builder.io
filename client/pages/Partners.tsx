@@ -1007,28 +1007,28 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-2 sm:p-2.5 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700" style={{ paddingBottom: "0" }}>
+                    <div className="relative z-10 flex-1 p-1.5 sm:p-2 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700" style={{ paddingBottom: "0" }}>
                       {/* Name and Position with enhanced effects */}
-                      <div className="pb-0.5 transition-all duration-700 group-hover:translate-x-1 px-1.5 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
-                        <h3 className="text-[10px] sm:text-xs font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
+                      <div className="pb-0 transition-all duration-700 group-hover:translate-x-1 px-1 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
+                        <h3 className="text-[9px] sm:text-[10px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
                           {vision.name_i18n && vision.name_i18n[currentLanguage]
                             ? vision.name_i18n[currentLanguage]
                             : vision.name}
                         </h3>
-                        <p className="text-[7px] sm:text-[8px] text-brand-red font-semibold mt-0.5 tracking-wider uppercase transition-all duration-700 group-hover:tracking-[0.08em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-1">
+                        <p className="text-[7px] sm:text-[8px] text-brand-red font-semibold mt-0 tracking-wider uppercase transition-all duration-700 group-hover:tracking-[0.08em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-1">
                           {vision.position_i18n &&
                           vision.position_i18n[currentLanguage]
                             ? vision.position_i18n[currentLanguage]
                             : vision.position}
                         </p>
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/30 to-transparent mt-0.5 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
+                        <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/30 to-transparent mt-0 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
                       </div>
 
                       {/* Quote with sophisticated animations - no background box */}
                       <div
                         className="space-y-0 flex flex-col flex-1"
                         style={{
-                          marginTop: "-4px",
+                          marginTop: "-2px",
                           marginBottom: "0",
                           paddingBottom: "0",
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
