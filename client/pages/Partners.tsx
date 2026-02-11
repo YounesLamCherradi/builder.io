@@ -990,14 +990,14 @@ export default function Partners() {
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
                     {/* Image Section with advanced hover effects - fixed width on left */}
-                    <div className="relative w-28 sm:w-32 md:w-36 h-full flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent">
+                    <div className="relative w-28 sm:w-32 md:w-36 h-full flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent p-0">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
                           <img
                             src={vision.image_url}
                             alt={vision.name}
-                            className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:drop-shadow-xl"
+                            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:drop-shadow-xl"
                           />
 
                         </>
