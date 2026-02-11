@@ -1009,7 +1009,7 @@ export default function Partners() {
                     {/* Content Section with staggered animations */}
                     <div className="relative z-10 flex-1 p-2 sm:p-3 flex flex-col gap-0 bg-white transition-all duration-700" style={{ paddingBottom: "2px" }}>
                       {/* Name and Position with enhanced effects */}
-                      <div className="pb-0 transition-all duration-700 group-hover:translate-x-1 px-1 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30 h-12 sm:h-14 flex flex-col justify-start">
+                      <div className="pb-0 transition-all duration-700 group-hover:translate-x-1 px-1 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
                         <h3 className="text-[9px] sm:text-[10px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
                           {vision.name_i18n && vision.name_i18n[currentLanguage]
                             ? vision.name_i18n[currentLanguage]
