@@ -963,7 +963,7 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-shrink-0 w-full sm:w-[480px] md:w-[550px] lg:w-[650px] perspective h-64 sm:h-72 md:h-80"
+                  className="group flex flex-shrink-0 w-full sm:w-[420px] md:w-[480px] lg:w-[550px] perspective h-56 sm:h-64 md:h-72"
                   style={{
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
@@ -990,7 +990,7 @@ export default function Partners() {
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
                     {/* Image Section with advanced hover effects - fixed width on left */}
-                    <div className="relative w-32 sm:w-40 md:w-44 h-full bg-gradient-to-b from-white to-gray-50 flex items-center justify-center flex-shrink-0 transition-all duration-500 border-r-2 border-gray-100 group-hover:border-brand-red/20">
+                    <div className="relative w-28 sm:w-32 md:w-36 h-full bg-gradient-to-b from-white to-gray-50 flex items-center justify-center flex-shrink-0 transition-all duration-500 border-r-2 border-gray-100 group-hover:border-brand-red/20">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
@@ -1017,26 +1017,26 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-2.5 sm:p-3 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700 overflow-hidden justify-between">
+                    <div className="relative z-10 flex-1 p-2 sm:p-2.5 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700 overflow-hidden justify-between">
                       {/* Name and Position with enhanced effects */}
-                      <div className="pb-1 transition-all duration-700 group-hover:translate-x-1 px-2 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
-                        <h3 className="text-xs sm:text-sm font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
+                      <div className="pb-0.5 transition-all duration-700 group-hover:translate-x-1 px-1.5 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
+                        <h3 className="text-[10px] sm:text-xs font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
                           {vision.name_i18n && vision.name_i18n[currentLanguage]
                             ? vision.name_i18n[currentLanguage]
                             : vision.name}
                         </h3>
-                        <p className="text-[8px] sm:text-[9px] text-brand-red font-semibold mt-0.5 tracking-widest uppercase transition-all duration-700 group-hover:tracking-[0.1em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-1">
+                        <p className="text-[7px] sm:text-[8px] text-brand-red font-semibold mt-0.5 tracking-wider uppercase transition-all duration-700 group-hover:tracking-[0.08em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-1">
                           {vision.position_i18n &&
                           vision.position_i18n[currentLanguage]
                             ? vision.position_i18n[currentLanguage]
                             : vision.position}
                         </p>
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/40 to-transparent mt-1 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
+                        <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/30 to-transparent mt-0.5 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
                       </div>
 
                       {/* Quote with sophisticated animations - no background box */}
                       <div
-                        className="space-y-0.5 flex flex-col min-h-0 overflow-hidden -mt-0.5"
+                        className="space-y-0 flex flex-col min-h-0 overflow-hidden -mt-0.5"
                         style={{
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
                           opacity: 0,
@@ -1044,13 +1044,13 @@ export default function Partners() {
                         }}
                       >
                         {/* Opening quote mark with animation */}
-                        <div className="text-brand-red/30 text-sm sm:text-base leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/70">
+                        <div className="text-brand-red/30 text-xs sm:text-sm leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/70">
                           "
                         </div>
 
                         {/* Quote text with reveal animation */}
                         <p
-                          className="text-[8px] sm:text-[9px] text-gray-600 italic font-light leading-snug transition-colors duration-700 ease-out group-hover:text-brand-red/90"
+                          className="text-[7px] sm:text-[8px] text-gray-600 italic font-light leading-snug transition-colors duration-700 ease-out group-hover:text-brand-red/90"
                           style={{
                             animation: `textReveal 0.9s ease-out 400ms forwards`,
                             opacity: 0,
@@ -1063,7 +1063,7 @@ export default function Partners() {
                         </p>
 
                         {/* Closing quote mark with animation */}
-                        <div className="text-brand-red/30 text-sm sm:text-base leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/70">
+                        <div className="text-brand-red/30 text-xs sm:text-sm leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/70">
                           "
                         </div>
                       </div>
