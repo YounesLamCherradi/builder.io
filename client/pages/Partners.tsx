@@ -963,7 +963,7 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-shrink-0 w-full sm:w-[420px] md:w-[480px] lg:w-[550px] perspective h-48 sm:h-56 md:h-60"
+                  className="group flex flex-shrink-0 w-full sm:w-80 md:w-96 perspective h-auto"
                   style={{
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
@@ -973,13 +973,13 @@ export default function Partners() {
                 >
                   {/* Vision Card - Premium Design */}
                   <div
-                    className="relative rounded-3xl overflow-hidden flex flex-row border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
+                    className="relative rounded-3xl overflow-hidden flex flex-col border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
                     style={{
                       transformStyle: "preserve-3d",
                       transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
                       height: "100%",
                       display: "flex",
-                      flexDirection: "row",
+                      flexDirection: "column",
                       boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
                     }}
                   >
@@ -989,8 +989,8 @@ export default function Partners() {
                     {/* Dynamic top accent line - slides and glows with brand colors */}
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
-                    {/* Image Section with advanced hover effects - fixed width on left */}
-                    <div className="relative w-28 sm:w-32 md:w-36 h-full flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent p-0">
+                    {/* Image Section with advanced hover effects - full width on top */}
+                    <div className="relative w-full h-32 sm:h-40 flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent p-0">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
@@ -1007,7 +1007,7 @@ export default function Partners() {
                     </div>
 
                     {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-1.5 sm:p-2 flex flex-col gap-0 bg-gradient-to-b from-white to-gray-50 backdrop-blur-sm transition-all duration-700" style={{ paddingBottom: "0" }}>
+                    <div className="relative z-10 flex-1 p-2 sm:p-3 flex flex-col gap-0 bg-white transition-all duration-700" style={{ paddingBottom: "2px" }}>
                       {/* Name and Position with enhanced effects */}
                       <div className="pb-0 transition-all duration-700 group-hover:translate-x-1 px-1 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
                         <h3 className="text-[9px] sm:text-[10px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
@@ -1026,11 +1026,11 @@ export default function Partners() {
 
                       {/* Quote with sophisticated animations - no background box */}
                       <div
-                        className="space-y-0 flex flex-col flex-1"
+                        className="space-y-0 flex flex-col flex-1 min-h-0"
                         style={{
-                          marginTop: "-2px",
-                          marginBottom: "0",
-                          paddingBottom: "0",
+                          marginTop: "0px",
+                          marginBottom: "-2px",
+                          paddingBottom: "2px",
                           animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
                           opacity: 0,
                           transform: "translateY(10px)",
