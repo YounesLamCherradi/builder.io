@@ -19,6 +19,15 @@ export default function AdminLogin() {
     setError("");
     setLoading(true);
 
+    const trimmedUsername = username.trim();
+    const trimmedPassword = password.trim();
+
+    if (!trimmedUsername || !trimmedPassword) {
+      setError("Username and password are required");
+      setLoading(false);
+      return;
+    }
+
     try {
       // Send login request to server
       const response = await fetch("/api/auth/login", {
@@ -26,7 +35,7 @@ export default function AdminLogin() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username: trimmedUsername, password: trimmedPassword }),
       });
 
       const result = await response.json();

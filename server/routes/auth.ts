@@ -10,21 +10,25 @@ export async function login(req: Request, res: Response) {
   try {
     const { username, password } = req.body;
 
-    // Validate required fields
-    if (!username || !password) {
+    // Trim whitespace and validate required fields
+    const trimmedUsername = typeof username === 'string' ? username.trim() : '';
+    const trimmedPassword = typeof password === 'string' ? password.trim() : '';
+
+    if (!trimmedUsername || !trimmedPassword) {
+      console.log("Login attempt with missing credentials");
       return res.status(400).json({
         error: "Missing username or password",
       });
     }
 
     // Log for debugging
-    console.log("Login attempt for:", username);
+    console.log("Login attempt for:", trimmedUsername);
     console.log("ADMIN_USERNAME env:", process.env.ADMIN_USERNAME ? "set" : "not set");
     console.log("ADMIN_PASSWORD env:", process.env.ADMIN_PASSWORD ? "set" : "not set");
 
     // Validate credentials
-    if (!validateCredentials(username, password)) {
-      console.log("Invalid credentials for user:", username);
+    if (!validateCredentials(trimmedUsername, trimmedPassword)) {
+      console.log("Invalid credentials for user:", trimmedUsername);
       return res.status(401).json({
         error: "Invalid credentials",
       });
