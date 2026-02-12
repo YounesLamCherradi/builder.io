@@ -106,6 +106,10 @@ export default function Contact() {
   };
 
   useEffect(() => {
+    document.title = "Contact | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -254,7 +258,7 @@ export default function Contact() {
       ar: {
         nav_home: "الرئيسية",
         nav_news: "الأخبار",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_partners: "الشركاء",
         nav_stories: "قصص النجاح",
         nav_resources: "الموارد",
@@ -327,7 +331,7 @@ export default function Contact() {
         scholarships: "المنح الدراسية",
         jobs: "الوظائف",
         programs: "البرامج",
-        about_us: "عننا",
+        about_us: "معلومات عنا",
         contact: "اتصل بنا",
         careers: "الوظائف",
         blog: "المدونة",
@@ -575,6 +579,10 @@ export default function Contact() {
       icon: Phone,
       label: t("contact_phone"),
       value: t("contact_phone_number"),
+      phones: [
+        "+212 7 73 70 64 47",
+        "+212 6 49 57 43 26"
+      ],
     },
     {
       icon: MapPin,
@@ -979,7 +987,19 @@ export default function Contact() {
                         <h3 className="text-lg font-semibold text-gray-900">
                           {info.label}
                         </h3>
-                        {info.url ? (
+                        {info.phones ? (
+                          <div className="flex flex-col gap-2 mt-1">
+                            {info.phones.map((phone: string, pidx: number) => (
+                              <a
+                                key={pidx}
+                                href={`tel:${phone.replace(/\s/g, '')}`}
+                                className="text-brand-red hover:text-red-700 hover:underline font-semibold transition-colors"
+                              >
+                                {phone}
+                              </a>
+                            ))}
+                          </div>
+                        ) : info.url ? (
                           <a
                             href={info.url}
                             target="_blank"

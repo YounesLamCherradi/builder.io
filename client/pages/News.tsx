@@ -87,6 +87,10 @@ export default function News() {
   };
 
   useEffect(() => {
+    document.title = "News | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -198,7 +202,7 @@ export default function News() {
       ar: {
         nav_home: "الرئيسية",
         nav_news: "الأخبار",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_partners: "الشركاء",
         nav_contact: "اتصل بنا",
         news_title: "أحدث الأخبار والمقالات",
@@ -213,7 +217,7 @@ export default function News() {
         scholarships: "المنح الدراسية",
         jobs: "الوظائف",
         programs: "البرامج",
-        about_us: "عننا",
+        about_us: "معلومات عنا",
         contact: "اتصل بنا",
         careers: "الوظائف",
         blog: "المدونة",

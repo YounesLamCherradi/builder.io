@@ -78,6 +78,10 @@ export default function Events() {
   };
 
   React.useEffect(() => {
+    document.title = "Events | WYF Morocco - World Youth Festival";
+  }, []);
+
+  React.useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -290,7 +294,7 @@ export default function Events() {
       ar: {
         nav_home: "الرئيسية",
         nav_events: "الفعاليات",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_stories: "قصص النجاح",
         nav_resources: "الموارد",
         nav_contact: "اتصل بنا",
@@ -324,7 +328,7 @@ export default function Events() {
         scholarships: "المنح الدراسية",
         jobs: "الوظائف",
         programs: "البرامج",
-        about_us: "عننا",
+        about_us: "معلومات عنا",
         contact: "اتصل بنا",
         careers: "الوظائف",
         blog: "المدونة",

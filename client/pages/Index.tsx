@@ -160,6 +160,10 @@ export default function Index() {
   }, [currentLanguage]);
 
   useEffect(() => {
+    document.title = "xxxx";
+  }, []);
+
+  useEffect(() => {
     const loadData = async () => {
       const [gallery, partners, news] = await Promise.all([
         fetchGallery(),
@@ -365,7 +369,7 @@ export default function Index() {
       ar: {
         nav_home: "الرئيسية",
         nav_news: "الأخبار",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_partners: "الشركاء",
         nav_stories: "قصص النجاح",
         nav_resources: "الموارد",
@@ -383,13 +387,13 @@ export default function Index() {
         who_we_are: "من نحن",
 
         stat_users: "المستخدمون النشطون",
-        stat_countries: "دول",
+        stat_countries: "الدول",
         stat_success: "معدل النجاح",
         stat_support: "الدعم",
 
         hero_stat_users: "الشباب المستهدفون",
-        hero_stat_countries: "الدول المستهدفة",
-        hero_stat_success: "معدل النجاح",
+        hero_stat_countries: "الشركاء",
+        hero_stat_success: "الدول",
         hero_stat_support: "الدعم",
 
         latest_updates: "أحدث التحديثات",
@@ -409,7 +413,7 @@ export default function Index() {
         scholarships: "المنح الدراسية",
         jobs: "الوظائف",
         programs: "البرامج",
-        about_us: "عننا",
+        about_us: "معلومات عنا",
         contact: "اتصل بنا",
         careers: "الوظائف",
         blog: "المدونة",
@@ -519,11 +523,11 @@ export default function Index() {
         // Hero section strings
         official_page_wyf: "الصفحة الرسمية لمهرجان الشباب العالمي بالمغرب",
         putin_quote_1: "روسيا أصبحت صديقتك الآن.",
-        putin_quote_2: "أبوابنا مفتوحة أمامك دائماً.",
+        putin_quote_2: "أبوابنا مفتوحة أمامك\nدائماً.",
         putin_attribution:
-          "— فلاديمير بوتين، حفل الإغلاق لمهرجان الشباب العالمي (2024)",
+          "— فلاديمير بوتين، خلال حفل اختتام مهرجان الشباب العالمي (2024)",
         wyf_description:
-          "الصفحة الرسمية للجنة الوطنية المغربية لمهرجان الشباب العالمي، أكبر شبكة شبابية في أفريقيا..',",
+          "الصفحة الرسمية للجنة الوطنية المغربية لمهرجان الشباب العالمي، أكبر شبكة شبابية في أفريقيا.",
 
         // Sponsors section strings
         partners_desc_call: "شارك معنا أو اعرض مؤسستك",
@@ -561,8 +565,8 @@ export default function Index() {
         stat_support: "Поддержка",
 
         hero_stat_users: "Молодёжь охвачена",
-        hero_stat_countries: "Страны охвачены",
-        hero_stat_success: "Успешность",
+        hero_stat_countries: "Партнёры",
+        hero_stat_success: "Страны",
         hero_stat_support: "Поддержка",
 
         latest_updates: "Последние обновления",
@@ -1114,11 +1118,11 @@ export default function Index() {
                 <span className="block text-brand-red text-lg sm:text-4xl lg:text-6xl">
                   "{t("putin_quote_1")}
                 </span>
-                <span className="block text-gray-900 text-lg sm:text-4xl lg:text-6xl mt-0.5 sm:mt-2">
+                <span className={`block text-gray-900 text-lg sm:text-4xl lg:text-6xl whitespace-pre-line ${currentLanguage === "ar" ? "leading-relaxed sm:leading-loose" : ""} ${currentLanguage === "ar" ? "mt-3 sm:mt-4" : "mt-0.5 sm:mt-2"}`}>
                   {t("putin_quote_2")}"
                 </span>
                 <span
-                  className="text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold mt-8 sm:mt-6 block sm:inline-block sm:ml-3 w-full sm:w-auto"
+                  className={`text-xs sm:text-base lg:text-lg font-serif text-brand-red font-semibold ${currentLanguage === "ar" ? "mt-10 sm:mt-14" : "mt-8 sm:mt-6"} block sm:inline-block sm:ml-3 w-full sm:w-auto`}
                   style={{
                     letterSpacing: "0.05em",
                     fontStyle: "italic",

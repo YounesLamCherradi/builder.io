@@ -158,6 +158,10 @@ export default function Admin() {
 
   // Load data
   useEffect(() => {
+    document.title = "Admin Dashboard | WYF Morocco";
+  }, []);
+
+  useEffect(() => {
     loadData();
   }, [activeTab]);
 
@@ -277,14 +281,14 @@ export default function Admin() {
       return;
     }
 
-    if (activeTab === "partner_visions" && !formData.visionName) {
-      toast.error("Please enter the partner name");
+    if (activeTab === "partner_visions" && !i18nData.name_i18n.en) {
+      toast.error("Please enter the partner name in English");
       setLoading(false);
       return;
     }
 
-    if (activeTab === "partner_visions" && !formData.visionPosition) {
-      toast.error("Please enter the partner position");
+    if (activeTab === "partner_visions" && !i18nData.role_i18n.en) {
+      toast.error("Please enter the partner position in English");
       setLoading(false);
       return;
     }
@@ -2057,7 +2061,7 @@ export default function Admin() {
                     (activeTab === "partners" &&
                       (!formData.image_url || !formData.partnerName)) ||
                     (activeTab === "partner_visions" &&
-                      (!formData.image_url || !formData.visionName)) ||
+                      (!formData.image_url || !i18nData.name_i18n.en)) ||
                     (activeTab === "past_events" && !formData.image_url)
                   }
                   className="flex-1 px-6 py-2 bg-brand-red text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50 flex items-center justify-center gap-2"
@@ -2072,7 +2076,7 @@ export default function Admin() {
                               !formData.image_url
                             ? "Please upload a partner image"
                             : activeTab === "partner_visions" &&
-                                !formData.visionName
+                                !i18nData.name_i18n.en
                               ? "Please enter partner name"
                               : activeTab === "past_events" &&
                                   !formData.image_url

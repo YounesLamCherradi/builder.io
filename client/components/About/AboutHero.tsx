@@ -126,7 +126,7 @@ function AboutStats({ t }: AboutStatsProps) {
     },
     {
       value: "24/7",
-      label: "Support",
+      label: t("hero_stat_support"),
       icon: Zap,
       gradient: "from-slate-700 to-slate-900",
       accentColor: "slate",

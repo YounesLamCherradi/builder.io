@@ -99,6 +99,10 @@ export default function About() {
   };
 
   useEffect(() => {
+    document.title = "About Us | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       const sections = document.querySelectorAll(".scroll-section");
@@ -227,6 +231,7 @@ export default function About() {
         about_achievements_3_desc: "Opportunities Shared",
         about_achievements_4: "35+",
         about_achievements_4_desc: "Countries",
+        hero_stat_support: "Support",
         about_achievements_5: "₹10M+",
         about_achievements_5_desc: "Scholarships Connected",
         about_achievements_6: "4+",
@@ -380,7 +385,7 @@ export default function About() {
       ar: {
         nav_home: "الرئيسية",
         nav_news: "الأخبار",
-        nav_about: "عننا",
+        nav_about: "معلومات عنا",
         nav_partners: "الشركاء",
         nav_stories: "قصص النجاح",
         nav_resources: "الموارد",
@@ -430,14 +435,15 @@ export default function About() {
         about_achievements_title: "التأثير بالأرقام",
         about_achievements_subtitle:
           "تغيير قابل للقياس في حياة الطلاب المغاربة",
-        about_achievements_1: "50,000+",
-        about_achievements_1_desc: "مستخدمون نشطون",
-        about_achievements_2: "150+",
-        about_achievements_2_desc: "دول مخدومة",
+        about_achievements_1: "8M+",
+        about_achievements_1_desc: "الشباب المستهدفون",
+        about_achievements_2: "115+",
+        about_achievements_2_desc: "الشركاء",
         about_achievements_3: "5,000+",
         about_achievements_3_desc: "فرص مشتركة",
-        about_achievements_4: "95%",
-        about_achievements_4_desc: "معدل النجاح",
+        about_achievements_4: "35+",
+        about_achievements_4_desc: "الدول",
+        hero_stat_support: "الدعم",
         about_achievements_5: "₹10M+",
         about_achievements_5_desc: "منح متصلة",
         about_achievements_6: "4+",
@@ -504,7 +510,7 @@ export default function About() {
 
         // Testimonial section
         about_testimonial_quote:
-          '"لقد أصبح مهرجان الشباب العالمي المغربي منصة دولية قوية توحد القادة الشباب وتعزز التعاون والحوار طويل الأجل بين الدول."',
+          '"لقد أصبحت اللجنة الوطنية للمغرب منصة دولية قوية توحد القادة الشباب وتعزز التعاون والحوار طويل الأجل بين الدول."',
         about_testimonial_author: "ماريا زاخاروفا",
         about_testimonial_role:
           "المتحدثة الرسمية لوزارة الخارجية للاتحاد الروسي",
@@ -565,7 +571,7 @@ export default function About() {
         scholarships: "المنح الدراسية",
         jobs: "الوظائف",
         programs: "البرامج",
-        about_us: "عننا",
+        about_us: "معلومات عنا",
         contact: "اتصل بنا",
         careers: "الوظائف",
         blog: "المدونة",
@@ -637,14 +643,15 @@ export default function About() {
         about_achievements_title: "Влияние в Цифрах",
         about_achievements_subtitle:
           "Измеримые изменения в жизни марокканских студентов",
-        about_achievements_1: "50 000+",
-        about_achievements_1_desc: "Активных Пользователей",
-        about_achievements_2: "150+",
-        about_achievements_2_desc: "Стран Охвачено",
-        about_achievements_3: "5 000+",
+        about_achievements_1: "8M+",
+        about_achievements_1_desc: "Молодёжь охвачена",
+        about_achievements_2: "115+",
+        about_achievements_2_desc: "Партнёры",
+        about_achievements_3: "5,000+",
         about_achievements_3_desc: "Возможностей Поделено",
-        about_achievements_4: "95%",
-        about_achievements_4_desc: "Коэффициент Успеха",
+        about_achievements_4: "35+",
+        about_achievements_4_desc: "Страны",
+        hero_stat_support: "Поддержка",
         about_achievements_5: "₹10M+",
         about_achievements_5_desc: "Стипендий Подключено",
         about_achievements_6: "4+",
