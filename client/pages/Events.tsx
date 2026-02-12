@@ -78,6 +78,10 @@ export default function Events() {
   };
 
   React.useEffect(() => {
+    document.title = "Events | WYF Morocco - World Youth Festival";
+  }, []);
+
+  React.useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

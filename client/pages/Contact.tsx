@@ -106,6 +106,10 @@ export default function Contact() {
   };
 
   useEffect(() => {
+    document.title = "Contact | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

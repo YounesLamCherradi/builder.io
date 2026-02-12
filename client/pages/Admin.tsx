@@ -158,6 +158,10 @@ export default function Admin() {
 
   // Load data
   useEffect(() => {
+    document.title = "Admin Dashboard | WYF Morocco";
+  }, []);
+
+  useEffect(() => {
     loadData();
   }, [activeTab]);
 

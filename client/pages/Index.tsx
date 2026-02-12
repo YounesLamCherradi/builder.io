@@ -160,6 +160,10 @@ export default function Index() {
   }, [currentLanguage]);
 
   useEffect(() => {
+    document.title = "Home | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const loadData = async () => {
       const [gallery, partners, news] = await Promise.all([
         fetchGallery(),

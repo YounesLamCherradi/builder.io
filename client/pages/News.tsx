@@ -87,6 +87,10 @@ export default function News() {
   };
 
   useEffect(() => {
+    document.title = "News | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };

@@ -60,6 +60,10 @@ export default function Partners() {
   };
 
   useEffect(() => {
+    document.title = "Partners | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       const sections = document.querySelectorAll(".scroll-section");

@@ -99,6 +99,10 @@ export default function About() {
   };
 
   useEffect(() => {
+    document.title = "About Us | WYF Morocco - World Youth Festival";
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
       const sections = document.querySelectorAll(".scroll-section");
