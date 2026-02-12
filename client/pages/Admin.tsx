@@ -131,17 +131,17 @@ export default function Admin() {
 
   // Multilingual form data
   const [i18nData, setI18nData] = useState({
-    title_i18n: { en: "", ar: "", ru: "", fr: "" },
-    description_i18n: { en: "", ar: "", ru: "", fr: "" },
-    content_i18n: { en: "", ar: "", ru: "", fr: "" },
-    about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-    name_i18n: { en: "", ar: "", ru: "", fr: "" },
-    role_i18n: { en: "", ar: "", ru: "", fr: "" },
-    bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-    caption_i18n: { en: "", ar: "", ru: "", fr: "" },
-    quote_i18n: { en: "", ar: "", ru: "", fr: "" },
-    question_i18n: { en: "", ar: "", ru: "", fr: "" },
-    answer_i18n: { en: "", ar: "", ru: "", fr: "" },
+    title_i18n: { en: "", ar: "", ru: "" },
+    description_i18n: { en: "", ar: "", ru: "" },
+    content_i18n: { en: "", ar: "", ru: "" },
+    about_event_i18n: { en: "", ar: "", ru: "" },
+    name_i18n: { en: "", ar: "", ru: "" },
+    role_i18n: { en: "", ar: "", ru: "" },
+    bio_i18n: { en: "", ar: "", ru: "" },
+    caption_i18n: { en: "", ar: "", ru: "" },
+    quote_i18n: { en: "", ar: "", ru: "" },
+    question_i18n: { en: "", ar: "", ru: "" },
+    answer_i18n: { en: "", ar: "", ru: "" },
   });
 
   const [eventDetails, setEventDetails] = useState<string[]>(["", "", "", ""]);
@@ -454,13 +454,13 @@ export default function Admin() {
         if (editingId) {
           await updateGalleryItem(editingId, {
             image_url: formData.image_url,
-            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "", fr: "" },
+            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         } else {
           await createGalleryItem({
             image_url: formData.image_url,
-            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "", fr: "" },
+            caption_i18n: i18nData.caption_i18n || { en: "", ar: "", ru: "" },
             order_index: formData.orderIndex,
           });
         }
@@ -685,9 +685,9 @@ export default function Admin() {
           ru: "",
         },
         content_i18n: news.content_i18n || { en: news.content, ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-        role_i18n: { en: "", ar: "", ru: "", fr: "" },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(news.image_url || null);
     } else if (activeTab === "events") {
@@ -713,14 +713,14 @@ export default function Admin() {
           ar: "",
           ru: "",
         },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
         about_event_i18n: event.about_event_i18n || {
           en: event.about_event,
           ar: "",
           ru: "",
         },
-        role_i18n: { en: "", ar: "", ru: "", fr: "" },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(event.image_url || null);
       setEventDetails(event.details || ["", "", "", ""]);
@@ -753,14 +753,14 @@ export default function Admin() {
         orderIndex: member.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "", fr: "" },
-        description_i18n: { en: "", ar: "", ru: "", fr: "" },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
         name_i18n: member.name_i18n || { en: member.name, ar: "", ru: "" },
         role_i18n: member.role_i18n || { en: member.role, ar: "", ru: "" },
         bio_i18n: member.bio_i18n || { en: member.bio, ar: "", ru: "" },
-        caption_i18n: { en: "", ar: "", ru: "", fr: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(member.image_url || null);
     } else if (activeTab === "gallery") {
@@ -786,13 +786,13 @@ export default function Admin() {
         orderIndex: gallery.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "", fr: "" },
-        description_i18n: { en: "", ar: "", ru: "", fr: "" },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-        role_i18n: { en: "", ar: "", ru: "", fr: "" },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-        caption_i18n: gallery.caption_i18n || { en: "", ar: "", ru: "", fr: "" },
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: gallery.caption_i18n || { en: "", ar: "", ru: "" },
       });
       setImagePreview(gallery.image_url || null);
     } else if (activeTab === "partners") {
@@ -819,13 +819,13 @@ export default function Admin() {
         orderIndex: partner.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "", fr: "" },
-        description_i18n: { en: "", ar: "", ru: "", fr: "" },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-        role_i18n: { en: "", ar: "", ru: "", fr: "" },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-        caption_i18n: { en: "", ar: "", ru: "", fr: "" },
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(partner.logo_url || null);
     } else if (activeTab === "partner_visions") {
@@ -855,21 +855,21 @@ export default function Admin() {
         orderIndex: vision.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "", fr: "" },
-        description_i18n: { en: "", ar: "", ru: "", fr: "" },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
         name_i18n: vision.name_i18n || { en: vision.name, ar: "", ru: "" },
         role_i18n: vision.position_i18n || {
           en: vision.position,
           ar: "",
           ru: "",
         },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-        caption_i18n: { en: "", ar: "", ru: "", fr: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
         quote_i18n: vision.quote_i18n || { en: vision.quote, ar: "", ru: "" },
-        question_i18n: { en: "", ar: "", ru: "", fr: "" },
-        answer_i18n: { en: "", ar: "", ru: "", fr: "" },
+        question_i18n: { en: "", ar: "", ru: "" },
+        answer_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(vision.image_url || null);
     } else if (activeTab === "faqs") {
@@ -895,13 +895,13 @@ export default function Admin() {
         orderIndex: faq.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "", fr: "" },
-        description_i18n: { en: "", ar: "", ru: "", fr: "" },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-        role_i18n: { en: "", ar: "", ru: "", fr: "" },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-        caption_i18n: { en: "", ar: "", ru: "", fr: "" },
+        title_i18n: { en: "", ar: "", ru: "" },
+        description_i18n: { en: "", ar: "", ru: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
         question_i18n: faq.question_i18n || {
           en: faq.question,
           ar: "",
@@ -942,11 +942,11 @@ export default function Admin() {
           ar: "",
           ru: "",
         },
-        content_i18n: { en: "", ar: "", ru: "", fr: "" },
-        about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-        role_i18n: { en: "", ar: "", ru: "", fr: "" },
-        bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-        caption_i18n: { en: "", ar: "", ru: "", fr: "" },
+        content_i18n: { en: "", ar: "", ru: "" },
+        about_event_i18n: { en: "", ar: "", ru: "" },
+        role_i18n: { en: "", ar: "", ru: "" },
+        bio_i18n: { en: "", ar: "", ru: "" },
+        caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(pastEvent.image_url || null);
     }
@@ -1013,17 +1013,17 @@ export default function Admin() {
       redirectUrl: "",
     });
     setI18nData({
-      title_i18n: { en: "", ar: "", ru: "", fr: "" },
-      description_i18n: { en: "", ar: "", ru: "", fr: "" },
-      content_i18n: { en: "", ar: "", ru: "", fr: "" },
-      about_event_i18n: { en: "", ar: "", ru: "", fr: "" },
-      name_i18n: { en: "", ar: "", ru: "", fr: "" },
-      role_i18n: { en: "", ar: "", ru: "", fr: "" },
-      bio_i18n: { en: "", ar: "", ru: "", fr: "" },
-      caption_i18n: { en: "", ar: "", ru: "", fr: "" },
-      quote_i18n: { en: "", ar: "", ru: "", fr: "" },
-      question_i18n: { en: "", ar: "", ru: "", fr: "" },
-      answer_i18n: { en: "", ar: "", ru: "", fr: "" },
+      title_i18n: { en: "", ar: "", ru: "" },
+      description_i18n: { en: "", ar: "", ru: "" },
+      content_i18n: { en: "", ar: "", ru: "" },
+      about_event_i18n: { en: "", ar: "", ru: "" },
+      name_i18n: { en: "", ar: "", ru: "" },
+      role_i18n: { en: "", ar: "", ru: "" },
+      bio_i18n: { en: "", ar: "", ru: "" },
+      caption_i18n: { en: "", ar: "", ru: "" },
+      quote_i18n: { en: "", ar: "", ru: "" },
+      question_i18n: { en: "", ar: "", ru: "" },
+      answer_i18n: { en: "", ar: "", ru: "" },
     });
     setEventDetails(["", "", "", ""]);
     setImagePreview(null);
