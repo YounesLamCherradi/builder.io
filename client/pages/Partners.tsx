@@ -1020,10 +1020,9 @@ export default function Partners() {
                         <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/30 to-transparent mt-2 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
                       </div>
 
-                      {/* Quote with sophisticated animations */}
-                      <div className="flex flex-col flex-1 px-2 py-2 gap-1">
-                        {/* Quote text */}
-                        <p className="text-sm text-gray-700 italic leading-snug transition-colors duration-700 ease-out group-hover:text-gray-900">
+                      {/* Quote in red box */}
+                      <div className="mt-2 bg-brand-red/10 border-l-4 border-brand-red px-3 py-2 rounded">
+                        <p className="text-xs sm:text-sm text-gray-800 italic leading-snug">
                           "{vision.quote_i18n &&
                           vision.quote_i18n[currentLanguage]
                             ? vision.quote_i18n[currentLanguage]
