@@ -941,60 +941,31 @@ export default function Partners() {
             </p>
           </div>
 
-          {/* Partner Visions Horizontal Scroll with Navigation */}
-          <div className="relative">
-            {/* Left Arrow - Hidden on mobile, visible on desktop */}
-            <button
-              onClick={() => {
-                if (visionsScrollRef.current) {
-                  visionsScrollRef.current.scrollBy({
-                    left: -400,
-                    behavior: "smooth",
-                  });
-                }
-              }}
-              className="hidden xl:flex absolute left-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6" />
-            </button>
-
-            {/* Scroll Container - Show Partner Visions */}
-            <div
-              ref={visionsScrollRef}
-              className="flex overflow-x-auto gap-4 sm:gap-6 md:gap-8 pb-4 scrollbar-hide px-2 sm:px-0"
-            >
-              {partnerVisionsList.map((vision, index) => (
-                <div
-                  key={vision.id}
-                  className="group flex flex-shrink-0 w-full sm:w-96 md:w-[420px] perspective h-auto"
-                  style={{
-                    animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
-                    opacity: 0,
-                    perspective: "1000px",
-                    height: "auto",
-                  }}
-                >
+          {/* Partner Visions Grid Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {partnerVisionsList.map((vision, index) => (
+              <div
+                key={vision.id}
+                className="group perspective h-auto"
+                style={{
+                  animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
+                  opacity: 0,
+                  perspective: "1000px",
+                  height: "auto",
+                }}
+              >
                   {/* Vision Card - Premium Design */}
                   <div
-                    className="relative rounded-3xl overflow-hidden flex flex-col border-2 border-gray-200 transition-all duration-700 ease-out group-hover:border-brand-red group-hover:shadow-2xl group-hover:-translate-y-2"
+                    className="relative rounded-2xl overflow-hidden flex flex-col border border-gray-200 transition-all duration-500 ease-out group-hover:border-brand-red group-hover:shadow-lg h-full"
                     style={{
-                      transformStyle: "preserve-3d",
-                      transition: "all 700ms cubic-bezier(0.34, 1.56, 0.64, 1)",
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+                      boxShadow: "0 4px 6px rgba(0,0,0,0.07)",
                     }}
                   >
-                    {/* Animated background gradient - enhanced with brand colors */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 via-brand-silver/5 to-brand-red/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out" />
+                    {/* Top accent line on hover */}
+                    <div className="absolute top-0 left-0 right-0 h-0.5 bg-brand-red scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-500" />
 
-                    {/* Dynamic top accent line - slides and glows with brand colors */}
-                    <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
-
-                    {/* Image Section with advanced hover effects - full width on top */}
-                    <div className="relative w-full h-40 sm:h-48 flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent p-0">
+                    {/* Image Section - full width on top */}
+                    <div className="relative w-full h-48 sm:h-56 flex items-center justify-center flex-shrink-0 bg-gray-100 p-0">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
@@ -1010,93 +981,39 @@ export default function Partners() {
 
                     </div>
 
-                    {/* Content Section with staggered animations */}
-                    <div className="relative z-10 flex-1 p-2 sm:p-3 flex flex-col gap-0 bg-white transition-all duration-700" style={{ paddingBottom: "2px" }}>
+                    {/* Content Section */}
+                    <div className="relative z-10 flex-1 p-4 sm:p-5 flex flex-col gap-2 bg-white">
                       {/* Name and Position with enhanced effects */}
-                      <div className="pb-0 transition-all duration-700 group-hover:translate-x-1 px-1 rounded-lg bg-gradient-to-r from-brand-red/8 via-transparent to-transparent group-hover:from-brand-red/15 group-hover:to-brand-red/5 border border-brand-red/10 group-hover:border-brand-red/30">
-                        <h3 className="text-[9px] sm:text-[10px] font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent transition-all duration-700 ease-out group-hover:from-brand-red group-hover:to-brand-red/80 leading-tight line-clamp-1">
+                      <div className="pb-2 transition-all duration-700 px-2 rounded-lg bg-gradient-to-r from-brand-red/5 via-transparent to-transparent group-hover:from-brand-red/10 border border-brand-red/10 group-hover:border-brand-red/20">
+                        <h3 className="text-sm sm:text-base font-bold text-gray-900 transition-all duration-700 ease-out group-hover:text-brand-red leading-tight line-clamp-2">
                           {vision.name_i18n && vision.name_i18n[currentLanguage]
                             ? vision.name_i18n[currentLanguage]
                             : vision.name}
                         </h3>
-                        <p className="text-[6px] sm:text-[7px] text-brand-red font-semibold mt-0 tracking-wider uppercase transition-all duration-700 group-hover:tracking-[0.08em] group-hover:text-brand-red/90 group-hover:font-bold line-clamp-2 min-h-[1.75rem] sm:min-h-[2rem]">
+                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1 transition-all duration-700">
                           {vision.position_i18n &&
                           vision.position_i18n[currentLanguage]
                             ? vision.position_i18n[currentLanguage]
                             : vision.position}
                         </p>
-                        <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/30 to-transparent mt-0 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
+                        <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-red/30 to-transparent mt-2 transition-all duration-700 ease-out group-hover:via-brand-red/70" />
                       </div>
 
-                      {/* Quote with sophisticated animations - no background box */}
-                      <div
-                        className="space-y-0 flex flex-col flex-1 min-h-0"
-                        style={{
-                          marginTop: "0px",
-                          marginBottom: "-2px",
-                          paddingBottom: "2px",
-                          animation: `quoteSlideIn 0.8s ease-out 300ms forwards`,
-                          opacity: 0,
-                          transform: "translateY(10px)",
-                        }}
-                      >
-                        {/* Opening quote mark with animation */}
-                        <div className="text-brand-red/30 text-xs sm:text-sm leading-none flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/70">
-                          "
-                        </div>
-
-                        {/* Quote text with reveal animation */}
-                        <p
-                          className="text-[7px] sm:text-[8px] text-gray-900 italic font-semibold leading-snug transition-colors duration-700 ease-out group-hover:text-gray-800"
-                          style={{
-                            animation: `textReveal 0.9s ease-out 400ms forwards`,
-                            opacity: 0,
-                          }}
-                        >
-                          {vision.quote_i18n &&
+                      {/* Quote with sophisticated animations */}
+                      <div className="flex flex-col flex-1 px-2 py-2 gap-1">
+                        {/* Quote text */}
+                        <p className="text-sm text-gray-700 italic leading-snug transition-colors duration-700 ease-out group-hover:text-gray-900">
+                          "{vision.quote_i18n &&
                           vision.quote_i18n[currentLanguage]
                             ? vision.quote_i18n[currentLanguage]
-                            : vision.quote}
+                            : vision.quote}"
                         </p>
-
-                        {/* Closing quote mark with animation */}
-                        <div className="text-brand-red/30 text-xs sm:text-sm leading-none text-right flex-shrink-0 font-bold transition-all duration-700 ease-out group-hover:text-brand-red/70 flex-1">
-                          "
-                        </div>
                       </div>
                     </div>
 
-                    {/* Premium glow effect with brand colors */}
-                    <div
-                      className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                      style={{
-                        boxShadow:
-                          "inset 0 0 40px rgba(187, 9, 9, 0.12), 0 15px 50px rgba(187, 9, 9, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)",
-                      }}
-                    />
-
-                    {/* Top rim light effect on hover */}
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none" />
                   </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Right Arrow - Hidden on mobile, visible on desktop */}
-            <button
-              onClick={() => {
-                if (visionsScrollRef.current) {
-                  visionsScrollRef.current.scrollBy({
-                    left: 400,
-                    behavior: "smooth",
-                  });
-                }
-              }}
-              className="hidden xl:flex absolute right-0 top-1/2 z-20 -translate-y-1/2 items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white border-2 border-gray-200 hover:border-brand-red text-gray-700 hover:text-brand-red transition-all duration-300 shadow-lg hover:shadow-red-200/50 hover:scale-110"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6" />
-            </button>
+              </div>
+            ))}
           </div>
         </div>
 
