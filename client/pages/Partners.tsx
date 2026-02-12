@@ -1019,9 +1019,9 @@ export default function Partners() {
                         </p>
                       </div>
 
-                      {/* Quote in red box */}
-                      <div className="mt-2 bg-brand-red/10 border-l-4 border-brand-red px-3 py-2 rounded">
-                        <p className="text-xs sm:text-sm text-gray-800 italic leading-snug">
+                      {/* Quote box - light pink background */}
+                      <div className="mt-2 bg-pink-50 border border-pink-200 px-3 py-2 rounded">
+                        <p className="text-xs sm:text-sm text-gray-700 italic leading-snug">
                           "{vision.quote_i18n &&
                           vision.quote_i18n[currentLanguage]
                             ? vision.quote_i18n[currentLanguage]
