@@ -160,7 +160,7 @@ export default function Index() {
   }, [currentLanguage]);
 
   useEffect(() => {
-    document.title = "xxxx";
+    document.title = "WYF Morocco - World Youth Festival";
   }, []);
 
   useEffect(() => {
