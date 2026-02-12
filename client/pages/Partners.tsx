@@ -1004,14 +1004,14 @@ export default function Partners() {
 
                     {/* Content Section */}
                     <div className="relative z-10 flex-1 p-4 sm:p-5 flex flex-col gap-2 bg-white">
-                      {/* Name and Position Box */}
-                      <div className="px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 transition-all duration-500 group-hover:border-brand-red group-hover:bg-brand-red/5">
+                      {/* Name and Position Box - Fixed height for consistency */}
+                      <div className="px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 transition-all duration-500 group-hover:border-brand-red group-hover:bg-brand-red/5 h-20">
                         <h3 className="text-sm sm:text-base font-bold text-gray-900 transition-all duration-500 ease-out group-hover:text-brand-red leading-tight line-clamp-1">
                           {vision.name_i18n && vision.name_i18n[currentLanguage]
                             ? vision.name_i18n[currentLanguage]
                             : vision.name}
                         </h3>
-                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1 transition-all duration-500">
+                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1 transition-all duration-500 line-clamp-2 h-9">
                           {vision.position_i18n &&
                           vision.position_i18n[currentLanguage]
                             ? vision.position_i18n[currentLanguage]
