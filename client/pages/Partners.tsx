@@ -963,7 +963,7 @@ export default function Partners() {
               {partnerVisionsList.map((vision, index) => (
                 <div
                   key={vision.id}
-                  className="group flex flex-shrink-0 w-full sm:w-80 md:w-96 perspective h-auto"
+                  className="group flex flex-shrink-0 w-full sm:w-96 md:w-[420px] perspective h-auto"
                   style={{
                     animation: `slideInUp 0.8s ease-out ${index * 100}ms forwards`,
                     opacity: 0,
@@ -990,7 +990,7 @@ export default function Partners() {
                     <div className="absolute top-0 left-0 right-0 h-1 sm:h-1.5 md:h-2 bg-gradient-to-r from-transparent via-brand-red via-brand-silver to-transparent scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-brand-red/60" />
 
                     {/* Image Section with advanced hover effects - full width on top */}
-                    <div className="relative w-full h-32 sm:h-40 flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent p-0">
+                    <div className="relative w-full h-40 sm:h-48 flex items-center justify-center flex-shrink-0 transition-all duration-500 bg-transparent p-0">
                       {vision.image_url && (
                         <>
                           {/* Base image - fills full container without cropping */}
