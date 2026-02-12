@@ -6,12 +6,20 @@
   directory = "netlify/functions"
   external_node_modules = ["express"]
   node_bundler = "esbuild"
-  
+
 [[redirects]]
   force = true
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+
+[[redirects]]
+  from = "/favicon.ico"
+  status = 404
+
+[[redirects]]
+  from = "/favicon.png"
+  status = 404
 
 [[redirects]]
   from = "/*"
