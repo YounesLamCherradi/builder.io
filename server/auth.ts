@@ -45,27 +45,3 @@ export function validateSession(token: string): {
 export function destroySession(token: string): void {
   sessionStore.delete(token);
 }
-
-export function validateCredentials(
-  username: string,
-  password: string,
-): boolean {
-  const adminUsername = process.env.ADMIN_USERNAME || "admin";
-  const adminPassword = process.env.ADMIN_PASSWORD || "password";
-
-  try {
-    // Check if lengths match first (timing-safe comparison requires same length)
-    const usernameMatch =
-      username.length === adminUsername.length &&
-      crypto.timingSafeEqual(Buffer.from(username), Buffer.from(adminUsername));
-
-    const passwordMatch =
-      password.length === adminPassword.length &&
-      crypto.timingSafeEqual(Buffer.from(password), Buffer.from(adminPassword));
-
-    return usernameMatch && passwordMatch;
-  } catch (error) {
-    // Fallback to simple comparison if timing-safe comparison fails
-    return username === adminUsername && password === adminPassword;
-  }
-}

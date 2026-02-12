@@ -1,44 +1,65 @@
 import { Request, Response } from "express";
-import {
-  validateCredentials,
-  createSession,
-  destroySession,
-  validateSession,
-} from "../auth";
+import { supabaseAdmin } from "../supabase";
+import { createSession, destroySession, validateSession } from "../auth";
 
 export async function login(req: Request, res: Response) {
   try {
     const { username, password } = req.body;
 
-    // Validate required fields
-    if (!username || !password) {
+    // Trim whitespace and validate required fields
+    const trimmedUsername = typeof username === 'string' ? username.trim() : '';
+    const trimmedPassword = typeof password === 'string' ? password.trim() : '';
+
+    if (!trimmedUsername || !trimmedPassword) {
+      console.log("Login attempt with missing credentials");
       return res.status(400).json({
         error: "Missing username or password",
       });
     }
 
-    // Log for debugging
-    console.log("Login attempt for:", username);
-    console.log("ADMIN_USERNAME env:", process.env.ADMIN_USERNAME ? "set" : "not set");
-    console.log("ADMIN_PASSWORD env:", process.env.ADMIN_PASSWORD ? "set" : "not set");
+    console.log("Login attempt for:", trimmedUsername);
 
-    // Validate credentials
-    if (!validateCredentials(username, password)) {
-      console.log("Invalid credentials for user:", username);
+    // Authenticate using Supabase Auth
+    if (!supabaseAdmin) {
+      console.error("Supabase not configured");
+      return res.status(500).json({
+        error: "Authentication service not available",
+      });
+    }
+
+    try {
+      // Sign in with Supabase Auth
+      const { data, error } = await supabaseAdmin.auth.signInWithPassword({
+        email: trimmedUsername, // Using username field as email in Supabase
+        password: trimmedPassword,
+      });
+
+      if (error || !data.session) {
+        console.log("Authentication failed:", trimmedUsername, error?.message);
+        return res.status(401).json({
+          error: "Invalid credentials",
+        });
+      }
+
+      // Get user info from Supabase Auth
+      const user = data.user;
+      console.log("User authenticated:", user.email);
+
+      // Create our own session token for consistency with existing system
+      const token = createSession(user.email || trimmedUsername);
+
+      return res.status(200).json({
+        success: true,
+        message: "Login successful",
+        token,
+        username: user.email || trimmedUsername,
+      });
+    } catch (authError) {
+      console.error("Supabase auth error:", authError);
       return res.status(401).json({
         error: "Invalid credentials",
       });
     }
-
-    // Create session
-    const token = createSession(username);
-
-    return res.status(200).json({
-      success: true,
-      message: "Login successful",
-      token,
-      username,
-    });
   } catch (error) {
     console.error("Error in login route:", error);
     return res.status(500).json({
