@@ -23,11 +23,10 @@ export async function login(req: Request, res: Response) {
 
     // Log for debugging
     console.log("Login attempt for:", trimmedUsername);
-    console.log("ADMIN_USERNAME env:", process.env.ADMIN_USERNAME ? "set" : "not set");
-    console.log("ADMIN_PASSWORD env:", process.env.ADMIN_PASSWORD ? "set" : "not set");
 
-    // Validate credentials
-    if (!validateCredentials(trimmedUsername, trimmedPassword)) {
+    // Validate credentials (now async - checks Supabase first, then env vars)
+    const isValid = await validateCredentials(trimmedUsername, trimmedPassword);
+    if (!isValid) {
       console.log("Invalid credentials for user:", trimmedUsername);
       return res.status(401).json({
         error: "Invalid credentials",

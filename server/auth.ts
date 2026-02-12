@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { supabaseAdmin } from "./supabase";
 
 // Simple in-memory session store (should use Redis/database in production)
 const sessionStore = new Map<string, { username: string; expiresAt: number }>();
@@ -46,7 +47,46 @@ export function destroySession(token: string): void {
   sessionStore.delete(token);
 }
 
-export function validateCredentials(
+export async function validateCredentials(
+  username: string,
+  password: string,
+): Promise<boolean> {
+  // First try Supabase
+  if (supabaseAdmin) {
+    try {
+      console.log("Validating credentials against Supabase admin_users table");
+
+      const { data, error } = await supabaseAdmin
+        .from("admin_users")
+        .select("id, username, password_hash")
+        .eq("username", username)
+        .single();
+
+      if (error) {
+        console.log("Admin user not found in Supabase:", username);
+        // Fall back to environment variables if Supabase fails
+        return validateCredentialsFromEnv(username, password);
+      }
+
+      if (!data) {
+        console.log("No admin user data returned");
+        return validateCredentialsFromEnv(username, password);
+      }
+
+      // Simple password comparison (in production, use proper hashing like bcrypt)
+      return data.password_hash === password;
+    } catch (err) {
+      console.error("Error validating credentials from Supabase:", err);
+      // Fall back to environment variables
+      return validateCredentialsFromEnv(username, password);
+    }
+  }
+
+  // Fall back to environment variables if Supabase not configured
+  return validateCredentialsFromEnv(username, password);
+}
+
+function validateCredentialsFromEnv(
   username: string,
   password: string,
 ): boolean {
