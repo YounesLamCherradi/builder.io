@@ -985,15 +985,15 @@ export default function Partners() {
                     {/* Top accent line on hover */}
                     <div className="absolute top-0 left-0 right-0 h-0.5 bg-brand-red scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-500" />
 
-                    {/* Image Section - full width on top */}
-                    <div className="relative w-full h-48 sm:h-56 flex items-center justify-center flex-shrink-0 bg-gray-100 p-0">
+                    {/* Image Section - Portrait orientation */}
+                    <div className="relative w-full h-64 sm:h-72 flex items-center justify-center flex-shrink-0 bg-gray-100 p-0 overflow-hidden">
                       {vision.image_url && (
                         <>
-                          {/* Base image - fills full container without cropping */}
+                          {/* Portrait image */}
                           <img
                             src={vision.image_url}
                             alt={vision.name}
-                            className="w-full h-full object-contain transition-all duration-700 ease-out group-hover:drop-shadow-xl"
+                            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
                           />
 
                         </>
