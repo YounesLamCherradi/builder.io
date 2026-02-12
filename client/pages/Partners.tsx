@@ -1004,26 +1004,19 @@ export default function Partners() {
 
                     {/* Content Section */}
                     <div className="relative z-10 flex-1 p-4 sm:p-5 flex flex-col gap-2 bg-white">
-                      {/* Name and Position - Aligned at same level */}
-                      <div className="flex gap-2 items-stretch">
-                        {/* Name Box */}
-                        <div className="flex-1 bg-gray-50 border border-gray-200 rounded px-2 py-2 transition-all duration-500 group-hover:border-brand-red group-hover:bg-brand-red/5">
-                          <h3 className="text-xs sm:text-sm font-bold text-gray-900 transition-all duration-500 ease-out group-hover:text-brand-red leading-tight">
-                            {vision.name_i18n && vision.name_i18n[currentLanguage]
-                              ? vision.name_i18n[currentLanguage]
-                              : vision.name}
-                          </h3>
-                        </div>
-
-                        {/* Position Box */}
-                        <div className="flex-1 bg-brand-red text-white rounded px-2 py-2 transition-all duration-500 group-hover:bg-brand-red/90">
-                          <p className="text-xs sm:text-sm font-semibold leading-tight line-clamp-2">
-                            {vision.position_i18n &&
-                            vision.position_i18n[currentLanguage]
-                              ? vision.position_i18n[currentLanguage]
-                              : vision.position}
-                          </p>
-                        </div>
+                      {/* Name and Position Box */}
+                      <div className="px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 transition-all duration-500 group-hover:border-brand-red group-hover:bg-brand-red/5">
+                        <h3 className="text-sm sm:text-base font-bold text-gray-900 transition-all duration-500 ease-out group-hover:text-brand-red leading-tight line-clamp-1">
+                          {vision.name_i18n && vision.name_i18n[currentLanguage]
+                            ? vision.name_i18n[currentLanguage]
+                            : vision.name}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-brand-red font-semibold mt-1 transition-all duration-500">
+                          {vision.position_i18n &&
+                          vision.position_i18n[currentLanguage]
+                            ? vision.position_i18n[currentLanguage]
+                            : vision.position}
+                        </p>
                       </div>
 
                       {/* Quote in red box */}
