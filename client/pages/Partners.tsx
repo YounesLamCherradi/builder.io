@@ -985,8 +985,8 @@ export default function Partners() {
                     {/* Top accent line on hover */}
                     <div className="absolute top-0 left-0 right-0 h-0.5 bg-brand-red scale-x-0 group-hover:scale-x-100 transform origin-center transition-all duration-500" />
 
-                    {/* Image Section - Portrait with white frame */}
-                    <div className="relative w-full h-64 sm:h-72 flex items-center justify-center flex-shrink-0 bg-white p-4 sm:p-6">
+                    {/* Image Section - Portrait with white sides */}
+                    <div className="relative w-full h-64 sm:h-72 flex items-center justify-center flex-shrink-0 bg-white px-4 sm:px-6">
                       {vision.image_url && (
                         <>
                           {/* Portrait image with white padding */}
