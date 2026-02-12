@@ -1,10 +1,6 @@
 import { Request, Response } from "express";
-import {
-  validateCredentials,
-  createSession,
-  destroySession,
-  validateSession,
-} from "../auth";
+import { supabaseAdmin } from "../supabase";
+import { createSession, destroySession, validateSession } from "../auth";
 
 export async function login(req: Request, res: Response) {
   try {
@@ -21,27 +17,49 @@ export async function login(req: Request, res: Response) {
       });
     }
 
-    // Log for debugging
     console.log("Login attempt for:", trimmedUsername);
 
-    // Validate credentials (now async - checks Supabase first, then env vars)
-    const isValid = await validateCredentials(trimmedUsername, trimmedPassword);
-    if (!isValid) {
-      console.log("Invalid credentials for user:", trimmedUsername);
+    // Authenticate using Supabase Auth
+    if (!supabaseAdmin) {
+      console.error("Supabase not configured");
+      return res.status(500).json({
+        error: "Authentication service not available",
+      });
+    }
+
+    try {
+      // Sign in with Supabase Auth
+      const { data, error } = await supabaseAdmin.auth.signInWithPassword({
+        email: trimmedUsername, // Using username field as email in Supabase
+        password: trimmedPassword,
+      });
+
+      if (error || !data.session) {
+        console.log("Authentication failed:", trimmedUsername, error?.message);
+        return res.status(401).json({
+          error: "Invalid credentials",
+        });
+      }
+
+      // Get user info from Supabase Auth
+      const user = data.user;
+      console.log("User authenticated:", user.email);
+
+      // Create our own session token for consistency with existing system
+      const token = createSession(user.email || trimmedUsername);
+
+      return res.status(200).json({
+        success: true,
+        message: "Login successful",
+        token,
+        username: user.email || trimmedUsername,
+      });
+    } catch (authError) {
+      console.error("Supabase auth error:", authError);
       return res.status(401).json({
         error: "Invalid credentials",
       });
     }
-
-    // Create session
-    const token = createSession(username);
-
-    return res.status(200).json({
-      success: true,
-      message: "Login successful",
-      token,
-      username,
-    });
   } catch (error) {
     console.error("Error in login route:", error);
     return res.status(500).json({

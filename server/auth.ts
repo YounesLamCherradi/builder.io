@@ -1,5 +1,4 @@
 import crypto from "crypto";
-import { supabaseAdmin } from "./supabase";
 
 // Simple in-memory session store (should use Redis/database in production)
 const sessionStore = new Map<string, { username: string; expiresAt: number }>();
@@ -45,67 +44,4 @@ export function validateSession(token: string): {
 
 export function destroySession(token: string): void {
   sessionStore.delete(token);
-}
-
-export async function validateCredentials(
-  username: string,
-  password: string,
-): Promise<boolean> {
-  // First try Supabase
-  if (supabaseAdmin) {
-    try {
-      console.log("Validating credentials against Supabase admin_users table");
-
-      const { data, error } = await supabaseAdmin
-        .from("admin_users")
-        .select("id, username, password_hash")
-        .eq("username", username)
-        .single();
-
-      if (error) {
-        console.log("Admin user not found in Supabase:", username);
-        // Fall back to environment variables if Supabase fails
-        return validateCredentialsFromEnv(username, password);
-      }
-
-      if (!data) {
-        console.log("No admin user data returned");
-        return validateCredentialsFromEnv(username, password);
-      }
-
-      // Simple password comparison (in production, use proper hashing like bcrypt)
-      return data.password_hash === password;
-    } catch (err) {
-      console.error("Error validating credentials from Supabase:", err);
-      // Fall back to environment variables
-      return validateCredentialsFromEnv(username, password);
-    }
-  }
-
-  // Fall back to environment variables if Supabase not configured
-  return validateCredentialsFromEnv(username, password);
-}
-
-function validateCredentialsFromEnv(
-  username: string,
-  password: string,
-): boolean {
-  const adminUsername = process.env.ADMIN_USERNAME || "admin";
-  const adminPassword = process.env.ADMIN_PASSWORD || "password";
-
-  try {
-    // Check if lengths match first (timing-safe comparison requires same length)
-    const usernameMatch =
-      username.length === adminUsername.length &&
-      crypto.timingSafeEqual(Buffer.from(username), Buffer.from(adminUsername));
-
-    const passwordMatch =
-      password.length === adminPassword.length &&
-      crypto.timingSafeEqual(Buffer.from(password), Buffer.from(adminPassword));
-
-    return usernameMatch && passwordMatch;
-  } catch (error) {
-    // Fallback to simple comparison if timing-safe comparison fails
-    return username === adminUsername && password === adminPassword;
-  }
 }
