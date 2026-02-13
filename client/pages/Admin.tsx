@@ -58,7 +58,14 @@ import { toast } from "sonner";
 export default function Admin() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<
-    "news" | "team" | "partners" | "partner_visions" | "faqs"
+    | "news"
+    | "events"
+    | "team"
+    | "gallery"
+    | "partners"
+    | "partner_visions"
+    | "faqs"
+    | "past_events"
   >("news");
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [eventsList, setEventsList] = useState<Event[]>([]);
@@ -102,8 +109,7 @@ export default function Admin() {
     navigate("/admin-login");
   };
 
-  // Form state
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     title: "",
     description: "",
     content: "",
@@ -127,10 +133,9 @@ export default function Admin() {
     bio: "",
     orderIndex: 0,
     redirectUrl: "",
-  });
+  };
 
-  // Multilingual form data
-  const [i18nData, setI18nData] = useState({
+  const initialI18nData = {
     title_i18n: { en: "", ar: "", ru: "" },
     description_i18n: { en: "", ar: "", ru: "" },
     content_i18n: { en: "", ar: "", ru: "" },
@@ -142,7 +147,13 @@ export default function Admin() {
     quote_i18n: { en: "", ar: "", ru: "" },
     question_i18n: { en: "", ar: "", ru: "" },
     answer_i18n: { en: "", ar: "", ru: "" },
-  });
+  };
+
+  // Form state
+  const [formData, setFormData] = useState(initialFormData);
+
+  // Multilingual form data
+  const [i18nData, setI18nData] = useState(initialI18nData);
 
   const [eventDetails, setEventDetails] = useState<string[]>(["", "", "", ""]);
 
@@ -657,27 +668,19 @@ export default function Admin() {
     if (activeTab === "news") {
       const news = item as NewsArticle;
       setFormData({
+        ...initialFormData,
         title: news.title,
         description: news.description,
         content: news.content,
         category: news.category,
         author: news.author,
         image_url: news.image_url || "",
-        location: "",
         date: news.date,
-        name: "",
-        role: "",
-        time: "18:00",
-        about_event: "",
-        partnerName: "",
-        partnerLink: "",
-        question: "",
-        answer: "",
-        bio: "",
         orderIndex: news.order_index || 0,
         redirectUrl: news.redirect_url || "",
       });
       setI18nData({
+        ...initialI18nData,
         title_i18n: news.title_i18n || { en: news.title, ar: "", ru: "" },
         description_i18n: news.description_i18n || {
           en: news.description,
@@ -685,42 +688,33 @@ export default function Admin() {
           ru: "",
         },
         content_i18n: news.content_i18n || { en: news.content, ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
-        role_i18n: { en: "", ar: "", ru: "" },
-        bio_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(news.image_url || null);
     } else if (activeTab === "events") {
       const event = item as Event;
       setFormData({
+        ...initialFormData,
         title: event.title,
         description: event.description,
-        content: "",
-        category: "",
-        author: "",
         image_url: event.image_url || "",
         location: event.location || "",
         date: event.date,
         time: event.time || "18:00",
         about_event: event.about_event || "",
-        name: "",
-        role: "",
       });
       setI18nData({
+        ...initialI18nData,
         title_i18n: event.title_i18n || { en: event.title, ar: "", ru: "" },
         description_i18n: event.description_i18n || {
           en: event.description,
           ar: "",
           ru: "",
         },
-        content_i18n: { en: "", ar: "", ru: "" },
         about_event_i18n: event.about_event_i18n || {
           en: event.about_event,
           ar: "",
           ru: "",
         },
-        role_i18n: { en: "", ar: "", ru: "" },
-        bio_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(event.image_url || null);
       setEventDetails(event.details || ["", "", "", ""]);
@@ -733,205 +727,90 @@ export default function Admin() {
     } else if (activeTab === "team") {
       const member = item as TeamMember;
       setFormData({
-        title: "",
-        description: "",
-        content: "",
-        category: "Visa Updates",
-        author: "",
+        ...initialFormData,
         image_url: member.image_url || "",
-        location: "",
-        date: new Date().toISOString().split("T")[0],
-        time: "18:00",
-        about_event: "",
         name: member.name,
         role: member.role,
-        partnerName: "",
-        partnerLink: "",
-        question: "",
-        answer: "",
-        bio: "",
         orderIndex: member.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "" },
-        description_i18n: { en: "", ar: "", ru: "" },
-        content_i18n: { en: "", ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
+        ...initialI18nData,
         name_i18n: member.name_i18n || { en: member.name, ar: "", ru: "" },
         role_i18n: member.role_i18n || { en: member.role, ar: "", ru: "" },
         bio_i18n: member.bio_i18n || { en: member.bio, ar: "", ru: "" },
-        caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(member.image_url || null);
     } else if (activeTab === "gallery") {
       const gallery = item as GalleryItem;
       setFormData({
-        title: "",
-        description: "",
-        content: "",
-        category: "Visa Updates",
-        author: "",
+        ...initialFormData,
         image_url: gallery.image_url || "",
-        location: "",
-        date: new Date().toISOString().split("T")[0],
-        time: "18:00",
-        about_event: "",
-        name: "",
-        role: "",
-        partnerName: "",
-        partnerLink: "",
-        question: "",
-        answer: "",
-        bio: "",
         orderIndex: gallery.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "" },
-        description_i18n: { en: "", ar: "", ru: "" },
-        content_i18n: { en: "", ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
-        role_i18n: { en: "", ar: "", ru: "" },
-        bio_i18n: { en: "", ar: "", ru: "" },
+        ...initialI18nData,
         caption_i18n: gallery.caption_i18n || { en: "", ar: "", ru: "" },
       });
       setImagePreview(gallery.image_url || null);
     } else if (activeTab === "partners") {
       const partner = item as Partner;
       setFormData({
-        title: "",
-        description: "",
-        content: "",
-        category: "Visa Updates",
-        author: "",
+        ...initialFormData,
         image_url: partner.logo_url || "",
-        location: "",
-        date: new Date().toISOString().split("T")[0],
-        time: "18:00",
-        about_event: "",
-        name: "",
-        role: "",
         partnerName: partner.name,
         partnerLink: partner.link,
         partnerType: partner.type || "institutional",
-        question: "",
-        answer: "",
-        bio: "",
         orderIndex: partner.order_index || 0,
       });
-      setI18nData({
-        title_i18n: { en: "", ar: "", ru: "" },
-        description_i18n: { en: "", ar: "", ru: "" },
-        content_i18n: { en: "", ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
-        role_i18n: { en: "", ar: "", ru: "" },
-        bio_i18n: { en: "", ar: "", ru: "" },
-        caption_i18n: { en: "", ar: "", ru: "" },
-      });
+      setI18nData(initialI18nData);
       setImagePreview(partner.logo_url || null);
     } else if (activeTab === "partner_visions") {
       const vision = item as PartnerVision;
       setFormData({
-        title: "",
-        description: "",
-        content: "",
-        category: "Visa Updates",
-        author: "",
+        ...initialFormData,
         image_url: vision.image_url || "",
-        location: "",
-        date: new Date().toISOString().split("T")[0],
-        time: "18:00",
-        about_event: "",
-        name: "",
-        role: "",
-        partnerName: "",
-        partnerLink: "",
-        partnerType: "institutional",
         visionName: vision.name,
         visionPosition: vision.position,
         visionQuote: vision.quote,
-        question: "",
-        answer: "",
-        bio: "",
         orderIndex: vision.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "" },
-        description_i18n: { en: "", ar: "", ru: "" },
-        content_i18n: { en: "", ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
+        ...initialI18nData,
         name_i18n: vision.name_i18n || { en: vision.name, ar: "", ru: "" },
         role_i18n: vision.position_i18n || {
           en: vision.position,
           ar: "",
           ru: "",
         },
-        bio_i18n: { en: "", ar: "", ru: "" },
-        caption_i18n: { en: "", ar: "", ru: "" },
         quote_i18n: vision.quote_i18n || { en: vision.quote, ar: "", ru: "" },
-        question_i18n: { en: "", ar: "", ru: "" },
-        answer_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(vision.image_url || null);
     } else if (activeTab === "faqs") {
       const faq = item as FAQ;
       setFormData({
-        title: "",
-        description: "",
-        content: "",
-        category: "Visa Updates",
-        author: "",
-        image_url: "",
-        location: "",
-        date: new Date().toISOString().split("T")[0],
-        time: "18:00",
-        about_event: "",
-        name: "",
-        role: "",
-        partnerName: "",
-        partnerLink: "",
+        ...initialFormData,
         question: faq.question,
         answer: faq.answer,
-        bio: "",
         orderIndex: faq.order_index || 0,
       });
       setI18nData({
-        title_i18n: { en: "", ar: "", ru: "" },
-        description_i18n: { en: "", ar: "", ru: "" },
-        content_i18n: { en: "", ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
-        role_i18n: { en: "", ar: "", ru: "" },
-        bio_i18n: { en: "", ar: "", ru: "" },
-        caption_i18n: { en: "", ar: "", ru: "" },
-        question_i18n: faq.question_i18n || {
-          en: faq.question,
-          ar: "",
-          ru: "",
-        },
+        ...initialI18nData,
+        question_i18n: faq.question_i18n || { en: faq.question, ar: "", ru: "" },
         answer_i18n: faq.answer_i18n || { en: faq.answer, ar: "", ru: "" },
       });
     } else if (activeTab === "past_events") {
       const pastEvent = item as PastEvent;
       setFormData({
+        ...initialFormData,
         title: pastEvent.title,
         description: pastEvent.description,
-        content: "",
-        category: "Visa Updates",
-        author: "",
-        image_url: pastEvent.image_url || "",
-        location: pastEvent.location,
+        location: pastEvent.location || "",
         date: pastEvent.date,
-        time: "18:00",
-        about_event: "",
-        name: "",
-        role: "",
-        partnerName: "",
-        partnerLink: "",
-        question: "",
-        answer: "",
-        bio: "",
+        image_url: pastEvent.image_url || "",
         orderIndex: pastEvent.order_index || 0,
       });
       setI18nData({
+        ...initialI18nData,
         title_i18n: pastEvent.title_i18n || {
           en: pastEvent.title,
           ar: "",
@@ -942,11 +821,6 @@ export default function Admin() {
           ar: "",
           ru: "",
         },
-        content_i18n: { en: "", ar: "", ru: "" },
-        about_event_i18n: { en: "", ar: "", ru: "" },
-        role_i18n: { en: "", ar: "", ru: "" },
-        bio_i18n: { en: "", ar: "", ru: "" },
-        caption_i18n: { en: "", ar: "", ru: "" },
       });
       setImagePreview(pastEvent.image_url || null);
     }
@@ -987,44 +861,8 @@ export default function Admin() {
   };
 
   const resetForm = () => {
-    setFormData({
-      title: "",
-      description: "",
-      content: "",
-      category: "Visa Updates",
-      author: "",
-      image_url: "",
-      location: "",
-      date: new Date().toISOString().split("T")[0],
-      time: "18:00",
-      about_event: "",
-      name: "",
-      role: "",
-      partnerName: "",
-      partnerLink: "",
-      partnerType: "institutional",
-      visionName: "",
-      visionPosition: "",
-      visionQuote: "",
-      question: "",
-      answer: "",
-      bio: "",
-      orderIndex: 0,
-      redirectUrl: "",
-    });
-    setI18nData({
-      title_i18n: { en: "", ar: "", ru: "" },
-      description_i18n: { en: "", ar: "", ru: "" },
-      content_i18n: { en: "", ar: "", ru: "" },
-      about_event_i18n: { en: "", ar: "", ru: "" },
-      name_i18n: { en: "", ar: "", ru: "" },
-      role_i18n: { en: "", ar: "", ru: "" },
-      bio_i18n: { en: "", ar: "", ru: "" },
-      caption_i18n: { en: "", ar: "", ru: "" },
-      quote_i18n: { en: "", ar: "", ru: "" },
-      question_i18n: { en: "", ar: "", ru: "" },
-      answer_i18n: { en: "", ar: "", ru: "" },
-    });
+    setFormData(initialFormData);
+    setI18nData(initialI18nData);
     setEventDetails(["", "", "", ""]);
     setImagePreview(null);
     setButtonConfig({
