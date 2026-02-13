@@ -115,13 +115,20 @@ export default function Index() {
   };
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-      const sections = document.querySelectorAll(".scroll-section");
-      sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 120 && rect.bottom >= 120) setActiveSection(index);
-      });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          const sections = document.querySelectorAll(".scroll-section");
+          sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 120 && rect.bottom >= 120) setActiveSection(index);
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -1100,6 +1107,10 @@ export default function Index() {
                 src="https://cdn.builder.io/api/v1/image/assets%2Fd4fd91be66e54271aa0c8ae2c3c89e7c%2F3eee9a46b02f44de88fb675aaf879228?format=webp&width=800&height=1200"
                 alt="Portrait"
                 className="w-full h-auto object-contain"
+                width={800}
+                height={1200}
+                loading="eager"
+                decoding="async"
               />
             </div>
 
@@ -1520,14 +1531,24 @@ export default function Index() {
               {/* Featured News - Left Side (2 columns on desktop) */}
               <div className="lg:col-span-2 animate-in fade-in slide-in-from-left-8 duration-700">
                 <div
-                  onClick={() =>
-                    setSelectedNews(
-                      [...newsList].sort(
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => {
+                    const article = [...newsList].sort(
+                      (a, b) => (a.order_index || 0) - (b.order_index || 0),
+                    )[0];
+                    setSelectedNews(article);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      const article = [...newsList].sort(
                         (a, b) => (a.order_index || 0) - (b.order_index || 0),
-                      )[0],
-                    )
-                  }
-                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 h-full max-h-[600px] lg:max-h-[800px] flex flex-col cursor-pointer hover:border-brand-red/70 relative"
+                      )[0];
+                      setSelectedNews(article);
+                    }
+                  }}
+                  aria-label={`${t("trending_now")}: ${newsList[0].title}`}
+                  className="group rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 h-full max-h-[600px] lg:max-h-[800px] flex flex-col cursor-pointer hover:border-brand-red/70 relative focus:outline-none focus:ring-4 focus:ring-brand-red/30"
                 >
                   {/* Gradient border effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl p-[2px] pointer-events-none">
@@ -1628,8 +1649,15 @@ export default function Index() {
                     {newsList.slice(1).map((article, idx) => (
                       <div
                         key={article.id}
+                        role="button"
+                        tabIndex={0}
                         onClick={() => setSelectedNews(article)}
-                        className="group animate-in fade-in slide-in-from-bottom-8 duration-700 rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-brand-red/70 cursor-pointer flex-shrink-0 w-80 sm:w-96 flex flex-col hover:bg-white relative hover:-translate-y-2"
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ")
+                            setSelectedNews(article);
+                        }}
+                        aria-label={`Article: ${article.title}`}
+                        className="group animate-in fade-in slide-in-from-bottom-8 duration-700 rounded-3xl overflow-hidden bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-brand-red/70 cursor-pointer flex-shrink-0 w-80 sm:w-96 flex flex-col hover:bg-white relative hover:-translate-y-2 focus:outline-none focus:ring-4 focus:ring-brand-red/30"
                         style={{ animationDelay: `${idx * 50}ms` }}
                       >
                         {/* Gradient border effect on hover */}

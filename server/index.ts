@@ -138,5 +138,20 @@ export function createServer() {
   app.post("/api/auth/logout", logout);
   app.get("/api/auth/validate", validateToken);
 
+  // Global error handler
+  app.use(
+    (
+      err: any,
+      req: express.Request,
+      res: express.Response,
+      next: express.NextFunction,
+    ) => {
+      console.error("Server error:", err);
+      res.status(err.status || 500).json({
+        error: err.message || "Internal server error",
+      });
+    },
+  );
+
   return app;
 }
