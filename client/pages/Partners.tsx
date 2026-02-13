@@ -229,7 +229,7 @@ export default function Partners() {
         version: "v1.0.0 • 2026",
 
         // Informational Partners Section
-        informational_partners: "شركاء الإعلام",
+        informational_partners: "منابر اعلامية شريكة",
         informational_partners_desc:
           "شركاء المعرفة ومصادر المعلومات الداعمة لمهمتنا",
 
