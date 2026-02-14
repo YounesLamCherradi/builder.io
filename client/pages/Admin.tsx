@@ -178,23 +178,38 @@ export default function Admin() {
 
   const loadData = async () => {
     setLoading(true);
-    if (activeTab === "news") {
-      const data = await fetchNews();
-      setNewsList(data);
-    } else if (activeTab === "team") {
-      const data = await fetchTeam();
-      setTeamList(data);
-    } else if (activeTab === "partners") {
-      const data = await fetchPartners();
-      setPartnersList(data);
-    } else if (activeTab === "partner_visions") {
-      const data = await fetchPartnerVisions();
-      setPartnerVisionsList(data);
-    } else if (activeTab === "faqs") {
-      const data = await fetchFAQs();
-      setFaqsList(data);
+    try {
+      if (activeTab === "news") {
+        const data = await fetchNews();
+        setNewsList(data);
+      } else if (activeTab === "events") {
+        const data = await fetchEvents();
+        setEventsList(data);
+      } else if (activeTab === "team") {
+        const data = await fetchTeam();
+        setTeamList(data);
+      } else if (activeTab === "gallery") {
+        const data = await fetchGallery();
+        setGalleryList(data);
+      } else if (activeTab === "partners") {
+        const data = await fetchPartners();
+        setPartnersList(data);
+      } else if (activeTab === "partner_visions") {
+        const data = await fetchPartnerVisions();
+        setPartnerVisionsList(data);
+      } else if (activeTab === "faqs") {
+        const data = await fetchFAQs();
+        setFaqsList(data);
+      } else if (activeTab === "past_events") {
+        const data = await fetchPastEvents();
+        setPastEventsList(data);
+      }
+    } catch (error) {
+      console.error("Error loading data:", error);
+      toast.error("Failed to load data");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const handleInputChange = (
@@ -731,6 +746,7 @@ export default function Admin() {
         image_url: member.image_url || "",
         name: member.name,
         role: member.role,
+        bio: member.bio || "",
         orderIndex: member.order_index || 0,
       });
       setI18nData({
