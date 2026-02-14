@@ -628,7 +628,7 @@ export default function Partners() {
                 </blockquote>
 
                 {/* Attribution */}
-                <div className="space-y-1 pt-3 border-t border-brand-red/30">
+                <div className="space-y-1 pt-3 border-t border-gray-100">
                   <p className="text-base sm:text-lg font-bold text-gray-900">
                     {t("partners_attribution")}
                   </p>
@@ -1027,7 +1027,7 @@ export default function Partners() {
                       </div>
 
                       {/* Quote box - red and white */}
-                      <div className="mt-2 bg-brand-red/20 border-l-4 border-brand-red px-3 py-2 rounded">
+                      <div className="mt-2 bg-brand-red/20 px-3 py-2 rounded">
                         <p className="text-xs sm:text-sm text-gray-800 italic leading-snug">
                           "{vision.quote_i18n &&
                           vision.quote_i18n[currentLanguage]
@@ -1210,7 +1210,7 @@ export default function Partners() {
                 </blockquote>
 
                 {/* Attribution */}
-                <div className="space-y-1 pt-3 border-t border-brand-red/30">
+                <div className="space-y-1 pt-3 border-t border-gray-100">
                   <p className="text-base sm:text-lg font-bold text-gray-900">
                     {t("affiliation_author")}
                   </p>
