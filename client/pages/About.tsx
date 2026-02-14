@@ -103,13 +103,20 @@ export default function About() {
   }, []);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-      const sections = document.querySelectorAll(".scroll-section");
-      sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 120 && rect.bottom >= 120) setActiveSection(index);
-      });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          const sections = document.querySelectorAll(".scroll-section");
+          sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 120 && rect.bottom >= 120) setActiveSection(index);
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);

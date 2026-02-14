@@ -132,7 +132,9 @@ export interface Partner {
 export interface PartnerVision {
   id: string;
   name: string;
+  name_i18n?: I18nString;
   position: string;
+  position_i18n?: I18nString;
   image_url: string;
   quote: string;
   quote_i18n?: I18nString;

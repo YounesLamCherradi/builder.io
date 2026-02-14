@@ -38,7 +38,7 @@ export default function Events() {
     return "en";
   });
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<string | null>(null);
   const [fetchedEvents, setFetchedEvents] = useState<Event[]>([]);
   const [loadingEvents, setLoadingEvents] = useState(true);
@@ -271,9 +271,6 @@ export default function Events() {
         event_8_d4: "Partner country presentations",
 
         past_events_title: "Past Events Highlights",
-        past_events_subtitle:
-          "Relive the magic - See what our students experienced",
-
         stay_updated_title: "Stay Updated with",
         stay_updated_highlight: "Global Opportunities",
         stay_updated_desc:
@@ -406,8 +403,6 @@ export default function Events() {
         event_8_d4: "عروض الدول الشريكة",
 
         past_events_title: "لحظات بارزة من الفعاليات السابقة",
-        past_events_subtitle: "أعد تجربة السحر - اكتشف ما عاشه طلابنا",
-
         stay_updated_title: "ابقَ محدثاً مع",
         stay_updated_highlight: "الفرص العالمية",
         stay_updated_desc:
@@ -547,9 +542,6 @@ export default function Events() {
         event_8_d4: "Презентации партнёрских стран",
 
         past_events_title: "Знаменательные моменты прошлых событий",
-        past_events_subtitle:
-          "Переживайте снова - Посмотрите, что испытали наши студенты",
-
         stay_updated_title: "Будьте в курсе",
         stay_updated_highlight: "Глобальные возможности",
         stay_updated_desc:
